@@ -1,8 +1,74 @@
-body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-.header { background: darkblue; color: white; padding: 20px; text-align: center; }
-.intro, .history { padding: 20px; }
-.seasons-table { width: 100%; border-collapse: collapse; }
-.seasons-table th, .seasons-table td { text-align: left; padding: 8px; border-bottom: 1px solid #ddd; }
-.seasons-table tr:hover { background-color: #f2f2f2;}
-a { color: darkblue; text-decoration: none; }
-a:hover { text-decoration: underline; }
+/* Base styles for the entire website */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.header {
+    background-color: darkblue;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.intro, .history {
+    padding: 20px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+/* Table styles for season archives */
+.seasons-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.seasons-table th, .seasons-table td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.seasons-table tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* Link styles */
+a {
+    color: darkblue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Additional Styling */
+.content {
+    padding: 20px;
+    background-color: white;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Use this section for specific styling on your season/league pages */
+.season-content h2 {
+    color: darkblue;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .header, .intro, .history, .content {
+        padding: 10px;
+    }
+
+    .seasons-table th, .seasons-table td {
+        padding: 8px;
+    }
+}
