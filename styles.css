@@ -109,3 +109,49 @@ a:hover {
 
   color: #555; /* Subtle color for the caption text */
 }
+
+/* Roster Table Styles */
+.roster-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #fff;
+}
+
+.roster-table th,
+.roster-table td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #eee;
+}
+
+.roster-table th {
+  background-color: #202a47;
+  color: white;
+  font-weight: bold;
+}
+
+.roster-table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.roster-table img {
+  border-radius: 10%;
+  width: auto;
+  height: 50px; /* Adjust height instead of width for consistency */
+}
+
+/* Adds a hover effect to table rows */
+.roster-table tr:hover {
+  background-color: #ddd;
+}
+
+/* Styling for links inside the table, if any */
+.roster-table a {
+  color: #202a47;
+  text-decoration: none;
+}
+
+.roster-table a:hover {
+  text-decoration: underline;
+}
