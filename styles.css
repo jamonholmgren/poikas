@@ -1,81 +1,83 @@
 /* Base styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
 }
 
 .header {
-    background-color: darkblue;
-    color: white;
-    padding: 20px;
-    text-align: center;
+  background-color: #202a47;
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
 
 /* Layout styles */
 .container {
-    display: flex;
-    flex-wrap: nowrap; /* Adjusted to prevent wrapping */
-    background-color: #f0f0f0;
+  display: flex;
+  flex-wrap: nowrap; /* Adjusted to prevent wrapping */
+  background-color: #f0f0f0;
 }
 
 .sidebar {
-    flex: 0 0 250px; /* Adjusted for fixed sidebar width */
-    background-color: #fff;
-    padding: 20px;
-    height: auto; /* Adjust as needed */
+  flex: 0 0 250px; /* Adjusted for fixed sidebar width */
+  background-color: #fff;
+  padding: 20px;
+  height: auto; /* Adjust as needed */
 }
 
 .main-content {
-    flex: 1; /* Adjusted to take remaining space */
-    background-color: #fff;
-    padding: 20px;
-    margin-left: 20px; /* Adds space between sidebar and main content */
+  flex: 1; /* Adjusted to take remaining space */
+  background-color: #fff;
+  padding: 20px;
+  margin-left: 20px; /* Adds space between sidebar and main content */
 }
 
 /* Table and link styles */
 .seasons-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-.seasons-table th, .seasons-table td {
-    text-align: left;
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
+.seasons-table th,
+.seasons-table td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
 }
 
 .seasons-table tr:hover {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 
 a {
-    color: darkblue;
-    text-decoration: none;
+  color: darkblue;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Image fit */
 .sidebar img {
-    max-width: 100%;
-    height: auto;
-    display: block; /* Ensures no extra space below the image */
+  max-width: 100%;
+  height: auto;
+  display: block; /* Ensures no extra space below the image */
 }
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
+  .container {
+    flex-direction: column;
+  }
 
-    .sidebar, .main-content {
-        max-width: 100%;
-        flex-basis: auto;
-        margin-left: 0; /* Removes space for a stacked layout */
-    }
+  .sidebar,
+  .main-content {
+    max-width: 100%;
+    flex-basis: auto;
+    margin-left: 0; /* Removes space for a stacked layout */
+  }
 }
