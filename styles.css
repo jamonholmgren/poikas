@@ -62,7 +62,32 @@ img {
     color: darkblue;
 }
 
-/* Responsive adjustments */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f0f0f0;
+}
+
+.sidebar {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    max-width: 250px;
+}
+
+.main-content {
+    flex: 3;
+    padding: 20px;
+}
+
+/* Ensure the image fits within the sidebar */
+.sidebar img {
+    width: 100%;
+    height: auto;
+}
+
+/* Adjustments for responsiveness */
 @media screen and (max-width: 768px) {
     .header, .intro, .history, .content {
         padding: 10px;
@@ -70,5 +95,14 @@ img {
 
     .seasons-table th, .seasons-table td {
         padding: 8px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar, .main-content {
+        max-width: 100%;
+        flex-basis: auto;
     }
 }
