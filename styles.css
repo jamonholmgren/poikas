@@ -1,4 +1,4 @@
-/* Base styles for the entire website */
+/* Base styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -13,22 +13,37 @@ body {
     text-align: center;
 }
 
-.intro, .history {
-    padding: 20px;
-    background-color: white;
-    margin-bottom: 20px;
+/* Layout styles */
+.container {
+    display: flex;
+    flex-wrap: nowrap; /* Adjusted to prevent wrapping */
+    background-color: #f0f0f0;
 }
 
-/* Table styles for season archives */
+.sidebar {
+    flex: 0 0 250px; /* Adjusted for fixed sidebar width */
+    background-color: #fff;
+    padding: 20px;
+    height: auto; /* Adjust as needed */
+}
+
+.main-content {
+    flex: 1; /* Adjusted to take remaining space */
+    background-color: #fff;
+    padding: 20px;
+    margin-left: 20px; /* Adds space between sidebar and main content */
+}
+
+/* Table and link styles */
 .seasons-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin-top: 20px;
 }
 
 .seasons-table th, .seasons-table td {
     text-align: left;
-    padding: 12px;
+    padding: 8px;
     border-bottom: 1px solid #ddd;
 }
 
@@ -36,7 +51,6 @@ body {
     background-color: #f2f2f2;
 }
 
-/* Link styles */
 a {
     color: darkblue;
     text-decoration: none;
@@ -46,57 +60,15 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Additional Styling */
-.content {
-    padding: 20px;
-    background-color: white;
-}
-
-img {
+/* Image fit */
+.sidebar img {
     max-width: 100%;
     height: auto;
+    display: block; /* Ensures no extra space below the image */
 }
 
-/* Use this section for specific styling on your season/league pages */
-.season-content h2 {
-    color: darkblue;
-}
-
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #f0f0f0;
-}
-
-.sidebar {
-    flex: 1;
-    background-color: #fff;
-    padding: 20px;
-    max-width: 250px;
-}
-
-.main-content {
-    flex: 3;
-    padding: 20px;
-}
-
-/* Ensure the image fits within the sidebar */
-.sidebar img {
-    width: 100%;
-    height: auto;
-}
-
-/* Adjustments for responsiveness */
+/* Responsive adjustments */
 @media screen and (max-width: 768px) {
-    .header, .intro, .history, .content {
-        padding: 10px;
-    }
-
-    .seasons-table th, .seasons-table td {
-        padding: 8px;
-    }
-
     .container {
         flex-direction: column;
     }
@@ -104,5 +76,6 @@ img {
     .sidebar, .main-content {
         max-width: 100%;
         flex-basis: auto;
+        margin-left: 0; /* Removes space for a stacked layout */
     }
 }
