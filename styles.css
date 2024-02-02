@@ -27,7 +27,7 @@ body {
   height: auto; /* Adjust as needed */
 }
 
-.main-content {
+main {
   flex: 1; /* Adjusted to take remaining space */
   background-color: #fff;
   padding: 20px;
@@ -75,9 +75,37 @@ a:hover {
   }
 
   .sidebar,
-  .main-content {
+  main {
     max-width: 100%;
     flex-basis: auto;
     margin-left: 0; /* Removes space for a stacked layout */
   }
+}
+
+.sidebar .photo {
+  display: block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #000; /* Adjust caption text color as needed */
+}
+
+.sidebar img {
+  width: 100%;
+  border-radius: 5px; /* Adds rounded corners to your images */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.sidebar img:hover,
+.sidebar img:focus {
+  transform: scale(1.03); /* Slightly enlarges the image on hover/focus */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhances shadow on hover/focus */
+}
+
+.caption {
+  display: block;
+  text-align: center;
+  margin-top: 8px;
+
+  color: #555; /* Subtle color for the caption text */
 }
