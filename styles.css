@@ -1,0 +1,8 @@
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+.header { background: darkblue; color: white; padding: 20px; text-align: center; }
+.intro, .history { padding: 20px; }
+.seasons-table { width: 100%; border-collapse: collapse; }
+.seasons-table th, .seasons-table td { text-align: left; padding: 8px; border-bottom: 1px solid #ddd; }
+.seasons-table tr:hover { background-color: #f2f2f2;}
+a { color: darkblue; text-decoration: none; }
+a:hover { text-decoration: underline; }
