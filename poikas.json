@@ -1,0 +1,321 @@
+{
+  "leagues": [
+    {
+      "year": 2019,
+      "season": "Fall",
+      "level": "Rec",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "championship": false,
+      "roster": []
+    },
+    {
+      "year": 2020,
+      "season": "Spring",
+      "level": "Rec",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "championship": false,
+      "roster": [
+        "Asa Storm",
+        "Brad Wuori",
+        "Joel Mattila",
+        "Brenden Mattila",
+        "Creighton Suomi",
+        "Dan Warren",
+        "Jens Tapio",
+        "Kevin Stepaniuk",
+        "Lars Jarvi",
+        "Milo Matson",
+        "Nathan Goddard",
+        "Nolan Storm",
+        "Oren Matson",
+        "Peter Tapio",
+        "Randy Storm",
+        "Scott Daniels",
+        "Jamon Holmgren"
+      ]
+    },
+    {
+      "year": 2024,
+      "season": "Spring",
+      "level": "Rec",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "championship": false,
+      "roster": [
+        "Brenden Mattila",
+        "Cedric Holmgren",
+        "Dan Warren",
+        "Daniel Kulla",
+        "Donald Kulla",
+        "Ethan Kulla",
+        "Jay Tapio",
+        "Joel Mattila",
+        "Konrad Stenersen",
+        "Logan Matson",
+        "Myron Kinnunen",
+        "Nolan Matson",
+        "Orrin Erickson",
+        "Shane Matson",
+        "Jamon Holmgren"
+      ]
+    },
+    {
+      "year": 2024,
+      "season": "Spring",
+      "level": "C",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "championship": false,
+      "roster": [
+        "Andrew Tunseth",
+        "Asa Storm",
+        "Brad Wuori",
+        "Jared Paben",
+        "Joel Mattila",
+        "Kieren Sarkela",
+        "Nels Tapio",
+        "Nolan Storm",
+        "Oren Matson",
+        "Randy Storm",
+        "Scott Daniels",
+        "Steve Saunders",
+        "Jamon Holmgren"
+      ]
+    }
+  ],
+  "players": [
+    {
+      "number": 77,
+      "name": "Joel Mattila",
+      "pos": "C",
+      "shoots": "R"
+    },
+    {
+      "number": 6,
+      "name": "Brenden Mattila",
+      "pos": "LW",
+      "shoots": "L"
+    },
+    {
+      "number": 51,
+      "name": "Jamon Holmgren",
+      "pos": "G",
+      "shoots": "R"
+    },
+    {
+      "number": 15,
+      "name": "Cedric Holmgren",
+      "pos": "RW",
+      "shoots": "R"
+    },
+    {
+      "number": 20,
+      "name": "Dan Warren",
+      "pos": "D"
+    },
+    {
+      "number": 70,
+      "name": "Daniel Kulla",
+      "pos": "RW"
+    },
+    {
+      "number": 28,
+      "name": "Donald Kulla"
+    },
+    {
+      "number": 18,
+      "name": "Ethan Kulla"
+    },
+    {
+      "number": 10,
+      "name": "Konrad Stenersen",
+      "pos": "LW"
+    },
+    {
+      "number": 14,
+      "name": "Logan Matson"
+    },
+    {
+      "number": 63,
+      "name": "Jay Tapio",
+      "pos": "D"
+    },
+    {
+      "number": 26,
+      "name": "Nels Tapio",
+      "pos": "C"
+    },
+    {
+      "number": 17,
+      "name": "Myron Kinnunen",
+      "pos": "FWD"
+    },
+    {
+      "number": 45,
+      "name": "Nolan Matson",
+      "pos": "LW"
+    },
+    {
+      "number": 96,
+      "name": "Nolan Storm",
+      "pos": "FWD"
+    },
+    {
+      "number": 97,
+      "name": "Orrin Erickson",
+      "pos": "C"
+    },
+    {
+      "number": 36,
+      "name": "Erik Benton",
+      "pos": "G"
+    },
+    {
+      "name": "Andrew Tunseth"
+    },
+    {
+      "number": 29,
+      "name": "Asa Storm",
+      "pos": "FWD"
+    },
+    {
+      "number": 19,
+      "name": "Brad Wuori",
+      "pos": "D/C"
+    },
+    {
+      "number": 50,
+      "name": "Jared Paben",
+      "pos": "D"
+    },
+    {
+      "name": "Andrew Nichol",
+      "pos": "F"
+    },
+    {
+      "name": "Austin Sakai"
+    },
+    {
+      "name": "Brent Mattila"
+    },
+    {
+      "name": "Jeff Fish"
+    },
+    {
+      "number": 91,
+      "name": "Levi Estola"
+    },
+    {
+      "name": "Mark Varivoda"
+    },
+    {
+      "number": 47,
+      "name": "Nathan Rivera"
+    },
+    {
+      "name": "Nick Andriuschenko"
+    },
+    {
+      "number": 10,
+      "name": "Russ Raybukin",
+      "pos": "FWD"
+    },
+    {
+      "name": "Sean Stocker"
+    },
+    {
+      "number": 31,
+      "name": "Shane Matson"
+    },
+    {
+      "name": "Travis Goddard"
+    },
+    {
+      "name": "Matt Bromley"
+    },
+    {
+      "number": 27,
+      "name": "Oren Matson",
+      "pos": "FWD"
+    },
+    {
+      "number": 88,
+      "name": "Randy Storm"
+    },
+    {
+      "name": "Rick Ramstetter"
+    },
+    {
+      "number": 7,
+      "name": "Scott Daniels",
+      "pos": "FWD"
+    },
+    {
+      "name": "Steve Saunders"
+    },
+    {
+      "number": 5,
+      "name": "Will Murphy"
+    },
+    {
+      "number": 21,
+      "name": "Ben Mikhalets"
+    },
+    {
+      "name": "David Dettmann"
+    },
+    {
+      "name": "Jacob Rybak"
+    },
+    {
+      "name": "Maksim Shirev"
+    },
+    {
+      "number": 9,
+      "name": "Ruben Voytenko",
+      "pos": "FWD"
+    },
+    {
+      "name": "Tim Petrienko"
+    },
+    {
+      "number": 11,
+      "name": "Creighton Suomi",
+      "pos": "D"
+    },
+    {
+      "number": 16,
+      "name": "Jens Tapio",
+      "pos": "D"
+    },
+    {
+      "number": 5,
+      "name": "Kevin Stepaniuk",
+      "pos": "D"
+    },
+    {
+      "number": 8,
+      "name": "Lars Jarvi",
+      "pos": "D"
+    },
+    {
+      "number": 95,
+      "name": "Milo Matson",
+      "pos": "D"
+    },
+    {
+      "number": 24,
+      "name": "Nathan Goddard"
+    },
+    {
+      "number": 24,
+      "name": "Peter Tapio"
+    }
+  ]
+}

@@ -1,9 +1,10 @@
 /* Base styles */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 auto;
   padding: 0;
   background-color: #f0f0f0;
+  max-width: 1280px;
 }
 
 .header {
@@ -32,6 +33,10 @@ main {
   background-color: #fff;
   padding: 20px;
   margin-left: 20px; /* Adds space between sidebar and main content */
+}
+
+h2 {
+  color: #222;
 }
 
 /* Table and link styles */
@@ -122,12 +127,14 @@ a:hover {
 .roster-table td {
   text-align: left;
   padding: 8px;
-  border: 1px solid #eee;
+  /* border: 1px solid #eee; */
+  border: none;
 }
 
 .roster-table th {
-  background-color: #202a47;
-  color: white;
+  /* background-color: #202a47; */
+  /* color: white; */
+  background-color: #d9d9d9;
   font-weight: bold;
 }
 
@@ -136,7 +143,7 @@ a:hover {
 }
 
 .roster-table img {
-  border-radius: 10%;
+  border-radius: 50%;
   width: auto;
   height: 50px; /* Adjust height instead of width for consistency */
 }
@@ -154,4 +161,52 @@ a:hover {
 
 .roster-table a:hover {
   text-decoration: underline;
+}
+
+/* Styles for the filter links container */
+#yearSeasonSwitcher,
+#levelSwitcher {
+  margin-bottom: 20px;
+}
+
+/* Basic styles for links */
+#yearSeasonSwitcher a,
+#levelSwitcher a {
+  text-decoration: none;
+  color: #007bff; /* Bootstrap primary blue */
+  background-color: #f8f9fa; /* Light background */
+  border: 1px solid #dae0e5; /* Light border */
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 10px; /* Space between links */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for links */
+#yearSeasonSwitcher a:hover,
+#levelSwitcher a:hover {
+  color: #0056b3; /* Darker blue on hover */
+  background-color: #e2e6ea; /* Slightly darker background on hover */
+  border-color: #d1d7db; /* Slightly darker border on hover */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Styles for the currently selected link */
+#yearSeasonSwitcher a[style*="font-weight: bold"],
+#levelSwitcher a[style*="font-weight: bold"] {
+  color: #fff; /* White text for selected link */
+  background-color: #007bff; /* Bootstrap primary blue for background */
+  border-color: #007bff; /* Same as background */
+}
+
+/* Optional: Add a little bit of shadow for depth */
+#yearSeasonSwitcher a,
+#levelSwitcher a {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect adds a bit more shadow */
+#yearSeasonSwitcher a:hover,
+#levelSwitcher a:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
