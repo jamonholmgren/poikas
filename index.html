@@ -6,6 +6,9 @@
     <title>Suomi Poikas Hockey Team</title>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="icon" type="image/png" href="images/finland-flag-icon.png" />
+
+    <!-- Load the roster from a JSON file -->
+    <script src="./rosters.js"></script>
   </head>
   <body>
     <div class="header">
@@ -18,14 +21,14 @@
             src="images/poikas-rec-2023-24-fall-champions.jpg"
             alt="Suomi Poikas 2023-24 Fall Rec Champions"
           />
-          <span class="caption"> Suomi Poikas 2023-24 Rec Champions </span>
+          <span class="caption">Suomi Poikas 2023-24 Rec Champions </span>
         </a>
         <a class="photo" href="./2021-fall-rec.html">
           <img
             src="images/poikas-rec-2021-22-fall-champions.jpg"
             alt="Suomi Poikas 2021-22 Fall Rec Champions"
           />
-          <span class="caption"> Suomi Poikas 2021-22 Fall Rec Champions </span>
+          <span class="caption">Suomi Poikas 2021-22 Fall Rec Champions </span>
         </a>
       </div>
       <main>
@@ -38,10 +41,12 @@
 
           <h2>Our History</h2>
           <p>
-            In 2018, Brenden Mattila asked his dad Joel if he could play ice
-            hockey. Joel said "Sure, if I can too!" Neither had ever played
-            hockey before. After one season, Joel and Brenden were hooked, and
-            the Suomi Poikas ("Finnish Boys") were born.
+            In fall of 2018, Brenden Mattila turned 18 and started playing ice
+            hockey with the local Thundersticks Rec League team. While watching
+            him play, his dad Joel decided to join for spring 2019 league, along
+            with his friend Eric Matson. Halfway through the season, Joel
+            thought "I know enough Finns who play hockey that I could start a
+            team," and the Suomi Poikas ("Finnish Boys") were born.
           </p>
           <p>
             The club is made up primarily of Finnish-American players. Most
@@ -54,37 +59,20 @@
           </p>
         </article>
         <div class="roster">
-          <h2>Current Rec League Roster</h2>
+          <h2>Roster</h2>
+          <div id="yearSeasonSwitcher"></div>
+          <div id="levelSwitcher"></div>
+
           <table class="roster-table">
             <tr>
               <th width="50">Photo</th>
-              <th width="30">#</th>
               <th>Name</th>
-              <th>Position</th>
-            </tr>
-            <tr>
-              <td data-label="photo">
-                <img src="images/77-joel-mattila.jpg" alt="Joel Mattila" />
-              </td>
-              <td>77</td>
-              <td>Joel Mattila</td>
-              <td>Center</td>
-            </tr>
-            <tr>
-              <td data-label="photo">
-                <img src="images/6-brenden-mattila.jpg" alt="Brenden Mattila" />
-              </td>
-              <td>6</td>
-              <td>Brenden Mattila</td>
-              <td>Right Wing</td>
-            </tr>
-            <tr>
-              <td data-label="photo">
-                <img src="images/51-jamon-holmgren.jpg" alt="Jamon Holmgren" />
-              </td>
-              <td>51</td>
-              <td>Jamon Holmgren</td>
-              <td>Goalie</td>
+              <th width="30">#</th>
+              <th width="30">Pos</th>
+              <th width="30">Ht/Wt</th>
+              <th width="30">Sh</th>
+              <th width="30">Joined</th>
+              <th width="30">Born</th>
             </tr>
           </table>
         </div>
@@ -106,5 +94,16 @@
         </div>
       </main>
     </div>
+
+    <script>
+      window.poikas = {
+        year: 2024,
+        season: "Spring",
+        level: "Rec",
+      };
+
+      // Call the function to load and display the roster when the page is ready
+      loadAndDisplayRoster();
+    </script>
   </body>
 </html>
