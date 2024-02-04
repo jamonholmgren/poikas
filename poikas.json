@@ -432,16 +432,19 @@
     {
       "number": 77,
       "name": "Joel Mattila",
+      "bio": "Joel is the founder of the Suomi Poikas and team captain. He is the father of Brenden Mattila and an uncle to Brent Mattila. Joel started playing hockey in spring of 2019 after his son Brenden joined a team and quickly grew to love hockey.",
+      "role": "Co-Founder and Captain",
       "pos": "C",
       "shoots": "R",
       "born": 1977,
       "ht": "6-0",
-      "wt": 210,
-      "bio": "Joel is the founder of the Suomi Poikas and team captain. He is the father of Brenden Mattila and an uncle to Brent Mattila. Joel started playing hockey in spring of 2019 after his son Brenden joined a team and quickly grew to love hockey."
+      "wt": 200
     },
     {
       "number": 6,
       "name": "Brenden Mattila",
+      "bio": "Brenden is the spark that caused the Poikas to come to be. When he turned 18 he started to play hockey, which caused his dad Joel to also start playing, and eventually start the Poikas. Brenden is a blazing fast skater and a top level scorer in Rec League.",
+      "role": "Co-Founder",
       "pos": "LW",
       "shoots": "L",
       "born": 2000
@@ -685,18 +688,22 @@
     },
     {
       "number": 24,
-      "name": "Nathan Goddard"
+      "name": "Nathan Goddard",
+      "pos": "D"
     },
     {
       "number": 24,
-      "name": "Peter Tapio"
+      "name": "Peter Tapio",
+      "pos": "C/D"
     },
     {
       "number": 32,
-      "name": "Russ Tapio"
+      "name": "Russ Tapio",
+      "pos": "W"
     },
     {
-      "name": "Treven Erickson"
+      "name": "Treven Erickson",
+      "pos": "C"
     },
     {
       "number": 21,
@@ -712,14 +719,17 @@
     },
     {
       "number": 18,
-      "name": "Asher (Dimitriy) Piskorskiy"
+      "bio": "Dimitriy is a Russian player who played with the Poikas for an extra season beyond the Russian/Poika combined season.",
+      "name": "Asher (Dimitriy) Piskorskiy",
+      "pos": "W"
     },
     {
       "number": 24,
       "name": "Levi Borth"
     },
     {
-      "name": "Trevor Kloetzli"
+      "name": "Trevor Kloetzli",
+      "pos": "D/W"
     }
   ]
 }
