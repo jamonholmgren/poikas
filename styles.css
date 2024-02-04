@@ -108,6 +108,11 @@ a:hover {
     flex-basis: auto;
     margin-left: 0; /* Removes space for a stacked layout */
   }
+
+  td.extra,
+  th.extra {
+    display: none; /* Hides the extra column on smaller screens */
+  }
 }
 
 .sidebar .photo {

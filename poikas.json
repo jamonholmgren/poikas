@@ -8,7 +8,21 @@
       "losses": 0,
       "ties": 0,
       "championship": false,
-      "roster": []
+      "roster": [
+        "Joel Mattila",
+        "Brenden Mattila",
+        "Jamon Holmgren",
+        "Lars Jarvi",
+        "Jens Tapio",
+        "Randy Storm",
+        "Peter Tapio",
+        "Kevin Stepaniuk",
+        "Brad Wuori",
+        "Scott Daniels",
+        "Asa Storm",
+        "Creighton Suomi",
+        "Konrad Stenersen"
+      ]
     },
     {
       "year": 2020,
@@ -35,6 +49,57 @@
         "Peter Tapio",
         "Randy Storm",
         "Scott Daniels",
+        "Jamon Holmgren"
+      ]
+    },
+    {
+      "year": 2021,
+      "season": "Spring",
+      "level": "Rec",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "championship": false,
+      "roster": [
+        "Asa Storm",
+        "Brad Wuori",
+        "Brenden Mattila",
+        "Dan Warren",
+        "Jay Tapio",
+        "Joel Mattila",
+        "Josh Monen",
+        "Kevin Stepaniuk",
+        "Konrad Stenersen",
+        "Milo Matson",
+        "Oren Matson",
+        "Peter Tapio",
+        "Scott Daniels",
+        "Jamon Holmgren"
+      ]
+    },
+    {
+      "year": 2021,
+      "season": "Summer",
+      "level": "Rec",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "championship": false,
+      "roster": [
+        "Asa Storm",
+        "Brad Wuori",
+        "Brenden Mattila",
+        "Dan Warren",
+        "Jay Tapio",
+        "Joel Mattila",
+        "Josh Monen",
+        "Kevin Stepaniuk",
+        "Konrad Stenersen",
+        "Milo Matson",
+        "Oren Matson",
+        "Peter Tapio",
+        "Scott Daniels",
+        "Shane Matson",
         "Jamon Holmgren"
       ]
     },
@@ -94,30 +159,45 @@
       "number": 77,
       "name": "Joel Mattila",
       "pos": "C",
-      "shoots": "R"
+      "shoots": "R",
+      "joined": 2019,
+      "born": 1977
     },
     {
       "number": 6,
       "name": "Brenden Mattila",
       "pos": "LW",
-      "shoots": "L"
+      "shoots": "L",
+      "joined": 2019,
+      "born": 2000
     },
     {
       "number": 51,
       "name": "Jamon Holmgren",
       "pos": "G",
-      "shoots": "R"
+      "shoots": "R",
+      "joined": 2019,
+      "born": 1981,
+      "ht": "6-4",
+      "wt": 250
     },
     {
       "number": 15,
       "name": "Cedric Holmgren",
+      "bio": "Cedric is Jamon's son and joined the team in Spring 2023.",
       "pos": "RW",
-      "shoots": "R"
+      "shoots": "R",
+      "joined": 2023,
+      "born": 2005,
+      "ht": "6-2",
+      "wt": 180
     },
     {
       "number": 55,
       "name": "Dan Warren",
-      "pos": "D"
+      "pos": "D",
+      "shoots": "L",
+      "joined": 2019
     },
     {
       "number": 70,
@@ -182,7 +262,9 @@
     {
       "number": 29,
       "name": "Asa Storm",
-      "pos": "FWD"
+      "pos": "C",
+      "shoots": "L",
+      "joined": 2019
     },
     {
       "number": 19,
@@ -231,7 +313,10 @@
     },
     {
       "number": 31,
-      "name": "Shane Matson"
+      "name": "Shane Matson",
+      "pos": "D",
+      "shoots": "R",
+      "joined": 2021
     },
     {
       "name": "Travis Goddard"
@@ -316,6 +401,10 @@
     {
       "number": 24,
       "name": "Peter Tapio"
+    },
+    {
+      "number": 21,
+      "name": "Josh Monen"
     }
   ]
 }
