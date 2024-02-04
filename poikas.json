@@ -104,6 +104,55 @@
       ]
     },
     {
+      "year": 2021,
+      "season": "Fall",
+      "level": "Rec",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "championship": false,
+      "roster": [
+        "Asa Storm",
+        "Brad Wuori",
+        "Brenden Mattila",
+        "Gabe Estola",
+        "Jay Tapio",
+        "Jens Tapio",
+        "Joel Mattila",
+        "Levi Estola",
+        "Milo Matson",
+        "Oren Matson",
+        "Peter Tapio",
+        "Scott Daniels",
+        "Shane Matson",
+        "Jamon Holmgren"
+      ]
+    },
+    {
+      "year": 2021,
+      "season": "Fall",
+      "level": "C",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "championship": false,
+      "roster": [
+        "Asa Storm",
+        "Brad Wuori",
+        "Creighton Suomi",
+        "Dan Warren",
+        "Eric Matson",
+        "Jens Tapio",
+        "Joel Mattila",
+        "Kevin Stepaniuk",
+        "Konrad Stenersen",
+        "Milo Matson",
+        "Peter Tapio",
+        "Scott Daniels",
+        "Jamon Holmgren"
+      ]
+    },
+    {
       "year": 2024,
       "season": "Spring",
       "level": "Rec",
@@ -249,7 +298,12 @@
     {
       "number": 97,
       "name": "Orrin Erickson",
-      "pos": "C"
+      "pos": "C",
+      "shoots": "R",
+      "joined": 2022,
+      "born": 2000,
+      "ht": "6-0",
+      "wt": 165
     },
     {
       "number": 36,
@@ -257,6 +311,7 @@
       "pos": "G"
     },
     {
+      "number": 9,
       "name": "Andrew Tunseth"
     },
     {
@@ -331,7 +386,10 @@
     },
     {
       "number": 88,
-      "name": "Randy Storm"
+      "name": "Randy Storm",
+      "pos": "D",
+      "shoots": "R",
+      "joined": 2019
     },
     {
       "name": "Rick Ramstetter"
@@ -342,6 +400,7 @@
       "pos": "FWD"
     },
     {
+      "number": 50,
       "name": "Steve Saunders"
     },
     {
@@ -405,6 +464,13 @@
     {
       "number": 21,
       "name": "Josh Monen"
+    },
+    {
+      "number": 23,
+      "name": "Gabe Estola"
+    },
+    {
+      "name": "Eric Matson"
     }
   ]
 }

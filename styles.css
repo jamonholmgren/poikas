@@ -75,7 +75,7 @@ h2 {
   background-color: #f2f2f2;
 }
 
-.roster-table a.playername {
+table.roster a.playername {
   color: #202a47;
   font-weight: bold;
 }
@@ -144,50 +144,50 @@ a:hover {
 }
 
 /* Roster Table Styles */
-.roster-table {
+table.roster {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
   background-color: #fff;
 }
 
-.roster-table th,
-.roster-table td {
+table.roster th,
+table.roster td {
   text-align: left;
   padding: 8px;
   /* border: 1px solid #eee; */
   border: none;
 }
 
-.roster-table th {
+table.roster th {
   /* background-color: #202a47; */
   /* color: white; */
   background-color: #d9d9d9;
   font-weight: bold;
 }
 
-.roster-table tr:nth-child(odd) {
+table.roster tr:nth-child(odd) {
   background-color: #f2f2f2;
 }
 
-.roster-table img {
+table.roster img {
   border-radius: 50%;
   width: auto;
   height: 50px; /* Adjust height instead of width for consistency */
 }
 
 /* Adds a hover effect to table rows */
-.roster-table tr:hover {
+table.roster tr:hover {
   background-color: #ddd;
 }
 
 /* Styling for links inside the table, if any */
-.roster-table a {
+table.roster a {
   color: #202a47;
   text-decoration: none;
 }
 
-.roster-table a:hover {
+table.roster a:hover {
   text-decoration: underline;
 }
 
