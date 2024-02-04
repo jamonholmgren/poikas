@@ -58,8 +58,13 @@ async function loadPlayerInfo(playerName) {
       case "Years":
         td.textContent = player.years || "—";
         break;
-      case "Seasons":
-        td.textContent = player.seasons?.length || "—";
+      case "Rec Seasons":
+        td.textContent =
+          player.seasons.filter((s) => s.level === "Rec").length || "—";
+        break;
+      case "C/CC Seasons":
+        td.textContent =
+          player.seasons.filter((s) => s.level === "C").length || "—";
         break;
       case "Championships":
         if (player.championships > 0) {
