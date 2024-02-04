@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Suomi Poikas Hockey Team</title>
+    <title>Suomi Poikas Hockey Club</title>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="icon" type="image/png" href="images/finland-flag-icon.png" />
 
@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="header">
-      <h1>Suomi Poikas Hockey Team</h1>
+      <h1><a href="/">Suomi Poikas Hockey Club</a></h1>
     </div>
     <div class="container">
       <div class="sidebar">
@@ -60,8 +60,12 @@
         </article>
         <div class="roster">
           <h2>Roster</h2>
-          <div id="yearSeasonSwitcher"></div>
-          <div id="levelSwitcher"></div>
+          <div id="switcher">
+            <p>Season:</p>
+            <div id="yearSeasonSwitcher"></div>
+            <p>League:</p>
+            <div id="levelSwitcher"></div>
+          </div>
 
           <table class="roster-table">
             <tr>
@@ -73,6 +77,9 @@
               <th width="30">Sh</th>
               <th width="30">Joined</th>
               <th width="30">Born</th>
+            </tr>
+            <tr>
+              <td colspan="8" id="rosterTableBody">Loading roster...</td>
             </tr>
           </table>
         </div>
