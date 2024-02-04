@@ -44,6 +44,8 @@
             </tr>
           </table>
 
+          <div id="videos" class="videos"></div>
+
           <h2>Roster</h2>
           <table id="roster" class="roster">
             <tr>
@@ -111,6 +113,7 @@
         document.querySelector(
           ".photo img"
         ).src = `/images/${league.photos[0]}`;
+
         // if there are more photos, add them
         if (league.photos.length > 1) {
           const photoContainer = document.querySelector(".photo");
@@ -119,6 +122,21 @@
             img.src = `/images/${team.photos[i]}`;
             img.alt = "Season Photo";
             photoContainer.appendChild(img);
+          }
+        }
+
+        // if there are any video embeds, add them
+        if (league.videos) {
+          const videoContainer = document.getElementById("videos");
+          for (let i = 0; i < league.videos.length; i++) {
+            const video = document.createElement("iframe");
+            video.src = league.videos[i];
+            video.title = "YouTube video player";
+            video.frameborder = "0";
+            video.allow =
+              "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+            video.allowfullscreen = true;
+            videoContainer.appendChild(video);
           }
         }
       });
