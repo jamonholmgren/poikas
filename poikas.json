@@ -542,9 +542,13 @@
     {
       "number": 29,
       "name": "Asa Storm",
-      "pos": "C",
-      "shoots": "L",
-      "joined": 2019
+      "bio": "Asa is Randy's son and Nolan's brother, and has been a top level scorer in both Rec and C leagues. He brings speed and power to the wing positions.",
+      "pos": "W",
+      "shoots": "R",
+      "ht": "5-10",
+      "wt": 190,
+      "joined": 2019,
+      "born": 1998
     },
     {
       "number": 19,
