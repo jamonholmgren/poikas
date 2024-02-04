@@ -85,7 +85,9 @@ function updateRosterTable(selector, players, league) {
       <td><a href="/player/?player=${player.name.replace(
         " ",
         "%20"
-      )}" class="playername">${player.name}</a></td>
+      )}" class="playername">${player.name}</a>${
+      player.role === "captain" ? " (team captain)" : ""
+    }</td>
       <td>${player.number || "–"}</td>
       <td>${player.pos || "–"}</td>
       <td class="extra">${player.ht || "–"}</td>

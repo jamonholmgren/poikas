@@ -8,10 +8,33 @@ body {
 }
 
 .header {
-  background-color: #202a47;
+  background-color: #111328;
   color: white;
   padding: 20px;
-  text-align: center;
+  display: flex; /* Align items in a row */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center title, but adjust as needed */
+}
+
+.header-logo {
+  margin-right: 20px; /* Space between logo and title */
+  display: flex; /* For vertical alignment */
+  align-items: center; /* Center logo vertically */
+  justify-content: flex-start; /* Align logo to the left */
+  flex: 0 1 auto; /* Allows logo to maintain size without flexing */
+  border-radius: 20%;
+  overflow: hidden;
+}
+
+.header-logo img {
+  height: 50px; /* Adjust size as needed */
+}
+
+.header h1 {
+  margin: 0; /* Remove default margin */
+  flex-grow: 1; /* Allows the title to take up remaining space */
+  text-align: center; /* Keep the title centered */
+  /* Other styles remain unchanged */
 }
 
 .header h1 {
@@ -30,6 +53,12 @@ body {
 /* Hover effect for the header link */
 .header h1 a:hover {
   color: #d4e2f0; /* Lighter blue for hover effect */
+}
+
+.header h1 img {
+  height: 50px; /* Control the image size */
+  vertical-align: middle; /* Align with the text */
+  margin-right: 10px; /* Space between the image and text */
 }
 
 /* Layout styles */
