@@ -34,7 +34,7 @@ async function loadAndDisplaySeasons(selector, options = {}) {
     leagueText = `<a href="${leagueUrl}">${leagueText}</a>`;
 
     if (league.aside) {
-      leagueText += ` (${league.aside})`;
+      leagueText += `<span class='extra'> (${league.aside})</span>`;
     }
 
     if (league.level === "Rec") {
