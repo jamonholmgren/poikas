@@ -150,6 +150,10 @@ a:hover {
   th.extra {
     display: none; /* Hides the extra column on smaller screens */
   }
+
+  .champion {
+    font-size: 15px;
+  }
 }
 
 .sidebar .photo {
