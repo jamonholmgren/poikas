@@ -67,10 +67,9 @@ function updateRosterTable(selector, players) {
       .toLowerCase()
       .replace(/\s+/g, "-")}.jpg`;
 
-    const years = player.joined
-      ? new Date().getFullYear() - player.joined
-      : "–";
-    const age = player.born ? new Date().getFullYear() - player.born - 1 : "–";
+    let years = player.years;
+    if (player.startYear === new Date().getFullYear()) years = "R";
+    if (player.years === 1) years = "R";
 
     // note: onerror, we should load images/000-placeholder.jpg
     row.innerHTML = `
@@ -89,7 +88,7 @@ function updateRosterTable(selector, players) {
       <td class="extra">${player.wt || "–"}</td>
       <td class="extra">${player.shoots || "–"}</td>
       <td class="extra">${years}</td>
-      <td class="extra">${age}</td>
+      <td class="extra">${player.age || "-"}</td>
     `;
   });
 }

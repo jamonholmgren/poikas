@@ -28,9 +28,20 @@ async function loadData(options = {}) {
       );
 
       // how many active calendar years has this player played?
-      player.years = new Set(player.seasons.map((season) => season.year)).size;
+      const activeYears = [
+        ...new Set(player.seasons.map((season) => season.year)),
+      ];
 
-      if (player.name === "Jamon Holmgren") console.log(player.seasons);
+      console.log(player.name, activeYears);
+
+      player.years = activeYears.length;
+      player.startYear = activeYears[0];
+      player.endYear = activeYears[activeYears.length - 1];
+
+      player.age = player.born
+        ? new Date().getFullYear() - player.born - 1
+        : undefined;
+
       // how many championships?
       player.championships = _rosterData.leagues
         .filter((league) => league.playoffs === "champions")
