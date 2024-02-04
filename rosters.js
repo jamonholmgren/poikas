@@ -11,24 +11,26 @@ async function loadAndDisplayRoster(selector, { year, season, level }) {
   console.log("Level", level);
 
   // Find the current team based on year, season, and level
-  const team = leagues.find(
+  const league = leagues.find(
     (league) =>
       league.year === year &&
       league.season.toLowerCase() === season.toLowerCase() &&
       league.level.toLowerCase() === level.toLowerCase()
   );
-  if (!team) {
+  if (!league) {
     throw new Error("Current team not found.");
   }
 
   // Filter players who are in the current team's roster
-  const roster = players.filter((player) => team.roster.includes(player.name));
+  const roster = players.filter((player) =>
+    league.roster.includes(player.name)
+  );
 
   // Generate and insert table rows for each player
-  updateRosterTable(selector, roster);
+  updateRosterTable(selector, roster, league);
 
   // This is useful, so we'll return it
-  return { team, roster };
+  return { league, roster };
 }
 
 /**
@@ -36,7 +38,7 @@ async function loadAndDisplayRoster(selector, { year, season, level }) {
  * @param {string>} selector - String selector for the table element.
  * @param {Array<{number: number, name: string, pos: string, shoots: string}>} players - List of players in the team.
  */
-function updateRosterTable(selector, players) {
+function updateRosterTable(selector, players, league) {
   const table = document.querySelector(selector);
   if (!table) {
     console.error("Roster table not found.");
@@ -67,9 +69,11 @@ function updateRosterTable(selector, players) {
       .toLowerCase()
       .replace(/\s+/g, "-")}.jpg`;
 
-    let years = player.years;
-    if (player.startYear === new Date().getFullYear()) years = "R";
-    if (player.years === 1) years = "R";
+    const currentYear = league?.year || new Date().getFullYear();
+    let years = currentYear - player.startYear;
+    if (player.startYear === currentYear) years = "R";
+
+    const age = player.born ? currentYear - player.born : undefined;
 
     // note: onerror, we should load images/000-placeholder.jpg
     row.innerHTML = `
@@ -88,7 +92,7 @@ function updateRosterTable(selector, players) {
       <td class="extra">${player.wt || "–"}</td>
       <td class="extra">${player.shoots || "–"}</td>
       <td class="extra">${years}</td>
-      <td class="extra">${player.age || "-"}</td>
+      <td class="extra">${age || "-"}</td>
     `;
   });
 }
