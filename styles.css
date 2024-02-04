@@ -14,6 +14,24 @@ body {
   text-align: center;
 }
 
+.header h1 {
+  margin: 0; /* Remove default margin */
+  color: #ffffff; /* White color for contrast */
+  font-size: 24px; /* Appropriately sized font for visibility */
+}
+
+/* Style for the header link */
+.header h1 a {
+  color: #ffffff; /* White color for the text */
+  text-decoration: none; /* No underline for a clean look */
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the header link */
+.header h1 a:hover {
+  color: #d4e2f0; /* Lighter blue for hover effect */
+}
+
 /* Layout styles */
 .container {
   display: flex;
@@ -55,6 +73,11 @@ h2 {
 
 .seasons-table tr:hover {
   background-color: #f2f2f2;
+}
+
+.roster-table a.playername {
+  color: #202a47;
+  font-weight: bold;
 }
 
 a {
@@ -209,4 +232,30 @@ a:hover {
 #yearSeasonSwitcher a:hover,
 #levelSwitcher a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Container for the navigation links */
+.prevnext {
+  text-align: center; /* Center the links */
+  margin-top: 20px; /* Add some space above the links */
+}
+
+/* Style for each link */
+.prevnext a {
+  text-decoration: none; /* Remove underline from links */
+  color: #ffffff; /* White text color */
+  background-color: #007bff; /* Blue background */
+  padding: 10px 15px; /* Padding around the text */
+  border-radius: 5px; /* Rounded corners for a modern look */
+  margin: 0 10px; /* Space between the links */
+  display: inline-block; /* Allows the use of margin and padding */
+  transition: background-color 0.3s; /* Smooth background color transition on hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+}
+
+/* Hover effect for links */
+.prevnext a:hover {
+  background-color: #0056b3; /* Slightly darker blue on hover */
+  color: #ffffff; /* Keep text color white */
+  text-decoration: none; /* Ensure underline doesn't reappear */
 }

@@ -85,7 +85,10 @@ function updateRosterTable(players) {
       player.name
     }" onerror="this.onerror=null;this.src='images/000-placeholder.jpg';">
       </td>
-      <td><strong>${player.name}</strong></td>
+      <td><a href="/player/?player=${player.name.replace(
+        " ",
+        "%20"
+      )}" class="playername">${player.name}</a></td>
       <td>${player.number || ""}</td>
       <td>${player.pos || ""}</td>
       <td>–</td>
