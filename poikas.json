@@ -153,6 +153,226 @@
       ]
     },
     {
+      "year": 2022,
+      "season": "Spring",
+      "level": "C",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "championship": false,
+      "roster": [
+        "Asa Storm",
+        "Brad Wuori",
+        "Brenden Mattila",
+        "Dan Warren",
+        "Eric Matson",
+        "Jay Tapio",
+        "Jens Tapio",
+        "Joel Mattila",
+        "Milo Matson",
+        "Nels Tapio",
+        "Peter Tapio",
+        "Russ Tapio",
+        "Scott Daniels",
+        "Treven Erickson",
+        "Jamon Holmgren"
+      ]
+    },
+    {
+      "year": 2022,
+      "season": "Spring",
+      "level": "Rec",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "championship": false,
+      "roster": [
+        "Asa Storm",
+        "Brad Wuori",
+        "Brenden Mattila",
+        "Erik Benton",
+        "Jay Tapio",
+        "Jens Tapio",
+        "Joel Mattila",
+        "Konrad Stenersen",
+        "Milo Matson",
+        "Oren Matson",
+        "Peter Tapio",
+        "Shane Matson",
+        "Jamon Holmgren"
+      ]
+    },
+    {
+      "year": 2022,
+      "season": "Summer",
+      "level": "Rec",
+      "description": "During summer 2022, we didn't have enough players for a full team, so we joined forces with the Slavic team.",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "championship": true,
+      "roster": [
+        "Ben Mikhalets",
+        "Brad Wuori",
+        "Brenden Mattila",
+        "Daniel Rybak",
+        "Joel Mattila",
+        "Maksim Shirev",
+        "Ruben Voytenko",
+        "Russ Raybukin",
+        "Tim Petrienko",
+        "Erik Benton",
+        "Jamon Holmgren"
+      ]
+    },
+    {
+      "year": 2022,
+      "season": "Fall",
+      "level": "Rec",
+      "description": "During fall 2022, we didn't have enough players for a full team, so we joined forces with the Slavic team.",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "championship": false,
+      "roster": [
+        "Asher (Dimitriy) Piskorskiy",
+        "Austin Sakai",
+        "Brenden Mattila",
+        "Brent Mattila",
+        "Jeff Fish",
+        "Joel Mattila",
+        "Levi Estola",
+        "Mark Varivoda",
+        "Nathan Rivera",
+        "Nick Andriuschenko",
+        "Orrin Erickson",
+        "Russ Raybukin",
+        "Sean Stocker",
+        "Shane Matson",
+        "Travis Goddard",
+        "Jamon Holmgren"
+      ]
+    },
+    {
+      "year": 2022,
+      "season": "Fall",
+      "level": "C",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "championship": false,
+      "roster": [
+        "Andrew Nichol",
+        "Asa Storm",
+        "Asher (Dimitriy) Piskorskiy",
+        "Brad Wuori",
+        "Jared Paben",
+        "Joel Mattila",
+        "Matt Bromley",
+        "Oren Matson",
+        "Randy Storm",
+        "Rick Ramstetter",
+        "Scott Daniels",
+        "Will Murphy",
+        "Jamon Holmgren"
+      ]
+    },
+    {
+      "year": 2023,
+      "season": "Spring",
+      "level": "Rec",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "championship": false,
+      "roster": [
+        "Brenden Mattila",
+        "Brent Mattila",
+        "Cedric Holmgren",
+        "Joel Mattila",
+        "Kieren Sarkela",
+        "Konrad Stenersen",
+        "Levi Borth",
+        "Myron Kinnunen",
+        "Nathan Goddard",
+        "Nolan Matson",
+        "Orrin Erickson",
+        "Shane Matson",
+        "Jamon Holmgren"
+      ]
+    },
+    {
+      "year": 2023,
+      "season": "Spring",
+      "level": "C",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "championship": false,
+      "roster": [
+        "Asa Storm",
+        "Eric Matson",
+        "Jared Paben",
+        "Joel Mattila",
+        "Matt Bromley",
+        "Nels Tapio",
+        "Oren Matson",
+        "Randy Storm",
+        "Rick Ramstetter",
+        "Scott Daniels",
+        "Steve Saunders",
+        "Jamon Holmgren"
+      ]
+    },
+    {
+      "year": 2023,
+      "season": "Fall",
+      "level": "Rec",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "championship": false,
+      "roster": [
+        "Brad Wuori",
+        "Brenden Mattila",
+        "Brent Mattila",
+        "Dan Warren",
+        "Daniel Kulla",
+        "Jay Tapio",
+        "Joel Mattila",
+        "Myron Kinnunen",
+        "Nolan Matson",
+        "Orrin Erickson",
+        "Scott Daniels",
+        "Shane Matson",
+        "Jamon Holmgren"
+      ]
+    },
+    {
+      "year": 2023,
+      "season": "Fall",
+      "level": "C",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "championship": false,
+      "roster": [
+        "Andrew Tunseth",
+        "Asa Storm",
+        "Brad Wuori",
+        "Eric Matson",
+        "Jared Paben",
+        "Joel Mattila",
+        "Matt Bromley",
+        "Nels Tapio",
+        "Oren Matson",
+        "Randy Storm",
+        "Steve Saunders",
+        "Trevor Kloetzli",
+        "Jamon Holmgren"
+      ]
+    },
+    {
       "year": 2024,
       "season": "Spring",
       "level": "Rec",
@@ -308,7 +528,7 @@
     {
       "number": 36,
       "name": "Erik Benton",
-      "pos": "G"
+      "pos": "G/D"
     },
     {
       "number": 9,
@@ -339,7 +559,10 @@
       "name": "Austin Sakai"
     },
     {
-      "name": "Brent Mattila"
+      "number": 12,
+      "name": "Brent Mattila",
+      "pos": "RW",
+      "joined": 2022
     },
     {
       "name": "Jeff Fish"
@@ -418,6 +641,9 @@
       "name": "Jacob Rybak"
     },
     {
+      "name": "Daniel Rybak"
+    },
+    {
       "name": "Maksim Shirev"
     },
     {
@@ -462,6 +688,13 @@
       "name": "Peter Tapio"
     },
     {
+      "number": 32,
+      "name": "Russ Tapio"
+    },
+    {
+      "name": "Treven Erickson"
+    },
+    {
       "number": 21,
       "name": "Josh Monen"
     },
@@ -471,6 +704,17 @@
     },
     {
       "name": "Eric Matson"
+    },
+    {
+      "number": 18,
+      "name": "Asher (Dimitriy) Piskorskiy"
+    },
+    {
+      "number": 24,
+      "name": "Levi Borth"
+    },
+    {
+      "name": "Trevor Kloetzli"
     }
   ]
 }
