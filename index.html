@@ -59,15 +59,26 @@
           </p>
         </article>
         <div class="roster">
-          <h2>Roster</h2>
-          <div id="switcher">
-            <p>Season:</p>
-            <div id="yearSeasonSwitcher"></div>
-            <p>League:</p>
-            <div id="levelSwitcher"></div>
-          </div>
+          <h2>Current Rec Roster</h2>
+          <table id="rec-roster" class="roster">
+            <tr>
+              <th width="50">Photo</th>
+              <th>Name</th>
+              <th width="30">#</th>
+              <th width="30">Pos</th>
+              <th width="30" class="extra">Ht</th>
+              <th width="30" class="extra">Wt</th>
+              <th width="30" class="extra">Sh</th>
+              <th width="30" class="extra">Yrs</th>
+              <th width="30" class="extra">Age</th>
+            </tr>
+            <tr>
+              <td colspan="8" id="rosterTableBody">Loading roster...</td>
+            </tr>
+          </table>
 
-          <table class="roster-table">
+          <h2>Current C/CC Roster</h2>
+          <table id="c-roster" class="roster">
             <tr>
               <th width="50">Photo</th>
               <th>Name</th>
@@ -104,14 +115,18 @@
     </div>
 
     <script>
-      window.poikas = {
+      // Call the function to load and display the roster when the page is ready
+      loadAndDisplayRoster("#rec-roster", {
         year: 2024,
         season: "Spring",
         level: "Rec",
-      };
+      });
 
-      // Call the function to load and display the roster when the page is ready
-      loadAndDisplayRoster();
+      loadAndDisplayRoster("#c-roster", {
+        year: 2024,
+        season: "Spring",
+        level: "C",
+      });
     </script>
   </body>
 </html>
