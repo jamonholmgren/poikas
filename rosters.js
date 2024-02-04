@@ -4,16 +4,21 @@
 async function loadAndDisplayRoster(selector, { year, season, level }) {
   const { leagues, players } = await loadData();
 
+  console.log("Leagues", leagues);
+  console.log("Players", players);
+  console.log("Year", year);
+  console.log("Season", season);
+  console.log("Level", level);
+
   // Find the current team based on year, season, and level
   const team = leagues.find(
     (league) =>
       league.year === year &&
-      league.season.toLowerCase() === season &&
-      league.level.toLowerCase() === level
+      league.season.toLowerCase() === season.toLowerCase() &&
+      league.level.toLowerCase() === level.toLowerCase()
   );
   if (!team) {
-    console.error("Current team not found.");
-    return;
+    throw new Error("Current team not found.");
   }
 
   // Filter players who are in the current team's roster
