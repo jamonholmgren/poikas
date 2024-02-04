@@ -434,15 +434,16 @@
       "name": "Joel Mattila",
       "pos": "C",
       "shoots": "R",
-      "joined": 2019,
-      "born": 1977
+      "born": 1977,
+      "ht": "6-0",
+      "wt": 210,
+      "bio": "Joel is the founder of the Suomi Poikas and team captain."
     },
     {
       "number": 6,
       "name": "Brenden Mattila",
       "pos": "LW",
       "shoots": "L",
-      "joined": 2019,
       "born": 2000
     },
     {
@@ -450,7 +451,6 @@
       "name": "Jamon Holmgren",
       "pos": "G",
       "shoots": "R",
-      "joined": 2019,
       "born": 1981,
       "ht": "6-4",
       "wt": 250
@@ -461,7 +461,6 @@
       "bio": "Cedric is Jamon's son and joined the team in Spring 2023.",
       "pos": "RW",
       "shoots": "R",
-      "joined": 2023,
       "born": 2005,
       "ht": "6-2",
       "wt": 180
@@ -470,8 +469,7 @@
       "number": 55,
       "name": "Dan Warren",
       "pos": "D",
-      "shoots": "L",
-      "joined": 2019
+      "shoots": "L"
     },
     {
       "number": 70,
@@ -508,7 +506,7 @@
     {
       "number": 17,
       "name": "Myron Kinnunen",
-      "pos": "FWD"
+      "pos": "LW"
     },
     {
       "number": 45,
@@ -518,14 +516,13 @@
     {
       "number": 96,
       "name": "Nolan Storm",
-      "pos": "FWD"
+      "pos": "W"
     },
     {
       "number": 97,
       "name": "Orrin Erickson",
       "pos": "C",
       "shoots": "R",
-      "joined": 2022,
       "born": 2000,
       "ht": "6-0",
       "wt": 165
@@ -537,7 +534,8 @@
     },
     {
       "number": 9,
-      "name": "Andrew Tunseth"
+      "name": "Andrew Tunseth",
+      "pos": "W"
     },
     {
       "number": 29,
@@ -547,7 +545,6 @@
       "shoots": "R",
       "ht": "5-10",
       "wt": 190,
-      "joined": 2019,
       "born": 1998
     },
     {
@@ -570,8 +567,7 @@
     {
       "number": 12,
       "name": "Brent Mattila",
-      "pos": "RW",
-      "joined": 2022
+      "pos": "RW"
     },
     {
       "name": "Jeff Fish"
@@ -593,7 +589,7 @@
     {
       "number": 10,
       "name": "Russ Raybukin",
-      "pos": "FWD"
+      "pos": "RW"
     },
     {
       "name": "Sean Stocker"
@@ -602,8 +598,7 @@
       "number": 31,
       "name": "Shane Matson",
       "pos": "D",
-      "shoots": "R",
-      "joined": 2021
+      "shoots": "R"
     },
     {
       "name": "Travis Goddard"
@@ -614,14 +609,13 @@
     {
       "number": 27,
       "name": "Oren Matson",
-      "pos": "FWD"
+      "pos": "W"
     },
     {
       "number": 88,
       "name": "Randy Storm",
       "pos": "D",
-      "shoots": "R",
-      "joined": 2019
+      "shoots": "R"
     },
     {
       "name": "Rick Ramstetter"
@@ -629,7 +623,7 @@
     {
       "number": 7,
       "name": "Scott Daniels",
-      "pos": "FWD"
+      "pos": "W"
     },
     {
       "number": 50,
@@ -658,7 +652,7 @@
     {
       "number": 9,
       "name": "Ruben Voytenko",
-      "pos": "FWD"
+      "pos": "W"
     },
     {
       "name": "Tim Petrienko"

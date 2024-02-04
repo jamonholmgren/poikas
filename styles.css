@@ -57,7 +57,11 @@ h2 {
   color: #222;
 }
 
-/* Table and link styles */
+table tr th,
+table tr td {
+  white-space: nowrap;
+}
+
 table.seasons {
   width: 100%;
   border-collapse: collapse;

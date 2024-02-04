@@ -50,10 +50,10 @@ async function loadPlayerInfo(playerName) {
         td.textContent = player.shoots || "—";
         break;
       case "Joined":
-        td.textContent = player.joined || "—";
+        td.textContent = player.startYear || "—";
         break;
-      case "Born":
-        td.textContent = player.born || "—";
+      case "Age":
+        td.textContent = player.age || "—";
         break;
       case "Years":
         td.textContent = player.years || "—";
@@ -63,10 +63,11 @@ async function loadPlayerInfo(playerName) {
         break;
       case "Championships":
         if (player.championships > 0) {
-          td.innerHTML = `<span class="champion">${player.championships}</span>`;
+          td.innerHTML = `<span class="champion">${player.championships}`;
           for (let i = 0; i < player.championships; i++) {
             td.innerHTML += " 🏆";
           }
+          td.innerHTML += "</span>";
         }
         break;
     }
