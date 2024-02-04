@@ -40,32 +40,37 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(
       ".sidebar .caption"
     ).textContent = `${player.name} Photo`;
-    document.querySelector("main article h2").textContent = player.name;
-    document.querySelector(
-      "main article p"
-    ).textContent = `${player.name}'s bio goes here.`; // Placeholder for player bio
+
+    // grab #player-name by ID and set to player.name
+    document.querySelector("#playername").textContent = player.name;
+    document.querySelector("#bio").textContent = `${
+      player.bio || "No bio yet!"
+    }`; // Placeholder for player bio
 
     // Update player stats
     document.querySelectorAll("main table tr th").forEach((th, index) => {
       const td = th.nextElementSibling; // Assuming there's a <td> right after each <th>
       switch (th.textContent) {
         case "Position":
-          td.textContent = player.pos || "N/A";
+          td.textContent = player.pos || "—";
           break;
         case "Number":
-          td.textContent = player.number || "N/A";
+          td.textContent = player.number || "—";
           break;
         case "Height":
-          td.textContent = "N/A"; // You'll need actual data
+          td.textContent = player.ht || "—";
+          break;
         case "Weight":
-          td.textContent = "N/A"; // You'll need actual data
+          td.textContent = player.wt || "—";
+          break;
         case "Shoots":
-          td.textContent = player.shoots || "N/A";
+          td.textContent = player.shoots || "—";
           break;
         case "Joined":
-          td.textContent = "N/A"; // You'll need actual data
+          td.textContent = player.joined || "—";
+          break;
         case "Born":
-          td.textContent = "N/A"; // You'll need actual data
+          td.textContent = player.born || "—";
       }
     });
 
