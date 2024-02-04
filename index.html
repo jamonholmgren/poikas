@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="./styles.css" />
     <link rel="icon" type="image/png" href="images/finland-flag-icon.png" />
 
-    <!-- Load the roster from a JSON file -->
-    <script src="./rosters.js"></script>
+    <script src="/common.js"></script>
+    <script src="/seasons.js"></script>
+    <script src="/rosters.js"></script>
   </head>
   <body>
     <div class="header">
@@ -16,19 +17,41 @@
     </div>
     <div class="container">
       <div class="sidebar">
-        <a class="photo" href="./2023-fall-rec.html">
+        <a class="photo" href="/season/?year=2023&season=fall&level=rec">
           <img
-            src="images/poikas-rec-2023-24-fall-champions.jpg"
-            alt="Suomi Poikas 2023-24 Fall Rec Champions"
+            src="images/poikas-rec-2023-fall-champions.jpg"
+            alt="Suomi Poikas 2023 Fall Rec Champions"
           />
-          <span class="caption">Suomi Poikas 2023-24 Rec Champions </span>
+          <span class="caption"
+            >Suomi Poikas<br />2023 Fall Rec Champions
+          </span>
         </a>
-        <a class="photo" href="./2021-fall-rec.html">
+        <a class="photo" href="/season/?year=2022&season=spring&level=rec">
           <img
-            src="images/poikas-rec-2021-22-fall-champions.jpg"
-            alt="Suomi Poikas 2021-22 Fall Rec Champions"
+            src="images/poikas-rec-2022-spring-champions.jpg"
+            alt="Suomi Poikas 2022 Spring Rec Champions"
           />
-          <span class="caption">Suomi Poikas 2021-22 Fall Rec Champions </span>
+          <span class="caption"
+            >Suomi Poikas<br />2022 Spring Rec Champions
+          </span>
+        </a>
+        <a class="photo" href="/season/?year=2021&season=fall&level=rec">
+          <img
+            src="images/poikas-rec-2021-fall-champions.jpg"
+            alt="Suomi Poikas 2021 Fall Rec Champions"
+          />
+          <span class="caption"
+            >Suomi Poikas<br />2021 Fall Rec Champions
+          </span>
+        </a>
+        <a class="photo" href="/season/?year=2021&season=summer&level=rec">
+          <img
+            src="images/poikas-rec-2021-summer-champions.jpg"
+            alt="Suomi Poikas 2021 Summer Rec Champions"
+          />
+          <span class="caption"
+            >Suomi Poikas<br />2021 Summer Rec Champions
+          </span>
         </a>
       </div>
       <main>
@@ -97,18 +120,12 @@
         </div>
         <div class="seasons">
           <h2>Season Archives</h2>
-          <table class="seasons-table">
+          <table id="seasons" class="seasons">
             <tr>
               <th>Season</th>
               <th>Rec League</th>
               <th>C/CC League</th>
             </tr>
-            <tr>
-              <td>2023-24 Fall</td>
-              <td><a href="./2023-fall-rec.html">Rec League</a></td>
-              <td><a href="./2023-fall-c.html">C/CC League</a></td>
-            </tr>
-            <!-- Add more rows here for each season and league -->
           </table>
         </div>
       </main>
@@ -126,6 +143,10 @@
         year: 2024,
         season: "Spring",
         level: "C",
+      });
+
+      loadAndDisplaySeasons("#seasons", {
+        order: "desc",
       });
     </script>
   </body>
