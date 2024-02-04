@@ -1,41 +1,29 @@
-let _rosterData;
-async function loadRoster() {
-  if (!_rosterData) {
-    const response = await fetch("./poikas.json");
-    if (!response.ok) {
-      throw new Error("Failed to load roster data: " + response.statusText);
-    }
-
-    _rosterData = await response.json();
-  }
-  return _rosterData;
-}
-
 /**
  * Loads the team roster JSON and updates the table based on the specified season.
  */
 async function loadAndDisplayRoster(selector, { year, season, level }) {
-  const { leagues, players } = await loadRoster();
-
-  players.sort((a, b) => (a.name < b.name ? -1 : 1)); // Sort players by name
+  const { leagues, players } = await loadData();
 
   // Find the current team based on year, season, and level
-  const currentTeam = leagues.find(
+  const team = leagues.find(
     (league) =>
-      league.year === year && league.season === season && league.level === level
+      league.year === year &&
+      league.season.toLowerCase() === season &&
+      league.level.toLowerCase() === level
   );
-  if (!currentTeam) {
+  if (!team) {
     console.error("Current team not found.");
     return;
   }
 
   // Filter players who are in the current team's roster
-  const rosterPlayers = players.filter((player) =>
-    currentTeam.roster.includes(player.name)
-  );
+  const roster = players.filter((player) => team.roster.includes(player.name));
 
   // Generate and insert table rows for each player
-  updateRosterTable(selector, rosterPlayers);
+  updateRosterTable(selector, roster);
+
+  // This is useful, so we'll return it
+  return { team, roster };
 }
 
 /**
@@ -55,7 +43,7 @@ function updateRosterTable(selector, players) {
     const row = table.rows[i];
     row.innerHTML = `
       <td data-label="photo">
-        <img src="images/000-placeholder.jpg" alt="Placeholder">
+        <img src="/images/000-placeholder.jpg" alt="Placeholder">
       </td>
       <td>–</td>
       <td>–</td>
@@ -70,7 +58,7 @@ function updateRosterTable(selector, players) {
   // Update rows (or add a row) for each player
   players.forEach((player, i) => {
     const row = table.rows[i + 1] || table.insertRow(-1);
-    const imageURL = `images/${player.number}-${player.name
+    const imageURL = `/images/${player.number}-${player.name
       .toLowerCase()
       .replace(/\s+/g, "-")}.jpg`;
 
@@ -84,7 +72,7 @@ function updateRosterTable(selector, players) {
       <td data-label="photo">
         <img src="${imageURL}" alt="${
       player.name
-    }" onerror="this.onerror=null;this.src='images/000-placeholder.jpg';">
+    }" onerror="this.onerror=null;this.src='/images/000-placeholder.jpg';">
       </td>
       <td><a href="/player/?player=${player.name.replace(
         " ",

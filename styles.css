@@ -58,20 +58,20 @@ h2 {
 }
 
 /* Table and link styles */
-.seasons-table {
+table.seasons {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-.seasons-table th,
-.seasons-table td {
+table.seasons th,
+table.seasons td {
   text-align: left;
   padding: 8px;
   border-bottom: 1px solid #ddd;
 }
 
-.seasons-table tr:hover {
+table.seasons tr:hover {
   background-color: #f2f2f2;
 }
 
@@ -263,4 +263,52 @@ table.roster a:hover {
   background-color: #0056b3; /* Slightly darker blue on hover */
   color: #ffffff; /* Keep text color white */
   text-decoration: none; /* Ensure underline doesn't reappear */
+}
+
+.statsheet {
+  width: 100%;
+  max-width: 600px; /* Adjust based on your preference */
+  border-collapse: collapse;
+  margin: 50px auto;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.statsheet th {
+  width: 30%;
+}
+
+.statsheet th,
+.statsheet td {
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee; /* Subtle border for each row */
+}
+
+.statsheet th {
+  background-color: #445863;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.statsheet td {
+  color: #333; /* Dark grey for readability */
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+.statsheet tr:last-child th,
+.statsheet tr:last-child td {
+  border-bottom: none;
+}
+
+.statsheet tr:hover {
+  background-color: #f1f1f1; /* Slight hover effect for interactivity */
+}
+
+.champion {
+  font-size: 22px;
+  font-weight: bold;
+  color: #202a47;
 }

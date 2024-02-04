@@ -7,7 +7,7 @@
       "wins": 0,
       "losses": 0,
       "ties": 0,
-      "championship": false,
+      "playoffs": "lost",
       "roster": [
         "Joel Mattila",
         "Brenden Mattila",
@@ -28,10 +28,12 @@
       "year": 2020,
       "season": "Spring",
       "level": "Rec",
-      "wins": 0,
-      "losses": 0,
-      "ties": 0,
-      "championship": false,
+      "description": "COVID hit during this season, so it was canceled entirely after a few games.",
+      "aside": "covid shortened",
+      "wins": 8,
+      "losses": 1,
+      "ties": 1,
+      "playoffs": "canceled",
       "roster": [
         "Asa Storm",
         "Brad Wuori",
@@ -59,7 +61,7 @@
       "wins": 0,
       "losses": 0,
       "ties": 0,
-      "championship": false,
+      "playoffs": "lost",
       "roster": [
         "Asa Storm",
         "Brad Wuori",
@@ -84,7 +86,7 @@
       "wins": 0,
       "losses": 0,
       "ties": 0,
-      "championship": false,
+      "playoffs": "champions",
       "roster": [
         "Asa Storm",
         "Brad Wuori",
@@ -110,7 +112,7 @@
       "wins": 0,
       "losses": 0,
       "ties": 0,
-      "championship": false,
+      "playoffs": "champions",
       "roster": [
         "Asa Storm",
         "Brad Wuori",
@@ -135,7 +137,7 @@
       "wins": 0,
       "losses": 0,
       "ties": 0,
-      "championship": false,
+      "playoffs": "lost",
       "roster": [
         "Asa Storm",
         "Brad Wuori",
@@ -159,7 +161,7 @@
       "wins": 0,
       "losses": 0,
       "ties": 0,
-      "championship": false,
+      "playoffs": "lost",
       "roster": [
         "Asa Storm",
         "Brad Wuori",
@@ -185,7 +187,7 @@
       "wins": 0,
       "losses": 0,
       "ties": 0,
-      "championship": false,
+      "playoffs": "champions",
       "roster": [
         "Asa Storm",
         "Brad Wuori",
@@ -206,11 +208,12 @@
       "year": 2022,
       "season": "Summer",
       "level": "Rec",
-      "description": "During summer 2022, we didn't have enough players for a full team, so we joined forces with the Slavic team.",
+      "description": "During summer 2022, we didn't have enough players for a full team, so we joined forces with the Russian team. This team won the championship, but we don't count it as a full Suomi Poikas championship. We do count it as individual championships for those who played.",
+      "aside": "with Russia",
       "wins": 0,
       "losses": 0,
       "ties": 0,
-      "championship": true,
+      "playoffs": "champions",
       "roster": [
         "Ben Mikhalets",
         "Brad Wuori",
@@ -230,10 +233,11 @@
       "season": "Fall",
       "level": "Rec",
       "description": "During fall 2022, we didn't have enough players for a full team, so we joined forces with the Slavic team.",
+      "aside": "with Ukraine",
       "wins": 0,
       "losses": 0,
       "ties": 0,
-      "championship": false,
+      "playoffs": "lost",
       "roster": [
         "Asher (Dimitriy) Piskorskiy",
         "Austin Sakai",
@@ -260,7 +264,7 @@
       "wins": 0,
       "losses": 0,
       "ties": 0,
-      "championship": false,
+      "playoffs": "lost",
       "roster": [
         "Andrew Nichol",
         "Asa Storm",
@@ -284,7 +288,7 @@
       "wins": 0,
       "losses": 0,
       "ties": 0,
-      "championship": false,
+      "playoffs": "lost",
       "roster": [
         "Brenden Mattila",
         "Brent Mattila",
@@ -308,7 +312,7 @@
       "wins": 0,
       "losses": 0,
       "ties": 0,
-      "championship": false,
+      "playoffs": "lost",
       "roster": [
         "Asa Storm",
         "Eric Matson",
@@ -331,7 +335,7 @@
       "wins": 0,
       "losses": 0,
       "ties": 0,
-      "championship": false,
+      "playoffs": "champions",
       "roster": [
         "Brad Wuori",
         "Brenden Mattila",
@@ -352,10 +356,11 @@
       "year": 2023,
       "season": "Fall",
       "level": "C",
-      "wins": 0,
-      "losses": 0,
+      "description": "We had a rough season, shorthanded most games.",
+      "wins": 3,
+      "losses": 12,
       "ties": 0,
-      "championship": false,
+      "playoffs": "lost",
       "roster": [
         "Andrew Tunseth",
         "Asa Storm",
@@ -379,7 +384,7 @@
       "wins": 0,
       "losses": 0,
       "ties": 0,
-      "championship": false,
+      "playoffs": "pending",
       "roster": [
         "Brenden Mattila",
         "Cedric Holmgren",
@@ -405,7 +410,7 @@
       "wins": 0,
       "losses": 0,
       "ties": 0,
-      "championship": false,
+      "playoffs": "pending",
       "roster": [
         "Andrew Tunseth",
         "Asa Storm",
@@ -703,6 +708,7 @@
       "name": "Gabe Estola"
     },
     {
+      "number": 20,
       "name": "Eric Matson"
     },
     {

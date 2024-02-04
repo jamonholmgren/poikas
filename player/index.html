@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="/styles.css" />
     <link rel="icon" type="image/png" href="images/finland-flag-icon.png" />
 
-    <!-- Load the player info from a JSON file -->
+    <script src="/common.js"></script>
+    <script src="/seasons.js"></script>
     <script src="./player.js"></script>
   </head>
   <body>
@@ -24,44 +25,56 @@
           <h2 id="playername">Player Name</h2>
           <p id="bio">Player bio goes here.</p>
           <h2>Player Info</h2>
-          <table>
+          <table class="statsheet">
             <tr>
               <th>Position</th>
-              <td>Player Position</td>
+              <td>-</td>
             </tr>
             <tr>
               <th>Number</th>
-              <td>Player Number</td>
+              <td>-</td>
             </tr>
             <tr>
               <th>Height</th>
-              <td>Player Height</td>
+              <td>-</td>
             </tr>
             <tr>
               <th>Weight</th>
-              <td>Player Weight</td>
+              <td>-</td>
             </tr>
             <tr>
               <th>Shoots</th>
-              <td>Player Shoots</td>
+              <td>-</td>
             </tr>
             <tr>
               <th>Joined</th>
-              <td>Player Joined</td>
+              <td>-</td>
             </tr>
             <tr>
               <th>Born</th>
-              <td>Player Born</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <th>Years</th>
+              <td>-</td>
+            </tr>
+            <tr>
+              <th>Seasons</th>
+              <td>-</td>
+            </tr>
+            <tr>
+              <th>Championships</th>
+              <td>-</td>
             </tr>
           </table>
         </article>
         <div class="seasons">
-          <h2>Seasons Played</h2>
-          <table class="seasons-table">
+          <h2>Seasons Played with the Poikas</h2>
+          <table id="seasons" class="seasons">
             <tr>
-              <th>Year</th>
               <th>Season</th>
-              <th>Level</th>
+              <th>Rec League</th>
+              <th>C/CC League</th>
             </tr>
           </table>
         </div>
@@ -72,7 +85,16 @@
         </div>
       </main>
     </div>
+    <script>
+      // Function to extract the player's name from the URL
+      const urlSearchParams = new URLSearchParams(window.location.search);
+      const playerName = urlSearchParams.get("player");
 
-    <script></script>
+      if (!playerName) {
+        window.location.href = "/";
+      }
+
+      loadPlayerInfo(playerName);
+    </script>
   </body>
 </html>
