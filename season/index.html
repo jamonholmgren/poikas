@@ -16,8 +16,10 @@
     </div>
     <div class="container">
       <div class="sidebar">
-        <img src="/images/000-placeholder.jpg" alt="Season Photo" />
-        <span class="caption">Team Photo</span>
+        <div class="photo">
+          <img src="/images/000-placeholder.jpg" alt="Season Photo" />
+          <span class="caption">Team Photo</span>
+        </div>
       </div>
       <main>
         <article>
@@ -68,44 +70,57 @@
       const season = urlParams.get("season");
       const level = urlParams.get("level");
 
-      console.log(year, season, level);
-
       loadAndDisplayRoster("#roster", {
         year,
         season,
         level,
-      }).then(({ team, roster }) => {
-        let seasonName = `Suomi Poikas ${team.year} ${team.season} ${team.level}`;
-        if (team.aside) seasonName += ` - ${team.aside}`;
+      }).then(({ league, roster }) => {
+        let seasonName = `Suomi Poikas ${league.year} ${league.season} ${league.level}`;
+        if (league.aside) seasonName += ` - ${league.aside}`;
 
-        const description = team.description || ``;
+        const description = league.description || ``;
 
         document.getElementById("seasonname").innerText = seasonName;
         document.getElementById("description").innerText = description;
         document.getElementById("seasonresults").innerHTML = `
           <tr>
             <th>Wins</th>
-            <td>${team.wins}</td>
+            <td>${league.wins}</td>
           </tr>
           <tr>
             <th>Losses</th>
-            <td>${team.losses}</td>
+            <td>${league.losses}</td>
           </tr>
           <tr>
             <th>Ties/OT Losses</th>
-            <td>${team.ties}</td>
+            <td>${league.ties}</td>
           </tr>
           <tr>
             <th>Playoffs</th>
             <td>${
-              team.playoffs === "champions"
+              league.playoffs === "champions"
                 ? "<span class='champion'>🏆 League Champions!</span>"
-                : team.playoffs === "lost"
+                : league.playoffs === "lost"
                 ? "Lost in Playoffs"
                 : "-"
             }</td>
           </tr>
         `;
+
+        // add from league.photos to the sidebar
+        document.querySelector(
+          ".photo img"
+        ).src = `/images/${league.photos[0]}`;
+        // if there are more photos, add them
+        if (league.photos.length > 1) {
+          const photoContainer = document.querySelector(".photo");
+          for (let i = 1; i < team.photos.length; i++) {
+            const img = document.createElement("img");
+            img.src = `/images/${team.photos[i]}`;
+            img.alt = "Season Photo";
+            photoContainer.appendChild(img);
+          }
+        }
       });
     </script>
   </body>
