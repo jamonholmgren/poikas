@@ -27,7 +27,7 @@
           <p id="description">Description.</p>
           <table id="seasonresults" class="statsheet">
             <tr>
-              <th>Schedule</th>
+              <th>Standings/Schedule</th>
               <td>-</td>
             </tr>
             <tr>
@@ -92,34 +92,36 @@
 
         document.getElementById("seasonname").innerText = seasonName;
         document.getElementById("description").innerText = description;
-        document.getElementById("seasonresults").innerHTML = `
-          <tr>
-            <th>Schedule</th>
-            <td>${scheduleLink}</td>
-          </tr>
-          <tr>
-            <th>Wins</th>
-            <td>${league.wins}</td>
-          </tr>
-          <tr>
-            <th>Losses</th>
-            <td>${league.losses}</td>
-          </tr>
-          <tr>
-            <th>Ties/OT Losses</th>
-            <td>${league.ties}</td>
-          </tr>
-          <tr>
-            <th>Playoffs</th>
-            <td>${
-              league.playoffs === "champions"
-                ? "<span class='champion'>🏆 Champions!</span>"
-                : league.playoffs === "lost"
-                ? "Lost in Playoffs"
-                : "-"
-            }</td>
-          </tr>
-        `;
+
+        // loop through table rows and update by label value
+        const table = document.getElementById("seasonresults");
+        for (let i = 0; i < table.rows.length; i++) {
+          const label = table.rows[i].cells[0].innerText;
+          switch (label) {
+            case "Standings/Schedule":
+              table.rows[i].cells[1].innerHTML = scheduleLink;
+              break;
+            case "Wins":
+              table.rows[i].cells[1].innerText = league.wins;
+              break;
+            case "Losses":
+              table.rows[i].cells[1].innerText = league.losses;
+              break;
+            case "Ties/OT Losses":
+              table.rows[i].cells[1].innerText = league.ties;
+              break;
+            case "Playoffs Result":
+              table.rows[i].cells[1].innerText =
+                league.playoffs === "champions"
+                  ? "🏆 Champions!"
+                  : league.playoffs === "lost"
+                  ? "Lost in Playoffs"
+                  : "-";
+              break;
+            default:
+              break;
+          }
+        }
 
         // add from league.photos to the sidebar
         document.querySelector(
