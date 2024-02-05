@@ -525,7 +525,11 @@
     {
       "number": 17,
       "name": "Myron Kinnunen",
-      "pos": "LW"
+      "pos": "RW/D",
+      "ht": "5-11",
+      "wt": 210,
+      "shoots": "R",
+      "born": 1989
     },
     {
       "number": 45,
