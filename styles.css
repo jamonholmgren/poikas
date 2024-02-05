@@ -160,6 +160,12 @@ a:hover {
   }
 }
 
+.details {
+  font-size: 14px;
+  position: relative;
+  bottom: 2px;
+}
+
 .sidebar .photo {
   display: block;
   margin-bottom: 20px;

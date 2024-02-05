@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Player - Suomi Poikas Hockey Club</title>
     <link rel="stylesheet" href="/styles.css?c=1" />
-    <link rel="icon" type="image/png" href="images/finland-flag-icon.png" />
+    <link rel="icon" type="image/png" href="/images/finland-flag-icon.png" />
 
     <script src="/common.js?c=1"></script>
     <script src="/rosters.js?c=1"></script>
@@ -26,6 +26,10 @@
           <h2 id="seasonname">Season Name</h2>
           <p id="description">Description.</p>
           <table id="seasonresults" class="statsheet">
+            <tr>
+              <th>Schedule</th>
+              <td>-</td>
+            </tr>
             <tr>
               <th>Wins</th>
               <td>-</td>
@@ -82,9 +86,17 @@
 
         const description = league.description || ``;
 
+        const scheduleLink = league.schedule
+          ? `<a href="${league.schedule}" target="_blank">View Schedule</a>`
+          : "-";
+
         document.getElementById("seasonname").innerText = seasonName;
         document.getElementById("description").innerText = description;
         document.getElementById("seasonresults").innerHTML = `
+          <tr>
+            <th>Schedule</th>
+            <td>${scheduleLink}</td>
+          </tr>
           <tr>
             <th>Wins</th>
             <td>${league.wins}</td>
