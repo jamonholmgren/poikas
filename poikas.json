@@ -573,7 +573,11 @@
     {
       "number": 19,
       "name": "Brad Wuori",
-      "pos": "D/C"
+      "pos": "D/C",
+      "ht": "5-10",
+      "wt": 155,
+      "shoots": "R",
+      "born": 1980
     },
     {
       "number": 50,
