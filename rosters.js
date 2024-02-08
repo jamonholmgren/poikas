@@ -1,5 +1,14 @@
 /**
+ * @typedef {import('./types').League} League
+ * @typedef {import('./types').Player} Player
+ * @typedef {import('./types').RosterUpdateConfig} RosterUpdateConfig
+ */
+
+/**
  * Loads the team roster JSON and updates the table based on the specified season.
+ * @param {string} selector
+ * @param {RosterUpdateConfig} config
+ * @returns {Promise<{league: League, roster: Player[]}>}
  */
 async function loadAndDisplayRoster(selector, { year, season, level }) {
   const { leagues, players } = await loadData();
@@ -29,8 +38,9 @@ async function loadAndDisplayRoster(selector, { year, season, level }) {
 
 /**
  * Generates HTML table rows for each player and inserts them into the roster table.
- * @param {string>} selector - String selector for the table element.
- * @param {Array<{number: number, name: string, pos: string, shoots: string}>} players - List of players in the team.
+ * @param {string} selector - String selector for the table element.
+ * @param {Player[]} players - List of players in the team.
+ * @param {League} league
  */
 function updateRosterTable(selector, players, league) {
   const table = document.querySelector(selector);
