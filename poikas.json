@@ -288,6 +288,120 @@
         "Scott Daniels",
         "Will Murphy",
         "Jamon Holmgren"
+      ],
+      "games": [
+        {
+          "vs": "PBR",
+          "us": 7,
+          "them": 1,
+          "result": "won",
+          "notable": "Joel was in Michigan"
+        },
+        {
+          "vs": "Callahan",
+          "us": 0,
+          "them": 5,
+          "result": "lost",
+          "sisu": "Matt Bromley"
+        },
+        {
+          "vs": "Bandits",
+          "us": 0,
+          "them": 5,
+          "result": "lost",
+          "sisu": "Will Murphy"
+        },
+        {
+          "vs": "Lightning",
+          "us": 2,
+          "them": 8,
+          "result": "lost"
+        },
+        {
+          "vs": "Dead Guys",
+          "us": 4,
+          "them": 5,
+          "result": "lost"
+        },
+        {
+          "vs": "Dead Guys",
+          "us": 2,
+          "them": 7,
+          "result": "lost",
+          "sisu": "Asa Storm"
+        },
+        {
+          "vs": "Badgers",
+          "us": 1,
+          "them": 3,
+          "result": "lost",
+          "sisu": "Andrew Nichol",
+          "notable": "They got an empty netter"
+        },
+        {
+          "vs": "CCCP",
+          "us": 3,
+          "them": 7,
+          "result": "lost",
+          "sisu": "Erik Matson"
+        },
+        {
+          "vs": "Revolution",
+          "us": 5,
+          "them": 6,
+          "result": "lost",
+          "sisu": "Jared Paben",
+          "notable": "Revolution had a 5-1 lead in the third"
+        },
+        {
+          "vs": "PBR",
+          "us": 5,
+          "them": 4,
+          "result": "won",
+          "sisu": "Oren Matson"
+        },
+        {
+          "vs": "Bandits",
+          "us": 2,
+          "them": 6,
+          "result": "lost",
+          "sisu": "Matt Bromley"
+        },
+        {
+          "vs": "Lightning",
+          "us": 0,
+          "them": 7,
+          "result": "lost"
+        },
+        {
+          "vs": "2 Towns",
+          "us": 4,
+          "them": 1,
+          "result": "won"
+        },
+        {
+          "vs": "Callahan",
+          "us": 1,
+          "them": 2,
+          "result": "lost",
+          "sisu": "Eric Matson",
+          "notable": "Lost in a shootout"
+        },
+        {
+          "vs": "Dead Guys",
+          "us": 2,
+          "them": 8,
+          "result": "lost",
+          "sisu": "Andrew Nichol"
+        },
+        {
+          "vs": "Bandits",
+          "us": 1,
+          "them": 10,
+          "result": "lost",
+          "sisu": "Dmitriy Piskorskiy",
+          "notable": "Playoffs round 1."
+        }
       ]
     },
     {
