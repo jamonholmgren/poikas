@@ -87,6 +87,40 @@ async function loadPlayerInfo(playerName) {
   // Display the seasons played
   loadAndDisplaySeasons("#seasons", { player: player.name });
 
+  // Display all sisu cups won across all seasons
+  const sisuCups = [...player.seasons]
+    .map((s) => {
+      if (!s.games) return [];
+
+      const gamesWithSisu = s.games.filter((g) => g.sisu === player.name);
+
+      return gamesWithSisu.map((g) => {
+        return {
+          year: s.year,
+          season: s.season,
+          level: s.level,
+          game: g.vs,
+        };
+      });
+    })
+    .flat();
+
+  const sisuCupsTable = document.getElementById("sisucup");
+  if (!sisuCupsTable) throw new Error("Table not found.");
+
+  sisuCups.forEach((cup) => {
+    const row = sisuCupsTable.insertRow();
+    row.innerHTML = `
+      <td><a href="/season/?year=${
+        cup.year
+      }&season=${cup.season.toLowerCase()}&level=${cup.level.toLowerCase()}">${
+      cup.year
+    } ${cup.season} ${cup.level}</a></td>
+      <td>vs ${cup.game}</td>
+      <td>${player.name}</td>
+    `;
+  });
+
   // Update the "Next" and "Previous" links
 
   // find next alphabetical player (first sort it by name)
