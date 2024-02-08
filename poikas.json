@@ -211,6 +211,128 @@
         "Peter Tapio",
         "Shane Matson",
         "Jamon Holmgren"
+      ],
+      "games": [
+        {
+          "vs": "Mother Russia",
+          "us": 7,
+          "them": 2,
+          "result": "won",
+          "sisu": "Shane Matson"
+        },
+        {
+          "vs": "Liquid Gold",
+          "us": 4,
+          "them": 1,
+          "result": "won",
+          "sisu": "Konrad Stenersen"
+        },
+        {
+          "vs": "Thundersticks",
+          "us": 6,
+          "them": 1,
+          "result": "won",
+          "sisu": "Jay Tapio"
+        },
+        {
+          "vs": "Caps N Taps",
+          "us": 5,
+          "them": 2,
+          "result": "won",
+          "sisu": "Jens Tapio"
+        },
+        {
+          "vs": "Ukraine",
+          "us": 7,
+          "them": 2,
+          "result": "won",
+          "sisu": "Milo Matson"
+        },
+        {
+          "vs": "Pinecones",
+          "us": 13,
+          "them": 1,
+          "result": "won",
+          "sisu": "Erik Benton"
+        },
+        {
+          "vs": "Pinecones",
+          "us": 4,
+          "them": 3,
+          "result": "won",
+          "sisu": "Milo Matson",
+          "notable": "Won in a shootout."
+        },
+        {
+          "vs": "Mother Russia",
+          "us": 6,
+          "them": 2,
+          "result": "won",
+          "sisu": "Brenden Mattila"
+        },
+        {
+          "vs": "Liquid Gold",
+          "us": 5,
+          "them": 0,
+          "result": "won"
+        },
+        {
+          "vs": "Caps N Taps",
+          "us": 8,
+          "them": 1,
+          "result": "won"
+        },
+        {
+          "vs": "Thundersticks",
+          "us": 0,
+          "them": 1,
+          "result": "lost",
+          "sisu": "Shane Matson"
+        },
+        {
+          "vs": "Caps N Taps",
+          "us": 12,
+          "them": 1,
+          "result": "won",
+          "notable": "Brenden had a hat trick"
+        },
+        {
+          "vs": "Ukraine",
+          "us": 8,
+          "them": 2,
+          "result": "won",
+          "sisu": "Konrad Stenersen"
+        },
+        {
+          "vs": "Pinecones",
+          "us": 2,
+          "them": 3,
+          "result": "lost",
+          "notable": "Lost in a shootout."
+        },
+        {
+          "vs": "Thundersticks",
+          "us": 7,
+          "them": 0,
+          "result": "won",
+          "notable": "Jamon shutout."
+        },
+        {
+          "vs": "Ukraine",
+          "us": 8,
+          "them": 2,
+          "result": "won",
+          "sisu": "Brenden Mattila",
+          "notable": "Playoffs semifinals."
+        },
+        {
+          "vs": "Pinecones",
+          "us": 1,
+          "them": 0,
+          "result": "won",
+          "sisu": "Asa Storm",
+          "notable": "Championship game! Jamon shutout."
+        }
       ]
     },
     {
@@ -235,6 +357,82 @@
         "Tim Petrienko",
         "Erik Benton",
         "Jamon Holmgren"
+      ],
+      "games": [
+        {
+          "vs": "Caps N Taps",
+          "us": 4,
+          "them": 2,
+          "result": "won"
+        },
+        {
+          "vs": "Liquid Gold",
+          "us": 3,
+          "them": 1,
+          "result": "won",
+          "sisu": "Daniel Rybak"
+        },
+        {
+          "vs": "Thundersticks",
+          "us": 11,
+          "them": 1,
+          "result": "won",
+          "sisu": "Brenden Mattila",
+          "notable": "Brenden had five goals!"
+        },
+        {
+          "vs": "Caps N Taps",
+          "us": 1,
+          "them": 4,
+          "result": "lost",
+          "sisu": "Joel Mattila"
+        },
+        {
+          "vs": "Liquid Gold",
+          "us": 4,
+          "them": 1,
+          "result": "won",
+          "sisu": "Ben Mikhalets"
+        },
+        {
+          "vs": "Thundersticks",
+          "us": 9,
+          "them": 1,
+          "result": "won",
+          "sisu": "Daniel Rybak",
+          "notable": "Joel Mattila had five goals."
+        },
+        {
+          "vs": "Caps N Taps",
+          "us": 4,
+          "them": 3,
+          "result": "won",
+          "sisu": "Jamon Holmgren",
+          "notable": "Shootout win"
+        },
+        {
+          "vs": "Liquid Gold",
+          "us": 3,
+          "them": 0,
+          "result": "won",
+          "sisu": "Russ Raybukin"
+        },
+        {
+          "vs": "Thundersticks",
+          "us": 9,
+          "them": 2,
+          "result": "won",
+          "sisu": "Erik Benton",
+          "notable": "Playoffs semifinals"
+        },
+        {
+          "vs": "Caps N Taps",
+          "us": 5,
+          "them": 3,
+          "result": "won",
+          "sisu": "Brenden Mattila",
+          "notable": "Championship game"
+        }
       ]
     },
     {

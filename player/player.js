@@ -100,6 +100,7 @@ async function loadPlayerInfo(playerName) {
           season: s.season,
           level: s.level,
           game: g.vs,
+          notable: g.notable || "-",
         };
       });
     })
@@ -118,6 +119,7 @@ async function loadPlayerInfo(playerName) {
     } ${cup.season} ${cup.level}</a></td>
       <td>vs ${cup.game}</td>
       <td>${player.name}</td>
+      <td class='extra'>${cup.notable}</td>
     `;
   });
 
