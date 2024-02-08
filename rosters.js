@@ -4,12 +4,6 @@
 async function loadAndDisplayRoster(selector, { year, season, level }) {
   const { leagues, players } = await loadData();
 
-  console.log("Leagues", leagues);
-  console.log("Players", players);
-  console.log("Year", year);
-  console.log("Season", season);
-  console.log("Level", level);
-
   // Find the current team based on year, season, and level
   const league = leagues.find(
     (league) =>
