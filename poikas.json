@@ -177,6 +177,87 @@
         "Scott Daniels",
         "Shane Matson",
         "Jamon Holmgren"
+      ],
+      "games": [
+        {
+          "vs": "Caps N Taps",
+          "us": 9,
+          "them": 4,
+          "result": "won",
+          "sisu": "Asa Storm",
+          "notable": "We were up 8-0 after the first period then we let off the throttle."
+        },
+        {
+          "vs": "Liquid Gold",
+          "us": 14,
+          "them": 0,
+          "result": "won",
+          "sisu": "Joel Mattila",
+          "notable": "They only had six skaters. Joel got a hat trick. Brenden got two goals."
+        },
+        {
+          "vs": "Caps N Taps",
+          "us": 5,
+          "them": 4,
+          "result": "won",
+          "sisu": "Konrad Stenersen",
+          "notable": "Kevin got the little cup."
+        },
+        {
+          "vs": "Liquid Gold",
+          "us": 4,
+          "them": 2,
+          "result": "won",
+          "sisu": "Brenden Mattila",
+          "notable": "37-25 shots on goal. Milo got little cup."
+        },
+        {
+          "vs": "Thundersticks",
+          "us": 9,
+          "them": 2,
+          "result": "won",
+          "sisu": "Dan Warren",
+          "notable": "It was 3-2 going into the third period. Jay got little cup."
+        },
+        {
+          "vs": "Caps N Taps",
+          "us": 5,
+          "them": 2,
+          "result": "won",
+          "notable": "Only five skaters each side."
+        },
+        {
+          "vs": "Liquid Gold",
+          "us": 6,
+          "them": 1,
+          "result": "won",
+          "sisu": "Konrad Stenersen",
+          "notable": "Konrad got 3 or 4 goals."
+        },
+        {
+          "vs": "Thundersticks",
+          "us": 7,
+          "them": 2,
+          "result": "won",
+          "sisu": "Kevin Stepaniuk",
+          "notable": "Brenden got the little cup."
+        },
+        {
+          "vs": "Caps N Taps",
+          "us": 4,
+          "them": 0,
+          "result": "won",
+          "sisu": "Jamon Holmgren",
+          "notable": "Playoff game. Dan got the little cup."
+        },
+        {
+          "vs": "Liquid Gold",
+          "us": 7,
+          "them": 2,
+          "result": "won",
+          "sisu": "Joel Mattila",
+          "notable": "Championship game. Konrad got the little cup."
+        }
       ]
     },
     {
