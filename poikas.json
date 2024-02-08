@@ -285,6 +285,136 @@
         "Scott Daniels",
         "Shane Matson",
         "Jamon Holmgren"
+      ],
+      "games": [
+        {
+          "vs": "Liquid Gold",
+          "us": 3,
+          "them": 2,
+          "result": "won",
+          "sisu": "Gabe Estola"
+        },
+        {
+          "vs": "Caps N Taps",
+          "us": 6,
+          "them": 0,
+          "result": "won",
+          "sisu": "Jamon Holmgren",
+          "notable": "Joel got two goals. 3-0 going into the third period."
+        },
+        {
+          "vs": "Pinecones",
+          "us": 0,
+          "them": 4,
+          "result": "lost",
+          "sisu": "Brenden Mattila"
+        },
+        {
+          "vs": "Mother Russia",
+          "us": 3,
+          "them": 2,
+          "result": "won",
+          "sisu": "Oren Matson"
+        },
+        {
+          "vs": "Thundersticks",
+          "us": 9,
+          "them": 0,
+          "result": "won",
+          "sisu": "Levi Estola",
+          "notable": "Levi and Gabe (brothers) both had two goals."
+        },
+        {
+          "vs": "Liquid Gold",
+          "us": 4,
+          "them": 3,
+          "result": "won",
+          "sisu": "Asa Storm"
+        },
+        {
+          "vs": "Caps N Taps",
+          "us": 8,
+          "them": 1,
+          "result": "won",
+          "sisu": "Brenden Mattila"
+        },
+        {
+          "vs": "Pinecones",
+          "us": 1,
+          "them": 4,
+          "result": "lost",
+          "sisu": "Levi Estola"
+        },
+        {
+          "vs": "Mother Russia",
+          "us": 2,
+          "them": 1,
+          "result": "won",
+          "sisu": "Jamon Holmgren",
+          "notable": "Joel scored the shootout winner. Brad got little cup."
+        },
+        {
+          "vs": "Thundersticks",
+          "us": 6,
+          "them": 2,
+          "result": "won"
+        },
+        {
+          "vs": "Liquid Gold",
+          "us": 3,
+          "them": 2,
+          "result": "won",
+          "sisu": "Jay Tapio",
+          "notable": "Levi got little cup."
+        },
+        {
+          "vs": "Pinecones",
+          "us": 4,
+          "them": 2,
+          "result": "won",
+          "sisu": "Asa Storm",
+          "notable": "Oren got little cup."
+        },
+        {
+          "vs": "Mother Russia",
+          "us": 5,
+          "them": 1,
+          "result": "won",
+          "sisu": "Brenden Mattila",
+          "notable": "Brenden got two goals. Levi got little cup."
+        },
+        {
+          "vs": "Thundersticks",
+          "us": 2,
+          "them": 1,
+          "result": "lost",
+          "sisu": "Jens Tapio",
+          "notable": "Asa got little cup."
+        },
+        {
+          "vs": "Caps N Taps",
+          "us": 4,
+          "them": 5,
+          "result": "lost",
+          "sisu": "Dan Warren",
+          "notable": "Lost in shootout. Brenden got little cup."
+        },
+        {
+          "vs": "Caps N Taps",
+          "us": 8,
+          "them": 0,
+          "result": "won",
+          "sisu": "Joel Mattila",
+          "notable": "Playoffs semifinals. Joel had a hat trick."
+        },
+        {
+          "vs": "Pinecones",
+          "us": 3,
+          "them": 0,
+          "result": "won",
+          "sisu": "Levi Estola",
+          "notable": "Championship game. Jamon had shutout and got game puck."
+        }
       ]
     },
     {
