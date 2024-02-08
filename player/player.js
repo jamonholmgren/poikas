@@ -1,16 +1,22 @@
-// Function to load player data and update the page
+/**
+ * @typedef {import('../types').Player} Player
+ * @typedef {import('../types').RosterData} RosterData
+ */
+
+/**
+ * Function to load player data and update the page.
+ * Assumes `loadData()` returns a Promise that resolves to `RosterData`.
+ * @param {string} playerName The name of the player to load information for.
+ * @returns {Promise<void>} Nothing is returned from this function.
+ */
 async function loadPlayerInfo(playerName) {
+  /**
+   * @type {RosterData}
+   */
   const data = await loadData();
 
   const player = data.players.find((p) => p.name === playerName);
   if (!player) throw new Error("Player not found.");
-
-  // find next alphabetical player (first sort it by name)
-  data.players.sort((a, b) => (a.name < b.name ? -1 : 1));
-  const nextPlayer = data.players.find((p) => p.name > playerName);
-  // find previous alphabetical player (first sort it by name)
-  data.players.sort((a, b) => (a.name > b.name ? -1 : 1));
-  const prevPlayer = data.players.find((p) => p.name < playerName);
 
   // Update player information in the HTML
   const avatar = document.querySelector(".sidebar img");
@@ -82,6 +88,15 @@ async function loadPlayerInfo(playerName) {
   loadAndDisplaySeasons("#seasons", { player: player.name });
 
   // Update the "Next" and "Previous" links
+
+  // find next alphabetical player (first sort it by name)
+  data.players.sort((a, b) => (a.name < b.name ? -1 : 1));
+  const nextPlayer = data.players.find((p) => p.name > playerName);
+
+  // find previous alphabetical player (first sort it by name)
+  data.players.sort((a, b) => (a.name > b.name ? -1 : 1));
+  const prevPlayer = data.players.find((p) => p.name < playerName);
+
   const prevLink = document.getElementById("prev");
   const nextLink = document.getElementById("next");
   if (prevPlayer) {
