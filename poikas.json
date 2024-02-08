@@ -342,6 +342,29 @@
       "season": "Fall",
       "level": "Rec",
       "description": "This was one of our most fulfilling seasons! We battled hard and ended up #2 in the league after the regular season. In the playoffs, we played against the #3 Thundersticks, which we had been 0-3 against in the regular season, and the #1 Slavic Peeps (Russians), which we went 1-2 against. We squeaked out a narrow 3-1 win against the Thundersticks and moved on to the Slavic Peeps for the Championship. We went down 0-2 early but battled back in front of a packed house to win it 5-3 for our fourth championship!",
+      "photos": ["poikas-rec-2023-fall-champions.jpg"],
+      "videos": [
+        "https://www.youtube.com/embed/y-PfIM5V3_Q?si=qlmu66nOdwSq4g0x"
+      ],
+      "wins": 10,
+      "losses": 5,
+      "ties": 0,
+      "playoffs": "champions",
+      "roster": [
+        "Brad Wuori",
+        "Brenden Mattila",
+        "Brent Mattila",
+        "Dan Warren",
+        "Daniel Kulla",
+        "Jay Tapio",
+        "Joel Mattila",
+        "Myron Kinnunen",
+        "Nolan Matson",
+        "Orrin Erickson",
+        "Scott Daniels",
+        "Shane Matson",
+        "Jamon Holmgren"
+      ],
       "games": [
         {
           "vs": "Slavic Peeps",
@@ -469,29 +492,6 @@
           "sisu": "Nolan Matson",
           "notable": "Championship game! Nolan had hat trick."
         }
-      ],
-      "photos": ["poikas-rec-2023-fall-champions.jpg"],
-      "videos": [
-        "https://www.youtube.com/embed/y-PfIM5V3_Q?si=qlmu66nOdwSq4g0x"
-      ],
-      "wins": 10,
-      "losses": 5,
-      "ties": 0,
-      "playoffs": "champions",
-      "roster": [
-        "Brad Wuori",
-        "Brenden Mattila",
-        "Brent Mattila",
-        "Dan Warren",
-        "Daniel Kulla",
-        "Jay Tapio",
-        "Joel Mattila",
-        "Myron Kinnunen",
-        "Nolan Matson",
-        "Orrin Erickson",
-        "Scott Daniels",
-        "Shane Matson",
-        "Jamon Holmgren"
       ]
     },
     {
@@ -517,6 +517,115 @@
         "Steve Saunders",
         "Trevor Kloetzli",
         "Jamon Holmgren"
+      ],
+      "games": [
+        {
+          "vs": "Lightning",
+          "us": 2,
+          "them": 11,
+          "result": "lost",
+          "sisu": "Asa Storm"
+        },
+        {
+          "vs": "CCCP",
+          "us": 6,
+          "them": 5,
+          "result": "won",
+          "sisu": "Steve Saunders",
+          "notable": "Won after trailing 1-4."
+        },
+        {
+          "vs": "Revolution",
+          "us": 6,
+          "them": 5,
+          "result": "won",
+          "sisu": "Asa Storm"
+        },
+        {
+          "vs": "Bandits",
+          "us": 1,
+          "them": 3,
+          "result": "lost",
+          "sisu": "Jamon Holmgren",
+          "notable": "They had an empty-netter at the end."
+        },
+        {
+          "vs": "Callahan",
+          "us": 2,
+          "them": 6,
+          "result": "lost",
+          "sisu": "Oren Matson"
+        },
+        {
+          "vs": "Badgers",
+          "us": 0,
+          "them": 9,
+          "result": "lost",
+          "sisu": "Nels Tapio"
+        },
+        {
+          "vs": "Dead Guys",
+          "us": 2,
+          "them": 9,
+          "result": "lost",
+          "sisu": "Trevor Kloetzli"
+        },
+        {
+          "vs": "Local Legends",
+          "us": 0,
+          "them": 10,
+          "result": "lost",
+          "sisu": "Asa Storm"
+        },
+        {
+          "vs": "PBR",
+          "us": 1,
+          "them": 0,
+          "result": "won",
+          "notable": "They forfeited due to lack of players. We scrimmaged."
+        },
+        {
+          "vs": "Lightning",
+          "us": 3,
+          "them": 6,
+          "result": "lost",
+          "sisu": "Andrew Tunseth"
+        },
+        {
+          "vs": "CCCP",
+          "us": 3,
+          "them": 6,
+          "result": "lost",
+          "sisu": "Jared Paben"
+        },
+        {
+          "vs": "Bandits",
+          "us": 2,
+          "them": 5,
+          "result": "lost",
+          "sisu": "Jared Paben"
+        },
+        {
+          "vs": "Callahan",
+          "us": 3,
+          "them": 6,
+          "result": "lost"
+        },
+        {
+          "vs": "Badgers",
+          "us": 0,
+          "them": 3,
+          "result": "lost",
+          "sisu": "Jamon Holmgren"
+        },
+        {
+          "vs": "Revolution",
+          "us": 5,
+          "them": 7,
+          "result": "lost",
+          "sisu": "Jared Paben",
+          "notable": "They got an empty netter at the end."
+        }
       ]
     },
     {
