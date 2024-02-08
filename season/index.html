@@ -67,6 +67,16 @@
               <td colspan="8" id="rosterTableBody">Loading roster...</td>
             </tr>
           </table>
+
+          <h2>Games</h2>
+          <table id="games" class="roster">
+            <tr>
+              <th>Opponent</th>
+              <th>Score</th>
+              <th>Sisu Cup</th>
+              <th class="extra">Notable</th>
+            </tr>
+          </table>
         </article>
       </main>
     </div>
@@ -120,6 +130,25 @@
               break;
             default:
               break;
+          }
+        }
+
+        // add game info to the game table
+        const gamesTable = document.getElementById("games");
+        if (league.games) {
+          for (let i = 0; i < league.games.length; i++) {
+            const game = league.games[i];
+            const row = gamesTable.insertRow(i + 1);
+            const res = `${game.result} ${game.us}-${game.them}`;
+            const sisu = game.sisu
+              ? `🇫🇮 <a href='/player/?player=${game.sisu}'>${game.sisu}</a>`
+              : "-";
+            row.insertCell(0).innerHTML = game.vs;
+            row.insertCell(1).innerHTML = res;
+            row.insertCell(2).innerHTML = sisu;
+            const notable = row.insertCell(3);
+            notable.innerHTML = game.notable || "-";
+            notable.classList.add("extra");
           }
         }
 

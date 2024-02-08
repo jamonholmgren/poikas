@@ -1,13 +1,23 @@
+export interface Game {
+  vs?: string;
+  us?: number;
+  them?: number;
+  result?: "won" | "lost" | "tied" | "forfeited" | "cancelled";
+  sisu?: string;
+  notable?: string;
+}
+
 export interface League {
   year: number;
   season: string;
   level: string;
-  description: string;
-  aside: string;
-  wins: number;
-  losses: number;
-  ties: number;
-  playoffs: string;
+  description?: string;
+  highlights?: Highlight[];
+  aside?: string;
+  wins?: number;
+  losses?: number;
+  ties?: number;
+  playoffs?: string;
   roster: string[];
 }
 

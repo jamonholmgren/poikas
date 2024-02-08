@@ -342,6 +342,134 @@
       "season": "Fall",
       "level": "Rec",
       "description": "This was one of our most fulfilling seasons! We battled hard and ended up #2 in the league after the regular season. In the playoffs, we played against the #3 Thundersticks, which we had been 0-3 against in the regular season, and the #1 Slavic Peeps (Russians), which we went 1-2 against. We squeaked out a narrow 3-1 win against the Thundersticks and moved on to the Slavic Peeps for the Championship. We went down 0-2 early but battled back in front of a packed house to win it 5-3 for our fourth championship!",
+      "games": [
+        {
+          "vs": "Slavic Peeps",
+          "us": 2,
+          "them": 3,
+          "result": "lost",
+          "sisu": "Brad Wuori"
+        },
+        {
+          "vs": "Pinecones",
+          "us": 7,
+          "them": 1,
+          "result": "won",
+          "sisu": "Brenden Mattila",
+          "notable": "Brenden had a hat trick."
+        },
+        {
+          "vs": "Caps N Taps",
+          "us": 2,
+          "them": 1,
+          "result": "won",
+          "sisu": "Nolan Matson",
+          "notable": "Joel had covid and missed the game."
+        },
+        {
+          "vs": "Liquid Gold",
+          "us": 2,
+          "them": 1,
+          "result": "won",
+          "sisu": "Orrin Erickson",
+          "notable": "Won in a shootout."
+        },
+        {
+          "vs": "Thundersticks",
+          "us": 5,
+          "them": 4,
+          "result": "won",
+          "sisu": "Brent Mattila"
+        },
+        {
+          "vs": "Slavic Peeps",
+          "us": 3,
+          "them": 4,
+          "result": "lost",
+          "sisu": "Jay Tapio"
+        },
+        {
+          "vs": "Pinecones",
+          "us": 7,
+          "them": 2,
+          "result": "won",
+          "sisu": "Orrin Erickson"
+        },
+        {
+          "vs": "Caps N Taps",
+          "us": 4,
+          "them": 2,
+          "result": "won",
+          "sisu": "Dan Warren"
+        },
+        {
+          "vs": "Liquid Gold",
+          "us": 7,
+          "them": 2,
+          "result": "won",
+          "sisu": "Jay Tapio"
+        },
+        {
+          "vs": "Thundersticks",
+          "us": 0,
+          "them": 2,
+          "result": "lost",
+          "sisu": "Jamon Holmgren"
+        },
+        {
+          "vs": "Slavic Peeps",
+          "us": 3,
+          "them": 5,
+          "result": "lost",
+          "sisu": "Brenden Mattila"
+        },
+        {
+          "vs": "Caps N Taps",
+          "us": 8,
+          "them": 1,
+          "result": "won",
+          "sisu": "Dan Warren"
+        },
+        {
+          "vs": "Liquid Gold",
+          "us": 4,
+          "them": 2,
+          "result": "won",
+          "sisu": "Daniel Kulla",
+          "notable": "Daniel's first Sisu Cup."
+        },
+        {
+          "vs": "Thundersticks",
+          "us": 2,
+          "them": 3,
+          "result": "lost",
+          "sisu": "Brenden Mattila"
+        },
+        {
+          "vs": "Pinecones",
+          "us": 1,
+          "them": 0,
+          "result": "won",
+          "sisu": "Jamon Holmgren",
+          "notable": "Jamon had a shutout."
+        },
+        {
+          "vs": "Thundersticks",
+          "us": 3,
+          "them": 1,
+          "result": "won",
+          "sisu": "Joel Mattila",
+          "notable": "Playoffs semifinals. Joel had two goals."
+        },
+        {
+          "vs": "Slavic Peeps",
+          "us": 5,
+          "them": 3,
+          "result": "won",
+          "sisu": "Nolan Matson",
+          "notable": "Championship game! Nolan had hat trick."
+        }
+      ],
       "photos": ["poikas-rec-2023-fall-champions.jpg"],
       "videos": [
         "https://www.youtube.com/embed/y-PfIM5V3_Q?si=qlmu66nOdwSq4g0x"
