@@ -32,8 +32,6 @@ async function loadData(options = {}) {
         ...new Set(player.seasons.map((season) => season.year)),
       ];
 
-      console.log(player.name, activeYears);
-
       player.years = activeYears.length;
       player.startYear = activeYears[0];
       player.endYear = activeYears[activeYears.length - 1];
