@@ -78,6 +78,77 @@
         "Peter Tapio",
         "Scott Daniels",
         "Jamon Holmgren"
+      ],
+      "games": [
+        {
+          "vs": "Liquid Gold",
+          "us": 2,
+          "them": 1,
+          "result": "lost",
+          "sisu": "Joel Mattila"
+        },
+        {
+          "vs": "Caps & Taps",
+          "us": 6,
+          "them": 3,
+          "result": "won",
+          "notable": "Trailing in the third, big third period"
+        },
+        {
+          "vs": "Pinecones",
+          "us": 6,
+          "them": 1,
+          "result": "won"
+        },
+        {
+          "vs": "Mother Russia",
+          "us": 10,
+          "them": 2,
+          "result": "won",
+          "notable": "We had a full bench and they had only two subs"
+        },
+        {
+          "vs": "Thundersticks",
+          "us": 4,
+          "them": 2,
+          "result": "won",
+          "notable": "Tied 2-2 in third. We got two powerplays to win it."
+        },
+        {
+          "vs": "Liquid Gold",
+          "us": 7,
+          "them": 2,
+          "result": "won"
+        },
+        {
+          "vs": "Cap & Taps",
+          "us": 4,
+          "them": 0,
+          "result": "won",
+          "notable": "Tighter game than the ending score."
+        },
+        {
+          "vs": "Pinecones",
+          "us": 3,
+          "them": 0,
+          "result": "won"
+        },
+        {
+          "vs": "Pinecones",
+          "us": 1,
+          "them": 0,
+          "result": "won",
+          "sisu": "Scott Daniels",
+          "notable": "Playoffs: Tied it late in the third and won in shootout. Shots 40-36."
+        },
+        {
+          "vs": "Liquid Gold",
+          "us": 1,
+          "them": 2,
+          "result": "lost",
+          "sisu": "Joel Mattila",
+          "notable": "Championship: Lost 2-1 in OT. Outshot them 68-6."
+        }
       ]
     },
     {
