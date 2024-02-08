@@ -1,6 +1,12 @@
 /**
+ * @typedef {import('./types').League} League
+ * @typedef {import('./types').LoadDisplaySeasonsOptions} LoadDisplaySeasonsOptions
+ */
+
+/**
  * Loads and displays seasons and their leagues in a table.
  * @param {string} selector The selector for the table to update.
+ * @param {LoadDisplaySeasonsOptions} [options={}] Options for filtering and displaying leagues.
  */
 async function loadAndDisplaySeasons(selector, options = {}) {
   const response = await fetch("/poikas.json"); // Adjust the path as needed

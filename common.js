@@ -1,4 +1,18 @@
-let _rosterData;
+/**
+ * @typedef {import('./types').RosterData} RosterData
+ * @typedef {import('./types').LoadDataOptions} LoadDataOptions
+ */
+
+/**
+ * @type {RosterData | null}
+ */
+let _rosterData = null;
+
+/**
+ * Fetches, processes, and returns roster data including players and leagues.
+ * @param {LoadDataOptions} [options={}] Options for loading data.
+ * @returns {Promise<RosterData>} The processed roster data.
+ */
 async function loadData(options = {}) {
   if (!_rosterData) {
     const response = await fetch("/poikas.json");
@@ -7,6 +21,8 @@ async function loadData(options = {}) {
     }
 
     _rosterData = await response.json();
+
+    if (!_rosterData) throw new Error("Failed to parse roster data.");
 
     // Sort players by name
     _rosterData.players.sort((a, b) => (a.name < b.name ? -1 : 1));
