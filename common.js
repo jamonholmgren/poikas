@@ -64,3 +64,43 @@ async function loadData(options = {}) {
   }
   return _rosterData;
 }
+
+/**
+ * Creates the main nav menu at the top of the page.
+ *
+ * @param {String} element
+ */
+function buildMenu(element) {
+  const menuItems = [
+    { label: "Home", url: "/" },
+    { label: "Rec League", url: "/season/?year=2024&season=spring&level=rec" },
+    { label: "C/CC", url: "/season/?year=2024&season=spring&level=c" },
+    { label: "Join", url: "/join/" },
+  ];
+
+  const nav = document.querySelector(element);
+  if (!nav) {
+    throw new Error("Could not find nav element: " + element);
+  }
+
+  const ul = document.createElement("ul");
+  nav.appendChild(ul);
+
+  menuItems.forEach((item) => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = item.url;
+    a.textContent = item.label;
+    li.appendChild(a);
+    ul.appendChild(li);
+
+    const currentPath =
+      window.location.pathname + window.location.search + window.location.hash;
+
+    if (currentPath === item.url) {
+      li.classList.add("active");
+    } else {
+      console.log(currentPath, item.url);
+    }
+  });
+}

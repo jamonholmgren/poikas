@@ -14,6 +14,10 @@
     <div class="header">
       <h1><a href="/">Suomi Poikas Hockey Club</a></h1>
     </div>
+    <nav id="nav"></nav>
+    <script>
+      buildMenu("#nav");
+    </script>
     <div class="container">
       <div class="sidebar">
         <div class="photo">
@@ -140,9 +144,16 @@
             const game = league.games[i];
             const row = gamesTable.insertRow(i + 1);
             const res = `${game.result} ${game.us}-${game.them}`;
+
+            const sisuPlayer =
+              game.sisu && roster.find((p) => p.name === game.sisu);
+
             const sisu = game.sisu
-              ? `🇫🇮 <a href='/player/?player=${game.sisu}'>${game.sisu}</a>`
+              ? sisuPlayer
+                ? `🇫🇮 <a href='/player/?player=${game.sisu}'>${game.sisu}</a>`
+                : `🇫🇮 ${game.sisu}`
               : "-";
+
             row.insertCell(0).innerHTML = game.vs;
             row.insertCell(1).innerHTML = res;
             row.insertCell(2).innerHTML = sisu;
@@ -153,18 +164,20 @@
         }
 
         // add from league.photos to the sidebar
-        document.querySelector(
-          ".photo img"
-        ).src = `/images/${league.photos[0]}`;
+        if (league.photos && league.photos.length > 0) {
+          document.querySelector(
+            ".photo img"
+          ).src = `/images/${league.photos[0]}`;
 
-        // if there are more photos, add them
-        if (league.photos.length > 1) {
-          const photoContainer = document.querySelector(".photo");
-          for (let i = 1; i < team.photos.length; i++) {
-            const img = document.createElement("img");
-            img.src = `/images/${team.photos[i]}`;
-            img.alt = "Season Photo";
-            photoContainer.appendChild(img);
+          // if there are more photos, add them
+          if (league.photos.length > 1) {
+            const photoContainer = document.querySelector(".photo");
+            for (let i = 1; i < team.photos.length; i++) {
+              const img = document.createElement("img");
+              img.src = `/images/${team.photos[i]}`;
+              img.alt = "Season Photo";
+              photoContainer.appendChild(img);
+            }
           }
         }
 

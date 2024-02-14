@@ -16,7 +16,12 @@ async function loadPlayerInfo(playerName) {
   const data = await loadData();
 
   const player = data.players.find((p) => p.name === playerName);
-  if (!player) throw new Error("Player not found.");
+  if (!player) {
+    // Update the page with an error message
+    const main = document.querySelector("main");
+    if (!main) throw new Error("Main content not found.");
+    main.innerHTML = `<p class="error">Player "${playerName}" not found.</p>`;
+  }
 
   // Update player information in the HTML
   const avatar = document.querySelector(".sidebar img");

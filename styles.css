@@ -41,6 +41,7 @@ body {
   margin: 0; /* Remove default margin */
   color: #ffffff; /* White color for contrast */
   font-size: 24px; /* Appropriately sized font for visibility */
+  flex: 1;
 }
 
 /* Style for the header link */
@@ -59,6 +60,77 @@ body {
   height: 50px; /* Control the image size */
   vertical-align: middle; /* Align with the text */
   margin-right: 10px; /* Space between the image and text */
+}
+
+/* Navigation styles -- a horizontal menu except on mobile when it goes vertical */
+
+nav#nav {
+  display: flex; /* Align items in a row */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center the menu */
+  background-color: #111328; /* Dark background color */
+}
+
+nav#nav ul {
+  list-style: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  display: flex; /* Align items in a row */
+  align-items: center; /* Center items vertically */
+}
+
+nav#nav ul li {
+  margin: 0 10px; /* Space between menu items */
+}
+
+nav#nav ul li a {
+  color: #ffffff; /* White color for the text */
+  text-decoration: none; /* No underline for a clean look */
+  transition: color 0.3s; /* Smooth transition for hover effect */
+  padding: 15px 30px; /* Padding around the text */
+  display: inline-block; /* Allows the use of margin and padding */
+}
+
+/* Active link styles */
+
+nav#nav ul li.active a {
+  color: #4082c3; /* Lighter blue for active link */
+}
+
+/* Hover effect for the navigation links */
+
+nav#nav ul li a:hover {
+  color: #8fb0d1; /* Lighter blue for hover effect */
+}
+
+/* Adjustments for mobile view */
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Adjusts to a vertical layout */
+    align-items: flex-start; /* Aligns items to the left */
+  }
+
+  .header-logo {
+    margin-bottom: 10px; /* Space between logo and title */
+  }
+
+  .header h1 {
+    text-align: left; /* Aligns the title to the left */
+  }
+
+  nav#nav {
+    margin-top: 20px; /* Space between the title and menu */
+  }
+
+  nav#nav ul {
+    flex-direction: column; /* Adjusts to a vertical layout */
+    align-items: flex-start; /* Aligns items to the left */
+  }
+
+  nav#nav ul li {
+    margin: 10px 0; /* Space between menu items */
+  }
 }
 
 /* Layout styles */
@@ -158,6 +230,14 @@ a:hover {
     width: 100%;
     height: 200px;
   }
+}
+
+/* Error style -- shows #f69e44 border color and font color, and a bigger font */
+p.error {
+  color: #f69e44;
+  border: 1px solid #f69e44;
+  padding: 10px;
+  font-size: 18px;
 }
 
 .details {

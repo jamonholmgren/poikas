@@ -1480,13 +1480,22 @@
         "Orrin Erickson",
         "Shane Matson",
         "Jamon Holmgren"
+      ],
+      "games": [
+        {
+          "vs": "Liquid Gold",
+          "us": 2,
+          "them": 5,
+          "result": "lost",
+          "notable": "Brenden and Shane goals. Shots were 11-13. Jamon out, Dennis in net."
+        }
       ]
     },
     {
       "year": 2024,
       "season": "Spring",
       "level": "C",
-      "schedule": "https://mountainview.ezleagues.ezfacility.com/leagues/440609/MVIA-Adult-Hockey-League-Spring-2024--CCC-League.aspx?framed=1",
+      "schedule": "https://mountainview.ezleagues.ezfacility.com/teams/2950569/Suomi-Poikas-C.aspx?framed=1",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -1505,6 +1514,16 @@
         "Scott Daniels",
         "Steve Saunders",
         "Jamon Holmgren"
+      ],
+      "games": [
+        {
+          "vs": "PBR",
+          "us": 2,
+          "them": 7,
+          "result": "lost",
+          "sisu": "Kieren Sarkela",
+          "notable": "Kieren's first C-level game. Asa & Kieren goals, Joel assist on Asa's."
+        }
       ]
     }
   ],
