@@ -897,6 +897,7 @@
         "Brent Mattila",
         "Cedric Holmgren",
         "Joel Mattila",
+        "Kevin Sarkela",
         "Kieren Sarkela",
         "Konrad Stenersen",
         "Levi Borth",
@@ -1577,6 +1578,18 @@
       "number": 70,
       "name": "Daniel Kulla",
       "pos": "RW"
+    },
+    {
+      "number": 81,
+      "name": "Kieren Sarkela",
+      "pos": "W",
+      "shoots": "R"
+    },
+    {
+      "number": 40,
+      "name": "Kevin Sarkela",
+      "pos": "D",
+      "shoots": "R"
     },
     {
       "number": 28,
