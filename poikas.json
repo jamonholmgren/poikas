@@ -1582,14 +1582,18 @@
     {
       "number": 81,
       "name": "Kieren Sarkela",
-      "pos": "W",
-      "shoots": "R"
+      "pos": "RW",
+      "shoots": "R",
+      "ht": "6-0",
+      "wt": 175
     },
     {
       "number": 40,
       "name": "Kevin Sarkela",
-      "pos": "D",
-      "shoots": "R"
+      "pos": "D/C",
+      "shoots": "L",
+      "ht": "6-0",
+      "wt": 190
     },
     {
       "number": 28,
