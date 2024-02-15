@@ -141,20 +141,20 @@
             >
           </h2>
           <table id="rec-roster" class="roster">
-            <tr>
-              <th width="50">Photo</th>
-              <th>Name</th>
-              <th width="30">#</th>
-              <th width="30">Pos</th>
-              <th width="30" class="extra">Ht</th>
-              <th width="30" class="extra">Wt</th>
-              <th width="30" class="extra">Sh</th>
-              <th width="30" class="extra">Yrs</th>
-              <th width="30" class="extra">Age</th>
-            </tr>
-            <tr>
-              <td colspan="8" id="rosterTableBody">Loading roster...</td>
-            </tr>
+            <thead>
+              <tr>
+                <th data-field="imageHTML" width="50">Photo</th>
+                <th data-field="profileLink">Name</th>
+                <th width="30" data-field="number">#</th>
+                <th width="30" data-field="position">Pos</th>
+                <th width="30" class="extra" data-field="ht">Ht</th>
+                <th width="30" class="extra" data-field="wt">Wt</th>
+                <th width="30" class="extra" data-field="shoots">Sh</th>
+                <th width="30" class="extra" data-field="years">Yrs</th>
+                <th width="30" class="extra" data-field="age">Age</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
           </table>
 
           <h2>
@@ -164,20 +164,20 @@
             >
           </h2>
           <table id="c-roster" class="roster">
-            <tr>
-              <th width="50">Photo</th>
-              <th>Name</th>
-              <th width="30">#</th>
-              <th width="30">Pos</th>
-              <th width="30" class="extra">Ht</th>
-              <th width="30" class="extra">Wt</th>
-              <th width="30" class="extra">Sh</th>
-              <th width="30" class="extra">Yrs</th>
-              <th width="30" class="extra">Age</th>
-            </tr>
-            <tr>
-              <td colspan="8" id="rosterTableBody">Loading roster...</td>
-            </tr>
+            <thead>
+              <tr>
+                <th data-field="imageHTML" width="50">Photo</th>
+                <th data-field="profileLink">Name</th>
+                <th width="30" data-field="number">#</th>
+                <th width="30" data-field="position">Pos</th>
+                <th width="30" class="extra" data-field="ht">Ht</th>
+                <th width="30" class="extra" data-field="wt">Wt</th>
+                <th width="30" class="extra" data-field="shoots">Sh</th>
+                <th width="30" class="extra" data-field="years">Yrs</th>
+                <th width="30" class="extra" data-field="age">Age</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
           </table>
         </div>
         <div class="seasons">
@@ -192,24 +192,29 @@
         </div>
         <footer>
           <p>
-            Website by <a href="https://jamon.dev" target="_blank">Jamon Holmgren</a>.
+            Website by
+            <a href="https://jamon.dev" target="_blank">Jamon Holmgren</a>.
           </p>
+        </footer>
       </main>
     </div>
 
     <script>
-      // Call the function to load and display the roster
-      loadAndDisplayRoster("#rec-roster", {
-        year: 2024,
-        season: "Spring",
-        level: "Rec",
-      });
+      (async () => {
+        const data = await loadData();
 
-      loadAndDisplayRoster("#c-roster", {
-        year: 2024,
-        season: "Spring",
-        level: "C",
-      });
+        const rec = data.leagues.find(
+          (r) => r.year === 2024 && r.season === "Spring" && r.level === "Rec"
+        );
+
+        renderTable("#rec-roster", rec.players);
+
+        const c = data.leagues.find(
+          (r) => r.year === 2024 && r.season === "Spring" && r.level === "C"
+        );
+
+        renderTable("#c-roster", c.players);
+      })();
 
       loadAndDisplaySeasons("#seasons", {
         order: "desc",

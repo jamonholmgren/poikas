@@ -18,13 +18,13 @@ async function loadPlayerInfo(playerName) {
   const player = data.players.find((p) => p.name === playerName);
   if (!player) {
     // Update the page with an error message
-    const main = document.querySelector("main");
+    const main = $("main");
     if (!main) throw new Error("Main content not found.");
     main.innerHTML = `<p class="error">Player "${playerName}" not found.</p>`;
   }
 
   // Update player information in the HTML
-  const avatar = document.querySelector(".sidebar img");
+  const avatar = $(".sidebar img");
   avatar.src = `/images/${player.number}-${player.name
     .toLowerCase()
     .replace(/\s+/g, "-")}.jpg`;
@@ -33,16 +33,14 @@ async function loadPlayerInfo(playerName) {
     this.src = "/images/000-placeholder.jpg";
   };
 
-  document.querySelector(
-    ".sidebar .caption"
-  ).textContent = `${player.name} Photo`;
+  $(".sidebar .caption").textContent = `${player.name} Photo`;
 
   // grab #player-name by ID and set to player.name
-  document.querySelector("#playername").textContent = player.name;
-  document.querySelector("#bio").textContent = `${player.bio || "No bio yet!"}`; // Placeholder for player bio
+  $("#playername").textContent = player.name;
+  $("#bio").textContent = `${player.bio || "No bio yet!"}`; // Placeholder for player bio
 
   // Update player stats
-  document.querySelectorAll("main table tr th").forEach((th, index) => {
+  $All("main table tr th").forEach((th, index) => {
     const td = th.nextElementSibling; // Assuming there's a <td> right after each <th>
     switch (th.textContent) {
       case "Position":
@@ -138,8 +136,8 @@ async function loadPlayerInfo(playerName) {
   data.players.sort((a, b) => (a.name > b.name ? -1 : 1));
   const prevPlayer = data.players.find((p) => p.name < playerName);
 
-  const prevLink = document.getElementById("prev");
-  const nextLink = document.getElementById("next");
+  const prevLink = $("#prev");
+  const nextLink = $("#next");
   if (prevPlayer) {
     prevLink.href = `/player/?player=${prevPlayer.name}`;
     prevLink.textContent = prevPlayer.name;

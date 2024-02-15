@@ -29,15 +29,15 @@
           <table id="players" class="roster">
             <thead>
               <tr>
-                <th>Img</th>
-                <th>Player</th>
-                <th>Pos</th>
-                <th>Num</th>
-                <th>Ht</th>
-                <th>Wt</th>
-                <th>Age</th>
-                <th>Rec</th>
-                <th>C/CC</th>
+                <th data-field="imageHTML">Img</th>
+                <th data-field="profileLink">Player</th>
+                <th data-field="pos">Pos</th>
+                <th data-field="number">Num</th>
+                <th data-field="ht">Ht</th>
+                <th data-field="wt">Wt</th>
+                <th data-field="age">Age</th>
+                <th data-field="recLink">Rec</th>
+                <th data-field="cLink">C/CC</th>
               </tr>
             </thead>
             <tbody>
@@ -47,7 +47,17 @@
       </main>
     </div>
     <script>
-      loadAllPlayers("#players")
+      (async () => {
+        const data= await loadData()
+
+        const players = data.players.slice().sort((a, b) => {
+          if (a.active < b.active) return 1
+          if (a.active > b.active) return -1
+          return 0
+        })
+
+        renderTable("#players", players)
+      })()
     </script>
     <!-- Google tag (gtag.js) -->
     <script

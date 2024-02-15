@@ -43,7 +43,7 @@ async function loadAndDisplayRoster(selector, { year, season, level }) {
  * @param {League} league
  */
 function updateRosterTable(selector, players, league) {
-  const table = document.querySelector(selector);
+  const table = $(selector);
   if (!table) {
     console.error("Roster table not found.");
     return;

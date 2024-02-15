@@ -52,7 +52,7 @@ async function loadAndDisplaySeasons(selector, options = {}) {
     return acc;
   }, {});
 
-  const seasonsTable = document.querySelector(selector);
+  const seasonsTable = $(selector);
   if (!seasonsTable) throw new Error("Table not found.");
 
   // Create table rows for each season
