@@ -29,7 +29,7 @@ async function loadAllPlayers(elementQuery) {
       ? `<a href="/season/?year=${recSeason.year}&season=${recSeason.season}&level=${recSeason.level}">Rec</a>`
       : "-";
     const cLink = cSeason
-      ? `<a href="/season/?year=${cSeason.year}&season=${cSeason.season}&level=${cSeason.level}">C</a>`
+      ? `<a href="/season/?year=${cSeason.year}&season=${cSeason.season}&level=${cSeason.level}">C/CC</a>`
       : "-";
 
     const tr = document.createElement("tr");
