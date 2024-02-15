@@ -103,14 +103,58 @@ nav#nav ul li a:hover {
   color: #8fb0d1; /* Lighter blue for hover effect */
 }
 
+/* Search input */
+
+input[type="search"] {
+  padding: 10px; /* Padding around the text */
+  margin: 20px 0; /* Space above and below the input */
+  /* 30% width */
+  width: 30%;
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+/* Search drop-down */
+
+.search-dropdown {
+  position: relative; /* Position relative to the parent */
+  display: inline-block; /* Allows the use of margin and padding */
+}
+
+/* Search items */
+
+.search-dropdown-content {
+  display: none; /* Hide the dropdown by default */
+  position: absolute; /* Position absolute to the parent */
+  background-color: #f9f9f9; /* Light background color */
+  min-width: 160px; /* Minimum width of the dropdown */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
+  z-index: 1; /* Ensure the dropdown is on top */
+}
+
+/* Show the dropdown when the input is focused */
+
+input[type="search"]:focus + .search-dropdown .search-dropdown-content {
+  display: block;
+}
+
+/* Style the search items */
+
+.search-dropdown-content a {
+  color: #202a47; /* Dark blue for the text */
+  padding: 12px 16px; /* Padding around the text */
+  text-decoration: none; /* No underline for a clean look */
+  display: block; /* Allows the use of margin and padding */
+}
+
+/* Hover effect for the search items */
+
+.search-dropdown-content a:hover {
+  background-color: #f1f1f1; /* Slightly darker background on hover */
+}
+
 /* Adjustments for mobile view */
 
 @media screen and (max-width: 768px) {
-  .header {
-    flex-direction: column; /* Adjusts to a vertical layout */
-    align-items: flex-start; /* Aligns items to the left */
-  }
-
   .header-logo {
     margin-bottom: 10px; /* Space between logo and title */
   }
@@ -119,17 +163,12 @@ nav#nav ul li a:hover {
     text-align: left; /* Aligns the title to the left */
   }
 
-  nav#nav {
-    margin-top: 20px; /* Space between the title and menu */
-  }
-
-  nav#nav ul {
-    flex-direction: column; /* Adjusts to a vertical layout */
-    align-items: flex-start; /* Aligns items to the left */
-  }
-
   nav#nav ul li {
-    margin: 10px 0; /* Space between menu items */
+    margin: 5px 0; /* Space between menu items */
+  }
+
+  nav#nav ul li a {
+    padding: 20px 10px; /* Padding around the text */
   }
 }
 
@@ -207,8 +246,10 @@ a:hover {
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
+  /* put sidebar below main content */
+
   .container {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   .sidebar,
@@ -315,6 +356,11 @@ table.roster th {
 
 table.roster tr:nth-child(odd) {
   background-color: #f2f2f2;
+}
+
+table.roster tr.inactive,
+table.roster tr.inactive a {
+  color: #999;
 }
 
 table.roster img {

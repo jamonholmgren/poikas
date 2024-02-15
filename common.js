@@ -37,11 +37,18 @@ async function loadData(options = {}) {
       return seasonsOrder.indexOf(a.level) - levelsOrder.indexOf(b.level);
     });
 
+    _rosterData.leagues.forEach((league) => {
+      // the "pending" playoffs status mean it's a current season
+      league.current = league.playoffs === "pending";
+    });
+
     _rosterData.players.forEach((player) => {
       // attach seasons to each player for convenience
       player.seasons = _rosterData.leagues.filter((league) =>
         league.roster.includes(player.name)
       );
+
+      player.active = player.seasons.some((season) => season.current);
 
       // how many active calendar years has this player played?
       const activeYears = [
@@ -75,6 +82,7 @@ function buildMenu(element) {
     { label: "Home", url: "/" },
     { label: "Rec League", url: "/season/?year=2024&season=spring&level=rec" },
     { label: "C/CC", url: "/season/?year=2024&season=spring&level=c" },
+    { label: "All Players", url: "/players/" },
     { label: "Join", url: "/join/" },
   ];
 

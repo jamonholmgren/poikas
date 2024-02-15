@@ -1570,6 +1570,7 @@
     {
       "number": 55,
       "name": "Dan Warren",
+      "bio": "Dan is one of our reliable and talented defensemen. He puts a lot of pressure on the other team and can often be found slicing through the neutral zone with the puck.",
       "pos": "D",
       "shoots": "L"
     },
@@ -1581,6 +1582,7 @@
     {
       "number": 81,
       "name": "Kieren Sarkela",
+      "bio": "Kieren is Kevin Sarkela's son and joined the team in Spring 2023. He has quickly advanced to C/CC level and continues to improve his game.",
       "pos": "RW",
       "shoots": "R",
       "ht": "6-0",
@@ -1590,6 +1592,7 @@
     {
       "number": 40,
       "name": "Kevin Sarkela",
+      "bio": "Kevin has played at multiple levels over the past couple decades. He's Kieren Sarkela's father and plays center and defense.",
       "pos": "D/C",
       "shoots": "L",
       "ht": "6-0",
@@ -1607,29 +1610,36 @@
     {
       "number": 10,
       "name": "Konrad Stenersen",
+      "bio": "Konrad pushes the puck especially up the boards and is a relentless scorer from the wing position.",
       "pos": "LW"
     },
     {
       "number": 14,
-      "name": "Logan Matson"
+      "name": "Logan Matson",
+      "bio": "Logan is new to the team as of Spring 2024. He's Shane, Oren, and Nolan's older brother.",
+      "pos": "RW"
     },
     {
       "number": 63,
       "name": "Jay Tapio",
+      "bio": "Jay grew up playing pond hockey in Michigan's upper peninsula. His steady presence on the defensive end is key to the Poikas success.",
       "pos": "D"
     },
     {
       "number": 26,
       "name": "Nels Tapio",
+      "bio": "Nels is a relentless, fast skater, and a top level scorer for our C/CC team. He can play any position and has a wealth of hockey experience. His son Evan Tapio has joined the team as well.",
       "pos": "C"
     },
     {
       "name": "Evan Tapio",
+      "bio": "Evan is Nels Tapio's son and already a versatile player in both the offensive and defensive zones.",
       "pos": "W"
     },
     {
       "number": 17,
       "name": "Myron Kinnunen",
+      "bio": "Myron ",
       "pos": "RW/D",
       "ht": "5-11",
       "wt": 210,
