@@ -156,12 +156,14 @@ function renderTable(tableQuery, data) {
   const tbody = table.querySelector("tbody");
   const ths = thead.querySelectorAll("th");
   const fields = Array.from(ths).map((th) => th.dataset.field);
+  const extras = Array.from(ths).map((th) => th.classList.contains("extra"));
 
   data.forEach((row) => {
     const tr = create("tr");
-    fields.forEach((field) => {
+    fields.forEach((field, i) => {
       const td = create("td");
       td.innerHTML = row[field] || "";
+      if (extras[i]) td.classList.add("extra");
       tr.appendChild(td);
     });
     tbody.appendChild(tr);

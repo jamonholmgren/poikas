@@ -9,7 +9,6 @@
 
     <script src="/common.js?c=2"></script>
     <script src="/seasons.js?c=2"></script>
-    <script src="./player.js?c=2"></script>
   </head>
   <body>
     <div class="header">
@@ -21,15 +20,19 @@
     </script>
     <div class="container">
       <div class="sidebar">
-        <img src="/images/000-placeholder.jpg" alt="Player Photo" />
-        <span class="caption">Player Photo</span>
+        <img
+          src="/images/000-placeholder.jpg"
+          alt="Player Photo"
+          id="playerimage"
+        />
+        <span class="caption" id="playerimagecaption">Player Photo</span>
       </div>
       <main>
         <article>
           <h2 id="playername">Player Name</h2>
           <p id="bio">Player bio goes here.</p>
           <h2>Player Info</h2>
-          <table class="statsheet">
+          <table class="statsheet" id="statsheet">
             <tr>
               <th>Position</th>
               <td>-</td>
@@ -79,11 +82,14 @@
         <div class="seasons">
           <h2>Seasons Played with the Poikas</h2>
           <table id="seasons" class="seasons">
-            <tr>
-              <th>Season</th>
-              <th>Rec League</th>
-              <th>C/CC League</th>
-            </tr>
+            <thead>
+              <tr>
+                <th data-field="season">Season</th>
+                <th data-field="rec">Rec League</th>
+                <th data-field="c">C/CC League</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
           </table>
         </div>
         <div class="sisucup">
@@ -95,12 +101,15 @@
             English, but is similar to "guts" or "grit" or "perseverance".
           </p>
           <table id="sisucup" class="seasons">
-            <tr>
-              <th>Season</th>
-              <th>Game</th>
-              <th>Sisu Cup</th>
-              <th>Notable</th>
-            </tr>
+            <thead>
+              <tr>
+                <th data-field="season">Season</th>
+                <th data-field="game">Game</th>
+                <th data-field="sisu">Sisu Cup</th>
+                <th data-field="notable" class="extra">Notable</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
           </table>
         </div>
 
@@ -111,15 +120,103 @@
       </main>
     </div>
     <script>
-      // Function to extract the player's name from the URL
-      const urlSearchParams = new URLSearchParams(window.location.search);
-      const playerName = urlSearchParams.get("player");
+      (async () => {
+        const data = await loadData();
 
-      if (!playerName) {
-        window.location.href = "/";
-      }
+        // Function to extract the player's name from the URL
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const playerName = urlSearchParams.get("player");
+        if (!playerName) window.location.href = "/";
 
-      loadPlayerInfo(playerName);
+        const player = data.players.find((p) => p.name === playerName);
+        if (!player) window.location.href = "/";
+
+        document.title = `Player - ${player.name} - Suomi Poikas Hockey Club`;
+        $("#playername").innerText = player.name;
+        $("#bio").innerText = player.bio || "";
+
+        // player image if available
+        const img = $("#playerimage");
+        const imgCaption = $("#playerimagecaption");
+        img.src = player.imageURL;
+        img.alt = `${player.name} - Player Photo`;
+        img.onerror = () => (img.src = "/images/000-placeholder.jpg");
+        imgCaption.innerText = player.name;
+
+        // Player stats
+
+        let champ = "-";
+        if (player.championships > 0) {
+          champ = `<span class="champion">${player.championships}`;
+          for (let i = 0; i < player.championships; i++) {
+            champ += " 🏆";
+          }
+          champ += "</span>";
+        }
+
+        renderVerticalTable("#statsheet", {
+          Position: player.pos,
+          Number: player.number,
+          Age: player.age,
+          Height: player.ht,
+          Weight: player.wt,
+          Shoots: player.shoots,
+          Joined: player.startYear,
+          Years: player.years,
+          "Rec Seasons":
+            player.seasons.filter((s) => s.level === "Rec").length || "—",
+          "C/CC Seasons":
+            player.seasons.filter((s) => s.level === "C").length || "—",
+          Championships: champ,
+        });
+
+        loadAndDisplaySeasons("#seasons", { player: player.name });
+
+        const sisuCups = [...player.seasons]
+          .map((s) => {
+            if (!s.games) return [];
+
+            const gamesWithSisu = s.games.filter((g) => g.sisu === player.name);
+
+            return gamesWithSisu.map((g) => {
+              const seasonLink = `<a href="/season/?year=${s.year}&season=${s.season}&level=${s.level}">${s.year} ${s.season}</a>`;
+              return {
+                season: seasonLink,
+                game: g.vs,
+                sisu: `🇫🇮 ${g.sisu}`,
+                notable: g.notable || "-",
+              };
+            });
+          })
+          .flat();
+
+        renderTable("#sisucup", sisuCups);
+
+        // Update the "Next" and "Previous" links
+
+        // find next alphabetical player (first sort it by name)
+        data.players.sort((a, b) => (a.name < b.name ? -1 : 1));
+        const nextPlayer = data.players.find((p) => p.name > playerName);
+
+        // find previous alphabetical player (first sort it by name)
+        data.players.sort((a, b) => (a.name > b.name ? -1 : 1));
+        const prevPlayer = data.players.find((p) => p.name < playerName);
+
+        const prevLink = $("#prev");
+        const nextLink = $("#next");
+        if (prevPlayer) {
+          prevLink.href = `/player/?player=${prevPlayer.name}`;
+          prevLink.textContent = prevPlayer.name;
+        } else {
+          prevLink.style.display = "none";
+        }
+        if (nextPlayer) {
+          nextLink.href = `/player/?player=${nextPlayer.name}`;
+          nextLink.textContent = nextPlayer.name;
+        } else {
+          nextLink.style.display = "none";
+        }
+      })();
     </script>
     <!-- Google tag (gtag.js) -->
     <script
