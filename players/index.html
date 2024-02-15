@@ -39,24 +39,17 @@
                 <th data-field="cLink">C/CC</th>
               </tr>
             </thead>
-            <tbody>
-              
-            </tbody>
+            <tbody></tbody>
           </table>
+        </article>
       </main>
     </div>
     <script>
       (async () => {
-        const data= await loadData()
+        const data = await loadData();
 
-        const players = data.players.slice().sort((a, b) => {
-          if (a.active < b.active) return 1
-          if (a.active > b.active) return -1
-          return 0
-        })
-
-        renderTable("#players", players)
-      })()
+        renderTable("#players", players.players);
+      })();
     </script>
     <!-- Google tag (gtag.js) -->
     <script
