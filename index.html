@@ -9,7 +9,6 @@
 
     <script src="/common.js?c=2"></script>
     <script src="/seasons.js?c=2"></script>
-    <script src="/rosters.js?c=2"></script>
   </head>
   <body>
     <div class="header">
@@ -216,9 +215,7 @@
         renderTable("#c-roster", c.players);
       })();
 
-      loadAndDisplaySeasons("#seasons", {
-        order: "desc",
-      });
+      loadAndDisplaySeasons("#seasons", { order: "desc" });
     </script>
     <!-- Google tag (gtag.js) -->
     <script
