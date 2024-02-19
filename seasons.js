@@ -9,9 +9,6 @@
  * @param {LoadDisplaySeasonsOptions} [options={}] Options for filtering and displaying leagues.
  */
 async function loadAndDisplaySeasons(selector, options = {}) {
-  const response = await fetch("/poikas.json"); // Adjust the path as needed
-  if (!response.ok) throw new Error("Failed to load data.");
-
   const data = await loadData();
   let leagues = data.leagues.slice(); // dup so we don't modify the original data
 
@@ -52,7 +49,7 @@ async function loadAndDisplaySeasons(selector, options = {}) {
     return acc;
   }, {});
 
-  const seasonsTable = document.querySelector(selector);
+  const seasonsTable = $(selector);
   if (!seasonsTable) throw new Error("Table not found.");
 
   // Create table rows for each season

@@ -8,7 +8,6 @@
     <link rel="icon" type="image/png" href="/images/finland-flag-icon.png" />
 
     <script src="/common.js?c=2"></script>
-    <script src="./players.js?c=2"></script>
   </head>
   <body>
     <div class="header">
@@ -29,25 +28,28 @@
           <table id="players" class="roster">
             <thead>
               <tr>
-                <th>Img</th>
-                <th>Player</th>
-                <th>Pos</th>
-                <th>Num</th>
-                <th>Ht</th>
-                <th>Wt</th>
-                <th>Age</th>
-                <th>Rec</th>
-                <th>C/CC</th>
+                <th data-field="imageHTML">Img</th>
+                <th data-field="profileLink">Player</th>
+                <th data-field="pos">Pos</th>
+                <th data-field="number">Num</th>
+                <th data-field="ht">Ht</th>
+                <th data-field="wt">Wt</th>
+                <th data-field="age">Age</th>
+                <th data-field="recLink">Rec</th>
+                <th data-field="cLink">C/CC</th>
               </tr>
             </thead>
-            <tbody>
-              
-            </tbody>
+            <tbody></tbody>
           </table>
+        </article>
       </main>
     </div>
     <script>
-      loadAllPlayers("#players")
+      (async () => {
+        const data = await loadData();
+
+        renderTable("#players", data.players);
+      })();
     </script>
     <!-- Google tag (gtag.js) -->
     <script

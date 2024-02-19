@@ -8,7 +8,6 @@
     <link rel="icon" type="image/png" href="/images/finland-flag-icon.png" />
 
     <script src="/common.js?c=2"></script>
-    <script src="/rosters.js?c=2"></script>
   </head>
   <body>
     <div class="header">
@@ -56,20 +55,20 @@
 
           <h2>Roster</h2>
           <table id="roster" class="roster">
-            <tr>
-              <th width="50">Photo</th>
-              <th>Name</th>
-              <th width="30">#</th>
-              <th width="30">Pos</th>
-              <th width="30" class="extra">Ht</th>
-              <th width="30" class="extra">Wt</th>
-              <th width="30" class="extra">Sh</th>
-              <th width="30" class="extra">Yrs</th>
-              <th width="30" class="extra">Age</th>
-            </tr>
-            <tr>
-              <td colspan="8" id="rosterTableBody">Loading roster...</td>
-            </tr>
+            <thead>
+              <tr>
+                <th data-field="imageHTML" width="50">Photo</th>
+                <th data-field="profileLink">Name</th>
+                <th data-field="number" width="30">#</th>
+                <th data-field="pos" width="30">Pos</th>
+                <th data-field="ht" width="30" class="extra">Ht</th>
+                <th data-field="wt" width="30" class="extra">Wt</th>
+                <th data-field="shoots" width="30" class="extra">Sh</th>
+                <th data-field="years" width="30" class="extra">Yrs</th>
+                <th data-field="age" width="30" class="extra">Age</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
           </table>
 
           <h2>Games</h2>
@@ -85,60 +84,49 @@
       </main>
     </div>
     <script>
-      const urlParams = new URLSearchParams(window.location.search);
-      const year = parseInt(urlParams.get("year"), 10);
-      const season = urlParams.get("season");
-      const level = urlParams.get("level");
+      (async () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const year = parseInt(urlParams.get("year"), 10);
+        const season = urlParams.get("season");
+        const level = urlParams.get("level");
 
-      loadAndDisplayRoster("#roster", {
-        year,
-        season,
-        level,
-      }).then(({ league, roster }) => {
+        const data = await loadData();
+
+        const league = data.leagues.find(
+          (t) =>
+            t.year === year &&
+            t.season.toLowerCase() === season &&
+            t.level.toLowerCase() === level
+        );
+
+        const roster = league.players;
+
+        renderTable("#roster", league.players);
+
         let seasonName = `Suomi Poikas ${league.year} ${league.season} ${league.level}`;
         if (league.aside) seasonName += ` - ${league.aside}`;
 
-        const description = league.description || ``;
-
-        const scheduleLink = league.schedule
-          ? `<a href="${league.schedule}" target="_blank">View Standings/Schedule</a>`
-          : "-";
-
-        document.getElementById("seasonname").innerText = seasonName;
-        document.getElementById("description").innerText = description;
+        $("#seasonname").innerText = seasonName;
+        $("#description").innerText = league.description || ``;
 
         // loop through table rows and update by label value
-        const table = document.getElementById("seasonresults");
-        for (let i = 0; i < table.rows.length; i++) {
-          const label = table.rows[i].cells[0].innerText;
-          switch (label) {
-            case "Standings/Schedule":
-              table.rows[i].cells[1].innerHTML = scheduleLink;
-              break;
-            case "Wins":
-              table.rows[i].cells[1].innerText = league.wins;
-              break;
-            case "Losses":
-              table.rows[i].cells[1].innerText = league.losses;
-              break;
-            case "Ties/OT Losses":
-              table.rows[i].cells[1].innerText = league.ties;
-              break;
-            case "Playoffs Result":
-              table.rows[i].cells[1].innerText =
-                league.playoffs === "champions"
-                  ? "🏆 Champions!"
-                  : league.playoffs === "lost"
-                  ? "Lost in Playoffs"
-                  : "-";
-              break;
-            default:
-              break;
-          }
-        }
+        renderVerticalTable("#seasonresults", {
+          "Standings/Schedule": league.schedule
+            ? `<a href="${league.schedule}" target="_blank">View Standings/Schedule</a>`
+            : "-",
+          Wins: league.wins,
+          Losses: league.losses,
+          "Ties/OT Losses": league.ties,
+          "Playoffs Result":
+            league.playoffs === "champions"
+              ? "🏆 Champions!"
+              : league.playoffs === "lost"
+              ? "Lost in Playoffs"
+              : "-",
+        });
 
         // add game info to the game table
-        const gamesTable = document.getElementById("games");
+        const gamesTable = $("#games");
         if (league.games) {
           for (let i = 0; i < league.games.length; i++) {
             const game = league.games[i];
@@ -165,16 +153,14 @@
 
         // add from league.photos to the sidebar
         if (league.photos && league.photos.length > 0) {
-          document.querySelector(
-            ".photo img"
-          ).src = `/images/${league.photos[0]}`;
+          $(".photo img").src = `/images/${league.photos[0]}`;
 
           // if there are more photos, add them
           if (league.photos.length > 1) {
-            const photoContainer = document.querySelector(".photo");
-            for (let i = 1; i < team.photos.length; i++) {
-              const img = document.createElement("img");
-              img.src = `/images/${team.photos[i]}`;
+            const photoContainer = $(".photo");
+            for (let i = 1; i < league.photos.length; i++) {
+              const img = create("img");
+              img.src = `/images/${league.photos[i]}`;
               img.alt = "Season Photo";
               photoContainer.appendChild(img);
             }
@@ -183,9 +169,9 @@
 
         // if there are any video embeds, add them
         if (league.videos) {
-          const videoContainer = document.getElementById("videos");
+          const videoContainer = $("#videos");
           for (let i = 0; i < league.videos.length; i++) {
-            const video = document.createElement("iframe");
+            const video = create("iframe");
             video.src = league.videos[i];
             video.title = "YouTube video player";
             video.frameborder = "0";
@@ -195,7 +181,7 @@
             videoContainer.appendChild(video);
           }
         }
-      });
+      })();
     </script>
     <!-- Google tag (gtag.js) -->
     <script
