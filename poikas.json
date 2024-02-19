@@ -1523,6 +1523,13 @@
           "result": "lost",
           "sisu": "Kieren Sarkela",
           "notable": "Kieren's first C-level game. Asa & Kieren goals, Joel assist on Asa's."
+        },
+        {
+          "vs": "CCCP",
+          "us": 6,
+          "them": 2,
+          "result": "won",
+          "notable": "Joel (x2), Oren, Kieren, Russ, and Asa scored. Jamon out, sub goalie got sisu cup."
         }
       ]
     }
