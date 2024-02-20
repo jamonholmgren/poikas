@@ -6,7 +6,7 @@ type LeagueProps = {
 }
 
 export function LeaguePage({ league }: LeagueProps) {
-  const { url, year, season, level, description, photos, wins, losses, ties, playoffs, videos, games } = league
+  const { url, year, season, level, description, photos, wins, losses, ties, playoffs, videos, games, players } = league
 
   const metaImage = (photos && photos[0]) || "/images/finland-flag-icon.png"
 
@@ -76,18 +76,39 @@ export function LeaguePage({ league }: LeagueProps) {
         <table id="roster" class="roster">
           <thead>
             <tr>
-              <th data-field="imageHTML" width="50">Photo</th>
-              <th data-field="profileLink">Name</th>
-              <th data-field="number" width="30">#</th>
-              <th data-field="pos" width="30">Pos</th>
-              <th data-field="ht" width="30" class="extra">Ht</th>
-              <th data-field="wt" width="30" class="extra">Wt</th>
-              <th data-field="shoots" width="30" class="extra">Sh</th>
-              <th data-field="years" width="30" class="extra">Yrs</th>
-              <th data-field="age" width="30" class="extra">Age</th>
+              <th width="50">Photo</th>
+              <th Name</th>
+              <th width="30">#</th>
+              <th width="30">Pos</th>
+              <th width="30" class="extra">Ht</th>
+              <th width="30" class="extra">Wt</th>
+              <th width="30" class="extra">Sh</th>
+              <th width="30" class="extra">Yrs</th>
+              <th width="30" class="extra">Age</th>
             </tr>
           </thead>
-          <tbody></tbody>
+          <tbody>
+            ${
+              players &&
+              players
+                .map(
+                  (player) => `
+                    <tr>
+                      <td>${player.imageHTML || "-"}</td>
+                      <td>${player.profileLink || "-"}</td>
+                      <td>${player.number || "-"}</td>
+                      <td>${player.pos || "-"}</td>
+                      <td class="extra">${player.ht || "-"}</td>
+                      <td class="extra">${player.wt || "-"}</td>
+                      <td class="extra">${player.shoots || "-"}</td>
+                      <td class="extra">${player.years || "-"}</td>
+                      <td class="extra">${player.age || "-"}</td>
+                    </tr>
+                  `
+                )
+                .join("\n")
+            }
+          </tbody>
         </table>
 
         <h2>Games</h2>
