@@ -36,6 +36,14 @@ export function template(options: TemplateOptions) {
     <meta name="description" content="${description}" />
     <link rel="stylesheet" href="/styles.css?c=2" />
     <link rel="icon" type="image/png" href="/images/finland-flag-icon.png" />
+
+    <!-- OG stuff -->
+    <meta property="og:title" content="${title} - Suomi Poikas Hockey Club" />
+    <meta property="og:description" content="${description}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/images/finland-flag-icon.png" />
+    <meta property="og:image:alt" content="Suomi Poikas Hockey Club" />
+    <meta property="og:url" content="https://suomipoikas.com${path}" />
   </head>
   <body>
     <div class="header">
@@ -43,11 +51,11 @@ export function template(options: TemplateOptions) {
     </div>
     <nav id="nav">
       <ul>
-        <li><a href="/" class="${active("/", path)}>Home</a></li>
-        <li><a href="${currentRecSeason!.url}" class="${active(currentRecSeason!.url, path)}>Rec</a></li>
-        <li><a href="${currentCSeason!.url}" class="${active(currentCSeason!.url, path)}>C/CC</a></li>
-        <li><a href="/players/" class="${active("/players/", path)}>All Players</a></li>
-        <li><a href="/join/" class="${active("/join/", path)}>Join</a></li>
+        <li><a href="/" class="${active("/", path)}">Home</a></li>
+        <li><a href="${currentRecSeason!.url}" class="${active(currentRecSeason!.url, path)}">Rec</a></li>
+        <li><a href="${currentCSeason!.url}" class="${active(currentCSeason!.url, path)}">C/CC</a></li>
+        <li><a href="/players/" class="${active("/players/", path)}">All Players</a></li>
+        <li><a href="/join/" class="${active("/join/", path)}">Join</a></li>
       </ul>
     </nav>
     <div class="container">
