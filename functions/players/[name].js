@@ -7,7 +7,7 @@
  * @type {import('../types').Game} Game
  **/
 
-export function onRequest(context) {
+export async function onRequest(context) {
   // current file is ./functions/players/[name].js
   // grab the name from the context
 
@@ -19,5 +19,7 @@ export function onRequest(context) {
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join(" ");
 
-  return new Response("Hello " + fullName);
+  // Load all data from ../../poikas.json
+
+  return new Response("Hello " + fullName + " async");
 }
