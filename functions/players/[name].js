@@ -8,16 +8,8 @@
  **/
 
 export async function onRequest(context) {
-  // current file is ./functions/players/[name].js
-  // grab the name from the context
-
-  const name = context.params.name
-
-  // turn jamon-holmgren into Jamon Holmgren in one line of code
-  const fullName = name
-    .split("-")
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(" ")
+  // grab the slugified name from the context
+  const slug = context.params.name
 
   // Load all data from ../../poikas.json
   const data = require("../../poikas.json")
@@ -26,7 +18,7 @@ export async function onRequest(context) {
   const poikasData = processPoikasData(data)
 
   // Find the player by name
-  const player = poikasData.players.find((p) => p.name === fullName)
+  const player = poikasData.players.find((p) => slugify(p.name) === slug)
 
   // If the player doesn't exist, return a 404
   if (!player) {
@@ -253,8 +245,8 @@ export async function onRequest(context) {
         </div>
 
         <div class="prevnext">
-          ${prevPlayer ? `<a href="/player/?player=${prevPlayer.name}" id="prev">← ${prevPlayer.name}</a>` : ""}
-          ${nextPlayer ? `<a href="/player/?player=${nextPlayer.name}" id="next">${nextPlayer.name} ➡</a>` : ""}
+          ${prevPlayer ? `<a href="/players/${slugify(prevPlayer.name)}" id="prev">← ${prevPlayer.name}</a>` : ""}
+          ${nextPlayer ? `<a href="/players/${slugify(nextPlayer.name)}" id="next">${nextPlayer.name} ➡</a>` : ""}
         </div>
       </main>
     </div>
@@ -356,4 +348,14 @@ function processPoikasData(data) {
   })
 
   return data
+}
+
+function slugify(text) {
+  return text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-") // replace spaces with -
+    .replace(/[^\w-]+/g, "") // remove all non-word chars
+    .replace(/--+/g, "-") // replace multiple - with single -
 }

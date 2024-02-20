@@ -15,7 +15,7 @@
     </div>
     <nav id="nav"></nav>
     <script>
-      buildMenu("#nav");
+      buildMenu("#nav")
     </script>
     <div class="container">
       <div class="sidebar">
@@ -84,30 +84,27 @@
       </main>
     </div>
     <script>
-      (async () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const year = parseInt(urlParams.get("year"), 10);
-        const season = urlParams.get("season");
-        const level = urlParams.get("level");
+      ;(async () => {
+        const urlParams = new URLSearchParams(window.location.search)
+        const year = parseInt(urlParams.get("year"), 10)
+        const season = urlParams.get("season").toLowerCase()
+        const level = urlParams.get("level").toLowerCase()
 
-        const data = await loadData();
+        const data = await loadData()
 
         const league = data.leagues.find(
-          (t) =>
-            t.year === year &&
-            t.season.toLowerCase() === season &&
-            t.level.toLowerCase() === level
-        );
+          (t) => t.year === year && t.season.toLowerCase() === season && t.level.toLowerCase() === level
+        )
 
-        const roster = league.players;
+        const roster = league.players
 
-        renderTable("#roster", league.players);
+        renderTable("#roster", league.players)
 
-        let seasonName = `Suomi Poikas ${league.year} ${league.season} ${league.level}`;
-        if (league.aside) seasonName += ` - ${league.aside}`;
+        let seasonName = `Suomi Poikas ${league.year} ${league.season} ${league.level}`
+        if (league.aside) seasonName += ` - ${league.aside}`
 
-        $("#seasonname").innerText = seasonName;
-        $("#description").innerText = league.description || ``;
+        $("#seasonname").innerText = seasonName
+        $("#description").innerText = league.description || ``
 
         // loop through table rows and update by label value
         renderVerticalTable("#seasonresults", {
@@ -118,84 +115,76 @@
           Losses: league.losses,
           "Ties/OT Losses": league.ties,
           "Playoffs Result":
-            league.playoffs === "champions"
-              ? "🏆 Champions!"
-              : league.playoffs === "lost"
-              ? "Lost in Playoffs"
-              : "-",
-        });
+            league.playoffs === "champions" ? "🏆 Champions!" : league.playoffs === "lost" ? "Lost in Playoffs" : "-",
+        })
 
         // add game info to the game table
-        const gamesTable = $("#games");
+        const gamesTable = $("#games")
         if (league.games) {
           for (let i = 0; i < league.games.length; i++) {
-            const game = league.games[i];
-            const row = gamesTable.insertRow(i + 1);
-            const res = `${game.result} ${game.us}-${game.them}`;
+            const game = league.games[i]
+            const row = gamesTable.insertRow(i + 1)
+            const res = `${game.result} ${game.us}-${game.them}`
 
-            const sisuPlayer =
-              game.sisu && roster.find((p) => p.name === game.sisu);
+            const sisuPlayer = game.sisu && roster.find((p) => p.name === game.sisu)
 
             const sisu = game.sisu
               ? sisuPlayer
                 ? `🇫🇮 <a href='/player/?player=${game.sisu}'>${game.sisu}</a>`
                 : `🇫🇮 ${game.sisu}`
-              : "-";
+              : "-"
 
-            row.insertCell(0).innerHTML = game.vs;
-            row.insertCell(1).innerHTML = res;
-            row.insertCell(2).innerHTML = sisu;
-            const notable = row.insertCell(3);
-            notable.innerHTML = game.notable || "-";
-            notable.classList.add("extra");
+            row.insertCell(0).innerHTML = game.vs
+            row.insertCell(1).innerHTML = res
+            row.insertCell(2).innerHTML = sisu
+            const notable = row.insertCell(3)
+            notable.innerHTML = game.notable || "-"
+            notable.classList.add("extra")
           }
         }
 
         // add from league.photos to the sidebar
         if (league.photos && league.photos.length > 0) {
-          $(".photo img").src = `/images/${league.photos[0]}`;
+          $(".photo img").src = `/images/${league.photos[0]}`
 
           // if there are more photos, add them
           if (league.photos.length > 1) {
-            const photoContainer = $(".photo");
+            const photoContainer = $(".photo")
             for (let i = 1; i < league.photos.length; i++) {
-              const img = create("img");
-              img.src = `/images/${league.photos[i]}`;
-              img.alt = "Season Photo";
-              photoContainer.appendChild(img);
+              const img = create("img")
+              img.src = `/images/${league.photos[i]}`
+              img.alt = "Season Photo"
+              photoContainer.appendChild(img)
             }
           }
         }
 
         // if there are any video embeds, add them
         if (league.videos) {
-          const videoContainer = $("#videos");
+          const videoContainer = $("#videos")
           for (let i = 0; i < league.videos.length; i++) {
-            const video = create("iframe");
-            video.src = league.videos[i];
-            video.title = "YouTube video player";
-            video.frameborder = "0";
+            const video = create("iframe")
+            video.src = league.videos[i]
+            video.title = "YouTube video player"
+            video.frameborder = "0"
             video.allow =
-              "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-            video.allowfullscreen = true;
-            videoContainer.appendChild(video);
+              "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            video.allowfullscreen = true
+            videoContainer.appendChild(video)
           }
         }
-      })();
+      })()
     </script>
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-T6M8LZYF5Q"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6M8LZYF5Q"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer || []
       function gtag() {
-        dataLayer.push(arguments);
+        dataLayer.push(arguments)
       }
-      gtag("js", new Date());
+      gtag("js", new Date())
 
-      gtag("config", "G-T6M8LZYF5Q");
+      gtag("config", "G-T6M8LZYF5Q")
     </script>
   </body>
 </html>
