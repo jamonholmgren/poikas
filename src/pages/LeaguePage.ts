@@ -25,7 +25,7 @@ export function LeaguePage({ league }: LeagueProps) {
 
   const metaImage = (photos && photos[0]) || "/images/finland-flag-icon.png"
 
-  const leagueStandingsHTML = schedule ? `<a href="${schedule}">MVIA Schedule/Standings/Stats</a>` : "-"
+  const leagueStandingsHTML = schedule ? `<a href="${schedule}" target="_blank">MVIA Schedule/Standings/Stats</a>` : "-"
 
   return template({
     path: url,
