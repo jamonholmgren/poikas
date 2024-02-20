@@ -13,5 +13,11 @@ export function onRequest(context) {
 
   const name = context.params.name;
 
-  return new Response("Hello" + name);
+  // turn jamon-holmgren into Jamon Holmgren in one line of code
+  const fullName = name
+    .split("-")
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
+
+  return new Response("Hello " + fullName);
 }
