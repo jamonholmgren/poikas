@@ -8,5 +8,10 @@
  **/
 
 export function onRequest(context) {
-  return new Response("Hello, world!");
+  // current file is ./functions/players/[name].js
+  // grab the name from the context
+
+  const name = context.params.name;
+
+  return new Response("Hello" + name);
 }
