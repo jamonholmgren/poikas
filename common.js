@@ -19,7 +19,9 @@ let _poikasData = null;
  */
 async function loadData(options = {}) {
   if (!_poikasData) {
-    const response = await fetch("/poikas.json");
+    // cachebusting
+    const cacheBuster = `?v=1`;
+    const response = await fetch("/poikas.json" + cacheBuster);
     if (!response.ok) {
       throw new Error("Failed to load roster data: " + response.statusText);
     }
