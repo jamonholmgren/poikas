@@ -37,15 +37,15 @@ export function AllPlayersPage({ players }: AllPlayersPageProps) {
               .map(
                 (p) => `
               <tr>
-                <td>${p.imageHTML}</td>
-                <td>${p.profileLink}</td>
-                <td>${p.pos}</td>
-                <td>${p.number}</td>
-                <td class="extra">${p.ht}</td>
-                <td class="extra">${p.wt}</td>
-                <td class="extra">${p.age}</td>
-                <td class="extra">${p.recLink}</td>
-                <td class="extra">${p.cLink}</td>
+                <td>${p.imageHTML || "-"}</td>
+                <td>${p.profileLink || "-"}</td>
+                <td>${p.pos || "-"}</td>
+                <td>${p.number || "-"}</td>
+                <td class="extra">${p.ht || "-"}</td>
+                <td class="extra">${p.wt || "-"}</td>
+                <td class="extra">${p.age || "-"}</td>
+                <td class="extra">${p.recLink || "-"}</td>
+                <td class="extra">${p.cLink || "-"}</td>
               </tr>
             `
               )
