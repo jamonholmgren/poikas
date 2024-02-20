@@ -4,5 +4,25 @@
   "prettier": {
     "semi": false,
     "printWidth": 120
+  },
+  "description": "This is a website for Suomi Poikas, a Finnish-American hockey club located in Vancouver, Washington.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamonholmgren/poikas.git"
+  },
+  "author": "Jamon Holmgren",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamonholmgren/poikas/issues"
+  },
+  "homepage": "https://github.com/jamonholmgren/poikas#readme",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240208.0",
+    "@types/node": "^20.11.19"
   }
 }

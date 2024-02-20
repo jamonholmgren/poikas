@@ -7,23 +7,35 @@ export interface Game {
   notable?: string
 }
 
-type League = {
+type LeagueRaw = {
   year: number
   season: string
   level: string
-  wins: number
-  losses: number
-  ties: number
   playoffs: string
   roster: string[]
-  games: Game[]
 
-  // processed data that we add
-  current?: boolean
+  // WLT can be derived from game results or explicitly set
+  wins?: number
+  losses?: number
+  ties?: number
+
+  // optional data
+  games?: Game[]
+  description?: string
+  aside?: string
+  photos?: string[]
+  videos?: string[]
+  schedule?: string
+}
+
+type League = LeagueRaw & {
+  // derived data that we add
+  url: string
+  current: boolean
   players?: Player[]
 }
 
-type Player = {
+type PlayerRaw = {
   // original data from the JSON
   number?: number
   name: string
@@ -33,8 +45,11 @@ type Player = {
   ht?: string
   wt?: number
   born?: number
+  role?: "captain"
+}
 
-  // processed data that we add later
+export type Player = PlayerRaw & {
+  // derived data that we add
   seasons: League[]
   active: boolean
   recLink: string
@@ -44,6 +59,7 @@ type Player = {
   endYear: number
   age: number | undefined
   championships: number
+  slug: string
   imageURL: string
   imageHTML: string
   profileURL: string
@@ -53,6 +69,11 @@ type Player = {
 export interface LoadDisplaySeasonsOptions {
   order?: "asc" | "desc"
   player?: string
+}
+
+export interface PoikasDataRaw {
+  players: PlayerRaw[]
+  leagues: LeagueRaw[]
 }
 
 export interface PoikasData {
