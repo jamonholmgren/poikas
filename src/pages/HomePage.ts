@@ -133,8 +133,9 @@ export function HomePage({ data }: HomeProps) {
             </tr>
           </thead>
           <tbody>
-            ${cLeague.players.map(
-              (p) => `
+            ${cLeague.players
+              .map(
+                (p) => `
             <tr>
               <td>${p.imageHTML}</td>
               <td>${p.profileLink}</td>
@@ -147,7 +148,8 @@ export function HomePage({ data }: HomeProps) {
               <td class="extra">${p.age}</td>
             </tr>
           `
-            )}
+              )
+              .join("\n")}
           </tbody>
         </table>
       </div>
