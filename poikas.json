@@ -1636,9 +1636,14 @@
       "pos": "C"
     },
     {
+      "num": 32,
       "name": "Evan Tapio",
       "bio": "Evan is Nels Tapio's son and already a versatile player in both the offensive and defensive zones.",
-      "pos": "W"
+      "pos": "W",
+      "shoots": "L",
+      "born": 2004,
+      "ht": "5-9",
+      "wt": 150
     },
     {
       "number": 17,
