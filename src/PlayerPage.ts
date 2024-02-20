@@ -78,6 +78,7 @@ export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
       />
       <span class="caption" id="playerimagecaption">${player.name}</span>`,
     main: `
+      <article>
         <h2 id="playername">${player.name}</h2>
         <p id="bio">${player.bio || ""}</p>
         <h2>Player Sheet</h2>
