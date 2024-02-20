@@ -10,7 +10,7 @@ export interface Game {
 type LeagueRaw = {
   year: number
   season: string
-  level: string
+  level: "Rec" | "C"
   playoffs: string
   roster: string[]
 
