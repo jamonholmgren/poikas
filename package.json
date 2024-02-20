@@ -1,0 +1,8 @@
+{
+  "name": "poikas",
+  "private": true,
+  "prettier": {
+    "semi": false,
+    "printWidth": 120
+  }
+}
