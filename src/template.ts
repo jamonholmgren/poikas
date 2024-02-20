@@ -1,4 +1,4 @@
-import { getData } from "./poikas"
+import { getData } from "./data/poikas"
 
 type TemplateOptions = {
   path: string

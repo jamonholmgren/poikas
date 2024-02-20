@@ -80,3 +80,10 @@ export interface PoikasData {
   players: Player[]
   leagues: League[]
 }
+
+export type SeasonMap = {
+  [label: string]: {
+    rec: string
+    c: string
+  }
+}

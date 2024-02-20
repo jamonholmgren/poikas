@@ -1,6 +1,8 @@
-import type { Player } from "./types"
-import { template } from "./template"
-import { Champ } from "./Champ"
+import type { Player } from "../types"
+import { template } from "../template"
+import { Champ } from "../components/Champ"
+import { sisuCups } from "../utils/sisuCups"
+import { playerSeasonsMap } from "../utils/playerSeasonsMap"
 
 type PlayerProps = {
   player: Player
@@ -9,63 +11,10 @@ type PlayerProps = {
 }
 
 export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
-  const sisuCups = [...player.seasons]
-    .map((s) => {
-      if (!s.games) return []
-
-      const gamesWithSisu = s.games.filter((g) => g.sisu === player.name)
-
-      return gamesWithSisu.map((g) => {
-        return {
-          season: `<a href="${s.url}">${s.year} ${s.season}</a>`,
-          game: g.vs,
-          sisu: `🇫🇮 ${g.sisu}`,
-          notable: g.notable || "-",
-        }
-      })
-    })
-    .flat()
-
   const recSeasons = player.seasons.filter((s) => s.level === "Rec").length || "—"
   const cSeasons = player.seasons.filter((s) => s.level === "C").length || "—"
 
-  // This table has each season
-  type SeasonMap = {
-    [label: string]: {
-      rec: string
-      c: string
-    }
-  }
-  // Organize data by season
-  const seasonsMap: SeasonMap = player.seasons.reduce((acc, league) => {
-    const key = `${league.year} ${league.season}`
-    if (!acc[key]) acc[key] = { rec: "", c: "" }
-
-    const leagueUrl = `/season/?year=${
-      league.year
-    }&season=${league.season.toLowerCase()}&level=${league.level.toLowerCase()}`
-    let leagueText = league.level === "Rec" ? "Rec League" : "C/CC League"
-    if (league.playoffs === "champions") {
-      leagueText += ` 🏆`
-    }
-
-    leagueText = `<a href="${leagueUrl}">${leagueText}</a>`
-
-    if (league.aside) {
-      leagueText += `<span class='extra'> (${league.aside})</span>`
-    }
-
-    if (league.level === "Rec") {
-      acc[key].rec = leagueText
-    } else if (["C", "CC"].includes(league.level)) {
-      acc[key].c = leagueText
-    }
-
-    return acc
-  }, {})
-
-  // Now let's build the page.
-  const html = template({
+  return template({
     path: player.profileURL,
     title: player.name,
     description: player.bio || "",
@@ -141,7 +90,7 @@ export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
             </tr>
           </thead>
           <tbody>
-            ${Object.entries(seasonsMap)
+            ${Object.entries(playerSeasonsMap(player))
               .map(
                 ([season, leagues]) => `
             <tr>
@@ -173,7 +122,7 @@ export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
             </tr>
           </thead>
           <tbody>
-            ${sisuCups
+            ${sisuCups(player)
               .map(
                 (cup) => `
             <tr>
@@ -196,6 +145,4 @@ export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
     `,
     footer: ``,
   })
-
-  return html
 }

@@ -1,5 +1,5 @@
-import { getData } from "../../src/poikas"
-import { PlayerPage } from "../../src/PlayerPage"
+import { getData } from "../../src/data/poikas"
+import { PlayerPage } from "../../src/pages/PlayerPage"
 
 export async function onRequest(context) {
   const data = getData()

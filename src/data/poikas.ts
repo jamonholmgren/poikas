@@ -1,4 +1,4 @@
-import type { PoikasData, PoikasDataRaw } from "./types"
+import type { PoikasData, PoikasDataRaw } from "../types"
 
 const poikasData: PoikasDataRaw = {
   leagues: [

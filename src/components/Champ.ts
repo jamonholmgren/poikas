@@ -1,4 +1,4 @@
-import type { Player } from "./types"
+import type { Player } from "../types"
 
 export function Champ(player: Player) {
   let champ = "-"
