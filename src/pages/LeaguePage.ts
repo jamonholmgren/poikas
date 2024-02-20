@@ -6,11 +6,26 @@ type LeagueProps = {
 }
 
 export function LeaguePage({ league }: LeagueProps) {
-  const { url, year, season, level, description, photos, wins, losses, ties, playoffs, videos, games, players } = league
+  const {
+    url,
+    schedule,
+    year,
+    season,
+    level,
+    description,
+    photos,
+    wins,
+    losses,
+    ties,
+    playoffs,
+    videos,
+    games,
+    players,
+  } = league
 
   const metaImage = (photos && photos[0]) || "/images/finland-flag-icon.png"
 
-  const leagueStandingsHTML = `<a href="${url}">Standings</a>`
+  const leagueStandingsHTML = schedule ? `<a href="${schedule}">MVIA Schedule/Standings/Stats</a>` : "-"
 
   return template({
     path: url,

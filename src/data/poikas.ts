@@ -1916,7 +1916,7 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
     // url for the league page
     const season = league.season.toLowerCase()
     const level = league.level.toLowerCase()
-    league.url = `/season/?year=${league.year}&season=${season}&level=${level}`
+    league.url = `/seasons/${league.year}/${season}/${level}`
 
     // for leagues with games listed, calculate w/l/t
     if (league.games) {
