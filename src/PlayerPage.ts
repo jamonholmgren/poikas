@@ -1,6 +1,6 @@
 import type { Player } from "./types"
 import { template } from "./template"
-import { Champ } from "./champ"
+import { Champ } from "./Champ"
 
 type PlayerProps = {
   player: Player
@@ -80,7 +80,7 @@ export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
     main: `
         <h2 id="playername">${player.name}</h2>
         <p id="bio">${player.bio || ""}</p>
-        <h2>Player Info</h2>
+        <h2>Player Sheet</h2>
         <table class="statsheet" id="statsheet">
           <tr>
             <th>Position</th>
