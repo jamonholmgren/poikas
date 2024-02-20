@@ -23,7 +23,7 @@ export function LeaguePage({ league }: LeagueProps) {
     players,
   } = league
 
-  const metaImage = (photos && photos[0]) || "/images/finland-flag-icon.png"
+  const metaImage = (photos && `/images/${photos[0]}`) || "/images/finland-flag-icon.png"
 
   const leagueStandingsHTML = schedule ? `<a href="${schedule}" target="_blank">MVIA Schedule/Standings/Stats</a>` : "-"
 
