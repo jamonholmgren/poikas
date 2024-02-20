@@ -1,0 +1,16 @@
+import type { League } from "../types"
+
+type ChampTileProps = {
+  league: League
+}
+
+export function ChampTile({ league }: ChampTileProps): string {
+  const { year, season, level, url, photos } = league
+
+  return `
+    <a class="photo" href="${url}">
+      <img src="/images/${photos[0]}" alt="Suomi Poikas ${year} ${season} ${level} Champions" />
+      <span class="caption">Suomi Poikas<br />${year} ${season} ${level} Champions</span>
+    </a>
+  `
+}

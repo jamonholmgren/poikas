@@ -1,8 +1,8 @@
-import type { Player, SeasonMap } from "../types"
+import type { League, SeasonMap } from "../types"
 
-export function playerSeasonsMap(player: Player): SeasonMap {
+export function leagueSeasonsMap(leagues: League[]): SeasonMap {
   // Organize data by season
-  return player.seasons.reduce((acc, league) => {
+  return leagues.reduce((acc, league) => {
     const key = `${league.year} ${league.season}`
     if (!acc[key]) acc[key] = { rec: "", c: "" }
 

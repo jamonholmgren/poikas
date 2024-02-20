@@ -28,7 +28,7 @@ type LeagueRaw = {
   schedule?: string
 }
 
-type League = LeagueRaw & {
+export type League = LeagueRaw & {
   // derived data that we add
   url: string
   current: boolean
@@ -50,7 +50,7 @@ type PlayerRaw = {
 
 export type Player = PlayerRaw & {
   // derived data that we add
-  seasons: League[]
+  leagues: League[]
   active: boolean
   recLink: string
   cLink: string

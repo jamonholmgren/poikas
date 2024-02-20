@@ -1928,25 +1928,25 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
 
   data.players.forEach((player) => {
     // attach seasons to each player for convenience
-    player.seasons = data.leagues.filter((league) => league.roster.includes(player.name))
+    player.leagues = data.leagues.filter((league) => league.roster.includes(player.name))
 
     // and the reverse too -- add players to each season
-    player.seasons.forEach((season) => {
+    player.leagues.forEach((season) => {
       season.players ||= []
       season.players.push(player)
     })
 
     // is this player currently active?
-    player.active = player.seasons.some((season) => season.current)
+    player.active = player.leagues.some((season) => season.current)
 
     // rec and c/cc links
-    const rec = player.seasons.find((s) => s.current && s.level === "Rec")
-    const c = player.seasons.find((s) => s.current && s.level === "C")
+    const rec = player.leagues.find((s) => s.current && s.level === "Rec")
+    const c = player.leagues.find((s) => s.current && s.level === "C")
     player.recLink = rec ? `<a href="/season/?year=${rec.year}&season=${rec.season}&level=${rec.level}">Rec</a>` : "-"
     player.cLink = c ? `<a href="/season/?year=${c.year}&season=${c.season}&level=${c.level}">C/CC</a>` : "-"
 
     // how many active calendar years has this player played?
-    const activeYears = [...new Set(player.seasons.map((season) => season.year))]
+    const activeYears = [...new Set(player.leagues.map((season) => season.year))]
 
     player.years = activeYears.length
     player.startYear = activeYears[0]

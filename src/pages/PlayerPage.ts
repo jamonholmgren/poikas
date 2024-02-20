@@ -2,7 +2,7 @@ import type { Player } from "../types"
 import { template } from "../template"
 import { Champ } from "../components/Champ"
 import { sisuCups } from "../utils/sisuCups"
-import { playerSeasonsMap } from "../utils/playerSeasonsMap"
+import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
 
 type PlayerProps = {
   player: Player
@@ -11,8 +11,8 @@ type PlayerProps = {
 }
 
 export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
-  const recSeasons = player.seasons.filter((s) => s.level === "Rec").length || "—"
-  const cSeasons = player.seasons.filter((s) => s.level === "C").length || "—"
+  const recSeasons = player.leagues.filter((s) => s.level === "Rec").length || "—"
+  const cSeasons = player.leagues.filter((s) => s.level === "C").length || "—"
 
   return template({
     path: player.profileURL,
@@ -90,7 +90,7 @@ export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
             </tr>
           </thead>
           <tbody>
-            ${Object.entries(playerSeasonsMap(player))
+            ${Object.entries(leagueSeasonsMap(player.leagues))
               .map(
                 ([season, leagues]) => `
             <tr>

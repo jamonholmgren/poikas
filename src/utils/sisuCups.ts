@@ -1,7 +1,7 @@
 import type { Player } from "../types"
 
 export function sisuCups(player: Player) {
-  return [...player.seasons]
+  return [...player.leagues]
     .map((s) => {
       if (!s.games) return []
 
