@@ -65,14 +65,14 @@ export function template(options: TemplateOptions) {
       <main>
         ${main}
       </main>
-      <footer>
-        ${footer || ""}
-        <p>
-          Website by
-          <a href="https://jamon.dev" target="_blank">Jamon Holmgren</a>.
-        </p>
-      </footer>
     </div>
+    <footer>
+      ${footer || ""}
+      <p>
+        Website by
+        <a href="https://jamon.dev" target="_blank">Jamon Holmgren</a>.
+      </p>
+    </footer>
     <!-- Google tag (gtag.js) -->
     <script
       async

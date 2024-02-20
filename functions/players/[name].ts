@@ -14,13 +14,11 @@ export async function onRequest(context) {
     return new Response(`Player ${slug} not found`, { status: 404 })
   }
 
-  // find next alphabetical player (first sort it by name)
-  data.players.sort((a, b) => (a.name < b.name ? -1 : 1))
-  const nextPlayer = data.players.find((p) => p.name > player.name)
-
-  // find previous alphabetical player (first sort it by name)
+  // find next and previous alphabetical player
   data.players.sort((a, b) => (a.name > b.name ? -1 : 1))
   const prevPlayer = data.players.find((p) => p.name < player.name)
+  data.players.reverse()
+  const nextPlayer = data.players.find((p) => p.name > player.name)
 
   const html = PlayerPage({ player, nextPlayer, prevPlayer })
 
