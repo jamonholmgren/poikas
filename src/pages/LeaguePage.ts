@@ -147,7 +147,7 @@ export function LeaguePage({ league }: LeagueProps) {
                     <tr>
                       <td>${game.vs}</td>
                       <td>${game.result} ${game.us}-${game.them}</td>
-                      <td>${game.sisu || "-"}</td>
+                      <td>${(game.sisu && players?.find((p) => p.name === game.sisu)?.profileLink) || "-"}</td>
                       <td class="extra">${game.notable || "-"}</td>
                     </tr>
                   `
