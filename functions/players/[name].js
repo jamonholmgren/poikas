@@ -44,11 +44,11 @@ export async function onRequest(context) {
 
   // find next alphabetical player (first sort it by name)
   data.players.sort((a, b) => (a.name < b.name ? -1 : 1))
-  const nextPlayer = data.players.find((p) => p.name > playerName)
+  const nextPlayer = data.players.find((p) => p.name > player.name)
 
   // find previous alphabetical player (first sort it by name)
   data.players.sort((a, b) => (a.name > b.name ? -1 : 1))
-  const prevPlayer = data.players.find((p) => p.name < playerName)
+  const prevPlayer = data.players.find((p) => p.name < player.name)
 
   const sisuCups = [...player.seasons]
     .map((s) => {
