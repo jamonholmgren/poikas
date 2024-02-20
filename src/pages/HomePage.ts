@@ -100,15 +100,15 @@ export function HomePage({ data }: HomeProps) {
               .map(
                 (p) => `
             <tr>
-              <td>${p.imageHTML}</td>
-              <td>${p.profileLink}</td>
-              <td>${p.number}</td>
-              <td>${p.pos}</td>
-              <td class="extra">${p.ht}</td>
-              <td class="extra">${p.wt}</td>
-              <td class="extra">${p.shoots}</td>
-              <td class="extra">${p.years}</td>
-              <td class="extra">${p.age}</td>
+              <td>${p.imageHTML || "-"}</td>
+              <td>${p.profileLink || "-"}</td>
+              <td>${p.number || "-"}</td>
+              <td>${p.pos || "-"}</td>
+              <td class="extra">${p.ht || "-"}</td>
+              <td class="extra">${p.wt || "-"}</td>
+              <td class="extra">${p.shoots || "-"}</td>
+              <td class="extra">${p.years || "-"}</td>
+              <td class="extra">${p.age || "-"}</td>
             </tr>
           `
               )
@@ -123,15 +123,15 @@ export function HomePage({ data }: HomeProps) {
         <table id="c-roster" class="roster">
           <thead>
             <tr>
-              <th data-field="imageHTML" width="50">Photo</th>
-              <th data-field="profileLink">Name</th>
-              <th width="30" data-field="number">#</th>
-              <th width="30" data-field="pos">Pos</th>
-              <th width="30" class="extra" data-field="ht">Ht</th>
-              <th width="30" class="extra" data-field="wt">Wt</th>
-              <th width="30" class="extra" data-field="shoots">Sh</th>
-              <th width="30" class="extra" data-field="years">Yrs</th>
-              <th width="30" class="extra" data-field="age">Age</th>
+              <th width="50">Photo</th>
+              <th>Name</th>
+              <th width="30">#</th>
+              <th width="30">Pos</th>
+              <th width="30" class="extra">Ht</th>
+              <th width="30" class="extra">Wt</th>
+              <th width="30" class="extra">Sh</th>
+              <th width="30" class="extra">Yrs</th>
+              <th width="30" class="extra">Age</th>
             </tr>
           </thead>
           <tbody>
@@ -139,15 +139,15 @@ export function HomePage({ data }: HomeProps) {
               .map(
                 (p) => `
             <tr>
-              <td>${p.imageHTML}</td>
-              <td>${p.profileLink}</td>
-              <td>${p.number}</td>
-              <td>${p.pos}</td>
-              <td class="extra">${p.ht}</td>
-              <td class="extra">${p.wt}</td>
-              <td class="extra">${p.shoots}</td>
-              <td class="extra">${p.years}</td>
-              <td class="extra">${p.age}</td>
+              <td>${p.imageHTML || "-"}</td>
+              <td>${p.profileLink || "-"}</td>
+              <td>${p.number || "-"}</td>
+              <td>${p.pos || "-"}</td>
+              <td class="extra">${p.ht || "-"}</td>
+              <td class="extra">${p.wt || "-"}</td>
+              <td class="extra">${p.shoots || "-"}</td>
+              <td class="extra">${p.years || "-"}</td>
+              <td class="extra">${p.age || "-"}</td>
             </tr>
           `
               )
