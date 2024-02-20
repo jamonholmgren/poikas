@@ -1,5 +1,4 @@
 import { data } from "../../src/poikas"
-import { template } from "../../src/template"
 import { PlayerPage } from "../../src/PlayerPage"
 
 export async function onRequest(context) {
@@ -10,9 +9,7 @@ export async function onRequest(context) {
   const player = data.players.find((p) => p.slug === slug)
 
   // If the player doesn't exist, return a 404
-  if (!player) {
-    return new Response(`Player ${slug} not found`, { status: 404 })
-  }
+  if (!player) return new Response(`Player ${slug} not found`, { status: 404 })
 
   // find next and previous alphabetical player
   data.players.sort((a, b) => (a.name > b.name ? -1 : 1))

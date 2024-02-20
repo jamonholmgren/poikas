@@ -69,6 +69,7 @@ export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
     path: player.profileURL,
     title: player.name,
     description: player.bio || "",
+    metaImage: player.imageURL,
     sidebar: `
       <img
         src="${player.imageURL}"
@@ -93,7 +94,7 @@ export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
           </tr>
           <tr>
             <th>Age</th>
-            <td>${player.age || "-"}</td>
+            <td>${new Date().getFullYear()} - ${player.born} - ${player.age || "-"}</td>
           </tr>
           <tr>
             <th>Height</th>

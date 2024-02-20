@@ -22,10 +22,11 @@ type TemplateOptions = {
   sidebar: string
   main: string
   footer?: string
+  metaImage?: string
 }
 
 export function template(options: TemplateOptions) {
-  const { path, title, description, sidebar, main, footer } = options
+  const { path, title, description, sidebar, main, footer, metaImage } = options
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -41,8 +42,8 @@ export function template(options: TemplateOptions) {
     <meta property="og:title" content="${title} - Suomi Poikas Hockey Club" />
     <meta property="og:description" content="${description}" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/images/finland-flag-icon.png" />
-    <meta property="og:image:alt" content="Suomi Poikas Hockey Club" />
+    <meta property="og:image" content="${metaImage || "/images/finland-flag-icon.png"}" />
+    <meta property="og:image:alt" content="${title}" />
     <meta property="og:url" content="https://suomipoikas.com${path}" />
   </head>
   <body>
