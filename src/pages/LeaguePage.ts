@@ -33,13 +33,15 @@ export function LeaguePage({ league }: LeagueProps) {
     description: `Suomi Poikas league ${year} ${season} ${level}`,
     metaImage,
     sidebar: `
-      <img
-        src="${metaImage}"
-        alt="${year} ${season} ${level} - League Photo"
-        id="leagueimage"
-        onerror="this.onerror=null;this.src='/images/000-placeholder.jpg';"
-      />
-      <span class="caption" id="leagueimagecaption">${year} ${season} ${level}</span>
+      <a href="${metaImage}" target="_blank">
+        <img
+          src="${metaImage}"
+          alt="${year} ${season} ${level} - League Photo"
+          id="leagueimage"
+          onerror="this.onerror=null;this.src='/images/000-placeholder.jpg';"
+        />
+        <span class="caption" id="leagueimagecaption">${year} ${season} ${level}</span>
+      </a>
     `,
     main: `
       <article>
