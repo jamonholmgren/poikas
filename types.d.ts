@@ -2,7 +2,7 @@ export interface Game {
   vs?: string;
   us?: number;
   them?: number;
-  result?: "won" | "lost" | "tied" | "forfeited" | "cancelled";
+  result?: "won" | "lost" | "lost-ot" | "tied" | "forfeited" | "cancelled";
   sisu?: string;
   notable?: string;
 }

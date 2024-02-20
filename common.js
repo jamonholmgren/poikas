@@ -44,6 +44,15 @@ async function loadData(options = {}) {
     _poikasData.leagues.forEach((league) => {
       // the "pending" playoffs status mean it's a current season
       league.current = league.playoffs === "pending";
+
+      // for leagues with games listed, calculate w/l/t
+      if (league.games) {
+        league.wins = league.games.filter((g) => g.result === "won").length;
+        league.losses = league.games.filter((g) => g.result === "lost").length;
+        league.ties = league.games.filter(
+          (g) => g.result === "tied" || g.result === "lost-ot"
+        ).length;
+      }
     });
 
     _poikasData.players.forEach((player) => {
