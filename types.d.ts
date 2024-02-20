@@ -7,50 +7,55 @@ export interface Game {
   notable?: string;
 }
 
-export interface League {
+type League = {
   year: number;
   season: string;
   level: string;
-  description?: string;
-  highlights?: Highlight[];
-  aside?: string;
-  wins?: number;
-  losses?: number;
-  ties?: number;
-  playoffs?: string;
+  wins: number;
+  losses: number;
+  ties: number;
+  playoffs: string;
   roster: string[];
-}
+  games: Game[];
 
-export interface Player {
+  // processed data that we add
+  current?: boolean;
+  players?: Player[];
+};
+
+type Player = {
+  // original data from the JSON
   number?: number;
   name: string;
   bio?: string;
-  role?: string;
   pos?: string;
   shoots?: string;
-  born?: number;
   ht?: string;
   wt?: number;
-  seasons?: League[]; // added in loadData transform
-  years?: number;
-  startYear?: number;
-  endYear?: number;
-  age?: number;
-  championships?: number;
-}
+  born?: number;
 
-export interface RosterUpdateConfig {
-  year: number;
-  season: string;
-  level: string;
-}
+  // processed data that we add later
+  seasons: League[];
+  active: boolean;
+  recLink: string;
+  cLink: string;
+  years: number;
+  startYear: number;
+  endYear: number;
+  age: number | undefined;
+  championships: number;
+  imageURL: string;
+  imageHTML: string;
+  profileURL: string;
+  profileLink: string;
+};
 
 export interface LoadDisplaySeasonsOptions {
   order?: "asc" | "desc";
   player?: string;
 }
 
-export interface RosterData {
+export interface PoikasData {
   players: Player[];
   leagues: League[];
 }

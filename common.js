@@ -1,5 +1,5 @@
 /**
- * @typedef {import('./types').RosterData} RosterData
+ * @typedef {import('./types').PoikasData} PoikasData
  * @typedef {import('./types').LoadDataOptions} LoadDataOptions
  */
 
@@ -8,14 +8,14 @@ const $ = document.querySelector.bind(document);
 const create = document.createElement.bind(document);
 
 /**
- * @type {RosterData | null}
+ * @type {PoikasData | null}
  */
 let _poikasData = null;
 
 /**
  * Fetches, processes, and returns roster data including players and leagues.
  * @param {LoadDataOptions} [options={}] Options for loading data.
- * @returns {Promise<RosterData>} The processed roster data.
+ * @returns {Promise<PoikasData>} The processed roster data.
  */
 async function loadData(options = {}) {
   if (!_poikasData) {
