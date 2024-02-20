@@ -1684,7 +1684,11 @@
     {
       "number": 9,
       "name": "Andrew Tunseth",
-      "pos": "W"
+      "pos": "RW",
+      "shoots": "R",
+      "born": 1987,
+      "ht": "6-0",
+      "wt": 200
     },
     {
       "number": 29,

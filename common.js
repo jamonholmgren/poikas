@@ -142,14 +142,10 @@ function buildMenu(element) {
     li.appendChild(a);
     ul.appendChild(li);
 
-    const currentPath =
-      window.location.pathname + window.location.search + window.location.hash;
+    const { pathname, search, hash } = window.location;
+    const currentPath = pathname + search + hash;
 
-    if (currentPath === item.url) {
-      li.classList.add("active");
-    } else {
-      console.log(currentPath, item.url);
-    }
+    if (currentPath === item.url) li.classList.add("active");
   });
 }
 
