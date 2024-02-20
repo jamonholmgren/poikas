@@ -126,6 +126,13 @@
         const player = data.players.find((p) => p.name === playerName)
         if (!player) window.location.href = "/"
 
+        // redirect to the new player URL that uses CloudFlare functions
+        if (player.profileURL !== window.location.pathname) {
+          window.location.href = player.profileURL
+        }
+
+        // the rest of this is just for legacy support ... probably won't be displayed
+
         document.title = `Player - ${player.name} - Suomi Poikas Hockey Club`
         $("#playername").innerText = player.name
         $("#bio").innerText = player.bio || ""
