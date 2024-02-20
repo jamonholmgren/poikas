@@ -6,19 +6,12 @@ export function leagueSeasonsMap(leagues: League[]): SeasonMap {
     const key = `${league.year} ${league.season}`
     if (!acc[key]) acc[key] = { rec: "", c: "" }
 
-    const leagueUrl = `/season/?year=${
-      league.year
-    }&season=${league.season.toLowerCase()}&level=${league.level.toLowerCase()}`
     let leagueText = league.level === "Rec" ? "Rec League" : "C/CC League"
-    if (league.playoffs === "champions") {
-      leagueText += ` 🏆`
-    }
+    if (league.playoffs === "champions") leagueText += ` 🏆`
 
-    leagueText = `<a href="${leagueUrl}">${leagueText}</a>`
+    leagueText = `<a href="${league.url}">${leagueText}</a>`
 
-    if (league.aside) {
-      leagueText += `<span class='extra'> (${league.aside})</span>`
-    }
+    if (league.aside) leagueText += `<span class='extra'> (${league.aside})</span>`
 
     if (league.level === "Rec") {
       acc[key].rec = leagueText
