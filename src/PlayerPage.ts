@@ -94,7 +94,7 @@ export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
           </tr>
           <tr>
             <th>Age</th>
-            <td>${new Date().getFullYear() - player.born - 1} - ${player.age || "-"}</td>
+            <td>${player.age || "-"}</td>
           </tr>
           <tr>
             <th>Height</th>

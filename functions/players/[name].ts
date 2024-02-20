@@ -1,7 +1,9 @@
-import { data } from "../../src/poikas"
+import { getData } from "../../src/poikas"
 import { PlayerPage } from "../../src/PlayerPage"
 
 export async function onRequest(context) {
+  const data = getData()
+
   // grab the slugified name from the context
   const slug = context.params.name
 

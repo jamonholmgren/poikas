@@ -1,19 +1,4 @@
-import { data } from "./poikas"
-
-let currentRecSeason = data.leagues.find((l) => l.current && l.level === "Rec")
-let currentCSeason = data.leagues.find((l) => l.current && l.level === "C")
-
-if (!currentRecSeason) {
-  // grab last rec season
-  currentRecSeason = data.leagues.filter((l) => l.level === "Rec").pop()
-  if (!currentRecSeason) throw new Error("No rec season found")
-}
-
-if (!currentCSeason) {
-  // grab last c season
-  currentCSeason = data.leagues.filter((l) => l.level === "C").pop()
-  if (!currentCSeason) throw new Error("No c season found")
-}
+import { getData } from "./poikas"
 
 type TemplateOptions = {
   path: string
@@ -27,6 +12,23 @@ type TemplateOptions = {
 
 export function template(options: TemplateOptions) {
   const { path, title, description, sidebar, main, footer, metaImage } = options
+
+  const data = getData()
+
+  let currentRecSeason = data.leagues.find((l) => l.current && l.level === "Rec")
+  let currentCSeason = data.leagues.find((l) => l.current && l.level === "C")
+
+  if (!currentRecSeason) {
+    // grab last rec season
+    currentRecSeason = data.leagues.filter((l) => l.level === "Rec").pop()
+    if (!currentRecSeason) throw new Error("No rec season found")
+  }
+
+  if (!currentCSeason) {
+    // grab last c season
+    currentCSeason = data.leagues.filter((l) => l.level === "C").pop()
+    if (!currentCSeason) throw new Error("No c season found")
+  }
 
   return `<!DOCTYPE html>
 <html lang="en">

@@ -1984,5 +1984,8 @@ function slugify(text) {
     .replace(/--+/g, "-") // replace multiple - with single -
 }
 
-// Process the data before exporting
-export const data = processPoikasData(poikasData)
+let _data: PoikasData
+export function getData(): PoikasData {
+  if (!_data) _data = processPoikasData(poikasData)
+  return _data
+}
