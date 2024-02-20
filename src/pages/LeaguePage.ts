@@ -46,36 +46,36 @@ export function LeaguePage({ league }: LeagueProps) {
     main: `
       <article>
         <h2 id="seasonname">${year} ${season} ${level}</h2>
-        <p id="description">${description}</p>
+        <p id="description">${description || ""}</p>
         <table id="seasonresults" class="statsheet">
           <tr>
             <th>Standings/Schedule</th>
-            <td>${leagueStandingsHTML}</td>
+            <td>${leagueStandingsHTML || ""}</td>
           </tr>
           <tr>
             <th>Wins</th>
-            <td>${wins}</td>
+            <td>${wins || ""}</td>
           </tr>
           <tr>
             <th>Losses</th>
-            <td>${losses}</td>
+            <td>${losses || ""}</td>
           </tr>
           <tr>
             <th>Ties/OT Losses</th>
-            <td>${ties}</td>
+            <td>${ties || ""}</td>
           </tr>
           <tr>
             <th>Playoffs Result</th>
-            <td>${playoffs}</td>
+            <td>${playoffs || ""}</td>
           </tr>
         </table>
 
         <div id="videos" class="videos">
           ${
-            videos &&
-            videos
-              .map(
-                (video) => `
+            (videos &&
+              videos
+                .map(
+                  (video) => `
                 <iframe
                   src="${video}"
                   title="YouTube video player"
@@ -84,8 +84,9 @@ export function LeaguePage({ league }: LeagueProps) {
                   allowfullscreen
                 ></iframe>
               `
-              )
-              .join("\n")
+                )
+                .join("\n")) ||
+            ""
           }
         </div>
 
