@@ -245,8 +245,8 @@ export async function onRequest(context) {
         </div>
 
         <div class="prevnext">
-          ${prevPlayer ? `<a href="/players/${slugify(prevPlayer.name)}" id="prev">← ${prevPlayer.name}</a>` : ""}
-          ${nextPlayer ? `<a href="/players/${slugify(nextPlayer.name)}" id="next">${nextPlayer.name} ➡</a>` : ""}
+          ${prevPlayer ? `<a href="${prevPlayer.profileURL}" id="prev">← ${prevPlayer.name}</a>` : ""}
+          ${nextPlayer ? `<a href="${nextPlayer.profileURL}" id="next">${nextPlayer.name} →</a>` : ""}
         </div>
       </main>
     </div>
@@ -343,7 +343,7 @@ function processPoikasData(data) {
     player.imageHTML = `<img src="${player.imageURL}" alt="${player.name}" onerror="this.onerror=null;this.src='/images/000-placeholder.jpg';">`
 
     // player profile URL
-    player.profileURL = `/player/?player=${player.name}`
+    player.profileURL = `/players/${slugify(player.name)}`
     player.profileLink = `<a href="${player.profileURL}">${player.name}</a>`
   })
 
