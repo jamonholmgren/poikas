@@ -187,14 +187,13 @@ export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
 
           </tbody>
         </table>
+        <div class="prevnext">
+          ${prevPlayer ? `<a href="${prevPlayer.profileURL}" id="prev">← ${prevPlayer.name}</a>` : ""}
+          ${nextPlayer ? `<a href="${nextPlayer.profileURL}" id="next">${nextPlayer.name} →</a>` : ""}
+        </div>
       </div>
     `,
-    footer: `
-      <div class="prevnext">
-        ${prevPlayer ? `<a href="${prevPlayer.profileURL}" id="prev">← ${prevPlayer.name}</a>` : ""}
-        ${nextPlayer ? `<a href="${nextPlayer.profileURL}" id="next">${nextPlayer.name} →</a>` : ""}
-      </div>
-    `,
+    footer: ``,
   })
 
   return html
