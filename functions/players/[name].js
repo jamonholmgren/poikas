@@ -76,7 +76,7 @@ export async function onRequest(context) {
 
   // This table has each season
   // Organize data by season
-  const seasonsMap = player.leagues.reduce((acc, league) => {
+  const seasonsMap = player.seasons.reduce((acc, league) => {
     const key = `${league.year} ${league.season}`
     if (!acc[key]) acc[key] = { rec: "", c: "" }
 
