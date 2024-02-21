@@ -1,11 +1,11 @@
 import { getData } from "../../src/data/poikas"
 import { PlayerPage } from "../../src/pages/PlayerPage"
 
-export async function onRequest(context) {
+export const onRequest: PagesFunction = async (context) => {
   const data = getData()
 
   // grab the name from the ?player= query parameter
-  const fullName = context.request.url.searchParams.get("player")
+  const fullName = new URL(context.request.url).searchParams.get("player")
 
   // Find the player by name
   const player = data.players.find((p) => p.name === fullName)
