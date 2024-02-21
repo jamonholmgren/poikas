@@ -4,8 +4,8 @@ import { PlayerPage } from "../../src/pages/PlayerPage"
 export async function onRequest(context) {
   const data = getData()
 
-  // grab the slugified name from the ?player= query parameter
-  const fullName = context.params.player
+  // grab the name from the ?player= query parameter
+  const fullName = context.request.url.searchParams.get("player")
 
   // Find the player by name
   const player = data.players.find((p) => p.name === fullName)
