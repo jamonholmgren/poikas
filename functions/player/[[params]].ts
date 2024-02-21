@@ -1,5 +1,4 @@
 import { getData } from "../../src/data/poikas"
-import { PlayerPage } from "../../src/pages/PlayerPage"
 
 export const onRequest: PagesFunction = async (context) => {
   const data = getData()
