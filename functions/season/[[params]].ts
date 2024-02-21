@@ -11,7 +11,9 @@ export const onRequest: PagesFunction = async (context) => {
   const level = params.get("level").toLowerCase()
 
   // Find the league
-  const league = data.leagues.find((l) => l.year === year && l.season === season && l.level === level)
+  const league = data.leagues.find(
+    (l) => l.year === year && l.season.toLowerCase() === season && l.level.toLowerCase() === level
+  )
 
   // If we found the league, 301 redirect to /seasons/:year/:season/:level
   if (league) {
