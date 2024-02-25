@@ -25,7 +25,7 @@ export function LeaguePage({ league }: LeagueProps) {
 
   const metaImage = (photos && `/images/${photos[0]}`) || "/images/finland-flag-icon.png"
 
-  const leagueStandingsHTML = schedule ? `<a href="${schedule}" target="_blank">MVIA Schedule/Standings/Stats</a>` : "-"
+  const leagueStandingsHTML = schedule ? `<a href="${schedule}" target="_blank">MVIA</a>` : "-"
 
   return template({
     path: url,
@@ -49,7 +49,7 @@ export function LeaguePage({ league }: LeagueProps) {
         <p id="description">${description || ""}</p>
         <table id="seasonresults" class="statsheet">
           <tr>
-            <th>Standings/Schedule</th>
+            <th>Standings/Schedule/Stats</th>
             <td>${leagueStandingsHTML || ""}</td>
           </tr>
           <tr>
