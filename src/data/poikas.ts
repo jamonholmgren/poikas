@@ -1492,6 +1492,14 @@ const poikasData: PoikasDataRaw = {
           result: "lost",
           notable: "Brenden and Shane goals. Shots were 11-13. Jamon out, Dennis in net.",
         },
+        {
+          vs: "Slavic Peeps",
+          us: 3,
+          them: 5,
+          result: "lost",
+          sisu: "Orrin Erickson",
+          notable: "Orrin, Nolan, Konrad goals. Orrin (2), Jamon, Cedric assists.",
+        }
       ],
     },
     {
