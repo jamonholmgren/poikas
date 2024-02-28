@@ -1499,7 +1499,7 @@ const poikasData: PoikasDataRaw = {
           result: "lost",
           sisu: "Orrin Erickson",
           notable: "Orrin, Nolan, Konrad goals. Orrin (2), Jamon, Cedric assists.",
-        }
+        },
       ],
     },
     {
@@ -1543,6 +1543,14 @@ const poikasData: PoikasDataRaw = {
           them: 2,
           result: "won",
           notable: "Joel (x2), Oren, Kieren, Russ, and Asa scored. Jamon out, sub goalie got Sisu cup.",
+        },
+        {
+          vs: "Callahan",
+          us: 3,
+          them: 2,
+          result: "won",
+          sisu: "Andrew Tunseth",
+          notable: "Hard fought game. Andrew 2 goals, Oren 1 goal in third on penalty shot. Shots about 21-25.",
         },
       ],
     },
