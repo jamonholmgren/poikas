@@ -1805,8 +1805,14 @@ const poikasData: PoikasDataRaw = {
       pos: "W",
     },
     {
-      number: 50,
+      number: 9,
       name: "Steve Saunders",
+      bio: "Steve is a fast, relentless skater with a nose for the puck.",
+      pos: "LW",
+      ht: "5-7",
+      wt: 185,
+      shoots: "R",
+      born: 1988,
     },
     {
       number: 5,
