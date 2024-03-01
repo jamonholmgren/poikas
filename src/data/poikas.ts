@@ -1734,7 +1734,12 @@ const poikasData: PoikasDataRaw = {
     {
       number: 50,
       name: "Jared Paben",
+      bio: "Jared is a smooth skater and high IQ defender. His outlet passes lead to a lot of Poikas breakouts.",
       pos: "D",
+      born: 1982,
+      ht: "6-3",
+      wt: 205,
+      shoots: "R",
     },
     {
       name: "Andrew Nichol",
