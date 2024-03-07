@@ -1953,8 +1953,6 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
     return seasonsOrder.indexOf(a.level) - levelsOrder.indexOf(b.level)
   })
 
-  data.opponents = {}
-
   data.leagues.forEach((league) => {
     // the "pending" playoffs status mean it's a current season
     league.current = league.playoffs === "pending"

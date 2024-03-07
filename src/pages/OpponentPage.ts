@@ -1,4 +1,4 @@
-import type { Game, Player } from "../types"
+import type { Game } from "../types"
 import { template } from "../template"
 
 type OpponentProps = {
@@ -11,11 +11,11 @@ type OpponentProps = {
 export function OpponentPage({ slug, name, recGames, cGames }: OpponentProps) {
   const recWins = recGames.filter((g) => g.result === "won").length
   const recLosses = recGames.filter((g) => g.result === "lost").length
-  const recTies = recGames.filter((g) => g.result === "tied").length
+  const recTies = recGames.filter((g) => g.result === "tied" || g.result === "lost-ot").length
 
   const cWins = cGames.filter((g) => g.result === "won").length
   const cLosses = cGames.filter((g) => g.result === "lost").length
-  const cTies = cGames.filter((g) => g.result === "tied").length
+  const cTies = cGames.filter((g) => g.result === "tied" || g.result === "lost-ot").length
 
   return template({
     path: `/vs/${slug}`,
@@ -35,6 +35,9 @@ export function OpponentPage({ slug, name, recGames, cGames }: OpponentProps) {
         <h2 id="playername">${name}</h2>
         <p id="bio">Games played between the Suomi Poikas and the ${name}.</p>
 
+        ${
+          recGames.length > 0
+            ? `
         <h2>Rec League</h2>
 
         <table class="statsheet" id="statsheet">
@@ -67,7 +70,7 @@ export function OpponentPage({ slug, name, recGames, cGames }: OpponentProps) {
               .map(
                 (game) => `
                     <tr>
-                      <td><a href="${game.league.url}">${game.league.year} ${game.league.season}</a></td>
+                      <td><a href="${game.league?.url}">${game.league?.year} ${game.league?.season}</a></td>
                       <td>${game.vs}</td>
                       <td>${game.result} ${game.us}-${game.them}</td>
                       <td>${game.sisuPlayer?.profileLink || "-"}</td>
@@ -78,7 +81,13 @@ export function OpponentPage({ slug, name, recGames, cGames }: OpponentProps) {
               .join("\n")}
           </tbody>
         </table>
+        `
+            : ""
+        }
 
+        ${
+          cGames.length > 0
+            ? `
         <h2>C/CC League</h2>
 
         <table class="statsheet" id="statsheet">
@@ -111,7 +120,7 @@ export function OpponentPage({ slug, name, recGames, cGames }: OpponentProps) {
               .map(
                 (game) => `
                     <tr>
-                      <td><a href="${game.league.url}">${game.league.year} ${game.league.season}</a></td>
+                      <td><a href="${game.league?.url}">${game.league?.year} ${game.league?.season}</a></td>
                       <td>${game.vs}</td>
                       <td>${game.result} ${game.us}-${game.them}</td>
                       <td>${game.sisuPlayer?.profileLink || "-"}</td>
@@ -122,6 +131,9 @@ export function OpponentPage({ slug, name, recGames, cGames }: OpponentProps) {
               .join("\n")}
           </tbody>
         </table>
+        `
+            : ""
+        }
       </article>
     `,
     footer: ``,
