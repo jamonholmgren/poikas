@@ -59,7 +59,7 @@ export function OpponentPage({ slug, name, recGames, cGames }: OpponentProps) {
           <thead>
             <tr>
               <th>Season</th>
-              <th>Opponent</th>
+              <th class="extra">Opponent</th>
               <th>Score</th>
               <th>Sisu Cup</th>
               <th class="extra">Notable</th>
@@ -71,7 +71,7 @@ export function OpponentPage({ slug, name, recGames, cGames }: OpponentProps) {
                 (game) => `
                     <tr>
                       <td><a href="${game.league?.url}">${game.league?.year} ${game.league?.season}</a></td>
-                      <td>${game.vs}</td>
+                      <td class="extra">${game.vs}</td>
                       <td>${game.result} ${game.us}-${game.them}</td>
                       <td>${game.sisuPlayer?.profileLink || "-"}</td>
                       <td class="extra">${game.notable || "-"}</td>
