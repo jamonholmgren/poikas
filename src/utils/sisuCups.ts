@@ -10,7 +10,7 @@ export function sisuCups(player: Player) {
       return gamesWithSisu.map((g) => {
         return {
           season: `<a href="${s.url}">${s.year} ${s.season}</a>`,
-          game: g.vs,
+          game: g.vsLink,
           sisu: `🇫🇮 ${g.sisu}`,
           notable: g.notable || "-",
         }

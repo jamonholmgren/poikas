@@ -9,7 +9,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx wrangler pages dev ."
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   "homepage": "https://github.com/jamonholmgren/poikas#readme",
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240208.0",
-    "@types/node": "^20.11.19"
+    "@types/node": "^20.11.19",
+    "wrangler": "^3.31.0"
   }
 }

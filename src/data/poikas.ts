@@ -1936,6 +1936,8 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
     return seasonsOrder.indexOf(a.level) - levelsOrder.indexOf(b.level)
   })
 
+  data.opponents = {}
+
   data.leagues.forEach((league) => {
     // the "pending" playoffs status mean it's a current season
     league.current = league.playoffs === "pending"
@@ -1950,6 +1952,16 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
       league.wins = league.games.filter((g) => g.result === "won").length
       league.losses = league.games.filter((g) => g.result === "lost").length
       league.ties = league.games.filter((g) => g.result === "tied" || g.result === "lost-ot").length
+
+      league.games.forEach((game) => {
+        // attach the league to each game
+        game.league = league
+        // attach the sisu player, if found
+        game.sisuPlayer = data.players.find((p) => p.name === game.sisu)
+        // link to opponent page
+        game.vsURL = `/vs/${slugify(game.vs)}`
+        game.vsLink = `<a href="${game.vsURL}">${game.vs}</a>`
+      })
     }
   })
 
@@ -2001,7 +2013,7 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
   return data
 }
 
-function slugify(text) {
+export function slugify(text) {
   return text
     .toString()
     .toLowerCase()

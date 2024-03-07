@@ -5,6 +5,12 @@ export interface Game {
   result?: "won" | "lost" | "lost-ot" | "tied" | "forfeited" | "cancelled"
   sisu?: string
   notable?: string
+
+  // convenience references
+  sisuPlayer?: Player
+  league?: League
+  vsURL?: string
+  vsLink?: string
 }
 
 type LeagueRaw = {
