@@ -11,7 +11,7 @@ export function sisuCups(player: Player) {
         return {
           season: `<a href="${s.url}">${s.year} ${s.season}</a>`,
           game: g.vsLink,
-          sisu: `🇫🇮 ${g.sisu}`,
+          score: `${g.us}-${g.them} (${g.result})`,
           notable: g.notable || "-",
         }
       })

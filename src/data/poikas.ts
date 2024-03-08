@@ -1506,7 +1506,7 @@ const poikasData: PoikasDataRaw = {
           them: 4,
           result: "lost",
           sisu: "Daniel Kulla",
-          notable: "Shots were 28-24. Our inexperienced showed and their goalie played great.",
+          notable: "Shots were 28-24. Our inexperience showed and their goalie played great.",
         },
       ],
     },
