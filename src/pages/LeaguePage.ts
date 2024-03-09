@@ -21,6 +21,7 @@ export function LeaguePage({ league }: LeagueProps) {
     videos,
     games,
     players,
+    links,
   } = league
 
   const metaImage = (photos && `/images/${photos[0]}`) || "/images/finland-flag-icon.png"
@@ -42,6 +43,15 @@ export function LeaguePage({ league }: LeagueProps) {
         />
         <span class="caption" id="leagueimagecaption">${year} ${season} ${level}</span>
       </a>
+      ${
+        links &&
+        `
+        <h2>Links</h2>
+        <ul id="links">
+          ${links.map((link) => `<li><a href="${link.url}" target="_blank">${link.label}</a></li>`).join("\n")}
+        </ul>
+      `
+      }
     `,
     main: `
       <article>

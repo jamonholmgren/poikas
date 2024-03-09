@@ -1466,6 +1466,12 @@ const poikasData: PoikasDataRaw = {
       level: "Rec",
       schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2950580/Suomi-Poikas-Rec.aspx?framed=1",
       playoffs: "pending",
+      links: [
+        {
+          label: "Naylynn Photography Spring Rec 2024 Photo Album",
+          url: "https://naylynnphotography.pic-time.com/-suomipoikasspring2024/gallery",
+        },
+      ],
       roster: [
         "Brenden Mattila",
         "Cedric Holmgren",

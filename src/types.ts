@@ -26,6 +26,7 @@ type LeagueRaw = {
   ties?: number
 
   // optional data
+  links?: { label: string; url: string }[] // [label, url]
   games?: Game[]
   description?: string
   aside?: string
