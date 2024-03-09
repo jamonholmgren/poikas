@@ -232,6 +232,11 @@ input[type="search"]:focus + .search-dropdown .search-dropdown-content {
   text-decoration: underline;
 }
 
+.sidebar-section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 main {
   flex: 1; /* Adjusted to take remaining space */
   background-color: #fff;

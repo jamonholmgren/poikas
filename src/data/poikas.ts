@@ -1467,10 +1467,13 @@ const poikasData: PoikasDataRaw = {
       schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2950580/Suomi-Poikas-Rec.aspx?framed=1",
       playoffs: "pending",
       sidebar: `
-        <a href="https://naylynnphotography.pic-time.com/-suomipoikasspring2024/gallery">
-          <img src="/images/poikas-rec-2024-spring.jpg" />
-          <br />Naylynn Photography Spring Rec 2024 Photo Album
-        </a>
+        <div class="sidebar-section">
+          <a href="https://naylynnphotography.pic-time.com/-suomipoikasspring2024/gallery" target="_blank">
+            <img src="/images/poikas-rec-2024-spring.jpg" />
+            <br />Naylynn Photography
+            <br />Spring Rec 2024 Photo Album
+          </a>
+        </div>
       `,
       roster: [
         "Brenden Mattila",
