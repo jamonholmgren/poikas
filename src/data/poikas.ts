@@ -1517,6 +1517,14 @@ const poikasData: PoikasDataRaw = {
           sisu: "Daniel Kulla",
           notable: "Shots were 28-24. Our inexperience showed and their goalie played great.",
         },
+        {
+          vs: "Thundersticks",
+          us: 4,
+          them: 3,
+          result: "won",
+          sisu: "Evan Tapio",
+          notable: "Myron (g a), Evan (g), Orrin (2g a), Konrad (a). 26-26 shots.",
+        }
       ],
     },
     {
