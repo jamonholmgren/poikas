@@ -1523,7 +1523,7 @@ const poikasData: PoikasDataRaw = {
           them: 3,
           result: "won",
           sisu: "Evan Tapio",
-          notable: "Myron (g a), Evan (g), Orrin (2g a), Konrad (a). 26-26 shots.",
+          notable: "Myron (g a), Evan (g), Orrin (2g a), Konrad (a), Nolan (a). 26-26 shots.",
         }
       ],
     },
@@ -1589,7 +1589,7 @@ const poikasData: PoikasDataRaw = {
           them: 3,
           result: "won",
           sisu: "Jamon Holmgren",
-          notable: "Goals: Asa, Steve, Oren, Brad, Andrew, and Nolan. Assists: Kevin, Steve, others. Shots: 31-26.",
+          notable: "Goals: Asa, Steve, Oren, Brad, Andrew, and Nolan. Assists: Kevin, Steve, Brad, likely others. Shots: 31-26.",
         }
       ],
     },
