@@ -1532,9 +1532,6 @@ const poikasData: PoikasDataRaw = {
       season: "Spring",
       level: "C",
       schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2950569/Suomi-Poikas-C.aspx?framed=1",
-      wins: 0,
-      losses: 1,
-      ties: 0,
       playoffs: "pending",
       roster: [
         "Andrew Tunseth",
@@ -1586,6 +1583,14 @@ const poikasData: PoikasDataRaw = {
           notable:
             "Kevin & Andrew goals, Kevin assisted on Andrew's. Shots about 28-29. They scored 4 in the first period.",
         },
+        {
+          vs: "Badgers",
+          us: 6,
+          them: 3,
+          result: "won",
+          sisu: "Jamon Holmgren",
+          notable: "Goals: Asa, Steve, Oren, Brad, Andrew, and Nolan. Assists: Kevin, Steve, others. Shots: 31-26.",
+        }
       ],
     },
   ],
