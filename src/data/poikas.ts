@@ -1524,6 +1524,14 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Evan Tapio",
           notable: "Myron (g a), Evan (g), Orrin (2g a), Konrad (a), Nolan (a). 26-26 shots.",
+        },
+        {
+          vs: "Liquid Gold",
+          us: 5,
+          them: 1,
+          result: "won",
+          sisu: "Ethan Kulla",
+          notable: "Shots 22-14, Dan 2g 1a, Nolan 1g, Evan 1g 1a, Brenden 1g, Orrin 1a.",
         }
       ],
     },
