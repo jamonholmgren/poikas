@@ -1597,7 +1597,15 @@ const poikasData: PoikasDataRaw = {
           them: 3,
           result: "won",
           sisu: "Jamon Holmgren",
-          notable: "Goals: Asa, Steve, Oren, Brad, Andrew, and Nolan. Assists: Kevin, Steve, Brad, likely others. Shots: 31-26.",
+          notable: "Goals: Asa, Steve, Oren, Brad, Andrew, and Nolan. Assists: Kevin, Steve, Brad, likely others. Shots: 31-26. Badgers were previously undefeated.",
+        },
+        {
+          vs: "Lightning",
+          us: 6,
+          them: 5,
+          result: "won",
+          sisu: "Randy Storm",
+          notable: "Shots officially 26-23 but probably 30s each. Goals: Nels 2, Andrew 2, Eric, Steve. Assists: Scott, Jared, Asa (at least). Lightning are the top offensive team in the league.",
         }
       ],
     },
