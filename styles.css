@@ -396,6 +396,23 @@ p.error {
   font-size: 1.2em;
   border: 1px solid #ddd;
   padding: 10px;
+  text-decoration: none;
+  color: #202a47;
+}
+
+.latest-games .game .league {
+  font-weight: bold;
+  color: #202a47;
+}
+/* .latest-games .game .league,
+.latest-games .game .teams,
+.latest-games .game .result {
+} */
+.latest-games .game .notable {
+  font-size: 0.8em;
+  color: #202a47;
+  padding: 5px 0;
+  text-align: left;
 }
 
 /* Roster Table Styles */
@@ -439,6 +456,10 @@ table.roster img {
 /* Adds a hover effect to table rows */
 table.roster tr:hover {
   background-color: #ddd;
+}
+
+table.roster tr td.notable {
+  white-space: normal;
 }
 
 /* Styling for links inside the table, if any */

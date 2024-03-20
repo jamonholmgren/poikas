@@ -1525,6 +1525,15 @@ const poikasData: PoikasDataRaw = {
           sisu: "Evan Tapio",
           notable: "Myron (g a), Evan (g), Orrin (2g a), Konrad (a), Nolan (a). 26-26 shots.",
         },
+        {
+          vs: "Liquid Gold",
+          us: 5,
+          them: 1,
+          result: "won",
+          sisu: "Ethan Kulla",
+          date: new Date("2024-04-16"),
+          notable: "Shots 22-14, Dan 2g 1a, Nolan 1g, Evan 1g 1a, Brenden 1g, Orrin 1a.",
+        },
       ],
     },
     {
@@ -1590,7 +1599,17 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Jamon Holmgren",
           notable:
-            "Goals: Asa, Steve, Oren, Brad, Andrew, and Nolan. Assists: Kevin, Steve, Brad, likely others. Shots: 31-26.",
+            "Goals: Asa, Steve, Oren, Brad, Andrew, and Nolan. Assists: Kevin, Steve, Brad, likely others. Shots: 31-26. Badgers were previously undefeated.",
+        },
+        {
+          vs: "Lightning",
+          us: 6,
+          them: 5,
+          result: "won",
+          sisu: "Randy Storm",
+          date: new Date("2024-04-17"),
+          notable:
+            "Shots officially 26-23 but probably 30s each. Goals: Nels 2, Andrew 2, Eric, Steve. Assists: Scott, Jared, Asa (at least). Lightning are the top offensive team in the league.",
         },
       ],
     },
@@ -2040,7 +2059,7 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
     player.slug = slugify(player.name)
 
     // player image URL and HTML
-    player.imageURL = `/images/${player.number}-${player.slug}.jpg`
+    player.imageURL = `/images/players/${player.slug}.jpg`
     player.imageHTML = `<img src="${player.imageURL}" alt="${player.name}" onerror="this.onerror=null;this.src='/images/000-placeholder.jpg';">`
 
     // player profile URL

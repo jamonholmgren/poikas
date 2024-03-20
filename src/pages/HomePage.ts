@@ -38,14 +38,26 @@ export function HomePage({ data }: HomeProps) {
 
         <h2>Latest Games</h2>
         <div class='latest-games'>
-          ${
-            lastRecGame
-              ? `<div class='game'><a href="${recLeague.url}">Rec League</a>: ${lastRecGame.vs} - ${lastRecGame.result} ${lastRecGame.us}-${lastRecGame.them}</div>`
-              : ""
-          }
+        ${
+          lastRecGame
+            ? `<a href="${recLeague.url}" class='game'>
+                <div class='league'>Rec League</div>
+                <div class='teams'>Poikas vs ${lastRecGame.vs} (${lastRecGame.date?.toLocaleDateString()})</div>
+                <div class='result'>${lastRecGame.result} ${lastRecGame.us}-${lastRecGame.them}</div>
+                ${lastRecGame.sisu ? `<div class='sisu'>${`🇫🇮 Sisu Cup: ${lastRecGame.sisu}` || ""}</div>` : ""}
+                <div class='notable'>${lastRecGame.notable || ""}</div>
+              </a>`
+            : ""
+        }
           ${
             lastCGame
-              ? `<div class='game'><a href="${cLeague.url}">C/CC League</a>: ${lastCGame.vs} - ${lastCGame.result} ${lastCGame.us}-${lastCGame.them}</div>`
+              ? `<a href="${cLeague.url}" class='game'>
+                  <div class='league'>C/CC League</div>
+                  <div class='teams'>Poikas vs ${lastCGame.vs} (${lastCGame.date?.toLocaleDateString()})</div>
+                  <div class='result'>${lastCGame.result} ${lastCGame.us}-${lastCGame.them}</div>
+                  ${lastCGame.sisu ? `<div class='sisu'>${`🇫🇮 Sisu Cup: ${lastCGame.sisu}` || ""}</div>` : ""}
+                  <div class='notable'>${lastCGame.notable || ""}</div>
+                </a>`
               : ""
           }
         </div>
