@@ -382,6 +382,22 @@ p.error {
   margin: 0 10px;
 }
 
+.latest-games {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.latest-games .game {
+  flex: 1;
+  margin: 0 10px;
+  text-align: center;
+  font-size: 1.2em;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
 /* Roster Table Styles */
 table.roster {
   width: 100%;

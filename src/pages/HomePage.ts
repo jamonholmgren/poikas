@@ -13,9 +13,13 @@ export function HomePage({ data }: HomeProps) {
   const championLeagues = data.leagues.filter((s) => s.playoffs === "champions" && !`${s.aside}`.includes("with"))
 
   let recLeague = data.leagues.find((l) => l.level === "Rec" && l.current)
-  if (!recLeague) recLeague = data.leagues.filter((l) => l.level === "Rec").pop()
+  if (!recLeague) recLeague = data.leagues.filter((l) => l.level === "Rec").pop()!
   let cLeague = data.leagues.find((l) => l.level === "C" && l.current)
-  if (!cLeague) cLeague = data.leagues.filter((l) => l.level === "C").pop()
+  if (!cLeague) cLeague = data.leagues.filter((l) => l.level === "C").pop()!
+
+  // latest games from each league
+  const lastRecGame = (recLeague.games || []).at(-1)
+  const lastCGame = (cLeague.games || []).at(-1)
 
   return template({
     path: "/",
@@ -31,6 +35,20 @@ export function HomePage({ data }: HomeProps) {
           Welcome to the official website of the Suomi Poikas, your favorite Finnish-American hockey team! Hyvä Suomi!
           🇫🇮
         </p>
+
+        <h2>Latest Games</h2>
+        <div class='latest-games'>
+          ${
+            lastRecGame
+              ? `<div class='game'><a href="${recLeague.url}">Rec League</a>: ${lastRecGame.vs} - ${lastRecGame.result} ${lastRecGame.us}-${lastRecGame.them}</div>`
+              : ""
+          }
+          ${
+            lastCGame
+              ? `<div class='game'><a href="${cLeague.url}">C/CC League</a>: ${lastCGame.vs} - ${lastCGame.result} ${lastCGame.us}-${lastCGame.them}</div>`
+              : ""
+          }
+        </div>
 
         <h2>Our History</h2>
         <p>
@@ -96,21 +114,21 @@ export function HomePage({ data }: HomeProps) {
             </tr>
           </thead>
           <tbody>
-            ${recLeague.players
-              .map(
+            ${recLeague
+              .players!.map(
                 (p) => `
-            <tr>
-              <td>${p.imageHTML || "-"}</td>
-              <td>${p.profileLink || "-"}</td>
-              <td>${p.number || "-"}</td>
-              <td>${p.pos || "-"}</td>
-              <td class="extra">${p.ht || "-"}</td>
-              <td class="extra">${p.wt || "-"}</td>
-              <td class="extra">${p.shoots || "-"}</td>
-              <td class="extra">${p.years || "-"}</td>
-              <td class="extra">${p.age || "-"}</td>
-            </tr>
-          `
+                  <tr>
+                    <td>${p.imageHTML || "-"}</td>
+                    <td>${p.profileLink || "-"}</td>
+                    <td>${p.number || "-"}</td>
+                    <td>${p.pos || "-"}</td>
+                    <td class="extra">${p.ht || "-"}</td>
+                    <td class="extra">${p.wt || "-"}</td>
+                    <td class="extra">${p.shoots || "-"}</td>
+                    <td class="extra">${p.years || "-"}</td>
+                    <td class="extra">${p.age || "-"}</td>
+                  </tr>
+                `
               )
               .join("\n")}
           </tbody>
@@ -135,8 +153,8 @@ export function HomePage({ data }: HomeProps) {
             </tr>
           </thead>
           <tbody>
-            ${cLeague.players
-              .map(
+            ${cLeague
+              .players!.map(
                 (p) => `
             <tr>
               <td>${p.imageHTML || "-"}</td>

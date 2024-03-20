@@ -5,6 +5,7 @@ export interface Game {
   result?: "won" | "lost" | "lost-ot" | "tied" | "forfeited" | "cancelled"
   sisu?: string
   notable?: string
+  date?: Date
 
   // convenience references
   sisuPlayer?: Player
