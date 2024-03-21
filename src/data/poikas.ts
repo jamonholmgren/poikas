@@ -1665,6 +1665,10 @@ const poikasData: PoikasDataRaw = {
       number: 70,
       name: "Daniel Kulla",
       pos: "RW",
+      shoots: "L",
+      born: 2004,
+      ht: "5-11",
+      wt: 160,
     },
     {
       number: 81,
