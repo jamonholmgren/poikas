@@ -37,7 +37,7 @@ export function template(options: TemplateOptions) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${title} - Suomi Poikas Hockey Club</title>
     <meta name="description" content="${description}" />
-    <link rel="stylesheet" href="/styles.css?c=2" />
+    <link rel="stylesheet" href="/styles.css?c=3" />
     <link rel="icon" type="image/png" href="/images/finland-flag-icon.png" />
 
     <!-- OG stuff -->
