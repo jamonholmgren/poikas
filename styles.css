@@ -404,10 +404,7 @@ p.error {
   font-weight: bold;
   color: #202a47;
 }
-/* .latest-games .game .league,
-.latest-games .game .teams,
-.latest-games .game .result {
-} */
+
 .latest-games .game .notable {
   font-size: 0.8em;
   color: #202a47;
