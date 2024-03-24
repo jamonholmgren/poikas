@@ -91,7 +91,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Joel Mattila",
         },
         {
-          vs: "Caps & Taps",
+          vs: "Caps N Taps",
           us: 6,
           them: 3,
           result: "won",
@@ -1533,6 +1533,15 @@ const poikasData: PoikasDataRaw = {
           sisu: "Ethan Kulla",
           date: new Date("2024-04-16"),
           notable: "Shots 22-14, Dan 2g 1a, Nolan 1g, Evan 1g 1a, Brenden 1g, Orrin 1a.",
+        },
+        {
+          "vs": "Caps N Taps",
+          "us": 3,
+          "them": 6,
+          "result": "lost",
+          "sisu": "Brenden Mattila",
+          "date": new Date("2024-04-23"),
+          "notable": "Shots 22-23, Evan 1g, Brenden 1g 2a, Daniel 1g, Jay 1a, Nolan 1a, Cedric 1a."
         },
       ],
     },
