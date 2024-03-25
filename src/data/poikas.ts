@@ -1620,6 +1620,15 @@ const poikasData: PoikasDataRaw = {
           notable:
             "Shots officially 26-23 but probably 30s each. Goals: Nels 2, Andrew 2, Eric, Steve. Assists: Scott, Jared, Asa (at least). Lightning are the top offensive team in the league.",
         },
+        {
+          "vs": "Bandits",
+          "us": 4,
+          "them": 6,
+          "result": "lost",
+          "sisu": "Andrew Tunseth",
+          "date": new Date("2024-04-24"),
+          "notable": "Shots 23-41 them, Nels 1g, Asa 2g 1a, Andrew 1g 1a, Nolan 1a, plus more assists."
+        },
       ],
     },
   ],
