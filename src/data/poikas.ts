@@ -1638,6 +1638,15 @@ const poikasData: PoikasDataRaw = {
           "date": new Date("2024-04-24"),
           "notable": "Shots 23-41 them, Nels 1g, Asa 2g 1a, Andrew 1g 1a, Nolan 1a, plus more assists."
         },
+        {
+          "vs": "Dead Guys",
+          "us": 2,
+          "them": 5,
+          "result": "lost",
+          "sisu": "",
+          "date": new Date("2024-04-31"),
+          "notable": "Nels Tapio 1g, Oren Matson 1g."
+        },
       ],
     },
   ],
