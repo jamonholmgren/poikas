@@ -1543,6 +1543,15 @@ const poikasData: PoikasDataRaw = {
           "date": new Date("2024-04-23"),
           "notable": "Shots 22-23, Evan 1g, Brenden 1g 2a, Daniel 1g, Jay 1a, Nolan 1a, Cedric 1a."
         },
+        {
+          "vs": "Slavic Peeps",
+          "us": 4,
+          "them": 3,
+          "result": "won",
+          "sisu": "Joel Mattila",
+          "date": new Date("2024-04-30"),
+          "notable": "Konrad Stenersen 2g, Dan Warren 2g, Joel Mattila 3a. Goals included a scramble in front, a faceoff win to Dan, and persistent forechecking leading to a goal by Konrad."
+        },
       ],
     },
     {
