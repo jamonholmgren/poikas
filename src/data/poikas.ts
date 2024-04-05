@@ -91,7 +91,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Joel Mattila",
         },
         {
-          vs: "Caps & Taps",
+          vs: "Caps N Taps",
           us: 6,
           them: 3,
           result: "won",
@@ -1534,6 +1534,24 @@ const poikasData: PoikasDataRaw = {
           date: new Date("2024-04-16"),
           notable: "Shots 22-14, Dan 2g 1a, Nolan 1g, Evan 1g 1a, Brenden 1g, Orrin 1a.",
         },
+        {
+          "vs": "Caps N Taps",
+          "us": 3,
+          "them": 6,
+          "result": "lost",
+          "sisu": "Brenden Mattila",
+          "date": new Date("2024-04-23"),
+          "notable": "Shots 22-23, Evan 1g, Brenden 1g 2a, Daniel 1g, Jay 1a, Nolan 1a, Cedric 1a."
+        },
+        {
+          "vs": "Slavic Peeps",
+          "us": 4,
+          "them": 3,
+          "result": "won",
+          "sisu": "Joel Mattila",
+          "date": new Date("2024-04-30"),
+          "notable": "Konrad Stenersen 2g, Dan Warren 2g, Joel Mattila 3a. Goals included a scramble in front, a faceoff win to Dan, and persistent forechecking leading to a goal by Konrad."
+        },
       ],
     },
     {
@@ -1610,6 +1628,24 @@ const poikasData: PoikasDataRaw = {
           date: new Date("2024-04-17"),
           notable:
             "Shots officially 26-23 but probably 30s each. Goals: Nels 2, Andrew 2, Eric, Steve. Assists: Scott, Jared, Asa (at least). Lightning are the top offensive team in the league.",
+        },
+        {
+          "vs": "Bandits",
+          "us": 4,
+          "them": 6,
+          "result": "lost",
+          "sisu": "Andrew Tunseth",
+          "date": new Date("2024-04-24"),
+          "notable": "Shots 23-41 them, Nels 1g, Asa 2g 1a, Andrew 1g 1a, Nolan 1a, plus more assists."
+        },
+        {
+          "vs": "Dead Guys",
+          "us": 2,
+          "them": 5,
+          "result": "lost",
+          "sisu": "",
+          "date": new Date("2024-04-31"),
+          "notable": "Nels Tapio 1g, Oren Matson 1g."
         },
       ],
     },
