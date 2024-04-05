@@ -1693,6 +1693,12 @@ const poikasData: PoikasDataRaw = {
     {
       number: 28,
       name: "Donald Kulla",
+      bio: "Donny is new to hockey but already demonstrating a lot of potential. He's Daniel's brother.",
+      pos: "D",
+      shoots: "L",
+      ht: "5-10",
+      wt: 160,
+      born: 2001,
     },
     {
       number: 18,
