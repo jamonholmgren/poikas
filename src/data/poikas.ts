@@ -1644,7 +1644,7 @@ const poikasData: PoikasDataRaw = {
           us: 2,
           them: 5,
           result: "lost",
-          sisu: "",
+          sisu: "Steve Saunders",
           date: new Date("2024-04-31"),
           notable: "Nels Tapio 1g, Oren Matson 1g.",
         },
