@@ -3,6 +3,7 @@ import { template } from "../template"
 import { Champ } from "../components/Champ"
 import { sisuCups } from "../utils/sisuCups"
 import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
+import { notableAbbr } from "../utils/notableAbbr"
 
 type PlayerProps = {
   player: Player
@@ -129,7 +130,7 @@ export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
               <td>${cup.season}</td>
               <td>${cup.game}</td>
               <td>${cup.score}</td>
-              <td class="extra">${cup.notable}</td>
+              <td class="extra">${notableAbbr(cup.notable, 80)}</td>
             </tr>
                 `
               )

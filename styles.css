@@ -295,8 +295,21 @@ a:hover {
   display: block;
 }
 
+.extra {
+  /* Hide content with an elipses if it's too long */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* make sure it is the width of the container */
+  width: 100%;
+}
+
+td {
+  width: 100%;
+}
+
 /* Responsive adjustments */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1280px) {
   /* put sidebar below main content */
 
   .container {
