@@ -1531,7 +1531,7 @@ const poikasData: PoikasDataRaw = {
           them: 1,
           result: "won",
           sisu: "Ethan Kulla",
-          date: new Date("2024-04-16"),
+          date: new Date("2024-03-16"),
           notable: "Shots 22-14, Dan 2g 1a, Nolan 1g, Evan 1g 1a, Brenden 1g, Orrin 1a.",
         },
         {
@@ -1540,7 +1540,7 @@ const poikasData: PoikasDataRaw = {
           them: 6,
           result: "lost",
           sisu: "Brenden Mattila",
-          date: new Date("2024-04-23"),
+          date: new Date("2024-03-23"),
           notable: "Shots 22-23, Evan 1g, Brenden 1g 2a, Daniel 1g, Jay 1a, Nolan 1a, Cedric 1a.",
         },
         {
@@ -1549,10 +1549,28 @@ const poikasData: PoikasDataRaw = {
           them: 3,
           result: "won",
           sisu: "Joel Mattila",
-          date: new Date("2024-04-30"),
+          date: new Date("2024-03-30"),
           notable:
             "Konrad Stenersen 2g, Dan Warren 2g, Joel Mattila 3a. Goals included a scramble in front, a faceoff win to Dan, and persistent forechecking leading to a goal by Konrad.",
         },
+        {
+          vs: "Caps N Taps",
+          us: 5,
+          them: 0,
+          result: "won",
+          sisu: "",
+          date: new Date("2024-04-06"),
+          notable: "First game of a double-header.",
+        },
+        {
+          vs: "Pinecones",
+          us: 1,
+          them: 4,
+          result: "lost",
+          sisu: "",
+          date: new Date("2024-04-06"),
+          notable: "Second game of a double-header. They scored an empty netter.",
+        }
       ],
     },
     {
@@ -1626,7 +1644,7 @@ const poikasData: PoikasDataRaw = {
           them: 5,
           result: "won",
           sisu: "Randy Storm",
-          date: new Date("2024-04-17"),
+          date: new Date("2024-03-17"),
           notable:
             "Shots officially 26-23 but probably 30s each. Goals: Nels 2, Andrew 2, Eric, Steve. Assists: Scott, Jared, Asa (at least). Lightning are the top offensive team in the league.",
         },
@@ -1636,7 +1654,7 @@ const poikasData: PoikasDataRaw = {
           them: 6,
           result: "lost",
           sisu: "Andrew Tunseth",
-          date: new Date("2024-04-24"),
+          date: new Date("2024-03-24"),
           notable: "Shots 23-41 them, Nels 1g, Asa 2g 1a, Andrew 1g 1a, Nolan 1a, plus more assists.",
         },
         {
@@ -1645,9 +1663,18 @@ const poikasData: PoikasDataRaw = {
           them: 5,
           result: "lost",
           sisu: "Steve Saunders",
-          date: new Date("2024-04-31"),
+          date: new Date("2024-03-31"),
           notable: "Nels Tapio 1g, Oren Matson 1g.",
         },
+        {
+          vs: "Revolution",
+          us: 3,
+          them: 5,
+          result: "lost",
+          sisu: "Asa Storm",
+          date: new Date("2024-04-07"),
+          notable: "Joel 2 goals, Eric 1 assist, shots 25-40.",
+        }
       ],
     },
   ],
