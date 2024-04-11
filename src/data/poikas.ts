@@ -1579,6 +1579,15 @@ const poikasData: PoikasDataRaw = {
       level: "C",
       schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2950569/Suomi-Poikas-C.aspx?framed=1",
       playoffs: "pending",
+      sidebar: `
+        <div class="sidebar-section">
+          <a href="https://www.dropbox.com/scl/fo/7ovs2p62hffx98nn6jm66/APYZkH7gMJjAoGCKxYY3Cy8?rlkey=mtarvqhsp7dnlb49zwyaheh8p&dl=0" target="_blank">
+            Jared Paben's
+            <br />Spring C 2024 Photo Album
+            <br />on Dropbox
+          </a>
+        </div>
+      `,
       roster: [
         "Andrew Tunseth",
         "Asa Storm",
