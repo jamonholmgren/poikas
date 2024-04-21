@@ -1,5 +1,5 @@
 import type { League } from "../types"
-import { template } from "../template"
+import { layout } from "../layout"
 
 type LeagueProps = {
   league: League
@@ -28,7 +28,7 @@ export function LeaguePage({ league }: LeagueProps) {
 
   const leagueStandingsHTML = schedule ? `<a href="${schedule}" target="_blank">MVIA</a>` : "-"
 
-  return template({
+  return layout({
     path: url,
     title: `${year} ${season} ${level}`,
     description: `Suomi Poikas league ${year} ${season} ${level}`,

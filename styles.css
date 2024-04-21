@@ -212,6 +212,35 @@ input[type="search"]:focus + .search-dropdown .search-dropdown-content {
   color: #555;
 }
 
+.caption {
+  font-size: 0.8em;
+  text-overflow: ellipsis;
+}
+
+#photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Adjusts spacing around items */
+  align-items: stretch; /* Stretches items to fill the container vertically */
+}
+
+.photo-item {
+  flex: 1 1 20%; /* Flex-grow, Flex-shrink, Flex-basis */
+  margin: 10px; /* Margin around each photo item */
+  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+.photo-item img {
+  width: 100%; /* Makes the image fill the container */
+  height: auto; /* Keeps the image's aspect ratio */
+  display: block; /* Removes the bottom margin/gap */
+}
+
+.photo-item abbr {
+  display: block; /* Makes the caption a block element */
+  text-align: center; /* Centers the text */
+}
+
 .sidebar ul#links {
   list-style-type: none;
   padding: 0;

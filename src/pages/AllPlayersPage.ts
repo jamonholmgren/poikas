@@ -1,12 +1,12 @@
 import type { League, Player } from "../types"
-import { template } from "../template"
+import { layout } from "../layout"
 
 type AllPlayersPageProps = {
   players: Player[]
 }
 
 export function AllPlayersPage({ players }: AllPlayersPageProps) {
-  return template({
+  return layout({
     path: "/players/",
     title: "All Poikas Players",
     description: "All Poikas Players All Time",

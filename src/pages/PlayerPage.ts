@@ -1,9 +1,10 @@
 import type { Player } from "../types"
-import { template } from "../template"
+import { layout } from "../layout"
 import { Champ } from "../components/Champ"
 import { sisuCups } from "../utils/sisuCups"
 import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
 import { notableAbbr } from "../utils/notableAbbr"
+import { images } from "../data/images"
 
 type PlayerProps = {
   player: Player
@@ -15,7 +16,9 @@ export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
   const recSeasons = player.leagues.filter((s) => s.level === "Rec").length || "—"
   const cSeasons = player.leagues.filter((s) => s.level === "C").length || "—"
 
-  return template({
+  const playerImages = images.filter((img) => img.players.includes(player.name))
+
+  return layout({
     path: player.profileURL,
     title: player.name,
     description: player.bio || "",
@@ -32,6 +35,7 @@ export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
       <article>
         <h2 id="playername">${player.name}</h2>
         <p id="bio">${player.bio || ""}</p>
+
         <h2>Player Sheet</h2>
         <table class="statsheet" id="statsheet">
           <tr>
@@ -80,6 +84,41 @@ export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
           </tr>
         </table>
       </article>
+
+      ${
+        playerImages.length
+          ? `
+            <h2>Photos</h2>
+            <table id="photos" class="photos">
+              <tbody>
+                ${playerImages
+                  .reduce(
+                    (rows, img, index) => {
+                      if (index % 4 === 0) {
+                        rows.push("<tr>")
+                      }
+                      rows.push(`
+                      <td>
+                        <a href="${img.path}" target="_blank">
+                          <img src="${img.path}" alt="${img.caption}" title="${img.caption}" width="250px" onerror="this.onerror=null;this.src='/images/000-placeholder.jpg';" />
+                          <span class="caption">${img.caption}</span>
+                        </a>
+                      </td>
+                    `)
+                      if (index % 4 === 3 || index === playerImages.length - 1) {
+                        rows.push("</tr>")
+                      }
+                      return rows
+                    },
+                    [""]
+                  )
+                  .join("")}
+              </tbody>
+            </table>
+          `
+          : ""
+      }
+      
       <div class="seasons">
         <h2>Seasons Played with the Poikas</h2>
         <table id="seasons" class="seasons">

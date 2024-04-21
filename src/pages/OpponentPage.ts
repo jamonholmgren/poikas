@@ -1,5 +1,5 @@
 import type { Game } from "../types"
-import { template } from "../template"
+import { layout } from "../layout"
 
 type OpponentProps = {
   slug: string
@@ -17,7 +17,7 @@ export function OpponentPage({ slug, name, recGames, cGames }: OpponentProps) {
   const cLosses = cGames.filter((g) => g.result === "lost").length
   const cTies = cGames.filter((g) => g.result === "tied" || g.result === "lost-ot").length
 
-  return template({
+  return layout({
     path: `/vs/${slug}`,
     title: `Poikas vs ${name}`,
     description: "Games between the Suomi Poikas and " + name,

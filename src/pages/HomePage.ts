@@ -1,5 +1,5 @@
 import { PoikasData } from "../types"
-import { template } from "../template"
+import { layout } from "../layout"
 import { ChampTile } from "../components/ChampTile"
 import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
 
@@ -21,7 +21,7 @@ export function HomePage({ data }: HomeProps) {
   const lastRecGame = (recLeague.games || []).at(-1)
   const lastCGame = (cLeague.games || []).at(-1)
 
-  return template({
+  return layout({
     path: "/",
     title: "Suomi Poikas",
     description: "Suomi Poikas Hockey Club",

@@ -1,7 +1,7 @@
-import { template } from "../template"
+import { layout } from "../layout"
 
 export function JoinPage() {
-  return template({
+  return layout({
     path: "/join/",
     title: "Join Suomi Poikas",
     description: "Join us! Suomi Poikas Hockey Club",
