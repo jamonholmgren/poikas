@@ -225,7 +225,7 @@ input[type="search"]:focus + .search-dropdown .search-dropdown-content {
 }
 
 .photo-item {
-  flex: 1 1 20%; /* Flex-grow, Flex-shrink, Flex-basis */
+  flex: 1 1 30%; /* Flex-grow, Flex-shrink, Flex-basis */
   margin: 10px; /* Margin around each photo item */
   box-sizing: border-box; /* Includes padding and border in the element's total width and height */
 }

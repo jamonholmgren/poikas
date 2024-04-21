@@ -290,15 +290,15 @@ export const images: PoikasImage[] = [
     credit: "Jared Paben",
   },
   {
-    path: "/images/paben/jamon-glove-save.gif",
-    caption: "Jamon Holmgren snags the rebound shot with his glove",
-    players: ["Jamon Holmgren"],
-    credit: "Jared Paben",
-  },
-  {
     path: "/images/paben/nels-on-the-ice.gif",
     caption: "Nels Tapio goes to the ice in front of the net",
     players: ["Nels Tapio"],
+    credit: "Jared Paben",
+  },
+  {
+    path: "/images/paben/jamon-glove-save.gif",
+    caption: "Jamon Holmgren snags the rebound shot with his glove",
+    players: ["Jamon Holmgren"],
     credit: "Jared Paben",
   },
   {
