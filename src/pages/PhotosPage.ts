@@ -14,6 +14,7 @@ export function PhotosPage({ images }: PhotosPageProps) {
     sidebar: `
       <img src="/images/poikas-2019-rec-faceoff-brenden.jpg" alt="Suomi Poikas" />
       <span class="caption">Suomi Poikas</span>
+      <p><em>Photo credit <a href="/players/jared-paben">Jared Paben</a></em></p>
     `,
     main: `
       <article>
