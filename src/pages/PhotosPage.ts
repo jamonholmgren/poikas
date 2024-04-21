@@ -8,14 +8,13 @@ type PhotosPageProps = {
 export function PhotosPage({ images }: PhotosPageProps) {
   return layout({
     path: "/join/",
-    title: "Join Suomi Poikas",
-    description: "Join us! Suomi Poikas Hockey Club",
+    title: "Suomi Poikas Photos",
+    description: "Photos of the Suomi Poikas Hockey Club",
     metaImage: "/images/000-placeholder.jpg",
     sidebar: `
       <img src="/images/poikas-2019-rec-faceoff-brenden.jpg" alt="Suomi Poikas" />
       <span class="caption">Suomi Poikas</span>
     `,
-    // show them in a table 5 images wide
     main: `
       <article>
         <h2>Photos</h2>
