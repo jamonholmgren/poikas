@@ -50,7 +50,7 @@ export const images: PoikasImage[] = [
   },
   {
     path: "/images/paben/IMG_4885.jpg",
-    caption: "Oren Matson and Andrew Tunseth trying to score",
+    caption: "Oren Matson and Andrew Tunseth about to score",
     players: ["Oren Matson", "Andrew Tunseth"],
     credit: "Jared Paben",
   },
