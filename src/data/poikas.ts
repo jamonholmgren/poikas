@@ -1599,6 +1599,15 @@ const poikasData: PoikasDataRaw = {
           notable:
             "Shots 47-13. Goals: Dan, Orrin 2, Evan, Logan, Konrad, Shane. Assists: Jamon, Joel, Konrad, Shane, Jay.",
         },
+        {
+          vs: "Slavic Peeps",
+          us: 7,
+          them: 1,
+          result: "won",
+          sisu: "Jamon Holmgren",
+          date: new Date("2024-05-04"),
+          notable: "Shots 23-34 them. Goals: Orrin 2, Evan 2, Nolan, Joel, Brenden. Assists: Orrin 3, Evan, Logan, Myron.",
+        },
       ],
     },
     {
