@@ -1608,6 +1608,15 @@ const poikasData: PoikasDataRaw = {
           date: new Date("2024-05-04"),
           notable: "Shots 23-34 them. Goals: Orrin 2, Evan 2, Nolan, Joel, Brenden. Assists: Orrin 3, Evan, Logan, Myron.",
         },
+        {
+          vs: "Pinecones",
+          us: 5,
+          them: 3,
+          result: "won",
+          sisu: "Evan Tapio",
+          date: new Date("2024-05-11"),
+          notable: "Shots 32-30 us. Goals: Evan 2, Orrin 2, Daniel. Assists: Logan, Shane, Orrin, Nolan.",
+        },
       ],
     },
     {
