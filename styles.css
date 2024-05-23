@@ -330,11 +330,7 @@ a:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   /* make sure it is the width of the container */
-  width: 100%;
-}
-
-td {
-  width: 100%;
+  /* width: 100%; */
 }
 
 /* Responsive adjustments */

@@ -21,7 +21,7 @@ export function AllPlayersPage({ players }: AllPlayersPageProps) {
         <table id="players" class="roster">
           <thead>
             <tr>
-              <th>Img</th>
+              <th width="50">Img</th>
               <th>Player</th>
               <th>Pos</th>
               <th>Num</th>
