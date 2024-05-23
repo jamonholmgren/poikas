@@ -156,6 +156,7 @@ export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
           <thead>
             <tr>
               <th data-field="season">Season</th>
+              <th data-field="date">Date</th>
               <th data-field="game">Game</th>
               <th data-field="sisu">Score</th>
               <th data-field="notable" class="extra">Notable</th>
@@ -167,6 +168,7 @@ export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
                 (cup) => `
             <tr>
               <td>${cup.season}</td>
+              <td>${cup.date}</td>
               <td>${cup.game}</td>
               <td>${cup.score}</td>
               <td class="extra">${notableAbbr(cup.notable, 80)}</td>
