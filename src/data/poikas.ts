@@ -1499,6 +1499,7 @@ const poikasData: PoikasDataRaw = {
           us: 2,
           them: 5,
           result: "lost",
+          date: new Date("2024-02-10"),
           notable: "Brenden and Shane goals. Shots were 11-13. Jamon out, Dennis in net.",
         },
         {
@@ -1507,6 +1508,7 @@ const poikasData: PoikasDataRaw = {
           them: 5,
           result: "lost",
           sisu: "Orrin Erickson",
+          date: new Date("2024-02-24"),
           notable: "Orrin, Nolan, Konrad goals. Orrin (2), Jamon, Cedric, Nolan assists.",
         },
         {
@@ -1515,6 +1517,7 @@ const poikasData: PoikasDataRaw = {
           them: 4,
           result: "lost",
           sisu: "Daniel Kulla",
+          date: new Date("2024-03-02"),
           notable: "Shots were 28-24. Our inexperience showed and their goalie played great.",
         },
         {
@@ -1523,6 +1526,7 @@ const poikasData: PoikasDataRaw = {
           them: 3,
           result: "won",
           sisu: "Evan Tapio",
+          date: new Date("2024-03-09"),
           notable: "Myron (g a), Evan (g), Orrin (2g a), Konrad (a), Nolan (a). 26-26 shots.",
         },
         {
@@ -1668,6 +1672,7 @@ const poikasData: PoikasDataRaw = {
           them: 7,
           result: "lost",
           sisu: "Kieren Sarkela",
+          date: new Date("2024-02-11"),
           notable: "Kieren's first C-level game. Asa & Kieren goals, Joel assist on Asa's.",
         },
         {
@@ -1675,6 +1680,7 @@ const poikasData: PoikasDataRaw = {
           us: 6,
           them: 2,
           result: "won",
+          date: new Date("2024-02-18"),
           notable: "Joel (x2), Oren, Kieren, Russ, and Asa scored. Jamon out, sub goalie got Sisu cup.",
         },
         {
@@ -1683,6 +1689,7 @@ const poikasData: PoikasDataRaw = {
           them: 2,
           result: "won",
           sisu: "Andrew Tunseth",
+          date: new Date("2024-02-25"),
           notable: "Hard fought game. Andrew 2 goals, Oren 1 goal in third on penalty shot. Shots about 21-25.",
         },
         {
@@ -1691,6 +1698,7 @@ const poikasData: PoikasDataRaw = {
           them: 6,
           result: "lost",
           sisu: "Kevin Sarkela",
+          date: new Date("2024-03-03"),
           notable:
             "Kevin & Andrew goals, Kevin assisted on Andrew's. Shots about 28-29. They scored 4 in the first period.",
         },
@@ -1700,6 +1708,7 @@ const poikasData: PoikasDataRaw = {
           them: 3,
           result: "won",
           sisu: "Jamon Holmgren",
+          date: new Date("2024-03-10"),
           notable:
             "Goals: Asa, Steve, Oren, Brad, Andrew, and Nolan. Assists: Kevin, Steve, Brad, likely others. Shots: 31-26. Badgers were previously undefeated.",
         },

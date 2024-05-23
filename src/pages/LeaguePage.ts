@@ -135,6 +135,7 @@ export function LeaguePage({ league }: LeagueProps) {
         <table id="games" class="roster">
           <thead>
             <tr>
+              <th>Date</th>
               <th>Opponent</th>
               <th>Score</th>
               <th>Sisu Cup</th>
@@ -148,6 +149,7 @@ export function LeaguePage({ league }: LeagueProps) {
                 .map(
                   (game) => `
                     <tr>
+                      <td>${game.date ? game.date.toLocaleDateString() : "-"}</td>
                       <td>${game.vsLink}</td>
                       <td>${game.result} ${game.us}-${game.them}</td>
                       <td>${(game.sisu && players?.find((p) => p.name === game.sisu)?.profileLink) || "-"}</td>
