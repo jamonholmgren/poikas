@@ -1631,6 +1631,24 @@ const poikasData: PoikasDataRaw = {
           date: new Date("2024-05-18"),
           notable: "Shots 18-42 them. Goal: Evan. Assist: Dan. Tight game down to the wire. Last reg season game.",
         },
+        {
+          vs: "Liquid Gold",
+          us: 5,
+          them: 2,
+          result: "won",
+          sisu: "Konrad Stenersen",
+          date: new Date("2024-05-25"),
+          notable: "Makeup game.",
+        },
+        {
+          vs: "Pinecones",
+          us: 4,
+          them: 3,
+          result: "won",
+          date: new Date("2024-06-01"),
+          notable:
+            "Playoff semifinals. Sisu went to whole team. Exciting, intense game, we were down 2-3 and tied up late, and scored with 16 seconds left in OT. G: Konrad, Evan, ?, ?. A: ?.",
+        },
       ],
     },
     {
@@ -1638,7 +1656,7 @@ const poikasData: PoikasDataRaw = {
       season: "Spring",
       level: "C",
       schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2950569/Suomi-Poikas-C.aspx?framed=1",
-      playoffs: "pending",
+      playoffs: "lost",
       sidebar: `
         <div class="sidebar-section">
           <a href="https://www.dropbox.com/scl/fo/7ovs2p62hffx98nn6jm66/APYZkH7gMJjAoGCKxYY3Cy8?rlkey=mtarvqhsp7dnlb49zwyaheh8p&dl=0" target="_blank">
@@ -1793,6 +1811,23 @@ const poikasData: PoikasDataRaw = {
           sisu: "Nolan Storm",
           date: new Date("2024-05-19"),
           notable: "Shots 28-29 them. Goals: Nolan 2, Asa. Assists: Asa, Jared, Nels.",
+        },
+        {
+          vs: "Badgers",
+          us: 4,
+          them: 6,
+          result: "lost",
+          date: new Date("2024-05-26"),
+          notable: "",
+        },
+        {
+          vs: "PBR",
+          us: 3,
+          them: 4,
+          result: "lost",
+          sisu: "Jamon Holmgren",
+          date: new Date("2024-06-02"),
+          notable: "Playoffs semifinals. Shots: 34-38 them. G: Eric, Asa, Nolan. A: Kevin.",
         },
       ],
     },
