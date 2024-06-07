@@ -1938,7 +1938,11 @@ const poikasData: PoikasDataRaw = {
       number: 14,
       name: "Logan Matson",
       bio: "Logan is new to the team as of Spring 2024. He's Shane, Oren, and Nolan's older brother.",
-      pos: "RW",
+      shoots: "L",
+      pos: "D",
+      ht: "5-8",
+      wt: 155,
+      born: 1990,
     },
     {
       number: 63,
