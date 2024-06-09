@@ -1465,7 +1465,7 @@ const poikasData: PoikasDataRaw = {
       season: "Spring",
       level: "Rec",
       schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2950580/Suomi-Poikas-Rec.aspx?framed=1",
-      playoffs: "pending",
+      playoffs: "champions",
       sidebar: `
         <div class="sidebar-section">
           <a href="https://naylynnphotography.pic-time.com/-suomipoikasspring2024/gallery" target="_blank">
@@ -1649,6 +1649,15 @@ const poikasData: PoikasDataRaw = {
           notable:
             "Playoff semifinals. Sisu went to whole team. Exciting, intense game, we were down 2-3 and tied up late, and scored with 16 seconds left in OT. G: Konrad, Evan, ?, ?. A: ?.",
         },
+        {
+          vs: "Slavic Peeps",
+          us: 5,
+          them: 1,
+          result: "won",
+          sisu: "Cedric Holmgren",
+          date: new Date("2024-06-08"),
+          notable: "CHAMPIONS! 🏆 Shots: 16-30 them. G: Evan 2, Cedric, Joel, Orrin. A: Shane 2, Orrin, Konrad, Myron. Poikas 5th championship!",
+        }
       ],
     },
     {
