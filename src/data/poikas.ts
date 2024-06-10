@@ -1466,6 +1466,7 @@ const poikasData: PoikasDataRaw = {
       level: "Rec",
       schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2950580/Suomi-Poikas-Rec.aspx?framed=1",
       playoffs: "champions",
+      photos: ["poikas-rec-2024-spring-champions.jpg"],
       sidebar: `
         <div class="sidebar-section">
           <a href="https://naylynnphotography.pic-time.com/-suomipoikasspring2024/gallery" target="_blank">
@@ -1656,8 +1657,9 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Cedric Holmgren",
           date: new Date("2024-06-08"),
-          notable: "CHAMPIONS! 🏆 Shots: 16-30 them. G: Evan 2, Cedric, Joel, Orrin. A: Shane 2, Orrin, Konrad, Myron. Poikas 5th championship!",
-        }
+          notable:
+            "CHAMPIONS! 🏆 Shots: 16-30 them. G: Evan 2, Cedric, Joel, Orrin. A: Shane 2, Orrin, Konrad, Myron. Poikas 5th championship!",
+        },
       ],
     },
     {
