@@ -10,7 +10,9 @@ type HomeProps = {
 export function HomePage({ data }: HomeProps) {
   // Finding the championships we've won as a team, but
   // ignoring the "with Russia" or "with Ukraine" leagues
-  const championLeagues = data.leagues.filter((s) => s.playoffs === "champions" && !`${s.aside}`.includes("with"))
+  const championLeagues = data.leagues
+    .filter((s) => s.playoffs === "champions" && !`${s.aside}`.includes("with"))
+    .toReversed()
 
   let recLeague = data.leagues.find((l) => l.level === "Rec" && l.current)
   if (!recLeague) recLeague = data.leagues.filter((l) => l.level === "Rec").pop()!
