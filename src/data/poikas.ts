@@ -1466,6 +1466,8 @@ const poikasData: PoikasDataRaw = {
       level: "Rec",
       schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2950580/Suomi-Poikas-Rec.aspx?framed=1",
       playoffs: "champions",
+      description:
+        "Back-to-back champions! Despite starting the season 0-3, we finished well and won a tight game in the semifinals, and in front of another packed house brought home the trophy against the Slavic Peeps 5-1!",
       photos: ["poikas-rec-2024-spring-champions.jpg"],
       sidebar: `
         <div class="sidebar-section">
@@ -1668,6 +1670,8 @@ const poikasData: PoikasDataRaw = {
       level: "C",
       schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2950569/Suomi-Poikas-C.aspx?framed=1",
       playoffs: "lost",
+      description:
+        "One of our most competitive C seasons. We had a chance to make it to the C finals but lost in overtime. Great season with a great group of guys!",
       sidebar: `
         <div class="sidebar-section">
           <a href="https://www.dropbox.com/scl/fo/7ovs2p62hffx98nn6jm66/APYZkH7gMJjAoGCKxYY3Cy8?rlkey=mtarvqhsp7dnlb49zwyaheh8p&dl=0" target="_blank">
