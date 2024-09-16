@@ -2153,7 +2153,7 @@ const poikasData: PoikasDataRaw = {
     },
     {
       year: 2024,
-      season: "Fall/Winter",
+      season: "Fall",
       level: "C",
       schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2950569/Suomi-Poikas-C.aspx?framed=1",
       playoffs: "pending",
