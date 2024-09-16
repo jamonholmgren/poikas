@@ -6,8 +6,11 @@ export interface Game {
   sisu?: string
   notable?: string
   date?: Date
+  goalie?: string
+  stats?: Stats
 
   // convenience references
+  goaliePlayer?: Player
   sisuPlayer?: Player
   league?: League
   vsURL?: string
@@ -93,5 +96,32 @@ export type SeasonMap = {
   [label: string]: {
     rec: string
     c: string
+  }
+}
+
+export interface PlayerGameStats {
+  player: string
+  goals: number
+  assists: number
+}
+
+// For use in functions that calculate season stats
+export interface PlayerSeasonStats {
+  player: Player
+  league: League
+  gamesPlayed: number
+  goals: number
+  assists: number
+  points: number
+  shootoutGoals: number
+  saves?: number
+  shotsAgainst?: number
+  gamesAsGoalie?: number
+}
+
+export type Stats = {
+  [playerName: string]: {
+    goals?: number
+    assists?: number
   }
 }

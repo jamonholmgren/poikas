@@ -1504,6 +1504,11 @@ const poikasData: PoikasDataRaw = {
           result: "lost",
           date: new Date("2024-02-10"),
           notable: "Brenden and Shane goals. Shots were 11-13. Jamon out, Dennis in net.",
+          goalie: "Dennis",
+          stats: {
+            "Brenden Mattila": { goals: 1 },
+            "Shane Matson": { goals: 1 },
+          },
         },
         {
           vs: "Slavic Peeps",
@@ -1513,6 +1518,13 @@ const poikasData: PoikasDataRaw = {
           sisu: "Orrin Erickson",
           date: new Date("2024-02-24"),
           notable: "Orrin, Nolan, Konrad goals. Orrin (2), Jamon, Cedric, Nolan assists.",
+          stats: {
+            "Orrin Erickson": { goals: 1, assists: 2 },
+            "Nolan Matson": { goals: 1, assists: 1 },
+            "Konrad Stenersen": { goals: 1 },
+            "Jamon Holmgren": { assists: 1 },
+            "Cedric Holmgren": { assists: 1 },
+          },
         },
         {
           vs: "Pinecones",
@@ -1531,6 +1543,13 @@ const poikasData: PoikasDataRaw = {
           sisu: "Evan Tapio",
           date: new Date("2024-03-09"),
           notable: "Myron (g a), Evan (g), Orrin (2g a), Konrad (a), Nolan (a). 26-26 shots.",
+          stats: {
+            "Myron Kinnunen": { goals: 1, assists: 1 },
+            "Evan Tapio": { goals: 1 },
+            "Orrin Erickson": { goals: 2, assists: 1 },
+            "Konrad Stenersen": { assists: 1 },
+            "Nolan Matson": { assists: 1 },
+          },
         },
         {
           vs: "Liquid Gold",
@@ -1540,6 +1559,13 @@ const poikasData: PoikasDataRaw = {
           sisu: "Ethan Kulla",
           date: new Date("2024-03-16"),
           notable: "Shots 22-14, Dan 2g 1a, Nolan 1g, Evan 1g 1a, Brenden 1g, Orrin 1a.",
+          stats: {
+            "Dan Warren": { goals: 2, assists: 1 },
+            "Nolan Matson": { goals: 1 },
+            "Evan Tapio": { goals: 1, assists: 1 },
+            "Brenden Mattila": { goals: 1 },
+            "Orrin Erickson": { assists: 1 },
+          },
         },
         {
           vs: "Caps N Taps",
@@ -1549,6 +1575,14 @@ const poikasData: PoikasDataRaw = {
           sisu: "Brenden Mattila",
           date: new Date("2024-03-23"),
           notable: "Shots 22-23, Evan 1g, Brenden 1g 2a, Daniel 1g, Jay 1a, Nolan 1a, Cedric 1a.",
+          stats: {
+            "Evan Tapio": { goals: 1 },
+            "Brenden Mattila": { goals: 1, assists: 2 },
+            "Daniel Kulla": { goals: 1 },
+            "Jay Tapio": { assists: 1 },
+            "Nolan Matson": { assists: 1 },
+            "Cedric Holmgren": { assists: 1 },
+          },
         },
         {
           vs: "Slavic Peeps",
@@ -1559,6 +1593,11 @@ const poikasData: PoikasDataRaw = {
           date: new Date("2024-03-30"),
           notable:
             "Konrad Stenersen 2g, Dan Warren 2g, Joel Mattila 3a. Goals included a scramble in front, a faceoff win to Dan, and persistent forechecking leading to a goal by Konrad.",
+          stats: {
+            "Konrad Stenersen": { goals: 2 },
+            "Dan Warren": { goals: 2 },
+            "Joel Mattila": { assists: 3 },
+          },
         },
         {
           vs: "Caps N Taps",
@@ -1568,6 +1607,13 @@ const poikasData: PoikasDataRaw = {
           sisu: "Myron Kinnunen",
           date: new Date("2024-04-06"),
           notable: "First game of a double-header. Goals: Myron (2), Dan, Shane, Konrad. Assists: Orrin. Jamon out.",
+          stats: {
+            "Myron Kinnunen": { goals: 2 },
+            "Dan Warren": { goals: 1 },
+            "Shane Matson": { goals: 1 },
+            "Konrad Stenersen": { goals: 1 },
+            "Orrin Erickson": { assists: 1 },
+          },
         },
         {
           vs: "Pinecones",
@@ -1577,6 +1623,9 @@ const poikasData: PoikasDataRaw = {
           sisu: "Konrad Stenersen",
           date: new Date("2024-04-06"),
           notable: "Second game of a double-header. They scored an empty netter. Goals: Shane. Jamon out.",
+          stats: {
+            "Shane Matson": { goals: 1 },
+          },
         },
         {
           vs: "Thundersticks",
@@ -1586,6 +1635,11 @@ const poikasData: PoikasDataRaw = {
           sisu: "Brenden Mattila",
           date: new Date("2024-04-13"),
           notable: "Goals: Brenden, Orrin. Assists: Donald. Jamon out.",
+          stats: {
+            "Brenden Mattila": { goals: 1 },
+            "Orrin Erickson": { goals: 1 },
+            "Donald Kulla": { assists: 1 },
+          },
         },
         {
           vs: "Liquid Gold",
@@ -1595,6 +1649,14 @@ const poikasData: PoikasDataRaw = {
           sisu: "Cedric Holmgren",
           date: new Date("2024-04-20"),
           notable: "Shots 35-25 us. Goals: Evan, Joel, Cedric (first, game winner). Assists: Myron, Orrin 2, Logan.",
+          stats: {
+            "Evan Tapio": { goals: 1 },
+            "Joel Mattila": { goals: 1 },
+            "Cedric Holmgren": { goals: 1 },
+            "Myron Kinnunen": { assists: 1 },
+            "Orrin Erickson": { assists: 2 },
+            "Logan Matson": { assists: 1 },
+          },
         },
         {
           vs: "Caps N Taps",
@@ -1605,6 +1667,17 @@ const poikasData: PoikasDataRaw = {
           date: new Date("2024-04-27"),
           notable:
             "Shots 47-13. Goals: Dan, Orrin 2, Evan, Logan, Konrad, Shane. Assists: Jamon, Joel, Konrad, Shane, Jay.",
+          stats: {
+            "Dan Warren": { goals: 1 },
+            "Orrin Erickson": { goals: 2 },
+            "Evan Tapio": { goals: 1 },
+            "Logan Matson": { goals: 1 },
+            "Konrad Stenersen": { goals: 1 },
+            "Shane Matson": { goals: 1 },
+            "Jamon Holmgren": { assists: 1 },
+            "Joel Mattila": { assists: 1 },
+            "Jay Tapio": { assists: 1 },
+          },
         },
         {
           vs: "Slavic Peeps",
@@ -1613,8 +1686,16 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Jamon Holmgren",
           date: new Date("2024-05-04"),
-          notable:
-            "Shots 23-34 them. Goals: Orrin 2, Evan 2, Nolan, Joel, Brenden. Assists: Orrin 3, Evan, Logan, Myron.",
+          notable: "Shots 23-34 them. G: Orrin 2, Evan 2, Nolan, Joel, Brenden. A: Orrin 3, Evan, Logan, Myron.",
+          stats: {
+            "Orrin Erickson": { goals: 2, assists: 3 },
+            "Evan Tapio": { goals: 2, assists: 1 },
+            "Nolan Matson": { goals: 1 },
+            "Joel Mattila": { goals: 1 },
+            "Brenden Mattila": { goals: 1 },
+            "Logan Matson": { assists: 1 },
+            "Myron Kinnunen": { assists: 1 },
+          },
         },
         {
           vs: "Pinecones",
@@ -1624,6 +1705,14 @@ const poikasData: PoikasDataRaw = {
           sisu: "Evan Tapio",
           date: new Date("2024-05-11"),
           notable: "Shots 32-30 us. Goals: Evan 2, Orrin 2, Daniel. Assists: Logan, Shane, Orrin, Nolan.",
+          stats: {
+            "Evan Tapio": { goals: 2 },
+            "Orrin Erickson": { goals: 2 },
+            "Daniel Kulla": { goals: 1 },
+            "Logan Matson": { assists: 1 },
+            "Shane Matson": { assists: 1 },
+            "Nolan Matson": { assists: 1 },
+          },
         },
         {
           vs: "Thundersticks",
@@ -1633,6 +1722,10 @@ const poikasData: PoikasDataRaw = {
           sisu: "Donald Kulla",
           date: new Date("2024-05-18"),
           notable: "Shots 18-42 them. Goal: Evan. Assist: Dan. Tight game down to the wire. Last reg season game.",
+          stats: {
+            "Evan Tapio": { goals: 1 },
+            "Dan Warren": { assists: 1 },
+          },
         },
         {
           vs: "Liquid Gold",
@@ -1651,6 +1744,10 @@ const poikasData: PoikasDataRaw = {
           date: new Date("2024-06-01"),
           notable:
             "Playoff semifinals. Sisu went to whole team. Exciting, intense game, we were down 2-3 and tied up late, and scored with 16 seconds left in OT. G: Konrad, Evan, ?, ?. A: ?.",
+          stats: {
+            "Konrad Stenersen": { goals: 1 },
+            "Evan Tapio": { goals: 1 },
+          },
         },
         {
           vs: "Slavic Peeps",
@@ -1661,6 +1758,15 @@ const poikasData: PoikasDataRaw = {
           date: new Date("2024-06-08"),
           notable:
             "CHAMPIONS! 🏆 Shots: 16-30 them. G: Evan 2, Cedric, Joel, Orrin. A: Shane 2, Orrin, Konrad, Myron. Poikas 5th championship!",
+          stats: {
+            "Evan Tapio": { goals: 2 },
+            "Cedric Holmgren": { goals: 1 },
+            "Joel Mattila": { goals: 1 },
+            "Orrin Erickson": { goals: 1, assists: 1 },
+            "Shane Matson": { assists: 2 },
+            "Konrad Stenersen": { assists: 1 },
+            "Myron Kinnunen": { assists: 1 },
+          },
         },
       ],
     },
@@ -1707,6 +1813,11 @@ const poikasData: PoikasDataRaw = {
           sisu: "Kieren Sarkela",
           date: new Date("2024-02-11"),
           notable: "Kieren's first C-level game. Asa & Kieren goals, Joel assist on Asa's.",
+          stats: {
+            "Asa Storm": { goals: 1 },
+            "Kieren Sarkela": { goals: 1 },
+            "Joel Mattila": { assists: 1 },
+          },
         },
         {
           vs: "CCCP",
@@ -1715,6 +1826,13 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           date: new Date("2024-02-18"),
           notable: "Joel (x2), Oren, Kieren, Russ, and Asa scored. Jamon out, sub goalie got Sisu cup.",
+          stats: {
+            "Joel Mattila": { goals: 2 },
+            "Oren Matson": { goals: 1 },
+            "Kieren Sarkela": { goals: 1 },
+            "Russ Tapio": { goals: 1 },
+            "Asa Storm": { goals: 1 },
+          },
         },
         {
           vs: "Callahan",
@@ -1724,6 +1842,10 @@ const poikasData: PoikasDataRaw = {
           sisu: "Andrew Tunseth",
           date: new Date("2024-02-25"),
           notable: "Hard fought game. Andrew 2 goals, Oren 1 goal in third on penalty shot. Shots about 21-25.",
+          stats: {
+            "Andrew Tunseth": { goals: 2 },
+            "Oren Matson": { goals: 1 },
+          },
         },
         {
           vs: "Local Legends",
@@ -1734,6 +1856,10 @@ const poikasData: PoikasDataRaw = {
           date: new Date("2024-03-03"),
           notable:
             "Kevin & Andrew goals, Kevin assisted on Andrew's. Shots about 28-29. They scored 4 in the first period.",
+          stats: {
+            "Kevin Sarkela": { goals: 1, assists: 1 },
+            "Andrew Tunseth": { goals: 1 },
+          },
         },
         {
           vs: "Badgers",
@@ -1744,6 +1870,15 @@ const poikasData: PoikasDataRaw = {
           date: new Date("2024-03-10"),
           notable:
             "Goals: Asa, Steve, Oren, Brad, Andrew, and Nolan. Assists: Kevin, Steve, Brad, likely others. Shots: 31-26. Badgers were previously undefeated.",
+          stats: {
+            "Asa Storm": { goals: 1 },
+            "Steve Saunders": { goals: 1, assists: 1 },
+            "Oren Matson": { goals: 1 },
+            "Brad Wuori": { goals: 1, assists: 1 },
+            "Andrew Tunseth": { goals: 1 },
+            "Nolan Storm": { goals: 1 },
+            "Kevin Sarkela": { assists: 1 },
+          },
         },
         {
           vs: "Lightning",
@@ -1754,6 +1889,15 @@ const poikasData: PoikasDataRaw = {
           date: new Date("2024-03-17"),
           notable:
             "Shots officially 26-23 but probably 30s each. Goals: Nels 2, Andrew 2, Eric, Steve. Assists: Scott, Jared, Asa (at least). Lightning are the top offensive team in the league.",
+          stats: {
+            "Nels Tapio": { goals: 2 },
+            "Andrew Tunseth": { goals: 2 },
+            "Eric Matson": { goals: 1 },
+            "Steve Saunders": { goals: 1 },
+            "Scott Daniels": { assists: 1 },
+            "Jared Paben": { assists: 1 },
+            "Asa Storm": { assists: 1 },
+          },
         },
         {
           vs: "Bandits",
@@ -1763,6 +1907,12 @@ const poikasData: PoikasDataRaw = {
           sisu: "Andrew Tunseth",
           date: new Date("2024-03-24"),
           notable: "Shots 23-41 them, Nels 1g, Asa 2g 1a, Andrew 1g 1a, Nolan 1a, plus more assists.",
+          stats: {
+            "Nels Tapio": { goals: 1 },
+            "Asa Storm": { goals: 2, assists: 1 },
+            "Andrew Tunseth": { goals: 1, assists: 1 },
+            "Nolan Storm": { assists: 1 },
+          },
         },
         {
           vs: "Dead Guys",
@@ -1772,6 +1922,10 @@ const poikasData: PoikasDataRaw = {
           sisu: "Steve Saunders",
           date: new Date("2024-03-31"),
           notable: "Nels Tapio 1g, Oren Matson 1g.",
+          stats: {
+            "Nels Tapio": { goals: 1 },
+            "Oren Matson": { goals: 1 },
+          },
         },
         {
           vs: "Revolution",
@@ -1781,6 +1935,10 @@ const poikasData: PoikasDataRaw = {
           sisu: "Asa Storm",
           date: new Date("2024-04-07"),
           notable: "Joel 2 goals, Eric 1 assist, shots 25-40.",
+          stats: {
+            "Joel Mattila": { goals: 2 },
+            "Eric Matson": { assists: 1 },
+          },
         },
         {
           vs: "PBR",
@@ -1790,6 +1948,11 @@ const poikasData: PoikasDataRaw = {
           sisu: "Nolan Storm",
           date: new Date("2024-04-14"),
           notable: "Lost in shootout. Goals by Asa, Nolan, Kieran. Assists by Nolan. Shots 22-29 them.",
+          stats: {
+            "Asa Storm": { goals: 1 },
+            "Nolan Storm": { goals: 1, assists: 1 },
+            "Kieran Sarkela": { goals: 1 },
+          },
         },
         {
           vs: "CCCP",
@@ -1799,6 +1962,11 @@ const poikasData: PoikasDataRaw = {
           sisu: "Russ Tapio",
           date: new Date("2024-04-21"),
           notable: "Goals: Asa, Steve. Assists: Russ. Shots: 18-26 them.",
+          stats: {
+            "Asa Storm": { goals: 1 },
+            "Steve Saunders": { goals: 1 },
+            "Russ Tapio": { assists: 1 },
+          },
         },
         {
           vs: "Callahan",
@@ -1808,6 +1976,12 @@ const poikasData: PoikasDataRaw = {
           sisu: "Kieren Sarkela",
           date: new Date("2024-04-28"),
           notable: "Goals: Russ 2, Asa 2, Randy, Kevin. Assists: Russ, Kevin.",
+          stats: {
+            "Russ Tapio": { goals: 2, assists: 1 },
+            "Asa Storm": { goals: 2 },
+            "Randy Storm": { goals: 1 },
+            "Kevin Sarkela": { goals: 1, assists: 1 },
+          },
         },
         {
           vs: "Local Legends",
@@ -1817,6 +1991,11 @@ const poikasData: PoikasDataRaw = {
           sisu: "Eric Matson",
           date: new Date("2024-05-05"),
           notable: "Shots 30-20 us. Goals: Scott, Andrew. Assists: Kevin, Andrew.",
+          stats: {
+            "Scott Daniels": { goals: 1 },
+            "Andrew Tunseth": { goals: 1, assists: 1 },
+            "Kevin Sarkela": { assists: 1 },
+          },
         },
         {
           vs: "Lightning",
@@ -1826,6 +2005,12 @@ const poikasData: PoikasDataRaw = {
           sisu: "Nolan Storm",
           date: new Date("2024-05-19"),
           notable: "Shots 28-29 them. Goals: Nolan 2, Asa. Assists: Asa, Jared, Nels.",
+          stats: {
+            "Nolan Storm": { goals: 2 },
+            "Asa Storm": { goals: 1, assists: 1 },
+            "Jared Paben": { assists: 1 },
+            "Nels Tapio": { assists: 1 },
+          },
         },
         {
           vs: "Badgers",
@@ -1843,6 +2028,140 @@ const poikasData: PoikasDataRaw = {
           sisu: "Jamon Holmgren",
           date: new Date("2024-06-02"),
           notable: "Playoffs semifinals. Shots: 34-38 them. G: Eric, Asa, Nolan. A: Kevin.",
+          stats: {
+            "Eric Matson": { goals: 1 },
+            "Asa Storm": { goals: 1 },
+            "Nolan Storm": { goals: 1 },
+            "Kevin Sarkela": { assists: 1 },
+          },
+        },
+      ],
+    },
+    {
+      year: 2024,
+      season: "Fall",
+      level: "Rec",
+      schedule: "https://mountainview.ezleagues.ezfacility.com/teams/3028138/Suomi-Poikas-Rec.aspx?framed=1",
+      playoffs: "pending",
+      description: "Rec league is back, and so are the Poikas!",
+      photos: [],
+      sidebar: "",
+      roster: [
+        "Avery Tapio",
+        "Brenden Mattila",
+        "Cedric Holmgren",
+        "Dan Warren",
+        "Daniel Kulla",
+        "Donald Kulla",
+        "Ethan Kulla",
+        "Joel Mattila",
+        "Logan Matson",
+        "Myron Kinnunen",
+        "Nolan Matson",
+        "Oren Matson",
+        "Orrin Erickson",
+        "Peter Tapio",
+        "Shane Matson",
+        "Jamon Holmgren",
+      ],
+      games: [
+        {
+          vs: "Unnamed Opponent",
+          us: 4,
+          them: 0,
+          result: "won",
+          sisu: "Orrin Erickson",
+          date: new Date("2024-09-08"),
+          notable: "Logan 1g, Oren M. 1g, Orrin E. 2g.",
+          stats: {
+            "Logan Matson": { goals: 1 },
+            "Oren Matson": { goals: 1 },
+            "Orrin Erickson": { goals: 2 },
+          },
+        },
+        {
+          vs: "Caps N Taps",
+          us: 9,
+          them: 0,
+          result: "won",
+          sisu: "Joel Mattila",
+          date: new Date("2024-09-14"),
+          notable:
+            "Orrin E. 2g, Oren M. 2g 1a, Myron 1g 2a, Dan 1g, Joel 1g, Nolan 1g, Shane 1g, Daniel 2a, Avery 1a. Shots were 41-5.",
+          stats: {
+            "Orrin Erickson": { goals: 2 },
+            "Oren Matson": { goals: 2, assists: 1 },
+            "Myron Kinnunen": { goals: 1, assists: 2 },
+            "Dan Warren": { goals: 1 },
+            "Joel Mattila": { goals: 1 },
+            "Nolan Matson": { goals: 1 },
+            "Shane Matson": { goals: 1 },
+            "Daniel Kulla": { assists: 2 },
+            "Avery Tapio": { assists: 1 },
+          },
+        },
+      ],
+    },
+    {
+      year: 2024,
+      season: "Fall/Winter",
+      level: "C",
+      schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2950569/Suomi-Poikas-C.aspx?framed=1",
+      playoffs: "pending",
+      description: "Another season of C/CC league is underway!",
+      photos: [],
+      sidebar: "",
+      roster: [
+        "Andrew Tunseth",
+        "Brad Wuori",
+        "Caleb Aring",
+        "Evan Tapio",
+        "Jared Matson",
+        "Jared Paben",
+        "Joel Mattila",
+        "Kevin Sarkela",
+        "Konrad Stenersen",
+        "Matt Bromley",
+        "Nels Tapio",
+        "Peter Tapio",
+        "Russ Tapio",
+        "Scott Daniels",
+        "Steve Saunders",
+        "Jamon Holmgren",
+      ],
+      games: [
+        {
+          vs: "Revolution",
+          us: 8,
+          them: 1,
+          result: "won",
+          sisu: "Joel Mattila",
+          date: new Date("2024-09-08"),
+          notable:
+            "Andrew 2g, Joel 1g 1a, Steve 1g, Kevin 1g, Peter 1g, Matt 1g, Jared 1g. Assists: Kevin, Russ. Shots were not fully recorded.",
+          stats: {
+            "Andrew Tunseth": { goals: 2 },
+            "Joel Mattila": { goals: 1, assists: 1 },
+            "Steve Saunders": { goals: 1 },
+            "Kevin Sarkela": { goals: 1, assists: 1 },
+            "Peter Tapio": { goals: 1 },
+            "Matt Bromley": { goals: 1 },
+            "Jared Matson": { goals: 1 },
+            "Russ Tapio": { assists: 1 },
+          },
+        },
+        {
+          vs: "Dead Guys",
+          us: 4,
+          them: 3,
+          result: "won",
+          sisu: "Jamon Holmgren",
+          date: new Date("2024-09-15"),
+          notable: "Andrew 2g 1a (plus shootout winner), Russ 1g. Shots estimated at 35-25 us.",
+          stats: {
+            "Andrew Tunseth": { goals: 2, assists: 1 },
+            "Russ Tapio": { goals: 1 },
+          },
         },
       ],
     },
@@ -2108,6 +2427,7 @@ const poikasData: PoikasDataRaw = {
     },
     {
       name: "Matt Bromley",
+      pos: "RW",
     },
     {
       number: 27,
@@ -2137,6 +2457,11 @@ const poikasData: PoikasDataRaw = {
       wt: 185,
       shoots: "R",
       born: 1988,
+    },
+    {
+      number: 40,
+      name: "Caleb Aring",
+      pos: "LW",
     },
     {
       number: 5,
@@ -2200,6 +2525,11 @@ const poikasData: PoikasDataRaw = {
       number: 24,
       name: "Peter Tapio",
       pos: "C/D",
+    },
+    {
+      number: 0,
+      name: "Avery Tapio",
+      pos: "LW",
     },
     {
       number: 32,
