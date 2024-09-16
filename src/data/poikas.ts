@@ -152,6 +152,8 @@ const poikasData: PoikasDataRaw = {
           result: "lost-ot",
           sisu: "Joel Mattila",
           notable: "Championship: Lost 2-1 in OT. Outshot them 68-6.",
+          shotsUs: 68,
+          shotsThem: 6,
         },
       ],
     },
@@ -214,6 +216,8 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Brenden Mattila",
           notable: "37-25 shots on goal. Milo got little cup.",
+          shotsUs: 37,
+          shotsThem: 25,
         },
         {
           vs: "Thundersticks",
@@ -1535,6 +1539,8 @@ const poikasData: PoikasDataRaw = {
           sisu: "Daniel Kulla",
           date: new Date("2024-03-02"),
           notable: "Shots were 28-24. Our inexperience showed and their goalie played great.",
+          shotsUs: 28,
+          shotsThem: 24,
         },
         {
           vs: "Thundersticks",
@@ -1551,6 +1557,8 @@ const poikasData: PoikasDataRaw = {
             "Konrad Stenersen": { assists: 1 },
             "Nolan Matson": { assists: 1 },
           },
+          shotsUs: 26,
+          shotsThem: 26,
         },
         {
           vs: "Liquid Gold",
@@ -1567,6 +1575,8 @@ const poikasData: PoikasDataRaw = {
             "Brenden Mattila": { goals: 1 },
             "Orrin Erickson": { assists: 1 },
           },
+          shotsUs: 22,
+          shotsThem: 14,
         },
         {
           vs: "Caps N Taps",
@@ -1584,6 +1594,8 @@ const poikasData: PoikasDataRaw = {
             "Nolan Matson": { assists: 1 },
             "Cedric Holmgren": { assists: 1 },
           },
+          shotsUs: 22,
+          shotsThem: 23,
         },
         {
           vs: "Slavic Peeps",
@@ -1658,6 +1670,8 @@ const poikasData: PoikasDataRaw = {
             "Orrin Erickson": { assists: 2 },
             "Logan Matson": { assists: 1 },
           },
+          shotsUs: 35,
+          shotsThem: 25,
         },
         {
           vs: "Caps N Taps",
@@ -1679,6 +1693,8 @@ const poikasData: PoikasDataRaw = {
             "Joel Mattila": { assists: 1 },
             "Jay Tapio": { assists: 1 },
           },
+          shotsUs: 47,
+          shotsThem: 13,
         },
         {
           vs: "Slavic Peeps",
@@ -1697,6 +1713,8 @@ const poikasData: PoikasDataRaw = {
             "Logan Matson": { assists: 1 },
             "Myron Kinnunen": { assists: 1 },
           },
+          shotsUs: 23,
+          shotsThem: 34,
         },
         {
           vs: "Pinecones",
@@ -1714,6 +1732,8 @@ const poikasData: PoikasDataRaw = {
             "Shane Matson": { assists: 1 },
             "Nolan Matson": { assists: 1 },
           },
+          shotsUs: 32,
+          shotsThem: 30,
         },
         {
           vs: "Thundersticks",
@@ -1727,6 +1747,8 @@ const poikasData: PoikasDataRaw = {
             "Evan Tapio": { goals: 1 },
             "Dan Warren": { assists: 1 },
           },
+          shotsUs: 18,
+          shotsThem: 42,
         },
         {
           vs: "Liquid Gold",
@@ -1768,6 +1790,8 @@ const poikasData: PoikasDataRaw = {
             "Konrad Stenersen": { assists: 1 },
             "Myron Kinnunen": { assists: 1 },
           },
+          shotsUs: 16,
+          shotsThem: 30,
         },
       ],
     },
@@ -1847,6 +1871,8 @@ const poikasData: PoikasDataRaw = {
             "Andrew Tunseth": { goals: 2 },
             "Oren Matson": { goals: 1 },
           },
+          shotsUs: 21,
+          shotsThem: 25,
         },
         {
           vs: "Local Legends",
@@ -1861,6 +1887,8 @@ const poikasData: PoikasDataRaw = {
             "Kevin Sarkela": { goals: 1, assists: 1 },
             "Andrew Tunseth": { goals: 1 },
           },
+          shotsUs: 28,
+          shotsThem: 29,
         },
         {
           vs: "Badgers",
@@ -1880,6 +1908,8 @@ const poikasData: PoikasDataRaw = {
             "Nolan Storm": { goals: 1 },
             "Kevin Sarkela": { assists: 1 },
           },
+          shotsUs: 31,
+          shotsThem: 26,
         },
         {
           vs: "Lightning",
@@ -1899,6 +1929,8 @@ const poikasData: PoikasDataRaw = {
             "Jared Paben": { assists: 1 },
             "Asa Storm": { assists: 1 },
           },
+          shotsUs: 33,
+          shotsThem: 30,
         },
         {
           vs: "Bandits",
@@ -1914,6 +1946,8 @@ const poikasData: PoikasDataRaw = {
             "Andrew Tunseth": { goals: 1, assists: 1 },
             "Nolan Storm": { assists: 1 },
           },
+          shotsUs: 23,
+          shotsThem: 41,
         },
         {
           vs: "Dead Guys",
@@ -1940,6 +1974,8 @@ const poikasData: PoikasDataRaw = {
             "Joel Mattila": { goals: 2 },
             "Eric Matson": { assists: 1 },
           },
+          shotsUs: 25,
+          shotsThem: 40,
         },
         {
           vs: "PBR",
@@ -1954,6 +1990,8 @@ const poikasData: PoikasDataRaw = {
             "Nolan Storm": { goals: 1, assists: 1 },
             "Kieran Sarkela": { goals: 1 },
           },
+          shotsUs: 22,
+          shotsThem: 29,
         },
         {
           vs: "CCCP",
@@ -1968,6 +2006,8 @@ const poikasData: PoikasDataRaw = {
             "Steve Saunders": { goals: 1 },
             "Russ Tapio": { assists: 1 },
           },
+          shotsUs: 18,
+          shotsThem: 26,
         },
         {
           vs: "Callahan",
@@ -1997,6 +2037,8 @@ const poikasData: PoikasDataRaw = {
             "Andrew Tunseth": { goals: 1, assists: 1 },
             "Kevin Sarkela": { assists: 1 },
           },
+          shotsUs: 30,
+          shotsThem: 20,
         },
         {
           vs: "Lightning",
@@ -2012,6 +2054,8 @@ const poikasData: PoikasDataRaw = {
             "Jared Paben": { assists: 1 },
             "Nels Tapio": { assists: 1 },
           },
+          shotsUs: 28,
+          shotsThem: 29,
         },
         {
           vs: "Badgers",
@@ -2035,6 +2079,8 @@ const poikasData: PoikasDataRaw = {
             "Nolan Storm": { goals: 1 },
             "Kevin Sarkela": { assists: 1 },
           },
+          shotsUs: 34,
+          shotsThem: 38,
         },
       ],
     },
@@ -2100,6 +2146,8 @@ const poikasData: PoikasDataRaw = {
             "Daniel Kulla": { assists: 2 },
             "Avery Tapio": { assists: 1 },
           },
+          shotsUs: 41,
+          shotsThem: 5,
         },
       ],
     },
