@@ -2,6 +2,8 @@ export interface Game {
   vs?: string
   us?: number
   them?: number
+  shotsUs?: number
+  shotsThem?: number
   result?: "won" | "lost" | "lost-ot" | "tied" | "forfeited" | "cancelled"
   sisu?: string
   notable?: string
