@@ -90,6 +90,7 @@ const poikasData: PoikasDataRaw = {
           them: 1,
           result: "lost",
           sisu: "Joel Mattila",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Caps N Taps",
@@ -97,12 +98,14 @@ const poikasData: PoikasDataRaw = {
           them: 3,
           result: "won",
           notable: "Trailing in the third, big third period",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Pinecones",
           us: 6,
           them: 1,
           result: "won",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Mother Russia",
@@ -110,6 +113,7 @@ const poikasData: PoikasDataRaw = {
           them: 2,
           result: "won",
           notable: "We had a full bench and they had only two subs",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Thundersticks",
@@ -117,12 +121,14 @@ const poikasData: PoikasDataRaw = {
           them: 2,
           result: "won",
           notable: "Tied 2-2 in third. We got two powerplays to win it.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Liquid Gold",
           us: 7,
           them: 2,
           result: "won",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Cap & Taps",
@@ -130,12 +136,14 @@ const poikasData: PoikasDataRaw = {
           them: 0,
           result: "won",
           notable: "Tighter game than the ending score.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Pinecones",
           us: 3,
           them: 0,
           result: "won",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Pinecones",
@@ -144,6 +152,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Scott Daniels",
           notable: "Playoffs: Tied it late in the third and won in shootout. Shots 40-36.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Liquid Gold",
@@ -154,6 +163,7 @@ const poikasData: PoikasDataRaw = {
           notable: "Championship: Lost 2-1 in OT. Outshot them 68-6.",
           shotsUs: 68,
           shotsThem: 6,
+          goalie: "Jamon Holmgren",
         },
       ],
     },
@@ -192,6 +202,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Asa Storm",
           notable: "We were up 8-0 after the first period then we let off the throttle.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Liquid Gold",
@@ -200,6 +211,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Joel Mattila",
           notable: "They only had six skaters. Joel got a hat trick. Brenden got two goals.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Caps N Taps",
@@ -208,6 +220,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Konrad Stenersen",
           notable: "Kevin got the little cup.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Liquid Gold",
@@ -218,6 +231,7 @@ const poikasData: PoikasDataRaw = {
           notable: "37-25 shots on goal. Milo got little cup.",
           shotsUs: 37,
           shotsThem: 25,
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Thundersticks",
@@ -226,6 +240,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Dan Warren",
           notable: "It was 3-2 going into the third period. Jay got little cup.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Caps N Taps",
@@ -233,6 +248,7 @@ const poikasData: PoikasDataRaw = {
           them: 2,
           result: "won",
           notable: "Only five skaters each side.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Liquid Gold",
@@ -241,6 +257,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Konrad Stenersen",
           notable: "Konrad got 3 or 4 goals.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Thundersticks",
@@ -249,6 +266,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Kevin Stepaniuk",
           notable: "Brenden got the little cup.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Caps N Taps",
@@ -257,6 +275,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Jamon Holmgren",
           notable: "Playoff game. Dan got the little cup.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Liquid Gold",
@@ -265,6 +284,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Joel Mattila",
           notable: "Championship game. Konrad got the little cup.",
+          goalie: "Jamon Holmgren",
         },
       ],
     },
@@ -301,6 +321,7 @@ const poikasData: PoikasDataRaw = {
           them: 2,
           result: "won",
           sisu: "Gabe Estola",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Caps N Taps",
@@ -309,6 +330,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Jamon Holmgren",
           notable: "Joel got two goals. 3-0 going into the third period.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Pinecones",
@@ -316,6 +338,7 @@ const poikasData: PoikasDataRaw = {
           them: 4,
           result: "lost",
           sisu: "Brenden Mattila",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Mother Russia",
@@ -323,6 +346,7 @@ const poikasData: PoikasDataRaw = {
           them: 2,
           result: "won",
           sisu: "Oren Matson",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Thundersticks",
@@ -331,6 +355,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Levi Estola",
           notable: "Levi and Gabe (brothers) both had two goals.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Liquid Gold",
@@ -338,6 +363,7 @@ const poikasData: PoikasDataRaw = {
           them: 3,
           result: "won",
           sisu: "Asa Storm",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Caps N Taps",
@@ -345,6 +371,7 @@ const poikasData: PoikasDataRaw = {
           them: 1,
           result: "won",
           sisu: "Brenden Mattila",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Pinecones",
@@ -352,6 +379,7 @@ const poikasData: PoikasDataRaw = {
           them: 4,
           result: "lost",
           sisu: "Levi Estola",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Mother Russia",
@@ -360,12 +388,14 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Jamon Holmgren",
           notable: "Joel scored the shootout winner. Brad got little cup.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Thundersticks",
           us: 6,
           them: 2,
           result: "won",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Liquid Gold",
@@ -374,6 +404,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Jay Tapio",
           notable: "Levi got little cup.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Pinecones",
@@ -382,6 +413,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Asa Storm",
           notable: "Oren got little cup.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Mother Russia",
@@ -390,6 +422,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Brenden Mattila",
           notable: "Brenden got two goals. Levi got little cup.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Thundersticks",
@@ -398,6 +431,7 @@ const poikasData: PoikasDataRaw = {
           result: "lost",
           sisu: "Jens Tapio",
           notable: "Asa got little cup.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Caps N Taps",
@@ -406,6 +440,7 @@ const poikasData: PoikasDataRaw = {
           result: "lost",
           sisu: "Dan Warren",
           notable: "Lost in shootout. Brenden got little cup.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Caps N Taps",
@@ -414,6 +449,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Joel Mattila",
           notable: "Playoffs semifinals. Joel had a hat trick.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Pinecones",
@@ -422,6 +458,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Levi Estola",
           notable: "Championship game. Jamon had shutout and got game puck.",
+          goalie: "Jamon Holmgren",
         },
       ],
     },
@@ -511,6 +548,7 @@ const poikasData: PoikasDataRaw = {
           them: 2,
           result: "won",
           sisu: "Shane Matson",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Liquid Gold",
@@ -518,6 +556,7 @@ const poikasData: PoikasDataRaw = {
           them: 1,
           result: "won",
           sisu: "Konrad Stenersen",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Thundersticks",
@@ -525,6 +564,7 @@ const poikasData: PoikasDataRaw = {
           them: 1,
           result: "won",
           sisu: "Jay Tapio",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Caps N Taps",
@@ -532,6 +572,7 @@ const poikasData: PoikasDataRaw = {
           them: 2,
           result: "won",
           sisu: "Jens Tapio",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Ukraine",
@@ -539,6 +580,7 @@ const poikasData: PoikasDataRaw = {
           them: 2,
           result: "won",
           sisu: "Milo Matson",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Pinecones",
@@ -546,6 +588,7 @@ const poikasData: PoikasDataRaw = {
           them: 1,
           result: "won",
           sisu: "Erik Benton",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Pinecones",
@@ -554,6 +597,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Milo Matson",
           notable: "Won in a shootout.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Mother Russia",
@@ -561,18 +605,21 @@ const poikasData: PoikasDataRaw = {
           them: 2,
           result: "won",
           sisu: "Brenden Mattila",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Liquid Gold",
           us: 5,
           them: 0,
           result: "won",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Caps N Taps",
           us: 8,
           them: 1,
           result: "won",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Thundersticks",
@@ -580,6 +627,7 @@ const poikasData: PoikasDataRaw = {
           them: 1,
           result: "lost",
           sisu: "Shane Matson",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Caps N Taps",
@@ -587,6 +635,7 @@ const poikasData: PoikasDataRaw = {
           them: 1,
           result: "won",
           notable: "Brenden had a hat trick",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Ukraine",
@@ -594,6 +643,7 @@ const poikasData: PoikasDataRaw = {
           them: 2,
           result: "won",
           sisu: "Konrad Stenersen",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Pinecones",
@@ -601,6 +651,7 @@ const poikasData: PoikasDataRaw = {
           them: 3,
           result: "lost",
           notable: "Lost in a shootout.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Thundersticks",
@@ -608,6 +659,7 @@ const poikasData: PoikasDataRaw = {
           them: 0,
           result: "won",
           notable: "Jamon shutout.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Ukraine",
@@ -616,6 +668,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Brenden Mattila",
           notable: "Playoffs semifinals.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Pinecones",
@@ -624,6 +677,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Asa Storm",
           notable: "Championship game! Jamon shutout.",
+          goalie: "Jamon Holmgren",
         },
       ],
     },
@@ -657,6 +711,7 @@ const poikasData: PoikasDataRaw = {
           us: 4,
           them: 2,
           result: "won",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Liquid Gold",
@@ -664,6 +719,7 @@ const poikasData: PoikasDataRaw = {
           them: 1,
           result: "won",
           sisu: "Daniel Rybak",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Thundersticks",
@@ -672,6 +728,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Brenden Mattila",
           notable: "Brenden had five goals!",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Caps N Taps",
@@ -679,6 +736,7 @@ const poikasData: PoikasDataRaw = {
           them: 4,
           result: "lost",
           sisu: "Joel Mattila",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Liquid Gold",
@@ -686,6 +744,7 @@ const poikasData: PoikasDataRaw = {
           them: 1,
           result: "won",
           sisu: "Ben Mikhalets",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Thundersticks",
@@ -694,6 +753,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Daniel Rybak",
           notable: "Joel Mattila had five goals.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Caps N Taps",
@@ -702,6 +762,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Jamon Holmgren",
           notable: "Shootout win",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Liquid Gold",
@@ -709,6 +770,7 @@ const poikasData: PoikasDataRaw = {
           them: 0,
           result: "won",
           sisu: "Russ Raybukin",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Thundersticks",
@@ -717,6 +779,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Erik Benton",
           notable: "Playoffs semifinals",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Caps N Taps",
@@ -725,6 +788,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Brenden Mattila",
           notable: "Championship game",
+          goalie: "Jamon Holmgren",
         },
       ],
     },
@@ -788,6 +852,7 @@ const poikasData: PoikasDataRaw = {
           them: 1,
           result: "won",
           notable: "Joel was in Michigan",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Callahan",
@@ -795,6 +860,7 @@ const poikasData: PoikasDataRaw = {
           them: 5,
           result: "lost",
           sisu: "Matt Bromley",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Bandits",
@@ -802,18 +868,21 @@ const poikasData: PoikasDataRaw = {
           them: 5,
           result: "lost",
           sisu: "Will Murphy",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Lightning",
           us: 2,
           them: 8,
           result: "lost",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Dead Guys",
           us: 4,
           them: 5,
           result: "lost",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Dead Guys",
@@ -821,6 +890,7 @@ const poikasData: PoikasDataRaw = {
           them: 7,
           result: "lost",
           sisu: "Asa Storm",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Badgers",
@@ -829,6 +899,7 @@ const poikasData: PoikasDataRaw = {
           result: "lost",
           sisu: "Andrew Nichol",
           notable: "They got an empty netter",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "CCCP",
@@ -836,6 +907,7 @@ const poikasData: PoikasDataRaw = {
           them: 7,
           result: "lost",
           sisu: "Erik Matson",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Revolution",
@@ -844,6 +916,7 @@ const poikasData: PoikasDataRaw = {
           result: "lost",
           sisu: "Jared Paben",
           notable: "Revolution had a 5-1 lead in the third",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "PBR",
@@ -851,6 +924,7 @@ const poikasData: PoikasDataRaw = {
           them: 4,
           result: "won",
           sisu: "Oren Matson",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Bandits",
@@ -858,18 +932,21 @@ const poikasData: PoikasDataRaw = {
           them: 6,
           result: "lost",
           sisu: "Matt Bromley",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Lightning",
           us: 0,
           them: 7,
           result: "lost",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "2 Towns",
           us: 4,
           them: 1,
           result: "won",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Callahan",
@@ -878,6 +955,7 @@ const poikasData: PoikasDataRaw = {
           result: "lost",
           sisu: "Eric Matson",
           notable: "Lost in a shootout",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Dead Guys",
@@ -885,6 +963,7 @@ const poikasData: PoikasDataRaw = {
           them: 8,
           result: "lost",
           sisu: "Andrew Nichol",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Bandits",
@@ -893,6 +972,7 @@ const poikasData: PoikasDataRaw = {
           result: "lost",
           sisu: "Dmitriy Piskorskiy",
           notable: "Playoffs round 1.",
+          goalie: "Jamon Holmgren",
         },
       ],
     },
@@ -926,12 +1006,14 @@ const poikasData: PoikasDataRaw = {
           result: "lost",
           sisu: "Levi Borth",
           notable: "Lost 3-2 in shootout.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Liquid Gold",
           us: 0,
           them: 2,
           result: "lost",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Slavic Peeps",
@@ -939,6 +1021,7 @@ const poikasData: PoikasDataRaw = {
           them: 5,
           result: "lost",
           sisu: "Shane Matson",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Pinecones",
@@ -946,6 +1029,7 @@ const poikasData: PoikasDataRaw = {
           them: 6,
           result: "lost",
           sisu: "Brenden Mattila",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Caps N Taps",
@@ -953,6 +1037,7 @@ const poikasData: PoikasDataRaw = {
           them: 1,
           result: "won",
           sisu: "Shane Matson",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Thundersticks",
@@ -960,6 +1045,7 @@ const poikasData: PoikasDataRaw = {
           them: 1,
           result: "won",
           sisu: "Kieren Sarkela",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Liquid Gold",
@@ -967,6 +1053,7 @@ const poikasData: PoikasDataRaw = {
           them: 1,
           result: "won",
           sisu: "Myron Kinnunen",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Slavic Peeps",
@@ -974,6 +1061,7 @@ const poikasData: PoikasDataRaw = {
           them: 3,
           result: "won",
           sisu: "Orrin Erickson",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Pinecones",
@@ -981,6 +1069,7 @@ const poikasData: PoikasDataRaw = {
           them: 0,
           result: "won",
           sisu: "Nathan Goddard",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Caps N Taps",
@@ -989,6 +1078,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Shane Matson",
           notable: "Brent Mattila had a goal, Brenden got 2.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Thundersticks",
@@ -996,6 +1086,7 @@ const poikasData: PoikasDataRaw = {
           them: 5,
           result: "lost",
           sisu: "Orrin Erickson",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Slavic Peeps",
@@ -1003,6 +1094,7 @@ const poikasData: PoikasDataRaw = {
           them: 5,
           result: "lost",
           sisu: "Nathan Goddard",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Pinecones",
@@ -1010,6 +1102,7 @@ const poikasData: PoikasDataRaw = {
           them: 2,
           result: "won",
           sisu: "Jamon Holmgren",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Caps N Taps",
@@ -1017,6 +1110,7 @@ const poikasData: PoikasDataRaw = {
           them: 0,
           result: "won",
           sisu: "Shane Matson",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Liquid Gold",
@@ -1024,6 +1118,7 @@ const poikasData: PoikasDataRaw = {
           them: 1,
           result: "lost",
           sisu: "Brenden Mattila",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Caps N Taps",
@@ -1031,6 +1126,7 @@ const poikasData: PoikasDataRaw = {
           them: 3,
           result: "lost",
           notable: "Playoffs semifinals. Shootout loss.",
+          goalie: "Jamon Holmgren",
         },
       ],
     },
@@ -1065,6 +1161,7 @@ const poikasData: PoikasDataRaw = {
           result: "lost",
           sisu: "Evan Tapio",
           notable: "They scored an empty netter.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Lightning",
@@ -1072,6 +1169,7 @@ const poikasData: PoikasDataRaw = {
           them: 3,
           result: "won",
           sisu: "Steve Saunders",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "PBR",
@@ -1080,6 +1178,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Eric Matson",
           notable: "Steve Saunders had a hat trick.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Dead Guys",
@@ -1087,6 +1186,7 @@ const poikasData: PoikasDataRaw = {
           them: 4,
           result: "lost",
           sisu: "Jamon Holmgren",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "2 Towns",
@@ -1094,6 +1194,7 @@ const poikasData: PoikasDataRaw = {
           them: 6,
           result: "lost",
           sisu: "Scott Daniels",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "CCCP",
@@ -1102,6 +1203,7 @@ const poikasData: PoikasDataRaw = {
           result: "lost",
           sisu: "Nels Tapio",
           notable: "Lost in a shootout.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Revolution",
@@ -1109,6 +1211,7 @@ const poikasData: PoikasDataRaw = {
           them: 4,
           result: "lost",
           sisu: "Eric Matson",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Badgers",
@@ -1116,6 +1219,7 @@ const poikasData: PoikasDataRaw = {
           them: 3,
           result: "won",
           sisu: "Steve Saunders",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Callahan",
@@ -1123,6 +1227,7 @@ const poikasData: PoikasDataRaw = {
           them: 4,
           result: "lost",
           sisu: "Jared Paben",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Bandits",
@@ -1130,6 +1235,7 @@ const poikasData: PoikasDataRaw = {
           them: 2,
           result: "won",
           sisu: "Brad Wuori",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Lightning",
@@ -1137,6 +1243,7 @@ const poikasData: PoikasDataRaw = {
           them: 11,
           result: "lost",
           sisu: "Steve Saunders",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "PBR",
@@ -1145,6 +1252,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Oren Matson",
           notable: "Joel game winner.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Dead Guys",
@@ -1152,18 +1260,21 @@ const poikasData: PoikasDataRaw = {
           them: 5,
           result: "lost",
           sisu: "Matt Bromley",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "2 Towns",
           us: 0,
           them: 12,
           result: "lost",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "CCCP",
           us: 5,
           them: 11,
           result: "lost",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Lightning",
@@ -1523,6 +1634,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Orrin Erickson",
           date: new Date("2024-02-24"),
           notable: "Orrin, Nolan, Konrad goals. Orrin (2), Jamon, Cedric, Nolan assists.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Orrin Erickson": { goals: 1, assists: 2 },
             "Nolan Matson": { goals: 1, assists: 1 },
@@ -1539,6 +1651,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Daniel Kulla",
           date: new Date("2024-03-02"),
           notable: "Shots were 28-24. Our inexperience showed and their goalie played great.",
+          goalie: "Jamon Holmgren",
           shotsUs: 28,
           shotsThem: 24,
         },
@@ -1550,6 +1663,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Evan Tapio",
           date: new Date("2024-03-09"),
           notable: "Myron (g a), Evan (g), Orrin (2g a), Konrad (a), Nolan (a). 26-26 shots.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Myron Kinnunen": { goals: 1, assists: 1 },
             "Evan Tapio": { goals: 1 },
@@ -1568,6 +1682,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Ethan Kulla",
           date: new Date("2024-03-16"),
           notable: "Shots 22-14, Dan 2g 1a, Nolan 1g, Evan 1g 1a, Brenden 1g, Orrin 1a.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Dan Warren": { goals: 2, assists: 1 },
             "Nolan Matson": { goals: 1 },
@@ -1586,6 +1701,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Brenden Mattila",
           date: new Date("2024-03-23"),
           notable: "Shots 22-23, Evan 1g, Brenden 1g 2a, Daniel 1g, Jay 1a, Nolan 1a, Cedric 1a.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Evan Tapio": { goals: 1 },
             "Brenden Mattila": { goals: 1, assists: 2 },
@@ -1606,6 +1722,7 @@ const poikasData: PoikasDataRaw = {
           date: new Date("2024-03-30"),
           notable:
             "Konrad Stenersen 2g, Dan Warren 2g, Joel Mattila 3a. Goals included a scramble in front, a faceoff win to Dan, and persistent forechecking leading to a goal by Konrad.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Konrad Stenersen": { goals: 2 },
             "Dan Warren": { goals: 2 },
@@ -1620,6 +1737,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Myron Kinnunen",
           date: new Date("2024-04-06"),
           notable: "First game of a double-header. Goals: Myron (2), Dan, Shane, Konrad. Assists: Orrin. Jamon out.",
+          goalie: "",
           stats: {
             "Myron Kinnunen": { goals: 2 },
             "Dan Warren": { goals: 1 },
@@ -1636,6 +1754,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Konrad Stenersen",
           date: new Date("2024-04-06"),
           notable: "Second game of a double-header. They scored an empty netter. Goals: Shane. Jamon out.",
+          goalie: "",
           stats: {
             "Shane Matson": { goals: 1 },
           },
@@ -1648,6 +1767,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Brenden Mattila",
           date: new Date("2024-04-13"),
           notable: "Goals: Brenden, Orrin. Assists: Donald. Jamon out.",
+          goalie: "",
           stats: {
             "Brenden Mattila": { goals: 1 },
             "Orrin Erickson": { goals: 1 },
@@ -1662,6 +1782,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Cedric Holmgren",
           date: new Date("2024-04-20"),
           notable: "Shots 35-25 us. Goals: Evan, Joel, Cedric (first, game winner). Assists: Myron, Orrin 2, Logan.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Evan Tapio": { goals: 1 },
             "Joel Mattila": { goals: 1 },
@@ -1682,6 +1803,7 @@ const poikasData: PoikasDataRaw = {
           date: new Date("2024-04-27"),
           notable:
             "Shots 47-13. Goals: Dan, Orrin 2, Evan, Logan, Konrad, Shane. Assists: Jamon, Joel, Konrad, Shane, Jay.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Dan Warren": { goals: 1 },
             "Orrin Erickson": { goals: 2 },
@@ -1704,6 +1826,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Jamon Holmgren",
           date: new Date("2024-05-04"),
           notable: "Shots 23-34 them. G: Orrin 2, Evan 2, Nolan, Joel, Brenden. A: Orrin 3, Evan, Logan, Myron.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Orrin Erickson": { goals: 2, assists: 3 },
             "Evan Tapio": { goals: 2, assists: 1 },
@@ -1724,6 +1847,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Evan Tapio",
           date: new Date("2024-05-11"),
           notable: "Shots 32-30 us. Goals: Evan 2, Orrin 2, Daniel. Assists: Logan, Shane, Orrin, Nolan.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Evan Tapio": { goals: 2 },
             "Orrin Erickson": { goals: 2 },
@@ -1743,6 +1867,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Donald Kulla",
           date: new Date("2024-05-18"),
           notable: "Shots 18-42 them. Goal: Evan. Assist: Dan. Tight game down to the wire. Last reg season game.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Evan Tapio": { goals: 1 },
             "Dan Warren": { assists: 1 },
@@ -1758,6 +1883,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Konrad Stenersen",
           date: new Date("2024-05-25"),
           notable: "Makeup game.",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "Pinecones",
@@ -1767,6 +1893,7 @@ const poikasData: PoikasDataRaw = {
           date: new Date("2024-06-01"),
           notable:
             "Playoff semifinals. Sisu went to whole team. Exciting, intense game, we were down 2-3 and tied up late, and scored with 16 seconds left in OT. G: Konrad, Evan, ?, ?. A: ?.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Konrad Stenersen": { goals: 1 },
             "Evan Tapio": { goals: 1 },
@@ -1781,6 +1908,7 @@ const poikasData: PoikasDataRaw = {
           date: new Date("2024-06-08"),
           notable:
             "CHAMPIONS! 🏆 Shots: 16-30 them. G: Evan 2, Cedric, Joel, Orrin. A: Shane 2, Orrin, Konrad, Myron. Poikas 5th championship!",
+          goalie: "Jamon Holmgren",
           stats: {
             "Evan Tapio": { goals: 2 },
             "Cedric Holmgren": { goals: 1 },
@@ -1838,6 +1966,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Kieren Sarkela",
           date: new Date("2024-02-11"),
           notable: "Kieren's first C-level game. Asa & Kieren goals, Joel assist on Asa's.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Asa Storm": { goals: 1 },
             "Kieren Sarkela": { goals: 1 },
@@ -1851,6 +1980,7 @@ const poikasData: PoikasDataRaw = {
           result: "won",
           date: new Date("2024-02-18"),
           notable: "Joel (x2), Oren, Kieren, Russ, and Asa scored. Jamon out, sub goalie got Sisu cup.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Joel Mattila": { goals: 2 },
             "Oren Matson": { goals: 1 },
@@ -1867,6 +1997,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Andrew Tunseth",
           date: new Date("2024-02-25"),
           notable: "Hard fought game. Andrew 2 goals, Oren 1 goal in third on penalty shot. Shots about 21-25.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Andrew Tunseth": { goals: 2 },
             "Oren Matson": { goals: 1 },
@@ -1883,6 +2014,7 @@ const poikasData: PoikasDataRaw = {
           date: new Date("2024-03-03"),
           notable:
             "Kevin & Andrew goals, Kevin assisted on Andrew's. Shots about 28-29. They scored 4 in the first period.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Kevin Sarkela": { goals: 1, assists: 1 },
             "Andrew Tunseth": { goals: 1 },
@@ -1899,6 +2031,7 @@ const poikasData: PoikasDataRaw = {
           date: new Date("2024-03-10"),
           notable:
             "Goals: Asa, Steve, Oren, Brad, Andrew, and Nolan. Assists: Kevin, Steve, Brad, likely others. Shots: 31-26. Badgers were previously undefeated.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Asa Storm": { goals: 1 },
             "Steve Saunders": { goals: 1, assists: 1 },
@@ -1920,6 +2053,7 @@ const poikasData: PoikasDataRaw = {
           date: new Date("2024-03-17"),
           notable:
             "Shots officially 26-23 but probably 30s each. Goals: Nels 2, Andrew 2, Eric, Steve. Assists: Scott, Jared, Asa (at least). Lightning are the top offensive team in the league.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Nels Tapio": { goals: 2 },
             "Andrew Tunseth": { goals: 2 },
@@ -1940,6 +2074,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Andrew Tunseth",
           date: new Date("2024-03-24"),
           notable: "Shots 23-41 them, Nels 1g, Asa 2g 1a, Andrew 1g 1a, Nolan 1a, plus more assists.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Nels Tapio": { goals: 1 },
             "Asa Storm": { goals: 2, assists: 1 },
@@ -1957,6 +2092,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Steve Saunders",
           date: new Date("2024-03-31"),
           notable: "Nels Tapio 1g, Oren Matson 1g.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Nels Tapio": { goals: 1 },
             "Oren Matson": { goals: 1 },
@@ -1970,6 +2106,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Asa Storm",
           date: new Date("2024-04-07"),
           notable: "Joel 2 goals, Eric 1 assist, shots 25-40.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Joel Mattila": { goals: 2 },
             "Eric Matson": { assists: 1 },
@@ -1985,6 +2122,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Nolan Storm",
           date: new Date("2024-04-14"),
           notable: "Lost in shootout. Goals by Asa, Nolan, Kieran. Assists by Nolan. Shots 22-29 them.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Asa Storm": { goals: 1 },
             "Nolan Storm": { goals: 1, assists: 1 },
@@ -2001,6 +2139,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Russ Tapio",
           date: new Date("2024-04-21"),
           notable: "Goals: Asa, Steve. Assists: Russ. Shots: 18-26 them.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Asa Storm": { goals: 1 },
             "Steve Saunders": { goals: 1 },
@@ -2017,6 +2156,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Kieren Sarkela",
           date: new Date("2024-04-28"),
           notable: "Goals: Russ 2, Asa 2, Randy, Kevin. Assists: Russ, Kevin.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Russ Tapio": { goals: 2, assists: 1 },
             "Asa Storm": { goals: 2 },
@@ -2032,6 +2172,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Eric Matson",
           date: new Date("2024-05-05"),
           notable: "Shots 30-20 us. Goals: Scott, Andrew. Assists: Kevin, Andrew.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Scott Daniels": { goals: 1 },
             "Andrew Tunseth": { goals: 1, assists: 1 },
@@ -2048,6 +2189,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Nolan Storm",
           date: new Date("2024-05-19"),
           notable: "Shots 28-29 them. Goals: Nolan 2, Asa. Assists: Asa, Jared, Nels.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Nolan Storm": { goals: 2 },
             "Asa Storm": { goals: 1, assists: 1 },
@@ -2064,6 +2206,7 @@ const poikasData: PoikasDataRaw = {
           result: "lost",
           date: new Date("2024-05-26"),
           notable: "",
+          goalie: "Jamon Holmgren",
         },
         {
           vs: "PBR",
@@ -2073,6 +2216,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Jamon Holmgren",
           date: new Date("2024-06-02"),
           notable: "Playoffs semifinals. Shots: 34-38 them. G: Eric, Asa, Nolan. A: Kevin.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Eric Matson": { goals: 1 },
             "Asa Storm": { goals: 1 },
@@ -2113,13 +2257,14 @@ const poikasData: PoikasDataRaw = {
       ],
       games: [
         {
-          vs: "Unnamed Opponent",
+          vs: "Thundersticks",
           us: 4,
           them: 0,
           result: "won",
           sisu: "Orrin Erickson",
           date: new Date("2024-09-08"),
-          notable: "Logan 1g, Oren M. 1g, Orrin E. 2g.",
+          notable: "Logan 1g, Oren M. 1g, Orrin E. 2g. Jamon out.",
+          goalie: "",
           stats: {
             "Logan Matson": { goals: 1 },
             "Oren Matson": { goals: 1 },
@@ -2135,6 +2280,7 @@ const poikasData: PoikasDataRaw = {
           date: new Date("2024-09-14"),
           notable:
             "Orrin E. 2g, Oren M. 2g 1a, Myron 1g 2a, Dan 1g, Joel 1g, Nolan 1g, Shane 1g, Daniel 2a, Avery 1a. Shots were 41-5.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Orrin Erickson": { goals: 2 },
             "Oren Matson": { goals: 2, assists: 1 },
@@ -2187,7 +2333,8 @@ const poikasData: PoikasDataRaw = {
           sisu: "Joel Mattila",
           date: new Date("2024-09-08"),
           notable:
-            "Andrew 2g, Joel 1g 1a, Steve 1g, Kevin 1g, Peter 1g, Matt 1g, Jared 1g. Assists: Kevin, Russ. Shots were not fully recorded.",
+            "Andrew 2g, Joel 1g 1a, Steve 1g, Kevin 1g, Peter 1g, Matt 1g, Jared 1g. Assists: Kevin, Russ. Shots were not fully recorded. Jamon out.",
+          goalie: "",
           stats: {
             "Andrew Tunseth": { goals: 2 },
             "Joel Mattila": { goals: 1, assists: 1 },
@@ -2207,6 +2354,7 @@ const poikasData: PoikasDataRaw = {
           sisu: "Jamon Holmgren",
           date: new Date("2024-09-15"),
           notable: "Andrew 2g 1a (plus shootout winner), Russ 1g. Shots estimated at 35-25 us.",
+          goalie: "Jamon Holmgren",
           stats: {
             "Andrew Tunseth": { goals: 2, assists: 1 },
             "Russ Tapio": { goals: 1 },
