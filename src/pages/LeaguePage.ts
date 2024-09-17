@@ -132,6 +132,21 @@ export function LeaguePage({ league }: LeagueProps) {
         </table>
 
         <h2>Games</h2>
+
+        <p>Subscribe to our Rec & C/CC schedules:</p>
+        <ul>
+          <li>
+            <a href="webcal://ics.benchapp.com/eyJwbGF5ZXJJZCI6NDY1ODAzLCJ0ZWFtSWQiOlsyNDYyNDBdfQ"
+              >Webcal link: Apple Calendar, Google Calendar</a
+            >
+          </li>
+          <li>
+            <a href="https://ics.benchapp.com/eyJwbGF5ZXJJZCI6NDY1ODAzLCJ0ZWFtSWQiOlsyNDYyNDBdfQ==" target="_blank"
+              >ICS file: Outlook, iCal, etc.</a
+            >
+          </li>
+        </ul>
+
         <table id="games" class="roster">
           <thead>
             <tr>
