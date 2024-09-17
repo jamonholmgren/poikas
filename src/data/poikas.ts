@@ -2301,7 +2301,7 @@ const poikasData: PoikasDataRaw = {
       year: 2024,
       season: "Fall",
       level: "C",
-      schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2950569/Suomi-Poikas-C.aspx?framed=1",
+      schedule: "https://mountainview.ezleagues.ezfacility.com/teams/3028116/Suomi-Poikas-C.aspx?framed=1",
       playoffs: "pending",
       description: "Another season of C/CC league is underway!",
       photos: [],
