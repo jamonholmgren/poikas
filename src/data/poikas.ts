@@ -2295,6 +2295,24 @@ const poikasData: PoikasDataRaw = {
           shotsUs: 41,
           shotsThem: 5,
         },
+{
+  "vs": "Liquid Gold",
+  "us": 4,
+  "them": 5,
+  "result": "shootout loss",
+  "sisu": "Daniel Kulla",
+  "date": new Date("2024-09-21"),
+  "notable": "Joel 1g, Oren 2g 1a, Brenden 1g, Cedric 1a",
+  "goalie": "Jamon Holmgren",
+  "stats": {
+    "Joel Mattila": { "goals": 1 },
+    "Oren Matson": { "goals": 2, "assists": 1 },
+    "Brenden Mattila": { "goals": 1 },
+    "Cedric Holmgren": { "assists": 1 }
+  },
+  "shotsUs": 25,
+  "shotsThem": 18
+},
       ],
     },
     {
