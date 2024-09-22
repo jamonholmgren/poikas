@@ -5,7 +5,7 @@
     "semi": false,
     "printWidth": 120
   },
-  "description": "This is a website for Suomi Poikas, a Finnish-American hockey club located in Vancouver, Washington.",
+  "description": "This is a website for Suomi Poikas, a Finnish-American hockey club located in Vancouver, Washington, playing at MVIA.",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
