@@ -1,7 +1,7 @@
 import { getData } from "../src/data/poikas"
 import { HomePage } from "../src/pages/HomePage"
 
-export async function onRequest(context) {
+export async function onRequest(context: EventContext<any, any, any>) {
   const data = getData()
 
   const html = HomePage({ data })
