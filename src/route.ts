@@ -10,7 +10,7 @@ type LayoutOptions = {
   metaImage?: string
 }
 
-export function layout(options: LayoutOptions) {
+function layout(options: LayoutOptions) {
   const { path, title, description, sidebar, main, footer, metaImage } = options
 
   const data = getData()
@@ -94,6 +94,11 @@ export function layout(options: LayoutOptions) {
   </body>
 </html>
   `
+}
+
+export function routePage(options: LayoutOptions) {
+  const contents = layout(options)
+  return new Response(contents, { headers: { "content-type": "text/html; charset=UTF-8" } })
 }
 
 function active(path: string, itemPath: string) {

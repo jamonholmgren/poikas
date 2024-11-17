@@ -1,13 +1,9 @@
-import { layout } from "../layout"
-import { type PoikasImage } from "../data/images"
+import type { PoikasImage } from "../data/images"
+import { routePage } from "../route"
 
-type PhotosPageProps = {
-  images: PoikasImage[]
-}
-
-export function PhotosPage({ images }: PhotosPageProps) {
-  return layout({
-    path: "/join/",
+export function PhotosPage(images: PoikasImage[]) {
+  return routePage({
+    path: "/photos/",
     title: "Suomi Poikas Photos",
     description: "Photos of the Suomi Poikas Hockey Club",
     metaImage: "/images/000-placeholder.jpg",

@@ -1,8 +1,7 @@
 import type { PoikasData } from "../types"
-import { layout } from "../layout"
+import { routePage } from "../route"
 import { ChampTile } from "../components/ChampTile"
 import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
-import { routePage } from "../utils/routePage"
 
 export function HomePage(data: PoikasData) {
   // Finding the championships we've won as a team, but
@@ -20,14 +19,13 @@ export function HomePage(data: PoikasData) {
   const lastRecGame = (recLeague.games || []).at(-1)
   const lastCGame = (cLeague.games || []).at(-1)
 
-  return routePage(
-    layout({
-      path: "/",
-      title: "Suomi Poikas",
-      description: "Suomi Poikas Hockey Club",
-      metaImage: "/images/finland-flag-icon.png",
-      sidebar: championLeagues.map((league) => ChampTile({ league })).join("\n"),
-      main: `
+  return routePage({
+    path: "/",
+    title: "Suomi Poikas",
+    description: "Suomi Poikas Hockey Club",
+    metaImage: "/images/finland-flag-icon.png",
+    sidebar: championLeagues.map((league) => ChampTile({ league })).join("\n"),
+    main: `
       <article>
         <img src="/images/poikas-2019-rec-faceoff-brenden.jpg" alt="Suomi Poikas" class="splash" />
         <h2>Welcome!</h2>
@@ -211,6 +209,5 @@ export function HomePage(data: PoikasData) {
         </table>
       </div>
     `,
-    })
-  )
+  })
 }

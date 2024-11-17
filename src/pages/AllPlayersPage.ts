@@ -1,12 +1,10 @@
-import type { League, Player } from "../types"
-import { layout } from "../layout"
+import type { Player, PoikasData } from "../types"
+import { routePage } from "../route"
 
-type AllPlayersPageProps = {
-  players: Player[]
-}
+export function AllPlayersPage(data: PoikasData) {
+  const players = data.players.sort((a, b) => (a.name > b.name ? -1 : 1))
 
-export function AllPlayersPage({ players }: AllPlayersPageProps) {
-  return layout({
+  return routePage({
     path: "/players/",
     title: "All Poikas Players",
     description: "All Poikas Players All Time",
@@ -54,6 +52,6 @@ export function AllPlayersPage({ players }: AllPlayersPageProps) {
         </table>
       </article>
 
-    `,
+      `,
   })
 }

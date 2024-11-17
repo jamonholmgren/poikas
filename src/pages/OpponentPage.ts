@@ -1,7 +1,6 @@
 import type { PoikasData } from "../types"
-import { layout } from "../layout"
+import { routePage } from "../route"
 import { gamesAgainstOpponent } from "../data/load"
-import { routePage } from "../utils/routePage"
 
 export function OpponentPage(data: PoikasData, slug: string) {
   const [recGames, cGames] = gamesAgainstOpponent(data, slug)
@@ -19,21 +18,20 @@ export function OpponentPage(data: PoikasData, slug: string) {
   const cLosses = cGames.filter((g) => g.result === "lost").length
   const cTies = cGames.filter((g) => g.result === "tied" || g.result === "lost-ot").length
 
-  return routePage(
-    layout({
-      path: `/vs/${slug}`,
-      title: `Poikas vs ${name}`,
-      description: "Games between the Suomi Poikas and " + name,
-      // metaImage: ,
-      sidebar: ``,
-      // <img
-      //   src="${player.imageURL}"
-      //   alt="${player.name} - Player Photo"
-      //   id="playerimage"
-      //   onerror="this.onerror=null;this.src='/images/000-placeholder.jpg';"
-      // />
-      // <span class="caption" id="playerimagecaption">${player.name}</span>`,
-      main: `
+  return routePage({
+    path: `/vs/${slug}`,
+    title: `Poikas vs ${name}`,
+    description: "Games between the Suomi Poikas and " + name,
+    // metaImage: ,
+    sidebar: ``,
+    // <img
+    //   src="${player.imageURL}"
+    //   alt="${player.name} - Player Photo"
+    //   id="playerimage"
+    //   onerror="this.onerror=null;this.src='/images/000-placeholder.jpg';"
+    // />
+    // <span class="caption" id="playerimagecaption">${player.name}</span>`,
+    main: `
       <article>
         <h2 id="playername">${name}</h2>
         <p id="bio">Games played between the Suomi Poikas and the ${name}.</p>
@@ -139,7 +137,6 @@ export function OpponentPage(data: PoikasData, slug: string) {
         }
       </article>
     `,
-      footer: ``,
-    })
-  )
+    footer: ``,
+  })
 }

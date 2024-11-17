@@ -1,11 +1,11 @@
-import type { League } from "../types"
-import { layout } from "../layout"
+import type { PoikasData } from "../types"
+import { routePage } from "../route"
 
-type LeagueProps = {
-  league: League
-}
+export function LeaguePage(data: PoikasData, slug: string) {
+  const league = data.leagues.find((l) => l.url.endsWith(slug))
 
-export function LeaguePage({ league }: LeagueProps) {
+  if (!league) return new Response(`League not found: ${slug}`, { status: 404 })
+
   const {
     url,
     schedule,
@@ -28,7 +28,7 @@ export function LeaguePage({ league }: LeagueProps) {
 
   const leagueStandingsHTML = schedule ? `<a href="${schedule}" target="_blank">MVIA</a>` : "-"
 
-  return layout({
+  return routePage({
     path: url,
     title: `${year} ${season} ${level}`,
     description: `Suomi Poikas league ${year} ${season} ${level}`,

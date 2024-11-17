@@ -1,11 +1,10 @@
-import type { Player, PoikasData } from "../types"
-import { layout } from "../layout"
+import type { PoikasData } from "../types"
 import { Champ } from "../components/Champ"
 import { sisuCups } from "../utils/sisuCups"
 import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
 import { notableAbbr } from "../utils/notableAbbr"
 import { images } from "../data/images"
-import { routePage } from "../utils/routePage"
+import { routePage } from "../route"
 
 export function PlayerPage(data: PoikasData, slug: string) {
   const player = data.players.find((p) => p.slug === slug)
@@ -22,13 +21,12 @@ export function PlayerPage(data: PoikasData, slug: string) {
 
   const playerImages = images.filter((img) => img.players.includes(player.name))
 
-  return routePage(
-    layout({
-      path: player.profileURL,
-      title: player.name,
-      description: player.bio || "",
-      metaImage: player.imageURL,
-      sidebar: `
+  return routePage({
+    path: player.profileURL,
+    title: player.name,
+    description: player.bio || "",
+    metaImage: player.imageURL,
+    sidebar: `
       <img
         src="${player.imageURL}"
         alt="${player.name} - Player Photo"
@@ -36,7 +34,7 @@ export function PlayerPage(data: PoikasData, slug: string) {
         onerror="this.onerror=null;this.src='/images/000-placeholder.jpg';"
       />
       <span class="caption" id="playerimagecaption">${player.name}</span>`,
-      main: `
+    main: `
       <article>
         <h2 id="playername">${player.name}</h2>
         <p id="bio">${player.bio || ""}</p>
@@ -190,7 +188,6 @@ export function PlayerPage(data: PoikasData, slug: string) {
         </div>
       </div>
     `,
-      footer: ``,
-    })
-  )
+    footer: ``,
+  })
 }

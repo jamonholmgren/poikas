@@ -1,7 +1,8 @@
-import { layout } from "../layout"
+import { routePage } from "../route"
+import type { PoikasData } from "../types"
 
-export function JoinPage() {
-  return layout({
+export function JoinPage(_data: PoikasData) {
+  return routePage({
     path: "/join/",
     title: "Join Suomi Poikas",
     description: "Join us! Suomi Poikas Hockey Club",
