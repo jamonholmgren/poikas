@@ -1,0 +1,40 @@
+name: Push to custom remote
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  pushToRemote:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Perform a full clone to avoid shallow clone issues
+
+      - name: Set up SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Manually set up known_hosts
+        run: |
+          set -e
+          echo "Adding remote server host key to known_hosts"
+          # Use ssh-keyscan to get the server's SSH host key
+          ssh-keyscan -p 22 ${{ secrets.CUSTOM_REMOTE_SERVER }} >> ~/.ssh/known_hosts
+          # Verify known_hosts file content
+          echo "Verifying known_hosts file content:"
+          cat ~/.ssh/known_hosts
+        shell: bash
+
+      - name: Force push to custom remote
+        env:
+          CUSTOM_REMOTE_URL: ${{ secrets.CUSTOM_REMOTE_URL }}
+        run: |
+          git remote add custom-remote $CUSTOM_REMOTE_URL
+          git push custom-remote main --force
+        shell: bash
