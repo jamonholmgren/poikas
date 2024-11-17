@@ -1,4 +1,4 @@
-import { PoikasData } from "../types"
+import type { PoikasData } from "../types"
 import { layout } from "../layout"
 import { ChampTile } from "../components/ChampTile"
 import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"

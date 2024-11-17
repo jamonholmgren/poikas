@@ -1,4 +1,4 @@
-import { getData } from "../../src/data/poikas"
+import { getData } from "../../data/poikas"
 
 export const onRequest: PagesFunction = async (context) => {
   const data = getData()

@@ -1,16 +1,12 @@
 {
   "name": "poikas",
   "private": true,
-  "prettier": {
-    "semi": false,
-    "printWidth": 120
-  },
   "description": "This is a website for Suomi Poikas, a Finnish-American hockey club located in Vancouver, Washington, playing at MVIA.",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./src/server.ts",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx wrangler pages dev ."
+    "start": "bun run src/server.ts"
   },
   "repository": {
     "type": "git",
@@ -18,13 +14,12 @@
   },
   "author": "Jamon Holmgren",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jamonholmgren/poikas/issues"
+  "prettier": {
+    "semi": false,
+    "printWidth": 120
   },
-  "homepage": "https://github.com/jamonholmgren/poikas#readme",
+  "homepage": "https://suomipoikas.com",
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240208.0",
-    "@types/node": "^22.5.5",
-    "wrangler": "^3.31.0"
+    "@types/bun": "latest"
   }
 }

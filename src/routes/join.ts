@@ -1,4 +1,4 @@
-import { JoinPage } from "../src/pages/JoinPage"
+import { JoinPage } from "../pages/JoinPage"
 
 export async function onRequest(context) {
   const html = JoinPage()

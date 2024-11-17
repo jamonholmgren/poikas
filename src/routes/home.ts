@@ -1,9 +1,8 @@
-import { getData } from "../src/data/poikas"
-import { HomePage } from "../src/pages/HomePage"
+import { getData } from "../data/poikas"
+import { HomePage } from "../pages/HomePage"
 
-export async function onRequest(context: EventContext<any, any, any>) {
+export async function routeHome(req: Request) {
   const data = getData()
-
   const html = HomePage({ data })
 
   return new Response(html, {
