@@ -28,7 +28,7 @@ export function OpponentPage(data: PoikasData, slug: string) {
     //   src="${player.imageURL}"
     //   alt="${player.name} - Player Photo"
     //   id="playerimage"
-    //   onerror="this.onerror=null;this.src='/images/000-placeholder.jpg';"
+    //   onerror="this.onerror=null;this.src='${img("000-placeholder.jpg")}';"
     // />
     // <span class="caption" id="playerimagecaption">${player.name}</span>`,
     main: `

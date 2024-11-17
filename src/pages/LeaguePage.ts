@@ -1,5 +1,6 @@
 import type { PoikasData } from "../types"
 import { routePage } from "../route"
+import { img } from "../image"
 
 export function LeaguePage(data: PoikasData, slug: string) {
   const league = data.leagues.find((l) => l.url.endsWith(slug))
@@ -24,7 +25,7 @@ export function LeaguePage(data: PoikasData, slug: string) {
     sidebar,
   } = league
 
-  const metaImage = (photos && `/images/${photos[0]}`) || "/images/finland-flag-icon.png"
+  const metaImage = (photos && img(photos[0])) || img("finland-flag-icon.png")
 
   const leagueStandingsHTML = schedule ? `<a href="${schedule}" target="_blank">MVIA</a>` : "-"
 
@@ -39,7 +40,7 @@ export function LeaguePage(data: PoikasData, slug: string) {
           src="${metaImage}"
           alt="${year} ${season} ${level} - League Photo"
           id="leagueimage"
-          onerror="this.onerror=null;this.src='/images/000-placeholder.jpg';"
+          onerror="this.onerror=null;this.src='${img("000-placeholder.jpg")}';"
         />
         <span class="caption" id="leagueimagecaption">${year} ${season} ${level}</span>
       </a>

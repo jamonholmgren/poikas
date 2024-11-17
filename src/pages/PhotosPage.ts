@@ -1,14 +1,15 @@
 import type { PoikasImage } from "../data/images"
 import { routePage } from "../route"
+import { img } from "../image"
 
 export function PhotosPage(images: PoikasImage[]) {
   return routePage({
     path: "/photos/",
     title: "Suomi Poikas Photos",
     description: "Photos of the Suomi Poikas Hockey Club",
-    metaImage: "/images/000-placeholder.jpg",
+    metaImage: img("000-placeholder.jpg"),
     sidebar: `
-      <img src="/images/poikas-2019-rec-faceoff-brenden.jpg" alt="Suomi Poikas" />
+      <img src="${img("poikas-2019-rec-faceoff-brenden.jpg")}" alt="Suomi Poikas" />
       <span class="caption">Suomi Poikas</span>
       <p><em>Photo credit <a href="/players/jared-paben">Jared Paben</a></em></p>
     `,
@@ -18,12 +19,12 @@ export function PhotosPage(images: PoikasImage[]) {
         <div id="photos" class="photos">
           ${images
             .map(
-              (img) => `
+              (im) => `
               <div class="photo-item">
-                <a href="${img.path}" target="_blank">
-                  <img src="${img.path}" alt="${img.caption}" title="${img.caption}"
-                      onerror="this.onerror=null;this.src='/images/000-placeholder.jpg';" />
-                  <abbr class="caption">${img.caption}</abbr>
+                <a href="${img(im.path)}" target="_blank">
+                  <img src="${img(im.path)}" alt="${im.caption}" title="${im.caption}"
+                      onerror="this.onerror=null;this.src='${img("000-placeholder.jpg")}';" />
+                  <abbr class="caption">${im.caption}</abbr>
                 </a>
               </div>
             `

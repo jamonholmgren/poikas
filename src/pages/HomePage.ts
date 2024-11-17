@@ -2,6 +2,7 @@ import type { PoikasData } from "../types"
 import { routePage } from "../route"
 import { ChampTile } from "../components/ChampTile"
 import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
+import { img } from "../image"
 
 export function HomePage(data: PoikasData) {
   // Finding the championships we've won as a team, but
@@ -23,11 +24,11 @@ export function HomePage(data: PoikasData) {
     path: "/",
     title: "Suomi Poikas",
     description: "Suomi Poikas Hockey Club",
-    metaImage: "/images/finland-flag-icon.png",
+    metaImage: img("finland-flag-icon.png"),
     sidebar: championLeagues.map((league) => ChampTile({ league })).join("\n"),
     main: `
       <article>
-        <img src="/images/poikas-2019-rec-faceoff-brenden.jpg" alt="Suomi Poikas" class="splash" />
+        <img src="${img("poikas-2019-rec-faceoff-brenden.jpg")}" alt="Suomi Poikas" class="splash" />
         <h2>Welcome!</h2>
         <p>
           Welcome to the official website of the Suomi Poikas, your favorite Finnish-American hockey team! Hyvä Suomi!

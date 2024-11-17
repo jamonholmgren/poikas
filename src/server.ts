@@ -9,6 +9,7 @@ import { AllPlayersPage } from "./pages/AllPlayersPage"
 import { JoinPage } from "./pages/JoinPage"
 import { PhotosPage } from "./pages/PhotosPage"
 import { LeaguePage } from "./pages/LeaguePage"
+import { setImageHost } from "./image"
 
 // Grab all the data on server start
 const data = getData()
@@ -17,6 +18,12 @@ const server = serve({
   port: 5151,
   async fetch(req) {
     const url = new URL(req.url)
+    const domain = url.hostname
+
+    // set the image host
+    const imageHost = domain === "localhost" ? "/images/" : `https://images.${domain}/`
+    setImageHost(imageHost)
+
     const segments = url.pathname.split("/")
     const segs = segments.length
 
@@ -44,9 +51,6 @@ const server = serve({
     if (url.pathname.startsWith("/photos")) {
       return PhotosPage(images)
     }
-    if (url.pathname.startsWith("/images/") && segs > 1) {
-      return routeStatic(url.pathname, ct(url.pathname))
-    }
     if (url.pathname.startsWith("/favicon.ico")) {
       return routeStatic("favicon.ico", "image/x-icon")
     }
@@ -55,6 +59,11 @@ const server = serve({
     }
     if (url.pathname.startsWith("/sitemap.xml")) {
       return routeStatic("sitemap.xml", "application/xml")
+    }
+
+    // these should be hosted by nginx, but just in case one slips through, we serve it
+    if (url.pathname.startsWith("/images/") && segs > 1) {
+      return routeStatic(url.pathname, ct(url.pathname))
     }
 
     return new Response("Not Found", { status: 404 })

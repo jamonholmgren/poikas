@@ -1,4 +1,5 @@
 import { getData } from "./data/load"
+import { img } from "./image"
 
 type LayoutOptions = {
   path: string
@@ -38,13 +39,13 @@ function layout(options: LayoutOptions) {
     <title>${title} - Suomi Poikas Hockey Club</title>
     <meta name="description" content="${description}" />
     <link rel="stylesheet" href="/styles.css?c=3" />
-    <link rel="icon" type="image/png" href="/images/finland-flag-icon.png" />
+    <link rel="icon" type="image/png" href="${img("finland-flag-icon.png")}" />
 
     <!-- OG stuff -->
     <meta property="og:title" content="${title} - Suomi Poikas Hockey Club" />
     <meta property="og:description" content="${description}" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="${metaImage || "/images/finland-flag-icon.png"}" />
+    <meta property="og:image" content="${metaImage || img("finland-flag-icon.png")}" />
     <meta property="og:image:alt" content="${title}" />
     <meta property="og:url" content="https://suomipoikas.com${path}" />
   </head>

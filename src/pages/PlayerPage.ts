@@ -5,6 +5,7 @@ import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
 import { notableAbbr } from "../utils/notableAbbr"
 import { images } from "../data/images"
 import { routePage } from "../route"
+import { img } from "../image"
 
 export function PlayerPage(data: PoikasData, slug: string) {
   const player = data.players.find((p) => p.slug === slug)
@@ -31,7 +32,7 @@ export function PlayerPage(data: PoikasData, slug: string) {
         src="${player.imageURL}"
         alt="${player.name} - Player Photo"
         id="playerimage"
-        onerror="this.onerror=null;this.src='/images/000-placeholder.jpg';"
+        onerror="this.onerror=null;this.src='${img("000-placeholder.jpg")}';"
       />
       <span class="caption" id="playerimagecaption">${player.name}</span>`,
     main: `
@@ -96,15 +97,17 @@ export function PlayerPage(data: PoikasData, slug: string) {
               <tbody>
                 ${playerImages
                   .reduce(
-                    (rows, img, index) => {
+                    (rows, im, index) => {
                       if (index % 4 === 0) {
                         rows.push("<tr>")
                       }
                       rows.push(`
                       <td>
-                        <a href="${img.path}" target="_blank">
-                          <img src="${img.path}" alt="${img.caption}" title="${img.caption}" width="250px" onerror="this.onerror=null;this.src='/images/000-placeholder.jpg';" />
-                          <span class="caption">${img.caption}</span>
+                        <a href="${im.path}" target="_blank">
+                          <img src="${im.path}" alt="${im.caption}" title="${
+                        im.caption
+                      }" width="250px" onerror="this.onerror=null;this.src='${img("000-placeholder.jpg")}';" />
+                          <span class="caption">${im.caption}</span>
                         </a>
                       </td>
                     `)

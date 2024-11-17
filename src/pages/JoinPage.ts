@@ -1,14 +1,15 @@
 import { routePage } from "../route"
 import type { PoikasData } from "../types"
+import { img } from "../image"
 
 export function JoinPage(_data: PoikasData) {
   return routePage({
     path: "/join/",
     title: "Join Suomi Poikas",
     description: "Join us! Suomi Poikas Hockey Club",
-    metaImage: "/images/000-placeholder.jpg",
+    metaImage: img("000-placeholder.jpg"),
     sidebar: `
-      <img src="/images/poikas-2019-rec-faceoff-brenden.jpg" alt="Suomi Poikas" />
+      <img src="${img("poikas-2019-rec-faceoff-brenden.jpg")}" alt="Suomi Poikas" />
       <span class="caption">Suomi Poikas</span>
     `,
     main: `

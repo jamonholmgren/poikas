@@ -1,5 +1,6 @@
 import type { Game, Player, PoikasData, PoikasDataRaw } from "../types"
 import { poikasData } from "./poikas"
+import { img } from "../image"
 
 let _data: PoikasData
 export function getData(): PoikasData {
@@ -87,8 +88,10 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
     player.slug = slugify(player.name)
 
     // player image URL and HTML
-    player.imageURL = `/images/players/${player.slug}.jpg`
-    player.imageHTML = `<img src="${player.imageURL}" alt="${player.name}" onerror="this.onerror=null;this.src='/images/000-placeholder.jpg';">`
+    player.imageURL = img(`players/${player.slug}.jpg`)
+    player.imageHTML = `<img src="${player.imageURL}" alt="${player.name}" onerror="this.onerror=null;this.src='${img(
+      "000-placeholder.jpg"
+    )}';">`
 
     // player profile URL
     player.profileURL = `/players/${player.slug}`

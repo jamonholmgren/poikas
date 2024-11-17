@@ -1,5 +1,6 @@
 import type { Player, PoikasData } from "../types"
 import { routePage } from "../route"
+import { img } from "../image"
 
 export function AllPlayersPage(data: PoikasData) {
   const players = data.players.sort((a, b) => (a.name > b.name ? 1 : -1))
@@ -8,9 +9,9 @@ export function AllPlayersPage(data: PoikasData) {
     path: "/players/",
     title: "All Poikas Players",
     description: "All Poikas Players All Time",
-    metaImage: "/images/finland-flag-icon.png",
+    metaImage: img("finland-flag-icon.png"),
     sidebar: `
-      <img src="/images/poikas-rec-2023-fall-champions.jpg" alt="Poikas" />
+      <img src="${img("poikas-rec-2023-fall-champions.jpg")}" alt="Poikas" />
       <span class="caption">Poikas</span>
     `,
     main: `

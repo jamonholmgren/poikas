@@ -1585,15 +1585,15 @@ export const poikasData: PoikasDataRaw = {
       description:
         "Back-to-back champions! Despite starting the season 0-3, we finished well and won a tight game in the semifinals, and in front of another packed house brought home the trophy against the Slavic Peeps 5-1!",
       photos: ["poikas-rec-2024-spring-champions.jpg"],
-      sidebar: `
-        <div class="sidebar-section">
-          <a href="https://naylynnphotography.pic-time.com/-suomipoikasspring2024/gallery" target="_blank">
-            <img src="/images/poikas-rec-2024-spring.jpg" />
-            <br />Naylynn Photography
-            <br />Spring Rec 2024 Photo Album
-          </a>
-        </div>
-      `,
+      // sidebar: `
+      //   <div class="sidebar-section">
+      //     <a href="https://naylynnphotography.pic-time.com/-suomipoikasspring2024/gallery" target="_blank">
+      //       <img src="${img("poikas-rec-2024-spring.jpg")}" />
+      //       <br />Naylynn Photography
+      //       <br />Spring Rec 2024 Photo Album
+      //     </a>
+      //   </div>
+      // `,
       roster: [
         "Brenden Mattila",
         "Cedric Holmgren",
