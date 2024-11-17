@@ -75,7 +75,7 @@ function layout(options: LayoutOptions) {
       ${footer || ""}
       <p>
         Website by
-        <a href="https://jamon.dev" target="_blank">Jamon Holmgren</a>.
+        <a href="https://jamon.dev" target="_blank">Jamon Holmgren</a>. Powered by Bun.
       </p>
     </footer>
     <!-- Google tag (gtag.js) -->
