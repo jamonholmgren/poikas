@@ -51,7 +51,7 @@ export function PlayerPage(data: PoikasData, slug: string) {
           </tr>
           <tr>
             <th>Age</th>
-            <td>${player.age || "-"}</td>
+            <td>${player.age() || "-"}</td>
           </tr>
           <tr>
             <th>Height</th>

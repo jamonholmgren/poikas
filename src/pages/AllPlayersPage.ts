@@ -2,7 +2,7 @@ import type { Player, PoikasData } from "../types"
 import { routePage } from "../route"
 
 export function AllPlayersPage(data: PoikasData) {
-  const players = data.players.sort((a, b) => (a.name > b.name ? -1 : 1))
+  const players = data.players.sort((a, b) => (a.name > b.name ? 1 : -1))
 
   return routePage({
     path: "/players/",
@@ -41,7 +41,7 @@ export function AllPlayersPage(data: PoikasData) {
                 <td>${p.number || "-"}</td>
                 <td class="extra">${p.ht || "-"}</td>
                 <td class="extra">${p.wt || "-"}</td>
-                <td class="extra">${p.age || "-"}</td>
+                <td class="extra">${p.age() || "-"}</td>
                 <td class="extra">${p.recLink || "-"}</td>
                 <td class="extra">${p.cLink || "-"}</td>
               </tr>

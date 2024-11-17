@@ -136,7 +136,7 @@ export function HomePage(data: PoikasData) {
                     <td class="extra">${p.wt || "-"}</td>
                     <td class="extra">${p.shoots || "-"}</td>
                     <td class="extra">${p.years || "-"}</td>
-                    <td class="extra">${p.age || "-"}</td>
+                    <td class="extra">${p.age() || "-"}</td>
                   </tr>
                 `
               )
@@ -175,7 +175,7 @@ export function HomePage(data: PoikasData) {
               <td class="extra">${p.wt || "-"}</td>
               <td class="extra">${p.shoots || "-"}</td>
               <td class="extra">${p.years || "-"}</td>
-              <td class="extra">${p.age || "-"}</td>
+              <td class="extra">${p.age() || "-"}</td>
             </tr>
           `
               )

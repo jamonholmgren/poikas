@@ -29,7 +29,7 @@ const server = serve({
     if (url.pathname.startsWith("/vs/")) {
       return OpponentPage(data, segments[2])
     }
-    if (url.pathname.startsWith("/players/") && segs > 2) {
+    if (url.pathname.startsWith("/players/") && segments[2]) {
       return PlayerPage(data, segments[2])
     }
     if (url.pathname.startsWith("/players")) {
@@ -67,9 +67,6 @@ function routeStatic(path: string, contentType: string, otherHeaders = {}) {
   const projectRoot = dirname(import.meta.dir)
   const file = Bun.file(join(projectRoot, "src", "static", path))
   if (!file.exists()) return new Response("Not Found", { status: 404 })
-
-  console.log("Serving static file:", path)
-  console.log("Content-Type:", contentType)
 
   return new Response(file, {
     headers: {

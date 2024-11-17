@@ -56,15 +56,15 @@ export function LeaguePage(data: PoikasData, slug: string) {
           </tr>
           <tr>
             <th>Wins</th>
-            <td>${wins || ""}</td>
+            <td>${wins || "0"}</td>
           </tr>
           <tr>
             <th>Losses</th>
-            <td>${losses || ""}</td>
+            <td>${losses || "0"}</td>
           </tr>
           <tr>
             <th>Ties/OT Losses</th>
-            <td>${ties || ""}</td>
+            <td>${ties || "0"}</td>
           </tr>
           <tr>
             <th>Playoffs Result</th>
@@ -122,7 +122,7 @@ export function LeaguePage(data: PoikasData, slug: string) {
                       <td class="extra">${player.wt || "-"}</td>
                       <td class="extra">${player.shoots || "-"}</td>
                       <td class="extra">${player.years || "-"}</td>
-                      <td class="extra">${player.age || "-"}</td>
+                      <td class="extra">${player.age() || "-"}</td>
                     </tr>
                   `
                 )
