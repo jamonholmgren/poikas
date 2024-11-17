@@ -1,5 +1,5 @@
 export interface Game {
-  vs?: string
+  vs: string
   us?: number
   them?: number
   shotsUs?: number
@@ -70,7 +70,7 @@ export type Player = PlayerRaw & {
   years: number
   startYear: number
   endYear: number
-  age: number | undefined
+  age: () => number | undefined
   championships: number
   slug: string
   imageURL: string

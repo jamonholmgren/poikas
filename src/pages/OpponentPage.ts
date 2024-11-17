@@ -1,14 +1,16 @@
-import type { Game } from "../types"
+import type { PoikasData } from "../types"
 import { layout } from "../layout"
+import { gamesAgainstOpponent } from "../data/load"
+import { routePage } from "../utils/routePage"
 
-type OpponentProps = {
-  slug: string
-  name: string
-  recGames: Game[]
-  cGames: Game[]
-}
+export function OpponentPage(data: PoikasData, slug: string) {
+  const [recGames, cGames] = gamesAgainstOpponent(data, slug)
 
-export function OpponentPage({ slug, name, recGames, cGames }: OpponentProps) {
+  const sampleGame = recGames[0] || cGames[0]
+  if (!sampleGame) return new Response(`No games against opponent ${slug} found`, { status: 404 })
+
+  const name = sampleGame.vs || slug
+
   const recWins = recGames.filter((g) => g.result === "won").length
   const recLosses = recGames.filter((g) => g.result === "lost").length
   const recTies = recGames.filter((g) => g.result === "tied" || g.result === "lost-ot").length
@@ -17,20 +19,21 @@ export function OpponentPage({ slug, name, recGames, cGames }: OpponentProps) {
   const cLosses = cGames.filter((g) => g.result === "lost").length
   const cTies = cGames.filter((g) => g.result === "tied" || g.result === "lost-ot").length
 
-  return layout({
-    path: `/vs/${slug}`,
-    title: `Poikas vs ${name}`,
-    description: "Games between the Suomi Poikas and " + name,
-    // metaImage: ,
-    sidebar: ``,
-    // <img
-    //   src="${player.imageURL}"
-    //   alt="${player.name} - Player Photo"
-    //   id="playerimage"
-    //   onerror="this.onerror=null;this.src='/images/000-placeholder.jpg';"
-    // />
-    // <span class="caption" id="playerimagecaption">${player.name}</span>`,
-    main: `
+  return routePage(
+    layout({
+      path: `/vs/${slug}`,
+      title: `Poikas vs ${name}`,
+      description: "Games between the Suomi Poikas and " + name,
+      // metaImage: ,
+      sidebar: ``,
+      // <img
+      //   src="${player.imageURL}"
+      //   alt="${player.name} - Player Photo"
+      //   id="playerimage"
+      //   onerror="this.onerror=null;this.src='/images/000-placeholder.jpg';"
+      // />
+      // <span class="caption" id="playerimagecaption">${player.name}</span>`,
+      main: `
       <article>
         <h2 id="playername">${name}</h2>
         <p id="bio">Games played between the Suomi Poikas and the ${name}.</p>
@@ -136,6 +139,7 @@ export function OpponentPage({ slug, name, recGames, cGames }: OpponentProps) {
         }
       </article>
     `,
-    footer: ``,
-  })
+      footer: ``,
+    })
+  )
 }

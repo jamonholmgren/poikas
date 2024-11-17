@@ -1,4 +1,4 @@
-import { getData } from "./data/poikas"
+import { getData } from "./data/load"
 
 type LayoutOptions = {
   path: string

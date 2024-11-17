@@ -1,1 +1,0 @@
-export { routeHome } from "./home"
