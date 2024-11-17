@@ -3,6 +3,7 @@ import { join, dirname } from "path"
 import { HomePage } from "./pages/HomePage"
 import { getData } from "./data/load"
 import { OpponentPage } from "./pages/OpponentPage"
+import { PlayerPage } from "./pages/PlayerPage"
 
 // Grab all the data on server start
 const data = getData()
@@ -15,6 +16,7 @@ const server = serve({
     if (url.pathname === "/styles.css") return routeStatic("styles.css", "text/css")
     if (url.pathname === "/") return HomePage(data)
     if (url.pathname.startsWith("/vs/")) return OpponentPage(data, url.pathname.slice(4))
+    if (url.pathname.startsWith("/players/")) return PlayerPage(data, url.pathname.slice(8))
 
     return new Response("Not Found", { status: 404 })
   },

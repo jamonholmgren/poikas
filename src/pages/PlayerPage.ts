@@ -1,29 +1,34 @@
-import type { Player } from "../types"
+import type { Player, PoikasData } from "../types"
 import { layout } from "../layout"
 import { Champ } from "../components/Champ"
 import { sisuCups } from "../utils/sisuCups"
 import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
 import { notableAbbr } from "../utils/notableAbbr"
 import { images } from "../data/images"
+import { routePage } from "../utils/routePage"
 
-type PlayerProps = {
-  player: Player
-  nextPlayer?: Player
-  prevPlayer?: Player
-}
+export function PlayerPage(data: PoikasData, slug: string) {
+  const player = data.players.find((p) => p.slug === slug)
+  if (!player) return new Response(`Player ${slug} not found`, { status: 404 })
 
-export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
+  // find next and previous alphabetical player
+  data.players.sort((a, b) => (a.name > b.name ? -1 : 1))
+  const prevPlayer = data.players.find((p) => p.name < player.name)
+  data.players.reverse()
+  const nextPlayer = data.players.find((p) => p.name > player.name)
+
   const recSeasons = player.leagues.filter((s) => s.level === "Rec").length || "—"
   const cSeasons = player.leagues.filter((s) => s.level === "C").length || "—"
 
   const playerImages = images.filter((img) => img.players.includes(player.name))
 
-  return layout({
-    path: player.profileURL,
-    title: player.name,
-    description: player.bio || "",
-    metaImage: player.imageURL,
-    sidebar: `
+  return routePage(
+    layout({
+      path: player.profileURL,
+      title: player.name,
+      description: player.bio || "",
+      metaImage: player.imageURL,
+      sidebar: `
       <img
         src="${player.imageURL}"
         alt="${player.name} - Player Photo"
@@ -31,7 +36,7 @@ export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
         onerror="this.onerror=null;this.src='/images/000-placeholder.jpg';"
       />
       <span class="caption" id="playerimagecaption">${player.name}</span>`,
-    main: `
+      main: `
       <article>
         <h2 id="playername">${player.name}</h2>
         <p id="bio">${player.bio || ""}</p>
@@ -185,6 +190,7 @@ export function PlayerPage({ player, nextPlayer, prevPlayer }: PlayerProps) {
         </div>
       </div>
     `,
-    footer: ``,
-  })
+      footer: ``,
+    })
+  )
 }
