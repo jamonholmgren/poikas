@@ -1,4 +1,4 @@
-MVIA Rec League Spring 2021 Standings
+Spring 2021 Rec League Standings
 https://mountainview.ezleagues.ezfacility.com/teams/2611313/Suomi-Poikas.aspx?framed=1
 
 Print
@@ -59,7 +59,7 @@ Goalie Stats
 1	Jamon Holmgren	G 51	7	7	2	0	198	9	1	0.957	2
 
 
-MVIA REC 2021 SUMMER LEAGUE Standings
+Summer 2021 Rec League Standings
 https://mountainview.ezleagues.ezfacility.com/teams/2633047/Suomi-Poikas.aspx?framed=1
 Print
  	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
@@ -120,7 +120,7 @@ Goalie Stats
 
 
 
-2021 Fall Rec League Standings
+Fall 2021 Rec League Standings
 https://mountainview.ezleagues.ezfacility.com/schedule.aspx?facility_id=2042&d=9%2f9%2f2019&framed=1
 
 Print
@@ -171,7 +171,7 @@ Goalie Stats
 1	Jamon Holmgren	G	14	13	2	0	203	22	2	0.902	4
 
 
-Spring Adult League Hockey 2022, Rec League Standings
+Spring 2022 Rec League Standings
 https://mountainview.ezleagues.ezfacility.com/teams/2704574/Suomi-Poikas-Rec.aspx?framed=1
 
 Print
@@ -223,11 +223,11 @@ Goalie Stats
 1	Jamon Holmgren	G	17	15	2	0	322	22	1	0.936	3
 
 
-Summer Adult League Hockey 2022 - Rec League Standings
+Summer 2022 Rec League Standings
 https://mountainview.ezleagues.ezfacility.com/teams/2759985/RussiaPoikas.aspx?framed=1
 Print
  	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
-Russia/Poikas	14	7	1	0	8	0	37	13	24	
+Suomi Poikas	14	7	1	0	8	0	37	13	24	
 Caps N Taps	11	5	3	0	8	1	34	21	13	
 Liquid Gold	7	3	5	0	8	1	23	27	-4	
 Thundersticks	2	1	7	0	8	0	17	50	-33	
@@ -264,14 +264,14 @@ Goalie Stats
 1	Jamon Holmgren	G	8	7	1	0	221	15	2	0.936	1
 
 
-Fall/Winter Adult Hockey League 22/23-Rec League Standings
+Fall 2022 Rec League Standings
 https://mountainview.ezleagues.ezfacility.com/leagues/416178/FallWinter-Adult-Hockey-League-2223-Rec-League.aspx?framed=1
 Print
  	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
 Pinecones	24	12	3	0	15	0	63	32	31	
 Slavic Peeps	20	10	5	0	15	0	67	44	23	
 Thundersticks	20	9	6	0	15	2	54	39	15	
-Mriya (Poikas/Ukraine)	12	6	9	0	15	0	41	57	-16	
+Suomi Poikas	12	6	9	0	15	0	41	57	-16	
 Caps N Taps	12	5	10	0	15	2	40	60	-20	
 Liquid Gold	7	3	12	0	15	1	26	59	-33	
 Mriya's Schedule
@@ -314,12 +314,11 @@ Player Stats
 16	Brent Mattila	 	6	0	0	0	3
 Goalie Stats
  	Player	#	Games Played	Wins	Losses	OT Losses	Saves	Goals Against	GAA	Save %	Shutouts
-1	Joel Mattila	1	1	0	1	0	39	3	3	0.929	0
-2	Jamon Holmgren	G	13	5	8	0	459	46	4	0.909	0
+1	Jamon Holmgren	G	13	5	8	0	459	46	4	0.909	0
 
 
 
-Adult Hockey League Spring 23-Rec League Standings
+Spring 2023 Rec League Standings
 https://mountainview.ezleagues.ezfacility.com/teams/2842210/Suomi-Poikas-Rec.aspx?framed=1
 Print
  	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
@@ -370,7 +369,7 @@ Goalie Stats
 
 
 
-Fall 2023 - Rec League Standings
+Fall 2023 Rec League Standings
 https://mountainview.ezleagues.ezfacility.com/teams/2902712/Suomi-Poikas-Rec.aspx?framed=1
 Print
  	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
@@ -434,7 +433,7 @@ Goalie Stats
 1	Jamon Holmgren	G	15	12	3	0	256	29	2	0.898	1
 
 
-Spring 2024 - Rec League Standings
+Spring 2024 Rec League Standings
 https://mountainview.ezleagues.ezfacility.com/teams/2950580/Suomi-Poikas-Rec.aspx?framed=1
 Print
  	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync

@@ -1,5 +1,8 @@
 {
-  "Fall/Winter 2021 C League": {
+  "Spring 2022 C League": {
+    "year": 2022,
+    "season": "Spring",
+    "level": "C",
     "standings": [
       {
         "team_name": "CCCP",
@@ -96,18 +99,6 @@
         "goals_for": 64,
         "goals_against": 86,
         "goal_differential": -22
-      },
-      {
-        "team_name": "Suomi Poikas C",
-        "points": 8,
-        "wins": 4,
-        "losses": 11,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 0,
-        "goals_for": 38,
-        "goals_against": 77,
-        "goal_differential": -39
       }
     ],
     "players": [
@@ -254,7 +245,451 @@
       }
     ]
   },
-  "Fall 2023 - CC/C League": {
+  "Fall 2022 C League": {
+    "year": 2022,
+    "season": "Fall",
+    "level": "C",
+    "standings": [
+      {
+        "team_name": "Deadguys",
+        "points": 21,
+        "wins": 10,
+        "losses": 5,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 77,
+        "goals_against": 52,
+        "goal_differential": 25
+      },
+      {
+        "team_name": "CCCP",
+        "points": 21,
+        "wins": 10,
+        "losses": 5,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 62,
+        "goals_against": 46,
+        "goal_differential": 16
+      },
+      {
+        "team_name": "Callahan Auto Parts",
+        "points": 16,
+        "wins": 8,
+        "losses": 7,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 48,
+        "goals_against": 53,
+        "goal_differential": -5
+      },
+      {
+        "team_name": "Liquid Gold C",
+        "points": 15,
+        "wins": 7,
+        "losses": 8,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 53,
+        "goals_against": 66,
+        "goal_differential": -13
+      }
+    ],
+    "players": [
+      {
+        "name": "Nels Tapio",
+        "number": "26",
+        "games_played": 17,
+        "goals": 17,
+        "assists": 13,
+        "points": 30,
+        "penalty_minutes": 18
+      },
+      {
+        "name": "Trevoen Erickson",
+        "number": "8",
+        "games_played": 12,
+        "goals": 16,
+        "assists": 5,
+        "points": 21,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Asa Storm",
+        "number": "29",
+        "games_played": 15,
+        "goals": 9,
+        "assists": 9,
+        "points": 18,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Russ Tapio",
+        "number": "32",
+        "games_played": 16,
+        "goals": 7,
+        "assists": 7,
+        "points": 14,
+        "penalty_minutes": 37
+      },
+      {
+        "name": "Scott Daniels",
+        "number": "7",
+        "games_played": 13,
+        "goals": 4,
+        "assists": 7,
+        "points": 11,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Eric Matson",
+        "number": "20",
+        "games_played": 10,
+        "goals": 7,
+        "assists": 4,
+        "points": 11,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Brad Wuori",
+        "number": "19",
+        "games_played": 14,
+        "goals": 7,
+        "assists": 3,
+        "points": 10,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Peter Tapio",
+        "number": "87",
+        "games_played": 13,
+        "goals": 3,
+        "assists": 7,
+        "points": 10,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Jens Tapio",
+        "number": "16",
+        "games_played": 12,
+        "goals": 3,
+        "assists": 7,
+        "points": 10,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Jay Tapio",
+        "number": "63",
+        "games_played": 16,
+        "goals": 0,
+        "assists": 8,
+        "points": 8,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Milo Matson",
+        "number": "95",
+        "games_played": 15,
+        "goals": 4,
+        "assists": 3,
+        "points": 7,
+        "penalty_minutes": 6
+      },
+      {
+        "name": "Dan Warren",
+        "number": "55",
+        "games_played": 13,
+        "goals": 1,
+        "assists": 6,
+        "points": 7,
+        "penalty_minutes": 9
+      },
+      {
+        "name": "Joel Mattila",
+        "number": "77",
+        "games_played": 12,
+        "goals": 2,
+        "assists": 1,
+        "points": 3,
+        "penalty_minutes": 9
+      },
+      {
+        "name": "Brenden Mattila",
+        "number": "6",
+        "games_played": 11,
+        "goals": 1,
+        "assists": 1,
+        "points": 2,
+        "penalty_minutes": 16
+      },
+      {
+        "name": "Jamon Holmgren",
+        "number": "G",
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "points": 0,
+        "penalty_minutes": 0
+      }
+    ],
+    "goalies": [
+      {
+        "name": "Jamon",
+        "number": "Holmgren G",
+        "games_played": 17,
+        "wins": 8,
+        "losses": 9,
+        "ot_losses": 0,
+        "saves": 394,
+        "goals_against": 72,
+        "gaa": 4.0,
+        "save_percentage": 0.845,
+        "shutouts": 0
+      }
+    ]
+  },
+  "Spring 2023 C League": {
+    "year": 2023,
+    "season": "Spring",
+    "level": "C",
+    "standings": [
+      {
+        "team_name": "CCCP",
+        "points": 25,
+        "wins": 12,
+        "losses": 3,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 79,
+        "goals_against": 37,
+        "goal_differential": 42
+      },
+      {
+        "team_name": "Badgers",
+        "points": 24,
+        "wins": 12,
+        "losses": 3,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 59,
+        "goals_against": 38,
+        "goal_differential": 21
+      },
+      {
+        "team_name": "Lightning C/CC",
+        "points": 22,
+        "wins": 11,
+        "losses": 4,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 73,
+        "goals_against": 44,
+        "goal_differential": 29
+      },
+      {
+        "team_name": "Deadguys",
+        "points": 18,
+        "wins": 9,
+        "losses": 6,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 60,
+        "goals_against": 50,
+        "goal_differential": 10
+      },
+      {
+        "team_name": "Callahan Auto Parts",
+        "points": 17,
+        "wins": 8,
+        "losses": 7,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 50,
+        "goals_against": 36,
+        "goal_differential": 14
+      },
+      {
+        "team_name": "Revolution",
+        "points": 15,
+        "wins": 7,
+        "losses": 8,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 68,
+        "goals_against": 75,
+        "goal_differential": -7
+      },
+      {
+        "team_name": "Bandits",
+        "points": 10,
+        "wins": 4,
+        "losses": 11,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 2,
+        "goals_for": 44,
+        "goals_against": 50,
+        "goal_differential": -6
+      }
+    ],
+    "players": [
+      {
+        "name": "Asa Storm",
+        "number": "29",
+        "games_played": 15,
+        "goals": 12,
+        "assists": 7,
+        "points": 19,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Jared Paben",
+        "number": "50",
+        "games_played": 15,
+        "goals": 7,
+        "assists": 3,
+        "points": 10,
+        "penalty_minutes": 6
+      },
+      {
+        "name": "Aaron Fuller",
+        "number": "40",
+        "games_played": 14,
+        "goals": 3,
+        "assists": 4,
+        "points": 7,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Andrew Nichol",
+        "number": "11",
+        "games_played": 8,
+        "goals": 4,
+        "assists": 3,
+        "points": 7,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "MATTHEW BROMLEY",
+        "number": "6",
+        "games_played": 11,
+        "goals": 2,
+        "assists": 4,
+        "points": 6,
+        "penalty_minutes": 15
+      },
+      {
+        "name": "Rick Ramstetter",
+        "number": "96",
+        "games_played": 16,
+        "goals": 1,
+        "assists": 5,
+        "points": 6,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Oren Matson",
+        "number": "27",
+        "games_played": 7,
+        "goals": 3,
+        "assists": 2,
+        "points": 5,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Randy Storm",
+        "number": "88",
+        "games_played": 14,
+        "goals": 1,
+        "assists": 4,
+        "points": 5,
+        "penalty_minutes": 9
+      },
+      {
+        "name": "Scott Daniels",
+        "number": "7",
+        "games_played": 9,
+        "goals": 1,
+        "assists": 3,
+        "points": 4,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Brad Wuori",
+        "number": "19",
+        "games_played": 14,
+        "goals": 1,
+        "assists": 2,
+        "points": 3,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Will Murphy",
+        "number": "5",
+        "games_played": 8,
+        "goals": 3,
+        "assists": 0,
+        "points": 3,
+        "penalty_minutes": 6
+      },
+      {
+        "name": "Joel Mattila",
+        "number": "77",
+        "games_played": 9,
+        "goals": 1,
+        "assists": 0,
+        "points": 1,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Erik Benton",
+        "number": "G",
+        "games_played": 0,
+        "goals": 0,
+        "assists": 1,
+        "points": 1,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Dan Warren",
+        "number": "55",
+        "games_played": 2,
+        "goals": 0,
+        "assists": 0,
+        "points": 0,
+        "penalty_minutes": 0
+      }
+    ],
+    "goalies": [
+      {
+        "name": "Jamon",
+        "number": "Holmgren G",
+        "games_played": 15,
+        "wins": 3,
+        "losses": 12,
+        "ot_losses": 0,
+        "saves": 543,
+        "goals_against": 82,
+        "gaa": 5.0,
+        "save_percentage": 0.869,
+        "shutouts": 0
+      }
+    ]
+  },
+  "Fall 2023 C League": {
+    "year": 2023,
+    "season": "Fall",
+    "level": "C",
     "standings": [
       {
         "team_name": "CCCP",
@@ -339,30 +774,6 @@
         "goals_for": 44,
         "goals_against": 66,
         "goal_differential": -22
-      },
-      {
-        "team_name": "Suomi Poikas C",
-        "points": 10,
-        "wins": 5,
-        "losses": 10,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 0,
-        "goals_for": 58,
-        "goals_against": 83,
-        "goal_differential": -25
-      },
-      {
-        "team_name": "PBR",
-        "points": 2,
-        "wins": 1,
-        "losses": 14,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 0,
-        "goals_for": 36,
-        "goals_against": 95,
-        "goal_differential": -59
       }
     ],
     "players": [
@@ -518,7 +929,10 @@
       }
     ]
   },
-  "Spring 2024 - CC/C League": {
+  "Spring 2024 C League": {
+    "year": 2024,
+    "season": "Spring",
+    "level": "C",
     "standings": [
       {
         "team_name": "Lightning C/CC",
@@ -615,30 +1029,6 @@
         "goals_for": 48,
         "goals_against": 55,
         "goal_differential": -7
-      },
-      {
-        "team_name": "Suomi Poikas C",
-        "points": 6,
-        "wins": 3,
-        "losses": 12,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 0,
-        "goals_for": 36,
-        "goals_against": 89,
-        "goal_differential": -53
-      },
-      {
-        "team_name": "PBR",
-        "points": 2,
-        "wins": 1,
-        "losses": 14,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 0,
-        "goals_for": 29,
-        "goals_against": 91,
-        "goal_differential": -62
       }
     ],
     "players": [

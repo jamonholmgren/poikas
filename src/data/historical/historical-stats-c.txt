@@ -1,4 +1,7 @@
-Fall/Winter 2021 C League Standings
+
+
+Fall 2021 C League Standings
+https://mountainview.ezleagues.ezfacility.com/teams/2649857/Suomi-Poikas-C.aspx?framed=1
 Print
  	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
 CCCP	26	13	2	0	15	0	85	45	40	
@@ -70,7 +73,7 @@ Goalie Stats
 
 
 
-Spring Adult League Hockey 2022, C / CC Leagues Standings
+Spring 2022 C League Standings
 https://mountainview.ezleagues.ezfacility.com/teams/2704526/Suomi-Poikas-C-.aspx?framed=1
 Print
  	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
@@ -125,7 +128,9 @@ Goalie Stats
  	Player	#	Games Played	Wins	Losses	OT Losses	Saves	Goals Against	GAA	Save %	Shutouts
 1	Jamon Holmgren	G	17	8	9	0	394	72	4	0.845	0
 
-Fall/Winter Adult Hockey League 22/23-CC/C Leagues Standings
+
+
+Fall 2022 C League Standings
 https://mountainview.ezleagues.ezfacility.com/teams/2771864/Suomi-Poikas-C-.aspx?framed=1
 Print
  	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
@@ -180,7 +185,7 @@ Goalie Stats
 1	Jamon Holmgren	G	15	3	12	0	543	82	5	0.869	0
 
 
-Adult Hockey League Spring 23-CC/C Leagues Standings
+Spring 2023 C League Standings
 https://mountainview.ezleagues.ezfacility.com/teams/2842184/Suomi-Poikas-C-.aspx?framed=1
 Print
  	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
@@ -236,7 +241,7 @@ Goalie Stats
 1	Jamon Holmgren	G	15	5	9	1	447	76	5	0.855	0
 
 
-Fall 2023 - CC/C League Standings
+Fall 2023 C League Standings
 https://mountainview.ezleagues.ezfacility.com/teams/2902820/Suomi-Poikas-C.aspx?framed=1
 Print
  	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
@@ -306,7 +311,7 @@ Goalie Stats
 
 
 
-Spring 2024 - CC/C League Standings
+Spring 2024 C League Standings
 https://mountainview.ezleagues.ezfacility.com/teams/2950569/Suomi-Poikas-C.aspx?framed=1
 Print
  	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync

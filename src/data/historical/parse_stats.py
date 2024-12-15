@@ -22,8 +22,8 @@ def extract_season_name(text: str) -> str:
 def extract_standings(text: str) -> List[Dict[str, Any]]:
     standings = []
     
-    # Look for the standings section
-    standings_section = re.search(r'Calendar Sync\n(.*?)\n\n', text, re.DOTALL)
+    # Look for the standings section - make the pattern more flexible
+    standings_section = re.search(r'Calendar Sync.*?\n(.*?)(?:\n\n|\nSuomi|$)', text, re.DOTALL)
     if not standings_section:
         return []
         
@@ -123,6 +123,41 @@ def extract_goalie_stats(text: str) -> List[Dict[str, Any]]:
     
     return goalies
 
+def extract_season_info(text: str) -> tuple[str, dict[str, str | int]]:
+    """Extract season name and metadata"""
+    patterns = [
+        # Even simpler pattern first
+        r"^(Spring|Summer|Fall|Fall/Winter)\s+(20\d{2})\s*(?:.*?League)?",
+        # Then more specific patterns
+        r"(Spring|Summer|Fall|Fall/Winter)\s+(20\d{2})\s+(C League|CC/C League|C/CC League|Rec League)",
+        r"(Spring|Summer|Fall|Fall/Winter).+?(20\d{2})(?:/\d{2})?.*(C League|CC/C League|C/CC League|Rec League)",
+        r"(20\d{2}).+(Spring|Summer|Fall|Fall/Winter).*(C League|CC/C League|C/CC League|Rec League)"
+    ]
+    
+    for pattern in patterns:
+        match = re.search(pattern, text, re.IGNORECASE | re.MULTILINE)
+        if match:
+            full_name = clean_text(match.group(0))
+            
+            # Extract year
+            year_match = re.search(r'20\d{2}', full_name)
+            year = int(year_match.group(0)) if year_match else None
+            
+            # Extract season
+            season_match = re.search(r'(Spring|Summer|Fall|Fall/Winter)', full_name, re.IGNORECASE)
+            season = season_match.group(1) if season_match else None
+            
+            # Look for level in the full text if not in the title
+            level_match = re.search(r'(C League|CC/C League|C/CC League|Rec League)', text, re.IGNORECASE)
+            level = 'C' if level_match and any(x in level_match.group(1) for x in ['C League', 'CC/C']) else 'Rec' if level_match and 'Rec' in level_match.group(1) else None
+            
+            return full_name, {
+                'year': year,
+                'season': season,
+                'level': level
+            }
+    return "Unknown Season", {}
+
 def parse_seasons(text: str) -> Dict[str, Dict[str, Any]]:
     # Split into seasons at URLs
     seasons_raw = re.split(r'https://.*?\n', text)
@@ -133,7 +168,7 @@ def parse_seasons(text: str) -> Dict[str, Dict[str, Any]]:
         if not season_text.strip():
             continue
             
-        season_name = extract_season_name(season_text)
+        season_name, metadata = extract_season_info(season_text)
         if season_name == "Unknown Season":
             continue
             
@@ -144,6 +179,7 @@ def parse_seasons(text: str) -> Dict[str, Dict[str, Any]]:
         # Only include seasons with valid data
         if standings or players or goalies:
             seasons_data[season_name] = {
+                **metadata,  # Add the metadata fields
                 'standings': standings,
                 'players': players,
                 'goalies': goalies
@@ -165,6 +201,20 @@ def main():
     
     print(f"Processed {len(seasons_data)} seasons")
     print("Data saved to hockey_stats_c.json")
+
+    # Read the input file
+    with open('historical-stats-rec.txt', 'r', encoding='utf-8') as f:
+        text = f.read()
+    
+    # Parse the data
+    seasons_data = parse_seasons(text)
+    
+    # Write to JSON file
+    with open('hockey_stats_rec.json', 'w', encoding='utf-8') as f:
+        json.dump(seasons_data, f, indent=2)
+    
+    print(f"Processed {len(seasons_data)} seasons")
+    print("Data saved to hockey_stats_rec.json")
 
 if __name__ == "__main__":
     main()

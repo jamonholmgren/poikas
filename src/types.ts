@@ -134,3 +134,52 @@ export type Stats = {
     assists?: number
   }
 }
+
+// Historical data from MVIA (src/data/historical/*.json)
+
+export interface HistoricalTeamStanding {
+  team_name: string
+  points: number
+  wins: number
+  losses: number
+  ties: number
+  games_played: number
+  otl: number
+  goals_for: number
+  goals_against: number
+  goal_differential: number
+}
+
+export interface HistoricalPlayerStats {
+  name: string
+  number: string
+  games_played: number
+  goals: number
+  assists: number
+  points: number
+  penalty_minutes: number
+}
+
+export interface HistoricalGoalieStats {
+  name: string
+  number: string
+  games_played: number
+  wins: number
+  losses: number
+  ot_losses: number
+  saves: number
+  goals_against: number
+  gaa: number
+  save_percentage: number
+  shutouts: number
+}
+
+export interface HistoricalSeasonData {
+  standings: HistoricalTeamStanding[]
+  players: HistoricalPlayerStats[]
+  goalies: HistoricalGoalieStats[]
+}
+
+export type HockeyStats = {
+  [season: string]: HistoricalSeasonData
+}
