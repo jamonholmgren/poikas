@@ -16,18 +16,18 @@ function layout(options: LayoutOptions) {
 
   const data = getData()
 
-  let currentRecSeason = data.leagues.find((l) => l.current && l.league === "Rec")
-  let currentCSeason = data.leagues.find((l) => l.current && l.league === "C")
+  let currentRecSeason = data.seasons.find((l) => l.current && l.leagueName === "Rec")
+  let currentCSeason = data.seasons.find((l) => l.current && l.leagueName === "C")
 
   if (!currentRecSeason) {
     // grab last rec season
-    currentRecSeason = data.leagues.filter((l) => l.league === "Rec").pop()
+    currentRecSeason = data.seasons.filter((l) => l.leagueName === "Rec").pop()
     if (!currentRecSeason) throw new Error("No rec season found")
   }
 
   if (!currentCSeason) {
     // grab last c season
-    currentCSeason = data.leagues.filter((l) => l.league === "C").pop()
+    currentCSeason = data.seasons.filter((l) => l.leagueName === "C").pop()
     if (!currentCSeason) throw new Error("No c season found")
   }
 

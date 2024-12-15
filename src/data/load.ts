@@ -65,6 +65,8 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
   data.players.forEach((player) => {
     // attach seasons to each player for convenience
     player.seasons = { Rec: [], C: [] }
+    player.activeSeasons = {}
+
     data.seasons.forEach((season) => {
       // if the player is not on the roster that season, skip
       if (!season.roster.includes(player.name)) return

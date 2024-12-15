@@ -79,7 +79,7 @@ export type Player = PlayerRaw & {
     [K in LeagueName]: PlayerSeason[]
   }
   activeSeasons: {
-    [K in LeagueName]: PlayerSeason
+    [K in LeagueName]?: PlayerSeason
   }
   active: boolean
   years: number
