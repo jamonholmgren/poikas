@@ -17,6 +17,19 @@ export function getData(): PoikasData {
 function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
   const data: PoikasData = dataRaw as PoikasData
 
+  data.leagues = {
+    Rec: {
+      name: "Rec",
+      seasons: data.seasons.filter((s) => s.leagueName === "Rec"),
+      current: data.seasons.find((s) => s.leagueName === "Rec" && s.current)!,
+    },
+    C: {
+      name: "C",
+      seasons: data.seasons.filter((s) => s.leagueName === "C"),
+      current: data.seasons.find((s) => s.leagueName === "C" && s.current)!,
+    },
+  }
+
   // Sort players by name
   data.players.sort((a, b) => (a.name < b.name ? -1 : 1))
 
@@ -34,10 +47,8 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
     season.current = season.playoffs === "pending"
 
     // url for the league page
-    const seasonName = season.seasonName.toLowerCase()
-    const leagueName = season.leagueName.toLowerCase()
-    season.url = `/seasons/${season.year}/${seasonName}/${leagueName}`
-    season.link = `<a href="/season/?year=${season.year}&season=${season.seasonName}&level=${season.leagueName}">${season.leagueName}</a>`
+    season.url = `/seasons/${season.year}/${season.seasonName.toLowerCase()}/${season.leagueName.toLowerCase()}`
+    season.link = `<a href="${season.url}">${season.leagueName}</a>`
 
     // Add historical data to the league
     season.arenaReportedStats = historicalSeasons.find(

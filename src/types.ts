@@ -1,10 +1,11 @@
-type SeasonName = "Fall" | "Spring" | "Summer"
-type LeagueName = "Rec" | "C"
+export type SeasonName = "Fall" | "Spring" | "Summer"
+export type LeagueName = "Rec" | "C"
 
 // A league is a collection of seasons, like Rec or C
 export type League = {
   name: LeagueName
   seasons: Season[]
+  current: Season | undefined
 }
 
 type SeasonRaw = {
@@ -125,6 +126,9 @@ export interface PoikasDataRaw {
 }
 
 export interface PoikasData {
+  leagues: {
+    [K in LeagueName]: League
+  }
   players: Player[]
   seasons: Season[]
 }

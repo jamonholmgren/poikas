@@ -7,18 +7,16 @@ import { img } from "../image"
 export function HomePage(data: PoikasData) {
   // Finding the championships we've won as a team, but
   // ignoring the "with Russia" or "with Ukraine" leagues
-  const championLeagues = data.leagues
+  const championLeagues = data.seasons
     .filter((s) => s.playoffs === "champions" && !`${s.aside}`.includes("with"))
     .toReversed()
 
-  let recLeague = data.leagues.find((l) => l.league === "Rec" && l.current)
-  if (!recLeague) recLeague = data.leagues.filter((l) => l.league === "Rec").pop()!
-  let cLeague = data.leagues.find((l) => l.league === "C" && l.current)
-  if (!cLeague) cLeague = data.leagues.filter((l) => l.league === "C").pop()!
+  let rec = data.leagues.Rec.current || data.leagues.Rec.seasons.at(-1)!
+  let c = data.leagues.C.current || data.leagues.C.seasons.at(-1)!
 
   // latest games from each league
-  const lastRecGame = (recLeague.games || []).at(-1)
-  const lastCGame = (cLeague.games || []).at(-1)
+  const lastRecGame = (rec.games || []).at(-1)
+  const lastCGame = (c.games || []).at(-1)
 
   return routePage({
     path: "/",
@@ -39,7 +37,7 @@ export function HomePage(data: PoikasData) {
         <div class='latest-games'>
         ${
           lastRecGame
-            ? `<a href="${recLeague.url}" class='game'>
+            ? `<a href="${rec.url}" class='game'>
                 <div class='league'>Rec League</div>
                 <div class='teams'>Poikas vs ${lastRecGame.vs} (${lastRecGame.date?.toLocaleDateString()})</div>
                 <div class='result'>${lastRecGame.result} ${lastRecGame.us}-${lastRecGame.them}</div>
@@ -50,7 +48,7 @@ export function HomePage(data: PoikasData) {
         }
           ${
             lastCGame
-              ? `<a href="${cLeague.url}" class='game'>
+              ? `<a href="${c.url}" class='game'>
                   <div class='league'>C/CC League</div>
                   <div class='teams'>Poikas vs ${lastCGame.vs} (${lastCGame.date?.toLocaleDateString()})</div>
                   <div class='result'>${lastCGame.result} ${lastCGame.us}-${lastCGame.them}</div>
@@ -108,7 +106,7 @@ export function HomePage(data: PoikasData) {
       <div class="roster">
         <h2>
           Current Rec Roster
-          <a class="details" href="${recLeague.url}">(view season page)</a>
+          <a class="details" href="${rec.url}">(view season page)</a>
         </h2>
         <table id="rec-roster" class="roster">
           <thead>
@@ -125,7 +123,7 @@ export function HomePage(data: PoikasData) {
             </tr>
           </thead>
           <tbody>
-            ${recLeague
+            ${rec
               .players!.map(
                 (p) => `
                   <tr>
@@ -147,7 +145,7 @@ export function HomePage(data: PoikasData) {
 
         <h2>
           Current C/CC Roster
-          <a class="details" href="${cLeague.url}">(view season page)</a>
+          <a class="details" href="${c.url}">(view season page)</a>
         </h2>
         <table id="c-roster" class="roster">
           <thead>
@@ -164,7 +162,7 @@ export function HomePage(data: PoikasData) {
             </tr>
           </thead>
           <tbody>
-            ${cLeague
+            ${c
               .players!.map(
                 (p) => `
             <tr>
@@ -195,7 +193,7 @@ export function HomePage(data: PoikasData) {
             </tr>
           </thead>
           <tbody>
-            ${Object.entries(leagueSeasonsMap(data.leagues))
+            ${Object.entries(leagueSeasonsMap(data.seasons))
               .map(
                 ([season, leagues]) => `
             <tr>

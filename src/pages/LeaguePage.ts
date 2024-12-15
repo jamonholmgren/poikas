@@ -3,7 +3,7 @@ import { routePage } from "../route"
 import { img } from "../image"
 
 export function LeaguePage(data: PoikasData, slug: string) {
-  const league = data.leagues.find((l) => l.url.endsWith(slug))
+  const league = data.seasons.find((l) => l.url.endsWith(slug))
 
   if (!league) return new Response(`League not found: ${slug}`, { status: 404 })
 
@@ -11,8 +11,8 @@ export function LeaguePage(data: PoikasData, slug: string) {
     url,
     schedule,
     year,
-    seasonName: season,
-    league: level,
+    seasonName,
+    leagueName,
     description,
     photos,
     wins,
@@ -31,24 +31,24 @@ export function LeaguePage(data: PoikasData, slug: string) {
 
   return routePage({
     path: url,
-    title: `${year} ${season} ${level}`,
-    description: `Suomi Poikas league ${year} ${season} ${level}`,
+    title: `${year} ${seasonName} ${leagueName}`,
+    description: `Suomi Poikas league ${year} ${seasonName} ${leagueName}`,
     metaImage,
     sidebar: `
       <a href="${metaImage}" target="_blank">
         <img
           src="${metaImage}"
-          alt="${year} ${season} ${level} - League Photo"
+          alt="${year} ${seasonName} ${leagueName} - League Photo"
           id="leagueimage"
           onerror="this.onerror=null;this.src='${img("000-placeholder.jpg")}';"
         />
-        <span class="caption" id="leagueimagecaption">${year} ${season} ${level}</span>
+        <span class="caption" id="leagueimagecaption">${year} ${seasonName} ${leagueName}</span>
       </a>
       ${sidebar || ""}
     `,
     main: `
       <article>
-        <h2 id="seasonname">${year} ${season} ${level}</h2>
+        <h2 id="seasonname">${year} ${seasonName} ${leagueName}</h2>
         <p id="description">${description || ""}</p>
         <table id="seasonresults" class="statsheet">
           <tr>
@@ -121,8 +121,8 @@ export function LeaguePage(data: PoikasData, slug: string) {
                       <td>${player.profileLink || "-"}</td>
                       <td>${player.number || "-"}</td>
                       <td>${player.pos || "-"}</td>
-                      <td>${player.currentStats[level].goals || "-"}</td>
-                      <td>${player.currentStats[level].assists || "-"}</td>
+                      <td>${player.activeSeasons[leagueName]?.stats?.goals || "-"}</td>
+                      <td>${player.activeSeasons[leagueName]?.stats?.assists || "-"}</td>
                       <td class="extra">${player.ht || "-"}</td>
                       <td class="extra">${player.wt || "-"}</td>
                       <td class="extra">${player.shoots || "-"}</td>

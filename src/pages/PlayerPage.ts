@@ -17,19 +17,19 @@ export function PlayerPage(data: PoikasData, slug: string) {
   data.players.reverse()
   const nextPlayer = data.players.find((p) => p.name > player.name)
 
-  const recSeasons = player.seasons.filter((s) => s.league === "Rec").length || "—"
-  const cSeasons = player.seasons.filter((s) => s.league === "C").length || "—"
+  const recSeasons = player.seasons.Rec.length || "—"
+  const cSeasons = player.seasons.C.length || "—"
 
   const playerImages = images.filter((img) => img.players.includes(player.name))
 
-  const recGoals = player.currentStats.Rec.goals > 0 ? `Rec: ${player.currentStats.Rec.goals}` : ""
-  const recAssists = player.currentStats.Rec.assists > 0 ? `Rec: ${player.currentStats.Rec.assists}` : ""
-  const cGoals = player.currentStats.C.goals > 0 ? `C: ${player.currentStats.C.goals}` : ""
-  const cAssists = player.currentStats.C.assists > 0 ? `C: ${player.currentStats.C.assists}` : ""
-  const careerRecGoals = player.careerStats.Rec.goals > 0 ? `Rec: ${player.careerStats.Rec.goals}` : ""
-  const careerRecAssists = player.careerStats.Rec.assists > 0 ? `Rec: ${player.careerStats.Rec.assists}` : ""
-  const careerCGoals = player.careerStats.C.goals > 0 ? `C: ${player.careerStats.C.goals}` : ""
-  const careerCAssists = player.careerStats.C.assists > 0 ? `C: ${player.careerStats.C.assists}` : ""
+  const recGoals = player.activeSeasons?.Rec?.stats?.goals || 0
+  const recAssists = player.activeSeasons?.Rec?.stats?.assists || 0
+  const cGoals = player.activeSeasons?.C?.stats?.goals || 0
+  const cAssists = player.activeSeasons?.C?.stats?.assists || 0
+  const careerRecGoals = player.careerStats?.Rec?.goals || 0
+  const careerRecAssists = player.careerStats?.Rec?.assists || 0
+  const careerCGoals = player.careerStats?.C?.goals || 0
+  const careerCAssists = player.careerStats?.C?.assists || 0
 
   return routePage({
     path: player.profileURL,
@@ -61,19 +61,19 @@ export function PlayerPage(data: PoikasData, slug: string) {
           </tr>
           <tr>
             <th>Current Season Goals</th>
-            <td>${[recGoals, cGoals].filter(Boolean).join(" | ")}</td>
+            <td>${ga(recGoals, cGoals, "G")}</td>
           </tr>
           <tr>
             <th>Current Season Assists</th>
-            <td>${[recAssists, cAssists].filter(Boolean).join(" | ")}</td>
+            <td>${ga(recAssists, cAssists, "A")}</td>
           </tr>
           <tr>
             <th>Career Goals</th>
-            <td>${[careerRecGoals, careerCGoals].filter(Boolean).join(" | ")}</td>
+            <td>${ga(careerRecGoals, careerCGoals, "G")}</td>
           </tr>
           <tr>
             <th>Career Assists</th>
-            <td>${[careerRecAssists, careerCAssists].filter(Boolean).join(" | ")}</td>
+            <td>${ga(careerRecAssists, careerCAssists, "A")}</td>
           </tr>
           <tr>
             <th>Age</th>
@@ -163,11 +163,11 @@ export function PlayerPage(data: PoikasData, slug: string) {
           <tbody>
             ${Object.entries(leagueSeasonsMap(player.seasons))
               .map(
-                ([season, leagues]) => `
+                ([seasonName, leagueData]) => `
             <tr>
-              <td>${season}</td>
-              <td>${leagues.rec || "—"}</td>
-              <td>${leagues.c || "—"}</td>
+              <td>${seasonName}</td>
+              <td>${leagueData.rec || "—"}</td>
+              <td>${leagueData.c || "—"}</td>
             </tr>
                 `
               )
@@ -218,4 +218,11 @@ export function PlayerPage(data: PoikasData, slug: string) {
     `,
     footer: ``,
   })
+}
+
+function ga(recGoals: number, cGoals: number, type: "G" | "A") {
+  return [recGoals, cGoals]
+    .filter(Boolean)
+    .map((g) => `${g} ${type}`)
+    .join(" | ")
 }
