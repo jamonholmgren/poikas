@@ -1,28 +1,16 @@
-export interface Game {
-  vs: string
-  us?: number
-  them?: number
-  shotsUs?: number
-  shotsThem?: number
-  result?: "won" | "lost" | "lost-ot" | "tied" | "forfeited" | "cancelled"
-  sisu?: string
-  notable?: string
-  date?: Date
-  goalie?: string
-  stats?: Stats
+type SeasonName = "Fall" | "Spring" | "Summer"
+type LeagueName = "Rec" | "C"
 
-  // convenience references
-  goaliePlayer?: Player
-  sisuPlayer?: Player
-  league?: League
-  vsURL?: string
-  vsLink?: string
+// A league is a collection of seasons, like Rec or C
+export type League = {
+  name: LeagueName
+  seasons: Season[]
 }
 
-type LeagueRaw = {
+type SeasonRaw = {
   year: number
-  season: string
-  level: "Rec" | "C"
+  seasonName: SeasonName
+  leagueName: LeagueName
   playoffs: string
   roster: string[]
 
@@ -41,18 +29,41 @@ type LeagueRaw = {
   schedule?: string
 }
 
-export type League = LeagueRaw & {
+export type Season = SeasonRaw & {
   // derived data that we add
   url: string
+  link: string
   current: boolean
   players?: Player[]
-  historical?: HistoricalSeasonData
+  arenaReportedStats?: ArenaSeasonStats
+}
+
+export interface Game {
+  // original data from the JSON
+  vs: string
+  us?: number
+  them?: number
+  shotsUs?: number
+  shotsThem?: number
+  result?: "won" | "lost" | "lost-ot" | "tied" | "forfeited" | "cancelled"
+  sisu?: string
+  notable?: string
+  date?: Date
+  goalie?: string
+  stats?: Stats
+
+  // convenience references we add later
+  goaliePlayer?: Player
+  sisuPlayer?: Player
+  season?: Season
+  vsURL?: string
+  vsLink?: string
 }
 
 type PlayerRaw = {
   // original data from the JSON
-  number?: number
   name: string
+  number?: number
   bio?: string
   pos?: string
   shoots?: string
@@ -62,17 +73,15 @@ type PlayerRaw = {
   role?: "captain"
 }
 
-type PlayerStats = {
-  goals: number
-  assists: number
-}
-
 export type Player = PlayerRaw & {
   // derived data that we add
-  leagues: League[]
+  seasons: {
+    [K in LeagueName]: PlayerSeason[]
+  }
+  activeSeasons: {
+    [K in LeagueName]: PlayerSeason
+  }
   active: boolean
-  recLink: string
-  cLink: string
   years: number
   startYear: number
   endYear: number
@@ -83,18 +92,26 @@ export type Player = PlayerRaw & {
   imageHTML: string
   profileURL: string
   profileLink: string
-  currentStats: {
-    Rec: PlayerStats
-    C: PlayerStats
-  }
   careerStats: {
-    Rec: PlayerStats
-    C: PlayerStats
+    [K in LeagueName]: PlayerStats
   }
-  historical: {
-    player: HistoricalPlayerStats[]
-    goalie: HistoricalGoalieStats[]
-  }
+  arenaPlayerSeasonStats: ArenaPlayerSeasonStats[]
+  arenaGoalieSeasonStats: ArenaGoalieSeasonStats[]
+}
+
+export type PlayerSeason = {
+  year: number
+  seasonName: SeasonName
+  leagueName: LeagueName
+  season: Season
+  stats: PlayerStats
+  arenaPlayerSeasonStats?: ArenaPlayerSeasonStats
+}
+
+// Can be for a game, season, or career
+type PlayerStats = {
+  goals: number
+  assists: number
 }
 
 export interface LoadDisplaySeasonsOptions {
@@ -104,12 +121,12 @@ export interface LoadDisplaySeasonsOptions {
 
 export interface PoikasDataRaw {
   players: PlayerRaw[]
-  leagues: LeagueRaw[]
+  seasons: SeasonRaw[]
 }
 
 export interface PoikasData {
   players: Player[]
-  leagues: League[]
+  seasons: Season[]
 }
 
 export type SeasonMap = {
@@ -117,26 +134,6 @@ export type SeasonMap = {
     rec: string
     c: string
   }
-}
-
-export interface PlayerGameStats {
-  player: string
-  goals: number
-  assists: number
-}
-
-// For use in functions that calculate season stats
-export interface PlayerSeasonStats {
-  player: Player
-  league: League
-  gamesPlayed: number
-  goals: number
-  assists: number
-  points: number
-  shootoutGoals: number
-  saves?: number
-  shotsAgainst?: number
-  gamesAsGoalie?: number
 }
 
 export type Stats = {
@@ -148,7 +145,7 @@ export type Stats = {
 
 // Historical data from MVIA (src/data/historical/*.json)
 
-export interface HistoricalTeamStanding {
+export interface ArenaTeamStanding {
   team_name: string
   points: number
   wins: number
@@ -161,7 +158,7 @@ export interface HistoricalTeamStanding {
   goal_differential: number
 }
 
-export interface HistoricalPlayerStats {
+export interface ArenaPlayerSeasonStats {
   name: string
   number: string
   games_played: number
@@ -171,7 +168,7 @@ export interface HistoricalPlayerStats {
   penalty_minutes: number
 }
 
-export interface HistoricalGoalieStats {
+export interface ArenaGoalieSeasonStats {
   name: string
   number: string
   games_played: number
@@ -185,12 +182,12 @@ export interface HistoricalGoalieStats {
   shutouts: number
 }
 
-export interface HistoricalSeasonData {
-  standings: HistoricalTeamStanding[]
-  players: HistoricalPlayerStats[]
-  goalies: HistoricalGoalieStats[]
+export interface ArenaSeasonStats {
+  standings: ArenaTeamStanding[]
+  players: ArenaPlayerSeasonStats[]
+  goalies: ArenaGoalieSeasonStats[]
 }
 
-export type HistoricalHockeyStats = {
-  [season: string]: HistoricalSeasonData
+export type ArenaStats = {
+  [season: string]: ArenaSeasonStats
 }

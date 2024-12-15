@@ -1,4 +1,4 @@
-import type { Game, Player, PoikasData, PoikasDataRaw } from "../types"
+import type { Game, Player, PoikasData, PoikasDataRaw, PlayerSeason } from "../types"
 import { poikasData } from "./poikas"
 import { img } from "../image"
 
@@ -10,13 +10,12 @@ const historicalSeasons = Object.values(historicalRecStats).concat(Object.values
 
 let _data: PoikasData
 export function getData(): PoikasData {
-  if (!_data) _data = processPoikasData(poikasData)
+  if (!_data) _data = processPoikasData(poikasData as PoikasData)
   return _data
 }
 
 function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
-  // cast the raw data to a PoikasData type so we can add data
-  const data = dataRaw as PoikasData
+  const data: PoikasData = dataRaw as PoikasData
 
   // Sort players by name
   data.players.sort((a, b) => (a.name < b.name ? -1 : 1))
@@ -24,35 +23,36 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
   // Sort leagues by year, season, and level
   const seasonsOrder = ["Spring", "Summer", "Fall"]
   const levelsOrder = ["Rec", "C"]
-  data.leagues.sort((a, b) => {
+  data.seasons.sort((a, b) => {
     if (a.year !== b.year) return a.year - b.year
-    if (a.season !== b.season) return seasonsOrder.indexOf(a.season) - seasonsOrder.indexOf(b.season)
-    return seasonsOrder.indexOf(a.level) - levelsOrder.indexOf(b.level)
+    if (a.seasonName !== b.seasonName) return seasonsOrder.indexOf(a.seasonName) - seasonsOrder.indexOf(b.seasonName)
+    return seasonsOrder.indexOf(a.leagueName) - levelsOrder.indexOf(b.leagueName)
   })
 
-  data.leagues.forEach((league) => {
+  data.seasons.forEach((season) => {
     // the "pending" playoffs status mean it's a current season
-    league.current = league.playoffs === "pending"
+    season.current = season.playoffs === "pending"
 
     // url for the league page
-    const season = league.season.toLowerCase()
-    const level = league.level.toLowerCase()
-    league.url = `/seasons/${league.year}/${season}/${level}`
+    const seasonName = season.seasonName.toLowerCase()
+    const leagueName = season.leagueName.toLowerCase()
+    season.url = `/seasons/${season.year}/${seasonName}/${leagueName}`
+    season.link = `<a href="/season/?year=${season.year}&season=${season.seasonName}&level=${season.leagueName}">${season.leagueName}</a>`
 
     // Add historical data to the league
-    league.historical = historicalSeasons.find(
-      (h) => h.year === league.year && h.season === league.season && h.level === league.level
+    season.arenaReportedStats = historicalSeasons.find(
+      (h) => h.year === season.year && h.season === season.seasonName && h.league === season.leagueName
     )
 
     // for leagues with games listed, calculate w/l/t
-    if (league.games) {
-      league.wins = league.games.filter((g) => g.result === "won").length
-      league.losses = league.games.filter((g) => g.result === "lost").length
-      league.ties = league.games.filter((g) => g.result === "tied" || g.result === "lost-ot").length
+    if (season.games) {
+      season.wins = season.games.filter((g) => g.result === "won").length
+      season.losses = season.games.filter((g) => g.result === "lost").length
+      season.ties = season.games.filter((g) => g.result === "tied" || g.result === "lost-ot").length
 
-      league.games.forEach((game) => {
+      season.games.forEach((game) => {
         // attach the league to each game
-        game.league = league
+        game.season = season
         // attach the sisu player, if found
         game.sisuPlayer = data.players.find((p) => p.name === game.sisu)
         // link to opponent page
@@ -64,36 +64,71 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
 
   data.players.forEach((player) => {
     // attach seasons to each player for convenience
-    player.leagues = data.leagues.filter((league) => league.roster.includes(player.name))
+    player.seasons = { Rec: [], C: [] }
+    data.seasons.forEach((season) => {
+      // if the player is not on the roster that season, skip
+      if (!season.roster.includes(player.name)) return
 
-    // and the reverse too -- add players to each season
-    player.leagues.forEach((season) => {
+      // create a player season object for this player and season
+      const playerSeason: PlayerSeason = {
+        year: season.year,
+        seasonName: season.seasonName,
+        leagueName: season.leagueName,
+        season: season,
+        stats: { goals: 0, assists: 0 }, // will fill out later
+      }
+
+      // add the player season to the player's seasons
+      player.seasons[season.leagueName].push(playerSeason)
+
+      // if this is a current season, mark the player as active and add to active seasons
+      if (season.current) {
+        player.active = true
+        player.activeSeasons[season.leagueName] = playerSeason
+      }
+
+      // and the reverse too -- add players to each season
       season.players ||= []
       season.players.push(player)
+
+      // did we win a championship this season?
+      if (season.playoffs === "champions") player.championships += 1
+
+      // calculate the player's stats for this season
+      let seasonGoals = 0
+      let seasonAssists = 0
+      season.games?.forEach((game) => {
+        if (!game.stats) return
+
+        // get the player's stats for this game
+        const playerStats = game.stats[player.name]
+
+        // add to the season totals
+        seasonGoals += playerStats?.goals || 0
+        seasonAssists += playerStats?.assists || 0
+      })
+
+      // Find the historical data for this season
+      const arenaStats = season.arenaReportedStats?.players.find((h) => h.name === player.name)
+      playerSeason.arenaPlayerSeasonStats = arenaStats
+
+      // resolve the stats for this season -- use greater of tracked or historical
+      seasonGoals = Math.max(seasonGoals, arenaStats?.goals || 0)
+      seasonAssists = Math.max(seasonAssists, arenaStats?.assists || 0)
+
+      // Now these are the resolved stats, added to this player season
+      playerSeason.stats.goals += seasonGoals
+      playerSeason.stats.assists += seasonAssists
     })
 
-    // is this player currently active?
-    player.active = player.leagues.some((season) => season.current)
-
-    // rec and c/cc links
-    const rec = player.leagues.find((s) => s.current && s.level === "Rec")
-    const c = player.leagues.find((s) => s.current && s.level === "C")
-    player.recLink = rec ? `<a href="/season/?year=${rec.year}&season=${rec.season}&level=${rec.level}">Rec</a>` : "-"
-    player.cLink = c ? `<a href="/season/?year=${c.year}&season=${c.season}&level=${c.level}">C/CC</a>` : "-"
-
     // how many active calendar years has this player played?
-    const activeYears = [...new Set(player.leagues.map((season) => season.year))]
+    const activeYears = [...new Set(Object.values(player.seasons).flatMap((seasons) => seasons.map((s) => s.year)))]
 
     player.years = activeYears.length
     player.startYear = activeYears[0]
     player.endYear = activeYears[activeYears.length - 1]
 
     player.age = ageFunction
-
-    // how many championships?
-    player.championships = data.leagues
-      .filter((league) => league.playoffs === "champions")
-      .filter((league) => league.roster.includes(player.name)).length
 
     // player slug (for URLs)
     player.slug = slugify(player.name)
@@ -107,35 +142,6 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
     // player profile URL
     player.profileURL = `/players/${player.slug}`
     player.profileLink = `<a href="${player.profileURL}">${player.name}</a>`
-
-    // Initialize stats
-    player.currentStats = { Rec: { goals: 0, assists: 0 }, C: { goals: 0, assists: 0 } }
-    player.careerStats = { Rec: { goals: 0, assists: 0 }, C: { goals: 0, assists: 0 } }
-
-    // Calculate stats across all leagues
-    player.leagues.forEach((league) => {
-      let leagueGoals = 0
-      let leagueAssists = 0
-      league.games?.forEach((game) => {
-        if (!game.stats) return
-
-        const playerStats = game.stats[player.name]
-
-        leagueGoals += playerStats?.goals || 0
-        leagueAssists += playerStats?.assists || 0
-      })
-
-      // Add to current season totals if this is a current league
-      if (league.current) {
-        player.currentStats[league.level].goals += leagueGoals
-        player.currentStats[league.level].assists += leagueAssists
-      }
-
-      // Add the greater of the tracked stats or the historical stats to their career totals
-      const historicalStats = league.historical?.players.find((h) => h.name === player.name)
-      player.careerStats[league.level].goals += Math.max(leagueGoals, historicalStats?.goals || 0)
-      player.careerStats[league.level].assists += Math.max(leagueAssists, historicalStats?.assists || 0)
-    })
   })
 
   return data
@@ -145,13 +151,13 @@ export function gamesAgainstOpponent(data: PoikasData, slug: string) {
   // Find all the games against that opponent across rec and C seasons
   const recGames: Game[] = []
   const cGames: Game[] = []
-  data.leagues.forEach((league) => {
+  data.seasons.forEach((league) => {
     if (!league.games) return
 
     league.games?.forEach((game) => {
       if (game.vs && slugify(game.vs) === slug) {
-        if (league.level === "Rec") recGames.push(game)
-        if (league.level === "C") cGames.push(game)
+        if (league.leagueName === "Rec") recGames.push(game)
+        if (league.leagueName === "C") cGames.push(game)
       }
     })
   })

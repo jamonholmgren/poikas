@@ -1,12 +1,12 @@
-import type { League } from "../types"
+import type { Season } from "../types"
 import { img } from "../image"
 
 type ChampTileProps = {
-  league: League
+  league: Season
 }
 
 export function ChampTile({ league }: ChampTileProps): string {
-  const { year, season, level, url, photos } = league
+  const { year, seasonName: season, leagueName: level, url, photos } = league
 
   if (!photos || photos.length === 0) {
     return `

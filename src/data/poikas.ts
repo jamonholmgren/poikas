@@ -1,12 +1,12 @@
 import type { PoikasDataRaw } from "../types"
-// rev 15848
+// rev 15849
 
 export const poikasData: PoikasDataRaw = {
-  leagues: [
+  seasons: [
     {
       year: 2019,
-      season: "Fall",
-      level: "Rec",
+      seasonName: "Fall",
+      leagueName: "Rec",
       wins: 0,
       losses: 0,
       ties: 0,
@@ -29,8 +29,8 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       year: 2020,
-      season: "Spring",
-      level: "Rec",
+      seasonName: "Spring",
+      leagueName: "Rec",
       description: "COVID hit during this season, so it was canceled entirely after a few games.",
       aside: "covid shortened",
       wins: 0,
@@ -59,8 +59,8 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       year: 2021,
-      season: "Spring",
-      level: "Rec",
+      seasonName: "Spring",
+      leagueName: "Rec",
       description:
         "We had a very solid regular season but fell short in the playoffs vs Liquid Gold. We outshot them by something like 68-6 but they won 1-0 on a breakaway.",
       wins: 8,
@@ -169,8 +169,8 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       year: 2021,
-      season: "Summer",
-      level: "Rec",
+      seasonName: "Summer",
+      leagueName: "Rec",
       description: "Our first championship! We went undefeated in the regular season and playoffs.",
       photos: ["poikas-rec-2021-summer-champions.jpg"],
       wins: 10,
@@ -290,8 +290,8 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       year: 2021,
-      season: "Fall",
-      level: "Rec",
+      seasonName: "Fall",
+      leagueName: "Rec",
       description: "We won back-to-back championships!",
       photos: ["poikas-rec-2021-fall-champions.jpg"],
       wins: 11,
@@ -464,8 +464,8 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       year: 2021,
-      season: "Fall",
-      level: "C",
+      seasonName: "Fall",
+      leagueName: "C",
       description:
         "For Fall 2021, Joel Mattila put together a C/CC level team to accommodate the players who were advancing beyond Rec League level. This was the first time for most of the Poikas playing at the next level.",
       wins: 3,
@@ -490,8 +490,8 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       year: 2022,
-      season: "Spring",
-      level: "C",
+      seasonName: "Spring",
+      leagueName: "C",
       description: "We had a solid second season at the C level, coming in just under .500.",
       wins: 7,
       losses: 8,
@@ -517,8 +517,8 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       year: 2022,
-      season: "Spring",
-      level: "Rec",
+      seasonName: "Spring",
+      leagueName: "Rec",
       description:
         "We won our third championship in a row! Our team was dominating Rec League, and this was the last season we would keep Asa Storm and some of our other top scorers.",
       photos: ["poikas-rec-2022-spring-champions.jpg"],
@@ -683,8 +683,8 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       year: 2022,
-      season: "Summer",
-      level: "Rec",
+      seasonName: "Summer",
+      leagueName: "Rec",
       description:
         "During summer 2022, we didn't have enough players for a full team, so we joined forces with the Russian team. This team won the championship, but we don't count it as a full Suomi Poikas championship. We do count it as individual championships for those who played.",
       aside: "with Russia",
@@ -794,8 +794,8 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       year: 2022,
-      season: "Fall",
-      level: "Rec",
+      seasonName: "Fall",
+      leagueName: "Rec",
       description:
         "During fall 2022, we didn't have enough players for a full team, so we joined forces with the Ukrainian team.",
       aside: "with Ukraine",
@@ -824,8 +824,8 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       year: 2022,
-      season: "Fall",
-      level: "C",
+      seasonName: "Fall",
+      leagueName: "C",
       wins: 3,
       losses: 10,
       ties: 2,
@@ -978,8 +978,8 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       year: 2023,
-      season: "Spring",
-      level: "Rec",
+      seasonName: "Spring",
+      leagueName: "Rec",
       wins: 8,
       losses: 7,
       ties: 0,
@@ -1132,8 +1132,8 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       year: 2023,
-      season: "Spring",
-      level: "C",
+      seasonName: "Spring",
+      leagueName: "C",
       wins: 5,
       losses: 10,
       ties: 0,
@@ -1288,8 +1288,8 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       year: 2023,
-      season: "Fall",
-      level: "Rec",
+      seasonName: "Fall",
+      leagueName: "Rec",
       description:
         "This was one of our most fulfilling seasons! We battled hard and ended up #2 in the league after the regular season. In the playoffs, we played against the #3 Thundersticks, which we had been 0-3 against in the regular season, and the #1 Slavic Peeps (Russians), which we went 1-2 against. We squeaked out a narrow 3-1 win against the Thundersticks and moved on to the Slavic Peeps for the Championship. We went down 0-2 early but battled back in front of a packed house to win it 5-3 for our fourth championship!",
       photos: ["poikas-rec-2023-fall-champions.jpg"],
@@ -1444,8 +1444,8 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       year: 2023,
-      season: "Fall",
-      level: "C",
+      seasonName: "Fall",
+      leagueName: "C",
       description: "We had a rough season, shorthanded most games.",
       wins: 3,
       losses: 12,
@@ -1578,8 +1578,8 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       year: 2024,
-      season: "Spring",
-      level: "Rec",
+      seasonName: "Spring",
+      leagueName: "Rec",
       schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2950580/Suomi-Poikas-Rec.aspx?framed=1",
       playoffs: "champions",
       description:
@@ -1925,8 +1925,8 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       year: 2024,
-      season: "Spring",
-      level: "C",
+      seasonName: "Spring",
+      leagueName: "C",
       schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2950569/Suomi-Poikas-C.aspx?framed=1",
       playoffs: "lost",
       description:
@@ -2230,8 +2230,8 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       year: 2024,
-      season: "Fall",
-      level: "Rec",
+      seasonName: "Fall",
+      leagueName: "Rec",
       schedule: "https://mountainview.ezleagues.ezfacility.com/teams/3028138/Suomi-Poikas-Rec.aspx?framed=1",
       playoffs: "pending",
       description: "Rec league is back, and so are the Poikas!",
@@ -2532,8 +2532,8 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       year: 2024,
-      season: "Fall",
-      level: "C",
+      seasonName: "Fall",
+      leagueName: "C",
       schedule: "https://mountainview.ezleagues.ezfacility.com/teams/3028116/Suomi-Poikas-C.aspx?framed=1",
       playoffs: "pending",
       description: "Another season of C/CC league is underway!",

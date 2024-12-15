@@ -2,7 +2,7 @@
   "Spring 2021 Rec League": {
     "year": 2021,
     "season": "Spring",
-    "level": "Rec",
+    "league": "Rec",
     "standings": [
       {
         "team_name": "Suomi Poikas",
@@ -188,7 +188,7 @@
   "Summer 2021 Rec League": {
     "year": 2021,
     "season": "Summer",
-    "level": "Rec",
+    "league": "Rec",
     "standings": [
       {
         "team_name": "Suomi Poikas",
@@ -374,7 +374,7 @@
   "Fall 2021 Rec League": {
     "year": 2021,
     "season": "Fall",
-    "level": "Rec",
+    "league": "Rec",
     "standings": [
       {
         "team_name": "Pinecones",
@@ -551,7 +551,7 @@
   "Spring 2022 Rec League": {
     "year": 2022,
     "season": "Spring",
-    "level": "Rec",
+    "league": "Rec",
     "standings": [
       {
         "team_name": "Suomi Poikas Rec",
@@ -728,7 +728,7 @@
   "Summer 2022 Rec League": {
     "year": 2022,
     "season": "Summer",
-    "level": "Rec",
+    "league": "Rec",
     "standings": [
       {
         "team_name": "Suomi Poikas",
@@ -896,7 +896,7 @@
   "Fall 2022 Rec League": {
     "year": 2022,
     "season": "Fall",
-    "level": "Rec",
+    "league": "Rec",
     "standings": [
       {
         "team_name": "Pinecones",
@@ -1073,7 +1073,7 @@
   "Spring 2023 Rec League": {
     "year": 2023,
     "season": "Spring",
-    "level": "Rec",
+    "league": "Rec",
     "standings": [
       {
         "team_name": "Thundersticks",
@@ -1259,7 +1259,7 @@
   "Fall 2023 Rec League": {
     "year": 2023,
     "season": "Fall",
-    "level": "Rec",
+    "league": "Rec",
     "standings": [
       {
         "team_name": "Slavic Peeps",
@@ -1427,7 +1427,7 @@
   "Spring 2024 Rec League": {
     "year": 2024,
     "season": "Spring",
-    "level": "Rec",
+    "league": "Rec",
     "standings": [
       {
         "team_name": "Pinecones",

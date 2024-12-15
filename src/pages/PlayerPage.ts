@@ -17,8 +17,8 @@ export function PlayerPage(data: PoikasData, slug: string) {
   data.players.reverse()
   const nextPlayer = data.players.find((p) => p.name > player.name)
 
-  const recSeasons = player.leagues.filter((s) => s.level === "Rec").length || "—"
-  const cSeasons = player.leagues.filter((s) => s.level === "C").length || "—"
+  const recSeasons = player.seasons.filter((s) => s.league === "Rec").length || "—"
+  const cSeasons = player.seasons.filter((s) => s.league === "C").length || "—"
 
   const playerImages = images.filter((img) => img.players.includes(player.name))
 
@@ -161,7 +161,7 @@ export function PlayerPage(data: PoikasData, slug: string) {
             </tr>
           </thead>
           <tbody>
-            ${Object.entries(leagueSeasonsMap(player.leagues))
+            ${Object.entries(leagueSeasonsMap(player.seasons))
               .map(
                 ([season, leagues]) => `
             <tr>

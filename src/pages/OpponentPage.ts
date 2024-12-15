@@ -71,7 +71,7 @@ export function OpponentPage(data: PoikasData, slug: string) {
               .map(
                 (game) => `
                     <tr>
-                      <td><a href="${game.league?.url}">${game.league?.year} ${game.league?.season}</a></td>
+                      <td><a href="${game.season?.url}">${game.season?.year} ${game.season?.seasonName}</a></td>
                       <td class="extra">${game.vs}</td>
                       <td>${game.result} ${game.us}-${game.them}</td>
                       <td>${game.sisuPlayer?.profileLink || "-"}</td>
@@ -121,7 +121,7 @@ export function OpponentPage(data: PoikasData, slug: string) {
               .map(
                 (game) => `
                     <tr>
-                      <td><a href="${game.league?.url}">${game.league?.year} ${game.league?.season}</a></td>
+                      <td><a href="${game.season?.url}">${game.season?.year} ${game.season?.seasonName}</a></td>
                       <td class="extra">${game.vs}</td>
                       <td>${game.result} ${game.us}-${game.them}</td>
                       <td>${game.sisuPlayer?.profileLink || "-"}</td>

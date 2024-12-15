@@ -2,7 +2,7 @@
   "Fall 2021 C League": {
     "year": 2021,
     "season": "Fall",
-    "level": "C",
+    "league": "C",
     "standings": [
       {
         "team_name": "CCCP",
@@ -188,7 +188,7 @@
   "Spring 2022 C League": {
     "year": 2022,
     "season": "Spring",
-    "level": "C",
+    "league": "C",
     "standings": [
       {
         "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\n2 Towns Ciderhouse",
@@ -359,7 +359,7 @@
   "Fall 2022 C League": {
     "year": 2022,
     "season": "Fall",
-    "level": "C",
+    "league": "C",
     "standings": [
       {
         "team_name": "CCCP",
@@ -545,7 +545,7 @@
   "Spring 2023 C League": {
     "year": 2023,
     "season": "Spring",
-    "level": "C",
+    "league": "C",
     "standings": [
       {
         "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\n2 Towns Ciderhouse",
@@ -716,7 +716,7 @@
   "Fall 2023 C League": {
     "year": 2023,
     "season": "Fall",
-    "level": "C",
+    "league": "C",
     "standings": [
       {
         "team_name": "Lightning C/CC",
@@ -893,7 +893,7 @@
   "Spring 2024 C League": {
     "year": 2024,
     "season": "Spring",
-    "level": "C",
+    "league": "C",
     "standings": [
       {
         "team_name": "Badgers",

@@ -11,10 +11,10 @@ export function HomePage(data: PoikasData) {
     .filter((s) => s.playoffs === "champions" && !`${s.aside}`.includes("with"))
     .toReversed()
 
-  let recLeague = data.leagues.find((l) => l.level === "Rec" && l.current)
-  if (!recLeague) recLeague = data.leagues.filter((l) => l.level === "Rec").pop()!
-  let cLeague = data.leagues.find((l) => l.level === "C" && l.current)
-  if (!cLeague) cLeague = data.leagues.filter((l) => l.level === "C").pop()!
+  let recLeague = data.leagues.find((l) => l.league === "Rec" && l.current)
+  if (!recLeague) recLeague = data.leagues.filter((l) => l.league === "Rec").pop()!
+  let cLeague = data.leagues.find((l) => l.league === "C" && l.current)
+  if (!cLeague) cLeague = data.leagues.filter((l) => l.league === "C").pop()!
 
   // latest games from each league
   const lastRecGame = (recLeague.games || []).at(-1)

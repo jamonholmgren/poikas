@@ -25,13 +25,13 @@ def extract_season_info(text: str) -> tuple[str, dict[str, str | int]]:
             season_match = re.search(r'(Spring|Summer|Fall|Fall/Winter)', full_name, re.IGNORECASE)
             season = season_match.group(1) if season_match else None
             
-            level_match = re.search(r'(C League|CC/C League|C/CC League|Rec League)', text, re.IGNORECASE)
-            level = 'C' if level_match and any(x in level_match.group(1) for x in ['C League', 'CC/C']) else 'Rec' if level_match and 'Rec' in level_match.group(1) else None
+            league_match = re.search(r'(C League|CC/C League|C/CC League|Rec League)', text, re.IGNORECASE)
+            league = 'C' if league_match and any(x in league_match.group(1) for x in ['C League', 'CC/C']) else 'Rec' if league_match and 'Rec' in league_match.group(1) else None
             
             return full_name, {
                 'year': year,
                 'season': season,
-                'level': level
+                'league': league
             }
     return "Unknown Season", {}
 
