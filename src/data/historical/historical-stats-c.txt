@@ -1,0 +1,384 @@
+Fall/Winter 2021 C League Standings
+Print
+ 	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
+CCCP	26	13	2	0	15	0	85	45	40	
+Liquid Gold C	22	10	5	0	15	2	69	41	28	
+Callahan Auto Parts	20	10	5	0	15	0	56	50	6	
+Revolution	17	7	8	0	15	3	73	59	14	
+Badgers	17	8	7	0	15	1	45	51	-6	
+Bandits	16	7	8	0	15	2	44	40	4	
+Deadguys	15	6	9	0	15	3	50	55	-5	
+PBR	14	6	9	0	15	2	64	86	-22	
+2 Towns Cider House	8	4	11	0	15	0	31	51	-20	
+Suomi Poikas C	8	4	11	0	15	0	38	77	-39	
+Suomi Poikas C's Schedule
+Print
+Date	Home	 	Away	Time/Status	Venue	Game Type	Officials
+Sun-Sep 12  	Suomi Poikas C	3 - 6	PBR	Complete	Mountain View Ice Arena	Regular	 
+Sun-Sep 19  	Suomi Poikas C	0 - 7	Callahan Auto Parts	Complete	Mountain View Ice Arena	Regular	McCormick
+Sun-Sep 26  	Suomi Poikas C	4 - 7	Bandits	Complete	Mountain View Ice Arena	Regular	Wolfe
+Sun-Oct 3  	Suomi Poikas C	2 - 5	Badgers	Complete	Mountain View Ice Arena	Regular	Dean, Wolfe
+Sun-Oct 10  	2 Towns Cider House	2 - 3	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Dean
+Sun-Oct 17  	Deadguys	1 - (Forfeit) 0	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	 
+Sun-Oct 24  	Liquid Gold C	7 - 2	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	 
+Sun-Oct 31  	Suomi Poikas C	4 - 8	CCCP	Complete	Mountain View Ice Arena	Regular	 
+Sun-Nov 7  	Suomi Poikas C	0 - 10	Revolution	Complete	Mountain View Ice Arena	Regular	Dean
+Sun-Nov 14  	PBR	6 - 2	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Dean
+Sun-Nov 21  	Callahan Auto Parts	1 - 4	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Dean, Wolfe
+Sun-Dec 5  	Badgers	3 - 4 OT	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Murashige
+Sun-Dec 12  	Suomi Poikas C	2 - 4	2 Towns Cider House	Complete	Mountain View Ice Arena	Regular	Wolfe
+Sun-Dec 19  	Suomi Poikas C	3 - 6	Deadguys	Complete	Mountain View Ice Arena	Regular	 
+Sun-Jan 9  	Bandits	4 - 5 OT	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Mischke
+Sun-Jan 16  	Deadguys	6 - 3	Suomi Poikas C	Complete	Mountain View Ice Arena	Postseason	 
+Roster	
+ 	Player	#
+1	Seth Bobbe	8
+2	Scott Daniels	7
+3	Jamon Holmgren	G
+4	Lars Jarvi	 
+5	Eric Matson	20
+6	Milo Matson	95
+7	Joel Mattila	77
+8	Josh Monen	21
+9	Konrad Stenersen	10
+10	Kevin Stepaniuk	5
+11	Asa Storm	29
+12	Creighton Suomi	11
+13	Peter Tapio	87
+14	Dan Warren	55
+15	Brad Wuori	19
+Player Stats
+ 	Player	#	Games Played	Goals	Assists	Points	Penalty Minutes
+1	Josh Monen	21	8	8	5	13	6
+2	Asa Storm	29	12	7	5	12	6
+3	Peter Tapio	87	14	3	9	12	12
+4	Joel Mattila	77	12	4	7	11	3
+5	Kevin Stepaniuk	5	9	4	5	9	6
+6	Eric Matson	20	6	5	3	8	12
+7	Dan Warren	55	15	2	4	6	3
+8	Konrad Stenersen	10	12	2	3	5	6
+9	Brad Wuori	19	10	1	3	4	0
+10	Scott Daniels	7	10	1	3	4	0
+11	Milo Matson	95	11	2	1	3	71
+12	Jamon Holmgren	G	1	0	0	0	0
+13	Lars Jarvi	 	0	0	0	0	0
+14	Creighton Suomi	11	5	0	0	0	0
+15	Seth Bobbe	8	3	0	0	0	36
+Goalie Stats
+ 	Player	#	Games Played	Wins	Losses	OT Losses	Saves	Goals Against	GAA	Save %	Shutouts
+1	Jamon Holmgren	G	13	3	10	0	322	71	5	0.819	0
+
+
+
+Spring Adult League Hockey 2022, C / CC Leagues Standings
+https://mountainview.ezleagues.ezfacility.com/teams/2704526/Suomi-Poikas-C-.aspx?framed=1
+Print
+ 	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
+2 Towns Ciderhouse	25	12	3	0	15	1	64	37	27	
+Deadguys	21	10	5	0	15	1	77	52	25	
+CCCP	21	10	5	0	15	1	62	46	16	
+Callahan Auto Parts	16	8	7	0	15	0	48	53	-5	
+Liquid Gold C	15	7	8	0	15	1	53	66	-13	
+Suomi Poikas C	14	7	8	0	15	0	75	64	11	
+Bandits	13	6	9	0	15	1	51	57	-6	
+Badgers	12	5	10	0	15	2	54	65	-11	
+Revolution	10	5	10	0	15	0	61	74	-13	
+PBR	10	5	10	0	15	0	64	95	-31	
+Suomi Poikas C 's Schedule
+Print
+Date	Home	 	Away	Time/Status	Venue	Game Type	Officials
+Sun-Feb 13  	Suomi Poikas C	6 - 7	PBR	Complete	Mountain View Ice Arena	Regular	Doherty
+Sun-Feb 20  	Suomi Poikas C	1 - 3	Callahan Auto Parts	Complete	Mountain View Ice Arena	Regular	Dean
+Sun-Feb 27  	Suomi Poikas C	5 - 2	Bandits	Complete	Mountain View Ice Arena	Regular	Doherty
+Sun-Mar 6  	Suomi Poikas C	7 - 6 OT	Liquid Gold C	Complete	Mountain View Ice Arena	Regular	Dean, Wolfe
+Sun-Mar 13  	2 Towns Ciderhouse	4 - 1	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	 
+Sun-Mar 20  	Deadguys	8 - 6	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Doherty
+Sun-Mar 27  	Badgers	3 - 4	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Mischke, Wolfe
+Sun-Apr 3  	Suomi Poikas C	4 - 6	CCCP	Complete	Mountain View Ice Arena	Regular	Fowler, Wolfe
+Sun-Apr 10  	Suomi Poikas C	7 - 2	Revolution	Complete	Mountain View Ice Arena	Regular	Dean, Murashige
+Sun-Apr 17  	PBR	1 - 10	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	 
+Sun-Apr 24  	Callahan Auto Parts	1 - 8	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	 
+Sun-May 1  	Bandits	7 - 3	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Mischke, Wolfe
+Sun-May 8  	Liquid Gold C	2 - 8	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Doherty, McCormick
+Sun-May 15  	Suomi Poikas C	2 - 6	2 Towns Ciderhouse	Complete	Mountain View Ice Arena	Regular	Wolfe, Murashige
+Sun-May 22  	Suomi Poikas C	3 - 6	Deadguys	Complete	Mountain View Ice Arena	Regular	Wolfe, Mischke
+Sun-Jun 12  	Suomi Poikas C	4 - 2	Bandits	Complete	Mountain View Ice Arena	Postseason	Doherty, Wolfe
+Sun-Jun 19  	Revolution	6 - 3	Suomi Poikas C	Complete	Mountain View Ice Arena	Postseason-CHAMPIONSHIP	Mischke
+Player Stats
+ 	Player	#	Games Played	Goals	Assists	Points	Penalty Minutes
+1	Nels Tapio	26	17	17	13	30	18
+2	Trevoen Erickson	8	12	16	5	21	0
+3	Asa Storm	29	15	9	9	18	3
+4	Russ Tapio	32	16	7	7	14	37
+5	Scott Daniels	7	13	4	7	11	3
+6	Eric Matson	20	10	7	4	11	0
+7	Brad Wuori	19	14	7	3	10	0
+8	Peter Tapio	87	13	3	7	10	3
+9	Jens Tapio	16	12	3	7	10	3
+10	Jay Tapio	63	16	0	8	8	0
+11	Milo Matson	95	15	4	3	7	6
+12	Dan Warren	55	13	1	6	7	9
+13	Joel Mattila	77	12	2	1	3	9
+14	Brenden Mattila	6	11	1	1	2	16
+15	Jamon Holmgren	G	0	0	0	0	0
+Goalie Stats
+ 	Player	#	Games Played	Wins	Losses	OT Losses	Saves	Goals Against	GAA	Save %	Shutouts
+1	Jamon Holmgren	G	17	8	9	0	394	72	4	0.845	0
+
+Fall/Winter Adult Hockey League 22/23-CC/C Leagues Standings
+https://mountainview.ezleagues.ezfacility.com/teams/2771864/Suomi-Poikas-C-.aspx?framed=1
+Print
+ 	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
+CCCP	25	12	3	0	15	1	79	37	42	
+Badgers	24	12	3	0	15	0	59	38	21	
+Lightning C/CC	22	11	4	0	15	0	73	44	29	
+Deadguys	18	9	6	0	15	0	60	50	10	
+Callahan Auto Parts	17	8	7	0	15	1	50	36	14	
+2 Towns Ciderhouse	16	8	7	0	15	0	58	56	2	
+Revolution	15	7	8	0	15	1	68	75	-7	
+Bandits	10	4	11	0	15	2	44	50	-6	
+Suomi Poikas C	7	3	12	0	15	1	39	74	-35	
+PBR	2	1	14	0	15	0	27	97	-70	
+Suomi Poikas C 's Schedule
+Print
+Date	Home	 	Away	Time/Status	Venue	Game Type	Officials
+Sun-Sep 18  	Suomi Poikas C	7 - 1	PBR	Complete	Mountain View Ice Arena	Regular	Doherty, Mischke
+Sun-Sep 25  	Suomi Poikas C	0 - 5	Callahan Auto Parts	Complete	Mountain View Ice Arena	Regular	Dean, Wolfe
+Sun-Oct 2  	Suomi Poikas C	0 - 5	Bandits	Complete	Mountain View Ice Arena	Regular	 
+Sun-Oct 9  	Suomi Poikas C	2 - 8	Lightning C/CC	Complete	Mountain View Ice Arena	Regular	Murashige
+Sun-Oct 16  	2 Towns Ciderhouse	5 - 4	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Dean
+Sun-Oct 23  	Deadguys	6 - 2	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Wolfe
+Sun-Oct 30  	Badgers	3 - 1	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Doherty, Murashige
+Sun-Nov 6  	Suomi Poikas C	4 - 7	CCCP	Complete	Mountain View Ice Arena	Regular	Bloemke, Dean
+Sun-Nov 13  	Suomi Poikas C	5 - 6	Revolution	Complete	Mountain View Ice Arena	Regular	Wolfe
+Sun-Nov 20  	PBR	4 - 5	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Murashige
+Sun-Dec 4  	Bandits	6 - 2	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Wolfe
+Sun-Dec 11  	Lightning C/CC	7 - 0	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Murashige, Nearman
+Sun-Dec 18  	Suomi Poikas C	4 - 1	2 Towns Ciderhouse	Complete	Mountain View Ice Arena	Regular	Doherty, Nearman
+Sun-Jan 8  	Callahan Auto Parts	2 - 1 OT	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Dean, Doherty
+Sun-Jan 15  	Suomi Poikas C	2 - 8	Deadguys	Complete	Mountain View Ice Arena	Regular	McIntyre(scorekeeper), Wolfe
+Sun-Jan 22  	Bandits	10 - 1	Suomi Poikas C	Complete	Mountain View Ice Arena	Postseason	McIntyre(scorekeeper), Wolfe, Dean
+Player Stats
+ 	Player	#	Games Played	Goals	Assists	Points	Penalty Minutes
+1	Asa Storm	29	15	12	7	19	3
+2	Jared Paben	50	15	7	3	10	6
+3	Aaron Fuller	40	14	3	4	7	0
+4	Andrew Nichol	11	8	4	3	7	3
+5	MATTHEW BROMLEY	6	11	2	4	6	15
+6	Rick Ramstetter	96	16	1	5	6	3
+7	Oren Matson	27	7	3	2	5	0
+8	Randy Storm	88	14	1	4	5	9
+9	Scott Daniels	7	9	1	3	4	0
+10	Brad Wuori	19	14	1	2	3	0
+11	Will Murphy	5	8	3	0	3	6
+12	Joel Mattila	77	9	1	0	1	0
+13	Erik Benton	G	0	0	1	1	0
+14	Dan Warren	55	2	0	0	0	0
+15	Paul Haar	 	0	0	0	0	0
+Goalie Stats
+ 	Player	#	Games Played	Wins	Losses	OT Losses	Saves	Goals Against	GAA	Save %	Shutouts
+1	Jamon Holmgren	G	15	3	12	0	543	82	5	0.869	0
+
+
+Adult Hockey League Spring 23-CC/C Leagues Standings
+https://mountainview.ezleagues.ezfacility.com/teams/2842184/Suomi-Poikas-C-.aspx?framed=1
+Print
+ 	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
+2 Towns Ciderhouse	24	11	4	0	15	2	75	43	32	
+CCCP	24	12	3	0	15	0	71	44	27	
+Callahan Auto Parts	23	11	4	0	15	1	62	41	21	
+Deadguys	20	8	7	0	15	4	74	64	10	
+Badgers	18	9	6	0	15	0	51	42	9	
+Revolution	18	8	7	0	15	2	61	64	-3	
+Lightning C/CC	16	6	9	0	15	4	67	57	10	
+Bandits	10	4	11	0	15	2	44	66	-22	
+Suomi Poikas C	10	5	10	0	15	0	58	83	-25	
+PBR	2	1	14	0	15	0	36	95	-59	
+Suomi Poikas C 's Schedule
+Print
+Date	Home	 	Away	Time/Status	Venue	Game Type	Officials
+Sun-Feb 12  	Suomi Poikas C	2 - 4	Bandits	Complete	Mountain View Ice Arena	Regular	Foppe (scorekeeper), Doherty
+Sun-Feb 19  	Suomi Poikas C	4 - 3	Lightning C/CC	Complete	Mountain View Ice Arena	Regular	Murashige, Nearman, Foppe (scorekeeper)
+Sun-Feb 26  	Suomi Poikas C	6 - 2	PBR	Complete	Mountain View Ice Arena	Regular	McIntyre(scorekeeper), Murashige, Nearman
+Sun-Mar 5  	Suomi Poikas C	2 - 4	Deadguys	Complete	Mountain View Ice Arena	Regular	Mischke
+Sun-Mar 12  	2 Towns Ciderhouse	6 - 4	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Foppe (scorekeeper), Nearman
+Sun-Mar 19  	CCCP	5 - 4	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Fowler, Welliver
+Sun-Mar 26  	Suomi Poikas C	2 - 4	Revolution	Complete	Mountain View Ice Arena	Regular	Doherty, Foppe (scorekeeper)
+Sun-Apr 2  	Suomi Poikas C	6 - 3	Badgers	Complete	Mountain View Ice Arena	Regular	Foppe (scorekeeper), Nearman, Murashige
+Sun-Apr 9  	Suomi Poikas C	2 - 4	Callahan Auto Parts	Complete	Mountain View Ice Arena	Regular	Bloemke, Fowler
+Sun-Apr 16  	Bandits	2 - 5	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Bloemke
+Sun-Apr 23  	Lightning C/CC	11 - 6	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Foppe (scorekeeper), Murashige, Nearman
+Sun-Apr 30  	PBR	7 - 8	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Wolfe, Mischke
+Sun-May 7  	Deadguys	5 - 2	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Bloemke, Mischke
+Sun-May 14  	2 Towns Ciderhouse	12 - 0	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Nearman, Foppe (scorekeeper)
+Sun-May 21  	Suomi Poikas C	5 - 11	CCCP	Complete	Mountain View Ice Arena	Regular	Mischke
+Sun-May 28  	Bandits	5 - 3	Suomi Poikas C	Complete	Mountain View Ice Arena	Postseason	Doherty, Nearman
+Player Stats
+ 	Player	#	Games Played	Goals	Assists	Points	Penalty Minutes
+1	Steve Saunders	40	13	13	6	19	21
+2	Matt Bromley	69	13	8	8	16	9
+3	Evan Tapio	22	14	7	4	11	6
+4	Asa Storm	29	14	5	5	10	3
+5	Nels Tapio	26	7	5	3	8	15
+6	Oren Matson	27	15	5	2	7	0
+7	Brad Wuori	19	10	2	5	7	6
+8	Jared Paben	57	11	2	4	6	6
+9	Will Murphy	50	13	2	4	6	12
+10	Scott Daniels	7	9	1	4	5	0
+11	Randy Storm	88	13	1	3	4	3
+12	Joel Mattila	77	11	2	1	3	6
+13	Eric Matson	20	10	2	0	2	6
+14	Andrew Nichol	35	12	1	1	2	9
+15	Rick Ramstetter	 	2	0	1	1	0
+16	Erik Benton-Price	G	0	0	0	0	3
+Goalie Stats
+ 	Player	#	Games Played	Wins	Losses	OT Losses	Saves	Goals Against	GAA	Save %	Shutouts
+1	Jamon Holmgren	G	15	5	9	1	447	76	5	0.855	0
+
+
+Fall 2023 - CC/C League Standings
+https://mountainview.ezleagues.ezfacility.com/teams/2902820/Suomi-Poikas-C.aspx?framed=1
+Print
+ 	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
+Lightning C/CC	23	11	4	0	15	1	72	46	26	
+Badgers	22	11	4	0	15	0	63	33	30	
+Callahan Auto Parts	21	10	5	0	15	1	53	37	16	
+Bandits	21	10	4	1	15	0	51	42	9	
+Local Legends	19	8	7	0	15	3	61	34	27	
+Deadguys	15	7	8	0	15	1	64	52	12	
+CCCP	14	6	8	1	15	1	54	52	2	
+Revolution	14	7	8	0	15	0	48	55	-7	
+Suomi Poikas C	6	3	12	0	15	0	36	89	-53	
+PBR	2	1	14	0	15	0	29	91	-62	
+Suomi Poikas C's Schedule
+Print
+Date	Home	 	Away	Time/Status	Venue	Game Type	Officials
+Sun-Sep 10  	Suomi Poikas C	2 - 11	Lightning C/CC	Complete	Mountain View Ice Arena	Regular	Dean, Doherty
+Sun-Sep 17  	Suomi Poikas C	6 - 5	CCCP	Complete	Mountain View Ice Arena	Regular	McIntyre(scorekeeper), Doherty, Wolfe
+Sun-Sep 24  	Suomi Poikas C	6 - 3	Revolution	Complete	Mountain View Ice Arena	Regular	Dean, Doherty
+Sun-Oct 1  	Suomi Poikas C	1 - 3	Bandits	Complete	Mountain View Ice Arena	Regular	Abrams, Bloemke
+Sun-Oct 8  	Callahan Auto Parts	6 - 2	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Doherty, Mischke
+Sun-Oct 15  	Badgers	9 - 0	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Bloemke, Welliver, McMurtry(Scorekeeper)
+Sun-Oct 22  	Deadguys	9 - 2	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Nearman
+Sun-Oct 29  	Suomi Poikas C	0 - 10	Local Legends	Complete	Mountain View Ice Arena	Regular	McMurtry(Scorekeeper), Doherty, Dean
+Sun-Nov 5  	Suomi Poikas C	1 - (Forfeit) 0	PBR	Complete	Mountain View Ice Arena	Regular	Wolfe, Dean, McMurtry(Scorekeeper)
+Sun-Nov 12  	Lightning C/CC	6 - 3	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Fowler, McIntyre(scorekeeper)
+Sun-Nov 19  	CCCP	6 - 3	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Wolfe
+Sun-Dec 3  	Bandits	5 - 2	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Doherty, Pfister, McMurtry(Scorekeeper)
+Sun-Dec 10  	Suomi Poikas C	3 - 6	Callahan Auto Parts	Complete	Mountain View Ice Arena	Regular	Dean, Doherty, McMurtry(Scorekeeper)
+Sun-Dec 17  	Suomi Poikas C	0 - 3	Badgers	Complete	Mountain View Ice Arena	Regular	McIntyre(scorekeeper), Nearman, Korchak
+Sun-Jan 7  	Revolution	7 - 5	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	McIntyre(scorekeeper), Nearman, Pfister
+Sun-Jan 14  	Revolution	9 - 3	Suomi Poikas C	Complete	Mountain View Ice Arena	Postseason	Doherty, Korchak
+Roster	
+ 	Player	#
+1	Matt Bromley	69
+2	Jamon Holmgren	G
+3	Trevor Kloetzli	50
+4	Oren Matson	27
+5	Eric Matson	20
+6	Joel Mattila	77
+7	Jared Paben	57
+8	Steve Saunders	40
+9	Asa Storm	29
+10	Randy Storm	88
+11	Peter Tapio	87
+12	Nels Tapio	26
+13	Andrew Tunseth	96
+14	Brad Wuori	18
+Player Stats
+ 	Player	#	Games Played	Goals	Assists	Points	Penalty Minutes
+1	Asa Storm	29	12	13	2	15	3
+2	Nels Tapio	26	11	5	5	10	24
+3	Steve Saunders	40	9	6	2	8	21
+4	Andrew Tunseth	96	7	2	4	6	0
+5	Oren Matson	27	13	2	3	5	3
+6	Trevor Kloetzli	50	7	2	2	4	0
+7	Jared Paben	57	12	3	0	3	0
+8	Joel Mattila	77	9	0	2	2	3
+9	Matt Bromley	69	4	1	1	2	3
+10	Randy Storm	88	12	1	1	2	3
+11	Eric Matson	20	7	0	1	1	15
+12	Brad Wuori	18	2	0	0	0	0
+13	Peter Tapio	87	2	0	0	0	3
+Goalie Stats
+ 	Player	#	Games Played	Wins	Losses	OT Losses	Saves	Goals Against	GAA	Save %	Shutouts
+1	Jamon Holmgren	G	12	2	10	0	328	72	6	0.820	0
+
+
+
+Spring 2024 - CC/C League Standings
+https://mountainview.ezleagues.ezfacility.com/teams/2950569/Suomi-Poikas-C.aspx?framed=1
+Print
+ 	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
+Badgers	23	11	3	1	15	0	61	44	17	
+Deadguys	21	10	4	1	15	0	52	42	10	
+Lightning C/CC	20	9	4	2	15	0	68	46	22	
+Bandits	18	8	5	2	15	0	52	39	13	
+Local Legends	18	7	8	0	15	4	45	46	-1	
+Revolution	17	7	6	2	15	1	65	63	2	
+CCCP	15	6	7	2	15	1	49	51	-2	
+PBR	11	5	10	0	15	1	49	69	-20	
+Suomi Poikas C	11	5	10	0	15	1	55	68	-13	
+Callahan Auto Parts	8	2	13	0	15	4	36	64	-28	
+Suomi Poikas C's Schedule
+Print
+Date	Home	 	Away	Time/Status	Venue	Game Type	Officials
+Sun-Feb 11  	Suomi Poikas C	2 - 8	PBR	Complete	Mountain View Ice Arena	Regular	Coughran (scorekeeper), Pfister, Doherty
+Sun-Feb 18  	Suomi Poikas C	6 - 2	CCCP	Complete	Mountain View Ice Arena	Regular	Coughran (scorekeeper), Fowler, Pfister
+Sun-Feb 25  	Suomi Poikas C	3 - 2	Callahan Auto Parts	Complete	Mountain View Ice Arena	Regular	Coughran (scorekeeper), Pfister, Schultz
+Sun-Mar 3  	Suomi Poikas C	2 - 6	Local Legends	Complete	Mountain View Ice Arena	Regular	Moss (scorekeeper), Pfister, Dean
+Sun-Mar 10  	Badgers	3 - 6	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	McIntyre(scorekeeper), Mischke, Zimmerman
+Sun-Mar 17  	Lightning C/CC	4 - 7	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Lucus (scorekeeper), Mischke, Schultz
+Sun-Mar 24  	Bandits	6 - 4	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Dean, Schultz, Moss (scorekeeper)
+Sun-Mar 31  	Suomi Poikas C	2 - 5	Deadguys	Complete	Mountain View Ice Arena	Regular	Coughran (scorekeeper), Dean, Pfister
+Sun-Apr 7  	Suomi Poikas C	3 - 5	Revolution	Complete	Mountain View Ice Arena	Regular	Coughran (scorekeeper), Doherty, Pfister
+Sun-Apr 14  	PBR	4 - 3 OT	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Coughran (scorekeeper), Dean, Zimmerman
+Sun-Apr 21  	CCCP	5 - 2	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Coughran (scorekeeper), Mischke, Schultz
+Sun-Apr 28  	Callahan Auto Parts	4 - 6	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Doherty, Fortin (scorekeeper), Zimmerman
+Sun-May 5  	Local Legends	3 - 2	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Fortin (scorekeeper), Pfister, Welliver
+Sun-May 19  	Suomi Poikas C	3 - 5	Lightning C/CC	Complete	Mountain View Ice Arena	Regular	Doherty, Moss (scorekeeper), Pfister
+Sun-May 26  	Suomi Poikas C	4 - 6	Badgers	Complete	Mountain View Ice Arena	Regular	Dean, Johnson (scorekeeper), Zimmerman
+Sun-Jun 2  	PBR	4 - 3	Suomi Poikas C	Complete	Mountain View Ice Arena	Postseason-C Semifinal	Dean, Doherty, Fortin (scorekeeper)
+Roster	
+ 	Player	#
+1	Scott Daniels	7
+2	Jamon Holmgren	G
+3	Oren Matson	27
+4	Eric Matson	20
+5	JOEL MATTILA	77
+6	Jared Paben	57
+7	Kieren Sarkela	81
+8	Kevin Sarkela	40
+9	Steve Saunders	9
+10	Asa Storm	29
+11	Nolan Storm	96
+12	Randy Storm	88
+13	Nels Tapio	26
+14	Russ Tapio	32
+15	Andrew Tunseth	50
+16	Brad Wuori	19
+Player Stats
+ 	Player	#	Games Played	Goals	Assists	Points	Penalty Minutes
+1	Asa Storm	29	15	14	6	20	0
+2	Andrew Tunseth	50	10	10	2	12	0
+3	Nels Tapio	26	12	7	4	11	15
+4	Nolan Storm	96	14	5	4	9	3
+5	Oren Matson	27	15	5	2	7	3
+6	Steve Saunders	9	10	4	3	7	12
+7	Eric Matson	20	8	2	5	7	9
+8	Russ Tapio	32	12	3	4	7	12
+9	Kevin Sarkela	40	10	2	1	3	6
+10	Kieren Sarkela	81	8	2	1	3	0
+11	JOEL MATTILA	77	11	2	1	3	6
+12	Scott Daniels	7	10	0	2	2	0
+13	Brad Wuori	19	5	0	1	1	0
+14	Randy Storm	88	13	1	0	1	6
+15	Jared Paben	57	11	0	1	1	0
+Goalie Stats
+ 	Player	#	Games Played	Wins	Losses	OT Losses	Saves	Goals Against	GAA	Save %	Shutouts
+1	Jamon Holmgren	G	11	2	8	1	256	50	5	0.837	0
+
+
+
+
+

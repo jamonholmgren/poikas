@@ -61,6 +61,11 @@ type PlayerRaw = {
   role?: "captain"
 }
 
+type PlayerStats = {
+  goals: number
+  assists: number
+}
+
 export type Player = PlayerRaw & {
   // derived data that we add
   leagues: League[]
@@ -77,6 +82,8 @@ export type Player = PlayerRaw & {
   imageHTML: string
   profileURL: string
   profileLink: string
+  currentStats: PlayerStats
+  careerStats: PlayerStats
 }
 
 export interface LoadDisplaySeasonsOptions {

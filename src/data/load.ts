@@ -96,6 +96,32 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
     // player profile URL
     player.profileURL = `/players/${player.slug}`
     player.profileLink = `<a href="${player.profileURL}">${player.name}</a>`
+
+    // Initialize stats
+    player.currentStats = { goals: 0, assists: 0 }
+    player.careerStats = { goals: 0, assists: 0 }
+
+    // Calculate stats across all leagues
+    player.leagues.forEach((league) => {
+      if (!league.games) return
+
+      league.games.forEach((game) => {
+        if (!game.stats) return
+
+        const playerStats = game.stats[player.name]
+        if (!playerStats) return
+
+        // Add to career totals
+        player.careerStats.goals += playerStats.goals || 0
+        player.careerStats.assists += playerStats.assists || 0
+
+        // Add to current season totals if this is a current league
+        if (league.current) {
+          player.currentStats.goals += playerStats.goals || 0
+          player.currentStats.assists += playerStats.assists || 0
+        }
+      })
+    })
   })
 
   return data

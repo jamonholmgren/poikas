@@ -51,6 +51,14 @@ export function PlayerPage(data: PoikasData, slug: string) {
             <td>${player.number || "-"}</td>
           </tr>
           <tr>
+            <th>Goals</th>
+            <td>${player.currentStats.goals || "0"} current / ${player.careerStats.goals || "0"} career</td>
+          </tr>
+          <tr>
+            <th>Assists</th>
+            <td>${player.currentStats.assists || "0"} current / ${player.careerStats.assists || "0"} career</td>
+          </tr>
+          <tr>
             <th>Age</th>
             <td>${player.age() || "-"}</td>
           </tr>
