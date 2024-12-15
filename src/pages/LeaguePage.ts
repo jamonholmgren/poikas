@@ -121,8 +121,8 @@ export function LeaguePage(data: PoikasData, slug: string) {
                       <td>${player.profileLink || "-"}</td>
                       <td>${player.number || "-"}</td>
                       <td>${player.pos || "-"}</td>
-                      <td>${player.currentStats.goals || "-"}</td>
-                      <td>${player.currentStats.assists || "-"}</td>
+                      <td>${player.currentStats[level].goals || "-"}</td>
+                      <td>${player.currentStats[level].assists || "-"}</td>
                       <td class="extra">${player.ht || "-"}</td>
                       <td class="extra">${player.wt || "-"}</td>
                       <td class="extra">${player.shoots || "-"}</td>

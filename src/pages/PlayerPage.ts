@@ -22,6 +22,15 @@ export function PlayerPage(data: PoikasData, slug: string) {
 
   const playerImages = images.filter((img) => img.players.includes(player.name))
 
+  const recGoals = player.currentStats.Rec.goals > 0 ? `Rec: ${player.currentStats.Rec.goals}` : ""
+  const recAssists = player.currentStats.Rec.assists > 0 ? `Rec: ${player.currentStats.Rec.assists}` : ""
+  const cGoals = player.currentStats.C.goals > 0 ? `C: ${player.currentStats.C.goals}` : ""
+  const cAssists = player.currentStats.C.assists > 0 ? `C: ${player.currentStats.C.assists}` : ""
+  const careerRecGoals = player.careerStats.Rec.goals > 0 ? `Rec: ${player.careerStats.Rec.goals}` : ""
+  const careerRecAssists = player.careerStats.Rec.assists > 0 ? `Rec: ${player.careerStats.Rec.assists}` : ""
+  const careerCGoals = player.careerStats.C.goals > 0 ? `C: ${player.careerStats.C.goals}` : ""
+  const careerCAssists = player.careerStats.C.assists > 0 ? `C: ${player.careerStats.C.assists}` : ""
+
   return routePage({
     path: player.profileURL,
     title: player.name,
@@ -51,12 +60,20 @@ export function PlayerPage(data: PoikasData, slug: string) {
             <td>${player.number || "-"}</td>
           </tr>
           <tr>
-            <th>Goals</th>
-            <td>${player.currentStats.goals || "0"} current / ${player.careerStats.goals || "0"} career</td>
+            <th>Current Season Goals</th>
+            <td>${[recGoals, cGoals].filter(Boolean).join(" | ")}</td>
           </tr>
           <tr>
-            <th>Assists</th>
-            <td>${player.currentStats.assists || "0"} current / ${player.careerStats.assists || "0"} career</td>
+            <th>Current Season Assists</th>
+            <td>${[recAssists, cAssists].filter(Boolean).join(" | ")}</td>
+          </tr>
+          <tr>
+            <th>Career Goals</th>
+            <td>${[careerRecGoals, careerCGoals].filter(Boolean).join(" | ")}</td>
+          </tr>
+          <tr>
+            <th>Career Assists</th>
+            <td>${[careerRecAssists, careerCAssists].filter(Boolean).join(" | ")}</td>
           </tr>
           <tr>
             <th>Age</th>

@@ -46,6 +46,7 @@ export type League = LeagueRaw & {
   url: string
   current: boolean
   players?: Player[]
+  historical?: HistoricalSeasonData
 }
 
 type PlayerRaw = {
@@ -82,8 +83,18 @@ export type Player = PlayerRaw & {
   imageHTML: string
   profileURL: string
   profileLink: string
-  currentStats: PlayerStats
-  careerStats: PlayerStats
+  currentStats: {
+    Rec: PlayerStats
+    C: PlayerStats
+  }
+  careerStats: {
+    Rec: PlayerStats
+    C: PlayerStats
+  }
+  historical: {
+    player: HistoricalPlayerStats[]
+    goalie: HistoricalGoalieStats[]
+  }
 }
 
 export interface LoadDisplaySeasonsOptions {
@@ -180,6 +191,6 @@ export interface HistoricalSeasonData {
   goalies: HistoricalGoalieStats[]
 }
 
-export type HockeyStats = {
+export type HistoricalHockeyStats = {
   [season: string]: HistoricalSeasonData
 }

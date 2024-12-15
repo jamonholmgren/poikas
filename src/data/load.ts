@@ -2,6 +2,12 @@ import type { Game, Player, PoikasData, PoikasDataRaw } from "../types"
 import { poikasData } from "./poikas"
 import { img } from "../image"
 
+// Import historical data, parsed from MVIA website
+import historicalRecStats from "./historical/hockey_stats_rec.json"
+import historicalCStats from "./historical/hockey_stats_c.json"
+
+const historicalSeasons = Object.values(historicalRecStats).concat(Object.values(historicalCStats))
+
 let _data: PoikasData
 export function getData(): PoikasData {
   if (!_data) _data = processPoikasData(poikasData)
@@ -32,6 +38,11 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
     const season = league.season.toLowerCase()
     const level = league.level.toLowerCase()
     league.url = `/seasons/${league.year}/${season}/${level}`
+
+    // Add historical data to the league
+    league.historical = historicalSeasons.find(
+      (h) => h.year === league.year && h.season === league.season && h.level === league.level
+    )
 
     // for leagues with games listed, calculate w/l/t
     if (league.games) {
@@ -98,29 +109,32 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
     player.profileLink = `<a href="${player.profileURL}">${player.name}</a>`
 
     // Initialize stats
-    player.currentStats = { goals: 0, assists: 0 }
-    player.careerStats = { goals: 0, assists: 0 }
+    player.currentStats = { Rec: { goals: 0, assists: 0 }, C: { goals: 0, assists: 0 } }
+    player.careerStats = { Rec: { goals: 0, assists: 0 }, C: { goals: 0, assists: 0 } }
 
     // Calculate stats across all leagues
     player.leagues.forEach((league) => {
-      if (!league.games) return
-
-      league.games.forEach((game) => {
+      let leagueGoals = 0
+      let leagueAssists = 0
+      league.games?.forEach((game) => {
         if (!game.stats) return
 
         const playerStats = game.stats[player.name]
-        if (!playerStats) return
 
-        // Add to career totals
-        player.careerStats.goals += playerStats.goals || 0
-        player.careerStats.assists += playerStats.assists || 0
-
-        // Add to current season totals if this is a current league
-        if (league.current) {
-          player.currentStats.goals += playerStats.goals || 0
-          player.currentStats.assists += playerStats.assists || 0
-        }
+        leagueGoals += playerStats?.goals || 0
+        leagueAssists += playerStats?.assists || 0
       })
+
+      // Add to current season totals if this is a current league
+      if (league.current) {
+        player.currentStats[league.level].goals += leagueGoals
+        player.currentStats[league.level].assists += leagueAssists
+      }
+
+      // Add the greater of the tracked stats or the historical stats to their career totals
+      const historicalStats = league.historical?.players.find((h) => h.name === player.name)
+      player.careerStats[league.level].goals += Math.max(leagueGoals, historicalStats?.goals || 0)
+      player.careerStats[league.level].assists += Math.max(leagueAssists, historicalStats?.assists || 0)
     })
   })
 
