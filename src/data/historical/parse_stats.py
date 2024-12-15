@@ -38,46 +38,82 @@ def extract_season_info(text: str) -> tuple[str, dict[str, str | int]]:
 def extract_standings(text: str) -> List[Dict[str, Any]]:
     standings = []
     
-    # Look for a section that starts with the word "Standings"
-    standings_section = re.search(r'Standings\n(.*?)(?:\n\n|\nSuomi|$)', text, re.DOTALL)
-    if not standings_section:
-        # First fallback - look for Calendar Sync
-        standings_section = re.search(r'Calendar Sync\n(.*?)(?:\n\n|\nSuomi|$)', text, re.DOTALL)
-    if not standings_section:
-        # Second fallback - look for stats header
-        standings_section = re.search(r'PTS\s+W\s+L\s+T\s+GP\s+OTL\s+PF\s+PA\s+PD.*?\n(.*?)(?:\n\n|\nSuomi|$)', text, re.DOTALL)
+    print("\n=== Debug Extract Standings ===")
+    print("Full text:")
+    print("---")
+    print(text)
+    print("---")
     
-    if not standings_section:
-        # Print debug info
-        print("\nFailed to find standings section in text:")
-        print(text[:200].replace('\n', '\\n'))
-        return []
+    print("\nTrying patterns:")
     
-    lines = standings_section.group(1).split('\n')
-    for line in lines:
-        # Skip empty lines and header rows
-        if not line.strip() or 'PTS' in line or 'Print' in line:
-            continue
-            
-        # Match team stats pattern
-        pattern = r'^([^0-9]+?)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(-?\d+)'
-        match = re.match(pattern, clean_text(line))
+    # Try patterns
+    patterns = [
+        (r'Standings\n(.*?)(?:\n\n|\nSuomi|$)', "Basic Standings"),
+        (r'Calendar Sync\n(.*?)(?:\n\n|\nSuomi|$)', "Calendar Sync"),
+        (r'PTS\s+W\s+L\s+T\s+GP\s+OTL\s+PF\s+PA\s+PD.*?\n(.*?)(?:\n\n|\nSuomi|$)', "Stats Header"),
+        # Last resort - try to find the tabular data directly
+        (r'(?:\n|^)\s*([A-Za-z][\w\s]+?)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(-?\d+)', "Direct Table Match")
+    ]
+    
+    for pattern, name in patterns:
+        print(f"\nTrying {name} pattern: {pattern}")
+        section_match = re.search(pattern, text, re.DOTALL | re.MULTILINE)
         
-        if match:
-            team = {
-                'team_name': match.group(1).strip(),
-                'points': int(match.group(2)),
-                'wins': int(match.group(3)),
-                'losses': int(match.group(4)),
-                'ties': int(match.group(5)),
-                'games_played': int(match.group(6)),
-                'otl': int(match.group(7)),
-                'goals_for': int(match.group(8)),
-                'goals_against': int(match.group(9)),
-                'goal_differential': int(match.group(10))
-            }
-            standings.append(team)
+        if section_match:
+            print(f"Found match with {name} pattern!")
+            print("Match content:")
+            print("---")
+            print(section_match.group(0))
+            print("---")
+            
+            if name == "Direct Table Match":
+                # Direct match gets processed differently
+                team = {
+                    'team_name': section_match.group(1).strip(),
+                    'points': int(section_match.group(2)),
+                    'wins': int(section_match.group(3)),
+                    'losses': int(section_match.group(4)),
+                    'ties': int(section_match.group(5)),
+                    'games_played': int(section_match.group(6)),
+                    'otl': int(section_match.group(7)),
+                    'goals_for': int(section_match.group(8)),
+                    'goals_against': int(section_match.group(9)),
+                    'goal_differential': int(section_match.group(10))
+                }
+                standings.append(team)
+                continue
+            
+            # Process regular section matches
+            lines = section_match.group(1).split('\n')
+            print(f"\nProcessing {len(lines)} lines")
+            for line in lines:
+                print(f"\nProcessing line: {repr(line)}")
+                if not line.strip() or 'PTS' in line or 'Print' in line:
+                    print("Skipping header/empty line")
+                    continue
+                    
+                pattern = r'^([^0-9]+?)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(-?\d+)'
+                match = re.match(pattern, clean_text(line))
+                
+                if match:
+                    print("Found team match!")
+                    team = {
+                        'team_name': match.group(1).strip(),
+                        'points': int(match.group(2)),
+                        'wins': int(match.group(3)),
+                        'losses': int(match.group(4)),
+                        'ties': int(match.group(5)),
+                        'games_played': int(match.group(6)),
+                        'otl': int(match.group(7)),
+                        'goals_for': int(match.group(8)),
+                        'goals_against': int(match.group(9)),
+                        'goal_differential': int(match.group(10))
+                    }
+                    standings.append(team)
+                else:
+                    print("No team match found")
     
+    print(f"\nFound {len(standings)} standings entries")
     return standings
 
 def extract_player_stats(text: str) -> List[Dict[str, Any]]:
@@ -143,49 +179,58 @@ def extract_goalie_stats(text: str) -> List[Dict[str, Any]]:
     return goalies
 
 def parse_seasons(text: str) -> Dict[str, Dict[str, Any]]:
-    seasons_raw = re.split(r'https://.*?\n', text)
+    # First, normalize line endings and remove extra whitespace
+    text = re.sub(r'\n\s*\n', '\n\n', text)
+    
+    # Split on season headers for both C and Rec leagues
+    seasons_raw = re.split(r'\n\n([A-Za-z]+\s+20\d{2}\s+(?:C|Rec) League Standings)\n', text)
     
     seasons_data = {}
+    current_season = None
+    current_text = ""
     
-    for season_text in seasons_raw:
-        if not season_text.strip():
-            continue
-        
-        season_name, metadata = extract_season_info(season_text)
-        if season_name == "Unknown Season":
-            continue
-        
-        standings = extract_standings(season_text)
-        players = extract_player_stats(season_text)
-        goalies = extract_goalie_stats(season_text)
-        
-        if not (standings or players or goalies):
-            print("\n=== Empty Season Detected ===")
-            print(f"Season Name: {season_name}")
-            print(f"Metadata: {metadata}")
-            print("\nFirst 500 chars of text:")
-            print(season_text[:500].replace('\n', '\\n'))
-            print("\nStandings section search result:")
-            standings_section = re.search(r'(?:Calendar Sync|Standings).*?\n(.*?)(?:\n\n|\nSuomi|$)', season_text, re.DOTALL)
-            if standings_section:
-                print("Found standings section:")
-                print(standings_section.group(0)[:200])
-            else:
-                print("No standings section found with primary pattern")
-                standings_section = re.search(r'PTS\s+W\s+L\s+T\s+GP\s+OTL\s+PF\s+PA\s+PD.*?\n(.*?)(?:\n\n|\nSuomi|$)', season_text, re.DOTALL)
-                if standings_section:
-                    print("Found standings section with fallback pattern:")
-                    print(standings_section.group(0)[:200])
-                else:
-                    print("No standings section found with fallback pattern")
-            sys.exit(1)
-        
-        seasons_data[season_name] = {
-            **metadata,
-            'standings': standings,
-            'players': players,
-            'goalies': goalies
-        }
+    # Process the split results
+    for chunk in seasons_raw:
+        if re.match(r'[A-Za-z]+\s+20\d{2}\s+(?:C|Rec) League Standings', chunk):
+            # This is a season header
+            if current_season and current_text:
+                # Process previous season if exists
+                season_name, metadata = extract_season_info(current_season + "\n" + current_text)
+                if season_name != "Unknown Season":
+                    standings = extract_standings(current_text)
+                    players = extract_player_stats(current_text)
+                    goalies = extract_goalie_stats(current_text)
+                    
+                    if standings or players or goalies:
+                        seasons_data[season_name] = {
+                            **metadata,
+                            'standings': standings,
+                            'players': players,
+                            'goalies': goalies
+                        }
+            
+            # Start new season
+            current_season = chunk
+            current_text = ""
+        else:
+            # This is content for the current season
+            current_text += chunk
+    
+    # Process the last season
+    if current_season and current_text:
+        season_name, metadata = extract_season_info(current_season + "\n" + current_text)
+        if season_name != "Unknown Season":
+            standings = extract_standings(current_text)
+            players = extract_player_stats(current_text)
+            goalies = extract_goalie_stats(current_text)
+            
+            if standings or players or goalies:
+                seasons_data[season_name] = {
+                    **metadata,
+                    'standings': standings,
+                    'players': players,
+                    'goalies': goalies
+                }
     
     return seasons_data
 

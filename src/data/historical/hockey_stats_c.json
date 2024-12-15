@@ -1,7 +1,7 @@
 {
-  "Spring 2022 C League": {
-    "year": 2022,
-    "season": "Spring",
+  "Fall 2021 C League": {
+    "year": 2021,
+    "season": "Fall",
     "level": "C",
     "standings": [
       {
@@ -17,88 +17,28 @@
         "goal_differential": 40
       },
       {
-        "team_name": "Liquid Gold C",
-        "points": 22,
-        "wins": 10,
-        "losses": 5,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 2,
-        "goals_for": 69,
-        "goals_against": 41,
-        "goal_differential": 28
-      },
-      {
-        "team_name": "Callahan Auto Parts",
-        "points": 20,
-        "wins": 10,
-        "losses": 5,
+        "team_name": "CCCP",
+        "points": 26,
+        "wins": 13,
+        "losses": 2,
         "ties": 0,
         "games_played": 15,
         "otl": 0,
-        "goals_for": 56,
-        "goals_against": 50,
-        "goal_differential": 6
+        "goals_for": 85,
+        "goals_against": 45,
+        "goal_differential": 40
       },
       {
-        "team_name": "Revolution",
-        "points": 17,
-        "wins": 7,
-        "losses": 8,
+        "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\nCCCP",
+        "points": 26,
+        "wins": 13,
+        "losses": 2,
         "ties": 0,
         "games_played": 15,
-        "otl": 3,
-        "goals_for": 73,
-        "goals_against": 59,
-        "goal_differential": 14
-      },
-      {
-        "team_name": "Badgers",
-        "points": 17,
-        "wins": 8,
-        "losses": 7,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 1,
-        "goals_for": 45,
-        "goals_against": 51,
-        "goal_differential": -6
-      },
-      {
-        "team_name": "Bandits",
-        "points": 16,
-        "wins": 7,
-        "losses": 8,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 2,
-        "goals_for": 44,
-        "goals_against": 40,
-        "goal_differential": 4
-      },
-      {
-        "team_name": "Deadguys",
-        "points": 15,
-        "wins": 6,
-        "losses": 9,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 3,
-        "goals_for": 50,
-        "goals_against": 55,
-        "goal_differential": -5
-      },
-      {
-        "team_name": "PBR",
-        "points": 14,
-        "wins": 6,
-        "losses": 9,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 2,
-        "goals_for": 64,
-        "goals_against": 86,
-        "goal_differential": -22
+        "otl": 0,
+        "goals_for": 85,
+        "goals_against": 45,
+        "goal_differential": 40
       }
     ],
     "players": [
@@ -245,58 +185,22 @@
       }
     ]
   },
-  "Fall 2022 C League": {
+  "Spring 2022 C League": {
     "year": 2022,
-    "season": "Fall",
+    "season": "Spring",
     "level": "C",
     "standings": [
       {
-        "team_name": "Deadguys",
-        "points": 21,
-        "wins": 10,
-        "losses": 5,
+        "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\n2 Towns Ciderhouse",
+        "points": 25,
+        "wins": 12,
+        "losses": 3,
         "ties": 0,
         "games_played": 15,
         "otl": 1,
-        "goals_for": 77,
-        "goals_against": 52,
-        "goal_differential": 25
-      },
-      {
-        "team_name": "CCCP",
-        "points": 21,
-        "wins": 10,
-        "losses": 5,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 1,
-        "goals_for": 62,
-        "goals_against": 46,
-        "goal_differential": 16
-      },
-      {
-        "team_name": "Callahan Auto Parts",
-        "points": 16,
-        "wins": 8,
-        "losses": 7,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 0,
-        "goals_for": 48,
-        "goals_against": 53,
-        "goal_differential": -5
-      },
-      {
-        "team_name": "Liquid Gold C",
-        "points": 15,
-        "wins": 7,
-        "losses": 8,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 1,
-        "goals_for": 53,
-        "goals_against": 66,
-        "goal_differential": -13
+        "goals_for": 64,
+        "goals_against": 37,
+        "goal_differential": 27
       }
     ],
     "players": [
@@ -452,9 +356,9 @@
       }
     ]
   },
-  "Spring 2023 C League": {
-    "year": 2023,
-    "season": "Spring",
+  "Fall 2022 C League": {
+    "year": 2022,
+    "season": "Fall",
     "level": "C",
     "standings": [
       {
@@ -470,76 +374,28 @@
         "goal_differential": 42
       },
       {
-        "team_name": "Badgers",
-        "points": 24,
+        "team_name": "CCCP",
+        "points": 25,
         "wins": 12,
         "losses": 3,
         "ties": 0,
         "games_played": 15,
-        "otl": 0,
-        "goals_for": 59,
-        "goals_against": 38,
-        "goal_differential": 21
+        "otl": 1,
+        "goals_for": 79,
+        "goals_against": 37,
+        "goal_differential": 42
       },
       {
-        "team_name": "Lightning C/CC",
-        "points": 22,
-        "wins": 11,
-        "losses": 4,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 0,
-        "goals_for": 73,
-        "goals_against": 44,
-        "goal_differential": 29
-      },
-      {
-        "team_name": "Deadguys",
-        "points": 18,
-        "wins": 9,
-        "losses": 6,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 0,
-        "goals_for": 60,
-        "goals_against": 50,
-        "goal_differential": 10
-      },
-      {
-        "team_name": "Callahan Auto Parts",
-        "points": 17,
-        "wins": 8,
-        "losses": 7,
+        "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\nCCCP",
+        "points": 25,
+        "wins": 12,
+        "losses": 3,
         "ties": 0,
         "games_played": 15,
         "otl": 1,
-        "goals_for": 50,
-        "goals_against": 36,
-        "goal_differential": 14
-      },
-      {
-        "team_name": "Revolution",
-        "points": 15,
-        "wins": 7,
-        "losses": 8,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 1,
-        "goals_for": 68,
-        "goals_against": 75,
-        "goal_differential": -7
-      },
-      {
-        "team_name": "Bandits",
-        "points": 10,
-        "wins": 4,
-        "losses": 11,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 2,
-        "goals_for": 44,
-        "goals_against": 50,
-        "goal_differential": -6
+        "goals_for": 79,
+        "goals_against": 37,
+        "goal_differential": 42
       }
     ],
     "players": [
@@ -686,94 +542,22 @@
       }
     ]
   },
-  "Fall 2023 C League": {
+  "Spring 2023 C League": {
     "year": 2023,
-    "season": "Fall",
+    "season": "Spring",
     "level": "C",
     "standings": [
       {
-        "team_name": "CCCP",
+        "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\n2 Towns Ciderhouse",
         "points": 24,
-        "wins": 12,
-        "losses": 3,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 0,
-        "goals_for": 71,
-        "goals_against": 44,
-        "goal_differential": 27
-      },
-      {
-        "team_name": "Callahan Auto Parts",
-        "points": 23,
         "wins": 11,
         "losses": 4,
         "ties": 0,
         "games_played": 15,
-        "otl": 1,
-        "goals_for": 62,
-        "goals_against": 41,
-        "goal_differential": 21
-      },
-      {
-        "team_name": "Deadguys",
-        "points": 20,
-        "wins": 8,
-        "losses": 7,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 4,
-        "goals_for": 74,
-        "goals_against": 64,
-        "goal_differential": 10
-      },
-      {
-        "team_name": "Badgers",
-        "points": 18,
-        "wins": 9,
-        "losses": 6,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 0,
-        "goals_for": 51,
-        "goals_against": 42,
-        "goal_differential": 9
-      },
-      {
-        "team_name": "Revolution",
-        "points": 18,
-        "wins": 8,
-        "losses": 7,
-        "ties": 0,
-        "games_played": 15,
         "otl": 2,
-        "goals_for": 61,
-        "goals_against": 64,
-        "goal_differential": -3
-      },
-      {
-        "team_name": "Lightning C/CC",
-        "points": 16,
-        "wins": 6,
-        "losses": 9,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 4,
-        "goals_for": 67,
-        "goals_against": 57,
-        "goal_differential": 10
-      },
-      {
-        "team_name": "Bandits",
-        "points": 10,
-        "wins": 4,
-        "losses": 11,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 2,
-        "goals_for": 44,
-        "goals_against": 66,
-        "goal_differential": -22
+        "goals_for": 75,
+        "goals_against": 43,
+        "goal_differential": 32
       }
     ],
     "players": [
@@ -929,11 +713,23 @@
       }
     ]
   },
-  "Spring 2024 C League": {
-    "year": 2024,
-    "season": "Spring",
+  "Fall 2023 C League": {
+    "year": 2023,
+    "season": "Fall",
     "level": "C",
     "standings": [
+      {
+        "team_name": "Lightning C/CC",
+        "points": 23,
+        "wins": 11,
+        "losses": 4,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 72,
+        "goals_against": 46,
+        "goal_differential": 26
+      },
       {
         "team_name": "Lightning C/CC",
         "points": 23,
@@ -957,78 +753,6 @@
         "goals_for": 63,
         "goals_against": 33,
         "goal_differential": 30
-      },
-      {
-        "team_name": "Callahan Auto Parts",
-        "points": 21,
-        "wins": 10,
-        "losses": 5,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 1,
-        "goals_for": 53,
-        "goals_against": 37,
-        "goal_differential": 16
-      },
-      {
-        "team_name": "Bandits",
-        "points": 21,
-        "wins": 10,
-        "losses": 4,
-        "ties": 1,
-        "games_played": 15,
-        "otl": 0,
-        "goals_for": 51,
-        "goals_against": 42,
-        "goal_differential": 9
-      },
-      {
-        "team_name": "Local Legends",
-        "points": 19,
-        "wins": 8,
-        "losses": 7,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 3,
-        "goals_for": 61,
-        "goals_against": 34,
-        "goal_differential": 27
-      },
-      {
-        "team_name": "Deadguys",
-        "points": 15,
-        "wins": 7,
-        "losses": 8,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 1,
-        "goals_for": 64,
-        "goals_against": 52,
-        "goal_differential": 12
-      },
-      {
-        "team_name": "CCCP",
-        "points": 14,
-        "wins": 6,
-        "losses": 8,
-        "ties": 1,
-        "games_played": 15,
-        "otl": 1,
-        "goals_for": 54,
-        "goals_against": 52,
-        "goal_differential": 2
-      },
-      {
-        "team_name": "Revolution",
-        "points": 14,
-        "wins": 7,
-        "losses": 8,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 0,
-        "goals_for": 48,
-        "goals_against": 55,
-        "goal_differential": -7
       }
     ],
     "players": [
@@ -1162,6 +886,201 @@
         "goals_against": 72,
         "gaa": 6.0,
         "save_percentage": 0.82,
+        "shutouts": 0
+      }
+    ]
+  },
+  "Spring 2024 C League": {
+    "year": 2024,
+    "season": "Spring",
+    "level": "C",
+    "standings": [
+      {
+        "team_name": "Badgers",
+        "points": 23,
+        "wins": 11,
+        "losses": 3,
+        "ties": 1,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 61,
+        "goals_against": 44,
+        "goal_differential": 17
+      },
+      {
+        "team_name": "Badgers",
+        "points": 23,
+        "wins": 11,
+        "losses": 3,
+        "ties": 1,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 61,
+        "goals_against": 44,
+        "goal_differential": 17
+      },
+      {
+        "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\nBadgers",
+        "points": 23,
+        "wins": 11,
+        "losses": 3,
+        "ties": 1,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 61,
+        "goals_against": 44,
+        "goal_differential": 17
+      }
+    ],
+    "players": [
+      {
+        "name": "Asa Storm",
+        "number": "29",
+        "games_played": 15,
+        "goals": 14,
+        "assists": 6,
+        "points": 20,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Andrew Tunseth",
+        "number": "50",
+        "games_played": 10,
+        "goals": 10,
+        "assists": 2,
+        "points": 12,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Nels Tapio",
+        "number": "26",
+        "games_played": 12,
+        "goals": 7,
+        "assists": 4,
+        "points": 11,
+        "penalty_minutes": 15
+      },
+      {
+        "name": "Nolan Storm",
+        "number": "96",
+        "games_played": 14,
+        "goals": 5,
+        "assists": 4,
+        "points": 9,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Oren Matson",
+        "number": "27",
+        "games_played": 15,
+        "goals": 5,
+        "assists": 2,
+        "points": 7,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Steve Saunders",
+        "number": "9",
+        "games_played": 10,
+        "goals": 4,
+        "assists": 3,
+        "points": 7,
+        "penalty_minutes": 12
+      },
+      {
+        "name": "Eric Matson",
+        "number": "20",
+        "games_played": 8,
+        "goals": 2,
+        "assists": 5,
+        "points": 7,
+        "penalty_minutes": 9
+      },
+      {
+        "name": "Russ Tapio",
+        "number": "32",
+        "games_played": 12,
+        "goals": 3,
+        "assists": 4,
+        "points": 7,
+        "penalty_minutes": 12
+      },
+      {
+        "name": "Kevin Sarkela",
+        "number": "40",
+        "games_played": 10,
+        "goals": 2,
+        "assists": 1,
+        "points": 3,
+        "penalty_minutes": 6
+      },
+      {
+        "name": "Kieren Sarkela",
+        "number": "81",
+        "games_played": 8,
+        "goals": 2,
+        "assists": 1,
+        "points": 3,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "JOEL MATTILA",
+        "number": "77",
+        "games_played": 11,
+        "goals": 2,
+        "assists": 1,
+        "points": 3,
+        "penalty_minutes": 6
+      },
+      {
+        "name": "Scott Daniels",
+        "number": "7",
+        "games_played": 10,
+        "goals": 0,
+        "assists": 2,
+        "points": 2,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Brad Wuori",
+        "number": "19",
+        "games_played": 5,
+        "goals": 0,
+        "assists": 1,
+        "points": 1,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Randy Storm",
+        "number": "88",
+        "games_played": 13,
+        "goals": 1,
+        "assists": 0,
+        "points": 1,
+        "penalty_minutes": 6
+      },
+      {
+        "name": "Jared Paben",
+        "number": "57",
+        "games_played": 11,
+        "goals": 0,
+        "assists": 1,
+        "points": 1,
+        "penalty_minutes": 0
+      }
+    ],
+    "goalies": [
+      {
+        "name": "Jamon",
+        "number": "Holmgren G",
+        "games_played": 11,
+        "wins": 2,
+        "losses": 8,
+        "ot_losses": 1,
+        "saves": 256,
+        "goals_against": 50,
+        "gaa": 5.0,
+        "save_percentage": 0.837,
         "shutouts": 0
       }
     ]

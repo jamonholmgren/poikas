@@ -1,3 +1,5 @@
+
+
 Spring 2021 Rec League Standings
 https://mountainview.ezleagues.ezfacility.com/teams/2611313/Suomi-Poikas.aspx?framed=1
 
@@ -122,7 +124,6 @@ Goalie Stats
 
 Fall 2021 Rec League Standings
 https://mountainview.ezleagues.ezfacility.com/schedule.aspx?facility_id=2042&d=9%2f9%2f2019&framed=1
-
 Print
  	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
 Pinecones	26	13	3	0	16	0	79	42	37	
@@ -173,7 +174,6 @@ Goalie Stats
 
 Spring 2022 Rec League Standings
 https://mountainview.ezleagues.ezfacility.com/teams/2704574/Suomi-Poikas-Rec.aspx?framed=1
-
 Print
  	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
 Suomi Poikas Rec	27	13	2	0	15	1	95	22	73	

@@ -1,7 +1,7 @@
 {
-  "Summer 2021 Rec League": {
+  "Spring 2021 Rec League": {
     "year": 2021,
-    "season": "Summer",
+    "season": "Spring",
     "level": "Rec",
     "standings": [
       {
@@ -17,64 +17,28 @@
         "goal_differential": 29
       },
       {
-        "team_name": "Thundersticks",
-        "points": 10,
-        "wins": 4,
-        "losses": 3,
-        "ties": 1,
+        "team_name": "Suomi Poikas",
+        "points": 15,
+        "wins": 7,
+        "losses": 1,
+        "ties": 0,
         "games_played": 8,
         "otl": 1,
-        "goals_for": 34,
-        "goals_against": 28,
-        "goal_differential": 6
+        "goals_for": 45,
+        "goals_against": 16,
+        "goal_differential": 29
       },
       {
-        "team_name": "Liquid Gold",
-        "points": 8,
-        "wins": 4,
-        "losses": 4,
+        "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\nSuomi Poikas",
+        "points": 15,
+        "wins": 7,
+        "losses": 1,
         "ties": 0,
-        "games_played": 8,
-        "otl": 0,
-        "goals_for": 37,
-        "goals_against": 32,
-        "goal_differential": 5
-      },
-      {
-        "team_name": "Pinecones",
-        "points": 6,
-        "wins": 3,
-        "losses": 5,
-        "ties": 0,
-        "games_played": 8,
-        "otl": 0,
-        "goals_for": 21,
-        "goals_against": 31,
-        "goal_differential": -10
-      },
-      {
-        "team_name": "Mother Russia",
-        "points": 6,
-        "wins": 2,
-        "losses": 5,
-        "ties": 1,
         "games_played": 8,
         "otl": 1,
-        "goals_for": 32,
-        "goals_against": 44,
-        "goal_differential": -12
-      },
-      {
-        "team_name": "Caps N Taps",
-        "points": 6,
-        "wins": 3,
-        "losses": 5,
-        "ties": 0,
-        "games_played": 8,
-        "otl": 0,
-        "goals_for": 26,
-        "goals_against": 44,
-        "goal_differential": -18
+        "goals_for": 45,
+        "goals_against": 16,
+        "goal_differential": 29
       }
     ],
     "players": [
@@ -221,9 +185,9 @@
       }
     ]
   },
-  "Fall 2021 Rec League": {
+  "Summer 2021 Rec League": {
     "year": 2021,
-    "season": "Fall",
+    "season": "Summer",
     "level": "Rec",
     "standings": [
       {
@@ -239,40 +203,28 @@
         "goal_differential": 42
       },
       {
-        "team_name": "Liquid Gold",
-        "points": 6,
-        "wins": 3,
-        "losses": 5,
+        "team_name": "Suomi Poikas",
+        "points": 16,
+        "wins": 8,
+        "losses": 0,
         "ties": 0,
         "games_played": 8,
         "otl": 0,
-        "goals_for": 28,
-        "goals_against": 41,
-        "goal_differential": -13
+        "goals_for": 59,
+        "goals_against": 17,
+        "goal_differential": 42
       },
       {
-        "team_name": "Thundersticks",
-        "points": 6,
-        "wins": 3,
-        "losses": 5,
+        "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\nSuomi Poikas",
+        "points": 16,
+        "wins": 8,
+        "losses": 0,
         "ties": 0,
         "games_played": 8,
         "otl": 0,
-        "goals_for": 27,
-        "goals_against": 45,
-        "goal_differential": -18
-      },
-      {
-        "team_name": "Caps N Taps",
-        "points": 5,
-        "wins": 2,
-        "losses": 6,
-        "ties": 0,
-        "games_played": 8,
-        "otl": 1,
-        "goals_for": 33,
-        "goals_against": 44,
-        "goal_differential": -11
+        "goals_for": 59,
+        "goals_against": 17,
+        "goal_differential": 42
       }
     ],
     "players": [
@@ -419,13 +371,37 @@
       }
     ]
   },
-  "Spring 2022 Rec League": {
-    "year": 2022,
-    "season": "Spring",
+  "Fall 2021 Rec League": {
+    "year": 2021,
+    "season": "Fall",
     "level": "Rec",
     "standings": [
       {
         "team_name": "Pinecones",
+        "points": 26,
+        "wins": 13,
+        "losses": 3,
+        "ties": 0,
+        "games_played": 16,
+        "otl": 0,
+        "goals_for": 79,
+        "goals_against": 42,
+        "goal_differential": 37
+      },
+      {
+        "team_name": "Pinecones",
+        "points": 26,
+        "wins": 13,
+        "losses": 3,
+        "ties": 0,
+        "games_played": 16,
+        "otl": 0,
+        "goals_for": 79,
+        "goals_against": 42,
+        "goal_differential": 37
+      },
+      {
+        "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\nPinecones",
         "points": 26,
         "wins": 13,
         "losses": 3,
@@ -572,9 +548,9 @@
       }
     ]
   },
-  "Summer 2022 Rec League": {
+  "Spring 2022 Rec League": {
     "year": 2022,
-    "season": "Summer",
+    "season": "Spring",
     "level": "Rec",
     "standings": [
       {
@@ -590,76 +566,28 @@
         "goal_differential": 73
       },
       {
-        "team_name": "Pinecones",
-        "points": 25,
-        "wins": 12,
-        "losses": 3,
+        "team_name": "Suomi Poikas Rec",
+        "points": 27,
+        "wins": 13,
+        "losses": 2,
         "ties": 0,
         "games_played": 15,
         "otl": 1,
-        "goals_for": 79,
-        "goals_against": 41,
-        "goal_differential": 38
+        "goals_for": 95,
+        "goals_against": 22,
+        "goal_differential": 73
       },
       {
-        "team_name": "Thundersticks",
-        "points": 16,
-        "wins": 8,
-        "losses": 8,
-        "ties": 0,
-        "games_played": 16,
-        "otl": 0,
-        "goals_for": 37,
-        "goals_against": 47,
-        "goal_differential": -10
-      },
-      {
-        "team_name": "Ukraine",
-        "points": 14,
-        "wins": 7,
-        "losses": 8,
+        "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\nSuomi Poikas Rec",
+        "points": 27,
+        "wins": 13,
+        "losses": 2,
         "ties": 0,
         "games_played": 15,
-        "otl": 0,
-        "goals_for": 59,
-        "goals_against": 76,
-        "goal_differential": -17
-      },
-      {
-        "team_name": "Caps N Taps",
-        "points": 12,
-        "wins": 5,
-        "losses": 10,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 2,
-        "goals_for": 51,
-        "goals_against": 79,
-        "goal_differential": -28
-      },
-      {
-        "team_name": "Mother Russia",
-        "points": 8,
-        "wins": 4,
-        "losses": 11,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 0,
-        "goals_for": 44,
-        "goals_against": 55,
-        "goal_differential": -11
-      },
-      {
-        "team_name": "Liquid Gold Rec",
-        "points": 8,
-        "wins": 4,
-        "losses": 11,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 0,
-        "goals_for": 27,
-        "goals_against": 72,
-        "goal_differential": -45
+        "otl": 1,
+        "goals_for": 95,
+        "goals_against": 22,
+        "goal_differential": 73
       }
     ],
     "players": [
@@ -797,9 +725,9 @@
       }
     ]
   },
-  "Fall 2022 Rec League": {
+  "Summer 2022 Rec League": {
     "year": 2022,
-    "season": "Fall",
+    "season": "Summer",
     "level": "Rec",
     "standings": [
       {
@@ -815,40 +743,28 @@
         "goal_differential": 24
       },
       {
-        "team_name": "Caps N Taps",
-        "points": 11,
-        "wins": 5,
-        "losses": 3,
-        "ties": 0,
-        "games_played": 8,
-        "otl": 1,
-        "goals_for": 34,
-        "goals_against": 21,
-        "goal_differential": 13
-      },
-      {
-        "team_name": "Liquid Gold",
-        "points": 7,
-        "wins": 3,
-        "losses": 5,
-        "ties": 0,
-        "games_played": 8,
-        "otl": 1,
-        "goals_for": 23,
-        "goals_against": 27,
-        "goal_differential": -4
-      },
-      {
-        "team_name": "Thundersticks",
-        "points": 2,
-        "wins": 1,
-        "losses": 7,
+        "team_name": "Suomi Poikas",
+        "points": 14,
+        "wins": 7,
+        "losses": 1,
         "ties": 0,
         "games_played": 8,
         "otl": 0,
-        "goals_for": 17,
-        "goals_against": 50,
-        "goal_differential": -33
+        "goals_for": 37,
+        "goals_against": 13,
+        "goal_differential": 24
+      },
+      {
+        "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\nSuomi Poikas",
+        "points": 14,
+        "wins": 7,
+        "losses": 1,
+        "ties": 0,
+        "games_played": 8,
+        "otl": 0,
+        "goals_for": 37,
+        "goals_against": 13,
+        "goal_differential": 24
       }
     ],
     "players": [
@@ -977,9 +893,9 @@
       }
     ]
   },
-  "Spring 2023 Rec League": {
-    "year": 2023,
-    "season": "Spring",
+  "Fall 2022 Rec League": {
+    "year": 2022,
+    "season": "Fall",
     "level": "Rec",
     "standings": [
       {
@@ -995,28 +911,28 @@
         "goal_differential": 31
       },
       {
-        "team_name": "Slavic Peeps",
-        "points": 20,
-        "wins": 10,
-        "losses": 5,
+        "team_name": "Pinecones",
+        "points": 24,
+        "wins": 12,
+        "losses": 3,
         "ties": 0,
         "games_played": 15,
         "otl": 0,
-        "goals_for": 67,
-        "goals_against": 44,
-        "goal_differential": 23
+        "goals_for": 63,
+        "goals_against": 32,
+        "goal_differential": 31
       },
       {
-        "team_name": "Thundersticks",
-        "points": 20,
-        "wins": 9,
-        "losses": 6,
+        "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\nPinecones",
+        "points": 24,
+        "wins": 12,
+        "losses": 3,
         "ties": 0,
         "games_played": 15,
-        "otl": 2,
-        "goals_for": 54,
-        "goals_against": 39,
-        "goal_differential": 15
+        "otl": 0,
+        "goals_for": 63,
+        "goals_against": 32,
+        "goal_differential": 31
       }
     ],
     "players": [
@@ -1154,9 +1070,9 @@
       }
     ]
   },
-  "Fall 2023 Rec League": {
+  "Spring 2023 Rec League": {
     "year": 2023,
-    "season": "Fall",
+    "season": "Spring",
     "level": "Rec",
     "standings": [
       {
@@ -1172,16 +1088,28 @@
         "goal_differential": 26
       },
       {
-        "team_name": "Slavic Peeps",
-        "points": 20,
-        "wins": 9,
-        "losses": 6,
+        "team_name": "Thundersticks",
+        "points": 26,
+        "wins": 13,
+        "losses": 2,
         "ties": 0,
         "games_played": 15,
-        "otl": 2,
+        "otl": 0,
         "goals_for": 62,
-        "goals_against": 45,
-        "goal_differential": 17
+        "goals_against": 36,
+        "goal_differential": 26
+      },
+      {
+        "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\nThundersticks",
+        "points": 26,
+        "wins": 13,
+        "losses": 2,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 62,
+        "goals_against": 36,
+        "goal_differential": 26
       }
     ],
     "players": [
@@ -1328,13 +1256,37 @@
       }
     ]
   },
-  "Spring 2024 Rec League": {
-    "year": 2024,
-    "season": "Spring",
+  "Fall 2023 Rec League": {
+    "year": 2023,
+    "season": "Fall",
     "level": "Rec",
     "standings": [
       {
         "team_name": "Slavic Peeps",
+        "points": 26,
+        "wins": 13,
+        "losses": 2,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 87,
+        "goals_against": 36,
+        "goal_differential": 51
+      },
+      {
+        "team_name": "Slavic Peeps",
+        "points": 26,
+        "wins": 13,
+        "losses": 2,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 87,
+        "goals_against": 36,
+        "goal_differential": 51
+      },
+      {
+        "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\nSlavic Peeps",
         "points": 26,
         "wins": 13,
         "losses": 2,
@@ -1469,6 +1421,201 @@
         "gaa": 2.0,
         "save_percentage": 0.898,
         "shutouts": 1
+      }
+    ]
+  },
+  "Spring 2024 Rec League": {
+    "year": 2024,
+    "season": "Spring",
+    "level": "Rec",
+    "standings": [
+      {
+        "team_name": "Pinecones",
+        "points": 24,
+        "wins": 11,
+        "losses": 3,
+        "ties": 1,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 72,
+        "goals_against": 37,
+        "goal_differential": 35
+      },
+      {
+        "team_name": "Pinecones",
+        "points": 24,
+        "wins": 11,
+        "losses": 3,
+        "ties": 1,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 72,
+        "goals_against": 37,
+        "goal_differential": 35
+      },
+      {
+        "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\nPinecones",
+        "points": 24,
+        "wins": 11,
+        "losses": 3,
+        "ties": 1,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 72,
+        "goals_against": 37,
+        "goal_differential": 35
+      }
+    ],
+    "players": [
+      {
+        "name": "Orrin Erickson",
+        "number": "97",
+        "games_played": 16,
+        "goals": 15,
+        "assists": 9,
+        "points": 24,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Evan Tapio",
+        "number": "22",
+        "games_played": 17,
+        "goals": 12,
+        "assists": 8,
+        "points": 20,
+        "penalty_minutes": 6
+      },
+      {
+        "name": "Konrad Stenersen",
+        "number": "10",
+        "games_played": 11,
+        "goals": 4,
+        "assists": 6,
+        "points": 10,
+        "penalty_minutes": 9
+      },
+      {
+        "name": "Brenden Mattila",
+        "number": "6",
+        "games_played": 13,
+        "goals": 8,
+        "assists": 1,
+        "points": 9,
+        "penalty_minutes": 9
+      },
+      {
+        "name": "Myron Kinnunen",
+        "number": "17",
+        "games_played": 16,
+        "goals": 6,
+        "assists": 3,
+        "points": 9,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Nolan Matson",
+        "number": "45",
+        "games_played": 13,
+        "goals": 3,
+        "assists": 4,
+        "points": 7,
+        "penalty_minutes": 12
+      },
+      {
+        "name": "JOEL MATTILA",
+        "number": "77",
+        "games_played": 15,
+        "goals": 4,
+        "assists": 3,
+        "points": 7,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Daniel Warren",
+        "number": "55",
+        "games_played": 15,
+        "goals": 5,
+        "assists": 1,
+        "points": 6,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Shane Matson",
+        "number": "31",
+        "games_played": 13,
+        "goals": 3,
+        "assists": 3,
+        "points": 6,
+        "penalty_minutes": 9
+      },
+      {
+        "name": "Jay Tapio",
+        "number": "63",
+        "games_played": 14,
+        "goals": 1,
+        "assists": 3,
+        "points": 4,
+        "penalty_minutes": 6
+      },
+      {
+        "name": "Cedric Holmgren",
+        "number": "15",
+        "games_played": 14,
+        "goals": 2,
+        "assists": 2,
+        "points": 4,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Daniel Kulla",
+        "number": "70",
+        "games_played": 14,
+        "goals": 2,
+        "assists": 1,
+        "points": 3,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Logan Matson",
+        "number": "14",
+        "games_played": 13,
+        "goals": 1,
+        "assists": 1,
+        "points": 2,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Donald Kulla",
+        "number": "28",
+        "games_played": 14,
+        "goals": 0,
+        "assists": 2,
+        "points": 2,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Ethan kulla",
+        "number": "18",
+        "games_played": 12,
+        "goals": 0,
+        "assists": 1,
+        "points": 1,
+        "penalty_minutes": 3
+      }
+    ],
+    "goalies": [
+      {
+        "name": "Jamon",
+        "number": "Holmgren G",
+        "games_played": 12,
+        "wins": 7,
+        "losses": 5,
+        "ot_losses": 0,
+        "saves": 250,
+        "goals_against": 33,
+        "gaa": 3.0,
+        "save_percentage": 0.883,
+        "shutouts": 0
       }
     ]
   }
