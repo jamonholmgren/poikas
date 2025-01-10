@@ -2817,7 +2817,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 51,
       name: "Jamon Holmgren",
-      bio: "Jamon is the first and only full time goalie for the Poikas since the beginning. He is the father of Cedric Holmgren. He's been a top level goalie in Rec League for several years and also competes in C league.",
+      bio: "Jamon was the first and only full time goalie for the Poikas from the beginning, and now plays primarily for the Rec team. He is the father of Cedric Holmgren.",
       pos: "G",
       shoots: "R",
       born: 1981,

@@ -1,6 +1,6 @@
-import type { PlayerSeason, SeasonMap, LeagueName } from "../types"
+import type { PlayerSeason, SeasonMap, LeagueName, Season, League } from "../types"
 
-export function leagueSeasonsMap(leagues: { [leagueName in LeagueName]: PlayerSeason[] }): SeasonMap {
+export function leagueSeasonsMap(seasons: Season[]): SeasonMap {
   // We're constructing a map of:
   // {
   //   "2024 Fall": { Rec: "Rec League 🏆", C: "C/CC League" },
@@ -10,23 +10,18 @@ export function leagueSeasonsMap(leagues: { [leagueName in LeagueName]: PlayerSe
 
   const data: SeasonMap = {}
 
-  Object.keys(leagues).forEach((ln) => {
-    const leagueName = ln as LeagueName // cast to avoid type error
+  seasons.forEach((season) => {
+    const key = `${season.year} ${season.seasonName}`
+    if (!data[key]) data[key] = { Rec: "", C: "" }
 
-    leagues[leagueName].forEach((playerSeason) => {
-      const season = playerSeason.season
-      const key = `${season.year} ${season.seasonName}`
-      if (!data[key]) data[key] = { Rec: "", C: "" }
+    let leagueText = season.leagueName === "Rec" ? "Rec League" : "C/CC League"
+    if (season.playoffs === "champions") leagueText += ` 🏆`
 
-      let leagueText = leagueName === "Rec" ? "Rec League" : "C/CC League"
-      if (season.playoffs === "champions") leagueText += ` 🏆`
+    leagueText = `<a href="${season.url}">${leagueText}</a>`
 
-      leagueText = `<a href="${season.url}">${leagueText}</a>`
+    if (season.aside) leagueText += `<span class='extra'> (${season.aside})</span>`
 
-      if (season.aside) leagueText += `<span class='extra'> (${season.aside})</span>`
-
-      data[key][leagueName] = leagueText
-    })
+    data[key][season.leagueName] = leagueText
   })
 
   return data

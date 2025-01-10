@@ -195,11 +195,11 @@ export function HomePage(data: PoikasData) {
           <tbody>
             ${Object.entries(leagueSeasonsMap(data.seasons))
               .map(
-                ([season, leagues]) => `
+                ([seasonName, leagues]) => `
             <tr>
-              <td>${season}</td>
-              <td>${leagues.rec}</td>
-              <td>${leagues.c}</td>
+              <td>${seasonName}</td>
+              <td>${leagues.Rec}</td>
+              <td>${leagues.C}</td>
             </tr>
           `
               )

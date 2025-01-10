@@ -1,4 +1,4 @@
-import type { PoikasData } from "../types"
+import type { PoikasData, Season } from "../types"
 import { Champ } from "../components/Champ"
 import { sisuCups } from "../utils/sisuCups"
 import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
@@ -19,6 +19,7 @@ export function PlayerPage(data: PoikasData, slug: string) {
 
   const recSeasons = player.seasons.Rec.length || "—"
   const cSeasons = player.seasons.C.length || "—"
+  const allSeasons: Season[] = player.seasons.Rec.concat(player.seasons.C).map((s) => s.season)
 
   const playerImages = images.filter((img) => img.players.includes(player.name))
 
@@ -161,7 +162,7 @@ export function PlayerPage(data: PoikasData, slug: string) {
             </tr>
           </thead>
           <tbody>
-            ${Object.entries(leagueSeasonsMap(player.seasons))
+            ${Object.entries(leagueSeasonsMap(allSeasons))
               .map(
                 ([seasonName, leagueData]) => `
             <tr>
