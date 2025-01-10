@@ -166,8 +166,8 @@ export function PlayerPage(data: PoikasData, slug: string) {
                 ([seasonName, leagueData]) => `
             <tr>
               <td>${seasonName}</td>
-              <td>${leagueData.rec || "—"}</td>
-              <td>${leagueData.c || "—"}</td>
+              <td>${leagueData.Rec || "—"}</td>
+              <td>${leagueData.C || "—"}</td>
             </tr>
                 `
               )

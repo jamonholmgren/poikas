@@ -3,33 +3,31 @@ import type { PlayerSeason, SeasonMap, LeagueName } from "../types"
 export function leagueSeasonsMap(leagues: { [leagueName in LeagueName]: PlayerSeason[] }): SeasonMap {
   // We're constructing a map of:
   // {
-  //   "2024 Fall": { rec: "Rec League 🏆", c: "C/CC League" },
-  //   "2024 Spring": { rec: "Rec League", c: "C/CC League" },
-  //   "2024 Summer": { rec: "Rec League", c: "C/CC League" },
+  //   "2024 Fall": { Rec: "Rec League 🏆", C: "C/CC League" },
+  //   "2024 Spring": { Rec: "Rec League", C: "C/CC League" },
+  //   "2024 Summer": { Rec: "Rec League", C: "C/CC League" },
   // }
 
-  const data = Object.entries(leagues).reduce((acc, [leagueName, playerSeasons]) => {
-    const season = playerSeasons?.[0]?.season
-    if (!season) return acc
+  const data: SeasonMap = {}
 
-    const key = `${season.year} ${season.seasonName}`
-    if (!acc[key]) acc[key] = { rec: "", c: "" }
+  Object.keys(leagues).forEach((ln) => {
+    const leagueName = ln as LeagueName // cast to avoid type error
 
-    let leagueText = leagueName === "Rec" ? "Rec League" : "C/CC League"
-    if (season.playoffs === "champions") leagueText += ` 🏆`
+    leagues[leagueName].forEach((playerSeason) => {
+      const season = playerSeason.season
+      const key = `${season.year} ${season.seasonName}`
+      if (!data[key]) data[key] = { Rec: "", C: "" }
 
-    leagueText = `<a href="${season.url}">${leagueText}</a>`
+      let leagueText = leagueName === "Rec" ? "Rec League" : "C/CC League"
+      if (season.playoffs === "champions") leagueText += ` 🏆`
 
-    if (season.aside) leagueText += `<span class='extra'> (${season.aside})</span>`
+      leagueText = `<a href="${season.url}">${leagueText}</a>`
 
-    if (leagueName === "Rec") {
-      acc[key].rec = leagueText
-    } else if (["C", "CC"].includes(leagueName)) {
-      acc[key].c = leagueText
-    }
+      if (season.aside) leagueText += `<span class='extra'> (${season.aside})</span>`
 
-    return acc
-  }, {} as SeasonMap)
+      data[key][leagueName] = leagueText
+    })
+  })
 
   return data
 }

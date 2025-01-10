@@ -135,8 +135,7 @@ export interface PoikasData {
 
 export type SeasonMap = {
   [label: string]: {
-    rec: string
-    c: string
+    [ln in LeagueName]: string
   }
 }
 
