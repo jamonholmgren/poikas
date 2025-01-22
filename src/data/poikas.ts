@@ -2584,7 +2584,7 @@ export const poikasData: PoikasDataRaw = {
       schedule: "https://mountainview.ezleagues.ezfacility.com/teams/3028116/Suomi-Poikas-C.aspx?framed=1",
       playoffs: "lost",
       description:
-        "The 2024-25 Fall/Winter C Poikas had their best season yet, finishing tied for first with 21 playoff points and a 9-6-0 record.",
+        "The 2024-25 Fall/Winter C Poikas had their best season yet, finishing tied for first with 21 playoff points and making it to the playoffs semifinals.",
       photos: [],
       sidebar: "",
       roster: [
