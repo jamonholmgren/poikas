@@ -1,4 +1,4 @@
-import type { PoikasData, Season } from "../types"
+import type { PoikasData, PoikasImage, Season } from "../types"
 import { Champ } from "../components/Champ"
 import { sisuCups } from "../utils/sisuCups"
 import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
@@ -21,7 +21,17 @@ export function PlayerPage(data: PoikasData, slug: string) {
   const cSeasons = player.seasons.C.length || "—"
   const allSeasons: Season[] = player.seasons.Rec.concat(player.seasons.C).map((s) => s.season)
 
-  const playerImages = images.filter((img) => img.players.includes(player.name))
+  const playerImages = images.filter((img: PoikasImage) => img.players.includes(player.name))
+  // Also add images from the player's seasons
+  const playerSeasonImages = player.seasons.Rec.concat(player.seasons.C)
+    .map((s) => (s.season.photos && s.season.photos.length ? s.season.photos.slice(0, 1) : []))
+    .flat()
+    .filter((im) => typeof im === "string")
+    .map((im: string) => ({
+      path: im,
+      caption: im,
+    }))
+  const allImages = [...playerImages, ...playerSeasonImages]
 
   const recGoals = player.activeSeasons?.Rec?.stats?.goals || 0
   const recAssists = player.activeSeasons?.Rec?.stats?.assists || 0
@@ -116,28 +126,28 @@ export function PlayerPage(data: PoikasData, slug: string) {
       </article>
 
       ${
-        playerImages.length
+        allImages.length
           ? `
             <h2>Photos</h2>
             <table id="photos" class="photos">
               <tbody>
-                ${playerImages
+                ${allImages
                   .reduce(
                     (rows, im, index) => {
-                      if (index % 4 === 0) {
+                      if (index % 3 === 0) {
                         rows.push("<tr>")
                       }
                       rows.push(`
                       <td>
-                        <a href="${im.path}" target="_blank">
-                          <img src="${im.path}" alt="${im.caption}" title="${
+                        <a href="${img(im.path)}" target="_blank">
+                          <img src="${img(im.path)}" alt="${im.caption}" title="${
                         im.caption
                       }" width="250px" onerror="this.onerror=null;this.src='${img("000-placeholder.jpg")}';" />
                           <span class="caption">${im.caption}</span>
                         </a>
                       </td>
                     `)
-                      if (index % 4 === 3 || index === playerImages.length - 1) {
+                      if (index % 3 === 2 || index === playerImages.length - 1) {
                         rows.push("</tr>")
                       }
                       return rows

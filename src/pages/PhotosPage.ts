@@ -1,4 +1,4 @@
-import type { PoikasImage } from "../data/images"
+import type { PoikasImage } from "../types"
 import { routePage } from "../route"
 import { img } from "../image"
 

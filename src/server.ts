@@ -27,44 +27,19 @@ const server = serve({
     const segments = url.pathname.split("/")
     const segs = segments.length
 
-    if (url.pathname === "/styles.css") {
-      return routeStatic("styles.css", "text/css")
-    }
-    if (url.pathname === "/") {
-      return HomePage(data)
-    }
-    if (url.pathname.startsWith("/vs/")) {
-      return OpponentPage(data, segments[2])
-    }
-    if (url.pathname.startsWith("/players/") && segments[2]) {
-      return PlayerPage(data, segments[2])
-    }
-    if (url.pathname.startsWith("/players")) {
-      return AllPlayersPage(data)
-    }
-    if (url.pathname.startsWith("/join")) {
-      return JoinPage(data)
-    }
-    if (url.pathname.startsWith("/seasons/") && segs > 4) {
-      return LeaguePage(data, segments.slice(2).join("/"))
-    }
-    if (url.pathname.startsWith("/photos")) {
-      return PhotosPage(images)
-    }
-    if (url.pathname.startsWith("/favicon.ico")) {
-      return routeStatic("favicon.ico", "image/x-icon")
-    }
-    if (url.pathname.startsWith("/robots.txt")) {
-      return routeStatic("robots.txt", "text/plain")
-    }
-    if (url.pathname.startsWith("/sitemap.xml")) {
-      return routeStatic("sitemap.xml", "application/xml")
-    }
-
-    // these should be hosted by nginx, but just in case one slips through, we serve it
-    if (url.pathname.startsWith("/images/") && segs > 1) {
-      return routeStatic(url.pathname, ct(url.pathname))
-    }
+    if (url.pathname === "/styles.css") return routeStatic("styles.css", "text/css")
+    if (url.pathname === "/") return HomePage(data)
+    if (url.pathname.startsWith("/vs/")) return OpponentPage(data, segments[2])
+    if (url.pathname.startsWith("/players/") && segments[2]) return PlayerPage(data, segments[2])
+    if (url.pathname.startsWith("/players")) return AllPlayersPage(data)
+    if (url.pathname.startsWith("/join")) return JoinPage(data)
+    if (url.pathname.startsWith("/seasons/") && segs > 4) return LeaguePage(data, segments.slice(2).join("/"))
+    if (url.pathname.startsWith("/photos")) return PhotosPage(images)
+    if (url.pathname.startsWith("/favicon.ico")) return routeStatic("favicon.ico", "image/x-icon")
+    if (url.pathname.startsWith("/robots.txt")) return routeStatic("robots.txt", "text/plain")
+    if (url.pathname.startsWith("/sitemap.xml")) return routeStatic("sitemap.xml", "application/xml")
+    // these should be hosted by nginx, but for local dev, we serve it here
+    if (url.pathname.startsWith("/images/") && segs > 1) return routeStatic(url.pathname, ct(url.pathname))
 
     return new Response("Not Found", { status: 404 })
   },

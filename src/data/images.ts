@@ -1,14 +1,9 @@
-export type PoikasImage = {
-  path: string
-  caption: string
-  players: string[]
-  credit: string
-}
+import type { PoikasImage } from "../types"
 
 export const images: PoikasImage[] = [
   {
     path: "paben/andrew-slapshot.gif",
-    caption: "Andrew Tunseth taking a slapshot during a game against the ",
+    caption: "Andrew Tunseth taking a slapshot during a C game",
     players: ["Andrew Tunseth"],
     credit: "Jared Paben",
   },
@@ -306,5 +301,11 @@ export const images: PoikasImage[] = [
     caption: "Jamon Holmgren steering rebound aside",
     players: ["Jamon Holmgren"],
     credit: "Jared Paben",
+  },
+  {
+    path: "poikas-rec-2024-fall-cedric-goal.gif",
+    caption: "Cedric Holmgren scores a goal in the 2024-25 Fall/Winter rec championship game",
+    players: ["Cedric Holmgren"],
+    credit: "Chyra Holmgren",
   },
 ]

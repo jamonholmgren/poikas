@@ -194,3 +194,10 @@ export interface ArenaSeasonStats {
 export type ArenaStats = {
   [season: string]: ArenaSeasonStats
 }
+
+export type PoikasImage = {
+  path: string
+  caption: string
+  players: string[]
+  credit: string
+}
