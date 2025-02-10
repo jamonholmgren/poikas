@@ -317,6 +317,11 @@ a:hover {
   text-decoration: underline;
 }
 
+a.current {
+  color: #202a47 !important;
+  font-weight: bold;
+}
+
 /* Image fit */
 .sidebar img {
   max-width: 100%;

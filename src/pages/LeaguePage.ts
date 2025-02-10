@@ -1,4 +1,4 @@
-import type { Game, PoikasData } from "../types"
+import type { Game, PoikasData, Season } from "../types"
 import { routePage } from "../route"
 import { img } from "../image"
 
@@ -6,6 +6,8 @@ export function LeaguePage(data: PoikasData, slug: string) {
   const league = data.seasons.find((l) => l.url.endsWith(slug))
 
   if (!league) return new Response(`League not found: ${slug}`, { status: 404 })
+
+  const allSeasons = data.leagues[league.leagueName].seasons
 
   const {
     url,
@@ -179,6 +181,32 @@ export function LeaguePage(data: PoikasData, slug: string) {
                 )
                 .join("\n")
             }
+          </tbody>
+        </table>
+
+        <h2>Previous Seasons</h2>
+        <table id="previous-seasons" class="roster">
+          <thead>
+            <tr>
+              <th>Season</th>
+              <th>Record</th>
+              <th>Playoffs</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${allSeasons
+              .map(
+                (season) => `
+                    <tr>
+                      <td><a href="${season.url}" class="${
+                  season.year === year && season.seasonName === seasonName ? "current" : ""
+                }">${season.year} ${season.seasonName}</a></td>
+                      <td>${season.wins || 0}-${season.losses || 0}${season.ties ? `-${season.ties}` : ""}</td>
+                      <td>${season.playoffs || "-"}</td>
+                    </tr>
+                  `
+              )
+              .join("\n")}
           </tbody>
         </table>
       </article>
