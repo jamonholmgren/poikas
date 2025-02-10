@@ -5,6 +5,7 @@ export function sisuCups(player: Player) {
     .flat()
     .flatMap((s) => s.season.games || [])
     .filter((g) => g.sisu === player.name)
+    .sort(byDateOrSeason)
 
   return sisuGames.map((g) => {
     const s = g.season
@@ -18,4 +19,10 @@ export function sisuCups(player: Player) {
       notable: g.notable || "-",
     }
   })
+}
+
+function byDateOrSeason(a: Game, b: Game) {
+  if (a.date && b.date) return a.date.getTime() - b.date.getTime()
+  if (a.season && b.season) return a.season.year - b.season.year
+  return 0
 }
