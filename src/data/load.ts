@@ -10,7 +10,7 @@ const historicalSeasons = Object.values(historicalRecStats).concat(Object.values
 
 let _data: PoikasData
 export function getData(): PoikasData {
-  if (!_data) _data = processPoikasData(poikasData as PoikasData)
+  if (!_data) _data = processPoikasData(poikasData)
   return _data
 }
 

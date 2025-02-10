@@ -8,7 +8,7 @@ export type League = {
   current: Season | undefined
 }
 
-type SeasonRaw = {
+export type SeasonRaw = {
   year: number
   seasonName: SeasonName
   leagueName: LeagueName
@@ -46,7 +46,7 @@ export interface Game {
   them?: number
   shotsUs?: number
   shotsThem?: number
-  result?: "won" | "lost" | "lost-ot" | "tied" | "forfeited" | "cancelled"
+  result?: "pending" | "won" | "lost" | "lost-ot" | "tied" | "forfeited" | "cancelled"
   sisu?: string
   notable?: string
   date?: Date

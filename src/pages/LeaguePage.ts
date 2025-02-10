@@ -1,4 +1,4 @@
-import type { PoikasData } from "../types"
+import type { Game, PoikasData } from "../types"
 import { routePage } from "../route"
 import { img } from "../image"
 
@@ -171,7 +171,7 @@ export function LeaguePage(data: PoikasData, slug: string) {
                     <tr>
                       <td>${game.date ? game.date.toLocaleDateString() : "-"}</td>
                       <td>${game.vsLink}</td>
-                      <td>${game.result} ${game.us}-${game.them}</td>
+                      <td>${gameScore(game)}</td>
                       <td>${(game.sisu && players?.find((p) => p.name === game.sisu)?.profileLink) || "-"}</td>
                       <td class="extra notable">${game.notable || "-"}</td>
                     </tr>
@@ -184,4 +184,11 @@ export function LeaguePage(data: PoikasData, slug: string) {
       </article>
     `,
   })
+}
+
+function gameScore(game: Game) {
+  if (game.result === "pending") return "Upcoming"
+  if (game.result === "forfeited") return "Forfeited"
+  if (game.result === "cancelled") return "Cancelled"
+  return `${game.result} ${game.us}-${game.them}`
 }

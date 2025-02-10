@@ -505,6 +505,75 @@ Goalie Stats
 1	Jamon Holmgren	G	12	7	5	0	250	33	3	0.883	0
 
 
+Fall 2024 Adult Hockey League-Rec League Standings
+https://mountainview.ezleagues.ezfacility.com/teams/3028138/Suomi-Poikas-Rec.aspx?framed=1
+Print
+ 	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
+Suomi Poikas Rec	23	11	4	0	15	1	67	36	31	
+Pinecones	23	11	4	0	15	1	67	36	31	
+Slavic Peeps	21	10	5	0	15	1	98	36	62	
+Thundersticks	16	8	7	0	15	0	46	47	-1	
+Liquid Gold	9	4	11	0	15	1	36	73	-37	
+Caps N Taps	2	1	14	0	15	0	22	108	-86	
+Suomi Poikas Rec's Schedule
+Print
+Date	Home	 	Away	Time/Status	Venue	Game Type	Officials
+Sat-Sep 7  	Suomi Poikas Rec	4 - 0	Thundersticks	Complete	Mountain View Ice Arena	Regular	Hickey, Murashige, Fortin (scorekeeper)
+Sat-Sep 14  	Suomi Poikas Rec	9 - 0	Caps N Taps	Complete	Mountain View Ice Arena	Regular	Fortin (scorekeeper), Nearman, Murashige
+Sat-Sep 21  	Suomi Poikas Rec	4 - 5 OT	Liquid Gold	Complete	Mountain View Ice Arena	Regular	Dean, Zimmerman, Nagel (scorekeeper)
+Sat-Sep 28  	Suomi Poikas Rec	1 - 7	Slavic Peeps	Complete	Mountain View Ice Arena	Regular	Doherty, Nagel (scorekeeper), Zimmerman
+Sat-Oct 5  	Suomi Poikas Rec	7 - 2	Pinecones	Complete	Mountain View Ice Arena	Regular	Doherty, Johnson (scorekeeper), Nearman
+Sat-Oct 12  	Suomi Poikas Rec	5 - 1	Thundersticks	Complete	Mountain View Ice Arena	Regular	Dean, Fortin (scorekeeper), Nearman
+Sat-Oct 19  	Caps N Taps	0 - 7	Suomi Poikas Rec	Complete	Mountain View Ice Arena	Regular	Doherty, Zimmerman, Fortin (scorekeeper)
+Sat-Oct 26  	Liquid Gold	1 - 6	Suomi Poikas Rec	Complete	Mountain View Ice Arena	Regular	Fortin (scorekeeper), Dean
+Sat-Nov 2  	Slavic Peeps	4 - 5	Suomi Poikas Rec	Complete	Mountain View Ice Arena	Regular	Doherty, Zimmerman, Johnson (scorekeeper)
+Sat-Nov 9  	Suomi Poikas Rec	3 - 2	Pinecones	Complete	Mountain View Ice Arena	Regular	McMahon (scorekeeper), Schultz, Zimmerman
+Sat-Nov 16  	Thundersticks	1 - 7	Suomi Poikas Rec	Complete	Mountain View Ice Arena	Regular	Fortin (scorekeeper), Schultz, Zimmerman
+Sat-Nov 23  	Caps N Taps	1 - 2	Suomi Poikas Rec	Complete	Mountain View Ice Arena	Regular	Doherty, Fortin (scorekeeper), Nearman
+Sat-Dec 7  	Slavic Peeps	8 - 3	Suomi Poikas Rec	Complete	Mountain View Ice Arena	Regular	Dean, Helyar, McMurtry(Scorekeeper)
+Sat-Dec 14  	Pinecones	3 - 4 OT	Suomi Poikas Rec	Complete	Mountain View Ice Arena	Regular	Fortin (scorekeeper), Schultz, Zimmerman
+Sat-Dec 21  	Liquid Gold	1 - 0	Suomi Poikas Rec	Complete	Mountain View Ice Arena	Regular	Fortin (scorekeeper), Fowler, Mischke
+Sat-Jan 11  	Suomi Poikas Rec	3 - 2	Thundersticks	Complete	Mountain View Ice Arena	Postseason	Doherty, Fortin (scorekeeper), Larkin
+Sat-Jan 18  	Suomi Poikas Rec	5 - 0	Slavic Peeps	Complete	Mountain View Ice Arena	Postseason-THE SHIP	Fortin (scorekeeper), Pfister, Bloemke
+Roster	
+ 	Player	#
+1	Orrin Erickson	97
+2	Jamon Holmgren	(G)51
+3	Cedric Holmgren	15
+4	Myron Kinnunen	17
+5	Daniel Kulla	70
+6	Ethan Kulla	18
+7	Donald Kulla	28
+8	Logan Matson	14
+9	Nolan Matson	45
+10	Shane Matson	31
+11	Oren Matson	27
+12	Brenden Mattila	6
+13	Joel Mattila	77
+14	Avery Tapio	16
+15	Peter Tapio	87
+16	Daniel Warren	55
+Player Stats
+ 	Player	#	Games Played	Goals	Assists	Points	Penalty Minutes
+1	Orrin Erickson	97	16	17	7	24	0
+2	Oren Matson	27	16	13	6	19	6
+3	Nolan Matson	45	17	5	11	16	18
+4	Daniel Kulla	70	15	7	4	11	6
+5	Joel Mattila	77	13	6	5	11	6
+6	Shane Matson	31	16	3	6	9	6
+7	Myron Kinnunen	17	14	5	3	8	0
+8	Brenden Mattila	6	11	4	3	7	18
+9	Daniel Warren	55	14	3	3	6	6
+10	Cedric Holmgren	15	15	3	3	6	0
+11	Peter Tapio	87	11	2	3	5	18
+12	Donald Kulla	28	12	2	3	5	3
+13	Avery Tapio	16	12	1	2	3	12
+14	Logan Matson	14	16	1	1	2	0
+15	Ethan Kulla	18	13	0	0	0	3
+Goalie Stats
+ 	Player	#	Games Played	Wins	Losses	OT Losses	Saves	Goals Against	GAA	Save %	Shutouts
+1	Jamon Holmgren	(G)51	12	9	2	1	188	19	2	0.908	2
+
 
 
 
