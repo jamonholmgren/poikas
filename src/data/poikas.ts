@@ -58,7 +58,7 @@ export const poikasData: PoikasDataRaw = {
           result: "pending",
           sisu: "",
           date: new Date("2025-02-15"),
-          notable: "7:30pm",
+          notable: "8:00pm (was 7:30pm)",
           goalie: "",
           stats: {},
           shotsUs: undefined,
