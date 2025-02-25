@@ -143,6 +143,7 @@ export type Stats = {
   [playerName: string]: {
     goals?: number
     assists?: number
+    penalties?: number
   }
 }
 
