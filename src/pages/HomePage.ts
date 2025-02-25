@@ -15,8 +15,14 @@ export function HomePage(data: PoikasData) {
   let c = data.leagues.C.current || data.leagues.C.seasons.at(-1)!
 
   // latest games from each league
-  const lastRecGame = (rec.games || []).at(-1)
-  const lastCGame = (c.games || []).at(-1)
+  const completedRecGames = (rec.games || []).filter((g) => g.result != "pending")
+  const lastRecGame = completedRecGames.length > 0 ? completedRecGames.at(-1) : undefined
+  const completedCGames = (c.games || []).filter((g) => g.result != "pending")
+  const lastCGame = completedCGames.length > 0 ? completedCGames.at(-1) : undefined
+  const incompleteRecGames = (rec.games || []).filter((g) => g.result == "pending")
+  const nextRecGame = incompleteRecGames.length > 0 ? incompleteRecGames.at(0) : undefined
+  const incompleteCGames = (c.games || []).filter((g) => g.result == "pending")
+  const nextCGame = incompleteCGames.length > 0 ? incompleteCGames.at(0) : undefined
 
   return routePage({
     path: "/",
@@ -47,7 +53,7 @@ export function HomePage(data: PoikasData) {
                 ${lastRecGame.sisu ? `<div class='sisu'>${`🇫🇮 Sisu Cup: ${lastRecGame.sisu}` || ""}</div>` : ""}
                 <div class='notable'>${lastRecGame.notable || ""}</div>
               </a>`
-            : ""
+            : "<div class='game'>No games completed yet</div>"
         }
           ${
             lastCGame
@@ -58,7 +64,28 @@ export function HomePage(data: PoikasData) {
                   ${lastCGame.sisu ? `<div class='sisu'>${`🇫🇮 Sisu Cup: ${lastCGame.sisu}` || ""}</div>` : ""}
                   <div class='notable'>${lastCGame.notable || ""}</div>
                 </a>`
-              : ""
+              : "<div class='game'>No games completed yet</div>"
+          }
+        </div>
+        <h2>Next Games</h2>
+        <div class='latest-games'>
+        ${
+          nextRecGame
+            ? `<a href="${rec.url}" class='game'>
+                <div class='league'>Rec League</div>
+                <div class='teams'>Poikas vs ${nextRecGame.vs} (${nextRecGame.date?.toLocaleDateString()})</div>
+                <div class='notable'>${nextRecGame.notable || ""}</div>
+              </a>`
+            : "<div class='game'>No Rec games scheduled</div>"
+        }
+          ${
+            nextCGame
+              ? `<a href="${c.url}" class='game'>
+                  <div class='league'>C/CC League</div>
+                  <div class='teams'>Poikas vs ${nextCGame.vs} (${nextCGame.date?.toLocaleDateString()})</div>
+                  <div class='notable'>${nextCGame.notable || ""}</div>
+                </a>`
+              : "<div class='game'>No C games scheduled</div>"
           }
         </div>
 
