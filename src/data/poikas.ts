@@ -160,7 +160,7 @@ export const poikasData: PoikasDataRaw = {
             "Nolan Matson": { assists: 1, penalties: 1 },
             "Oren Matson": { assists: 1 },
             "Dan Warren": { penalties: 1 },
-            "Peter Tapio": { penalties; 1 },
+            "Peter Tapio": { penalties: 1 },
             "Donald Kulla": { penalties: 1 },
           },
           shotsUs: 18,
