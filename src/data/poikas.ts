@@ -350,7 +350,7 @@ export const poikasData: PoikasDataRaw = {
           them: undefined,
           result: "pending",
           sisu: "",
-          date: new Date("2025-06-08"),
+          date: new Date("2025-06-07"),
           notable: "7:30pm Championship game",
           goalie: "",
           stats: {},
