@@ -40,6 +40,7 @@ function layout(options: LayoutOptions) {
     <meta name="description" content="${description}" />
     <link rel="stylesheet" href="/styles.css?c=3" />
     <link rel="icon" type="image/png" href="${img("finland-flag-icon.png")}" />
+    <script src="/sort.js"></script>
 
     <!-- OG stuff -->
     <meta property="og:title" content="${title} - Suomi Poikas Hockey Club" />

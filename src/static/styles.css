@@ -633,3 +633,24 @@ table.roster a:hover {
   font-weight: bold;
   color: #202a47;
 }
+
+/* Table sorting styles */
+th {
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+}
+
+th:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.sort-indicator {
+  display: inline-block;
+  margin-left: 4px;
+  opacity: 0.3;
+}
+
+th[data-sort] .sort-indicator {
+  opacity: 1;
+}

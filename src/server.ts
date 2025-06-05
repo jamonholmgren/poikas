@@ -28,6 +28,7 @@ const server = serve({
     const segs = segments.length
 
     if (url.pathname === "/styles.css") return routeStatic("styles.css", "text/css")
+    if (url.pathname === "/sort.js") return routeStatic("sort.js", "application/javascript")
     if (url.pathname === "/") return HomePage(data)
     if (url.pathname.startsWith("/vs/")) return OpponentPage(data, segments[2])
     if (url.pathname.startsWith("/players/") && segments[2]) return PlayerPage(data, segments[2])

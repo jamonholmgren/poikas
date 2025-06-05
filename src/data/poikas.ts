@@ -1089,7 +1089,7 @@ export const poikasData: PoikasDataRaw = {
       pos: "C/D",
     },
     {
-      number: 0,
+      number: 48,
       name: "Avery Tapio",
       pos: "LW",
     },
