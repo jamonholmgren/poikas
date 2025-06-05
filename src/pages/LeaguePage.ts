@@ -105,6 +105,7 @@ export function LeaguePage(data: PoikasData, slug: string) {
               <th width="30">Pos</th>
               <th width="30">G</th>
               <th width="30">A</th>
+              <th width="30">P</th>
               <th width="30" class="extra">Ht</th>
               <th width="30" class="extra">Wt</th>
               <th width="30" class="extra">Sh</th>
@@ -125,6 +126,10 @@ export function LeaguePage(data: PoikasData, slug: string) {
                       <td>${player.pos || "-"}</td>
                       <td>${player.activeSeasons[leagueName]?.stats?.goals || "-"}</td>
                       <td>${player.activeSeasons[leagueName]?.stats?.assists || "-"}</td>
+                      <td>${
+                        (player.activeSeasons[leagueName]?.stats?.goals || 0) +
+                          (player.activeSeasons[leagueName]?.stats?.assists || 0) || "-"
+                      }</td>
                       <td class="extra">${player.ht || "-"}</td>
                       <td class="extra">${player.wt || "-"}</td>
                       <td class="extra">${player.shoots || "-"}</td>

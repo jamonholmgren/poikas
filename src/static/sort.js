@@ -49,20 +49,21 @@ document.addEventListener("DOMContentLoaded", function () {
           const aValue = a.children[index].textContent.trim()
           const bValue = b.children[index].textContent.trim()
 
+          // Handle dates if the header contains "Date"
+          if (header.textContent.includes("Date")) {
+            const aDate = new Date(aValue)
+            const bDate = new Date(bValue)
+            if (!isNaN(aDate.getTime()) && !isNaN(bDate.getTime())) {
+              return newDirection === "asc" ? aDate - bDate : bDate - aDate
+            }
+          }
+
           // Handle numeric values
           const aNum = parseFloat(aValue)
           const bNum = parseFloat(bValue)
 
           if (!isNaN(aNum) && !isNaN(bNum)) {
             return newDirection === "asc" ? aNum - bNum : bNum - aNum
-          }
-
-          // Handle dates
-          const aDate = new Date(aValue)
-          const bDate = new Date(bValue)
-
-          if (!isNaN(aDate.getTime()) && !isNaN(bDate.getTime())) {
-            return newDirection === "asc" ? aDate - bDate : bDate - aDate
           }
 
           // Handle text
