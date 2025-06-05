@@ -111,6 +111,31 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
       // calculate the player's stats for this season
       let seasonGoals = 0
       let seasonAssists = 0
+
+      // Calculate goalie stats if player was a goalie in any games
+      if (season.games) {
+        const goalieGames = season.games.filter((game) => game.goalie === player.name)
+        if (goalieGames.length > 0) {
+          const totalShotsAgainst = goalieGames.reduce((sum, game) => sum + (game.shotsThem || 0), 0)
+          const totalGoalsAgainst = goalieGames.reduce((sum, game) => sum + (game.them || 0), 0)
+          const totalShotsFor = goalieGames.reduce((sum, game) => sum + (game.shotsUs || 0), 0)
+          const gamesPlayed = goalieGames.length
+
+          const savePercentage =
+            totalShotsAgainst > 0 ? ((totalShotsAgainst - totalGoalsAgainst) / totalShotsAgainst) * 100 : 0
+          const goalsAgainstAverage = totalGoalsAgainst / gamesPlayed
+          const averageShotsAgainst = totalShotsAgainst / gamesPlayed
+
+          playerSeason.stats.gamesPlayed = gamesPlayed
+          playerSeason.stats.shotsFor = totalShotsFor
+          playerSeason.stats.shotsAgainst = totalShotsAgainst
+          playerSeason.stats.goalsAgainst = totalGoalsAgainst
+          playerSeason.stats.savePercentage = parseFloat(savePercentage.toFixed(1))
+          playerSeason.stats.goalsAgainstAverage = parseFloat(goalsAgainstAverage.toFixed(2))
+          playerSeason.stats.averageShotsAgainst = parseFloat(averageShotsAgainst.toFixed(1))
+        }
+      }
+
       season.games?.forEach((game) => {
         if (!game.stats) return
 

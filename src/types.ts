@@ -113,6 +113,14 @@ export type PlayerSeason = {
 type PlayerStats = {
   goals: number
   assists: number
+  // Goalie stats
+  gamesPlayed?: number
+  shotsFor?: number
+  shotsAgainst?: number
+  goalsAgainst?: number
+  savePercentage?: number
+  goalsAgainstAverage?: number
+  averageShotsAgainst?: number
 }
 
 export interface LoadDisplaySeasonsOptions {
