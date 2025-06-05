@@ -121,6 +121,7 @@ type PlayerStats = {
   savePercentage?: number
   goalsAgainstAverage?: number
   averageShotsAgainst?: number
+  shutouts?: number
 }
 
 export interface LoadDisplaySeasonsOptions {

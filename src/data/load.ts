@@ -120,6 +120,7 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
           const totalGoalsAgainst = goalieGames.reduce((sum, game) => sum + (game.them || 0), 0)
           const totalShotsFor = goalieGames.reduce((sum, game) => sum + (game.shotsUs || 0), 0)
           const gamesPlayed = goalieGames.length
+          const shutouts = goalieGames.filter((game) => game.them === 0).length
 
           const savePercentage =
             totalShotsAgainst > 0 ? ((totalShotsAgainst - totalGoalsAgainst) / totalShotsAgainst) * 100 : 0
@@ -133,6 +134,7 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
           playerSeason.stats.savePercentage = parseFloat(savePercentage.toFixed(1))
           playerSeason.stats.goalsAgainstAverage = parseFloat(goalsAgainstAverage.toFixed(2))
           playerSeason.stats.averageShotsAgainst = parseFloat(averageShotsAgainst.toFixed(1))
+          playerSeason.stats.shutouts = shutouts
         }
       }
 

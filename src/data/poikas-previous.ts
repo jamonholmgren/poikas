@@ -1320,6 +1320,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 3,
         result: "lost",
         sisu: "Brad Wuori",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Pinecones",
@@ -1328,6 +1329,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "won",
         sisu: "Brenden Mattila",
         notable: "Brenden had a hat trick.",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Caps N Taps",
@@ -1336,6 +1338,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "won",
         sisu: "Nolan Matson",
         notable: "Joel had covid and missed the game.",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Liquid Gold",
@@ -1344,6 +1347,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "won",
         sisu: "Orrin Erickson",
         notable: "Won in a shootout.",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Thundersticks",
@@ -1351,6 +1355,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 4,
         result: "won",
         sisu: "Brent Mattila",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Slavic Peeps",
@@ -1358,6 +1363,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 4,
         result: "lost",
         sisu: "Jay Tapio",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Pinecones",
@@ -1365,6 +1371,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 2,
         result: "won",
         sisu: "Orrin Erickson",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Caps N Taps",
@@ -1372,6 +1379,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 2,
         result: "won",
         sisu: "Dan Warren",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Liquid Gold",
@@ -1379,6 +1387,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 2,
         result: "won",
         sisu: "Jay Tapio",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Thundersticks",
@@ -1386,6 +1395,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 2,
         result: "lost",
         sisu: "Jamon Holmgren",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Slavic Peeps",
@@ -1393,6 +1403,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 5,
         result: "lost",
         sisu: "Brenden Mattila",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Caps N Taps",
@@ -1400,6 +1411,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 1,
         result: "won",
         sisu: "Dan Warren",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Liquid Gold",
@@ -1408,6 +1420,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "won",
         sisu: "Daniel Kulla",
         notable: "Daniel's first Sisu Cup.",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Thundersticks",
@@ -1415,6 +1428,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 3,
         result: "lost",
         sisu: "Brenden Mattila",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Pinecones",
@@ -1423,6 +1437,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "won",
         sisu: "Jamon Holmgren",
         notable: "Jamon had a shutout.",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Thundersticks",
@@ -1431,6 +1446,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "won",
         sisu: "Joel Mattila",
         notable: "Playoffs semifinals. Joel had two goals.",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Slavic Peeps",
@@ -1439,6 +1455,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "won",
         sisu: "Nolan Matson",
         notable: "Championship game! Nolan had hat trick.",
+        goalie: "Jamon Holmgren",
       },
     ],
   },
@@ -1473,6 +1490,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 11,
         result: "lost",
         sisu: "Asa Storm",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "CCCP",
@@ -1481,6 +1499,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "won",
         sisu: "Steve Saunders",
         notable: "Won after trailing 1-4.",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Revolution",
@@ -1488,6 +1507,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 5,
         result: "won",
         sisu: "Asa Storm",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Bandits",
@@ -1496,6 +1516,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "lost",
         sisu: "Jamon Holmgren",
         notable: "They had an empty-netter at the end.",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Callahan",
@@ -1503,6 +1524,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 6,
         result: "lost",
         sisu: "Oren Matson",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Badgers",
@@ -1510,6 +1532,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 9,
         result: "lost",
         sisu: "Nels Tapio",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Dead Guys",
@@ -1517,6 +1540,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 9,
         result: "lost",
         sisu: "Trevor Kloetzli",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Local Legends",
@@ -1524,6 +1548,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 10,
         result: "lost",
         sisu: "Asa Storm",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "PBR",
@@ -1531,6 +1556,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 0,
         result: "won",
         notable: "They forfeited due to lack of players. We scrimmaged.",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Lightning",
@@ -1538,6 +1564,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 6,
         result: "lost",
         sisu: "Andrew Tunseth",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "CCCP",
@@ -1545,6 +1572,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 6,
         result: "lost",
         sisu: "Jared Paben",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Bandits",
@@ -1552,12 +1580,14 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 5,
         result: "lost",
         sisu: "Jared Paben",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Callahan",
         us: 3,
         them: 6,
         result: "lost",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Badgers",
@@ -1565,6 +1595,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 3,
         result: "lost",
         sisu: "Jamon Holmgren",
+        goalie: "Jamon Holmgren",
       },
       {
         vs: "Revolution",
@@ -1573,6 +1604,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "lost",
         sisu: "Jared Paben",
         notable: "They got an empty netter at the end.",
+        goalie: "Jamon Holmgren",
       },
     ],
   },

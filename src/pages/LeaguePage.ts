@@ -118,27 +118,27 @@ export function LeaguePage(data: PoikasData, slug: string) {
               players &&
               players
                 .filter((player) => player.pos !== "G")
-                .map(
-                  (player) => `
+                .map((player) => {
+                  const seasonStats = player.seasons[leagueName]?.find(
+                    (s) => s.year === year && s.seasonName === seasonName
+                  )?.stats
+                  return `
                     <tr>
                       <td>${player.imageHTML || "-"}</td>
                       <td>${player.profileLink || "-"}</td>
                       <td>${player.number || "-"}</td>
                       <td>${player.pos || "-"}</td>
-                      <td>${player.activeSeasons[leagueName]?.stats?.goals || "-"}</td>
-                      <td>${player.activeSeasons[leagueName]?.stats?.assists || "-"}</td>
-                      <td>${
-                        (player.activeSeasons[leagueName]?.stats?.goals || 0) +
-                          (player.activeSeasons[leagueName]?.stats?.assists || 0) || "-"
-                      }</td>
+                      <td>${seasonStats?.goals || "-"}</td>
+                      <td>${seasonStats?.assists || "-"}</td>
+                      <td>${(seasonStats?.goals || 0) + (seasonStats?.assists || 0) || "-"}</td>
                       <td class="extra">${player.ht || "-"}</td>
                       <td class="extra">${player.wt || "-"}</td>
                       <td class="extra">${player.shoots || "-"}</td>
                       <td class="extra">${player.years || "-"}</td>
-                      <td class="extra">${player.age() || "-"}</td>
+                      <td class="extra">${player.age?.() || "-"}</td>
                     </tr>
                   `
-                )
+                })
                 .join("\n")
             }
           </tbody>
@@ -156,6 +156,7 @@ export function LeaguePage(data: PoikasData, slug: string) {
               <th width="30">GAA</th>
               <th width="30">SV%</th>
               <th width="30">SA/G</th>
+              <th width="30">SO</th>
               <th width="30" class="extra">Ht</th>
               <th width="30" class="extra">Wt</th>
               <th width="30" class="extra">Sh</th>
@@ -169,17 +170,20 @@ export function LeaguePage(data: PoikasData, slug: string) {
               players
                 .filter((player) => player.pos === "G")
                 .map((player) => {
-                  const stats = player.activeSeasons?.[leagueName]?.stats
+                  const seasonStats = player.seasons[leagueName]?.find(
+                    (s) => s.year === year && s.seasonName === seasonName
+                  )?.stats
                   return `
                     <tr>
                       <td>${player.imageHTML || "-"}</td>
                       <td>${player.profileLink || "-"}</td>
                       <td>${player.number || "-"}</td>
                       <td>${player.pos || "-"}</td>
-                      <td>${stats?.gamesPlayed || "-"}</td>
-                      <td>${stats?.goalsAgainstAverage || "-"}</td>
-                      <td>${stats?.savePercentage || "-"}</td>
-                      <td>${stats?.averageShotsAgainst || "-"}</td>
+                      <td>${seasonStats?.gamesPlayed || "-"}</td>
+                      <td>${seasonStats?.goalsAgainstAverage || "-"}</td>
+                      <td>${seasonStats?.savePercentage || "-"}</td>
+                      <td>${seasonStats?.averageShotsAgainst || "-"}</td>
+                      <td>${seasonStats?.shutouts || "-"}</td>
                       <td class="extra">${player.ht || "-"}</td>
                       <td class="extra">${player.wt || "-"}</td>
                       <td class="extra">${player.shoots || "-"}</td>
