@@ -117,6 +117,7 @@ export function LeaguePage(data: PoikasData, slug: string) {
             ${
               players &&
               players
+                .filter((player) => player.pos !== "G")
                 .map(
                   (player) => `
                     <tr>
@@ -130,6 +131,46 @@ export function LeaguePage(data: PoikasData, slug: string) {
                         (player.activeSeasons[leagueName]?.stats?.goals || 0) +
                           (player.activeSeasons[leagueName]?.stats?.assists || 0) || "-"
                       }</td>
+                      <td class="extra">${player.ht || "-"}</td>
+                      <td class="extra">${player.wt || "-"}</td>
+                      <td class="extra">${player.shoots || "-"}</td>
+                      <td class="extra">${player.years || "-"}</td>
+                      <td class="extra">${player.age() || "-"}</td>
+                    </tr>
+                  `
+                )
+                .join("\n")
+            }
+          </tbody>
+        </table>
+
+        <h3>Goalies</h3>
+        <table id="goalies" class="roster">
+          <thead>
+            <tr>
+              <th width="50">Photo</th>
+              <th>Name</th>
+              <th width="30">#</th>
+              <th width="30">Pos</th>
+              <th width="30" class="extra">Ht</th>
+              <th width="30" class="extra">Wt</th>
+              <th width="30" class="extra">Sh</th>
+              <th width="30" class="extra">Yrs</th>
+              <th width="30" class="extra">Age</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${
+              players &&
+              players
+                .filter((player) => player.pos === "G")
+                .map(
+                  (player) => `
+                    <tr>
+                      <td>${player.imageHTML || "-"}</td>
+                      <td>${player.profileLink || "-"}</td>
+                      <td>${player.number || "-"}</td>
+                      <td>${player.pos || "-"}</td>
                       <td class="extra">${player.ht || "-"}</td>
                       <td class="extra">${player.wt || "-"}</td>
                       <td class="extra">${player.shoots || "-"}</td>
