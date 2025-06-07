@@ -1,12 +1,12 @@
 import type { Player, Season } from "../types"
 
 type Column = {
-  h: string
+  th: string
   width?: number
-  isExtra?: boolean
-  t?: string
-  v?: string
+  txt?: string
+  val?: string
   getValue?: (player: Player) => string | number
+  xtra?: boolean
   fb?: string
 }
 
@@ -39,8 +39,8 @@ function getValueByPath(obj: any, path: string): any {
 function getColumnValue(player: Player, column: Column, season?: Season): string | number {
   if (column.getValue) return column.getValue(player)
 
-  if (column.v) {
-    const value = getValueByPath(player, column.v)
+  if (column.val) {
+    const value = getValueByPath(player, column.val)
     if (value === undefined) return column.fb || "-"
     return value
   }
@@ -61,7 +61,7 @@ export function renderRosterTable(options: RosterTableOptions): string {
       ${columns
         .map(
           (col) => `
-        <th${col.width ? ` width="${col.width}"` : ""}${col.t ? ` title="${col.t}"` : ""}${col.isExtra ? ' class="extra"' : ""}>${col.h}</th>
+        <th${col.width ? ` width="${col.width}"` : ""}${col.txt ? ` title="${col.txt}"` : ""}${col.xtra ? ' class="extra"' : ""}>${col.th}</th>
       `
         )
         .join("")}
@@ -75,7 +75,7 @@ export function renderRosterTable(options: RosterTableOptions): string {
         ${columns
           .map(
             (col) => `
-          <td${col.isExtra ? ' class="extra"' : ""}>${getColumnValue(player, col, options.season)}</td>
+          <td${col.xtra ? ' class="extra"' : ""}>${getColumnValue(player, col, options.season)}</td>
         `
           )
           .join("")}
