@@ -1,17 +1,4 @@
-import type {
-  Game,
-  Player,
-  PoikasData,
-  PoikasDataRaw,
-  PlayerSeason,
-  ArenaSeasonStats,
-  SeasonName,
-  LeagueName,
-  Season,
-  PlayerStats,
-  GameStats,
-  PlayerGameStats,
-} from "../types"
+import type { Game, Player, PoikasData, PoikasDataRaw, PlayerSeason, ArenaSeasonStats, SeasonName, LeagueName, Season, PlayerStats, PlayerGameStats } from "../types"
 import { poikasData } from "./poikas"
 import { img } from "../image"
 
@@ -78,9 +65,7 @@ function populateSeasonData(season: Season, players: Player[]) {
   season.link = `<a href="${season.url}">${season.leagueName}</a>`
 
   // Add historical data to the league
-  season.arenaReportedStats = historicalSeasons.find(
-    (h) => h.year === season.year && h.season === season.seasonName && h.league === season.leagueName
-  )
+  season.arenaReportedStats = historicalSeasons.find((h) => h.year === season.year && h.season === season.seasonName && h.league === season.leagueName)
 
   // Add all roster players
   if (!season.players) season.players = []
@@ -150,10 +135,6 @@ function populatePlayerData(player: Player, data: PoikasData) {
       player.active = true
       player.activeSeasons[season.leagueName] = playerSeason
     }
-
-    // and the reverse too -- add players to each season
-    season.players ||= []
-    season.players.push(player)
 
     // did we win a championship this season?
     if (season.playoffs === "champions") player.championships += 1
@@ -239,9 +220,7 @@ function populatePlayerData(player: Player, data: PoikasData) {
 
   // player image URL and HTML
   player.imageURL = img(`players/${player.slug}.jpg`)
-  player.imageHTML = `<img src="${player.imageURL}" alt="${player.name}" onerror="this.onerror=null;this.src='${img(
-    "000-placeholder.jpg"
-  )}';">`
+  player.imageHTML = `<img src="${player.imageURL}" alt="${player.name}" onerror="this.onerror=null;this.src='${img("000-placeholder.jpg")}';">`
 
   // player profile URL
   player.profileURL = `/players/${player.slug}`
@@ -254,7 +233,7 @@ function populateGoalieStatsAggregates(stats: PlayerStats) {
   const sa: number = stats.shotsAgainst
   const ga: number = stats.goalsAgainst
   stats.savePercentage = parseFloat((sa > 0 ? ((sa - ga) / sa) * 100 : 0).toFixed(1))
-  stats.goalsAgainstAverage = parseFloat((sa / gp).toFixed(2))
+  stats.goalsAgainstAverage = parseFloat((ga / gp).toFixed(2))
   stats.averageShotsAgainst = parseFloat((sa / gp).toFixed(2))
 }
 

@@ -1,35 +1,21 @@
-import type { Game, PoikasData, Season } from "../types"
+import type { Game, Player, PlayerStats, PoikasData, Season } from "../types"
 import { routePage } from "../route"
 import { img } from "../image"
+import { renderRosterTable } from "../utils/renderRosterTable"
 
 export function LeaguePage(data: PoikasData, slug: string) {
   const league = data.seasons.find((l) => l.url.endsWith(slug))
-
   if (!league) return new Response(`League not found: ${slug}`, { status: 404 })
 
   const allSeasons = data.leagues[league.leagueName].seasons
-
-  const {
-    url,
-    schedule,
-    year,
-    seasonName,
-    leagueName,
-    description,
-    photos,
-    wins,
-    losses,
-    ties,
-    playoffs,
-    videos,
-    games,
-    players,
-    sidebar,
-  } = league
-
+  const { url, schedule, year, seasonName, leagueName, description, photos, wins, losses, ties, playoffs, videos, games, players, sidebar } = league
   const metaImage = (photos && img(photos[0])) || img("finland-flag-icon.png")
-
   const leagueStandingsHTML = schedule ? `<a href="${schedule}" target="_blank">MVIA</a>` : "-"
+
+  const getValueCustom = (prop: keyof PlayerStats) => (player: Player) => {
+    const seasonStats = player.seasons[leagueName]?.find((s) => s.year === year && s.seasonName === seasonName)?.stats
+    return (seasonStats && seasonStats[prop]) || "-"
+  }
 
   return routePage({
     path: url,
@@ -96,106 +82,48 @@ export function LeaguePage(data: PoikasData, slug: string) {
         </div>
 
         <h2>Roster</h2>
-        <table id="roster" class="roster">
-          <thead>
-            <tr>
-              <th width="50">Photo</th>
-              <th>Name</th>
-              <th width="30">#</th>
-              <th width="30">Pos</th>
-              <th width="30">G</th>
-              <th width="30">A</th>
-              <th width="30">P</th>
-              <th width="30" class="extra">Ht</th>
-              <th width="30" class="extra">Wt</th>
-              <th width="30" class="extra">Sh</th>
-              <th width="30" class="extra">Yrs</th>
-              <th width="30" class="extra">Age</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${
-              players &&
-              players
-                .filter((player) => player.pos !== "G")
-                .map((player) => {
-                  const seasonStats = player.seasons[leagueName]?.find(
-                    (s) => s.year === year && s.seasonName === seasonName
-                  )?.stats
-                  return `
-                    <tr>
-                      <td>${player.imageHTML || "-"}</td>
-                      <td>${player.profileLink || "-"}</td>
-                      <td>${player.number || "-"}</td>
-                      <td>${player.pos || "-"}</td>
-                      <td>${seasonStats?.goals || "-"}</td>
-                      <td>${seasonStats?.assists || "-"}</td>
-                      <td>${(seasonStats?.goals || 0) + (seasonStats?.assists || 0) || "-"}</td>
-                      <td class="extra">${player.ht || "-"}</td>
-                      <td class="extra">${player.wt || "-"}</td>
-                      <td class="extra">${player.shoots || "-"}</td>
-                      <td class="extra">${player.years || "-"}</td>
-                      <td class="extra">${player.age?.() || "-"}</td>
-                    </tr>
-                  `
-                })
-                .join("\n")
-            }
-          </tbody>
-        </table>
+        ${renderRosterTable({
+          id: "roster",
+          className: "roster",
+          columns: [
+            { th: "Photo", val: "imageHTML", width: 50, alt: "Player photo" },
+            { th: "Name", val: "profileLink", alt: "Player name" },
+            { th: "#", val: "number", width: 30, alt: "Jersey number" },
+            { th: "Pos", val: "pos", width: 30, alt: "Position" },
+            { th: "G", getValue: getValueCustom("goals"), width: 30, alt: "Goals" },
+            { th: "A", getValue: getValueCustom("assists"), width: 30, alt: "Assists" },
+            { th: "P", getValue: getValueCustom("points"), width: 30, xtra: true, alt: "Points" },
+            { th: "Ht", val: "ht", width: 30, xtra: true, alt: "Height" },
+            { th: "Wt", val: "wt", width: 30, xtra: true, alt: "Weight" },
+            { th: "Sh", val: "shoots", width: 30, xtra: true, alt: "Shoots left or right" },
+            { th: "Yrs", val: "years", width: 30, xtra: true, alt: "Years with team" },
+            { th: "Age", val: "age", width: 30, xtra: true, alt: "Player age" },
+          ],
+          players: players?.filter((player) => player.pos !== "G") || [],
+        })}
 
         <h3>Goalies</h3>
-        <table id="goalies" class="roster">
-          <thead>
-            <tr>
-              <th width="50">Photo</th>
-              <th>Name</th>
-              <th width="30">#</th>
-              <th width="30">Pos</th>
-              <th width="30">GP</th>
-              <th width="30">GAA</th>
-              <th width="30">SV%</th>
-              <th width="30">SA/G</th>
-              <th width="30">SO</th>
-              <th width="30" class="extra">Ht</th>
-              <th width="30" class="extra">Wt</th>
-              <th width="30" class="extra">Sh</th>
-              <th width="30" class="extra">Yrs</th>
-              <th width="30" class="extra">Age</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${
-              players &&
-              players
-                .filter((player) => player.pos === "G")
-                .map((player) => {
-                  const seasonStats = player.seasons[leagueName]?.find(
-                    (s) => s.year === year && s.seasonName === seasonName
-                  )?.stats
-                  return `
-                    <tr>
-                      <td>${player.imageHTML || "-"}</td>
-                      <td>${player.profileLink || "-"}</td>
-                      <td>${player.number || "-"}</td>
-                      <td>${player.pos || "-"}</td>
-                      <td>${seasonStats?.goalieGamesPlayed || "-"}</td>
-                      <td>${seasonStats?.goalsAgainstAverage || "-"}</td>
-                      <td>${seasonStats?.savePercentage || "-"}</td>
-                      <td>${seasonStats?.averageShotsAgainst || "-"}</td>
-                      <td>${seasonStats?.shutouts || "-"}</td>
-                      <td class="extra">${player.ht || "-"}</td>
-                      <td class="extra">${player.wt || "-"}</td>
-                      <td class="extra">${player.shoots || "-"}</td>
-                      <td class="extra">${player.years || "-"}</td>
-                      <td class="extra">${player.age?.() || "-"}</td>
-                    </tr>
-                  `
-                })
-                .join("\n")
-            }
-          </tbody>
-        </table>
+        ${renderRosterTable({
+          id: "goalies",
+          className: "roster",
+          columns: [
+            { th: "Photo", val: "imageHTML", width: 50, alt: "Player photo" },
+            { th: "Name", val: "profileLink", alt: "Player name" },
+            { th: "#", val: "number", width: 30, alt: "Jersey number" },
+            { th: "Pos", val: "pos", width: 30, alt: "Position" },
+            { th: "GP", width: 30, alt: "Games played", getValue: getValueCustom("goalieGamesPlayed") },
+            { th: "GAA", width: 30, alt: "Goals against average", getValue: getValueCustom("goalsAgainstAverage") },
+            { th: "SV%", width: 30, alt: "Save percentage", getValue: getValueCustom("savePercentage") },
+            { th: "SA/G", width: 30, alt: "Shots against per game", getValue: getValueCustom("averageShotsAgainst") },
+            { th: "SO", width: 30, alt: "Shutouts", getValue: getValueCustom("shutouts") },
+            { th: "Ht", val: "ht", width: 30, xtra: true, alt: "Height" },
+            { th: "Wt", val: "wt", width: 30, xtra: true, alt: "Weight" },
+            { th: "Sh", val: "shoots", width: 30, xtra: true, alt: "Shoots left or right" },
+            { th: "Yrs", val: "years", width: 30, xtra: true, alt: "Years with team" },
+            { th: "Age", val: "age", width: 30, xtra: true, alt: "Player age" },
+          ],
+          players: players?.filter((player) => player.pos === "G") || [],
+        })}
 
         <h2>Games</h2>
 
@@ -257,9 +185,7 @@ export function LeaguePage(data: PoikasData, slug: string) {
               .map(
                 (season) => `
                     <tr>
-                      <td><a href="${season.url}" class="${
-                  season.year === year && season.seasonName === seasonName ? "current" : ""
-                }">${season.year} ${season.seasonName}</a></td>
+                      <td><a href="${season.url}" class="${season.year === year && season.seasonName === seasonName ? "current" : ""}">${season.year} ${season.seasonName}</a></td>
                       <td>${season.wins || 0}-${season.losses || 0}${season.ties ? `-${season.ties}` : ""}</td>
                       <td>${season.playoffs || "-"}</td>
                     </tr>
