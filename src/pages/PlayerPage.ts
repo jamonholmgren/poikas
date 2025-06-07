@@ -78,8 +78,7 @@ export function PlayerPage(data: PoikasData, slug: string) {
       <article>
         <h2 id="playername">${player.name}</h2>
         <p id="bio">${player.bio || ""}</p>
-        <h2>Player Sheet</h2>
-        <table class="statsheet" id="statsheet">
+        <h2>Player Sheet</h2><table class="statsheet" id="statsheet">
           <tr>
             <th>Position</th>
             <td>${player.pos || "-"}</td>
@@ -88,8 +87,8 @@ export function PlayerPage(data: PoikasData, slug: string) {
             <th>Number</th>
             <td>${player.number || "-"}</td>
           </tr>
-          ${rec && activeStats(rec)}
-          ${c && activeStats(c)}
+          ${(rec && activeStats(rec)) || ""}
+          ${(c && activeStats(c)) || ""}
           <tr>
             <th>Career Goals</th>
             <td>${careerGoals || "-"}</td>
