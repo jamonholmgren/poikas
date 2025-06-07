@@ -16,7 +16,7 @@
   "license": "ISC",
   "prettier": {
     "semi": false,
-    "printWidth": 120
+    "printWidth": 180
   },
   "homepage": "https://suomipoikas.com",
   "devDependencies": {
