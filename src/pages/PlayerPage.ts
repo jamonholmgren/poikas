@@ -1,4 +1,4 @@
-import type { PoikasData, PoikasImage, Season } from "../types"
+import type { PoikasData, PoikasImage, Season, PlayerSeason } from "../types"
 import { Champ } from "../components/Champ"
 import { sisuCups } from "../utils/sisuCups"
 import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
@@ -33,14 +33,14 @@ export function PlayerPage(data: PoikasData, slug: string) {
     }))
   const allImages = [...playerImages, ...playerSeasonImages]
 
-  const recGoals = player.activeSeasons?.Rec?.stats?.goals || 0
-  const recAssists = player.activeSeasons?.Rec?.stats?.assists || 0
-  const cGoals = player.activeSeasons?.C?.stats?.goals || 0
-  const cAssists = player.activeSeasons?.C?.stats?.assists || 0
-  const careerRecGoals = player.careerStats?.Rec?.goals || 0
-  const careerRecAssists = player.careerStats?.Rec?.assists || 0
-  const careerCGoals = player.careerStats?.C?.goals || 0
-  const careerCAssists = player.careerStats?.C?.assists || 0
+  const rec = player.activeSeasons?.Rec
+  const c = player.activeSeasons?.C
+  const recGoals = rec?.stats?.goals || 0
+  const recAssists = rec?.stats?.assists || 0
+  const cGoals = c?.stats?.goals || 0
+  const cAssists = c?.stats?.assists || 0
+  const careerGoals = player.careerStats?.goals || 0
+  const careerAssists = player.careerStats?.assists || 0
 
   return routePage({
     path: player.profileURL,
@@ -70,21 +70,15 @@ export function PlayerPage(data: PoikasData, slug: string) {
             <th>Number</th>
             <td>${player.number || "-"}</td>
           </tr>
-          <tr>
-            <th>Current Season Goals</th>
-            <td>${ga(recGoals, cGoals, "G")}</td>
-          </tr>
-          <tr>
-            <th>Current Season Assists</th>
-            <td>${ga(recAssists, cAssists, "A")}</td>
-          </tr>
+          ${rec && activeStats(rec)}
+          ${c && activeStats(c)}
           <tr>
             <th>Career Goals</th>
-            <td>${ga(careerRecGoals, careerCGoals, "G")}</td>
+            <td>${careerGoals || "-"}</td>
           </tr>
           <tr>
             <th>Career Assists</th>
-            <td>${ga(careerRecAssists, careerCAssists, "A")}</td>
+            <td>${careerAssists || "-"}</td>
           </tr>
           <tr>
             <th>Age</th>
@@ -231,9 +225,15 @@ export function PlayerPage(data: PoikasData, slug: string) {
   })
 }
 
-function ga(recGoals: number, cGoals: number, type: "G" | "A") {
-  return [recGoals, cGoals]
-    .filter(Boolean)
-    .map((g) => `${g} ${type}`)
-    .join(" | ")
+function activeStats(season: PlayerSeason) {
+  return `
+    <tr>
+      <th>Current ${season.leagueName} Goals</th>
+      <td>${season.stats?.goals || "-"}</td>
+    </tr>
+    <tr>
+      <th>Current ${season.leagueName} Assists</th>
+      <td>${season.stats?.assists || "-"}</td>
+    </tr>
+  `
 }

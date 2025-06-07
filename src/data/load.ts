@@ -1,12 +1,28 @@
-import type { Game, Player, PoikasData, PoikasDataRaw, PlayerSeason } from "../types"
+import type {
+  Game,
+  Player,
+  PoikasData,
+  PoikasDataRaw,
+  PlayerSeason,
+  ArenaSeasonStats,
+  SeasonName,
+  LeagueName,
+  Season,
+  PlayerStats,
+  GameStats,
+  PlayerGameStats,
+} from "../types"
 import { poikasData } from "./poikas"
 import { img } from "../image"
+
+const seasonsOrder: SeasonName[] = ["Spring", "Summer", "Fall"]
+const levelsOrder: LeagueName[] = ["Rec", "C"]
 
 // Import historical data, parsed from MVIA website
 import historicalRecStats from "./historical/hockey_stats_rec.json"
 import historicalCStats from "./historical/hockey_stats_c.json"
 
-const historicalSeasons = Object.values(historicalRecStats).concat(Object.values(historicalCStats))
+const historicalSeasons: ArenaSeasonStats[] = Object.values(historicalRecStats).concat(Object.values(historicalCStats))
 
 let _data: PoikasData
 export function getData(): PoikasData {
@@ -16,176 +32,230 @@ export function getData(): PoikasData {
 
 function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
   const data: PoikasData = dataRaw as PoikasData
+  populateLeagueData(data)
+  data.players.sort(sortPlayers)
+  data.seasons.sort(sortSeasons)
+  data.seasons.forEach((season) => populateSeasonData(season, data.players))
+  data.players.forEach((player) => populatePlayerData(player, data))
+  return data
+}
 
+function populateLeagueData(data: PoikasData) {
+  const recSeasons: Season[] = data.seasons.filter((s) => s.leagueName === "Rec")
+  const cSeasons: Season[] = data.seasons.filter((s) => s.leagueName === "C")
   data.leagues = {
     Rec: {
       name: "Rec",
-      seasons: data.seasons.filter((s) => s.leagueName === "Rec"),
-      current: data.seasons.find((s) => s.leagueName === "Rec" && s.current)!,
+      seasons: recSeasons,
+      current: recSeasons.find((s) => s.current)!,
     },
     C: {
       name: "C",
-      seasons: data.seasons.filter((s) => s.leagueName === "C"),
-      current: data.seasons.find((s) => s.leagueName === "C" && s.current)!,
+      seasons: cSeasons,
+      current: cSeasons.find((s) => s.current)!,
     },
   }
+}
 
-  // Sort players by name
-  data.players.sort((a, b) => (a.name < b.name ? -1 : 1))
+// Sort players by name
+function sortPlayers(a: Player, b: Player): number {
+  return a.name < b.name ? -1 : 1
+}
 
-  // Sort leagues by year, season, and level
-  const seasonsOrder = ["Spring", "Summer", "Fall"]
-  const levelsOrder = ["Rec", "C"]
-  data.seasons.sort((a, b) => {
-    if (a.year !== b.year) return a.year - b.year
-    if (a.seasonName !== b.seasonName) return seasonsOrder.indexOf(a.seasonName) - seasonsOrder.indexOf(b.seasonName)
-    return seasonsOrder.indexOf(a.leagueName) - levelsOrder.indexOf(b.leagueName)
+// Sort leagues by year, season, and level
+function sortSeasons(a: Season, b: Season): number {
+  if (a.year !== b.year) return a.year - b.year
+  if (a.seasonName !== b.seasonName) return seasonsOrder.indexOf(a.seasonName) - seasonsOrder.indexOf(b.seasonName)
+  return seasonsOrder.indexOf(a.seasonName) - levelsOrder.indexOf(b.leagueName)
+}
+
+function populateSeasonData(season: Season, players: Player[]) {
+  // the "pending" playoffs status mean it's a current season
+  season.current = season.playoffs === "pending"
+
+  // url for the league page
+  season.url = `/seasons/${season.year}/${season.seasonName.toLowerCase()}/${season.leagueName.toLowerCase()}`
+  season.link = `<a href="${season.url}">${season.leagueName}</a>`
+
+  // Add historical data to the league
+  season.arenaReportedStats = historicalSeasons.find(
+    (h) => h.year === season.year && h.season === season.seasonName && h.league === season.leagueName
+  )
+
+  // Add all roster players
+  if (!season.players) season.players = []
+  season.roster.forEach((playerName: string) => {
+    const player: Player | undefined = players.find((p) => p.name === playerName)
+    if (!player) return
+    season.players!.push(player)
   })
+
+  // for leagues with games listed, calculate w/l/t
+  if (season.games) {
+    season.wins = season.games.filter((g) => g.result === "won").length
+    season.losses = season.games.filter((g) => g.result === "lost").length
+    season.ties = season.games.filter((g) => g.result === "tied" || g.result === "lost-ot").length
+
+    // populate game data for this season
+    season.games.forEach((game) => populateGameData(game, season))
+  }
+}
+
+// Attach all the data for a particular game
+function populateGameData(game: Game, season: Season) {
+  if (!season.players) throw new Error("Season requires players to be populated before games")
+
+  // attach the current season to each game in that season
+  game.season = season
+  // attach the sisu player, if found
+  game.sisuPlayer = season.players.find((p) => p.name === game.sisu)
+  // attach the goalie player, if found
+  game.goaliePlayer = season.players.find((p) => p.name === game.goalie)
+  // link to opponent page
+  game.vsURL = `/vs/${slugify(game.vs)}`
+  game.vsLink = `<a href="${game.vsURL}">${game.vs}</a>`
+}
+
+// Add all the data for a particular player
+function populatePlayerData(player: Player, data: PoikasData) {
+  // attach seasons to each player for convenience
+  player.seasons = { Rec: [], C: [] }
+  player.activeSeasons = {}
+  player.championships = 0
+
+  if (!player.careerStats) player.careerStats = defaultStats()
+  const cs: PlayerStats = player.careerStats
 
   data.seasons.forEach((season) => {
-    // the "pending" playoffs status mean it's a current season
-    season.current = season.playoffs === "pending"
+    // if the player is not on the roster that season, skip
+    if (!season.roster.includes(player.name)) return
 
-    // url for the league page
-    season.url = `/seasons/${season.year}/${season.seasonName.toLowerCase()}/${season.leagueName.toLowerCase()}`
-    season.link = `<a href="${season.url}">${season.leagueName}</a>`
-
-    // Add historical data to the league
-    season.arenaReportedStats = historicalSeasons.find(
-      (h) => h.year === season.year && h.season === season.seasonName && h.league === season.leagueName
-    )
-
-    // for leagues with games listed, calculate w/l/t
-    if (season.games) {
-      season.wins = season.games.filter((g) => g.result === "won").length
-      season.losses = season.games.filter((g) => g.result === "lost").length
-      season.ties = season.games.filter((g) => g.result === "tied" || g.result === "lost-ot").length
-
-      season.games.forEach((game) => {
-        // attach the league to each game
-        game.season = season
-        // attach the sisu player, if found
-        game.sisuPlayer = data.players.find((p) => p.name === game.sisu)
-        // link to opponent page
-        game.vsURL = `/vs/${slugify(game.vs)}`
-        game.vsLink = `<a href="${game.vsURL}">${game.vs}</a>`
-      })
+    // create a player season object for this player and season
+    const playerSeason: PlayerSeason = {
+      year: season.year,
+      seasonName: season.seasonName,
+      leagueName: season.leagueName,
+      season: season,
+      stats: defaultStats(),
     }
-  })
 
-  data.players.forEach((player) => {
-    // attach seasons to each player for convenience
-    player.seasons = { Rec: [], C: [] }
-    player.activeSeasons = {}
-    player.championships = 0
+    // Shortcut for season stats
+    const ss: PlayerStats = playerSeason.stats
 
-    data.seasons.forEach((season) => {
-      // if the player is not on the roster that season, skip
-      if (!season.roster.includes(player.name)) return
+    // add the player season to the player's seasons
+    player.seasons[season.leagueName].push(playerSeason)
 
-      // create a player season object for this player and season
-      const playerSeason: PlayerSeason = {
-        year: season.year,
-        seasonName: season.seasonName,
-        leagueName: season.leagueName,
-        season: season,
-        stats: { goals: 0, assists: 0 }, // will fill out later
+    // if this is a current season, mark the player as active and add to active seasons
+    if (season.current) {
+      player.active = true
+      player.activeSeasons[season.leagueName] = playerSeason
+    }
+
+    // and the reverse too -- add players to each season
+    season.players ||= []
+    season.players.push(player)
+
+    // did we win a championship this season?
+    if (season.playoffs === "champions") player.championships += 1
+
+    // calculate the player's stats for this season
+    let seasonGoals: number = 0
+    let seasonAssists: number = 0
+    let seasonPenalties: number = 0
+
+    season.games?.forEach((game) => {
+      if (!game.stats) return
+      if (!game.result || game.result === "pending" || game.result === "cancelled") return
+
+      // get the player's stats for this game
+      const pgs: PlayerGameStats = game.stats[player.name]
+
+      // add to the season totals
+      seasonGoals += pgs?.goals || 0
+      seasonAssists += pgs?.assists || 0
+      seasonPenalties += pgs?.penalties || 0
+
+      // did the player play goalie in this game?
+      if (game.goalie === player.name) {
+        ss.goalieGamesPlayed += 1
+        ss.shotsFor += game.shotsUs || 0
+        ss.shotsAgainst += game.shotsThem || 0
+        ss.goalsAgainst += game.them || 0
+        if ((game.them || 0) === 0) ss.shutouts += 1
       }
-
-      // add the player season to the player's seasons
-      player.seasons[season.leagueName].push(playerSeason)
-
-      // if this is a current season, mark the player as active and add to active seasons
-      if (season.current) {
-        player.active = true
-        player.activeSeasons[season.leagueName] = playerSeason
-      }
-
-      // and the reverse too -- add players to each season
-      season.players ||= []
-      season.players.push(player)
-
-      // did we win a championship this season?
-      if (season.playoffs === "champions") player.championships += 1
-
-      // calculate the player's stats for this season
-      let seasonGoals = 0
-      let seasonAssists = 0
-
-      // Calculate goalie stats if player was a goalie in any games
-      if (season.games) {
-        const goalieGames = season.games.filter((game) => game.goalie === player.name)
-        if (goalieGames.length > 0) {
-          const totalShotsAgainst = goalieGames.reduce((sum, game) => sum + (game.shotsThem || 0), 0)
-          const totalGoalsAgainst = goalieGames.reduce((sum, game) => sum + (game.them || 0), 0)
-          const totalShotsFor = goalieGames.reduce((sum, game) => sum + (game.shotsUs || 0), 0)
-          const gamesPlayed = goalieGames.length
-          const shutouts = goalieGames.filter((game) => game.them === 0).length
-
-          const savePercentage =
-            totalShotsAgainst > 0 ? ((totalShotsAgainst - totalGoalsAgainst) / totalShotsAgainst) * 100 : 0
-          const goalsAgainstAverage = totalGoalsAgainst / gamesPlayed
-          const averageShotsAgainst = totalShotsAgainst / gamesPlayed
-
-          playerSeason.stats.gamesPlayed = gamesPlayed
-          playerSeason.stats.shotsFor = totalShotsFor
-          playerSeason.stats.shotsAgainst = totalShotsAgainst
-          playerSeason.stats.goalsAgainst = totalGoalsAgainst
-          playerSeason.stats.savePercentage = parseFloat(savePercentage.toFixed(1))
-          playerSeason.stats.goalsAgainstAverage = parseFloat(goalsAgainstAverage.toFixed(2))
-          playerSeason.stats.averageShotsAgainst = parseFloat(averageShotsAgainst.toFixed(1))
-          playerSeason.stats.shutouts = shutouts
-        }
-      }
-
-      season.games?.forEach((game) => {
-        if (!game.stats) return
-
-        // get the player's stats for this game
-        const playerStats = game.stats[player.name]
-
-        // add to the season totals
-        seasonGoals += playerStats?.goals || 0
-        seasonAssists += playerStats?.assists || 0
-      })
-
-      // Find the historical data for this season
-      const arenaStats = season.arenaReportedStats?.players.find((h) => h.name === player.name)
-      playerSeason.arenaPlayerSeasonStats = arenaStats
-
-      // resolve the stats for this season -- use greater of tracked or historical
-      seasonGoals = Math.max(seasonGoals, arenaStats?.goals || 0)
-      seasonAssists = Math.max(seasonAssists, arenaStats?.assists || 0)
-
-      // Now these are the resolved stats, added to this player season
-      playerSeason.stats.goals += seasonGoals
-      playerSeason.stats.assists += seasonAssists
     })
 
-    // how many active calendar years has this player played?
-    const activeYears = [...new Set(Object.values(player.seasons).flatMap((seasons) => seasons.map((s) => s.year)))]
+    // add all totals to career stats
+    cs.goals += ss.goals
+    cs.assists += ss.assists
+    cs.points += ss.goals + ss.assists
+    cs.penalties += ss.penalties
+    cs.pim += ss.penalties * 3
 
-    player.years = activeYears.length
-    player.startYear = activeYears[0]
-    player.endYear = activeYears[activeYears.length - 1]
+    // Find the historical data for this season
+    const arenaStats = season.arenaReportedStats?.players.find((h) => h.name === player.name)
+    playerSeason.arenaPlayerSeasonStats = arenaStats
 
-    player.age = ageFunction
+    // resolve the stats for this season -- use greater of tracked or historical
+    seasonGoals = Math.max(seasonGoals, arenaStats?.goals || 0)
+    seasonAssists = Math.max(seasonAssists, arenaStats?.assists || 0)
+    seasonPenalties = Math.max(seasonPenalties, 0) // No arena penalties
 
-    // player slug (for URLs)
-    player.slug = slugify(player.name)
+    // Now these are the resolved stats, set for this player season
+    ss.goals = seasonGoals
+    ss.assists = seasonAssists
+    ss.points = seasonGoals + seasonAssists
+    ss.penalties = seasonPenalties
+    ss.pim = seasonPenalties * 3
 
-    // player image URL and HTML
-    player.imageURL = img(`players/${player.slug}.jpg`)
-    player.imageHTML = `<img src="${player.imageURL}" alt="${player.name}" onerror="this.onerror=null;this.src='${img(
-      "000-placeholder.jpg"
-    )}';">`
+    populateGoalieStatsAggregates(ss)
 
-    // player profile URL
-    player.profileURL = `/players/${player.slug}`
-    player.profileLink = `<a href="${player.profileURL}">${player.name}</a>`
+    // Add totals for player's career
+    cs.goals += ss.goals
+    cs.assists += ss.assists
+    cs.points += ss.points
+    cs.penalties += ss.penalties
+    cs.pim += ss.pim
+    cs.goalieGamesPlayed += ss.goalieGamesPlayed
+    cs.shotsFor += ss.shotsFor
+    cs.shotsAgainst += ss.shotsAgainst
+    cs.goalsAgainst += ss.goalsAgainst
+    cs.shutouts += ss.shutouts
   })
 
-  return data
+  populateGoalieStatsAggregates(cs)
+
+  // how many active calendar years has this player played?
+  const activeYears = [...new Set(Object.values(player.seasons).flatMap((seasons) => seasons.map((s) => s.year)))]
+
+  player.years = activeYears.length
+  player.startYear = activeYears[0]
+  player.endYear = activeYears[activeYears.length - 1]
+
+  player.age = ageFunction
+
+  // player slug (for URLs)
+  player.slug = slugify(player.name)
+
+  // player image URL and HTML
+  player.imageURL = img(`players/${player.slug}.jpg`)
+  player.imageHTML = `<img src="${player.imageURL}" alt="${player.name}" onerror="this.onerror=null;this.src='${img(
+    "000-placeholder.jpg"
+  )}';">`
+
+  // player profile URL
+  player.profileURL = `/players/${player.slug}`
+  player.profileLink = `<a href="${player.profileURL}">${player.name}</a>`
+}
+
+// Goalie stats aggregates based on totals
+function populateGoalieStatsAggregates(stats: PlayerStats) {
+  const gp: number = stats.goalieGamesPlayed
+  const sa: number = stats.shotsAgainst
+  const ga: number = stats.goalsAgainst
+  stats.savePercentage = parseFloat((sa > 0 ? ((sa - ga) / sa) * 100 : 0).toFixed(1))
+  stats.goalsAgainstAverage = parseFloat((sa / gp).toFixed(2))
+  stats.averageShotsAgainst = parseFloat((sa / gp).toFixed(2))
 }
 
 export function gamesAgainstOpponent(data: PoikasData, slug: string) {
@@ -217,4 +287,22 @@ export function slugify(text: string) {
 
 function ageFunction(this: Player) {
   return this.born ? new Date().getFullYear() - this.born - 1 : undefined
+}
+
+function defaultStats(): PlayerStats {
+  return {
+    goals: 0,
+    assists: 0,
+    points: 0,
+    penalties: 0,
+    pim: 0,
+    goalieGamesPlayed: 0,
+    shotsFor: 0,
+    shotsAgainst: 0,
+    goalsAgainst: 0,
+    savePercentage: 0,
+    goalsAgainstAverage: 0,
+    averageShotsAgainst: 0,
+    shutouts: 0,
+  }
 }

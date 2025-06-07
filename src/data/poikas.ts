@@ -375,7 +375,6 @@ export const poikasData: PoikasDataRaw = {
         "Evan Tapio",
         "Jared Matson",
         "Jared Paben",
-        "Joel Mattila",
         "Kevin Sarkela",
         "Konrad Stenersen",
         "Matt Bromley",

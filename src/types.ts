@@ -51,7 +51,7 @@ export interface Game {
   notable?: string
   date?: Date
   goalie?: string
-  stats?: Stats
+  stats?: GameStats
 
   // convenience references we add later
   goaliePlayer?: Player
@@ -93,9 +93,7 @@ export type Player = PlayerRaw & {
   imageHTML: string
   profileURL: string
   profileLink: string
-  careerStats: {
-    [K in LeagueName]: PlayerStats
-  }
+  careerStats: PlayerStats
   arenaPlayerSeasonStats: ArenaPlayerSeasonStats[]
   arenaGoalieSeasonStats: ArenaGoalieSeasonStats[]
 }
@@ -110,18 +108,21 @@ export type PlayerSeason = {
 }
 
 // Can be for a game, season, or career
-type PlayerStats = {
+export type PlayerStats = {
   goals: number
   assists: number
+  points: number // goals + assists
+  penalties: number
+  pim: number // penalty minutes (penalties * 3)
   // Goalie stats
-  gamesPlayed?: number
-  shotsFor?: number
-  shotsAgainst?: number
-  goalsAgainst?: number
-  savePercentage?: number
-  goalsAgainstAverage?: number
-  averageShotsAgainst?: number
-  shutouts?: number
+  goalieGamesPlayed: number
+  shotsFor: number
+  shotsAgainst: number
+  goalsAgainst: number
+  savePercentage: number
+  goalsAgainstAverage: number
+  averageShotsAgainst: number
+  shutouts: number
 }
 
 export interface LoadDisplaySeasonsOptions {
@@ -148,12 +149,14 @@ export type SeasonMap = {
   }
 }
 
-export type Stats = {
-  [playerName: string]: {
-    goals?: number
-    assists?: number
-    penalties?: number
-  }
+export type PlayerGameStats = {
+  goals?: number
+  assists?: number
+  penalties?: number
+}
+
+export type GameStats = {
+  [playerName: string]: PlayerGameStats
 }
 
 // Historical data from MVIA (src/data/historical/*.json)
@@ -196,6 +199,9 @@ export interface ArenaGoalieSeasonStats {
 }
 
 export interface ArenaSeasonStats {
+  year: number
+  season: string
+  league: string
   standings: ArenaTeamStanding[]
   players: ArenaPlayerSeasonStats[]
   goalies: ArenaGoalieSeasonStats[]

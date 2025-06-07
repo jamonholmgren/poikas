@@ -20,15 +20,19 @@ export function AllPlayersPage(data: PoikasData) {
         <table id="players" class="roster">
           <thead>
             <tr>
-              <th width="50">Img</th>
-              <th>Player</th>
-              <th>Pos</th>
-              <th>Num</th>
-              <th class="extra">Ht</th>
-              <th class="extra">Wt</th>
-              <th class="extra">Age</th>
-              <th class="extra">Rec</th>
-              <th class="extra">C/CC</th>
+              <th width="50" title="Player image">Img</th>
+              <th title="Player name">Player</th>
+              <th title="Player position">Pos</th>
+              <th title="Player jersey number">Num</th>
+              <th class="extra" title="Height">Ht</th>
+              <th class="extra" title="Weight">Wt</th>
+              <th class="extra" title="Age (approximately)">Age</th>
+              <th class="extra" title="Career goals">G</th>
+              <th class="extra" title="Career assists">A</th>
+              <th class="extra" title="Career points (goals + assists)">P</th>
+              <th class="extra" title="Career penalties\n(since we started\ncounting in 2024)">PNL</th>
+              <th class="extra" title="Total rec seasons played">Rec</th>
+              <th class="extra" title="Total C/CC seasons played">C/CC</th>
             </tr>
           </thead>
           <tbody>
@@ -43,8 +47,12 @@ export function AllPlayersPage(data: PoikasData) {
                 <td class="extra">${p.ht || "-"}</td>
                 <td class="extra">${p.wt || "-"}</td>
                 <td class="extra">${p.age() || "-"}</td>
-                <td class="extra">${p.recLink || "-"}</td>
-                <td class="extra">${p.cLink || "-"}</td>
+                <td class="extra">${p.careerStats.goals || "-"}</td>
+                <td class="extra">${p.careerStats.assists || "-"}</td>
+                <td class="extra">${p.careerStats.points || "-"}</td>
+                <td class="extra">${p.careerStats.penalties || "-"}</td>
+                <td class="extra">${p.seasons.Rec.length || "-"}</td>
+                <td class="extra">${p.seasons.C.length || "-"}</td>
               </tr>
             `
               )
