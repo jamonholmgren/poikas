@@ -62,7 +62,7 @@ function populateSeasonData(season: Season, players: Player[]) {
 
   // url for the league page
   season.url = `/seasons/${season.year}/${season.seasonName.toLowerCase()}/${season.leagueName.toLowerCase()}`
-  season.link = `<a href="${season.url}">${season.leagueName}</a>`
+  season.link = `<a href="${season.url}">${season.leagueName} ${season.year} ${season.seasonName}</a>`
 
   // Add historical data to the league
   season.arenaReportedStats = historicalSeasons.find((h) => h.year === season.year && h.season === season.seasonName && h.league === season.leagueName)
@@ -163,6 +163,9 @@ function populatePlayerData(player: Player, data: PoikasData) {
         ss.shotsAgainst += game.shotsThem || 0
         ss.goalsAgainst += game.them || 0
         if ((game.them || 0) === 0) ss.shutouts += 1
+        if (game.result === "won") ss.goalieWins += 1
+        if (game.result === "lost") ss.goalieLosses += 1
+        if (game.result === "lost-ot" || game.result === "tied") ss.goalieTies += 1
       }
     })
 
@@ -232,9 +235,13 @@ function populateGoalieStatsAggregates(stats: PlayerStats) {
   const gp: number = stats.goalieGamesPlayed
   const sa: number = stats.shotsAgainst
   const ga: number = stats.goalsAgainst
+  const gw: number = stats.goalieWins
+  const gl: number = stats.goalieLosses
+  const gt: number = stats.goalieTies
   stats.savePercentage = parseFloat((sa > 0 ? ((sa - ga) / sa) * 100 : 0).toFixed(1))
   stats.goalsAgainstAverage = parseFloat((ga / gp).toFixed(2))
   stats.averageShotsAgainst = parseFloat((sa / gp).toFixed(2))
+  stats.goalieRecord = `${gw}-${gl}-${gt}`
 }
 
 export function gamesAgainstOpponent(data: PoikasData, slug: string) {
@@ -265,7 +272,7 @@ export function slugify(text: string) {
 }
 
 function ageFunction(this: Player) {
-  return this.born ? new Date().getFullYear() - this.born - 1 : undefined
+  return this.born ? new Date().getFullYear() - this.born : undefined
 }
 
 function defaultStats(): PlayerStats {
@@ -276,6 +283,10 @@ function defaultStats(): PlayerStats {
     penalties: 0,
     pim: 0,
     goalieGamesPlayed: 0,
+    goalieWins: 0,
+    goalieLosses: 0,
+    goalieTies: 0,
+    goalieRecord: "",
     shotsFor: 0,
     shotsAgainst: 0,
     goalsAgainst: 0,

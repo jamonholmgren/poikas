@@ -41,7 +41,7 @@ function getColumnValue<T>(item: T, column: Column<T>, season?: Season): string 
 
   if (column.val) {
     const value = getValueByPath(item, column.val)
-    if (value === undefined) return column.fb || "-"
+    if (value === undefined || Number.isNaN(value)) return column.fb || "-"
     return value
   }
 

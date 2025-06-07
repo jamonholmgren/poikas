@@ -7,9 +7,6 @@ export const poikasPrevious: SeasonRaw[] = [
     year: 2019,
     seasonName: "Fall",
     leagueName: "Rec",
-    wins: 0,
-    losses: 0,
-    ties: 0,
     playoffs: "lost",
     roster: [
       "Joel Mattila",
@@ -33,9 +30,6 @@ export const poikasPrevious: SeasonRaw[] = [
     leagueName: "Rec",
     description: "COVID hit during this season, so it was canceled entirely after a few games.",
     aside: "covid shortened",
-    wins: 0,
-    losses: 0,
-    ties: 0,
     playoffs: "canceled",
     roster: [
       "Asa Storm",
@@ -61,11 +55,7 @@ export const poikasPrevious: SeasonRaw[] = [
     year: 2021,
     seasonName: "Spring",
     leagueName: "Rec",
-    description:
-      "We had a very solid regular season but fell short in the playoffs vs Liquid Gold. We outshot them by something like 68-6 but they won 1-0 on a breakaway.",
-    wins: 8,
-    losses: 1,
-    ties: 1,
+    description: "We had a very solid regular season but fell short in the playoffs vs Liquid Gold. We outshot them by something like 68-6 but they won 1-0 on a breakaway.",
     playoffs: "lost",
     roster: [
       "Asa Storm",
@@ -173,9 +163,6 @@ export const poikasPrevious: SeasonRaw[] = [
     leagueName: "Rec",
     description: "Our first championship! We went undefeated in the regular season and playoffs.",
     photos: ["poikas-rec-2021-summer-champions.jpg"],
-    wins: 10,
-    losses: 0,
-    ties: 0,
     playoffs: "champions",
     roster: [
       "Asa Storm",
@@ -294,9 +281,6 @@ export const poikasPrevious: SeasonRaw[] = [
     leagueName: "Rec",
     description: "We won back-to-back championships!",
     photos: ["poikas-rec-2021-fall-champions.jpg"],
-    wins: 11,
-    losses: 4,
-    ties: 0,
     playoffs: "champions",
     roster: [
       "Asa Storm",
@@ -468,9 +452,6 @@ export const poikasPrevious: SeasonRaw[] = [
     leagueName: "C",
     description:
       "For Fall 2021, Joel Mattila put together a C/CC level team to accommodate the players who were advancing beyond Rec League level. This was the first time for most of the Poikas playing at the next level.",
-    wins: 3,
-    losses: 8,
-    ties: 4,
     playoffs: "lost",
     roster: [
       "Asa Storm",
@@ -493,9 +474,6 @@ export const poikasPrevious: SeasonRaw[] = [
     seasonName: "Spring",
     leagueName: "C",
     description: "We had a solid second season at the C level, coming in just under .500.",
-    wins: 7,
-    losses: 8,
-    ties: 0,
     playoffs: "lost",
     roster: [
       "Asa Storm",
@@ -522,9 +500,6 @@ export const poikasPrevious: SeasonRaw[] = [
     description:
       "We won our third championship in a row! Our team was dominating Rec League, and this was the last season we would keep Asa Storm and some of our other top scorers.",
     photos: ["poikas-rec-2022-spring-champions.jpg"],
-    wins: 13,
-    losses: 2,
-    ties: 0,
     playoffs: "champions",
     roster: [
       "Asa Storm",
@@ -688,9 +663,6 @@ export const poikasPrevious: SeasonRaw[] = [
     description:
       "During summer 2022, we didn't have enough players for a full team, so we joined forces with the Russian team. This team won the championship, but we don't count it as a full Suomi Poikas championship. We do count it as individual championships for those who played.",
     aside: "with Russia",
-    wins: 9,
-    losses: 1,
-    ties: 0,
     playoffs: "champions",
     roster: [
       "Ben Mikhalets",
@@ -796,12 +768,8 @@ export const poikasPrevious: SeasonRaw[] = [
     year: 2022,
     seasonName: "Fall",
     leagueName: "Rec",
-    description:
-      "During fall 2022, we didn't have enough players for a full team, so we joined forces with the Ukrainian team.",
+    description: "During fall 2022, we didn't have enough players for a full team, so we joined forces with the Ukrainian team.",
     aside: "with Ukraine",
-    wins: 0,
-    losses: 0,
-    ties: 0,
     playoffs: "lost",
     roster: [
       "Asher (Dimitriy) Piskorskiy",
@@ -826,9 +794,6 @@ export const poikasPrevious: SeasonRaw[] = [
     year: 2022,
     seasonName: "Fall",
     leagueName: "C",
-    wins: 3,
-    losses: 10,
-    ties: 2,
     playoffs: "lost",
     roster: [
       "Andrew Nichol",
@@ -980,9 +945,6 @@ export const poikasPrevious: SeasonRaw[] = [
     year: 2023,
     seasonName: "Spring",
     leagueName: "Rec",
-    wins: 8,
-    losses: 7,
-    ties: 0,
     playoffs: "lost",
     roster: [
       "Brenden Mattila",
@@ -1134,9 +1096,6 @@ export const poikasPrevious: SeasonRaw[] = [
     year: 2023,
     seasonName: "Spring",
     leagueName: "C",
-    wins: 5,
-    losses: 10,
-    ties: 0,
     playoffs: "lost",
     roster: [
       "Asa Storm",
@@ -1294,9 +1253,6 @@ export const poikasPrevious: SeasonRaw[] = [
       "This was one of our most fulfilling seasons! We battled hard and ended up #2 in the league after the regular season. In the playoffs, we played against the #3 Thundersticks, which we had been 0-3 against in the regular season, and the #1 Slavic Peeps (Russians), which we went 1-2 against. We squeaked out a narrow 3-1 win against the Thundersticks and moved on to the Slavic Peeps for the Championship. We went down 0-2 early but battled back in front of a packed house to win it 5-3 for our fourth championship!",
     photos: ["poikas-rec-2023-fall-champions.jpg"],
     videos: ["https://www.youtube.com/embed/y-PfIM5V3_Q?si=qlmu66nOdwSq4g0x"],
-    wins: 10,
-    losses: 5,
-    ties: 0,
     playoffs: "champions",
     roster: [
       "Brad Wuori",
@@ -1833,8 +1789,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "won",
         sisu: "Logan Matson",
         date: new Date("2024-04-27"),
-        notable:
-          "Shots 47-13. Goals: Dan, Orrin 2, Evan, Logan, Konrad, Shane. Assists: Jamon, Joel, Konrad, Shane, Jay.",
+        notable: "Shots 47-13. Goals: Dan, Orrin 2, Evan, Logan, Konrad, Shane. Assists: Jamon, Joel, Konrad, Shane, Jay.",
         goalie: "Jamon Holmgren",
         stats: {
           "Dan Warren": { goals: 1 },
@@ -1938,8 +1893,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "won",
         sisu: "Cedric Holmgren",
         date: new Date("2024-06-08"),
-        notable:
-          "CHAMPIONS! 🏆 Shots: 16-30 them. G: Evan 2, Cedric, Joel, Orrin. A: Shane 2, Orrin, Konrad, Myron. Poikas 5th championship!",
+        notable: "CHAMPIONS! 🏆 Shots: 16-30 them. G: Evan 2, Cedric, Joel, Orrin. A: Shane 2, Orrin, Konrad, Myron. Poikas 5th championship!",
         goalie: "Jamon Holmgren",
         stats: {
           "Evan Tapio": { goals: 2 },
@@ -1961,8 +1915,7 @@ export const poikasPrevious: SeasonRaw[] = [
     leagueName: "C",
     schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2950569/Suomi-Poikas-C.aspx?framed=1",
     playoffs: "lost",
-    description:
-      "One of our most competitive C seasons. We had a chance to make it to the C finals but lost in overtime. Great season with a great group of guys!",
+    description: "One of our most competitive C seasons. We had a chance to make it to the C finals but lost in overtime. Great season with a great group of guys!",
     sidebar: `
       <div class="sidebar-section">
         <a href="https://www.dropbox.com/scl/fo/7ovs2p62hffx98nn6jm66/APYZkH7gMJjAoGCKxYY3Cy8?rlkey=mtarvqhsp7dnlb49zwyaheh8p&dl=0" target="_blank">
@@ -2044,8 +1997,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "lost",
         sisu: "Kevin Sarkela",
         date: new Date("2024-03-03"),
-        notable:
-          "Kevin & Andrew goals, Kevin assisted on Andrew's. Shots about 28-29. They scored 4 in the first period.",
+        notable: "Kevin & Andrew goals, Kevin assisted on Andrew's. Shots about 28-29. They scored 4 in the first period.",
         goalie: "Jamon Holmgren",
         stats: {
           "Kevin Sarkela": { goals: 1, assists: 1 },
@@ -2061,8 +2013,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "won",
         sisu: "Jamon Holmgren",
         date: new Date("2024-03-10"),
-        notable:
-          "Goals: Asa, Steve, Oren, Brad, Andrew, and Nolan. Assists: Kevin, Steve, Brad, likely others. Shots: 31-26. Badgers were previously undefeated.",
+        notable: "Goals: Asa, Steve, Oren, Brad, Andrew, and Nolan. Assists: Kevin, Steve, Brad, likely others. Shots: 31-26. Badgers were previously undefeated.",
         goalie: "Jamon Holmgren",
         stats: {
           "Asa Storm": { goals: 1 },
@@ -2311,8 +2262,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "won",
         sisu: "Joel Mattila",
         date: new Date("2024-09-14"),
-        notable:
-          "Orrin E. 2g, Oren M. 2g 1a, Myron 1g 2a, Dan 1g, Joel 1g, Nolan 1g, Shane 1g, Daniel 2a, Avery 1a. Shots were 41-5.",
+        notable: "Orrin E. 2g, Oren M. 2g 1a, Myron 1g 2a, Dan 1g, Joel 1g, Nolan 1g, Shane 1g, Daniel 2a, Avery 1a. Shots were 41-5.",
         goalie: "Jamon Holmgren",
         stats: {
           "Orrin Erickson": { goals: 2 },
@@ -2472,8 +2422,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 2,
         result: "won",
         date: new Date("2024-11-09"),
-        notable:
-          "We came back from a 2 to 0 deficit and won 3 to 2.Brenden 1g, Orrin 1g, Dan 1g. Assists: Orrin, Dan. Jamon out injured.",
+        notable: "We came back from a 2 to 0 deficit and won 3 to 2.Brenden 1g, Orrin 1g, Dan 1g. Assists: Orrin, Dan. Jamon out injured.",
         goalie: "Jamie Dugger",
         stats: {
           "Brenden Mattila": { goals: 1 },
@@ -2512,8 +2461,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "won",
         sisu: "Shane Matson",
         date: new Date("2024-11-23"),
-        notable:
-          "We beat Caps N Taps 2-1. Both goals were shorthanded on the same penalty kill in the third period. Orrin 1g, Shane 1g 1a, Oren 1a. Shots 43-9. Jamon out.",
+        notable: "We beat Caps N Taps 2-1. Both goals were shorthanded on the same penalty kill in the third period. Orrin 1g, Shane 1g 1a, Oren 1a. Shots 43-9. Jamon out.",
         goalie: "Jamie Dugger",
         stats: {
           "Orrin Erickson": { goals: 1 },
@@ -2547,8 +2495,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "won",
         sisu: "Cedric Holmgren",
         date: new Date("2024-12-14"),
-        notable:
-          "Won in shootout. Orrin 1g 1a, Dan 1g, Oren 1g, Myron 1a, Daniel 1a, Nolan 1a. Shane scored the shootout goal. Jamon out.",
+        notable: "Won in shootout. Orrin 1g 1a, Dan 1g, Oren 1g, Myron 1a, Daniel 1a, Nolan 1a. Shane scored the shootout goal. Jamon out.",
         goalie: "",
         stats: {
           "Orrin Erickson": { goals: 1, assists: 1 },
@@ -2617,8 +2564,7 @@ export const poikasPrevious: SeasonRaw[] = [
     leagueName: "C",
     schedule: "https://mountainview.ezleagues.ezfacility.com/teams/3028116/Suomi-Poikas-C.aspx?framed=1",
     playoffs: "lost",
-    description:
-      "The 2024-25 Fall/Winter C Poikas had their best season yet, finishing tied for first with 21 playoff points and making it to the playoffs semifinals.",
+    description: "The 2024-25 Fall/Winter C Poikas had their best season yet, finishing tied for first with 21 playoff points and making it to the playoffs semifinals.",
     photos: [],
     sidebar: "",
     roster: [
@@ -2647,8 +2593,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "won",
         sisu: "Joel Mattila",
         date: new Date("2024-09-08"),
-        notable:
-          "Andrew 2g, Joel 1g 1a, Steve 1g, Kevin 1g, Peter 1g, Matt 1g, Jared 1g. Assists: Kevin, Russ. Shots were not fully recorded. Jamon out.",
+        notable: "Andrew 2g, Joel 1g 1a, Steve 1g, Kevin 1g, Peter 1g, Matt 1g, Jared 1g. Assists: Kevin, Russ. Shots were not fully recorded. Jamon out.",
         goalie: "",
         stats: {
           "Andrew Tunseth": { goals: 2 },

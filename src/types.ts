@@ -116,6 +116,10 @@ export type PlayerStats = {
   pim: number // penalty minutes (penalties * 3)
   // Goalie stats
   goalieGamesPlayed: number
+  goalieWins: number
+  goalieLosses: number
+  goalieTies: number
+  goalieRecord: string
   shotsFor: number
   shotsAgainst: number
   goalsAgainst: number

@@ -821,8 +821,12 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 10,
       name: "Konrad Stenersen",
-      bio: "Konrad pushes the puck especially up the boards and is a relentless scorer from the wing position.",
+      bio: "Konrad pushes the puck and is a relentless scorer from the wing position.",
       pos: "LW",
+      ht: "5-9",
+      wt: 185,
+      shoots: "R",
+      born: 1982,
     },
     {
       number: 14,
@@ -1008,6 +1012,10 @@ export const poikasData: PoikasDataRaw = {
       number: 27,
       name: "Oren Matson",
       pos: "W",
+      ht: "5-9",
+      wt: 145,
+      shoots: "L",
+      born: 1999,
     },
     {
       number: 88,
@@ -1118,6 +1126,10 @@ export const poikasData: PoikasDataRaw = {
       number: 32,
       name: "Russ Tapio",
       pos: "W",
+      ht: "5-9",
+      wt: 180,
+      shoots: "R",
+      born: 1986,
     },
     {
       name: "Treven Erickson",

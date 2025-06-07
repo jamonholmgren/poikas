@@ -12,7 +12,7 @@ export function sisuCups(player: Player) {
     if (!s) throw new Error("No season found!!")
 
     return {
-      season: `<a href="${s.url}">${s.year} ${s.seasonName}</a>`,
+      season: s.link,
       game: g.vsLink,
       date: g.date?.toLocaleDateString() || "-",
       score: `${g.us}-${g.them} (${g.result})`,

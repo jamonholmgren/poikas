@@ -1,4 +1,4 @@
-import type { PoikasData, PoikasImage, Season, PlayerSeason, Player, PlayerStats } from "../types"
+import type { PoikasData, PoikasImage, Season, PlayerSeason, Player, PlayerStats, LeagueName } from "../types"
 import { Champ } from "../components/Champ"
 import { sisuCups } from "../utils/sisuCups"
 import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
@@ -27,7 +27,6 @@ export function PlayerPage(data: PoikasData, slug: string) {
 
   const recSeasons = player.seasons.Rec.length || "—"
   const cSeasons = player.seasons.C.length || "—"
-  const allSeasons: Season[] = player.seasons.Rec.concat(player.seasons.C).map((s) => s.season)
 
   const playerImages = images.filter((img: PoikasImage) => img.players.includes(player.name))
   // Also add images from the player's seasons
@@ -51,7 +50,7 @@ export function PlayerPage(data: PoikasData, slug: string) {
     return player.seasons[leagueName].map((playerSeason: PlayerSeason) => {
       const { season, stats } = playerSeason
       const record = `${season.wins || 0}-${season.losses || 0}${season.ties ? `-${season.ties}` : ""}`
-      const seasonLink = `<a href="${season.url}">${season.leagueName} ${season.seasonName} ${season.year}</a>`
+      const seasonLink = season.link
 
       return {
         seasonLink,
@@ -79,7 +78,6 @@ export function PlayerPage(data: PoikasData, slug: string) {
       <article>
         <h2 id="playername">${player.name}</h2>
         <p id="bio">${player.bio || ""}</p>
-
         <h2>Player Sheet</h2>
         <table class="statsheet" id="statsheet">
           <tr>
@@ -176,63 +174,37 @@ export function PlayerPage(data: PoikasData, slug: string) {
       }
       
       <div class="seasons">
-        <h2>Seasons Played with the Poikas</h2>
-        ${
-          player.seasons.Rec.length > 0
-            ? `
-              <h3>Rec League Seasons</h3>
+        <h2>Stats</h2>
+        ${Object.keys(player.seasons)
+          .map((k: string) =>
+            player.seasons[k as LeagueName].length > 0
+              ? `
+              <h3>${k} League Seasons</h3>
               ${renderRosterTable<SeasonData>({
-                id: "rec-seasons",
+                id: "${k}-seasons",
                 className: "seasons",
                 columns: [
                   { th: "Season", val: "seasonLink", width: 200, alt: "Season name and link" },
-                  { th: "Record", val: "record", width: 100, alt: "Team record" },
+                  { th: "Team Record", val: "record", width: 100, alt: "Team record" },
                   ...(player.pos === "G"
                     ? [
-                        { th: "GP", width: 50, alt: "Games played", getValue: (data: SeasonData) => data.stats?.goalieGamesPlayed || "-" },
-                        { th: "GAA", width: 50, alt: "Goals against average", getValue: (data: SeasonData) => data.stats?.goalsAgainstAverage || "-" },
-                        { th: "SV%", width: 50, alt: "Save percentage", getValue: (data: SeasonData) => data.stats?.savePercentage || "-" },
-                        { th: "SA/G", width: 50, alt: "Shots against per game", getValue: (data: SeasonData) => data.stats?.averageShotsAgainst || "-" },
-                        { th: "SO", width: 50, alt: "Shutouts", getValue: (data: SeasonData) => data.stats?.shutouts || "-" },
+                        { th: "GP", width: 50, alt: "Games played", val: "stats.goalieGamesPlayed" },
+                        { th: "Rec", width: 50, alt: "Record", val: "stats.goalieRecord" },
+                        { th: "GAA", width: 50, alt: "Goals against average", val: "stats.goalsAgainstAverage" },
+                        { th: "SV%", width: 50, alt: "Save percentage", val: "stats.savePercentage" },
+                        { th: "SA/G", width: 50, alt: "Shots against per game", val: "stats.averageShotsAgainst" },
+                        { th: "SO", width: 50, alt: "Shutouts", val: "stats.shutouts" },
                       ]
-                    : [
-                        { th: "G", width: 50, alt: "Goals", getValue: (data: SeasonData) => data.stats?.goals || "-" },
-                        { th: "A", width: 50, alt: "Assists", getValue: (data: SeasonData) => data.stats?.assists || "-" },
-                        { th: "P", width: 50, alt: "Points", getValue: (data: SeasonData) => data.stats?.points || "-" },
-                      ]),
+                    : []),
+                  { th: "G", width: 50, alt: "Goals", val: "stats.goals" },
+                  { th: "A", width: 50, alt: "Assists", val: "stats.assists" },
+                  { th: "P", width: 50, alt: "Points", val: "stats.points" },
                 ],
-                players: buildSeasonData(player, "Rec"),
+                players: buildSeasonData(player, k as LeagueName),
               })}`
-            : ""
-        }
-        ${
-          player.seasons.C.length > 0
-            ? `
-              <h3>C/CC League Seasons</h3>
-              ${renderRosterTable<SeasonData>({
-                id: "c-seasons",
-                className: "seasons",
-                columns: [
-                  { th: "Season", val: "seasonLink", width: 200, alt: "Season name and link" },
-                  { th: "Record", val: "record", width: 100, alt: "Team record" },
-                  ...(player.pos === "G"
-                    ? [
-                        { th: "GP", width: 50, alt: "Games played", getValue: (data: SeasonData) => data.stats?.goalieGamesPlayed || "-" },
-                        { th: "GAA", width: 50, alt: "Goals against average", getValue: (data: SeasonData) => data.stats?.goalsAgainstAverage || "-" },
-                        { th: "SV%", width: 50, alt: "Save percentage", getValue: (data: SeasonData) => data.stats?.savePercentage || "-" },
-                        { th: "SA/G", width: 50, alt: "Shots against per game", getValue: (data: SeasonData) => data.stats?.averageShotsAgainst || "-" },
-                        { th: "SO", width: 50, alt: "Shutouts", getValue: (data: SeasonData) => data.stats?.shutouts || "-" },
-                      ]
-                    : [
-                        { th: "G", width: 50, alt: "Goals", getValue: (data: SeasonData) => data.stats?.goals || "-" },
-                        { th: "A", width: 50, alt: "Assists", getValue: (data: SeasonData) => data.stats?.assists || "-" },
-                        { th: "P", width: 50, alt: "Points", getValue: (data: SeasonData) => data.stats?.points || "-" },
-                      ]),
-                ],
-                players: buildSeasonData(player, "C"),
-              })}`
-            : ""
-        }
+              : ""
+          )
+          .join("\n")}
       </div>
       <div class="sisucup">
         <h2>Sisu Cups Won</h2>
@@ -261,7 +233,7 @@ export function PlayerPage(data: PoikasData, slug: string) {
               <td>${cup.date}</td>
               <td>${cup.game}</td>
               <td>${cup.score}</td>
-              <td class="extra">${notableAbbr(cup.notable, 80)}</td>
+              <td class="extra">${notableAbbr(cup.notable, 50)}</td>
             </tr>
                 `
               )
