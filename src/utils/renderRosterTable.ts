@@ -1,19 +1,19 @@
 import type { Player, Season } from "../types"
 
-type Column = {
+type Column<T = Player> = {
   th: string
   width?: number
   alt?: string
   val?: string
-  getValue?: (player: Player) => string | number
+  getValue?: (item: T) => string | number
   xtra?: boolean
   fb?: string
 }
 
-type RosterTableOptions = {
-  columns: Column[]
-  players: Player[]
-  filter?: (player: Player) => boolean
+type RosterTableOptions<T = Player> = {
+  columns: Column<T>[]
+  players: T[]
+  filter?: (item: T) => boolean
   className?: string
   id?: string
   season?: Season
@@ -36,11 +36,11 @@ function getValueByPath(obj: any, path: string): any {
 }
 
 // Helper function to get a column's value
-function getColumnValue(player: Player, column: Column, season?: Season): string | number {
-  if (column.getValue) return column.getValue(player)
+function getColumnValue<T>(item: T, column: Column<T>, season?: Season): string | number {
+  if (column.getValue) return column.getValue(item)
 
   if (column.val) {
-    const value = getValueByPath(player, column.val)
+    const value = getValueByPath(item, column.val)
     if (value === undefined) return column.fb || "-"
     return value
   }
@@ -48,7 +48,7 @@ function getColumnValue(player: Player, column: Column, season?: Season): string
   return column.fb || "-"
 }
 
-export function renderRosterTable(options: RosterTableOptions): string {
+export function renderRosterTable<T = Player>(options: RosterTableOptions<T>): string {
   const { columns, players, filter, className = "roster", id } = options
 
   const filteredPlayers = filter ? players.filter(filter) : players
@@ -70,12 +70,12 @@ export function renderRosterTable(options: RosterTableOptions): string {
 
   const bodyRows = filteredPlayers
     .map(
-      (player) => `
+      (item) => `
       <tr>
         ${columns
           .map(
             (col) => `
-          <td${col.xtra ? ' class="extra"' : ""}>${getColumnValue(player, col, options.season)}</td>
+          <td${col.xtra ? ' class="extra"' : ""}>${getColumnValue(item, col, options.season)}</td>
         `
           )
           .join("")}

@@ -1,4 +1,4 @@
-import type { PoikasData, PoikasImage, Season, PlayerSeason } from "../types"
+import type { PoikasData, PoikasImage, Season, PlayerSeason, Player, PlayerStats } from "../types"
 import { Champ } from "../components/Champ"
 import { sisuCups } from "../utils/sisuCups"
 import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
@@ -6,6 +6,14 @@ import { notableAbbr } from "../utils/notableAbbr"
 import { images } from "../data/images"
 import { routePage } from "../route"
 import { img } from "../image"
+import { renderRosterTable } from "../utils/renderRosterTable"
+
+type SeasonData = {
+  seasonLink: string
+  record: string
+  stats?: PlayerStats
+  isGoalie: boolean
+}
 
 export function PlayerPage(data: PoikasData, slug: string) {
   const player = data.players.find((p) => p.slug === slug)
@@ -35,12 +43,24 @@ export function PlayerPage(data: PoikasData, slug: string) {
 
   const rec = player.activeSeasons?.Rec
   const c = player.activeSeasons?.C
-  const recGoals = rec?.stats?.goals || 0
-  const recAssists = rec?.stats?.assists || 0
-  const cGoals = c?.stats?.goals || 0
-  const cAssists = c?.stats?.assists || 0
   const careerGoals = player.careerStats?.goals || 0
   const careerAssists = player.careerStats?.assists || 0
+
+  // Helper function to build season data for a specific league
+  function buildSeasonData(player: Player, leagueName: "Rec" | "C"): SeasonData[] {
+    return player.seasons[leagueName].map((playerSeason: PlayerSeason) => {
+      const { season, stats } = playerSeason
+      const record = `${season.wins || 0}-${season.losses || 0}${season.ties ? `-${season.ties}` : ""}`
+      const seasonLink = `<a href="${season.url}">${season.leagueName} ${season.seasonName} ${season.year}</a>`
+
+      return {
+        seasonLink,
+        record,
+        stats,
+        isGoalie: player.pos === "G",
+      }
+    })
+  }
 
   return routePage({
     path: player.profileURL,
@@ -134,9 +154,9 @@ export function PlayerPage(data: PoikasData, slug: string) {
                       rows.push(`
                       <td>
                         <a href="${img(im.path)}" target="_blank">
-                          <img src="${img(im.path)}" alt="${im.caption}" title="${
-                        im.caption
-                      }" width="250px" onerror="this.onerror=null;this.src='${img("000-placeholder.jpg")}';" />
+                          <img src="${img(im.path)}" alt="${im.caption}" title="${im.caption}" width="250px" onerror="this.onerror=null;this.src='${img(
+                        "000-placeholder.jpg"
+                      )}';" />
                           <span class="caption">${im.caption}</span>
                         </a>
                       </td>
@@ -157,34 +177,68 @@ export function PlayerPage(data: PoikasData, slug: string) {
       
       <div class="seasons">
         <h2>Seasons Played with the Poikas</h2>
-        <table id="seasons" class="seasons">
-          <thead>
-            <tr>
-              <th data-field="season">Season</th>
-              <th data-field="rec">Rec League</th>
-              <th data-field="c">C/CC League</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${Object.entries(leagueSeasonsMap(allSeasons))
-              .map(
-                ([seasonName, leagueData]) => `
-            <tr>
-              <td>${seasonName}</td>
-              <td>${leagueData.Rec || "—"}</td>
-              <td>${leagueData.C || "—"}</td>
-            </tr>
-                `
-              )
-              .join("")}
-          </tbody>
-        </table>
+        ${
+          player.seasons.Rec.length > 0
+            ? `
+              <h3>Rec League Seasons</h3>
+              ${renderRosterTable<SeasonData>({
+                id: "rec-seasons",
+                className: "seasons",
+                columns: [
+                  { th: "Season", val: "seasonLink", width: 200, alt: "Season name and link" },
+                  { th: "Record", val: "record", width: 100, alt: "Team record" },
+                  ...(player.pos === "G"
+                    ? [
+                        { th: "GP", width: 50, alt: "Games played", getValue: (data: SeasonData) => data.stats?.goalieGamesPlayed || "-" },
+                        { th: "GAA", width: 50, alt: "Goals against average", getValue: (data: SeasonData) => data.stats?.goalsAgainstAverage || "-" },
+                        { th: "SV%", width: 50, alt: "Save percentage", getValue: (data: SeasonData) => data.stats?.savePercentage || "-" },
+                        { th: "SA/G", width: 50, alt: "Shots against per game", getValue: (data: SeasonData) => data.stats?.averageShotsAgainst || "-" },
+                        { th: "SO", width: 50, alt: "Shutouts", getValue: (data: SeasonData) => data.stats?.shutouts || "-" },
+                      ]
+                    : [
+                        { th: "G", width: 50, alt: "Goals", getValue: (data: SeasonData) => data.stats?.goals || "-" },
+                        { th: "A", width: 50, alt: "Assists", getValue: (data: SeasonData) => data.stats?.assists || "-" },
+                        { th: "P", width: 50, alt: "Points", getValue: (data: SeasonData) => data.stats?.points || "-" },
+                      ]),
+                ],
+                players: buildSeasonData(player, "Rec"),
+              })}`
+            : ""
+        }
+        ${
+          player.seasons.C.length > 0
+            ? `
+              <h3>C/CC League Seasons</h3>
+              ${renderRosterTable<SeasonData>({
+                id: "c-seasons",
+                className: "seasons",
+                columns: [
+                  { th: "Season", val: "seasonLink", width: 200, alt: "Season name and link" },
+                  { th: "Record", val: "record", width: 100, alt: "Team record" },
+                  ...(player.pos === "G"
+                    ? [
+                        { th: "GP", width: 50, alt: "Games played", getValue: (data: SeasonData) => data.stats?.goalieGamesPlayed || "-" },
+                        { th: "GAA", width: 50, alt: "Goals against average", getValue: (data: SeasonData) => data.stats?.goalsAgainstAverage || "-" },
+                        { th: "SV%", width: 50, alt: "Save percentage", getValue: (data: SeasonData) => data.stats?.savePercentage || "-" },
+                        { th: "SA/G", width: 50, alt: "Shots against per game", getValue: (data: SeasonData) => data.stats?.averageShotsAgainst || "-" },
+                        { th: "SO", width: 50, alt: "Shutouts", getValue: (data: SeasonData) => data.stats?.shutouts || "-" },
+                      ]
+                    : [
+                        { th: "G", width: 50, alt: "Goals", getValue: (data: SeasonData) => data.stats?.goals || "-" },
+                        { th: "A", width: 50, alt: "Assists", getValue: (data: SeasonData) => data.stats?.assists || "-" },
+                        { th: "P", width: 50, alt: "Points", getValue: (data: SeasonData) => data.stats?.points || "-" },
+                      ]),
+                ],
+                players: buildSeasonData(player, "C"),
+              })}`
+            : ""
+        }
       </div>
       <div class="sisucup">
         <h2>Sisu Cups Won</h2>
         <p>
           The "Sisu Cup" is awarded to the player who demonstrates the most
-          <strong>sisu</strong> <em>(pronounced – see’-soo)</em> in a game.
+          <strong>sisu</strong> <em>(pronounced – see'soo)</em> in a game.
           Sisu is a Finnish word that doesn't have a precise equivalent in
           English, but is similar to "guts" or "grit" or "perseverance".
         </p>
