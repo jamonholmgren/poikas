@@ -252,8 +252,7 @@ export const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Myron Kinnunen",
           date: new Date("2025-04-26"),
-          notable:
-            "Jamon's 5th shutout of the season, third in a row. Jay had a nice snipe along the ice from the blue line. Missing several players. 10:00pm game.",
+          notable: "Jamon's 5th shutout of the season, third in a row. Jay had a nice snipe along the ice from the blue line. Missing several players. 10:00pm game.",
           goalie: "Jamon Holmgren",
           stats: {
             "Myron Kinnunen": { goals: 1, assists: 1 },
@@ -313,8 +312,7 @@ export const poikasData: PoikasDataRaw = {
           result: "lost",
           sisu: "Shane Matson",
           date: new Date("2025-05-17"),
-          notable:
-            "Shots were 2-15 in the first period with 0-3 score. Last game of the regular season. Slavic Peeps clinch 1st, we get 2nd place.",
+          notable: "Shots were 2-15 in the first period with 0-3 score. Last game of the regular season. Slavic Peeps clinch 1st, we get 2nd place.",
           goalie: "Jamon Holmgren",
           stats: {
             "Daniel Warren": { goals: 1 },
@@ -383,7 +381,7 @@ export const poikasData: PoikasDataRaw = {
         "Russ Tapio",
         "Scott Daniels",
         "Steve Saunders",
-        "Ward Peason",
+        "Ward Pearson",
         "Kyle Malstrom",
       ],
       games: [
@@ -394,8 +392,7 @@ export const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Kyle Malstrom",
           date: new Date("2025-02-09"),
-          notable:
-            "New full-time C-level goalie Kyle Malstrom makes his debut in net for the Poikas with a shutout win, and dished an assist to Nels as well",
+          notable: "New full-time C-level goalie Kyle Malstrom makes his debut in net for the Poikas with a shutout win, and dished an assist to Nels as well",
           goalie: "Kyle Malstrom",
           stats: {
             "Caleb Aring": { goals: 1 },
@@ -403,7 +400,7 @@ export const poikasData: PoikasDataRaw = {
             "Evan Tapio": { goals: 1 },
             "Russ Tapio": { goals: 2, assists: 1 },
             "Kevin Sarkela": { assists: 1 },
-            "Ward Peason": { assists: 2 },
+            "Ward Pearson": { assists: 2 },
             "Kyle Malstrom": { assists: 1 },
           },
           shotsUs: 29,
@@ -414,7 +411,7 @@ export const poikasData: PoikasDataRaw = {
           us: 5,
           them: 0,
           result: "won",
-          sisu: "Ward Peason",
+          sisu: "Ward Pearson",
           date: new Date("2025-02-16"),
           notable: "Defense dominated the game, allowed only 9 shots!",
           goalie: "Kyle Malstrom",
@@ -422,7 +419,7 @@ export const poikasData: PoikasDataRaw = {
             "Nels Tapio": { goals: 1, assists: 1 },
             "Evan Tapio": { goals: 1 },
             "Treven Erickson": { goals: 1 },
-            "Ward Peason": { goals: 1 },
+            "Ward Pearson": { goals: 1 },
             "Jared Matson": { goals: 1, assists: 1 },
             "Kevin Sarkela": { assists: 1 },
             "Peter Tapio": { assists: 1 },
@@ -437,8 +434,7 @@ export const poikasData: PoikasDataRaw = {
           result: "lost-ot",
           sisu: "Jared Matson",
           date: new Date("2025-02-23"),
-          notable:
-            "Pulled goalie with 35s left, Jared scored with 10s left to force a shootout. Both goalies stopped first 3 shots but they scored on 4th to get the OT win.",
+          notable: "Pulled goalie with 35s left, Jared scored with 10s left to force a shootout. Both goalies stopped first 3 shots but they scored on 4th to get the OT win.",
           goalie: "Jamon Holmgren",
           stats: {
             "Caleb Aring": { goals: 2 },
@@ -521,7 +517,7 @@ export const poikasData: PoikasDataRaw = {
           stats: {
             "Evan Tapio": { goals: 1 },
             "Brad Wuori": { goals: 1 },
-            "Ward Peason": { goals: 1 },
+            "Ward Pearson": { goals: 1 },
             "Jared Matson": { goals: 1 },
             "Russ Tapio": { assists: 1 },
             "Nels Tapio": { assists: 1, penalties: 1 },
@@ -559,7 +555,7 @@ export const poikasData: PoikasDataRaw = {
           notable: "Jamon Holmgren substituted for the Bandits goalie and was in net against the Poikas.",
           goalie: "Kyle Malstrom",
           stats: {
-            "Ward Peason": { goals: 2 },
+            "Ward Pearson": { goals: 2 },
           },
           shotsUs: 30,
           shotsThem: 14,
@@ -617,7 +613,7 @@ export const poikasData: PoikasDataRaw = {
             "Treven Erickson": { goals: 1 },
             "Orrin Erickson": { goals: 1 },
             "Nels Tapio": { assists: 1 },
-            "Ward Peason": { assists: 1, penalties: 1 },
+            "Ward Pearson": { assists: 1, penalties: 1 },
             "Evan Tapio": { penalties: 1 },
             "Brad Wuori": { penalties: 1 },
             "Andrew Tunseth": { penalties: 1 },
@@ -653,7 +649,7 @@ export const poikasData: PoikasDataRaw = {
           goalie: "Kyle Malstrom",
           stats: {
             "Nels Tapio": { goals: 2 },
-            "Ward Peason": { goals: 1, assists: 1 },
+            "Ward Pearson": { goals: 1, assists: 1 },
             "Russ Tapio": { goals: 1, assists: 1 },
             "Andrew Tunseth": { goals: 1, penalties: 1 },
             "Scott Daniels": { penalties: 1 },
@@ -686,7 +682,7 @@ export const poikasData: PoikasDataRaw = {
           us: 6,
           them: 2,
           result: "won",
-          sisu: "Ward Peason",
+          sisu: "Ward Pearson",
           date: new Date("2025-06-01"),
           notable: "With this win, we advance to the C Championship game for the first time!",
           goalie: "Kyle Malstrom",
@@ -695,7 +691,7 @@ export const poikasData: PoikasDataRaw = {
             "Jared Matson": { goals: 1 },
             "Russ Tapio": { goals: 1, penalties: 1 },
             "Andrew Tunseth": { goals: 1 },
-            "Ward Peason": { goals: 1, assists: 1 },
+            "Ward Pearson": { goals: 1, assists: 1 },
             "Nels Tapio": { assists: 1, penalties: 1 },
             "Kevin Sarkela": { assists: 1 },
             "Konrad Stenersen": { penalties: 2 },
@@ -769,6 +765,9 @@ export const poikasData: PoikasDataRaw = {
       bio: "Dan is one of our reliable and talented defensemen. He puts a lot of pressure on the other team and can often be found slicing through the neutral zone with the puck.",
       pos: "D",
       shoots: "L",
+      ht: "5-10",
+      wt: 190,
+      born: 1969,
     },
     {
       number: 70,
@@ -846,6 +845,10 @@ export const poikasData: PoikasDataRaw = {
       name: "Nels Tapio",
       bio: "Nels is a relentless, fast skater, and a top level scorer for our C/CC team. He can play any position and has a wealth of hockey experience. His son Evan Tapio has joined the team as well.",
       pos: "C",
+      ht: "5-9",
+      wt: 170,
+      shoots: "R",
+      born: 1976,
     },
     {
       number: 22,
@@ -939,6 +942,10 @@ export const poikasData: PoikasDataRaw = {
     {
       name: "Jared Matson",
       pos: "F",
+      ht: "5-11",
+      wt: 155,
+      shoots: "L",
+      born: 1979,
     },
     {
       name: "Andrew Nichol",
@@ -951,6 +958,10 @@ export const poikasData: PoikasDataRaw = {
       number: 12,
       name: "Brent Mattila",
       pos: "RW",
+      ht: "5-7",
+      wt: 165,
+      shoots: "R",
+      born: 1991,
     },
     {
       name: "Jeff Fish",
@@ -982,6 +993,9 @@ export const poikasData: PoikasDataRaw = {
       name: "Shane Matson",
       pos: "D",
       shoots: "R",
+      ht: "6-1",
+      wt: 180,
+      born: 1992,
     },
     {
       name: "Travis Goddard",
@@ -1086,11 +1100,19 @@ export const poikasData: PoikasDataRaw = {
       number: 24,
       name: "Peter Tapio",
       pos: "C/D",
+      ht: "5-11",
+      wt: 185,
+      shoots: "R",
+      born: 1969,
     },
     {
       number: 48,
       name: "Avery Tapio",
       pos: "LW",
+      ht: "5-10",
+      wt: 145,
+      shoots: "R",
+      born: 2004,
     },
     {
       number: 32,
@@ -1132,7 +1154,7 @@ export const poikasData: PoikasDataRaw = {
       pos: "G",
     },
     {
-      name: "Ward Peason",
+      name: "Ward Pearson",
       pos: "W",
     },
   ],
