@@ -1030,6 +1030,10 @@ export const poikasData: PoikasDataRaw = {
       number: 7,
       name: "Scott Daniels",
       pos: "W",
+      ht: "6-2",
+      wt: 190,
+      shoots: "R",
+      born: 1980,
     },
     {
       number: 9,

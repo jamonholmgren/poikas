@@ -2606,8 +2606,8 @@ export const poikasPrevious: SeasonRaw[] = [
           "Jared Matson": { goals: 1 },
           "Russ Tapio": { assists: 1 },
         },
-        shotsUs: undefined,
-        shotsThem: undefined,
+        shotsUs: 20,
+        shotsThem: 20,
       },
       {
         vs: "Dead Guys",
@@ -2677,6 +2677,8 @@ export const poikasPrevious: SeasonRaw[] = [
           "Steve Saunders": { goals: 1 },
           "Nels Tapio": { goals: 2 },
         },
+        shotsUs: 20,
+        shotsThem: 20,
       },
       {
         vs: "Bandits",
@@ -2742,6 +2744,8 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "lost",
         goalie: "Kyle Malstrom",
         notable: "Jamon out injured (MCL). No stats available.",
+        shotsUs: 20,
+        shotsThem: 20,
       },
       {
         date: new Date("2024-11-10"),
@@ -2757,6 +2761,8 @@ export const poikasPrevious: SeasonRaw[] = [
           "Russ Tapio": { goals: 1 },
           "Caleb Aring": { goals: 1 },
         },
+        shotsUs: 20,
+        shotsThem: 20,
       },
       {
         vs: "Deadguys",
@@ -2802,8 +2808,8 @@ export const poikasPrevious: SeasonRaw[] = [
         notable: "No stats/info available for this game.",
         goalie: "Kyle Malstrom",
         stats: {},
-        shotsUs: undefined,
-        shotsThem: undefined,
+        shotsUs: 20,
+        shotsThem: 20,
       },
       {
         vs: "Bandits",
@@ -2830,8 +2836,8 @@ export const poikasPrevious: SeasonRaw[] = [
         notable: "No stats available. Jamon out injured.",
         goalie: "Kyle Malstrom",
         stats: {},
-        shotsUs: undefined,
-        shotsThem: undefined,
+        shotsUs: 20,
+        shotsThem: 20,
       },
       {
         vs: "CCCP",
@@ -2843,8 +2849,8 @@ export const poikasPrevious: SeasonRaw[] = [
         notable: "Playoffs quarterfinals. No stats available.",
         goalie: "Kyle Malstrom",
         stats: {},
-        shotsUs: undefined,
-        shotsThem: undefined,
+        shotsUs: 20,
+        shotsThem: 20,
       },
       {
         vs: "Local Legends",
