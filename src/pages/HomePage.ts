@@ -3,13 +3,12 @@ import { routePage } from "../route"
 import { ChampTile } from "../components/ChampTile"
 import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
 import { img } from "../image"
+import { renderRosterTable } from "../utils/renderRosterTable"
 
 export function HomePage(data: PoikasData) {
   // Finding the championships we've won as a team, but
   // ignoring the "with Russia" or "with Ukraine" leagues
-  const championLeagues = data.seasons
-    .filter((s) => s.playoffs === "champions" && !`${s.aside}`.includes("with"))
-    .toReversed()
+  const championLeagues = data.seasons.filter((s) => s.playoffs === "champions" && !`${s.aside}`.includes("with")).toReversed()
 
   let rec = data.leagues.Rec.current || data.leagues.Rec.seasons.at(-1)!
   let c = data.leagues.C.current || data.leagues.C.seasons.at(-1)!
@@ -138,79 +137,43 @@ export function HomePage(data: PoikasData) {
           Current Rec Roster
           <a class="details" href="${rec.url}">(view season page)</a>
         </h2>
-        <table id="rec-roster" class="roster">
-          <thead>
-            <tr>
-              <th width="50">Photo</th>
-              <th>Name</th>
-              <th width="30">#</th>
-              <th width="30">Pos</th>
-              <th width="30" class="extra">Ht</th>
-              <th width="30" class="extra">Wt</th>
-              <th width="30" class="extra">Sh</th>
-              <th width="30" class="extra">Yrs</th>
-              <th width="30" class="extra">Age</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${rec
-              .players!.map(
-                (p) => `
-                  <tr>
-                    <td>${p.imageHTML || "-"}</td>
-                    <td>${p.profileLink || "-"}</td>
-                    <td>${p.number || "-"}</td>
-                    <td>${p.pos || "-"}</td>
-                    <td class="extra">${p.ht || "-"}</td>
-                    <td class="extra">${p.wt || "-"}</td>
-                    <td class="extra">${p.shoots || "-"}</td>
-                    <td class="extra">${p.years || "-"}</td>
-                    <td class="extra">${p.age() || "-"}</td>
-                  </tr>
-                `
-              )
-              .join("\n")}
-          </tbody>
-        </table>
+        ${renderRosterTable({
+          id: "rec-roster",
+          className: "roster",
+          columns: [
+            { th: "Photo", val: "imageHTML", width: 50, alt: "Player photo" },
+            { th: "Name", val: "profileLink", alt: "Player name" },
+            { th: "#", val: "number", width: 30, alt: "Jersey number" },
+            { th: "Pos", val: "pos", width: 30, alt: "Position" },
+            { th: "Ht", val: "ht", width: 30, xtra: true, alt: "Height" },
+            { th: "Wt", val: "wt", width: 30, xtra: true, alt: "Weight" },
+            { th: "Sh", val: "shoots", width: 30, xtra: true, alt: "Shoots left or right" },
+            { th: "Yrs", val: "years", width: 30, xtra: true, alt: "Years with team" },
+            { th: "Age", val: "age", width: 30, xtra: true, alt: "Player age" },
+          ],
+          players: rec.players || [],
+        })}
 
         <h2>
           Current C/CC Roster
           <a class="details" href="${c.url}">(view season page)</a>
         </h2>
-        <table id="c-roster" class="roster">
-          <thead>
-            <tr>
-              <th width="50">Photo</th>
-              <th>Name</th>
-              <th width="30">#</th>
-              <th width="30">Pos</th>
-              <th width="30" class="extra">Ht</th>
-              <th width="30" class="extra">Wt</th>
-              <th width="30" class="extra">Sh</th>
-              <th width="30" class="extra">Yrs</th>
-              <th width="30" class="extra">Age</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${c
-              .players!.map(
-                (p) => `
-            <tr>
-              <td>${p.imageHTML || "-"}</td>
-              <td>${p.profileLink || "-"}</td>
-              <td>${p.number || "-"}</td>
-              <td>${p.pos || "-"}</td>
-              <td class="extra">${p.ht || "-"}</td>
-              <td class="extra">${p.wt || "-"}</td>
-              <td class="extra">${p.shoots || "-"}</td>
-              <td class="extra">${p.years || "-"}</td>
-              <td class="extra">${p.age() || "-"}</td>
-            </tr>
-          `
-              )
-              .join("\n")}
-          </tbody>
-        </table>
+        ${renderRosterTable({
+          id: "c-roster",
+          className: "roster",
+          columns: [
+            { th: "Photo", val: "imageHTML", width: 50, alt: "Player photo" },
+            { th: "Name", val: "profileLink", alt: "Player name" },
+            { th: "#", val: "number", width: 30, alt: "Jersey number" },
+            { th: "Pos", val: "pos", width: 30, alt: "Position" },
+            { th: "Ht", val: "ht", width: 30, xtra: true, alt: "Height" },
+            { th: "Wt", val: "wt", width: 30, xtra: true, alt: "Weight" },
+            { th: "Sh", val: "shoots", width: 30, xtra: true, alt: "Shoots left or right" },
+            { th: "Yrs", val: "years", width: 30, xtra: true, alt: "Years with team" },
+            { th: "Age", val: "age", width: 30, xtra: true, alt: "Player age" },
+          ],
+          players: c.players || [],
+        })}
       </div>
       <div class="seasons">
         <h2>Season Archives</h2>

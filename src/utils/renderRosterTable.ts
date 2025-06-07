@@ -3,7 +3,7 @@ import type { Player, Season } from "../types"
 type Column = {
   th: string
   width?: number
-  txt?: string
+  alt?: string
   val?: string
   getValue?: (player: Player) => string | number
   xtra?: boolean
@@ -61,7 +61,7 @@ export function renderRosterTable(options: RosterTableOptions): string {
       ${columns
         .map(
           (col) => `
-        <th${col.width ? ` width="${col.width}"` : ""}${col.txt ? ` title="${col.txt}"` : ""}${col.xtra ? ' class="extra"' : ""}>${col.th}</th>
+        <th${col.width ? ` width="${col.width}"` : ""}${col.alt ? ` title="${col.alt}"` : ""}${col.xtra ? ' class="extra"' : ""}>${col.th}</th>
       `
         )
         .join("")}
