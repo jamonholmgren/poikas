@@ -945,6 +945,7 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       name: "Jared Matson",
+      bio: "Jared is an incredibly polished skater and one of the best scorers in the Poikas system.",
       pos: "F",
       ht: "5-11",
       wt: 155,
@@ -961,6 +962,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 12,
       name: "Brent Mattila",
+      bio: "Brent has a great locker room presence and a fearless style on the ice.",
       pos: "RW",
       ht: "5-7",
       wt: 165,
@@ -995,7 +997,8 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 31,
       name: "Shane Matson",
-      pos: "D",
+      bio: "Shane is a locker room leader, a versatile player (having played both defense and center), and a prolific scorer and passer.",
+      pos: "C/D",
       shoots: "R",
       ht: "6-1",
       wt: 180,
@@ -1011,6 +1014,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 27,
       name: "Oren Matson",
+      bio: "Oren is a smooth skater who always seems in control, a natural scorer, and is able to slice through defenders with ease.",
       pos: "W",
       ht: "5-9",
       wt: 145,
@@ -1029,6 +1033,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 7,
       name: "Scott Daniels",
+      bio: "Scott is an opportunistic scorer, a good passer, with a great feel for the flow of the game.",
       pos: "W",
       ht: "6-2",
       wt: 190,
