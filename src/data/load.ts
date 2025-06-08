@@ -150,8 +150,10 @@ function populatePlayerData(player: Player, data: PoikasData) {
       // did the player play goalie in this game?
       if (game.goalie === player.name) {
         ss.goalieGamesPlayed += 1
-        ss.shotsFor += game.shotsUs || 0
-        ss.shotsAgainst += game.shotsThem || 0
+        if (!season.ignoreGoalieStats) {
+          ss.shotsFor += game.shotsUs || 0
+          ss.shotsAgainst += game.shotsThem || 0
+        }
         ss.goalsAgainst += game.them || 0
         if ((game.them || 0) === 0) ss.shutouts += 1
         if (game.result === "won") ss.goalieWins += 1
@@ -164,6 +166,7 @@ function populatePlayerData(player: Player, data: PoikasData) {
 
       // get the player's stats for this game
       const pgs: PlayerGameStats = game.stats[player.name]
+      if (!pgs) return
 
       // add to the season totals
       seasonGoals += pgs?.goals || 0
@@ -194,7 +197,7 @@ function populatePlayerData(player: Player, data: PoikasData) {
     ss.penalties = seasonPenalties
     ss.pim = seasonPenalties * 3
 
-    populateGoalieStatsAggregates(ss)
+    populateGoalieStatsAggregates(ss, season.ignoreGoalieStats)
 
     // Add totals for player's career
     cs.goals += ss.goals
@@ -239,16 +242,18 @@ function populatePlayerData(player: Player, data: PoikasData) {
 }
 
 // Goalie stats aggregates based on totals
-function populateGoalieStatsAggregates(stats: PlayerStats) {
+function populateGoalieStatsAggregates(stats: PlayerStats, ignoreShots: boolean = false) {
   const gp: number = stats.goalieGamesPlayed
   const sa: number = stats.shotsAgainst
   const ga: number = stats.goalsAgainst
   const gw: number = stats.goalieWins
   const gl: number = stats.goalieLosses
   const gt: number = stats.goalieTies
-  stats.savePercentage = parseFloat((sa > 0 ? ((sa - ga) / sa) * 100 : 0).toFixed(1))
+  if (!ignoreShots) {
+    stats.savePercentage = parseFloat((sa > 0 ? ((sa - ga) / sa) * 100 : 0).toFixed(1))
+    stats.averageShotsAgainst = parseFloat((sa / gp).toFixed(2))
+  }
   stats.goalsAgainstAverage = parseFloat((ga / gp).toFixed(2))
-  stats.averageShotsAgainst = parseFloat((sa / gp).toFixed(2))
   stats.goalieRecord = `${gw}-${gl}-${gt}`
 }
 

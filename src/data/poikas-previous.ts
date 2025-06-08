@@ -8,6 +8,7 @@ export const poikasPrevious: SeasonRaw[] = [
     seasonName: "Fall",
     leagueName: "Rec",
     playoffs: "lost",
+    ignoreGoalieStats: true,
     roster: [
       "Joel Mattila",
       "Brenden Mattila",
@@ -31,6 +32,7 @@ export const poikasPrevious: SeasonRaw[] = [
     description: "COVID hit during this season, so it was canceled entirely after a few games.",
     aside: "covid shortened",
     playoffs: "canceled",
+    ignoreGoalieStats: true,
     roster: [
       "Asa Storm",
       "Brad Wuori",
@@ -57,6 +59,7 @@ export const poikasPrevious: SeasonRaw[] = [
     leagueName: "Rec",
     description: "We had a very solid regular season but fell short in the playoffs vs Liquid Gold. We outshot them by something like 68-6 but they won 1-0 on a breakaway.",
     playoffs: "lost",
+    ignoreGoalieStats: true,
     roster: [
       "Asa Storm",
       "Brad Wuori",
@@ -164,6 +167,7 @@ export const poikasPrevious: SeasonRaw[] = [
     description: "Our first championship! We went undefeated in the regular season and playoffs.",
     photos: ["poikas-rec-2021-summer-champions.jpg"],
     playoffs: "champions",
+    ignoreGoalieStats: true,
     roster: [
       "Asa Storm",
       "Brad Wuori",
@@ -240,8 +244,6 @@ export const poikasPrevious: SeasonRaw[] = [
       {
         vs: "Liquid Gold",
         us: 6,
-        them: 1,
-        result: "won",
         sisu: "Konrad Stenersen",
         notable: "Konrad got 3 or 4 goals.",
         goalie: "Jamon Holmgren",
@@ -282,6 +284,7 @@ export const poikasPrevious: SeasonRaw[] = [
     description: "We won back-to-back championships!",
     photos: ["poikas-rec-2021-fall-champions.jpg"],
     playoffs: "champions",
+    ignoreGoalieStats: true,
     roster: [
       "Asa Storm",
       "Brad Wuori",
@@ -453,6 +456,7 @@ export const poikasPrevious: SeasonRaw[] = [
     description:
       "For Fall 2021, Joel Mattila put together a C/CC level team to accommodate the players who were advancing beyond Rec League level. This was the first time for most of the Poikas playing at the next level.",
     playoffs: "lost",
+    ignoreGoalieStats: true,
     roster: [
       "Asa Storm",
       "Brad Wuori",
@@ -475,6 +479,7 @@ export const poikasPrevious: SeasonRaw[] = [
     leagueName: "C",
     description: "We had a solid second season at the C level, coming in just under .500.",
     playoffs: "lost",
+    ignoreGoalieStats: true,
     roster: [
       "Asa Storm",
       "Brad Wuori",
@@ -501,6 +506,7 @@ export const poikasPrevious: SeasonRaw[] = [
       "We won our third championship in a row! Our team was dominating Rec League, and this was the last season we would keep Asa Storm and some of our other top scorers.",
     photos: ["poikas-rec-2022-spring-champions.jpg"],
     playoffs: "champions",
+    ignoreGoalieStats: true,
     roster: [
       "Asa Storm",
       "Brad Wuori",
@@ -664,6 +670,7 @@ export const poikasPrevious: SeasonRaw[] = [
       "During summer 2022, we didn't have enough players for a full team, so we joined forces with the Russian team. This team won the championship, but we don't count it as a full Suomi Poikas championship. We do count it as individual championships for those who played.",
     aside: "with Russia",
     playoffs: "champions",
+    ignoreGoalieStats: true,
     roster: [
       "Ben Mikhalets",
       "Brad Wuori",
@@ -771,6 +778,7 @@ export const poikasPrevious: SeasonRaw[] = [
     description: "During fall 2022, we didn't have enough players for a full team, so we joined forces with the Ukrainian team.",
     aside: "with Ukraine",
     playoffs: "lost",
+    ignoreGoalieStats: true,
     roster: [
       "Asher (Dimitriy) Piskorskiy",
       "Austin Sakai",
@@ -795,6 +803,7 @@ export const poikasPrevious: SeasonRaw[] = [
     seasonName: "Fall",
     leagueName: "C",
     playoffs: "lost",
+    ignoreGoalieStats: true,
     roster: [
       "Andrew Nichol",
       "Asa Storm",
@@ -946,6 +955,7 @@ export const poikasPrevious: SeasonRaw[] = [
     seasonName: "Spring",
     leagueName: "Rec",
     playoffs: "lost",
+    ignoreGoalieStats: true,
     roster: [
       "Brenden Mattila",
       "Brent Mattila",
@@ -1097,6 +1107,7 @@ export const poikasPrevious: SeasonRaw[] = [
     seasonName: "Spring",
     leagueName: "C",
     playoffs: "lost",
+    ignoreGoalieStats: true,
     roster: [
       "Asa Storm",
       "Evan Tapio",
@@ -1254,6 +1265,7 @@ export const poikasPrevious: SeasonRaw[] = [
     photos: ["poikas-rec-2023-fall-champions.jpg"],
     videos: ["https://www.youtube.com/embed/y-PfIM5V3_Q?si=qlmu66nOdwSq4g0x"],
     playoffs: "champions",
+    ignoreGoalieStats: true,
     roster: [
       "Brad Wuori",
       "Brenden Mattila",
@@ -1424,6 +1436,7 @@ export const poikasPrevious: SeasonRaw[] = [
     losses: 12,
     ties: 0,
     playoffs: "lost",
+    ignoreGoalieStats: true,
     roster: [
       "Andrew Tunseth",
       "Asa Storm",

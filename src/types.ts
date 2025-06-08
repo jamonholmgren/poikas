@@ -28,6 +28,10 @@ export type SeasonRaw = {
   photos?: string[]
   videos?: string[]
   schedule?: string
+
+  // shots stats are not accurate for this season, so don't include in
+  // goalie save % calculations
+  ignoreGoalieStats?: boolean
 }
 
 export type Season = SeasonRaw & {
