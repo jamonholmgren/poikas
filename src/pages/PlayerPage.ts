@@ -46,7 +46,19 @@ export function PlayerPage(data: PoikasData, slug: string) {
   const careerAssists = player.careerStats?.assists || 0
 
   // Helper function to build season data for a specific league
-  function buildSeasonData(player: Player, leagueName: "Rec" | "C"): SeasonData[] {
+  function buildSeasonData(player: Player, leagueName: "Rec" | "C" | "Career"): SeasonData[] {
+    const seasons: SeasonData[] = []
+    if (leagueName === "Career") {
+      return [
+        {
+          seasonLink: "Career",
+          record: `${player.careerStats?.goalieWins || 0}-${player.careerStats?.goalieLosses || 0}${player.careerStats?.goalieTies ? `-${player.careerStats?.goalieTies}` : ""}`,
+          stats: player.careerStats,
+          isGoalie: player.pos === "G",
+        },
+      ]
+    }
+
     return player.seasons[leagueName].map((playerSeason: PlayerSeason) => {
       const { season, stats } = playerSeason
       const record = `${season.wins || 0}-${season.losses || 0}${season.ties ? `-${season.ties}` : ""}`
@@ -175,9 +187,10 @@ export function PlayerPage(data: PoikasData, slug: string) {
       <div class="seasons">
         <h2>Stats</h2>
         ${Object.keys(player.seasons)
-          .map((k: string) =>
-            player.seasons[k as LeagueName].length > 0
-              ? `
+          .concat(["Career"])
+          .map((k: string) => {
+            if (k !== "Career" && player.seasons[k as LeagueName].length === 0) return ""
+            return `
               <h3>${k} League Seasons</h3>
               ${renderRosterTable<SeasonData>({
                 id: "${k}-seasons",
@@ -201,8 +214,7 @@ export function PlayerPage(data: PoikasData, slug: string) {
                 ],
                 players: buildSeasonData(player, k as LeagueName),
               })}`
-              : ""
-          )
+          })
           .join("\n")}
       </div>
       <div class="sisucup">

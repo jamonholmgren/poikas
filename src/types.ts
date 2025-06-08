@@ -28,10 +28,6 @@ export type SeasonRaw = {
   photos?: string[]
   videos?: string[]
   schedule?: string
-
-  // shots stats are not accurate for this season, so don't include in
-  // goalie save % calculations
-  ignoreGoalieStats?: boolean
 }
 
 export type Season = SeasonRaw & {
@@ -122,6 +118,7 @@ export type PlayerStats = {
   pim: number // penalty minutes (penalties * 3)
   // Goalie stats
   goalieGamesPlayed: number
+  goalieGamesWithShots: number
   goalieWins: number
   goalieLosses: number
   goalieTies: number
@@ -129,6 +126,7 @@ export type PlayerStats = {
   shotsFor: number
   shotsAgainst: number
   goalsAgainst: number
+  goalsAgainstWithShots: number
   savePercentage: number
   goalsAgainstAverage: number
   averageShotsAgainst: number

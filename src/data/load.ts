@@ -150,9 +150,11 @@ function populatePlayerData(player: Player, data: PoikasData) {
       // did the player play goalie in this game?
       if (game.goalie === player.name) {
         ss.goalieGamesPlayed += 1
-        if (!season.ignoreGoalieStats) {
+        if (game.shotsUs && game.shotsThem) {
+          ss.goalieGamesWithShots += 1
           ss.shotsFor += game.shotsUs || 0
           ss.shotsAgainst += game.shotsThem || 0
+          ss.goalsAgainstWithShots += game.them || 0
         }
         ss.goalsAgainst += game.them || 0
         if ((game.them || 0) === 0) ss.shutouts += 1
@@ -197,7 +199,7 @@ function populatePlayerData(player: Player, data: PoikasData) {
     ss.penalties = seasonPenalties
     ss.pim = seasonPenalties * 3
 
-    populateGoalieStatsAggregates(ss, season.ignoreGoalieStats)
+    populateGoalieStatsAggregates(ss)
 
     // Add totals for player's career
     cs.goals += ss.goals
@@ -206,9 +208,11 @@ function populatePlayerData(player: Player, data: PoikasData) {
     cs.penalties += ss.penalties
     cs.pim += ss.pim
     cs.goalieGamesPlayed += ss.goalieGamesPlayed
+    cs.goalieGamesWithShots += ss.goalieGamesWithShots
     cs.shotsFor += ss.shotsFor
     cs.shotsAgainst += ss.shotsAgainst
     cs.goalsAgainst += ss.goalsAgainst
+    cs.goalsAgainstWithShots += ss.goalsAgainstWithShots
     cs.shutouts += ss.shutouts
     cs.goalieWins += ss.goalieWins
     cs.goalieLosses += ss.goalieLosses
@@ -242,17 +246,17 @@ function populatePlayerData(player: Player, data: PoikasData) {
 }
 
 // Goalie stats aggregates based on totals
-function populateGoalieStatsAggregates(stats: PlayerStats, ignoreShots: boolean = false) {
+function populateGoalieStatsAggregates(stats: PlayerStats) {
   const gp: number = stats.goalieGamesPlayed
+  const gws: number = stats.goalieGamesWithShots
   const sa: number = stats.shotsAgainst
   const ga: number = stats.goalsAgainst
+  const gaw: number = stats.goalsAgainstWithShots
   const gw: number = stats.goalieWins
   const gl: number = stats.goalieLosses
   const gt: number = stats.goalieTies
-  if (!ignoreShots) {
-    stats.savePercentage = parseFloat((sa > 0 ? ((sa - ga) / sa) * 100 : 0).toFixed(1))
-    stats.averageShotsAgainst = parseFloat((sa / gp).toFixed(2))
-  }
+  if (gaw > 0) stats.savePercentage = parseFloat((sa > 0 ? ((sa - gaw) / sa) * 100 : 0).toFixed(1))
+  if (gws > 0) stats.averageShotsAgainst = parseFloat((sa / gws).toFixed(2))
   stats.goalsAgainstAverage = parseFloat((ga / gp).toFixed(2))
   stats.goalieRecord = `${gw}-${gl}-${gt}`
 }
@@ -296,6 +300,7 @@ function defaultStats(): PlayerStats {
     penalties: 0,
     pim: 0,
     goalieGamesPlayed: 0,
+    goalieGamesWithShots: 0,
     goalieWins: 0,
     goalieLosses: 0,
     goalieTies: 0,
@@ -303,6 +308,7 @@ function defaultStats(): PlayerStats {
     shotsFor: 0,
     shotsAgainst: 0,
     goalsAgainst: 0,
+    goalsAgainstWithShots: 0,
     savePercentage: 0,
     goalsAgainstAverage: 0,
     averageShotsAgainst: 0,
