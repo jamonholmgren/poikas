@@ -22,7 +22,7 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
   populateLeagueData(data)
   data.players.sort(sortPlayers)
   data.seasons.sort(sortSeasons)
-  data.seasons.forEach((season) => populateSeasonData(season, data.players))
+  data.seasons.forEach((season) => populateSeasonData(season, data))
   data.players.forEach((player) => populatePlayerData(player, data))
   return data
 }
@@ -56,7 +56,9 @@ function sortSeasons(a: Season, b: Season): number {
   return seasonsOrder.indexOf(a.seasonName) - levelsOrder.indexOf(b.leagueName)
 }
 
-function populateSeasonData(season: Season, players: Player[]) {
+function populateSeasonData(season: Season, data: PoikasData) {
+  const players: Player[] = data.players
+
   // the "pending" playoffs status mean it's a current season
   season.current = season.playoffs === "pending"
 
@@ -82,20 +84,20 @@ function populateSeasonData(season: Season, players: Player[]) {
     season.ties = season.games.filter((g) => g.result === "tied" || g.result === "lost-ot").length
 
     // populate game data for this season
-    season.games.forEach((game) => populateGameData(game, season))
+    season.games.forEach((game) => populateGameData(game, season, data))
   }
 }
 
 // Attach all the data for a particular game
-function populateGameData(game: Game, season: Season) {
+function populateGameData(game: Game, season: Season, data: PoikasData) {
   if (!season.players) throw new Error("Season requires players to be populated before games")
 
   // attach the current season to each game in that season
   game.season = season
   // attach the sisu player, if found
-  game.sisuPlayer = season.players.find((p) => p.name === game.sisu)
+  game.sisuPlayer = data.players.find((p) => p.name === game.sisu)
   // attach the goalie player, if found
-  game.goaliePlayer = season.players.find((p) => p.name === game.goalie)
+  game.goaliePlayer = data.players.find((p) => p.name === game.goalie)
   // link to opponent page
   game.vsURL = `/vs/${slugify(game.vs)}`
   game.vsLink = `<a href="${game.vsURL}">${game.vs}</a>`
@@ -145,17 +147,6 @@ function populatePlayerData(player: Player, data: PoikasData) {
     let seasonPenalties: number = 0
 
     season.games?.forEach((game) => {
-      if (!game.stats) return
-      if (!game.result || game.result === "pending" || game.result === "cancelled") return
-
-      // get the player's stats for this game
-      const pgs: PlayerGameStats = game.stats[player.name]
-
-      // add to the season totals
-      seasonGoals += pgs?.goals || 0
-      seasonAssists += pgs?.assists || 0
-      seasonPenalties += pgs?.penalties || 0
-
       // did the player play goalie in this game?
       if (game.goalie === player.name) {
         ss.goalieGamesPlayed += 1
@@ -167,6 +158,17 @@ function populatePlayerData(player: Player, data: PoikasData) {
         if (game.result === "lost") ss.goalieLosses += 1
         if (game.result === "lost-ot" || game.result === "tied") ss.goalieTies += 1
       }
+
+      if (!game.stats) return
+      if (!game.result || game.result === "pending" || game.result === "cancelled") return
+
+      // get the player's stats for this game
+      const pgs: PlayerGameStats = game.stats[player.name]
+
+      // add to the season totals
+      seasonGoals += pgs?.goals || 0
+      seasonAssists += pgs?.assists || 0
+      seasonPenalties += pgs?.penalties || 0
     })
 
     // add all totals to career stats
@@ -205,6 +207,9 @@ function populatePlayerData(player: Player, data: PoikasData) {
     cs.shotsAgainst += ss.shotsAgainst
     cs.goalsAgainst += ss.goalsAgainst
     cs.shutouts += ss.shutouts
+    cs.goalieWins += ss.goalieWins
+    cs.goalieLosses += ss.goalieLosses
+    cs.goalieTies += ss.goalieTies
   })
 
   populateGoalieStatsAggregates(cs)
@@ -218,6 +223,8 @@ function populatePlayerData(player: Player, data: PoikasData) {
 
   player.age = ageFunction
 
+  player.shortName = player.name.split(" ")[0] + " " + player.name.split(" ")[1].charAt(0) + ""
+
   // player slug (for URLs)
   player.slug = slugify(player.name)
 
@@ -228,6 +235,7 @@ function populatePlayerData(player: Player, data: PoikasData) {
   // player profile URL
   player.profileURL = `/players/${player.slug}`
   player.profileLink = `<a href="${player.profileURL}">${player.name}</a>`
+  player.shortProfileLink = `<a href="${player.profileURL}">${player.shortName}</a>`
 }
 
 // Goalie stats aggregates based on totals

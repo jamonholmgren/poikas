@@ -111,7 +111,7 @@ export function LeaguePage(data: PoikasData, slug: string) {
             { th: "Name", val: "profileLink", alt: "Player name" },
             { th: "#", val: "number", width: 30, alt: "Jersey number" },
             { th: "Pos", val: "pos", width: 30, alt: "Position" },
-            { th: "GP", width: 30, alt: "Games played", getValue: getValueCustom("goalieGamesPlayed") },
+            { th: "GP", width: 30, alt: "Games played as goalie", getValue: getValueCustom("goalieGamesPlayed") },
             { th: "GAA", width: 30, alt: "Goals against average", getValue: getValueCustom("goalsAgainstAverage") },
             { th: "SV%", width: 30, alt: "Save percentage", getValue: getValueCustom("savePercentage") },
             { th: "SA/G", width: 30, alt: "Shots against per game", getValue: getValueCustom("averageShotsAgainst") },
@@ -147,7 +147,9 @@ export function LeaguePage(data: PoikasData, slug: string) {
               <th>Date</th>
               <th>Opponent</th>
               <th>Score</th>
+              <th>Shots</th>
               <th>Sisu Cup</th>
+              <th>Goalie</th>
               <th class="extra">Notable</th>
             </tr>
           </thead>
@@ -161,7 +163,9 @@ export function LeaguePage(data: PoikasData, slug: string) {
                       <td>${game.date ? game.date.toLocaleDateString() : "-"}</td>
                       <td>${game.vsLink}</td>
                       <td>${gameScore(game)}</td>
-                      <td>${(game.sisu && players?.find((p) => p.name === game.sisu)?.profileLink) || "-"}</td>
+                      <td>${gameShots(game)}</td>
+                      <td>${(game.sisu && players?.find((p) => p.name === game.sisu)?.shortProfileLink) || "-"}</td>
+                      <td>${game.goaliePlayer?.shortProfileLink || game.goalie || "-"}</td>
                       <td class="extra notable">${game.notable || "-"}</td>
                     </tr>
                   `
@@ -204,4 +208,9 @@ function gameScore(game: Game) {
   if (game.result === "forfeited") return "Forfeited"
   if (game.result === "cancelled") return "Cancelled"
   return `${game.result} ${game.us}-${game.them}`
+}
+
+function gameShots(game: Game) {
+  if (game.shotsUs === undefined || game.shotsThem === undefined) return "-"
+  return `${game.shotsUs}-${game.shotsThem}`
 }

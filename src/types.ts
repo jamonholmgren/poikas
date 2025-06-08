@@ -82,6 +82,7 @@ export type Player = PlayerRaw & {
   activeSeasons: {
     [K in LeagueName]?: PlayerSeason
   }
+  shortName: string
   active: boolean
   years: number
   startYear: number
@@ -93,6 +94,7 @@ export type Player = PlayerRaw & {
   imageHTML: string
   profileURL: string
   profileLink: string
+  shortProfileLink: string
   careerStats: PlayerStats
   arenaPlayerSeasonStats: ArenaPlayerSeasonStats[]
   arenaGoalieSeasonStats: ArenaGoalieSeasonStats[]
