@@ -289,7 +289,12 @@ export function slugify(text: string) {
 }
 
 function ageFunction(this: Player) {
-  return this.born ? new Date().getFullYear() - this.born : undefined
+  if (!this.born) return undefined
+  let age = new Date().getFullYear() - this.born - 1
+  // We have to decide whether to round up or down since we don't have the exact date.
+  // For most, we round down. But for the younger guys, we round up.
+  if (age < 24) age += 1
+  return age
 }
 
 function defaultStats(): PlayerStats {

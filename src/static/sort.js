@@ -62,6 +62,22 @@ document.addEventListener("DOMContentLoaded", function () {
           const aNum = parseFloat(aValue)
           const bNum = parseFloat(bValue)
 
+          // Handle heights (6-4, 5-9, etc)
+          if (aValue.includes("-") && bValue.includes("-")) {
+            const aParts = aValue.split("-")
+            const bParts = bValue.split("-")
+            const aFeet = parseInt(aParts[0])
+            const aInches = parseInt(aParts[1])
+            const bFeet = parseInt(bParts[0])
+            const bInches = parseInt(bParts[1])
+
+            if (!isNaN(aFeet) && !isNaN(aInches) && !isNaN(bFeet) && !isNaN(bInches)) {
+              const aHeight = aFeet * 12 + aInches
+              const bHeight = bFeet * 12 + bInches
+              return newDirection === "asc" ? aHeight - bHeight : bHeight - aHeight
+            }
+          }
+
           if (!isNaN(aNum) && !isNaN(bNum)) {
             return newDirection === "asc" ? aNum - bNum : bNum - aNum
           }
