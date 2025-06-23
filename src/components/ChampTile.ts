@@ -14,9 +14,11 @@ export function ChampTile({ league }: ChampTileProps): string {
     `
   }
 
+  const lev = level === "C" ? "C/CC" : "Rec"
+
   return `
     <a class="photo" href="${url}">
-      <img src="${img(photos[0])}" alt="Suomi Poikas ${year} ${season} ${level} Champions" />
+      <img src="${img(photos[0])}" alt="Suomi Poikas ${year} ${season} ${lev} Champions" />
       <span class="caption">Suomi Poikas<br />${year} ${season} ${level} Champions</span>
     </a>
   `

@@ -38,6 +38,16 @@ export function HomePage(data: PoikasData) {
           🇫🇮
         </p>
 
+        <h2>What's New?</h2>
+        <p><em>Updated June 23, 2025</em></p>
+        <ul>
+          <li>Updated with the final stats and info from the 2025 spring leagues</li>
+          <li>Updated a bunch of players</li>
+          <li>Added sortable stats tables to each season page</li>
+          <li>Added sortable stats tables to each player page</li>
+          <li>Lots more stats everywhere ... go check them out!</li>
+        </ul>
+
         <h2>Latest Games</h2>
         <div class='latest-games'>
         ${
