@@ -2251,6 +2251,7 @@ export const poikasPrevious: SeasonRaw[] = [
       "Peter Tapio",
       "Shane Matson",
       "Jamon Holmgren",
+      "Jamie Dugger",
     ],
     games: [
       {

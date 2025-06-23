@@ -256,9 +256,14 @@ function populateGoalieStatsAggregates(stats: PlayerStats) {
   const gl: number = stats.goalieLosses
   const gt: number = stats.goalieTies
   if (gaw > 0) stats.savePercentage = parseFloat((sa > 0 ? ((sa - gaw) / sa) * 100 : 0).toFixed(1))
-  if (gws > 0) stats.averageShotsAgainst = parseFloat((sa / gws).toFixed(2))
+  if (gws > 0) stats.averageShotsAgainst = parseFloat((sa / gws).toFixed(1))
   stats.goalsAgainstAverage = parseFloat((ga / gp).toFixed(2))
   stats.goalieRecord = `${gw}-${gl}-${gt}`
+  stats.saves = sa - gaw
+
+  stats.goalsAgainstAverageFormatted = stats.goalsAgainstAverage.toFixed(2)
+  stats.savePercentageFormatted = stats.savePercentage.toFixed(1) + "%"
+  stats.averageShotsAgainstFormatted = stats.averageShotsAgainst.toFixed(1)
 }
 
 export function gamesAgainstOpponent(data: PoikasData, slug: string) {
@@ -318,5 +323,9 @@ function defaultStats(): PlayerStats {
     goalsAgainstAverage: 0,
     averageShotsAgainst: 0,
     shutouts: 0,
+    saves: 0,
+    goalsAgainstAverageFormatted: "",
+    savePercentageFormatted: "",
+    averageShotsAgainstFormatted: "",
   }
 }

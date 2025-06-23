@@ -32,6 +32,7 @@ export const poikasData: PoikasDataRaw = {
         "Oren Matson",
         "Peter Tapio",
         "Shane Matson",
+        "Jamie Dugger",
       ],
       games: [
         {
@@ -387,6 +388,7 @@ export const poikasData: PoikasDataRaw = {
         "Scott Daniels",
         "Ward Pearson",
         "Kyle Malstrom",
+        "Jamon Holmgren",
       ],
       games: [
         {

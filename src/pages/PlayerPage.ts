@@ -202,9 +202,9 @@ export function PlayerPage(data: PoikasData, slug: string) {
                     ? [
                         { th: "GP", width: 50, alt: "Games played", val: "stats.goalieGamesPlayed" },
                         { th: "Rec", width: 50, alt: "Record", val: "stats.goalieRecord" },
-                        { th: "GAA", width: 50, alt: "Goals against average", val: "stats.goalsAgainstAverage" },
-                        { th: "SV%", width: 50, alt: "Save percentage", val: "stats.savePercentage" },
-                        { th: "SA/G", width: 50, alt: "Shots against per game", val: "stats.averageShotsAgainst" },
+                        { th: "GAA", width: 50, alt: "Goals against average", val: "stats.goalsAgainstAverageFormatted" },
+                        { th: "SV%", width: 50, alt: "Save percentage", val: "stats.savePercentageFormatted" },
+                        { th: "SA/G", width: 50, alt: "Shots against per game", val: "stats.averageShotsAgainstFormatted" },
                         { th: "SO", width: 50, alt: "Shutouts", val: "stats.shutouts" },
                       ]
                     : []),

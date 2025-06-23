@@ -28,6 +28,8 @@ export type SeasonRaw = {
   photos?: string[]
   videos?: string[]
   schedule?: string
+  // if true, we won't show goalie stats for this season, due to missing data
+  ignoreGoalieStats?: boolean
 }
 
 export type Season = SeasonRaw & {
@@ -122,15 +124,21 @@ export type PlayerStats = {
   goalieWins: number
   goalieLosses: number
   goalieTies: number
-  goalieRecord: string
   shotsFor: number
   shotsAgainst: number
   goalsAgainst: number
   goalsAgainstWithShots: number
+  saves: number
   savePercentage: number
   goalsAgainstAverage: number
   averageShotsAgainst: number
   shutouts: number
+
+  // formatted strings
+  goalieRecord: string
+  goalsAgainstAverageFormatted: string
+  averageShotsAgainstFormatted: string
+  savePercentageFormatted: string
 }
 
 export interface LoadDisplaySeasonsOptions {
