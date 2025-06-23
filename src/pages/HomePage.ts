@@ -31,11 +31,8 @@ export function HomePage(data: PoikasData) {
     sidebar: championLeagues.map((league) => ChampTile({ league })).join("\n"),
     main: `
       <article>
-        <!-- (Disabled for now!)
-        <img src="${img("poikas-2019-rec-faceoff-brenden.jpg")}" alt="Suomi Poikas" class="splash" />
-        -->
-        <img src="${img("poikas-rec-2024-fall-championship.jpg")}" alt="Suomi Poikas" class="splash" />
-        <h2>Welcome!</h2>
+        <img src="${img("poikas-c-2025-spring-champions.jpg")}" alt="Suomi Poikas 2025 Spring CC league championship team photo" class="splash" />
+        <h2>Congrats to the 2025 Spring CC League champion Suomi Poikas!</h2>
         <p>
           Welcome to the official website of the Suomi Poikas, your favorite Finnish-American hockey team! Hyvä Suomi!
           🇫🇮
