@@ -85,13 +85,15 @@ export function renderRosterTable<T = Player>(options: RosterTableOptions<T>): s
     .join("")
 
   return `
-    <table${tableClass}${tableId}>
-      <thead>
-        ${headerRow}
-      </thead>
-      <tbody>
-        ${bodyRows}
-      </tbody>
-    </table>
+    <div class="table-container">
+      <table${tableClass}${tableId}>
+        <thead>
+          ${headerRow}
+        </thead>
+        <tbody>
+          ${bodyRows}
+        </tbody>
+      </table>
+    </div>
   `
 }

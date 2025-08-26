@@ -9,13 +9,33 @@ export function AllPlayersPage(data: PoikasData) {
     title: "All Poikas Players",
     description: "All Poikas Players All Time",
     metaImage: img("finland-flag-icon.png"),
-    sidebar: `
-      <img src="${img("poikas-rec-2023-fall-champions.jpg")}" alt="Poikas" />
-      <span class="caption">Poikas</span>
-    `,
+    sidebar: "",
     main: `
-      <article>
-        <h2>All Players</h2>
+      <!-- Hero Section -->
+      <div class="players-hero">
+        <div class="players-hero-content">
+          <div class="players-hero-image">
+            <img src="${img("poikas-rec-2023-fall-champions.jpg")}" alt="Poikas Champions" />
+          </div>
+          <div class="players-hero-info">
+            <h1>All Players</h1>
+            <p>Complete roster of Suomi Poikas players with career statistics and achievements.</p>
+            <div class="players-stats">
+              <div class="stat-item">
+                <span class="stat-number">${data.players.length}</span>
+                <span class="stat-label">Total Players</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">${data.players.filter((p) => p.activeSeasons?.Rec || p.activeSeasons?.C).length}</span>
+                <span class="stat-label">Active Players</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Players Table Section -->
+      <div class="players-table-section">
         ${renderRosterTable({
           id: "players",
           className: "roster",
@@ -35,7 +55,7 @@ export function AllPlayersPage(data: PoikasData) {
           ],
           players: data.players.sort((a, b) => (a.name > b.name ? 1 : -1)),
         })}
-      </article>
+      </div>
     `,
   })
 }

@@ -31,22 +31,18 @@ export function HomePage(data: PoikasData) {
     sidebar: championLeagues.map((league) => ChampTile({ league })).join("\n"),
     main: `
       <article>
-        <img src="${img("poikas-c-2025-spring-champions.jpg")}" alt="Suomi Poikas 2025 Spring CC league championship team photo" class="splash" />
+        <h2>Fall season starts September 6th!</h2>
+        <p>
+          Fall season for our Rec and CC teams are starting on September 6th! Keep an eye on our website for more info.
+          This year, our C/CC team was promoted to the new CC league. We have a Rec team as usual. We don't have a C team
+          yet (due to lack of team slots available).
+        </p>
         <h2>Congrats to the 2025 Spring CC League champion Suomi Poikas!</h2>
+        <img src="${img("poikas-c-2025-spring-champions.jpg")}?c=2" alt="Suomi Poikas 2025 Spring CC league championship team photo" class="splash" />
         <p>
           Welcome to the official website of the Suomi Poikas, your favorite Finnish-American hockey team! Hyvä Suomi!
           🇫🇮
         </p>
-
-        <h2>What's New?</h2>
-        <p><em>Updated June 23, 2025</em></p>
-        <ul>
-          <li>Updated with the final stats and info from the 2025 spring leagues</li>
-          <li>Updated a bunch of players</li>
-          <li>Added sortable stats tables to each season page</li>
-          <li>Added sortable stats tables to each player page</li>
-          <li>Lots more stats everywhere ... go check them out!</li>
-        </ul>
 
         <h2>Latest Games</h2>
         <div class='latest-games'>
@@ -94,6 +90,16 @@ export function HomePage(data: PoikasData) {
               : "<div class='game'>No C games scheduled</div>"
           }
         </div>
+
+        <h2>What's New?</h2>
+        <p><em>Updated June 23, 2025</em></p>
+        <ul>
+          <li>Updated with the final stats and info from the 2025 spring leagues</li>
+          <li>Updated a bunch of players</li>
+          <li>Added sortable stats tables to each season page</li>
+          <li>Added sortable stats tables to each player page</li>
+          <li>Lots more stats everywhere ... go check them out!</li>
+        </ul>
 
         <h2>Our History</h2>
         <p>
@@ -184,15 +190,16 @@ export function HomePage(data: PoikasData) {
       </div>
       <div class="seasons">
         <h2>Season Archives</h2>
-        <table id="seasons" class="seasons">
-          <thead>
-            <tr>
-              <th>Season</th>
-              <th>Rec League</th>
-              <th>C/CC League</th>
-            </tr>
-          </thead>
-          <tbody>
+        <div class="table-container">
+          <table id="seasons" class="seasons">
+            <thead>
+              <tr>
+                <th>Season</th>
+                <th>Rec League</th>
+                <th>C/CC League</th>
+              </tr>
+            </thead>
+            <tbody>
             ${Object.entries(leagueSeasonsMap(data.seasons))
               .map(
                 ([seasonName, leagues]) => `
@@ -206,6 +213,7 @@ export function HomePage(data: PoikasData) {
               .join("\n")}
           </tbody>
         </table>
+        </div>
       </div>
     `,
   })

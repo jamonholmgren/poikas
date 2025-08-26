@@ -2,6 +2,7 @@ import type { Game, Player, PlayerStats, PoikasData, Season } from "../types"
 import { routePage } from "../route"
 import { img } from "../image"
 import { renderRosterTable } from "../utils/renderRosterTable"
+import { notableAbbr, shortenName } from "../utils/strings"
 
 export function LeaguePage(data: PoikasData, slug: string) {
   const league = data.seasons.find((l) => l.url.endsWith(slug))
@@ -17,70 +18,127 @@ export function LeaguePage(data: PoikasData, slug: string) {
     return (seasonStats && seasonStats[prop]) || "-"
   }
 
+  const record = `${wins || 0}-${losses || 0}${ties ? `-${ties}` : ""}`
+  const winPercentage = wins && losses ? ((wins / (wins + losses + (ties || 0))) * 100).toFixed(1) : "0.0"
+
   return routePage({
     path: url,
     title: `${year} ${seasonName} ${leagueName}`,
     description: `Suomi Poikas league ${year} ${seasonName} ${leagueName}`,
     metaImage,
-    sidebar: `
-      <a href="${metaImage}" target="_blank">
-        <img
-          src="${metaImage}"
-          alt="${year} ${seasonName} ${leagueName} - League Photo"
-          id="leagueimage"
-          onerror="this.onerror=null;this.src='${img("000-placeholder.jpg")}';"
-        />
-        <span class="caption" id="leagueimagecaption">${year} ${seasonName} ${leagueName}</span>
-      </a>
-      ${sidebar || ""}
-    `,
+    sidebar: ``,
     main: `
-      <article>
-        <h2 id="seasonname">${year} ${seasonName} ${leagueName}</h2>
-        <p id="description">${description || ""}</p>
-        <table id="seasonresults" class="statsheet">
-          <tr>
-            <th>Standings/Schedule/Stats</th>
-            <td>${leagueStandingsHTML || ""}</td>
-          </tr>
-          <tr>
-            <th>Wins</th>
-            <td>${wins || "0"}</td>
-          </tr>
-          <tr>
-            <th>Losses</th>
-            <td>${losses || "0"}</td>
-          </tr>
-          <tr>
-            <th>Ties/OT Losses</th>
-            <td>${ties || "0"}</td>
-          </tr>
-          <tr>
-            <th>Playoffs Result</th>
-            <td>${playoffs || ""}</td>
-          </tr>
-        </table>
-
-        <div id="videos" class="videos">
-          ${
-            (videos &&
-              videos
-                .map(
-                  (video) => `
-                <iframe
-                  src="${video}"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
-                ></iframe>
-              `
-                )
-                .join("\n")) ||
-            ""
-          }
+      <!-- Hero Section -->
+      <div class="league-hero page-hero">
+        <div class="page-hero-content">
+          <div class="page-hero-image">
+            <a href="${metaImage}" target="_blank">
+              <img
+                src="${metaImage}"
+                alt="${year} ${seasonName} ${leagueName} - League Photo"
+                onerror="this.onerror=null;this.src='${img("000-placeholder.jpg")}';"
+              />
+            </a>
+          </div>
+          <div class="page-hero-info">
+            <h1 class="page-hero-name">${year} ${seasonName} ${leagueName}</h1>
+            <div class="page-hero-details">
+              <div class="stat-item">
+                <span class="stat-number">${record}</span>
+                <span class="stat-label">Record</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">${winPercentage}%</span>
+                <span class="stat-label">Win %</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">${players?.length || 0}</span>
+                <span class="stat-label">Players</span>
+              </div>
+            </div>
+            <div class="page-hero-description">${description || ""}</div>
+          </div>
         </div>
+      </div>
 
+      <!-- Season Info Section -->
+      <div class="content-section">
+        <div class="content-grid">
+          <div class="content-card">
+            <h3>Season Results</h3>
+            <div class="table-container">
+              <table class="statsheet">
+                <tr>
+                  <th>Standings/Schedule</th>
+                  <td>${leagueStandingsHTML || "-"}</td>
+                </tr>
+                <tr>
+                  <th>Wins</th>
+                  <td>${wins || "0"}</td>
+                </tr>
+                <tr>
+                  <th>Losses</th>
+                  <td>${losses || "0"}</td>
+                </tr>
+                <tr>
+                  <th>Ties/OT Losses</th>
+                  <td>${ties || "0"}</td>
+                </tr>
+                <tr>
+                  <th>Playoffs Result</th>
+                  <td>${playoffs || "-"}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="content-card">
+            <h3>Team Schedule</h3>
+            <p>Subscribe to our ${leagueName} schedule:</p>
+            <ul class="schedule-links">
+              <li>
+                <a href="webcal://ics.benchapp.com/eyJwbGF5ZXJJZCI6NDY1ODAzLCJ0ZWFtSWQiOlsyNDYyNDBdfQ" target="_blank">
+                  📅 Webcal: Apple Calendar, Google Calendar
+                </a>
+              </li>
+              <li>
+                <a href="https://ics.benchapp.com/eyJwbGF5ZXJJZCI6NDY1ODAzLCJ0ZWFtSWQiOlsyNDYyNDBdfQ==" target="_blank">
+                  📄 ICS file: Outlook, iCal, etc.
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Videos Section -->
+      ${
+        videos && videos.length
+          ? `
+            <div class="videos-section">
+              <h2>Videos</h2>
+              <div class="videos">
+                ${videos
+                  .map(
+                    (video) => `
+                  <iframe
+                    src="${video}"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                `
+                  )
+                  .join("\n")}
+              </div>
+            </div>
+          `
+          : ""
+      }
+
+      <!-- Roster Section -->
+      <div class="roster-section">
         <h2>Roster</h2>
         ${renderRosterTable({
           id: "roster",
@@ -125,81 +183,78 @@ export function LeaguePage(data: PoikasData, slug: string) {
           ],
           players: players?.filter((player) => player.pos === "G") || [],
         })}
+      </div>
 
+      <!-- Games Section -->
+      <div class="games-section">
         <h2>Games</h2>
+        <div class="table-container">
+          <table id="games" class="roster">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Opponent</th>
+                <th>Score</th>
+                <th>Shots</th>
+                <th>Sisu Cup</th>
+                <th>Goalie</th>
+                <th class="extra">Notable</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${
+                games &&
+                games
+                  .map(
+                    (game) => `
+                      <tr>
+                        <td>${game.date ? game.date.toLocaleDateString() : "-"}</td>
+                        <td>${game.vsLink}</td>
+                        <td>${gameScore(game)}</td>
+                        <td>${gameShots(game)}</td>
+                        <td>${(game.sisu && players?.find((p) => p.name === game.sisu)?.shortProfileLink) || "-"}</td>
+                        <td>${game.goaliePlayer?.shortProfileLink || shortenName(game.goalie)}</td>
+                        <td class="extra notable">${notableAbbr(game.notable, 60)}</td>
+                      </tr>
+                    `
+                  )
+                  .join("\n")
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-        <p>Subscribe to our Rec & C/CC schedules:</p>
-        <ul>
-          <li>
-            <a href="webcal://ics.benchapp.com/eyJwbGF5ZXJJZCI6NDY1ODAzLCJ0ZWFtSWQiOlsyNDYyNDBdfQ"
-              >Webcal link: Apple Calendar, Google Calendar</a
-            >
-          </li>
-          <li>
-            <a href="https://ics.benchapp.com/eyJwbGF5ZXJJZCI6NDY1ODAzLCJ0ZWFtSWQiOlsyNDYyNDBdfQ==" target="_blank"
-              >ICS file: Outlook, iCal, etc.</a
-            >
-          </li>
-        </ul>
-
-        <table id="games" class="roster">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Opponent</th>
-              <th>Score</th>
-              <th>Shots</th>
-              <th>Sisu Cup</th>
-              <th>Goalie</th>
-              <th class="extra">Notable</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${
-              games &&
-              games
-                .map(
-                  (game) => `
-                    <tr>
-                      <td>${game.date ? game.date.toLocaleDateString() : "-"}</td>
-                      <td>${game.vsLink}</td>
-                      <td>${gameScore(game)}</td>
-                      <td>${gameShots(game)}</td>
-                      <td>${(game.sisu && players?.find((p) => p.name === game.sisu)?.shortProfileLink) || "-"}</td>
-                      <td>${game.goaliePlayer?.shortProfileLink || game.goalie || "-"}</td>
-                      <td class="extra notable">${game.notable || "-"}</td>
-                    </tr>
-                  `
-                )
-                .join("\n")
-            }
-          </tbody>
-        </table>
-
+      <!-- Previous Seasons Section -->
+      <div class="previous-seasons-section">
         <h2>Previous Seasons</h2>
-        <table id="previous-seasons" class="roster">
-          <thead>
-            <tr>
-              <th>Season</th>
-              <th>Record</th>
-              <th>Playoffs</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${allSeasons
-              .map(
-                (season) => `
-                    <tr>
-                      <td><a href="${season.url}" class="${season.year === year && season.seasonName === seasonName ? "current" : ""}">${season.year} ${season.seasonName}</a></td>
-                      <td>${season.wins || 0}-${season.losses || 0}${season.ties ? `-${season.ties}` : ""}</td>
-                      <td>${season.playoffs || "-"}</td>
-                    </tr>
-                  `
-              )
-              .join("\n")}
-          </tbody>
-        </table>
-      </article>
+        <div class="table-container">
+          <table id="previous-seasons" class="roster">
+            <thead>
+              <tr>
+                <th>Season</th>
+                <th>Record</th>
+                <th>Playoffs</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${allSeasons
+                .map(
+                  (season) => `
+                      <tr>
+                        <td><a href="${season.url}" class="${season.year === year && season.seasonName === seasonName ? "current" : ""}">${season.year} ${
+                    season.seasonName
+                  }</a></td>
+                        <td>${season.wins || 0}-${season.losses || 0}${season.ties ? `-${season.ties}` : ""}</td>
+                        <td>${season.playoffs || "-"}</td>
+                      </tr>
+                    `
+                )
+                .join("\n")}
+            </tbody>
+          </table>
+        </div>
+      </div>
     `,
   })
 }

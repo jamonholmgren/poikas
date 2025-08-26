@@ -8,10 +8,7 @@ export function JoinPage(_data: PoikasData) {
     title: "Join Suomi Poikas",
     description: "Join us! Suomi Poikas Hockey Club",
     metaImage: img("000-placeholder.jpg"),
-    sidebar: `
-      <img src="${img("poikas-2019-rec-faceoff-brenden.jpg")}" alt="Suomi Poikas" />
-      <span class="caption">Suomi Poikas</span>
-    `,
+    sidebar: ``,
     main: `
       <article>
         <h2>Join the team</h2>
