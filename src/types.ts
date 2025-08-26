@@ -118,6 +118,9 @@ export type PlayerStats = {
   points: number // goals + assists
   penalties: number
   pim: number // penalty minutes (penalties * 3)
+  teamWins: number
+  teamLosses: number
+  teamTies: number
   // Goalie stats
   goalieGamesPlayed: number
   goalieGamesWithShots: number
@@ -135,6 +138,7 @@ export type PlayerStats = {
   shutouts: number
 
   // formatted strings
+  record: string
   goalieRecord: string
   goalsAgainstAverageFormatted: string
   averageShotsAgainstFormatted: string

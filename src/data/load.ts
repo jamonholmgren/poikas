@@ -24,6 +24,8 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
   data.seasons.sort(sortSeasons)
   data.seasons.forEach((season) => populateSeasonData(season, data))
   data.players.forEach((player) => populatePlayerData(player, data))
+  // Only show players who have played in at least one season
+  data.players = data.players.filter((p) => p.seasons.Rec.length > 0 || p.seasons.CC.length > 0)
   return data
 }
 
@@ -182,6 +184,9 @@ function populatePlayerData(player: Player, data: PoikasData) {
     cs.points += ss.goals + ss.assists
     cs.penalties += ss.penalties
     cs.pim += ss.penalties * 3
+    cs.teamWins += playerSeason.season.wins || 0
+    cs.teamLosses += playerSeason.season.losses || 0
+    cs.teamTies += playerSeason.season.ties || 0
 
     // Find the historical data for this season
     const arenaStats = season.arenaReportedStats?.players.find((h) => h.name === player.name)
@@ -220,6 +225,8 @@ function populatePlayerData(player: Player, data: PoikasData) {
   })
 
   populateGoalieStatsAggregates(cs)
+
+  cs.record = `${cs.teamWins}-${cs.teamLosses}-${cs.teamTies}`
 
   // how many active calendar years has this player played?
   const activeYears = [...new Set(Object.values(player.seasons).flatMap((seasons) => seasons.map((s) => s.year)))]
@@ -328,5 +335,9 @@ function defaultStats(): PlayerStats {
     goalsAgainstAverageFormatted: "",
     savePercentageFormatted: "",
     averageShotsAgainstFormatted: "",
+    teamWins: 0,
+    teamLosses: 0,
+    teamTies: 0,
+    record: "",
   }
 }

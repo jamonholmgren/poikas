@@ -47,12 +47,14 @@ export function PlayerPage(data: PoikasData, slug: string) {
 
   // Helper function to build season data for a specific league
   function buildSeasonData(player: Player, leagueName: LeagueName | "Career"): SeasonData[] {
-    const seasons: SeasonData[] = []
     if (leagueName === "Career") {
+      let record = `${player.careerStats?.teamWins || 0}-${player.careerStats?.teamLosses || 0}${player.careerStats?.teamTies ? `-${player.careerStats?.teamTies}` : ""}`
+      if (player.pos === "G")
+        record = `${player.careerStats?.goalieWins || 0}-${player.careerStats?.goalieLosses || 0}${player.careerStats?.goalieTies ? `-${player.careerStats?.goalieTies}` : ""}`
       return [
         {
           seasonLink: "Career",
-          record: `${player.careerStats?.goalieWins || 0}-${player.careerStats?.goalieLosses || 0}${player.careerStats?.goalieTies ? `-${player.careerStats?.goalieTies}` : ""}`,
+          record,
           stats: player.careerStats,
           isGoalie: player.pos === "G",
         },
