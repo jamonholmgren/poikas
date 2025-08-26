@@ -3,7 +3,7 @@ import { poikasData } from "./poikas"
 import { img } from "../image"
 
 const seasonsOrder: SeasonName[] = ["Spring", "Summer", "Fall"]
-const levelsOrder: LeagueName[] = ["Rec", "C"]
+const levelsOrder: LeagueName[] = ["Rec", "CC"]
 
 // Import historical data, parsed from MVIA website
 import historicalRecStats from "./historical/hockey_stats_rec.json"
@@ -29,17 +29,17 @@ function processPoikasData(dataRaw: PoikasDataRaw): PoikasData {
 
 function populateLeagueData(data: PoikasData) {
   const recSeasons: Season[] = data.seasons.filter((s) => s.leagueName === "Rec")
-  const cSeasons: Season[] = data.seasons.filter((s) => s.leagueName === "C")
+  const ccSeasons: Season[] = data.seasons.filter((s) => s.leagueName === "CC")
   data.leagues = {
     Rec: {
       name: "Rec",
       seasons: recSeasons,
       current: recSeasons.find((s) => s.current)!,
     },
-    C: {
-      name: "C",
-      seasons: cSeasons,
-      current: cSeasons.find((s) => s.current)!,
+    CC: {
+      name: "CC",
+      seasons: ccSeasons,
+      current: ccSeasons.find((s) => s.current)!,
     },
   }
 }
@@ -106,7 +106,7 @@ function populateGameData(game: Game, season: Season, data: PoikasData) {
 // Add all the data for a particular player
 function populatePlayerData(player: Player, data: PoikasData) {
   // attach seasons to each player for convenience
-  player.seasons = { Rec: [], C: [] }
+  player.seasons = { Rec: [], CC: [] }
   player.activeSeasons = {}
   player.championships = 0
 
@@ -276,7 +276,7 @@ export function gamesAgainstOpponent(data: PoikasData, slug: string) {
     league.games?.forEach((game) => {
       if (game.vs && slugify(game.vs) === slug) {
         if (league.leagueName === "Rec") recGames.push(game)
-        if (league.leagueName === "C") cGames.push(game)
+        if (league.leagueName === "CC") cGames.push(game)
       }
     })
   })
@@ -293,9 +293,10 @@ export function slugify(text: string) {
     .replace(/--+/g, "-") // replace multiple - with single -
 }
 
-function ageFunction(this: Player) {
+function ageFunction(this: Player, inYear?: number | undefined) {
   if (!this.born) return undefined
-  let age = new Date().getFullYear() - this.born - 1
+  if (!inYear) inYear = new Date().getFullYear()
+  let age = inYear - this.born - 1
   // We have to decide whether to round up or down since we don't have the exact date.
   // For most, we round down. But for the younger guys, we round up.
   if (age < 24) age += 1

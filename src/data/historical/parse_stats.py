@@ -9,9 +9,9 @@ def clean_text(text: str) -> str:
 def extract_season_info(text: str) -> tuple[str, dict[str, str | int]]:
     patterns = [
         r"^(Spring|Summer|Fall|Fall/Winter)\s+(20\d{2})\s*(?:.*?League)?",
-        r"(Spring|Summer|Fall|Fall/Winter)\s+(20\d{2})\s+(C League|CC/C League|C/CC League|Rec League)",
-        r"(Spring|Summer|Fall|Fall/Winter).+?(20\d{2})(?:/\d{2})?.*(C League|CC/C League|C/CC League|Rec League)",
-        r"(20\d{2}).+(Spring|Summer|Fall|Fall/Winter).*(C League|CC/C League|C/CC League|Rec League)"
+        r"(Spring|Summer|Fall|Fall/Winter)\s+(20\d{2})\s+(C League|CC/C League|CC League|Rec League)",
+        r"(Spring|Summer|Fall|Fall/Winter).+?(20\d{2})(?:/\d{2})?.*(C League|CC/C League|CC League|Rec League)",
+        r"(20\d{2}).+(Spring|Summer|Fall|Fall/Winter).*(C League|CC/C League|CC League|Rec League)"
     ]
     
     for pattern in patterns:
@@ -25,7 +25,7 @@ def extract_season_info(text: str) -> tuple[str, dict[str, str | int]]:
             season_match = re.search(r'(Spring|Summer|Fall|Fall/Winter)', full_name, re.IGNORECASE)
             season = season_match.group(1) if season_match else None
             
-            league_match = re.search(r'(C League|CC/C League|C/CC League|Rec League)', text, re.IGNORECASE)
+            league_match = re.search(r'(C League|CC/C League|CC League|Rec League)', text, re.IGNORECASE)
             league = 'C' if league_match and any(x in league_match.group(1) for x in ['C League', 'CC/C']) else 'Rec' if league_match and 'Rec' in league_match.group(1) else None
             
             return full_name, {

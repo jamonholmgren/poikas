@@ -1,5 +1,5 @@
 export type SeasonName = "Fall" | "Spring" | "Summer"
-export type LeagueName = "Rec" | "C"
+export type LeagueName = "Rec" | "CC"
 
 // A league is a collection of seasons, like Rec or C
 export type League = {
@@ -89,7 +89,7 @@ export type Player = PlayerRaw & {
   years: number
   startYear: number
   endYear: number
-  age: () => number | undefined
+  age: (inYear?: number | undefined) => number | undefined
   championships: number
   slug: string
   imageURL: string

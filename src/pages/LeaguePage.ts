@@ -18,6 +18,11 @@ export function LeaguePage(data: PoikasData, slug: string) {
     return (seasonStats && seasonStats[prop]) || "-"
   }
 
+  const getAgeCustom = (season: Season) => (player: Player) => {
+    if (!player.born) return "-"
+    return player.age(season.year) || "-"
+  }
+
   const record = `${wins || 0}-${losses || 0}${ties ? `-${ties}` : ""}`
   const winPercentage = wins && losses ? ((wins / (wins + losses + (ties || 0))) * 100).toFixed(1) : "0.0"
 
@@ -155,7 +160,7 @@ export function LeaguePage(data: PoikasData, slug: string) {
             { th: "Wt", val: "wt", width: 30, xtra: true, alt: "Weight" },
             { th: "Sh", val: "shoots", width: 30, xtra: true, alt: "Shoots left or right" },
             { th: "Yrs", val: "years", width: 30, xtra: true, alt: "Years with team" },
-            { th: "Age", val: "age", width: 30, xtra: true, alt: "Player age" },
+            { th: "Age", getValue: getAgeCustom(league), width: 30, xtra: true, alt: "Player age" },
           ],
           players: players?.filter((player) => player.pos !== "G") || [],
         })}
@@ -179,7 +184,7 @@ export function LeaguePage(data: PoikasData, slug: string) {
             { th: "Wt", val: "wt", width: 30, xtra: true, alt: "Weight" },
             { th: "Sh", val: "shoots", width: 30, xtra: true, alt: "Shoots left or right" },
             { th: "Yrs", val: "years", width: 30, xtra: true, alt: "Years with team" },
-            { th: "Age", val: "age", width: 30, xtra: true, alt: "Player age" },
+            { th: "Age", getValue: getAgeCustom(league), width: 30, xtra: true, alt: "Player age" },
           ],
           players: players?.filter((player) => player.pos === "G") || [],
         })}

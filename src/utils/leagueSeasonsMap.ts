@@ -3,18 +3,18 @@ import type { PlayerSeason, SeasonMap, LeagueName, Season, League } from "../typ
 export function leagueSeasonsMap(seasons: Season[]): SeasonMap {
   // We're constructing a map of:
   // {
-  //   "2024 Fall": { Rec: "Rec League 🏆", C: "C/CC League" },
-  //   "2024 Spring": { Rec: "Rec League", C: "C/CC League" },
-  //   "2024 Summer": { Rec: "Rec League", C: "C/CC League" },
+  //   "2024 Fall": { Rec: "Rec League 🏆", CC: "CC League" },
+  //   "2024 Spring": { Rec: "Rec League", CC: "CC League" },
+  //   "2024 Summer": { Rec: "Rec League", CC: "CC League" },
   // }
 
   const data: SeasonMap = {}
 
   seasons.forEach((season) => {
     const key = `${season.year} ${season.seasonName}`
-    if (!data[key]) data[key] = { Rec: "", C: "" }
+    if (!data[key]) data[key] = { Rec: "", CC: "" }
 
-    let leagueText = season.leagueName === "Rec" ? "Rec League" : "C/CC League"
+    let leagueText = season.leagueName === "Rec" ? "Rec League" : "CC League"
     if (season.playoffs === "champions") leagueText += ` 🏆`
 
     leagueText = `<a href="${season.url}">${leagueText}</a>`

@@ -11,17 +11,17 @@ export function HomePage(data: PoikasData) {
   const championLeagues = data.seasons.filter((s) => s.playoffs === "champions" && !`${s.aside}`.includes("with")).toReversed()
 
   let rec = data.leagues.Rec.current || data.leagues.Rec.seasons.at(-1)!
-  let c = data.leagues.C.current || data.leagues.C.seasons.at(-1)!
+  let cc = data.leagues.CC.current || data.leagues.CC.seasons.at(-1)!
 
   // latest games from each league
   const completedRecGames = (rec.games || []).filter((g) => g.result != "pending")
   const lastRecGame = completedRecGames.length > 0 ? completedRecGames.at(-1) : undefined
-  const completedCGames = (c.games || []).filter((g) => g.result != "pending")
-  const lastCGame = completedCGames.length > 0 ? completedCGames.at(-1) : undefined
+  const completedCCGames = (cc.games || []).filter((g) => g.result != "pending")
+  const lastCCGame = completedCCGames.length > 0 ? completedCCGames.at(-1) : undefined
   const incompleteRecGames = (rec.games || []).filter((g) => g.result == "pending")
   const nextRecGame = incompleteRecGames.length > 0 ? incompleteRecGames.at(0) : undefined
-  const incompleteCGames = (c.games || []).filter((g) => g.result == "pending")
-  const nextCGame = incompleteCGames.length > 0 ? incompleteCGames.at(0) : undefined
+  const incompleteCCGames = (cc.games || []).filter((g) => g.result == "pending")
+  const nextCCGame = incompleteCCGames.length > 0 ? incompleteCCGames.at(0) : undefined
 
   return routePage({
     path: "/",
@@ -34,7 +34,7 @@ export function HomePage(data: PoikasData) {
         <h2>Fall season starts September 6th!</h2>
         <p>
           Fall season for our Rec and CC teams are starting on September 6th! Keep an eye on our website for more info.
-          This year, our C/CC team was promoted to the new CC league. We have a Rec team as usual. We don't have a C team
+          This year, our CC team was promoted to the new CC league. We have a Rec team as usual. We don't have a C team
           yet (due to lack of team slots available).
         </p>
         <h2>Congrats to the 2025 Spring CC League champion Suomi Poikas!</h2>
@@ -58,13 +58,13 @@ export function HomePage(data: PoikasData) {
             : "<div class='game'>No games completed yet</div>"
         }
           ${
-            lastCGame
-              ? `<a href="${c.url}" class='game'>
-                  <div class='league'>C/CC League</div>
-                  <div class='teams'>Poikas vs ${lastCGame.vs} (${lastCGame.date?.toLocaleDateString()})</div>
-                  <div class='result'>${lastCGame.result} ${lastCGame.us}-${lastCGame.them}</div>
-                  ${lastCGame.sisu ? `<div class='sisu'>${`🇫🇮 Sisu Cup: ${lastCGame.sisu}` || ""}</div>` : ""}
-                  <div class='notable'>${lastCGame.notable || ""}</div>
+            lastCCGame
+              ? `<a href="${cc.url}" class='game'>
+                  <div class='league'>CC League</div>
+                  <div class='teams'>Poikas vs ${lastCCGame.vs} (${lastCCGame.date?.toLocaleDateString()})</div>
+                  <div class='result'>${lastCCGame.result} ${lastCCGame.us}-${lastCCGame.them}</div>
+                  ${lastCCGame.sisu ? `<div class='sisu'>${`🇫🇮 Sisu Cup: ${lastCCGame.sisu}` || ""}</div>` : ""}
+                  <div class='notable'>${lastCCGame.notable || ""}</div>
                 </a>`
               : "<div class='game'>No games completed yet</div>"
           }
@@ -81,13 +81,13 @@ export function HomePage(data: PoikasData) {
             : "<div class='game'>No Rec games scheduled</div>"
         }
           ${
-            nextCGame
-              ? `<a href="${c.url}" class='game'>
-                  <div class='league'>C/CC League</div>
-                  <div class='teams'>Poikas vs ${nextCGame.vs} (${nextCGame.date?.toLocaleDateString()})</div>
-                  <div class='notable'>${nextCGame.notable || ""}</div>
+            nextCCGame
+              ? `<a href="${cc.url}" class='game'>
+                  <div class='league'>CC League</div>
+                  <div class='teams'>Poikas vs ${nextCCGame.vs} (${nextCCGame.date?.toLocaleDateString()})</div>
+                  <div class='notable'>${nextCCGame.notable || ""}</div>
                 </a>`
-              : "<div class='game'>No C games scheduled</div>"
+              : "<div class='game'>No CC games scheduled</div>"
           }
         </div>
 
@@ -113,7 +113,7 @@ export function HomePage(data: PoikasData) {
         </p>
         <p>
           The club is made up primarily of Finnish-American players. Most seasons, there
-          is a Rec League team and a C/CC League team. We play at the
+          is a Rec League team and a CC League team. We play at the
           <a href="https://mtviewice.com/" target="_blank">Mountain View Ice Arena</a>
           in Vancouver, Washington, USA.
         </p>
@@ -130,7 +130,7 @@ export function HomePage(data: PoikasData) {
           Also check out our recent
           <a href="https://www.youtube.com/watch?v=y-PfIM5V3_Q" target="_blank">Fall 2023 Rec championship video</a>.
         </p>
-        <p>Subscribe to our Rec & C/CC schedules:</p>
+        <p>Subscribe to our Rec & CC schedules:</p>
         <ul>
           <li>
             <a href="webcal://ics.benchapp.com/eyJwbGF5ZXJJZCI6NDY1ODAzLCJ0ZWFtSWQiOlsyNDYyNDBdfQ"
@@ -168,8 +168,8 @@ export function HomePage(data: PoikasData) {
         })}
 
         <h2>
-          Current C/CC Roster
-          <a class="details" href="${c.url}">(view season page)</a>
+          Current CC Roster
+          <a class="details" href="${cc.url}">(view season page)</a>
         </h2>
         ${renderRosterTable({
           id: "c-roster",
@@ -185,7 +185,7 @@ export function HomePage(data: PoikasData) {
             { th: "Yrs", val: "years", width: 30, xtra: true, alt: "Years with team" },
             { th: "Age", val: "age", width: 30, xtra: true, alt: "Player age" },
           ],
-          players: c.players || [],
+          players: cc.players || [],
         })}
       </div>
       <div class="seasons">
@@ -196,7 +196,7 @@ export function HomePage(data: PoikasData) {
               <tr>
                 <th>Season</th>
                 <th>Rec League</th>
-                <th>C/CC League</th>
+                <th>CC League</th>
               </tr>
             </thead>
             <tbody>
@@ -206,7 +206,7 @@ export function HomePage(data: PoikasData) {
             <tr>
               <td>${seasonName}</td>
               <td>${leagues.Rec}</td>
-              <td>${leagues.C}</td>
+              <td>${leagues.CC}</td>
             </tr>
           `
               )

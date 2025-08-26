@@ -1,4 +1,4 @@
-import type { PoikasData, PoikasImage, Season, PlayerSeason, Player, PlayerStats, LeagueName } from "../types"
+import type { PoikasData, PoikasImage, PlayerSeason, Player, PlayerStats, LeagueName } from "../types"
 import { Champ } from "../components/Champ"
 import { sisuCups } from "../utils/sisuCups"
 import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
@@ -26,11 +26,11 @@ export function PlayerPage(data: PoikasData, slug: string) {
   const nextPlayer = data.players.find((p) => p.name > player.name)
 
   const recSeasons = player.seasons.Rec.length || "—"
-  const cSeasons = player.seasons.C.length || "—"
+  const ccSeasons = player.seasons.CC.length || "—"
 
   const playerImages = images.filter((img: PoikasImage) => img.players.includes(player.name))
   // Also add images from the player's seasons
-  const playerSeasonImages = player.seasons.Rec.concat(player.seasons.C)
+  const playerSeasonImages = player.seasons.Rec.concat(player.seasons.CC)
     .map((s) => (s.season.photos && s.season.photos.length ? s.season.photos.slice(0, 1) : []))
     .flat()
     .filter((im) => typeof im === "string")
@@ -41,12 +41,12 @@ export function PlayerPage(data: PoikasData, slug: string) {
   const allImages = [...playerImages, ...playerSeasonImages]
 
   const rec = player.activeSeasons?.Rec
-  const c = player.activeSeasons?.C
+  const cc = player.activeSeasons?.CC
   const careerGoals = player.careerStats?.goals || 0
   const careerAssists = player.careerStats?.assists || 0
 
   // Helper function to build season data for a specific league
-  function buildSeasonData(player: Player, leagueName: "Rec" | "C" | "Career"): SeasonData[] {
+  function buildSeasonData(player: Player, leagueName: LeagueName | "Career"): SeasonData[] {
     const seasons: SeasonData[] = []
     if (leagueName === "Career") {
       return [
@@ -166,15 +166,15 @@ export function PlayerPage(data: PoikasData, slug: string) {
                   <td>${recSeasons}</td>
                 </tr>
                 <tr>
-                  <th>C/CC Seasons</th>
-                  <td>${cSeasons}</td>
+                  <th>CC Seasons</th>
+                  <td>${ccSeasons}</td>
                 </tr>
                 <tr>
                   <th>Championships</th>
                   <td>${Champ(player)}</td>
                 </tr>
                 ${(rec && activeStats(rec)) || ""}
-                ${(c && activeStats(c)) || ""}
+                ${(cc && activeStats(cc)) || ""}
               </table>
             </div>
           </div>

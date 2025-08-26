@@ -136,7 +136,7 @@ Print
  	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
 CCCP	25	12	3	0	15	1	79	37	42	
 Badgers	24	12	3	0	15	0	59	38	21	
-Lightning C/CC	22	11	4	0	15	0	73	44	29	
+Lightning CC	22	11	4	0	15	0	73	44	29	
 Deadguys	18	9	6	0	15	0	60	50	10	
 Callahan Auto Parts	17	8	7	0	15	1	50	36	14	
 2 Towns Ciderhouse	16	8	7	0	15	0	58	56	2	
@@ -150,7 +150,7 @@ Date	Home	 	Away	Time/Status	Venue	Game Type	Officials
 Sun-Sep 18  	Suomi Poikas C	7 - 1	PBR	Complete	Mountain View Ice Arena	Regular	Doherty, Mischke
 Sun-Sep 25  	Suomi Poikas C	0 - 5	Callahan Auto Parts	Complete	Mountain View Ice Arena	Regular	Dean, Wolfe
 Sun-Oct 2  	Suomi Poikas C	0 - 5	Bandits	Complete	Mountain View Ice Arena	Regular	 
-Sun-Oct 9  	Suomi Poikas C	2 - 8	Lightning C/CC	Complete	Mountain View Ice Arena	Regular	Murashige
+Sun-Oct 9  	Suomi Poikas C	2 - 8	Lightning CC	Complete	Mountain View Ice Arena	Regular	Murashige
 Sun-Oct 16  	2 Towns Ciderhouse	5 - 4	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Dean
 Sun-Oct 23  	Deadguys	6 - 2	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Wolfe
 Sun-Oct 30  	Badgers	3 - 1	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Doherty, Murashige
@@ -158,7 +158,7 @@ Sun-Nov 6  	Suomi Poikas C	4 - 7	CCCP	Complete	Mountain View Ice Arena	Regular	B
 Sun-Nov 13  	Suomi Poikas C	5 - 6	Revolution	Complete	Mountain View Ice Arena	Regular	Wolfe
 Sun-Nov 20  	PBR	4 - 5	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Murashige
 Sun-Dec 4  	Bandits	6 - 2	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Wolfe
-Sun-Dec 11  	Lightning C/CC	7 - 0	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Murashige, Nearman
+Sun-Dec 11  	Lightning CC	7 - 0	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Murashige, Nearman
 Sun-Dec 18  	Suomi Poikas C	4 - 1	2 Towns Ciderhouse	Complete	Mountain View Ice Arena	Regular	Doherty, Nearman
 Sun-Jan 8  	Callahan Auto Parts	2 - 1 OT	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Dean, Doherty
 Sun-Jan 15  	Suomi Poikas C	2 - 8	Deadguys	Complete	Mountain View Ice Arena	Regular	McIntyre(scorekeeper), Wolfe
@@ -195,7 +195,7 @@ Callahan Auto Parts	23	11	4	0	15	1	62	41	21
 Deadguys	20	8	7	0	15	4	74	64	10	
 Badgers	18	9	6	0	15	0	51	42	9	
 Revolution	18	8	7	0	15	2	61	64	-3	
-Lightning C/CC	16	6	9	0	15	4	67	57	10	
+Lightning CC	16	6	9	0	15	4	67	57	10	
 Bandits	10	4	11	0	15	2	44	66	-22	
 Suomi Poikas C	10	5	10	0	15	0	58	83	-25	
 PBR	2	1	14	0	15	0	36	95	-59	
@@ -203,7 +203,7 @@ Suomi Poikas C 's Schedule
 Print
 Date	Home	 	Away	Time/Status	Venue	Game Type	Officials
 Sun-Feb 12  	Suomi Poikas C	2 - 4	Bandits	Complete	Mountain View Ice Arena	Regular	Foppe (scorekeeper), Doherty
-Sun-Feb 19  	Suomi Poikas C	4 - 3	Lightning C/CC	Complete	Mountain View Ice Arena	Regular	Murashige, Nearman, Foppe (scorekeeper)
+Sun-Feb 19  	Suomi Poikas C	4 - 3	Lightning CC	Complete	Mountain View Ice Arena	Regular	Murashige, Nearman, Foppe (scorekeeper)
 Sun-Feb 26  	Suomi Poikas C	6 - 2	PBR	Complete	Mountain View Ice Arena	Regular	McIntyre(scorekeeper), Murashige, Nearman
 Sun-Mar 5  	Suomi Poikas C	2 - 4	Deadguys	Complete	Mountain View Ice Arena	Regular	Mischke
 Sun-Mar 12  	2 Towns Ciderhouse	6 - 4	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Foppe (scorekeeper), Nearman
@@ -212,7 +212,7 @@ Sun-Mar 26  	Suomi Poikas C	2 - 4	Revolution	Complete	Mountain View Ice Arena	Re
 Sun-Apr 2  	Suomi Poikas C	6 - 3	Badgers	Complete	Mountain View Ice Arena	Regular	Foppe (scorekeeper), Nearman, Murashige
 Sun-Apr 9  	Suomi Poikas C	2 - 4	Callahan Auto Parts	Complete	Mountain View Ice Arena	Regular	Bloemke, Fowler
 Sun-Apr 16  	Bandits	2 - 5	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Bloemke
-Sun-Apr 23  	Lightning C/CC	11 - 6	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Foppe (scorekeeper), Murashige, Nearman
+Sun-Apr 23  	Lightning CC	11 - 6	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Foppe (scorekeeper), Murashige, Nearman
 Sun-Apr 30  	PBR	7 - 8	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Wolfe, Mischke
 Sun-May 7  	Deadguys	5 - 2	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Bloemke, Mischke
 Sun-May 14  	2 Towns Ciderhouse	12 - 0	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Nearman, Foppe (scorekeeper)
@@ -245,7 +245,7 @@ Fall 2023 C League Standings
 https://mountainview.ezleagues.ezfacility.com/teams/2902820/Suomi-Poikas-C.aspx?framed=1
 Print
  	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
-Lightning C/CC	23	11	4	0	15	1	72	46	26	
+Lightning CC	23	11	4	0	15	1	72	46	26	
 Badgers	22	11	4	0	15	0	63	33	30	
 Callahan Auto Parts	21	10	5	0	15	1	53	37	16	
 Bandits	21	10	4	1	15	0	51	42	9	
@@ -258,7 +258,7 @@ PBR	2	1	14	0	15	0	29	91	-62
 Suomi Poikas C's Schedule
 Print
 Date	Home	 	Away	Time/Status	Venue	Game Type	Officials
-Sun-Sep 10  	Suomi Poikas C	2 - 11	Lightning C/CC	Complete	Mountain View Ice Arena	Regular	Dean, Doherty
+Sun-Sep 10  	Suomi Poikas C	2 - 11	Lightning CC	Complete	Mountain View Ice Arena	Regular	Dean, Doherty
 Sun-Sep 17  	Suomi Poikas C	6 - 5	CCCP	Complete	Mountain View Ice Arena	Regular	McIntyre(scorekeeper), Doherty, Wolfe
 Sun-Sep 24  	Suomi Poikas C	6 - 3	Revolution	Complete	Mountain View Ice Arena	Regular	Dean, Doherty
 Sun-Oct 1  	Suomi Poikas C	1 - 3	Bandits	Complete	Mountain View Ice Arena	Regular	Abrams, Bloemke
@@ -267,7 +267,7 @@ Sun-Oct 15  	Badgers	9 - 0	Suomi Poikas C	Complete	Mountain View Ice Arena	Regul
 Sun-Oct 22  	Deadguys	9 - 2	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Nearman
 Sun-Oct 29  	Suomi Poikas C	0 - 10	Local Legends	Complete	Mountain View Ice Arena	Regular	McMurtry(Scorekeeper), Doherty, Dean
 Sun-Nov 5  	Suomi Poikas C	1 - (Forfeit) 0	PBR	Complete	Mountain View Ice Arena	Regular	Wolfe, Dean, McMurtry(Scorekeeper)
-Sun-Nov 12  	Lightning C/CC	6 - 3	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Fowler, McIntyre(scorekeeper)
+Sun-Nov 12  	Lightning CC	6 - 3	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Fowler, McIntyre(scorekeeper)
 Sun-Nov 19  	CCCP	6 - 3	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Wolfe
 Sun-Dec 3  	Bandits	5 - 2	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Doherty, Pfister, McMurtry(Scorekeeper)
 Sun-Dec 10  	Suomi Poikas C	3 - 6	Callahan Auto Parts	Complete	Mountain View Ice Arena	Regular	Dean, Doherty, McMurtry(Scorekeeper)
@@ -317,7 +317,7 @@ Print
  	 PTS 	 W 	 L 	 T 	 GP 	 OTL 	 PF 	 PA 	 PD 	Calendar Sync
 Badgers	23	11	3	1	15	0	61	44	17	
 Deadguys	21	10	4	1	15	0	52	42	10	
-Lightning C/CC	20	9	4	2	15	0	68	46	22	
+Lightning CC	20	9	4	2	15	0	68	46	22	
 Bandits	18	8	5	2	15	0	52	39	13	
 Local Legends	18	7	8	0	15	4	45	46	-1	
 Revolution	17	7	6	2	15	1	65	63	2	
@@ -333,7 +333,7 @@ Sun-Feb 18  	Suomi Poikas C	6 - 2	CCCP	Complete	Mountain View Ice Arena	Regular	
 Sun-Feb 25  	Suomi Poikas C	3 - 2	Callahan Auto Parts	Complete	Mountain View Ice Arena	Regular	Coughran (scorekeeper), Pfister, Schultz
 Sun-Mar 3  	Suomi Poikas C	2 - 6	Local Legends	Complete	Mountain View Ice Arena	Regular	Moss (scorekeeper), Pfister, Dean
 Sun-Mar 10  	Badgers	3 - 6	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	McIntyre(scorekeeper), Mischke, Zimmerman
-Sun-Mar 17  	Lightning C/CC	4 - 7	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Lucus (scorekeeper), Mischke, Schultz
+Sun-Mar 17  	Lightning CC	4 - 7	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Lucus (scorekeeper), Mischke, Schultz
 Sun-Mar 24  	Bandits	6 - 4	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Dean, Schultz, Moss (scorekeeper)
 Sun-Mar 31  	Suomi Poikas C	2 - 5	Deadguys	Complete	Mountain View Ice Arena	Regular	Coughran (scorekeeper), Dean, Pfister
 Sun-Apr 7  	Suomi Poikas C	3 - 5	Revolution	Complete	Mountain View Ice Arena	Regular	Coughran (scorekeeper), Doherty, Pfister
@@ -341,7 +341,7 @@ Sun-Apr 14  	PBR	4 - 3 OT	Suomi Poikas C	Complete	Mountain View Ice Arena	Regula
 Sun-Apr 21  	CCCP	5 - 2	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Coughran (scorekeeper), Mischke, Schultz
 Sun-Apr 28  	Callahan Auto Parts	4 - 6	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Doherty, Fortin (scorekeeper), Zimmerman
 Sun-May 5  	Local Legends	3 - 2	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Fortin (scorekeeper), Pfister, Welliver
-Sun-May 19  	Suomi Poikas C	3 - 5	Lightning C/CC	Complete	Mountain View Ice Arena	Regular	Doherty, Moss (scorekeeper), Pfister
+Sun-May 19  	Suomi Poikas C	3 - 5	Lightning CC	Complete	Mountain View Ice Arena	Regular	Doherty, Moss (scorekeeper), Pfister
 Sun-May 26  	Suomi Poikas C	4 - 6	Badgers	Complete	Mountain View Ice Arena	Regular	Dean, Johnson (scorekeeper), Zimmerman
 Sun-Jun 2  	PBR	4 - 3	Suomi Poikas C	Complete	Mountain View Ice Arena	Postseason-C Semifinal	Dean, Doherty, Fortin (scorekeeper)
 Roster	
@@ -393,7 +393,7 @@ Badgers	21	10	5	0	15	1	53	48	5
 Bandits	20	9	6	0	15	2	48	40	8	
 Jugs	18	9	6	0	15	0	45	41	4	
 CCCP	18	8	7	0	15	2	56	45	11	
-Lightning C/CC	16	7	8	0	15	2	50	60	-10	
+Lightning CC	16	7	8	0	15	2	50	60	-10	
 Deadguys	12	5	10	0	15	2	32	47	-15	
 PBR	9	4	11	0	15	1	46	60	-14	
 Revolution	9	4	11	0	15	1	38	66	-28	
@@ -406,7 +406,7 @@ Sun-Sep 22  	Suomi Poikas C	2 - 8	Local Legends	Complete	Mountain View Ice Arena
 Sun-Sep 29  	Badgers	2 - 6	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Dean, Doherty, Fortin (scorekeeper)
 Sun-Oct 6  	PBR	6 - 8	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Dean, Pfister, Fortin (scorekeeper)
 Sun-Oct 13  	Bandits	0 - 4	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Nearman, Pfister
-Sun-Oct 20  	Suomi Poikas C	6 - 7 OT	Lightning C/CC	Complete	Mountain View Ice Arena	Regular	Hickey, Mischke, Nagel (scorekeeper)
+Sun-Oct 20  	Suomi Poikas C	6 - 7 OT	Lightning CC	Complete	Mountain View Ice Arena	Regular	Hickey, Mischke, Nagel (scorekeeper)
 Sun-Oct 27  	Suomi Poikas C	3 - 5	CCCP	Complete	Mountain View Ice Arena	Regular	McMurtry(Scorekeeper), Pfister, Mischke
 Sun-Nov 3  	Jugs	2 - 1 OT	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Kempany, McMurtry(Scorekeeper), Schultz
 Sun-Nov 10  	Revolution	1 - 4	Suomi Poikas C	Complete	Mountain View Ice Arena	Regular	Doherty, McMahon (scorekeeper), Pfister

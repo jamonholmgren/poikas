@@ -26,7 +26,7 @@ export function JoinPage(_data: PoikasData) {
           in Vancouver, Washington.
         </p>
         <p>
-          In addition to our Rec team (beginners), we also have a C/CC team
+          In addition to our Rec team (beginners), we also have a CC team
           for more advanced players.
         </p>
         <h2>Requirements</h2>

@@ -93,7 +93,7 @@ export function OpponentPage(data: PoikasData, slug: string) {
         ${
           cGames.length > 0
             ? `
-        <h2>C/CC League</h2>
+        <h2>CC League</h2>
 
         <div class="table-container">
           <table class="statsheet" id="statsheet">

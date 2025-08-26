@@ -17,7 +17,7 @@ function layout(options: LayoutOptions) {
   const data = getData()
 
   let currentRecSeason = data.seasons.find((l) => l.current && l.leagueName === "Rec")
-  let currentCSeason = data.seasons.find((l) => l.current && l.leagueName === "C")
+  let currentCCSeason = data.seasons.find((l) => l.current && l.leagueName === "CC")
 
   if (!currentRecSeason) {
     // grab last rec season
@@ -25,10 +25,10 @@ function layout(options: LayoutOptions) {
     if (!currentRecSeason) throw new Error("No rec season found")
   }
 
-  if (!currentCSeason) {
-    // grab last c season
-    currentCSeason = data.seasons.filter((l) => l.leagueName === "C").pop()
-    if (!currentCSeason) throw new Error("No c season found")
+  if (!currentCCSeason) {
+    // grab last cc season
+    currentCCSeason = data.seasons.filter((l) => l.leagueName === "CC").pop()
+    if (!currentCCSeason) throw new Error("No cc season found")
   }
 
   return `<!DOCTYPE html>
@@ -58,7 +58,7 @@ function layout(options: LayoutOptions) {
       <ul>
         <li><a href="/" class="${active("/", path)}">Home</a></li>
         <li><a href="${currentRecSeason!.url}" class="${active(currentRecSeason!.url, path)}">Rec</a></li>
-        <li><a href="${currentCSeason!.url}" class="${active(currentCSeason!.url, path)}">C/CC</a></li>
+        <li><a href="${currentCCSeason!.url}" class="${active(currentCCSeason!.url, path)}">CC</a></li>
         <li><a href="/players/" class="${active("/players/", path)}">All Players</a></li>
         <li><a href="/photos/" class="${active("/photos/", path)}">Photos</a></li>
         <li><a href="/join/" class="${active("/join/", path)}">Join</a></li>

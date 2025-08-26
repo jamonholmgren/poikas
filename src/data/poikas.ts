@@ -10,7 +10,7 @@ export const poikasData: PoikasDataRaw = {
       seasonName: "Spring",
       leagueName: "Rec",
       schedule: "https://mountainview.ezleagues.ezfacility.com/teams/3068426/Suomi-Poikas-Rec.aspx?framed=1",
-      playoffs: "lost-championship",
+      playoffs: "eliminated-championship",
       description:
         "We had a great season, finishing the regular season at 13-2-1, but the Slavic Peeps were our achilles heel. We faced them for the fourth time in a row in the championship game and fell short this time. But it was a fantastic season nonetheless, a lot of growth from our young guys, a huge defensive effort, and we had a record 7 shutouts throughout the season.",
       photos: ["poikas-rec-2025-spring-championship-loss.jpg"],
@@ -366,10 +366,10 @@ export const poikasData: PoikasDataRaw = {
     {
       year: 2025,
       seasonName: "Spring",
-      leagueName: "C",
+      leagueName: "CC",
       schedule: "https://mountainview.ezleagues.ezfacility.com/teams/3068408/Suomi-Poikas-C.aspx?framed=1",
       playoffs: "champions",
-      description: "Our most successful C/CC season yet! We not only made the CC playoffs bracket, but won the entire thing. Fantastic play by our stellar C/CC team!",
+      description: "Our most successful CC season yet! We not only made the CC playoffs bracket, but won the entire thing. Fantastic play by our stellar CC team!",
       photos: ["poikas-c-2025-spring-champions.jpg"],
       sidebar: "",
       roster: [
@@ -386,6 +386,7 @@ export const poikasData: PoikasDataRaw = {
         "Peter Tapio",
         "Russ Tapio",
         "Scott Daniels",
+        "Treven Erickson",
         "Ward Pearson",
         "Kyle Malstrom",
         "Jamon Holmgren",
@@ -735,7 +736,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 77,
       name: "Joel Mattila",
-      bio: "Joel is the founder of the Suomi Poikas and team captain. He is the father of Brenden Mattila and an uncle to Brent Mattila. Joel started playing hockey in spring of 2019 after his son Brenden joined a team and quickly grew to love hockey.",
+      bio: "Joel is the founder of the Suomi Poikas and team captain. He's the heart and soul of the team and is a relentless competitor, constantly pushing to get better. His specialities are his faceoff skills, ice vision, and versatility in any role.",
       role: "captain",
       pos: "C",
       shoots: "R",
@@ -746,7 +747,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 6,
       name: "Brenden Mattila",
-      bio: "Brenden is the spark that caused the Poikas to come to be. When he turned 18 he started to play hockey, which caused his dad Joel to also start playing, and eventually start the Poikas. Brenden is a blazing fast skater and a top level scorer in Rec League.",
+      bio: "Brenden is a blazing fast skater and one of the Poikas' top scorers in Rec League all time. He is a natural scorer and has a knack for finding the back of the net.",
       pos: "LW",
       shoots: "L",
       born: 2000,
@@ -754,7 +755,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 51,
       name: "Jamon Holmgren",
-      bio: "Jamon was the first and only full time goalie for the Poikas from the beginning, and now plays primarily for the Rec team. He is the father of Cedric Holmgren.",
+      bio: "Jamon was the first full time goalie for the Poikas from the beginning, and now plays primarily for the Rec team. He has been a top goalie in Rec for many years and has competed at the CC level as well.",
       pos: "G",
       shoots: "R",
       born: 1981,
@@ -763,7 +764,9 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       name: "Jamie Dugger",
+      bio: "Jamie is the Poikas' backup Rec level goalie. He played a lot as a kid and recently returned to the ice.",
       pos: "G",
+      shoots: "R",
     },
     {
       number: 15,
@@ -778,7 +781,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 55,
       name: "Dan Warren",
-      bio: "Dan is one of our reliable and talented defensemen. He puts a lot of pressure on the other team and can often be found slicing through the neutral zone with the puck.",
+      bio: "Dan is a talented and competitive defensemen. He puts a lot of pressure on the other team and can often be found slicing through the neutral zone with the puck.",
       pos: "D",
       shoots: "L",
       ht: "5-10",
@@ -788,6 +791,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 70,
       name: "Daniel Kulla",
+      bio: "Daniel is incredibly fast and agile. He's a relentless goal scorer and has improved immensely since he started playing ice hockey not long ago.",
       pos: "RW",
       shoots: "L",
       born: 2004,
@@ -797,7 +801,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 81,
       name: "Kieren Sarkela",
-      bio: "Kieren is Kevin Sarkela's son and joined the team in Spring 2023. He has quickly advanced to C/CC level and continues to improve his game.",
+      bio: "Kieren started playing at 18 years old and quickly advanced to CC level and continues to improve his game. He has a natural feel for the game and is a great puck handler and shooter.",
       pos: "RW",
       shoots: "R",
       ht: "6-0",
@@ -807,7 +811,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 78,
       name: "Kevin Sarkela",
-      bio: "Kevin has played at multiple levels over the past couple decades. He's Kieren Sarkela's father and plays center and defense.",
+      bio: "Kevin has played at a high level over the past couple decades. He can do it all: defense, center, wing, and finds the back of the net with regularly. His smooth skating, incredible ice awareness, and top tier puck handling makes him one of the most effective players on the Poikas CC team.",
       pos: "D/C",
       shoots: "L",
       ht: "6-0",
@@ -817,7 +821,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 28,
       name: "Donald Kulla",
-      bio: "Donny is new to hockey but already demonstrating a lot of potential. He's Daniel's brother.",
+      bio: "Donny is a reliable defenseman and has a knack for making the right play at the right time. He's improved a ton since he started just a couple years ago. His quiet competitiveness is a huge asset.",
       pos: "D",
       shoots: "L",
       ht: "5-10",
@@ -827,7 +831,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 18,
       name: "Ethan Kulla",
-      bio: "Ethan is a recent newcomer who's infectious enthusiasm is clear. He has good instincts and potential, and is a cousin of Daniel and Donny.",
+      bio: "Ethan is new player who's infectious enthusiasm is clear. He has good instincts and potential and a great locker room presence.",
       pos: "D/W",
       shoots: "R",
       ht: "5-9",
@@ -837,7 +841,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 10,
       name: "Konrad Stenersen",
-      bio: "Konrad pushes the puck and is a relentless scorer from the wing position.",
+      bio: "Konrad is a veteran forward who pushes the puck and is a relentless scorer from either wing position. He is also a great locker room presence and mentors the young players.",
       pos: "LW",
       ht: "5-9",
       wt: 185,
@@ -847,7 +851,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 14,
       name: "Logan Matson",
-      bio: "Logan is new to the team as of Spring 2024. He's Shane, Oren, and Nolan's older brother.",
+      bio: "Logan's quiet competitive nature comes out when he gets the puck. Despite being relatively new to hockey, he can execute puck handling moves that leave defenders behind.",
       shoots: "L",
       pos: "D",
       ht: "5-8",
@@ -857,7 +861,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 63,
       name: "Jay Tapio",
-      bio: "Jay grew up playing pond hockey in Michigan's upper peninsula. His steady presence and experience on the defensive end is key to the Poikas success.",
+      bio: "Jay grew up playing pond hockey in Michigan's upper peninsula. His steady presence and experience on the defensive end has been incredibly important to the Poikas success.",
       pos: "D",
       shoots: "L",
       ht: "5-9",
@@ -867,7 +871,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 26,
       name: "Nels Tapio",
-      bio: "Nels is a relentless, fast skater, and a top level scorer for our C/CC team. He can play any position and has a wealth of hockey experience. His son Evan Tapio has joined the team as well.",
+      bio: "Nels is a relentless, fast skater, and a top level scorer for our CC team. He can play any position and has a wealth of hockey experience. If you see a blue-shaded streak on the ice, it's probably Nels going after a loose puck.",
       pos: "C",
       ht: "5-9",
       wt: 170,
@@ -877,8 +881,8 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 22,
       name: "Evan Tapio",
-      bio: "Evan is Nels Tapio's son and already a versatile player in both the offensive and defensive zones.",
-      pos: "W",
+      bio: "Evan is a poised and versatile player, with an incredibly high hockey IQ. He sees plays before they develop and is already in the right place at the right time. He can play any position on the ice.",
+      pos: "F",
       shoots: "L",
       born: 2004,
       ht: "5-9",
@@ -887,7 +891,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 17,
       name: "Myron Kinnunen",
-      bio: "Myron ",
+      bio: "Myron only started playing ice hockey competitively a few years ago but already feels like a veteran presence. He is a solid defender and reliable goal scorer.",
       pos: "RW/D",
       ht: "5-11",
       wt: 210,
@@ -897,7 +901,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 45,
       name: "Nolan Matson",
-      bio: "Nolan is Shane and Oren's younger brother. He skates hard and covers a ton of ice. He was MVP of the 2023 Fall Rec championship game.",
+      bio: "Nolan skates hard and covers a ton of ice, finding the back of the net regularly from the right wing. He was MVP of the 2023 Fall Rec championship game, and if you see a cloud of ice chips flying through the air, it's probably Nolan pursuing a puck.",
       pos: "RW",
       ht: "5-8",
       wt: 170,
@@ -906,7 +910,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 96,
       name: "Nolan Storm",
-      bio: "Nolan is Randy's son and Asa's brother. He is versatile and can play nearly any position. He skates with power and poise, and has a wicked slapshot.",
+      bio: "Nolan is versatile and can play nearly any position. He skates with power and poise and has a wicked slapshot.",
       pos: "W",
     },
     {
@@ -922,12 +926,13 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 36,
       name: "Erik Benton",
+      bio: "Erik is a backup goalie for the Poikas with a lot of experience. He also skates out on defense regularly.",
       pos: "G/D",
     },
     {
       number: 9,
       name: "Andrew Tunseth",
-      bio: "Andrew is a smooth skating forward who never seems in a hurry but is always in the right place. He is one of the top scorers in C league.",
+      bio: "Andrew is a smooth skating forward who never seems in a hurry but is always in the right place. He is one of the top scorers in CC league.",
       pos: "RW",
       shoots: "R",
       born: 1987,
@@ -937,7 +942,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 29,
       name: "Asa Storm",
-      bio: "Asa is Randy's son and Nolan's brother, and has been a top level scorer in both Rec and C leagues. He brings speed and power to the wing positions.",
+      bio: "Asa is one of the top scorers for the Poikas in both Rec and C leagues. He brings speed and power to the wing positions.",
       pos: "W",
       shoots: "R",
       ht: "5-10",
@@ -947,6 +952,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 19,
       name: "Brad Wuori",
+      bio: "Brad played hockey growing up in Michigan and Canada and is an incredibly good skater, a very effective defenseman / center, and can score at a high level.",
       pos: "D/C",
       ht: "5-10",
       wt: 155,
@@ -979,6 +985,7 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       name: "Austin Sakai",
+      pos: "C/D",
     },
     {
       number: 12,
@@ -996,6 +1003,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 91,
       name: "Levi Estola",
+      bio: "Levi grew up playing pond hockey in Michigan and has a good feel for the game and a lot of valuable skills.",
     },
     {
       name: "Mark Varivoda",
@@ -1045,6 +1053,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 88,
       name: "Randy Storm",
+      bio: "Randy is a veteran ice hockey player and a very solid defenseman.",
       pos: "D",
       shoots: "R",
     },
@@ -1127,6 +1136,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 95,
       name: "Milo Matson",
+      bio: "Milo is a very fast defenseman and has a powerful shot. He moved out of the area but was a key player in the Poikas' early success.",
       pos: "D",
     },
     {
@@ -1137,6 +1147,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 24,
       name: "Peter Tapio",
+      bio: "Peter grew up playing pond hockey in Michigan and is a cornerstone of the Poikas club. He's a prolific scorer and passer and a great leader.",
       pos: "C/D",
       ht: "5-11",
       wt: 185,
@@ -1146,6 +1157,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 48,
       name: "Avery Tapio",
+      bio: "Avery is a relatively new player who's already shown his value. He is always in the mix scrapping for loose pucks.",
       pos: "LW",
       ht: "5-10",
       wt: 145,
@@ -1155,6 +1167,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 32,
       name: "Russ Tapio",
+      bio: "Russ is our CC team captain. His power and speed make him a force to be reckoned with every time he steps on the ice.",
       pos: "W",
       ht: "5-9",
       wt: 180,
@@ -1163,6 +1176,7 @@ export const poikasData: PoikasDataRaw = {
     },
     {
       name: "Treven Erickson",
+      bio: "Treven is from Michigan and has played ice hockey all his life. He is a great natural scorer and skater.",
       pos: "C",
     },
     {
@@ -1176,6 +1190,7 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 20,
       name: "Eric Matson",
+      bio: "Eric is a competitive, experienced, and versatile player. He's always an asset every time he steps on the ice.",
     },
     {
       number: 18,
@@ -1194,10 +1209,12 @@ export const poikasData: PoikasDataRaw = {
     {
       name: "Kyle Malstrom",
       pos: "G",
+      bio: "Kyle took over for Jamon as the full time CC goalie in 2025. He's a very solid goalie who has a lot of experience and a great teammate.",
     },
     {
       name: "Ward Pearson",
       pos: "W",
+      bio: "Ward is a very skilled player who can do it all. He's a great passer, scorer, and defender. His slapshot is one of the best in the league.",
     },
   ],
 } as const

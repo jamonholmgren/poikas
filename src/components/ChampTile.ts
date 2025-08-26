@@ -14,7 +14,7 @@ export function ChampTile({ league }: ChampTileProps): string {
     `
   }
 
-  const lev = level === "C" ? "C/CC" : "Rec"
+  const lev = level === "CC" ? "CC" : "Rec"
 
   return `
     <a class="photo" href="${url}">
