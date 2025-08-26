@@ -19,7 +19,7 @@ export function ChampTile({ league }: ChampTileProps): string {
   return `
     <a class="photo" href="${url}">
       <img src="${img(photos[0])}" alt="Suomi Poikas ${year} ${season} ${lev} Champions" />
-      <span class="caption">🏆 Suomi Poikas<br />${year} ${season} ${level} Champions</span>
+      <div class="caption"><span class="large-icon">🏆</span> <span>${year} ${season} ${level}<br />Champions</span></div>
     </a>
   `
 }
