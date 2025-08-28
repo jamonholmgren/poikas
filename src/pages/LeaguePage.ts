@@ -2,7 +2,7 @@ import type { Game, Player, PlayerStats, PoikasData, Season } from "../types"
 import { routePage } from "../route"
 import { img } from "../image"
 import { renderRosterTable } from "../utils/renderRosterTable"
-import { notableAbbr, shortenName } from "../utils/strings"
+import { fullPlayoffs, fullRecord, notableAbbr, shortenName } from "../utils/strings"
 
 export function LeaguePage(data: PoikasData, slug: string) {
   const league = data.seasons.find((l) => l.url.endsWith(slug))
@@ -15,7 +15,9 @@ export function LeaguePage(data: PoikasData, slug: string) {
 
   const getValueCustom = (prop: keyof PlayerStats) => (player: Player) => {
     const seasonStats = player.seasons[leagueName]?.find((s) => s.year === year && s.seasonName === seasonName)?.stats
-    return (seasonStats && seasonStats[prop]) || "-"
+    const s = seasonStats && seasonStats[prop]
+    if (typeof s !== "number" || isNaN(s)) return "-"
+    return s
   }
 
   const getAgeCustom = (season: Season) => (player: Player) => {
@@ -208,10 +210,10 @@ export function LeaguePage(data: PoikasData, slug: string) {
             </thead>
             <tbody>
               ${
-                games &&
                 games
-                  .map(
-                    (game) => `
+                  ? games
+                      .map(
+                        (game) => `
                       <tr>
                         <td>${game.date ? game.date.toLocaleDateString() : "-"}</td>
                         <td>${game.vsLink}</td>
@@ -222,8 +224,9 @@ export function LeaguePage(data: PoikasData, slug: string) {
                         <td class="extra notable">${notableAbbr(game.notable, 60)}</td>
                       </tr>
                     `
-                  )
-                  .join("\n")
+                      )
+                      .join("\n")
+                  : "<td colspan='6'>No game data available for this season</td>"
               }
             </tbody>
           </table>
@@ -250,8 +253,8 @@ export function LeaguePage(data: PoikasData, slug: string) {
                         <td><a href="${season.url}" class="${season.year === year && season.seasonName === seasonName ? "current" : ""}">${season.year} ${
                     season.seasonName
                   }</a></td>
-                        <td>${season.wins || 0}-${season.losses || 0}${season.ties ? `-${season.ties}` : ""}</td>
-                        <td>${season.playoffs || "-"}</td>
+                        <td>${fullRecord(season.wins, season.losses, season.ties)}</td>
+                        <td>${fullPlayoffs(season.playoffs) || "-"}</td>
                       </tr>
                     `
                 )
@@ -268,7 +271,8 @@ function gameScore(game: Game) {
   if (game.result === "pending") return "Upcoming"
   if (game.result === "forfeited") return "Forfeited"
   if (game.result === "cancelled") return "Cancelled"
-  return `${game.result} ${game.us}-${game.them}`
+  if (game.us !== undefined && game.them !== undefined) return `${game.result} ${game.us}-${game.them}`
+  return game.result
 }
 
 function gameShots(game: Game) {

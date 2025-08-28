@@ -760,7 +760,7 @@ export const poikasData: PoikasDataRaw = {
       shoots: "R",
       born: 1981,
       ht: "6-4",
-      wt: 250,
+      wt: 240,
     },
     {
       name: "Jamie Dugger",

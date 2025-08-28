@@ -2,7 +2,7 @@ import type { PoikasData, PoikasImage, PlayerSeason, Player, PlayerStats, League
 import { Champ } from "../components/Champ"
 import { sisuCups } from "../utils/sisuCups"
 import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
-import { fullPos, fullShoots, notableAbbr } from "../utils/strings"
+import { fullPos, fullRecord, fullShoots, notableAbbr } from "../utils/strings"
 import { images } from "../data/images"
 import { routePage } from "../route"
 import { img } from "../image"
@@ -63,7 +63,7 @@ export function PlayerPage(data: PoikasData, slug: string) {
 
     return player.seasons[leagueName].map((playerSeason: PlayerSeason) => {
       const { season, stats } = playerSeason
-      const record = `${season.wins || 0}-${season.losses || 0}${season.ties ? `-${season.ties}` : ""}`
+      const record = fullRecord(season.wins, season.losses, season.ties)
       const seasonLink = season.link
 
       return {

@@ -30,75 +30,105 @@ export function HomePage(data: PoikasData) {
     metaImage: img("finland-flag-icon.png"),
     sidebar: championLeagues.map((league) => ChampTile({ league })).join("\n"),
     main: `
+      <!-- Hero Section -->
+      <div class="page-hero">
+        <div class="page-hero-content">
+          <div class="page-hero-image">
+            <img
+              src="${img("poikas-c-2025-spring-champions.jpg")}?c=2"
+              alt="Suomi Poikas 2025 Spring CC league championship team photo"
+              onerror="this.onerror=null;this.src='${img("000-placeholder.jpg")}';"
+            />
+          </div>
+          <div class="page-hero-info">
+            <h1 class="page-hero-name">Champs!</h1>
+            <div class="page-hero-details">
+              <div class="stat-item">
+                <span class="stat-number">🏆</span>
+                <span class="stat-label">2025 Spring CC Champions</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">🇫🇮</span>
+                <span class="stat-label">Finnish-American Team</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">2</span>
+                <span class="stat-label">Active Leagues</span>
+              </div>
+            </div>
+            <div class="page-hero-description">
+              <p>Welcome to the official website of the Suomi Poikas, your favorite Finnish-American hockey team! Hyvä Suomi! 🇫🇮</p>
+              <p><strong>Fall season starts September 6th!</strong> Our Rec and CC teams are starting soon.</p>
+              <p>This year, our championship-winning CC team was promoted to the new CC league!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Latest Games Section -->
+      <div class="content-section">
+        <div class="content-grid">
+          <div class="content-card">
+            <h3>Rec League</h3>
+            <div class="latest-games">
+            ${
+              lastRecGame
+                ? `<a href="${rec.url}" class='game'>
+                    <div class='league'>Latest Game</div>
+                    <div class='teams'>Poikas vs ${lastRecGame.vs} (${lastRecGame.date?.toLocaleDateString()})</div>
+                    <div class='result'>${lastRecGame.result} ${lastRecGame.us}-${lastRecGame.them}</div>
+                    ${lastRecGame.sisu ? `<div class='sisu'>${`🇫🇮 Sisu Cup: ${lastRecGame.sisu}` || ""}</div>` : ""}
+                    <div class='notable'>${lastRecGame.notable || ""}</div>
+                  </a>`
+                : "<div class='game'>No games completed yet</div>"
+            }
+              ${
+                nextRecGame
+                  ? `<a href="${rec.url}" class='game'>
+                      <div class='league'>Next Game</div>
+                      <div class='teams'>Poikas vs ${nextRecGame.vs} (${nextRecGame.date?.toLocaleDateString()})</div>
+                      <div class='notable'>${nextRecGame.notable || ""}</div>
+                    </a>`
+                  : "<div class='game'>No Rec games scheduled</div>"
+              }
+            </div>
+          </div>
+
+          <div class="content-card">
+            <h3>CC League</h3>
+            <div class="latest-games">
+            ${
+              lastCCGame
+                ? `<a href="${cc.url}" class='game'>
+                    <div class='league'>Latest Game</div>
+                    <div class='teams'>Poikas vs ${lastCCGame.vs} (${lastCCGame.date?.toLocaleDateString()})</div>
+                    <div class='result'>${lastCCGame.result} ${lastCCGame.us}-${lastCCGame.them}</div>
+                    ${lastCCGame.sisu ? `<div class='sisu'>${`🇫🇮 Sisu Cup: ${lastCCGame.sisu}` || ""}</div>` : ""}
+                    <div class='notable'>${lastCCGame.notable || ""}</div>
+                  </a>`
+                : "<div class='game'>No games completed yet</div>"
+            }
+              ${
+                nextCCGame
+                  ? `<a href="${cc.url}" class='game'>
+                      <div class='league'>Next Game</div>
+                      <div class='teams'>Poikas vs ${nextCCGame.vs} (${nextCCGame.date?.toLocaleDateString()})</div>
+                      <div class='notable'>${nextCCGame.notable || ""}</div>
+                    </a>`
+                  : "<div class='game'>No CC games scheduled</div>"
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+
       <article>
-        <h2>Fall season starts September 6th!</h2>
-        <p>
-          Fall season for our Rec and CC teams are starting on September 6th! Keep an eye on our website for more info.
-          This year, our CC team was promoted to the new CC league. We have a Rec team as usual. We don't have a C team
-          yet (due to lack of team slots available).
-        </p>
-        <h2>Congrats to the 2025 Spring CC League champion Suomi Poikas!</h2>
-        <img src="${img("poikas-c-2025-spring-champions.jpg")}?c=2" alt="Suomi Poikas 2025 Spring CC league championship team photo" class="splash" />
-        <p>
-          Welcome to the official website of the Suomi Poikas, your favorite Finnish-American hockey team! Hyvä Suomi!
-          🇫🇮
-        </p>
-
-        <h2>Latest Games</h2>
-        <div class='latest-games'>
-        ${
-          lastRecGame
-            ? `<a href="${rec.url}" class='game'>
-                <div class='league'>Rec League</div>
-                <div class='teams'>Poikas vs ${lastRecGame.vs} (${lastRecGame.date?.toLocaleDateString()})</div>
-                <div class='result'>${lastRecGame.result} ${lastRecGame.us}-${lastRecGame.them}</div>
-                ${lastRecGame.sisu ? `<div class='sisu'>${`🇫🇮 Sisu Cup: ${lastRecGame.sisu}` || ""}</div>` : ""}
-                <div class='notable'>${lastRecGame.notable || ""}</div>
-              </a>`
-            : "<div class='game'>No games completed yet</div>"
-        }
-          ${
-            lastCCGame
-              ? `<a href="${cc.url}" class='game'>
-                  <div class='league'>CC League</div>
-                  <div class='teams'>Poikas vs ${lastCCGame.vs} (${lastCCGame.date?.toLocaleDateString()})</div>
-                  <div class='result'>${lastCCGame.result} ${lastCCGame.us}-${lastCCGame.them}</div>
-                  ${lastCCGame.sisu ? `<div class='sisu'>${`🇫🇮 Sisu Cup: ${lastCCGame.sisu}` || ""}</div>` : ""}
-                  <div class='notable'>${lastCCGame.notable || ""}</div>
-                </a>`
-              : "<div class='game'>No games completed yet</div>"
-          }
-        </div>
-        <h2>Next Games</h2>
-        <div class='latest-games'>
-        ${
-          nextRecGame
-            ? `<a href="${rec.url}" class='game'>
-                <div class='league'>Rec League</div>
-                <div class='teams'>Poikas vs ${nextRecGame.vs} (${nextRecGame.date?.toLocaleDateString()})</div>
-                <div class='notable'>${nextRecGame.notable || ""}</div>
-              </a>`
-            : "<div class='game'>No Rec games scheduled</div>"
-        }
-          ${
-            nextCCGame
-              ? `<a href="${cc.url}" class='game'>
-                  <div class='league'>CC League</div>
-                  <div class='teams'>Poikas vs ${nextCCGame.vs} (${nextCCGame.date?.toLocaleDateString()})</div>
-                  <div class='notable'>${nextCCGame.notable || ""}</div>
-                </a>`
-              : "<div class='game'>No CC games scheduled</div>"
-          }
-        </div>
-
         <h2>What's New?</h2>
-        <p><em>Updated June 23, 2025</em></p>
+        <p><em>Updated August 28, 2025</em></p>
         <ul>
-          <li>Updated with the final stats and info from the 2025 spring leagues</li>
-          <li>Updated a bunch of players</li>
-          <li>Added sortable stats tables to each season page</li>
-          <li>Added sortable stats tables to each player page</li>
-          <li>Lots more stats everywhere ... go check them out!</li>
+          <li>New website design refresh!</li>
+          <li>Fixed a bunch of layout issues from the last design</li>
+          <li>Updated a bunch of players' bios</li>
         </ul>
 
         <h2>Our History</h2>

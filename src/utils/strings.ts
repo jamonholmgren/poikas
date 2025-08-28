@@ -36,3 +36,18 @@ export function fullShoots(shoots: string | undefined): string {
   if (shoots === "R") return "Right"
   return "-"
 }
+
+export function fullPlayoffs(playoffs: string | undefined): string {
+  if (!playoffs) return "-"
+  if (playoffs === "champions") return "Champions!"
+  if (playoffs === "canceled") return "Canceled"
+  if (playoffs === "eliminated") return "Eliminated"
+  if (playoffs === "eliminated-championship") return "Eliminated in Championship"
+  return playoffs
+}
+
+export function fullRecord(wins: number | undefined, losses: number | undefined, ties: number | undefined): string {
+  if (!wins && !losses && !ties) return "-"
+  if (ties) return `${wins || 0}-${losses || 0}-${ties || 0}`
+  return `${wins || 0}-${losses || 0}`
+}
