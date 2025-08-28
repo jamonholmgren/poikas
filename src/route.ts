@@ -1,5 +1,6 @@
 import { getData } from "./data/load"
 import { img } from "./image"
+import { serverStart } from "./server"
 
 type LayoutOptions = {
   path: string
@@ -38,7 +39,7 @@ function layout(options: LayoutOptions) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${title} - Suomi Poikas Hockey Club</title>
     <meta name="description" content="${description}" />
-    <link rel="stylesheet" href="/styles.css?c=6" />
+    <link rel="stylesheet" href="/styles.css?c=${serverStart}" />
     <link rel="icon" type="image/png" href="${img("finland-flag-icon.png")}" />
     <script src="/sort.js"></script>
 

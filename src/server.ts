@@ -11,6 +11,8 @@ import { PhotosPage } from "./pages/PhotosPage"
 import { LeaguePage } from "./pages/LeaguePage"
 import { setImageHost } from "./image"
 
+export const serverStart = Date.now()
+
 // Grab all the data on server start
 const data = getData()
 

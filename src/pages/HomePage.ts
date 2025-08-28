@@ -4,6 +4,7 @@ import { ChampTile } from "../components/ChampTile"
 import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
 import { img } from "../image"
 import { renderRosterTable } from "../utils/renderRosterTable"
+import { serverStart } from "../server"
 
 export function HomePage(data: PoikasData) {
   // Finding the championships we've won as a team, but
@@ -35,7 +36,7 @@ export function HomePage(data: PoikasData) {
         <div class="page-hero-content">
           <div class="page-hero-image">
             <img
-              src="${img("poikas-c-2025-spring-champions.jpg")}?c=2"
+              src="${img("poikas-c-2025-spring-champions.jpg")}?c=${serverStart}"
               alt="Suomi Poikas 2025 Spring CC league championship team photo"
               onerror="this.onerror=null;this.src='${img("000-placeholder.jpg")}';"
             />
