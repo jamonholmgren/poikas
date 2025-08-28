@@ -5,6 +5,7 @@ import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
 import { img } from "../image"
 import { renderRosterTable } from "../utils/renderRosterTable"
 import { serverStart } from "../server"
+import { notableAbbr } from "../utils/strings"
 
 export function HomePage(data: PoikasData) {
   // Finding the championships we've won as a team, but
@@ -70,14 +71,43 @@ export function HomePage(data: PoikasData) {
       <div class="content-section">
         <div class="content-grid">
           <div class="content-card">
-            <h3>Rec League</h3>
+            <div class="mini-hero">
+              <div class="mini-hero-content">
+                <div class="mini-hero-image">
+                  <img
+                    src="${rec.photos && rec.photos[0] ? img(rec.photos[0]) : img("000-placeholder.jpg")}"
+                    alt="${rec.year} ${rec.seasonName} Rec League"
+                    onerror="this.onerror=null;this.src='${img("000-placeholder.jpg")}';"
+                  />
+                </div>
+                <div class="mini-hero-info">
+                  <h3>${rec.year} ${rec.seasonName} Rec</h3>
+                  <div class="mini-hero-stats">
+                    <div class="mini-stat">
+                      <span class="mini-stat-number">${rec.wins || 0}-${rec.losses || 0}${rec.ties ? `-${rec.ties}` : ""}</span>
+                      <span class="mini-stat-label">Record</span>
+                    </div>
+                    <div class="mini-stat">
+                      <span class="mini-stat-number">${rec.wins && rec.losses ? ((rec.wins / (rec.wins + rec.losses + (rec.ties || 0))) * 100).toFixed(1) : "0.0"}%</span>
+                      <span class="mini-stat-label">Win %</span>
+                    </div>
+                    <div class="mini-stat">
+                      <span class="mini-stat-number">${rec.players?.length || 0}</span>
+                      <span class="mini-stat-label">Players</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="latest-games">
             ${
               lastRecGame
                 ? `<a href="${rec.url}" class='game'>
                     <div class='league'>Latest Game</div>
-                    <div class='teams'>Poikas vs ${lastRecGame.vs} (${lastRecGame.date?.toLocaleDateString()})</div>
-                    <div class='result'>${lastRecGame.result} ${lastRecGame.us}-${lastRecGame.them}</div>
+                    <div class='teams'>Poikas vs ${lastRecGame.vs}</div>
+                    <div class='result'>${lastRecGame.date?.toLocaleDateString("en-US", { month: "short", day: "numeric" })}, ${lastRecGame.result} ${lastRecGame.us}-${
+                    lastRecGame.them
+                  }</div>
                     ${lastRecGame.sisu ? `<div class='sisu'>${`🇫🇮 Sisu Cup: ${lastRecGame.sisu}` || ""}</div>` : ""}
                     <div class='notable'>${lastRecGame.notable || ""}</div>
                   </a>`
@@ -96,7 +126,34 @@ export function HomePage(data: PoikasData) {
           </div>
 
           <div class="content-card">
-            <h3>CC League</h3>
+            <div class="mini-hero">
+              <div class="mini-hero-content">
+                <div class="mini-hero-image">
+                  <img
+                    src="${cc.photos && cc.photos[0] ? img(cc.photos[0]) : img("000-placeholder.jpg")}"
+                    alt="${cc.year} ${cc.seasonName} CC League"
+                    onerror="this.onerror=null;this.src='${img("000-placeholder.jpg")}';"
+                  />
+                </div>
+                <div class="mini-hero-info">
+                  <h3>${cc.year} ${cc.seasonName} CC</h3>
+                  <div class="mini-hero-stats">
+                    <div class="mini-stat">
+                      <span class="mini-stat-number">${cc.wins || 0}-${cc.losses || 0}${cc.ties ? `-${cc.ties}` : ""}</span>
+                      <span class="mini-stat-label">Record</span>
+                    </div>
+                    <div class="mini-stat">
+                      <span class="mini-stat-number">${cc.wins && cc.losses ? ((cc.wins / (cc.wins + cc.losses + (cc.ties || 0))) * 100).toFixed(1) : "0.0"}%</span>
+                      <span class="mini-stat-label">Win %</span>
+                    </div>
+                    <div class="mini-stat">
+                      <span class="mini-stat-number">${cc.players?.length || 0}</span>
+                      <span class="mini-stat-label">Players</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="latest-games">
             ${
               lastCCGame

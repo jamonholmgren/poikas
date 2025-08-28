@@ -182,6 +182,88 @@ body {
   font-size: 14px;
 }
 
+/* Mini Hero Section for League Cards */
+.mini-hero {
+  background: var(--gradient-primary);
+  color: var(--white);
+  padding: 20px;
+  margin: -25px -25px 20px -25px;
+  border-radius: 16px 16px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.mini-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+}
+
+.mini-hero-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.mini-hero-image {
+  flex-shrink: 0;
+}
+
+.mini-hero-image img {
+  width: 80px;
+  height: 60px;
+  border: 2px solid var(--yellow);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.mini-hero-info {
+  flex: 1;
+}
+
+.mini-hero-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  color: var(--white);
+  border: none;
+  padding: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.mini-hero-stats {
+  display: flex;
+  gap: 15px;
+}
+
+.mini-stat {
+  text-align: center;
+}
+
+.mini-stat-number {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--yellow);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.mini-stat-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
 /* Media Grid Section (Shared between Player and League pages) */
 .media-section {
   margin-bottom: 40px;
@@ -1195,7 +1277,6 @@ p.error {
   flex: 1;
   margin: 0;
   text-align: center;
-  font-size: 1.2em;
   border: 2px solid var(--gray);
   padding: 20px;
   text-decoration: none;
@@ -1219,7 +1300,16 @@ p.error {
   display: block;
 }
 
+.latest-games div {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  flex: 1;
+}
+
 .latest-games .game .notable {
+  white-space: normal;
   font-size: 0.9em;
   color: var(--dark-gray);
   padding: 8px 0;
