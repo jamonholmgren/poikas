@@ -117,7 +117,7 @@ export function HomePage(data: PoikasData) {
                 nextRecGame
                   ? `<a href="${rec.url}" class='game'>
                       <div class='league'>Next Game</div>
-                      <div class='teams'>Poikas vs ${nextRecGame.vs} (${nextRecGame.date?.toLocaleDateString()})</div>
+                      <div class='teams'>Poikas vs ${nextRecGame.vs}<br />${nextRecGame.date?.toLocaleDateString("en-US", { month: "short", day: "numeric" })}</div>
                       <div class='notable'>${nextRecGame.notable || ""}</div>
                     </a>`
                   : "<div class='game'>No Rec games scheduled</div>"
@@ -159,7 +159,7 @@ export function HomePage(data: PoikasData) {
               lastCCGame
                 ? `<a href="${cc.url}" class='game'>
                     <div class='league'>Latest Game</div>
-                    <div class='teams'>Poikas vs ${lastCCGame.vs} (${lastCCGame.date?.toLocaleDateString()})</div>
+                    <div class='teams'>Poikas vs ${lastCCGame.vs}<br />${lastCCGame.date?.toLocaleDateString("en-US", { month: "short", day: "numeric" })}</div>
                     <div class='result'>${lastCCGame.result} ${lastCCGame.us}-${lastCCGame.them}</div>
                     ${lastCCGame.sisu ? `<div class='sisu'>${`🇫🇮 Sisu Cup: ${lastCCGame.sisu}` || ""}</div>` : ""}
                     <div class='notable'>${lastCCGame.notable || ""}</div>
@@ -170,7 +170,7 @@ export function HomePage(data: PoikasData) {
                 nextCCGame
                   ? `<a href="${cc.url}" class='game'>
                       <div class='league'>Next Game</div>
-                      <div class='teams'>Poikas vs ${nextCCGame.vs} (${nextCCGame.date?.toLocaleDateString()})</div>
+                      <div class='teams'>Poikas vs ${nextCCGame.vs}<br />${nextCCGame.date?.toLocaleDateString("en-US", { month: "short", day: "numeric" })}</div>
                       <div class='notable'>${nextCCGame.notable || ""}</div>
                     </a>`
                   : "<div class='game'>No CC games scheduled</div>"
