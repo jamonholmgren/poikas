@@ -731,6 +731,11 @@ export const poikasData: PoikasDataRaw = {
       number: 91,
       name: "Levi Estola",
       bio: "Levi grew up playing pond hockey in Michigan and has a good feel for the game and a lot of valuable skills.",
+      pos: "LW",
+      born: 1999,
+      ht: "5-11",
+      wt: 180,
+      shoots: "R",
     },
     {
       name: "Mark Varivoda",
