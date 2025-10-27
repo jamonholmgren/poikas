@@ -158,6 +158,7 @@ function populatePlayerData(player: Player, data: PoikasData) {
           ss.shotsAgainst += game.shotsThem || 0
           ss.goalsAgainstWithShots += game.them || 0
         }
+        ss.goalsAgainstEmptyNetters += game.goalsAgainstEmptyNetters || 0
         ss.goalsAgainst += game.them || 0
         if ((game.them || 0) === 0) ss.shutouts += 1
         if (game.result === "won") ss.goalieWins += 1
@@ -218,6 +219,7 @@ function populatePlayerData(player: Player, data: PoikasData) {
     cs.shotsAgainst += ss.shotsAgainst
     cs.goalsAgainst += ss.goalsAgainst
     cs.goalsAgainstWithShots += ss.goalsAgainstWithShots
+    cs.goalsAgainstEmptyNetters += ss.goalsAgainstEmptyNetters
     cs.shutouts += ss.shutouts
     cs.goalieWins += ss.goalieWins
     cs.goalieLosses += ss.goalieLosses
@@ -257,8 +259,8 @@ function populateGoalieStatsAggregates(stats: PlayerStats) {
   const gp: number = stats.goalieGamesPlayed
   const gws: number = stats.goalieGamesWithShots
   const sa: number = stats.shotsAgainst
-  const ga: number = stats.goalsAgainst
-  const gaw: number = stats.goalsAgainstWithShots
+  const ga: number = stats.goalsAgainst - stats.goalsAgainstEmptyNetters
+  const gaw: number = stats.goalsAgainstWithShots - stats.goalsAgainstEmptyNetters
   const gw: number = stats.goalieWins
   const gl: number = stats.goalieLosses
   const gt: number = stats.goalieTies
@@ -327,6 +329,7 @@ function defaultStats(): PlayerStats {
     shotsAgainst: 0,
     goalsAgainst: 0,
     goalsAgainstWithShots: 0,
+    goalsAgainstEmptyNetters: 0,
     savePercentage: 0,
     goalsAgainstAverage: 0,
     averageShotsAgainst: 0,

@@ -54,6 +54,7 @@ export interface Game {
   date?: Date
   goalie?: string
   stats?: GameStats
+  goalsAgainstEmptyNetters?: number // for accurately tracking goalie stats
 
   // convenience references we add later
   goaliePlayer?: Player
@@ -131,6 +132,7 @@ export type PlayerStats = {
   shotsAgainst: number
   goalsAgainst: number
   goalsAgainstWithShots: number
+  goalsAgainstEmptyNetters: number
   saves: number
   savePercentage: number
   goalsAgainstAverage: number
