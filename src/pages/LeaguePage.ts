@@ -16,7 +16,9 @@ export function LeaguePage(data: PoikasData, slug: string) {
   const getValueCustom = (prop: keyof PlayerStats) => (player: Player) => {
     const seasonStats = player.seasons[leagueName]?.find((s) => s.year === year && s.seasonName === seasonName)?.stats
     const s = seasonStats && seasonStats[prop]
-    if (typeof s !== "number" || isNaN(s)) return "-"
+    if (s === undefined || s === null) return "-"
+    if (typeof s === "string") return s || "-"
+    if (typeof s === "number" && isNaN(s)) return "-"
     return s
   }
 

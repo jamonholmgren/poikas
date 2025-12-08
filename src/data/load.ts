@@ -266,13 +266,13 @@ function populateGoalieStatsAggregates(stats: PlayerStats) {
   const gt: number = stats.goalieTies
   if (gaw > 0) stats.savePercentage = parseFloat((sa > 0 ? ((sa - gaw) / sa) * 100 : 0).toFixed(1))
   if (gws > 0) stats.averageShotsAgainst = parseFloat((sa / gws).toFixed(1))
-  stats.goalsAgainstAverage = parseFloat((ga / gp).toFixed(2))
+  stats.goalsAgainstAverage = gp > 0 ? parseFloat((ga / gp).toFixed(2)) : 0
   stats.goalieRecord = `${gw}-${gl}-${gt}`
   stats.saves = sa - gaw
 
-  stats.goalsAgainstAverageFormatted = stats.goalsAgainstAverage.toFixed(2)
-  stats.savePercentageFormatted = stats.savePercentage.toFixed(1) + "%"
-  stats.averageShotsAgainstFormatted = stats.averageShotsAgainst.toFixed(1)
+  stats.goalsAgainstAverageFormatted = gp > 0 ? stats.goalsAgainstAverage.toFixed(2) : "0.00"
+  stats.savePercentageFormatted = stats.savePercentage ? stats.savePercentage.toFixed(1) + "%" : "0.0%"
+  stats.averageShotsAgainstFormatted = stats.averageShotsAgainst ? stats.averageShotsAgainst.toFixed(1) : "0.0"
 }
 
 export function gamesAgainstOpponent(data: PoikasData, slug: string) {
