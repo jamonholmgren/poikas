@@ -43,25 +43,24 @@ export function HomePage(data: PoikasData) {
             />
           </div>
           <div class="page-hero-info">
-            <h1 class="page-hero-name">Champs!</h1>
+            <h1 class="page-hero-name">Playoff Bound!</h1>
             <div class="page-hero-details">
               <div class="stat-item">
-                <span class="stat-number">🏆</span>
-                <span class="stat-label">2025 Spring CC Champions</span>
+                <span class="stat-number">🥇</span>
+                <span class="stat-label">Rec: #1 Seed</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">🥇</span>
+                <span class="stat-label">CC: #1 Seed</span>
               </div>
               <div class="stat-item">
                 <span class="stat-number">🇫🇮</span>
                 <span class="stat-label">Finnish-American Team</span>
               </div>
-              <div class="stat-item">
-                <span class="stat-number">2</span>
-                <span class="stat-label">Active Leagues</span>
-              </div>
             </div>
             <div class="page-hero-description">
               <p>Welcome to the official website of the Suomi Poikas, your favorite Finnish-American hockey team! Hyvä Suomi! 🇫🇮</p>
-              <p><strong>Fall season starts September 6th!</strong> Our Rec and CC teams are starting soon.</p>
-              <p>This year, our championship-winning CC team was promoted to the new CC league!</p>
+              <p><strong>Both teams clinched #1!</strong> Our Rec and CC squads have secured the top seed and are heading into the playoffs.</p>
             </div>
           </div>
         </div>

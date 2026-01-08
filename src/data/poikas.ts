@@ -353,7 +353,7 @@ export const poikasData: PoikasDataRaw = {
       leagueName: "CC",
       schedule: "https://mountainview.ezleagues.ezfacility.com/leagues/465540/FallWinter-Adult-League-2025-2026-CC-League.aspx?framed=1",
       playoffs: "pending",
-      description: "Time to get back on the ice!",
+      description: "A fantastic CC season, headed to the playoffs!",
       photos: [],
       sidebar: "",
       roster: [
