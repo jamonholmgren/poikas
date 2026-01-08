@@ -25,8 +25,8 @@ export function PlayerPage(data: PoikasData, slug: string) {
   data.players.reverse()
   const nextPlayer = data.players.find((p) => p.name > player.name)
 
-  const recSeasons = player.seasons.Rec.length || "—"
-  const ccSeasons = player.seasons.CC.length || "—"
+  const recSeasons = player.seasons.Rec.length || "-"
+  const ccSeasons = player.seasons.CC.length || "-"
 
   const playerImages = images.filter((img: PoikasImage) => img.players.includes(player.name))
   // Also add images from the player's seasons
@@ -96,7 +96,7 @@ export function PlayerPage(data: PoikasData, slug: string) {
           <div class="page-hero-info">
             <h1 class="page-hero-name">${player.name}</h1>
             <div class="page-hero-details">
-              <span class="page-hero-number">#${player.number || "—"}</span>
+              <span class="page-hero-number">#${player.number || "-"}</span>
               <span class="page-hero-position">${fullPos(player.pos)}</span>
             </div>
             <div class="page-hero-description">${player.bio || ""}</div>
