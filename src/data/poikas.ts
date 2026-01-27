@@ -378,8 +378,8 @@ export const poikasData: PoikasDataRaw = {
       leagueName: "CC",
       schedule: "https://mountainview.ezleagues.ezfacility.com/leagues/465540/FallWinter-Adult-League-2025-2026-CC-League.aspx?framed=1",
       playoffs: "champions",
-      description: "A fantastic CC season, capped off with a championship win!",
-      photos: [],
+      description: "A fantastic CC season, capped off with a championship win -- our second in a row!",
+      photos: ["poikas-c-2025-fall-championship.jpg"],
       sidebar: "",
       roster: [
         "Evan Tapio",

@@ -37,7 +37,7 @@ export function HomePage(data: PoikasData) {
         <div class="page-hero-content">
           <div class="page-hero-image">
             <img
-              src="${img("poikas-rec-2025-fall-championship.jpg")}?c=${serverStart}"
+              src="${img("poikas-rec-and-cc-2025-fall-double-championship.jpg")}?c=${serverStart}"
               alt="Suomi Poika~s 2025 Spring CC league championship team photo"
               onerror="this.onerror=null;this.src='${img("000-placeholder.jpg")}';"
             />
