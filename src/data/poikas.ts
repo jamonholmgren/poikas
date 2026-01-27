@@ -11,8 +11,9 @@ export const poikasData: PoikasDataRaw = {
       leagueName: "Rec",
       schedule: "https://mountainview.ezleagues.ezfacility.com/leagues/465543/FallWinter-Adult-League-2025-2026-Rec-League.aspx?framed=1",
       playoffs: "champions",
-      description: "Poikas return to the top with a win over the Thundersticks in another championship game! This team was dominate defensively all season, averaging a very low shots against per game.",
-      photos: [],
+      description:
+        "Poikas return to the top with a win over the Thundersticks in another championship game! This team was dominate defensively all season, averaging a very low shots against per game.",
+      photos: ["poikas-rec-2025-fall-championship.jpg"],
       sidebar: "",
       roster: [
         "Asa Storm",
@@ -339,7 +340,8 @@ export const poikasData: PoikasDataRaw = {
           result: "won",
           sisu: "Daniel Kulla",
           date: new Date("2026-01-10"),
-          notable: "Playoff game ... Pinecones goalie was very good, but we got the win to move on to the championship. Mike Kulla (Ethan Kulla's dad) scored the one goal for the Pinecones.",
+          notable:
+            "Playoff game ... Pinecones goalie was very good, but we got the win to move on to the championship. Mike Kulla (Ethan Kulla's dad) scored the one goal for the Pinecones.",
           goalie: "Jamon Holmgren",
           stats: {
             "Orrin Erickson": { goals: 1 },

@@ -37,8 +37,8 @@ export function HomePage(data: PoikasData) {
         <div class="page-hero-content">
           <div class="page-hero-image">
             <img
-              src="${img("poikas-c-2025-spring-champions.jpg")}?c=${serverStart}"
-              alt="Suomi Poikas 2025 Spring CC league championship team photo"
+              src="${img("poikas-rec-2025-fall-championship.jpg")}?c=${serverStart}"
+              alt="Suomi Poika~s 2025 Spring CC league championship team photo"
               onerror="this.onerror=null;this.src='${img("000-placeholder.jpg")}';"
             />
           </div>
@@ -105,8 +105,8 @@ export function HomePage(data: PoikasData) {
                     <div class='league'>Latest Game</div>
                     <div class='teams'>Poikas vs ${lastRecGame.vs}</div>
                     <div class='result'>${lastRecGame.date?.toLocaleDateString("en-US", { month: "short", day: "numeric" })}, ${lastRecGame.result} ${lastRecGame.us}-${
-                    lastRecGame.them
-                  }</div>
+                      lastRecGame.them
+                    }</div>
                     ${lastRecGame.sisu ? `<div class='sisu'>${`🇫🇮 Sisu Cup: ${lastRecGame.sisu}` || ""}</div>` : ""}
                     <div class='notable'>${lastRecGame.notable || ""}</div>
                   </a>`
@@ -295,7 +295,7 @@ export function HomePage(data: PoikasData) {
               <td>${leagues.Rec}</td>
               <td>${leagues.CC}</td>
             </tr>
-          `
+          `,
               )
               .join("\n")}
           </tbody>
