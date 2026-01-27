@@ -43,15 +43,15 @@ export function HomePage(data: PoikasData) {
             />
           </div>
           <div class="page-hero-info">
-            <h1 class="page-hero-name">Playoff Bound!</h1>
+            <h1 class="page-hero-name">Double Champions!</h1>
             <div class="page-hero-details">
               <div class="stat-item">
-                <span class="stat-number">🥇</span>
-                <span class="stat-label">Rec: #1 Seed</span>
+                <span class="stat-number">🏆</span>
+                <span class="stat-label">Rec: Champions</span>
               </div>
               <div class="stat-item">
-                <span class="stat-number">🥇</span>
-                <span class="stat-label">CC: #1 Seed</span>
+                <span class="stat-number">🏆</span>
+                <span class="stat-label">CC: Champions</span>
               </div>
               <div class="stat-item">
                 <span class="stat-number">🇫🇮</span>
@@ -60,7 +60,7 @@ export function HomePage(data: PoikasData) {
             </div>
             <div class="page-hero-description">
               <p>Welcome to the official website of the Suomi Poikas, your favorite Finnish-American hockey team! Hyvä Suomi! 🇫🇮</p>
-              <p><strong>Both teams clinched #1!</strong> Our Rec and CC squads have secured the top seed and are heading into the playoffs.</p>
+              <p><strong>Both teams are Fall 2025 champions!</strong> Our Rec squad won 2-0 over the Thundersticks and our CC squad won 4-2 with a Treven hat trick!</p>
             </div>
           </div>
         </div>
@@ -181,11 +181,11 @@ export function HomePage(data: PoikasData) {
 
       <article>
         <h2>What's New?</h2>
-        <p><em>Updated August 28, 2025</em></p>
+        <p><em>Updated January 18, 2026</em></p>
         <ul>
-          <li>New website design refresh!</li>
-          <li>Fixed a bunch of layout issues from the last design</li>
-          <li>Updated a bunch of players' bios</li>
+          <li>Both Rec and CC teams won the Fall 2025 championship!</li>
+          <li>Rec beat Thundersticks 2-0 in the final</li>
+          <li>CC won 4-2 with a Treven Erickson hat trick</li>
         </ul>
 
         <h2>Our History</h2>
