@@ -1190,6 +1190,10 @@ export const poikasData: PoikasDataRaw = {
       pos: "W",
       number: 20,
       bio: "Zacharias grew up in Finland and moved to the USA in 2023. He's a smooth skater, great puck handler, and has a wicked hard shot.",
+      shoots: "L",
+      ht: "6-0",
+      wt: 170,
+      born: 1997,
     },
   ],
 } as const
