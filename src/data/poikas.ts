@@ -724,7 +724,7 @@ export const poikasData: PoikasDataRaw = {
           result: "lost",
           sisu: undefined,
           date: new Date("2026-02-21"),
-          notable: "The Peeps beat us 4 to 3. Asa had two goals and Logan had the other one.",
+          notable: "The Peeps beat us 4 to 3. Asa had two goals and Logan had the other one. Shots were favoring them 20 to 16.",
           stats: {
             "Asa Storm": { goals: 2 },
             "Logan Matson": { goals: 1 },
