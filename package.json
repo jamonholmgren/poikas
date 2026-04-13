@@ -6,7 +6,8 @@
   "main": "./src/server.ts",
   "type": "module",
   "scripts": {
-    "start": "bun run src/server.ts"
+    "start": "bun run src/server.ts",
+    "test": "bun test"
   },
   "repository": {
     "type": "git",

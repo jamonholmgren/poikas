@@ -160,6 +160,7 @@ export function LeaguePage(data: PoikasData, slug: string) {
             { th: "G", getValue: getValueCustom("goals"), width: 30, alt: "Goals" },
             { th: "A", getValue: getValueCustom("assists"), width: 30, alt: "Assists" },
             { th: "P", getValue: getValueCustom("points"), width: 30, xtra: true, alt: "Points" },
+            { th: "PIM", getValue: getValueCustom("pim"), width: 30, xtra: true, alt: "Penalty minutes" },
             { th: "Ht", val: "ht", width: 30, xtra: true, alt: "Height" },
             { th: "Wt", val: "wt", width: 30, xtra: true, alt: "Weight" },
             { th: "Sh", val: "shoots", width: 30, xtra: true, alt: "Shoots left or right" },

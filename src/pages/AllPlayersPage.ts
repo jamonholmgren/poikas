@@ -50,6 +50,7 @@ export function AllPlayersPage(data: PoikasData) {
             { th: "G", val: "careerStats.goals", alt: "Career goals", xtra: true },
             { th: "A", val: "careerStats.assists", alt: "Career assists", xtra: true },
             { th: "P", val: "careerStats.points", alt: "Career points (goals + assists)", xtra: true },
+            { th: "PIM", val: "careerStats.pim", alt: "Career penalty minutes", xtra: true },
             { th: "Rec", val: "seasons.Rec.length", alt: "Total rec seasons played", xtra: true },
             { th: "CC", val: "seasons.CC.length", alt: "Total CC seasons played", xtra: true },
           ],

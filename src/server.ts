@@ -13,12 +13,15 @@ import { setImageHost } from "./image"
 
 export const serverStart = Date.now()
 
-// Grab all the data on server start
-const data = getData()
+if (import.meta.main) startServer()
 
-const server = serve({
-  port: 5151,
-  async fetch(req) {
+function startServer() {
+  // Grab all the data on server start
+  const data = getData()
+
+  const server = serve({
+    port: 5151,
+    async fetch(req) {
     const url = new URL(req.url)
     const domain = url.hostname
 
@@ -48,7 +51,8 @@ const server = serve({
   },
 })
 
-console.log(`Server running at http://localhost:${server.port}`)
+  console.log(`Server running at http://localhost:${server.port}`)
+}
 
 function routeStatic(path: string, contentType: string, otherHeaders = {}) {
   const projectRoot = dirname(import.meta.dir)

@@ -164,6 +164,10 @@ export function PlayerPage(data: PoikasData, slug: string) {
                   <td>${careerGoals + careerAssists || "-"}</td>
                 </tr>
                 <tr>
+                  <th>Career PIM</th>
+                  <td>${player.careerStats?.pim || "-"}</td>
+                </tr>
+                <tr>
                   <th>Rec Seasons</th>
                   <td>${recSeasons}</td>
                 </tr>
@@ -234,6 +238,7 @@ export function PlayerPage(data: PoikasData, slug: string) {
                   { th: "G", width: 50, alt: "Goals", val: "stats.goals" },
                   { th: "A", width: 50, alt: "Assists", val: "stats.assists" },
                   { th: "P", width: 50, alt: "Points", val: "stats.points" },
+                  { th: "PIM", width: 50, alt: "Penalty minutes", val: "stats.pim" },
                 ],
                 players: buildSeasonData(player, k as LeagueName),
               })}`
