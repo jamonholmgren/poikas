@@ -1,4 +1,4 @@
-import type { PoikasData } from "../types"
+import type { Game, PoikasData } from "../types"
 import { routePage } from "../route"
 import { ChampTile } from "../components/ChampTile"
 import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
@@ -20,9 +20,9 @@ export function HomePage(data: PoikasData) {
   const lastRecGame = completedRecGames.length > 0 ? completedRecGames.at(-1) : undefined
   const completedCCGames = (cc.games || []).filter((g) => g.result != "pending")
   const lastCCGame = completedCCGames.length > 0 ? completedCCGames.at(-1) : undefined
-  const incompleteRecGames = (rec.games || []).filter((g) => g.result == "pending")
+  const incompleteRecGames = upcomingPendingGames(rec.games || [])
   const nextRecGame = incompleteRecGames.length > 0 ? incompleteRecGames.at(0) : undefined
-  const incompleteCCGames = (cc.games || []).filter((g) => g.result == "pending")
+  const incompleteCCGames = upcomingPendingGames(cc.games || [])
   const nextCCGame = incompleteCCGames.length > 0 ? incompleteCCGames.at(0) : undefined
 
   return routePage({
@@ -304,4 +304,17 @@ export function HomePage(data: PoikasData) {
       </div>
     `,
   })
+}
+
+export function upcomingPendingGames(games: Game[], now = new Date()) {
+  const today = localDateKey(now)
+  return games.filter((g) => g.result == "pending" && (!g.date || gameDateKey(g.date) >= today))
+}
+
+function gameDateKey(date: Date) {
+  return date.getUTCFullYear() * 10000 + (date.getUTCMonth() + 1) * 100 + date.getUTCDate()
+}
+
+function localDateKey(date: Date) {
+  return date.getFullYear() * 10000 + (date.getMonth() + 1) * 100 + date.getDate()
 }

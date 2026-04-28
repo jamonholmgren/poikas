@@ -3,6 +3,7 @@ import { getData } from "../data/load"
 import { LeaguePage } from "./LeaguePage"
 import { PlayerPage } from "./PlayerPage"
 import { AllPlayersPage } from "./AllPlayersPage"
+import { upcomingPendingGames } from "./HomePage"
 
 const data = getData()
 
@@ -46,6 +47,19 @@ describe("LeaguePage", () => {
     const res = LeaguePage(data, "not-a-real-slug")
     expect(res).toBeInstanceOf(Response)
     expect((res as Response).status).toBe(404)
+  })
+})
+
+describe("HomePage", () => {
+  test("skips pending games from before today", () => {
+    const games = [
+      { vs: "Old Pending", result: "pending" as const, date: new Date("2026-04-26") },
+      { vs: "Today Pending", result: "pending" as const, date: new Date("2026-04-28") },
+      { vs: "Future Pending", result: "pending" as const, date: new Date("2026-05-03") },
+      { vs: "Finished", result: "won" as const, date: new Date("2026-05-10") },
+    ]
+
+    expect(upcomingPendingGames(games, new Date("2026-04-28T12:00:00-07:00")).map((g) => g.vs)).toEqual(["Today Pending", "Future Pending"])
   })
 })
 
