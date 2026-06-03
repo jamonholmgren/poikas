@@ -202,7 +202,7 @@ export function PlayerPage(data: PoikasData, slug: string) {
                       <span class="caption">${im.caption}</span>
                     </a>
                   </div>
-                `
+                `,
                   )
                   .join("")}
               </div>
@@ -224,11 +224,11 @@ export function PlayerPage(data: PoikasData, slug: string) {
                 className: "seasons",
                 columns: [
                   { th: "Season", val: "seasonLink", width: 200, alt: "Season name and link" },
-                  { th: "Team Record", val: "record", width: 100, alt: "Team record" },
+                  { th: "Team WLT", val: "record", width: 100, alt: "Team win-loss-tie record" },
                   ...(player.pos === "G"
                     ? [
                         { th: "GP", width: 50, alt: "Games played", val: "stats.goalieGamesPlayed" },
-                        { th: "Rec", width: 50, alt: "Record", val: "stats.goalieRecord" },
+                        { th: "WLT", width: 50, alt: "Player win-loss-tie record", val: "stats.goalieRecord" },
                         { th: "GAA", width: 50, alt: "Goals against average", val: "stats.goalsAgainstAverageFormatted" },
                         { th: "SV%", width: 50, alt: "Save percentage", val: "stats.savePercentageFormatted" },
                         { th: "SA/G", width: 50, alt: "Shots against per game", val: "stats.averageShotsAgainstFormatted" },
@@ -275,7 +275,7 @@ export function PlayerPage(data: PoikasData, slug: string) {
               <td>${cup.score}</td>
               <td class="extra">${notableAbbr(cup.notable, 20)}</td>
             </tr>
-                `
+                `,
               )
               .join("")}
 
