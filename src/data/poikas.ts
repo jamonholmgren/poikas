@@ -63,7 +63,7 @@ export const poikasData: PoikasDataRaw = {
           sisu: "Cedric Holmgren",
           date: new Date("2026-02-14"),
           notable: "Strong road win, shots 26-13 in our favor.",
-          goalie: "Jamon Holmgren",
+          goalie: "Jamie Dugger",
           stats: {
             "Ethan Kulla": { goals: 2 },
             "Asa Storm": { goals: 2 },
@@ -81,7 +81,7 @@ export const poikasData: PoikasDataRaw = {
           result: "lost",
           date: new Date("2026-02-21"),
           notable: "Close loss to the Peeps - shots 16-20 in their favor.",
-          goalie: "Jamon Holmgren",
+          goalie: "Jamie Dugger",
           stats: {
             "Asa Storm": { goals: 2 },
             "Logan Matson": { goals: 1 },
@@ -244,7 +244,7 @@ export const poikasData: PoikasDataRaw = {
           sisu: undefined,
           date: new Date("2026-04-18"),
           notable: "",
-          goalie: "Michael Contour",
+          goalie: "?",
           stats: {
             "Dan Warren": { goals: 1 },
             "Peter Tapio": { goals: 1 },
