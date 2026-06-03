@@ -1,0 +1,168 @@
+{
+  "seasons": [
+    {
+      "year": 2021,
+      "seasonName": "Fall",
+      "leagueName": "CC",
+      "teamName": "Suomi Poikas CC",
+      "teamId": 2649857,
+      "teamUrl": "https://mountainview.ezleagues.ezfacility.com/teams/2649857/Suomi-Poikas-C.aspx?framed=1",
+      "htmlPath": "teams/2021-fall-cc-2649857.html"
+    },
+    {
+      "year": 2021,
+      "seasonName": "Fall",
+      "leagueName": "Rec",
+      "teamName": "Suomi Poikas Rec",
+      "teamId": 2649820,
+      "teamUrl": "https://mountainview.ezleagues.ezfacility.com/teams/2649820/Suomi-Poikas-Rec.aspx?framed=1",
+      "htmlPath": "teams/2021-fall-rec-2649820.html"
+    },
+    {
+      "year": 2022,
+      "seasonName": "Spring",
+      "leagueName": "CC",
+      "teamName": "Suomi Poikas CC",
+      "teamId": 2704526,
+      "teamUrl": "https://mountainview.ezleagues.ezfacility.com/teams/2704526/Suomi-Poikas-C-.aspx?framed=1",
+      "htmlPath": "teams/2022-spring-cc-2704526.html"
+    },
+    {
+      "year": 2022,
+      "seasonName": "Spring",
+      "leagueName": "Rec",
+      "teamName": "Suomi Poikas Rec",
+      "teamId": 2704574,
+      "teamUrl": "https://mountainview.ezleagues.ezfacility.com/teams/2704574/Suomi-Poikas-Rec.aspx?framed=1",
+      "htmlPath": "teams/2022-spring-rec-2704574.html"
+    },
+    {
+      "year": 2022,
+      "seasonName": "Fall",
+      "leagueName": "CC",
+      "teamName": "Suomi Poikas CC",
+      "teamId": 2771864,
+      "teamUrl": "https://mountainview.ezleagues.ezfacility.com/teams/2771864/Suomi-Poikas-C-.aspx?framed=1",
+      "htmlPath": "teams/2022-fall-cc-2771864.html"
+    },
+    {
+      "year": 2023,
+      "seasonName": "Spring",
+      "leagueName": "Rec",
+      "teamName": "Suomi Poikas Rec",
+      "teamId": 2842210,
+      "teamUrl": "https://mountainview.ezleagues.ezfacility.com/teams/2842210/Suomi-Poikas-Rec.aspx?framed=1",
+      "htmlPath": "teams/2023-spring-rec-2842210.html"
+    },
+    {
+      "year": 2023,
+      "seasonName": "Fall",
+      "leagueName": "CC",
+      "teamName": "Suomi Poikas CC",
+      "teamId": 2902820,
+      "teamUrl": "https://mountainview.ezleagues.ezfacility.com/teams/2902820/Suomi-Poikas-C.aspx?framed=1",
+      "htmlPath": "teams/2023-fall-cc-2902820.html"
+    },
+    {
+      "year": 2023,
+      "seasonName": "Fall",
+      "leagueName": "Rec",
+      "teamName": "Suomi Poikas Rec",
+      "teamId": 2902712,
+      "teamUrl": "https://mountainview.ezleagues.ezfacility.com/teams/2902712/Suomi-Poikas-Rec.aspx?framed=1",
+      "htmlPath": "teams/2023-fall-rec-2902712.html"
+    },
+    {
+      "year": 2024,
+      "seasonName": "Spring",
+      "leagueName": "CC",
+      "teamName": "Suomi Poikas CC",
+      "teamId": 2950569,
+      "teamUrl": "https://mountainview.ezleagues.ezfacility.com/teams/2950569/Suomi-Poikas-C.aspx?framed=1",
+      "htmlPath": "teams/2024-spring-cc-2950569.html"
+    },
+    {
+      "year": 2024,
+      "seasonName": "Spring",
+      "leagueName": "Rec",
+      "teamName": "Suomi Poikas Rec",
+      "teamId": 2950580,
+      "teamUrl": "https://mountainview.ezleagues.ezfacility.com/teams/2950580/Suomi-Poikas-Rec.aspx?framed=1",
+      "htmlPath": "teams/2024-spring-rec-2950580.html"
+    },
+    {
+      "year": 2024,
+      "seasonName": "Fall",
+      "leagueName": "CC",
+      "teamName": "Suomi Poikas CC",
+      "teamId": 3028116,
+      "teamUrl": "https://mountainview.ezleagues.ezfacility.com/teams/3028116/Suomi-Poikas-C.aspx?framed=1",
+      "htmlPath": "teams/2024-fall-cc-3028116.html"
+    },
+    {
+      "year": 2024,
+      "seasonName": "Fall",
+      "leagueName": "Rec",
+      "teamName": "Suomi Poikas Rec",
+      "teamId": 3028138,
+      "teamUrl": "https://mountainview.ezleagues.ezfacility.com/teams/3028138/Suomi-Poikas-Rec.aspx?framed=1",
+      "htmlPath": "teams/2024-fall-rec-3028138.html"
+    },
+    {
+      "year": 2025,
+      "seasonName": "Spring",
+      "leagueName": "CC",
+      "teamName": "Suomi Poikas CC",
+      "teamId": 3068408,
+      "teamUrl": "https://mountainview.ezleagues.ezfacility.com/teams/3068408/Suomi-Poikas-C.aspx?framed=1",
+      "htmlPath": "teams/2025-spring-cc-3068408.html"
+    },
+    {
+      "year": 2025,
+      "seasonName": "Spring",
+      "leagueName": "Rec",
+      "teamName": "Suomi Poikas Rec",
+      "teamId": 3068426,
+      "teamUrl": "https://mountainview.ezleagues.ezfacility.com/teams/3068426/Suomi-Poikas-Rec.aspx?framed=1",
+      "htmlPath": "teams/2025-spring-rec-3068426.html"
+    },
+    {
+      "year": 2025,
+      "seasonName": "Fall",
+      "leagueName": "CC",
+      "teamName": "Suomi Poikas CC",
+      "teamId": 3137047,
+      "teamUrl": "https://mountainview.ezleagues.ezfacility.com/teams/3137047/Suomi-Poikas-CC.aspx?framed=1",
+      "discoveredFromDate": "2025-09-07",
+      "htmlPath": "teams/2025-fall-cc-3137047.html"
+    },
+    {
+      "year": 2025,
+      "seasonName": "Fall",
+      "leagueName": "Rec",
+      "teamName": "Suomi Poikas Rec",
+      "teamId": 3137067,
+      "teamUrl": "https://mountainview.ezleagues.ezfacility.com/teams/3137067/Suomi-Poikas-Rec.aspx?framed=1",
+      "discoveredFromDate": "2025-09-06",
+      "htmlPath": "teams/2025-fall-rec-3137067.html"
+    },
+    {
+      "year": 2026,
+      "seasonName": "Spring",
+      "leagueName": "CC",
+      "teamName": "Suomi Poikas CC",
+      "teamId": 3183421,
+      "teamUrl": "https://mountainview.ezleagues.ezfacility.com/teams/3183421/Suomi-Poikas-CC.aspx?framed=1",
+      "htmlPath": "teams/2026-spring-cc-3183421.html"
+    },
+    {
+      "year": 2026,
+      "seasonName": "Spring",
+      "leagueName": "Rec",
+      "teamName": "Suomi Poikas Rec",
+      "teamId": 3183449,
+      "teamUrl": "https://mountainview.ezleagues.ezfacility.com/teams/3183449/Suomi-Poikas-Rec.aspx?framed=1",
+      "htmlPath": "teams/2026-spring-rec-3183449.html"
+    }
+  ]
+}

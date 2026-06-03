@@ -119,7 +119,7 @@ describe("PlayerPage", () => {
     const erik = data.players.find((p) => p.name === "Erik Benton")!
     const erikFall2022 = erik.seasons.CC.find((s) => s.year === 2022 && s.seasonName === "Fall")!
     expect(erikFall2022.stats.savePercentageFormatted).toBe("86.9%")
-    expect(erikFall2022.arenaGoalieSeasonStats?.name).toBe("Erik Benton")
+    expect(`${erikFall2022.arenaGoalieSeasonStats?.name} ${erikFall2022.arenaGoalieSeasonStats?.number}`).toContain("Erik Benton")
   })
 
   test("does not render fake goalie percentages for ignored seasons", async () => {

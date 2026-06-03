@@ -3715,7 +3715,7 @@ export const poikasPrevious: SeasonRaw[] = [
     year: 2025,
     seasonName: "Fall",
     leagueName: "Rec",
-    schedule: "https://mountainview.ezleagues.ezfacility.com/leagues/465543/FallWinter-Adult-League-2025-2026-Rec-League.aspx?framed=1",
+    schedule: "https://mountainview.ezleagues.ezfacility.com/teams/3137067/Suomi-Poikas-Rec.aspx?framed=1",
     playoffs: "champions",
     description:
       "Poikas return to the top with a win over the Thundersticks in another championship game! This team was dominate defensively all season, averaging a very low shots against per game.",
@@ -4082,7 +4082,7 @@ export const poikasPrevious: SeasonRaw[] = [
     year: 2025,
     seasonName: "Fall",
     leagueName: "CC",
-    schedule: "https://mountainview.ezleagues.ezfacility.com/leagues/465540/FallWinter-Adult-League-2025-2026-CC-League.aspx?framed=1",
+    schedule: "https://mountainview.ezleagues.ezfacility.com/teams/3137047/Suomi-Poikas-CC.aspx?framed=1",
     playoffs: "champions",
     description: "A fantastic CC season, capped off with a championship win -- our second in a row!",
     photos: ["poikas-c-2025-fall-champions.jpg"],

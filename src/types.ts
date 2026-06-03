@@ -225,6 +225,7 @@ export interface ArenaSeasonStats {
   year: number
   season: string
   league: string
+  source_url?: string
   standings: ArenaTeamStanding[]
   players: ArenaPlayerSeasonStats[]
   goalies: ArenaGoalieSeasonStats[]

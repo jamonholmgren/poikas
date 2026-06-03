@@ -3,6 +3,7 @@
     "year": 2021,
     "season": "Fall",
     "league": "C",
+    "source_url": "https://mountainview.ezleagues.ezfacility.com/teams/2649857/Suomi-Poikas-C.aspx?framed=1",
     "standings": [
       {
         "team_name": "CCCP",
@@ -17,28 +18,112 @@
         "goal_differential": 40
       },
       {
-        "team_name": "CCCP",
-        "points": 26,
-        "wins": 13,
-        "losses": 2,
+        "team_name": "Liquid Gold C",
+        "points": 22,
+        "wins": 10,
+        "losses": 5,
         "ties": 0,
         "games_played": 15,
-        "otl": 0,
-        "goals_for": 85,
-        "goals_against": 45,
-        "goal_differential": 40
+        "otl": 2,
+        "goals_for": 69,
+        "goals_against": 41,
+        "goal_differential": 28
       },
       {
-        "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\nCCCP",
-        "points": 26,
-        "wins": 13,
-        "losses": 2,
+        "team_name": "Callahan Auto Parts",
+        "points": 20,
+        "wins": 10,
+        "losses": 5,
         "ties": 0,
         "games_played": 15,
         "otl": 0,
-        "goals_for": 85,
-        "goals_against": 45,
-        "goal_differential": 40
+        "goals_for": 56,
+        "goals_against": 50,
+        "goal_differential": 6
+      },
+      {
+        "team_name": "Revolution",
+        "points": 17,
+        "wins": 7,
+        "losses": 8,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 3,
+        "goals_for": 73,
+        "goals_against": 59,
+        "goal_differential": 14
+      },
+      {
+        "team_name": "Badgers",
+        "points": 17,
+        "wins": 8,
+        "losses": 7,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 45,
+        "goals_against": 51,
+        "goal_differential": -6
+      },
+      {
+        "team_name": "Bandits",
+        "points": 16,
+        "wins": 7,
+        "losses": 8,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 2,
+        "goals_for": 44,
+        "goals_against": 40,
+        "goal_differential": 4
+      },
+      {
+        "team_name": "Deadguys",
+        "points": 15,
+        "wins": 6,
+        "losses": 9,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 3,
+        "goals_for": 50,
+        "goals_against": 55,
+        "goal_differential": -5
+      },
+      {
+        "team_name": "PBR",
+        "points": 14,
+        "wins": 6,
+        "losses": 9,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 2,
+        "goals_for": 64,
+        "goals_against": 86,
+        "goal_differential": -22
+      },
+      {
+        "team_name": "2 Towns Cider House",
+        "points": 8,
+        "wins": 4,
+        "losses": 11,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 31,
+        "goals_against": 51,
+        "goal_differential": -20
+      },
+      {
+        "team_name": "Suomi Poikas C",
+        "points": 8,
+        "wins": 4,
+        "losses": 11,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 38,
+        "goals_against": 77,
+        "goal_differential": -39
       }
     ],
     "players": [
@@ -79,7 +164,7 @@
         "penalty_minutes": 3
       },
       {
-        "name": "Kevin Stepaniuk",
+        "name": "KEVIN STEPANIUK",
         "number": "5",
         "games_played": 9,
         "goals": 4,
@@ -151,6 +236,15 @@
         "penalty_minutes": 0
       },
       {
+        "name": "Lars Jarvi",
+        "number": "",
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "points": 0,
+        "penalty_minutes": 0
+      },
+      {
         "name": "Creighton Suomi",
         "number": "11",
         "games_played": 5,
@@ -179,7 +273,7 @@
         "ot_losses": 0,
         "saves": 322,
         "goals_against": 71,
-        "gaa": 5.0,
+        "gaa": 5,
         "save_percentage": 0.819,
         "shutouts": 0
       }
@@ -189,9 +283,10 @@
     "year": 2022,
     "season": "Spring",
     "league": "C",
+    "source_url": "https://mountainview.ezleagues.ezfacility.com/teams/2704526/Suomi-Poikas-C-.aspx?framed=1",
     "standings": [
       {
-        "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\n2 Towns Ciderhouse",
+        "team_name": "2 Towns Ciderhouse",
         "points": 25,
         "wins": 12,
         "losses": 3,
@@ -201,6 +296,114 @@
         "goals_for": 64,
         "goals_against": 37,
         "goal_differential": 27
+      },
+      {
+        "team_name": "Deadguys",
+        "points": 21,
+        "wins": 10,
+        "losses": 5,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 77,
+        "goals_against": 52,
+        "goal_differential": 25
+      },
+      {
+        "team_name": "CCCP",
+        "points": 21,
+        "wins": 10,
+        "losses": 5,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 62,
+        "goals_against": 46,
+        "goal_differential": 16
+      },
+      {
+        "team_name": "Callahan Auto Parts",
+        "points": 16,
+        "wins": 8,
+        "losses": 7,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 48,
+        "goals_against": 53,
+        "goal_differential": -5
+      },
+      {
+        "team_name": "Liquid Gold C",
+        "points": 15,
+        "wins": 7,
+        "losses": 8,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 53,
+        "goals_against": 66,
+        "goal_differential": -13
+      },
+      {
+        "team_name": "Suomi Poikas C",
+        "points": 14,
+        "wins": 7,
+        "losses": 8,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 75,
+        "goals_against": 64,
+        "goal_differential": 11
+      },
+      {
+        "team_name": "Bandits",
+        "points": 13,
+        "wins": 6,
+        "losses": 9,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 51,
+        "goals_against": 57,
+        "goal_differential": -6
+      },
+      {
+        "team_name": "Badgers",
+        "points": 12,
+        "wins": 5,
+        "losses": 10,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 2,
+        "goals_for": 54,
+        "goals_against": 65,
+        "goal_differential": -11
+      },
+      {
+        "team_name": "Revolution",
+        "points": 10,
+        "wins": 5,
+        "losses": 10,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 61,
+        "goals_against": 74,
+        "goal_differential": -13
+      },
+      {
+        "team_name": "PBR",
+        "points": 10,
+        "wins": 5,
+        "losses": 10,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 64,
+        "goals_against": 95,
+        "goal_differential": -31
       }
     ],
     "players": [
@@ -350,7 +553,7 @@
         "ot_losses": 0,
         "saves": 394,
         "goals_against": 72,
-        "gaa": 4.0,
+        "gaa": 4,
         "save_percentage": 0.845,
         "shutouts": 0
       }
@@ -360,6 +563,7 @@
     "year": 2022,
     "season": "Fall",
     "league": "C",
+    "source_url": "https://mountainview.ezleagues.ezfacility.com/teams/2771864/Suomi-Poikas-C-.aspx?framed=1",
     "standings": [
       {
         "team_name": "CCCP",
@@ -374,28 +578,112 @@
         "goal_differential": 42
       },
       {
-        "team_name": "CCCP",
-        "points": 25,
+        "team_name": "Badgers",
+        "points": 24,
         "wins": 12,
         "losses": 3,
         "ties": 0,
         "games_played": 15,
-        "otl": 1,
-        "goals_for": 79,
-        "goals_against": 37,
-        "goal_differential": 42
+        "otl": 0,
+        "goals_for": 59,
+        "goals_against": 38,
+        "goal_differential": 21
       },
       {
-        "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\nCCCP",
-        "points": 25,
-        "wins": 12,
-        "losses": 3,
+        "team_name": "Lightning C/CC",
+        "points": 22,
+        "wins": 11,
+        "losses": 4,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 73,
+        "goals_against": 44,
+        "goal_differential": 29
+      },
+      {
+        "team_name": "Deadguys",
+        "points": 18,
+        "wins": 9,
+        "losses": 6,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 60,
+        "goals_against": 50,
+        "goal_differential": 10
+      },
+      {
+        "team_name": "Callahan Auto Parts",
+        "points": 17,
+        "wins": 8,
+        "losses": 7,
         "ties": 0,
         "games_played": 15,
         "otl": 1,
-        "goals_for": 79,
-        "goals_against": 37,
-        "goal_differential": 42
+        "goals_for": 50,
+        "goals_against": 36,
+        "goal_differential": 14
+      },
+      {
+        "team_name": "2 Towns Ciderhouse",
+        "points": 16,
+        "wins": 8,
+        "losses": 7,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 58,
+        "goals_against": 56,
+        "goal_differential": 2
+      },
+      {
+        "team_name": "Revolution",
+        "points": 15,
+        "wins": 7,
+        "losses": 8,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 68,
+        "goals_against": 75,
+        "goal_differential": -7
+      },
+      {
+        "team_name": "Bandits",
+        "points": 10,
+        "wins": 4,
+        "losses": 11,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 2,
+        "goals_for": 44,
+        "goals_against": 50,
+        "goal_differential": -6
+      },
+      {
+        "team_name": "Suomi Poikas C",
+        "points": 7,
+        "wins": 3,
+        "losses": 12,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 39,
+        "goals_against": 74,
+        "goal_differential": -35
+      },
+      {
+        "team_name": "PBR",
+        "points": 2,
+        "wins": 1,
+        "losses": 14,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 27,
+        "goals_against": 97,
+        "goal_differential": -70
       }
     ],
     "players": [
@@ -524,191 +812,29 @@
         "assists": 0,
         "points": 0,
         "penalty_minutes": 0
+      },
+      {
+        "name": "Paul Haar",
+        "number": "",
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "points": 0,
+        "penalty_minutes": 0
       }
     ],
     "goalies": [
       {
-        "name": "Erik Benton",
-        "number": "G",
+        "name": "Erik",
+        "number": "Benton G",
         "games_played": 15,
         "wins": 3,
         "losses": 12,
         "ot_losses": 0,
         "saves": 543,
         "goals_against": 82,
-        "gaa": 5.0,
+        "gaa": 5,
         "save_percentage": 0.869,
-        "shutouts": 0
-      }
-    ]
-  },
-  "Spring 2023 C League": {
-    "year": 2023,
-    "season": "Spring",
-    "league": "C",
-    "standings": [
-      {
-        "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\n2 Towns Ciderhouse",
-        "points": 24,
-        "wins": 11,
-        "losses": 4,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 2,
-        "goals_for": 75,
-        "goals_against": 43,
-        "goal_differential": 32
-      }
-    ],
-    "players": [
-      {
-        "name": "Steve Saunders",
-        "number": "40",
-        "games_played": 13,
-        "goals": 13,
-        "assists": 6,
-        "points": 19,
-        "penalty_minutes": 21
-      },
-      {
-        "name": "Matt Bromley",
-        "number": "69",
-        "games_played": 13,
-        "goals": 8,
-        "assists": 8,
-        "points": 16,
-        "penalty_minutes": 9
-      },
-      {
-        "name": "Evan Tapio",
-        "number": "22",
-        "games_played": 14,
-        "goals": 7,
-        "assists": 4,
-        "points": 11,
-        "penalty_minutes": 6
-      },
-      {
-        "name": "Asa Storm",
-        "number": "29",
-        "games_played": 14,
-        "goals": 5,
-        "assists": 5,
-        "points": 10,
-        "penalty_minutes": 3
-      },
-      {
-        "name": "Nels Tapio",
-        "number": "26",
-        "games_played": 7,
-        "goals": 5,
-        "assists": 3,
-        "points": 8,
-        "penalty_minutes": 15
-      },
-      {
-        "name": "Oren Matson",
-        "number": "27",
-        "games_played": 15,
-        "goals": 5,
-        "assists": 2,
-        "points": 7,
-        "penalty_minutes": 0
-      },
-      {
-        "name": "Brad Wuori",
-        "number": "19",
-        "games_played": 10,
-        "goals": 2,
-        "assists": 5,
-        "points": 7,
-        "penalty_minutes": 6
-      },
-      {
-        "name": "Jared Paben",
-        "number": "57",
-        "games_played": 11,
-        "goals": 2,
-        "assists": 4,
-        "points": 6,
-        "penalty_minutes": 6
-      },
-      {
-        "name": "Will Murphy",
-        "number": "50",
-        "games_played": 13,
-        "goals": 2,
-        "assists": 4,
-        "points": 6,
-        "penalty_minutes": 12
-      },
-      {
-        "name": "Scott Daniels",
-        "number": "7",
-        "games_played": 9,
-        "goals": 1,
-        "assists": 4,
-        "points": 5,
-        "penalty_minutes": 0
-      },
-      {
-        "name": "Randy Storm",
-        "number": "88",
-        "games_played": 13,
-        "goals": 1,
-        "assists": 3,
-        "points": 4,
-        "penalty_minutes": 3
-      },
-      {
-        "name": "Joel Mattila",
-        "number": "77",
-        "games_played": 11,
-        "goals": 2,
-        "assists": 1,
-        "points": 3,
-        "penalty_minutes": 6
-      },
-      {
-        "name": "Eric Matson",
-        "number": "20",
-        "games_played": 10,
-        "goals": 2,
-        "assists": 0,
-        "points": 2,
-        "penalty_minutes": 6
-      },
-      {
-        "name": "Andrew Nichol",
-        "number": "35",
-        "games_played": 12,
-        "goals": 1,
-        "assists": 1,
-        "points": 2,
-        "penalty_minutes": 9
-      },
-      {
-        "name": "Erik Benton-Price",
-        "number": "G",
-        "games_played": 0,
-        "goals": 0,
-        "assists": 0,
-        "points": 0,
-        "penalty_minutes": 3
-      }
-    ],
-    "goalies": [
-      {
-        "name": "Jamon",
-        "number": "Holmgren G",
-        "games_played": 15,
-        "wins": 5,
-        "losses": 9,
-        "ot_losses": 1,
-        "saves": 447,
-        "goals_against": 76,
-        "gaa": 5.0,
-        "save_percentage": 0.855,
         "shutouts": 0
       }
     ]
@@ -717,19 +843,8 @@
     "year": 2023,
     "season": "Fall",
     "league": "C",
+    "source_url": "https://mountainview.ezleagues.ezfacility.com/teams/2902820/Suomi-Poikas-C.aspx?framed=1",
     "standings": [
-      {
-        "team_name": "Lightning C/CC",
-        "points": 23,
-        "wins": 11,
-        "losses": 4,
-        "ties": 0,
-        "games_played": 15,
-        "otl": 1,
-        "goals_for": 72,
-        "goals_against": 46,
-        "goal_differential": 26
-      },
       {
         "team_name": "Lightning C/CC",
         "points": 23,
@@ -753,6 +868,102 @@
         "goals_for": 63,
         "goals_against": 33,
         "goal_differential": 30
+      },
+      {
+        "team_name": "Callahan Auto Parts",
+        "points": 21,
+        "wins": 10,
+        "losses": 5,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 53,
+        "goals_against": 37,
+        "goal_differential": 16
+      },
+      {
+        "team_name": "Bandits",
+        "points": 21,
+        "wins": 10,
+        "losses": 4,
+        "ties": 1,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 51,
+        "goals_against": 42,
+        "goal_differential": 9
+      },
+      {
+        "team_name": "Local Legends",
+        "points": 19,
+        "wins": 8,
+        "losses": 7,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 3,
+        "goals_for": 61,
+        "goals_against": 34,
+        "goal_differential": 27
+      },
+      {
+        "team_name": "Deadguys",
+        "points": 15,
+        "wins": 7,
+        "losses": 8,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 64,
+        "goals_against": 52,
+        "goal_differential": 12
+      },
+      {
+        "team_name": "CCCP",
+        "points": 14,
+        "wins": 6,
+        "losses": 8,
+        "ties": 1,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 54,
+        "goals_against": 52,
+        "goal_differential": 2
+      },
+      {
+        "team_name": "Revolution",
+        "points": 14,
+        "wins": 7,
+        "losses": 8,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 48,
+        "goals_against": 55,
+        "goal_differential": -7
+      },
+      {
+        "team_name": "Suomi Poikas C",
+        "points": 6,
+        "wins": 3,
+        "losses": 12,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 36,
+        "goals_against": 89,
+        "goal_differential": -53
+      },
+      {
+        "team_name": "PBR",
+        "points": 2,
+        "wins": 1,
+        "losses": 14,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 29,
+        "goals_against": 91,
+        "goal_differential": -62
       }
     ],
     "players": [
@@ -884,7 +1095,7 @@
         "ot_losses": 0,
         "saves": 328,
         "goals_against": 72,
-        "gaa": 6.0,
+        "gaa": 6,
         "save_percentage": 0.82,
         "shutouts": 0
       }
@@ -894,6 +1105,7 @@
     "year": 2024,
     "season": "Spring",
     "league": "C",
+    "source_url": "https://mountainview.ezleagues.ezfacility.com/teams/2950569/Suomi-Poikas-C.aspx?framed=1",
     "standings": [
       {
         "team_name": "Badgers",
@@ -908,28 +1120,112 @@
         "goal_differential": 17
       },
       {
-        "team_name": "Badgers",
-        "points": 23,
-        "wins": 11,
-        "losses": 3,
+        "team_name": "Deadguys",
+        "points": 21,
+        "wins": 10,
+        "losses": 4,
         "ties": 1,
         "games_played": 15,
         "otl": 0,
-        "goals_for": 61,
-        "goals_against": 44,
-        "goal_differential": 17
+        "goals_for": 52,
+        "goals_against": 42,
+        "goal_differential": 10
       },
       {
-        "team_name": "Print\n \t PTS \t W \t L \t T \t GP \t OTL \t PF \t PA \t PD \tCalendar Sync\nBadgers",
-        "points": 23,
-        "wins": 11,
-        "losses": 3,
-        "ties": 1,
+        "team_name": "Lightning C/CC",
+        "points": 20,
+        "wins": 9,
+        "losses": 4,
+        "ties": 2,
         "games_played": 15,
         "otl": 0,
-        "goals_for": 61,
-        "goals_against": 44,
-        "goal_differential": 17
+        "goals_for": 68,
+        "goals_against": 46,
+        "goal_differential": 22
+      },
+      {
+        "team_name": "Bandits",
+        "points": 18,
+        "wins": 8,
+        "losses": 5,
+        "ties": 2,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 52,
+        "goals_against": 39,
+        "goal_differential": 13
+      },
+      {
+        "team_name": "Local Legends",
+        "points": 18,
+        "wins": 7,
+        "losses": 8,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 4,
+        "goals_for": 45,
+        "goals_against": 46,
+        "goal_differential": -1
+      },
+      {
+        "team_name": "Revolution",
+        "points": 17,
+        "wins": 7,
+        "losses": 6,
+        "ties": 2,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 65,
+        "goals_against": 63,
+        "goal_differential": 2
+      },
+      {
+        "team_name": "CCCP",
+        "points": 15,
+        "wins": 6,
+        "losses": 7,
+        "ties": 2,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 49,
+        "goals_against": 51,
+        "goal_differential": -2
+      },
+      {
+        "team_name": "PBR",
+        "points": 11,
+        "wins": 5,
+        "losses": 10,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 49,
+        "goals_against": 69,
+        "goal_differential": -20
+      },
+      {
+        "team_name": "Suomi Poikas C",
+        "points": 11,
+        "wins": 5,
+        "losses": 10,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 55,
+        "goals_against": 68,
+        "goal_differential": -13
+      },
+      {
+        "team_name": "Callahan Auto Parts",
+        "points": 8,
+        "wins": 2,
+        "losses": 13,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 4,
+        "goals_for": 36,
+        "goals_against": 64,
+        "goal_differential": -28
       }
     ],
     "players": [
@@ -1024,7 +1320,7 @@
         "penalty_minutes": 0
       },
       {
-        "name": "JOEL MATTILA",
+        "name": "Joel Mattila",
         "number": "77",
         "games_played": 11,
         "goals": 2,
@@ -1079,9 +1375,1048 @@
         "ot_losses": 1,
         "saves": 256,
         "goals_against": 50,
-        "gaa": 5.0,
+        "gaa": 5,
         "save_percentage": 0.837,
         "shutouts": 0
+      }
+    ]
+  },
+  "Fall 2024 C League": {
+    "year": 2024,
+    "season": "Fall",
+    "league": "C",
+    "source_url": "https://mountainview.ezleagues.ezfacility.com/teams/3028116/Suomi-Poikas-C.aspx?framed=1",
+    "standings": [
+      {
+        "team_name": "Local Legends",
+        "points": 21,
+        "wins": 10,
+        "losses": 5,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 60,
+        "goals_against": 36,
+        "goal_differential": 24
+      },
+      {
+        "team_name": "Suomi Poikas C",
+        "points": 21,
+        "wins": 9,
+        "losses": 6,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 3,
+        "goals_for": 56,
+        "goals_against": 41,
+        "goal_differential": 15
+      },
+      {
+        "team_name": "Badgers",
+        "points": 21,
+        "wins": 10,
+        "losses": 5,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 53,
+        "goals_against": 48,
+        "goal_differential": 5
+      },
+      {
+        "team_name": "Bandits",
+        "points": 20,
+        "wins": 9,
+        "losses": 6,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 2,
+        "goals_for": 48,
+        "goals_against": 40,
+        "goal_differential": 8
+      },
+      {
+        "team_name": "Jugs",
+        "points": 18,
+        "wins": 9,
+        "losses": 6,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 45,
+        "goals_against": 41,
+        "goal_differential": 4
+      },
+      {
+        "team_name": "CCCP",
+        "points": 18,
+        "wins": 8,
+        "losses": 7,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 2,
+        "goals_for": 56,
+        "goals_against": 45,
+        "goal_differential": 11
+      },
+      {
+        "team_name": "Lightning C/CC",
+        "points": 16,
+        "wins": 7,
+        "losses": 8,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 2,
+        "goals_for": 50,
+        "goals_against": 60,
+        "goal_differential": -10
+      },
+      {
+        "team_name": "Deadguys",
+        "points": 12,
+        "wins": 5,
+        "losses": 10,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 2,
+        "goals_for": 32,
+        "goals_against": 47,
+        "goal_differential": -15
+      },
+      {
+        "team_name": "PBR",
+        "points": 9,
+        "wins": 4,
+        "losses": 11,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 46,
+        "goals_against": 60,
+        "goal_differential": -14
+      },
+      {
+        "team_name": "Revolution",
+        "points": 9,
+        "wins": 4,
+        "losses": 11,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 38,
+        "goals_against": 66,
+        "goal_differential": -28
+      }
+    ],
+    "players": [
+      {
+        "name": "Kevin Sarkela",
+        "number": "81",
+        "games_played": 15,
+        "goals": 7,
+        "assists": 14,
+        "points": 21,
+        "penalty_minutes": 9
+      },
+      {
+        "name": "Andrew Tunseth",
+        "number": "50",
+        "games_played": 14,
+        "goals": 7,
+        "assists": 12,
+        "points": 19,
+        "penalty_minutes": 9
+      },
+      {
+        "name": "Nels Tapio",
+        "number": "26",
+        "games_played": 15,
+        "goals": 10,
+        "assists": 5,
+        "points": 15,
+        "penalty_minutes": 33
+      },
+      {
+        "name": "Russ Tapio",
+        "number": "32",
+        "games_played": 14,
+        "goals": 7,
+        "assists": 7,
+        "points": 14,
+        "penalty_minutes": 12
+      },
+      {
+        "name": "Caleb Aring",
+        "number": "40",
+        "games_played": 11,
+        "goals": 8,
+        "assists": 4,
+        "points": 12,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Jared Matson",
+        "number": "20",
+        "games_played": 10,
+        "goals": 8,
+        "assists": 3,
+        "points": 11,
+        "penalty_minutes": 9
+      },
+      {
+        "name": "Steve Saunders",
+        "number": "9",
+        "games_played": 10,
+        "goals": 5,
+        "assists": 2,
+        "points": 7,
+        "penalty_minutes": 15
+      },
+      {
+        "name": "Matt Bromley",
+        "number": "69",
+        "games_played": 11,
+        "goals": 2,
+        "assists": 5,
+        "points": 7,
+        "penalty_minutes": 6
+      },
+      {
+        "name": "Joel Mattila",
+        "number": "77",
+        "games_played": 12,
+        "goals": 2,
+        "assists": 2,
+        "points": 4,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Brad Wuori",
+        "number": "19",
+        "games_played": 9,
+        "goals": 1,
+        "assists": 1,
+        "points": 2,
+        "penalty_minutes": 6
+      },
+      {
+        "name": "Peter Tapio",
+        "number": "87",
+        "games_played": 11,
+        "goals": 1,
+        "assists": 1,
+        "points": 2,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Jared Paben",
+        "number": "57",
+        "games_played": 10,
+        "goals": 1,
+        "assists": 1,
+        "points": 2,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Konrad Stenersen",
+        "number": "10",
+        "games_played": 7,
+        "goals": 0,
+        "assists": 1,
+        "points": 1,
+        "penalty_minutes": 6
+      },
+      {
+        "name": "Evan Tapio",
+        "number": "22",
+        "games_played": 15,
+        "goals": 1,
+        "assists": 0,
+        "points": 1,
+        "penalty_minutes": 9
+      },
+      {
+        "name": "Scott Daniels",
+        "number": "7",
+        "games_played": 3,
+        "goals": 0,
+        "assists": 0,
+        "points": 0,
+        "penalty_minutes": 0
+      }
+    ],
+    "goalies": [
+      {
+        "name": "Jamon",
+        "number": "Holmgren G",
+        "games_played": 9,
+        "wins": 6,
+        "losses": 2,
+        "ot_losses": 1,
+        "saves": 217,
+        "goals_against": 33,
+        "gaa": 4,
+        "save_percentage": 0.868,
+        "shutouts": 1
+      }
+    ]
+  },
+  "Spring 2025 C League": {
+    "year": 2025,
+    "season": "Spring",
+    "league": "C",
+    "source_url": "https://mountainview.ezleagues.ezfacility.com/teams/3068408/Suomi-Poikas-C.aspx?framed=1",
+    "standings": [
+      {
+        "team_name": "Revolution",
+        "points": 21,
+        "wins": 10,
+        "losses": 5,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 64,
+        "goals_against": 45,
+        "goal_differential": 19
+      },
+      {
+        "team_name": "Suomi Poikas C",
+        "points": 21,
+        "wins": 9,
+        "losses": 6,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 3,
+        "goals_for": 64,
+        "goals_against": 36,
+        "goal_differential": 28
+      },
+      {
+        "team_name": "Local Legends",
+        "points": 20,
+        "wins": 10,
+        "losses": 5,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 52,
+        "goals_against": 46,
+        "goal_differential": 6
+      },
+      {
+        "team_name": "Bandits",
+        "points": 20,
+        "wins": 10,
+        "losses": 5,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 46,
+        "goals_against": 36,
+        "goal_differential": 10
+      },
+      {
+        "team_name": "Jugs",
+        "points": 19,
+        "wins": 9,
+        "losses": 6,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 55,
+        "goals_against": 47,
+        "goal_differential": 8
+      },
+      {
+        "team_name": "Pinecones C",
+        "points": 18,
+        "wins": 9,
+        "losses": 6,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 67,
+        "goals_against": 54,
+        "goal_differential": 13
+      },
+      {
+        "team_name": "PBR",
+        "points": 16,
+        "wins": 8,
+        "losses": 7,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 51,
+        "goals_against": 54,
+        "goal_differential": -3
+      },
+      {
+        "team_name": "CCCP",
+        "points": 14,
+        "wins": 6,
+        "losses": 9,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 2,
+        "goals_for": 49,
+        "goals_against": 52,
+        "goal_differential": -3
+      },
+      {
+        "team_name": "Lightning C/CC",
+        "points": 13,
+        "wins": 6,
+        "losses": 9,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 68,
+        "goals_against": 66,
+        "goal_differential": 2
+      },
+      {
+        "team_name": "The Clowns",
+        "points": 10,
+        "wins": 4,
+        "losses": 11,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 2,
+        "goals_for": 46,
+        "goals_against": 67,
+        "goal_differential": -21
+      },
+      {
+        "team_name": "Badgers",
+        "points": 10,
+        "wins": 5,
+        "losses": 10,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 37,
+        "goals_against": 57,
+        "goal_differential": -20
+      },
+      {
+        "team_name": "Deadguys",
+        "points": 8,
+        "wins": 4,
+        "losses": 11,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 36,
+        "goals_against": 75,
+        "goal_differential": -39
+      }
+    ],
+    "players": [
+      {
+        "name": "Jared Matson",
+        "number": "20",
+        "games_played": 13,
+        "goals": 11,
+        "assists": 5,
+        "points": 16,
+        "penalty_minutes": 6
+      },
+      {
+        "name": "Russ Tapio",
+        "number": "32-C",
+        "games_played": 14,
+        "goals": 7,
+        "assists": 9,
+        "points": 16,
+        "penalty_minutes": 6
+      },
+      {
+        "name": "Kevin Sarkela",
+        "number": "78",
+        "games_played": 13,
+        "goals": 1,
+        "assists": 13,
+        "points": 14,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Treven Erickson",
+        "number": "13",
+        "games_played": 12,
+        "goals": 12,
+        "assists": 2,
+        "points": 14,
+        "penalty_minutes": 6
+      },
+      {
+        "name": "Nels Tapio",
+        "number": "26",
+        "games_played": 14,
+        "goals": 6,
+        "assists": 6,
+        "points": 12,
+        "penalty_minutes": 18
+      },
+      {
+        "name": "Ward Pearson",
+        "number": "33",
+        "games_played": 12,
+        "goals": 4,
+        "assists": 8,
+        "points": 12,
+        "penalty_minutes": 9
+      },
+      {
+        "name": "Caleb Aring",
+        "number": "40",
+        "games_played": 9,
+        "goals": 6,
+        "assists": 4,
+        "points": 10,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Andrew Tunseth",
+        "number": "50",
+        "games_played": 13,
+        "goals": 6,
+        "assists": 4,
+        "points": 10,
+        "penalty_minutes": 21
+      },
+      {
+        "name": "Kieren Sarkela",
+        "number": "81",
+        "games_played": 12,
+        "goals": 4,
+        "assists": 3,
+        "points": 7,
+        "penalty_minutes": 6
+      },
+      {
+        "name": "Orrin Erickson",
+        "number": "97",
+        "games_played": 12,
+        "goals": 2,
+        "assists": 4,
+        "points": 6,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Evan Tapio",
+        "number": "22",
+        "games_played": 12,
+        "goals": 3,
+        "assists": 3,
+        "points": 6,
+        "penalty_minutes": 6
+      },
+      {
+        "name": "Brad Wuori",
+        "number": "19",
+        "games_played": 9,
+        "goals": 1,
+        "assists": 2,
+        "points": 3,
+        "penalty_minutes": 9
+      },
+      {
+        "name": "Peter Tapio",
+        "number": "87",
+        "games_played": 14,
+        "goals": 0,
+        "assists": 3,
+        "points": 3,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Konrad Stenersen",
+        "number": "10",
+        "games_played": 13,
+        "goals": 1,
+        "assists": 0,
+        "points": 1,
+        "penalty_minutes": 12
+      },
+      {
+        "name": "Scott Daniels",
+        "number": "7",
+        "games_played": 9,
+        "goals": 0,
+        "assists": 0,
+        "points": 0,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Kyle Malstrom",
+        "number": "G",
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "points": 0,
+        "penalty_minutes": 3
+      }
+    ],
+    "goalies": [
+      {
+        "name": "Kyle",
+        "number": "Malstrom G",
+        "games_played": 9,
+        "wins": 7,
+        "losses": 1,
+        "ot_losses": 1,
+        "saves": 137,
+        "goals_against": 16,
+        "gaa": 2,
+        "save_percentage": 0.895,
+        "shutouts": 3
+      }
+    ]
+  },
+  "Fall 2025 C League": {
+    "year": 2025,
+    "season": "Fall",
+    "league": "C",
+    "source_url": "https://mountainview.ezleagues.ezfacility.com/teams/3137047/Suomi-Poikas-CC.aspx?framed=1",
+    "standings": [
+      {
+        "team_name": "Suomi Poikas CC",
+        "points": 24,
+        "wins": 12,
+        "losses": 2,
+        "ties": 0,
+        "games_played": 14,
+        "otl": 0,
+        "goals_for": 64,
+        "goals_against": 21,
+        "goal_differential": 43
+      },
+      {
+        "team_name": "Revolution",
+        "points": 19,
+        "wins": 9,
+        "losses": 5,
+        "ties": 0,
+        "games_played": 14,
+        "otl": 1,
+        "goals_for": 49,
+        "goals_against": 44,
+        "goal_differential": 5
+      },
+      {
+        "team_name": "Jugs",
+        "points": 13,
+        "wins": 6,
+        "losses": 8,
+        "ties": 0,
+        "games_played": 14,
+        "otl": 1,
+        "goals_for": 43,
+        "goals_against": 47,
+        "goal_differential": -4
+      },
+      {
+        "team_name": "Local Legends",
+        "points": 12,
+        "wins": 6,
+        "losses": 8,
+        "ties": 0,
+        "games_played": 14,
+        "otl": 0,
+        "goals_for": 44,
+        "goals_against": 45,
+        "goal_differential": -1
+      },
+      {
+        "team_name": "Pinecones CC",
+        "points": 11,
+        "wins": 5,
+        "losses": 9,
+        "ties": 0,
+        "games_played": 14,
+        "otl": 1,
+        "goals_for": 43,
+        "goals_against": 63,
+        "goal_differential": -20
+      },
+      {
+        "team_name": "Bandits",
+        "points": 8,
+        "wins": 4,
+        "losses": 10,
+        "ties": 0,
+        "games_played": 14,
+        "otl": 0,
+        "goals_for": 25,
+        "goals_against": 48,
+        "goal_differential": -23
+      }
+    ],
+    "players": [
+      {
+        "name": "Andrew Tunseth",
+        "number": "50",
+        "games_played": 11,
+        "goals": 11,
+        "assists": 9,
+        "points": 20,
+        "penalty_minutes": 15
+      },
+      {
+        "name": "Russ Tapio",
+        "number": "(C)32",
+        "games_played": 11,
+        "goals": 9,
+        "assists": 7,
+        "points": 16,
+        "penalty_minutes": 9
+      },
+      {
+        "name": "Treven Erickson",
+        "number": "13",
+        "games_played": 12,
+        "goals": 10,
+        "assists": 6,
+        "points": 16,
+        "penalty_minutes": 12
+      },
+      {
+        "name": "Ward Pearson",
+        "number": "33",
+        "games_played": 11,
+        "goals": 8,
+        "assists": 8,
+        "points": 16,
+        "penalty_minutes": 18
+      },
+      {
+        "name": "Kevin Sarkela",
+        "number": "78",
+        "games_played": 13,
+        "goals": 4,
+        "assists": 9,
+        "points": 13,
+        "penalty_minutes": 6
+      },
+      {
+        "name": "Nels Tapio",
+        "number": "26",
+        "games_played": 12,
+        "goals": 3,
+        "assists": 9,
+        "points": 12,
+        "penalty_minutes": 15
+      },
+      {
+        "name": "Nolan Matson",
+        "number": "45",
+        "games_played": 11,
+        "goals": 5,
+        "assists": 5,
+        "points": 10,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Sam Balto",
+        "number": "4",
+        "games_played": 11,
+        "goals": 3,
+        "assists": 6,
+        "points": 9,
+        "penalty_minutes": 39
+      },
+      {
+        "name": "Evan Tapio",
+        "number": "22",
+        "games_played": 13,
+        "goals": 3,
+        "assists": 2,
+        "points": 5,
+        "penalty_minutes": 9
+      },
+      {
+        "name": "Konrad Stenersen",
+        "number": "10",
+        "games_played": 10,
+        "goals": 2,
+        "assists": 2,
+        "points": 4,
+        "penalty_minutes": 9
+      },
+      {
+        "name": "Brad Wuori",
+        "number": "19",
+        "games_played": 8,
+        "goals": 2,
+        "assists": 0,
+        "points": 2,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Caleb Aring",
+        "number": "3",
+        "games_played": 8,
+        "goals": 2,
+        "assists": 0,
+        "points": 2,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Scott Daniels",
+        "number": "7",
+        "games_played": 5,
+        "goals": 0,
+        "assists": 1,
+        "points": 1,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Kyle Malstrom",
+        "number": "G",
+        "games_played": 0,
+        "goals": 0,
+        "assists": 1,
+        "points": 1,
+        "penalty_minutes": 0
+      }
+    ],
+    "goalies": [
+      {
+        "name": "Kyle",
+        "number": "Malstrom G",
+        "games_played": 11,
+        "wins": 9,
+        "losses": 2,
+        "ot_losses": 0,
+        "saves": 254,
+        "goals_against": 13,
+        "gaa": 1,
+        "save_percentage": 0.951,
+        "shutouts": 4
+      }
+    ]
+  },
+  "Spring 2026 C League": {
+    "year": 2026,
+    "season": "Spring",
+    "league": "C",
+    "source_url": "https://mountainview.ezleagues.ezfacility.com/teams/3183421/Suomi-Poikas-CC.aspx?framed=1",
+    "standings": [
+      {
+        "team_name": "Suomi Poikas CC",
+        "points": 23,
+        "wins": 11,
+        "losses": 4,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 70,
+        "goals_against": 46,
+        "goal_differential": 24
+      },
+      {
+        "team_name": "Revolution",
+        "points": 20,
+        "wins": 10,
+        "losses": 5,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 70,
+        "goals_against": 50,
+        "goal_differential": 20
+      },
+      {
+        "team_name": "CCCP",
+        "points": 20,
+        "wins": 10,
+        "losses": 5,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 0,
+        "goals_for": 62,
+        "goals_against": 46,
+        "goal_differential": 16
+      },
+      {
+        "team_name": "Jugs",
+        "points": 15,
+        "wins": 7,
+        "losses": 8,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 50,
+        "goals_against": 59,
+        "goal_differential": -9
+      },
+      {
+        "team_name": "Local Legends",
+        "points": 13,
+        "wins": 6,
+        "losses": 9,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 43,
+        "goals_against": 57,
+        "goal_differential": -14
+      },
+      {
+        "team_name": "Pinecones CC",
+        "points": 3,
+        "wins": 1,
+        "losses": 14,
+        "ties": 0,
+        "games_played": 15,
+        "otl": 1,
+        "goals_for": 35,
+        "goals_against": 72,
+        "goal_differential": -37
+      }
+    ],
+    "players": [
+      {
+        "name": "Nels Tapio",
+        "number": "26",
+        "games_played": 13,
+        "goals": 7,
+        "assists": 14,
+        "points": 21,
+        "penalty_minutes": 9
+      },
+      {
+        "name": "Treven Erickson",
+        "number": "13",
+        "games_played": 8,
+        "goals": 14,
+        "assists": 3,
+        "points": 17,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Kevin Sarkela",
+        "number": "78",
+        "games_played": 10,
+        "goals": 6,
+        "assists": 9,
+        "points": 15,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Russ Tapio",
+        "number": "(C)32",
+        "games_played": 14,
+        "goals": 7,
+        "assists": 8,
+        "points": 15,
+        "penalty_minutes": 6
+      },
+      {
+        "name": "Jared Matson",
+        "number": "11",
+        "games_played": 10,
+        "goals": 8,
+        "assists": 5,
+        "points": 13,
+        "penalty_minutes": 0
+      },
+      {
+        "name": "Kyle Tapio",
+        "number": "84",
+        "games_played": 11,
+        "goals": 6,
+        "assists": 6,
+        "points": 12,
+        "penalty_minutes": 9
+      },
+      {
+        "name": "Kieren Sarkela",
+        "number": "81",
+        "games_played": 10,
+        "goals": 4,
+        "assists": 4,
+        "points": 8,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Evan Tapio",
+        "number": "22",
+        "games_played": 12,
+        "goals": 4,
+        "assists": 3,
+        "points": 7,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Ward Pearson",
+        "number": "33",
+        "games_played": 10,
+        "goals": 3,
+        "assists": 3,
+        "points": 6,
+        "penalty_minutes": 18
+      },
+      {
+        "name": "Sam Balto",
+        "number": "4",
+        "games_played": 8,
+        "goals": 1,
+        "assists": 4,
+        "points": 5,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Nolan Matson",
+        "number": "45",
+        "games_played": 11,
+        "goals": 2,
+        "assists": 3,
+        "points": 5,
+        "penalty_minutes": 12
+      },
+      {
+        "name": "Ryan Tapio",
+        "number": "94",
+        "games_played": 9,
+        "goals": 0,
+        "assists": 5,
+        "points": 5,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Brad Wuori",
+        "number": "19",
+        "games_played": 10,
+        "goals": 2,
+        "assists": 1,
+        "points": 3,
+        "penalty_minutes": 3
+      },
+      {
+        "name": "Scott Daniels",
+        "number": "7",
+        "games_played": 7,
+        "goals": 0,
+        "assists": 1,
+        "points": 1,
+        "penalty_minutes": 0
+      }
+    ],
+    "goalies": [
+      {
+        "name": "Kyle",
+        "number": "(G)",
+        "games_played": 10,
+        "wins": 7,
+        "losses": 2,
+        "ot_losses": 1,
+        "saves": 231,
+        "goals_against": 26,
+        "gaa": 3,
+        "save_percentage": 0.899,
+        "shutouts": 1
       }
     ]
   }

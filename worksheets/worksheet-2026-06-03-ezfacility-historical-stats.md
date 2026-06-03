@@ -67,7 +67,24 @@ Known samples:
 - Expanded the arena goalie fallback so seasons without local game lists can use arena GP/W-L/GA when a matching arena goalie row exists.
 - Added regression tests for older Rec/CC arena goalie stats, Erik Benton in 2022 Fall CC, and ignored-season rendering.
 - Ran `bun test`: 12 pass, 0 fail.
+- Added `src/data/historical/ezfacility.ts`, a dependency-free Bun CLI for discovering Suomi team pages, archiving EZFacility HTML, and regenerating JSON from local HTML.
+- Added `src/data/historical/ezfacility.test.ts` parser tests that do not use network.
+- Created `src/data/historical/ezfacility/manifest.json`.
+- Archived 18 validated team pages under `src/data/historical/ezfacility/teams/`.
+- Archived only the schedule pages that produced accepted team URLs under `src/data/historical/ezfacility/schedules/`.
+- Ran `bun run src/data/historical/ezfacility.ts discover --write`.
+  - Found Fall 2025 Rec team URL: `https://mountainview.ezleagues.ezfacility.com/teams/3137067/Suomi-Poikas-Rec.aspx?framed=1`.
+  - Found Fall 2025 CC team URL: `https://mountainview.ezleagues.ezfacility.com/teams/3137047/Suomi-Poikas-CC.aspx?framed=1`.
+- Broader discovery initially found a false 2023 Spring CC candidate from the prior Fall season; fixed discovery by validating the fetched team page header against the requested season before accepting candidates.
+- A broad discovery run temporarily cached many unmatched schedule pages; removed them and changed the tool so it keeps only accepted discovery source pages.
+- Ran `bun run src/data/historical/ezfacility.ts fetch --write`.
+- Ran `bun run src/data/historical/ezfacility.ts parse --write-json`.
+- Regenerated `src/data/historical/hockey_stats_rec.json` and `src/data/historical/hockey_stats_c.json` from archived HTML.
+- Updated Fall 2025 Rec/CC `schedule` fields from league pages to the discovered team pages.
+- Ran `bun test`: 14 pass, 0 fail.
+- Ran `bun test` again after compacting the archive: 14 pass, 0 fail.
 
 ## Commits
 
-- Pending commit: `Fix historical goalie stat display`
+- `f30f70d Fix historical goalie stat display`
+- Pending commit: `Archive EZFacility historical stats`
