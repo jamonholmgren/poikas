@@ -85,6 +85,9 @@ Known samples:
 - Ran `bun test` again after compacting the archive: 14 pass, 0 fail.
 - Follow-up: updated goalie player-page career cards to show goalie career GP/WLT/GAA/SV%/SA/G/SO, plus compact skater G-A-P and PIM rows. Non-goalie pages keep the existing skater career rows.
 - Added player-page tests for goalie and non-goalie career-card rendering.
+- Follow-up: changed the Career League Seasons table to render Rec, CC, and Career aggregate rows for both goalies and skaters.
+- Goalie aggregate rows calculate goalie columns from seasons that are not marked `ignoreGoalieStats`; skater G/A/P/PIM still aggregate all seasons.
+- Ran `bun test`: 18 pass, 0 fail.
 
 ## Commits
 
@@ -92,3 +95,4 @@ Known samples:
 - `8140839 Archive EZFacility historical stats`
 - Commit message: `Update EZFacility worksheet`
 - Commit message: `Show goalie career stats on player pages`
+- Commit message: `Add league career rows to player pages`

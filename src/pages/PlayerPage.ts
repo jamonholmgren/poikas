@@ -47,18 +47,7 @@ export function PlayerPage(data: PoikasData, slug: string) {
   // Helper function to build season data for a specific league
   function buildSeasonData(player: Player, leagueName: LeagueName | "Career"): SeasonData[] {
     if (leagueName === "Career") {
-      let record = `${player.careerStats?.teamWins || 0}-${player.careerStats?.teamLosses || 0}${player.careerStats?.teamTies ? `-${player.careerStats?.teamTies}` : ""}`
-      if (isGoaliePosition(player.pos))
-        record = `${player.careerStats?.goalieWins || 0}-${player.careerStats?.goalieLosses || 0}${player.careerStats?.goalieTies ? `-${player.careerStats?.goalieTies}` : ""}`
-      return [
-        {
-          seasonLink: "Career",
-          record,
-          stats: player.careerStats,
-          isGoalie: isGoaliePosition(player.pos),
-          goalieStatsReliable: true,
-        },
-      ]
+      return buildCareerSeasonData(player)
     }
 
     return player.seasons[leagueName].map((playerSeason: PlayerSeason) => {
@@ -83,7 +72,8 @@ export function PlayerPage(data: PoikasData, slug: string) {
     return value
   }
 
-  const careerStatsRows = isGoaliePosition(player.pos) ? goalieCareerStatsRows(player) : skaterCareerStatsRows(player)
+  const careerStats = aggregateSeasonStats(Object.values(player.seasons).flat())
+  const careerStatsRows = isGoaliePosition(player.pos) ? goalieCareerStatsRows(player, careerStats) : skaterCareerStatsRows(player)
 
   return routePage({
     path: player.profileURL,
@@ -291,9 +281,73 @@ function isGoaliePosition(pos?: string): boolean {
   return !!pos?.split("/").includes("G")
 }
 
+function buildCareerSeasonData(player: Player): SeasonData[] {
+  const careerRows: SeasonData[] = []
+
+  for (const leagueName of ["Rec", "CC"] as LeagueName[]) {
+    const seasons = player.seasons[leagueName]
+    if (!seasons.length) continue
+
+    const stats = aggregateSeasonStats(seasons)
+    careerRows.push({
+      seasonLink: leagueName,
+      record: fullRecord(stats.teamWins, stats.teamLosses, stats.teamTies),
+      stats,
+      isGoalie: isGoaliePosition(player.pos),
+      goalieStatsReliable: true,
+    })
+  }
+
+  const stats = aggregateSeasonStats(Object.values(player.seasons).flat())
+  careerRows.push({
+    seasonLink: "Career",
+    record: fullRecord(stats.teamWins, stats.teamLosses, stats.teamTies),
+    stats,
+    isGoalie: isGoaliePosition(player.pos),
+    goalieStatsReliable: true,
+  })
+
+  return careerRows
+}
+
+function aggregateSeasonStats(seasons: PlayerSeason[]): PlayerStats {
+  const stats = emptyStats()
+
+  seasons.forEach((playerSeason) => {
+    const seasonStats = playerSeason.stats
+    stats.goals += seasonStats.goals
+    stats.assists += seasonStats.assists
+    stats.points += seasonStats.points
+    stats.penalties += seasonStats.penalties
+    stats.pim += seasonStats.pim
+    stats.teamWins += playerSeason.season.wins || 0
+    stats.teamLosses += playerSeason.season.losses || 0
+    stats.teamTies += playerSeason.season.ties || 0
+
+    if (playerSeason.season.ignoreGoalieStats) return
+
+    stats.goalieGamesPlayed += seasonStats.goalieGamesPlayed
+    stats.goalieGamesWithShots += seasonStats.goalieGamesWithShots
+    stats.goalieWins += seasonStats.goalieWins
+    stats.goalieLosses += seasonStats.goalieLosses
+    stats.goalieTies += seasonStats.goalieTies
+    stats.shotsFor += seasonStats.shotsFor
+    stats.shotsAgainst += seasonStats.shotsAgainst
+    stats.goalsAgainst += seasonStats.goalsAgainst
+    stats.goalsAgainstWithShots += seasonStats.goalsAgainstWithShots
+    stats.goalsAgainstEmptyNetters += seasonStats.goalsAgainstEmptyNetters
+    stats.shutouts += seasonStats.shutouts
+  })
+
+  populateGoalieStatsAggregates(stats)
+  stats.record = fullRecord(stats.teamWins, stats.teamLosses, stats.teamTies)
+  return stats
+}
+
 function skaterCareerStatsRows(player: Player) {
-  const careerGoals = player.careerStats?.goals || 0
-  const careerAssists = player.careerStats?.assists || 0
+  const stats = aggregateSeasonStats(Object.values(player.seasons).flat())
+  const careerGoals = stats.goals
+  const careerAssists = stats.assists
   return `
     <tr>
       <th>Career Goals</th>
@@ -309,41 +363,40 @@ function skaterCareerStatsRows(player: Player) {
     </tr>
     <tr>
       <th>Career PIM</th>
-      <td>${player.careerStats?.pim || "-"}</td>
+      <td>${stats.pim || "-"}</td>
     </tr>
   `
 }
 
-function goalieCareerStatsRows(player: Player) {
-  const stats = player.careerStats
-  const careerGoals = stats?.goals || 0
-  const careerAssists = stats?.assists || 0
+function goalieCareerStatsRows(player: Player, stats: PlayerStats) {
+  const careerGoals = stats.goals
+  const careerAssists = stats.assists
   const careerPoints = careerGoals + careerAssists
 
   return `
     <tr>
       <th>Career GP</th>
-      <td>${stats?.goalieGamesPlayed || "-"}</td>
+      <td>${stats.goalieGamesPlayed || "-"}</td>
     </tr>
     <tr>
       <th>Career WLT</th>
-      <td>${stats?.goalieRecord || "-"}</td>
+      <td>${stats.goalieRecord || "-"}</td>
     </tr>
     <tr>
       <th>Career GAA</th>
-      <td>${stats?.goalieGamesPlayed ? stats.goalsAgainstAverageFormatted : "-"}</td>
+      <td>${stats.goalieGamesPlayed ? stats.goalsAgainstAverageFormatted : "-"}</td>
     </tr>
     <tr>
       <th>Career SV%</th>
-      <td>${stats?.goalieGamesWithShots ? stats.savePercentageFormatted : "-"}</td>
+      <td>${stats.goalieGamesWithShots ? stats.savePercentageFormatted : "-"}</td>
     </tr>
     <tr>
       <th>Career SA/G</th>
-      <td>${stats?.goalieGamesWithShots ? stats.averageShotsAgainstFormatted : "-"}</td>
+      <td>${stats.goalieGamesWithShots ? stats.averageShotsAgainstFormatted : "-"}</td>
     </tr>
     <tr>
       <th>Career SO</th>
-      <td>${stats?.shutouts || "-"}</td>
+      <td>${stats.shutouts || "-"}</td>
     </tr>
     <tr>
       <th>Skater G-A-P</th>
@@ -351,9 +404,62 @@ function goalieCareerStatsRows(player: Player) {
     </tr>
     <tr>
       <th>Skater PIM</th>
-      <td>${stats?.pim || "-"}</td>
+      <td>${stats.pim || "-"}</td>
     </tr>
   `
+}
+
+function populateGoalieStatsAggregates(stats: PlayerStats) {
+  const gp: number = stats.goalieGamesPlayed
+  const gws: number = stats.goalieGamesWithShots
+  const sa: number = stats.shotsAgainst
+  const ga: number = stats.goalsAgainst - stats.goalsAgainstEmptyNetters
+  const gaw: number = stats.goalsAgainstWithShots - stats.goalsAgainstEmptyNetters
+  const gw: number = stats.goalieWins
+  const gl: number = stats.goalieLosses
+  const gt: number = stats.goalieTies
+  if (gaw > 0) stats.savePercentage = parseFloat((sa > 0 ? ((sa - gaw) / sa) * 100 : 0).toFixed(1))
+  if (gws > 0) stats.averageShotsAgainst = parseFloat((sa / gws).toFixed(1))
+  stats.goalsAgainstAverage = gp > 0 ? parseFloat((ga / gp).toFixed(2)) : 0
+  stats.goalieRecord = `${gw}-${gl}-${gt}`
+  stats.saves = sa - gaw
+
+  stats.goalsAgainstAverageFormatted = gp > 0 ? stats.goalsAgainstAverage.toFixed(2) : "0.00"
+  stats.savePercentageFormatted = stats.savePercentage ? stats.savePercentage.toFixed(1) + "%" : "0.0%"
+  stats.averageShotsAgainstFormatted = stats.averageShotsAgainst ? stats.averageShotsAgainst.toFixed(1) : "0.0"
+}
+
+function emptyStats(): PlayerStats {
+  return {
+    goals: 0,
+    assists: 0,
+    points: 0,
+    penalties: 0,
+    pim: 0,
+    goalieGamesPlayed: 0,
+    goalieGamesWithShots: 0,
+    goalieWins: 0,
+    goalieLosses: 0,
+    goalieTies: 0,
+    goalieRecord: "",
+    shotsFor: 0,
+    shotsAgainst: 0,
+    goalsAgainst: 0,
+    goalsAgainstWithShots: 0,
+    goalsAgainstEmptyNetters: 0,
+    savePercentage: 0,
+    goalsAgainstAverage: 0,
+    averageShotsAgainst: 0,
+    shutouts: 0,
+    saves: 0,
+    goalsAgainstAverageFormatted: "",
+    savePercentageFormatted: "",
+    averageShotsAgainstFormatted: "",
+    teamWins: 0,
+    teamLosses: 0,
+    teamTies: 0,
+    record: "",
+  }
 }
 
 function activeStats(season: PlayerSeason) {

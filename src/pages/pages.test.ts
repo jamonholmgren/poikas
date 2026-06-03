@@ -99,12 +99,32 @@ describe("PlayerPage", () => {
     expect(page).not.toContain("<th>Career Goals</th>")
   })
 
+  test("renders Rec, CC, and Career aggregate rows for goalie player pages", async () => {
+    const jamon = data.players.find((p) => p.name === "Jamon Holmgren")!
+    const page = await html(PlayerPage(data, jamon.slug))
+    const careerTable = page.slice(page.indexOf("<h3>Career League Seasons</h3>"))
+
+    expect(careerTable).toMatch(/<td>Rec<\/td>[\s\S]*?<td>90\.3%<\/td>[\s\S]*?<td>17\.4<\/td>/)
+    expect(careerTable).toMatch(/<td>CC<\/td>[\s\S]*?<td>83\.6%<\/td>[\s\S]*?<td>29\.9<\/td>/)
+    expect(careerTable).toMatch(/<td>Career<\/td>[\s\S]*?<td>87\.3%<\/td>[\s\S]*?<td>21\.5<\/td>/)
+  })
+
   test("keeps skater career stats for non-goalie player pages", async () => {
     const joel = data.players.find((p) => p.name === "Joel Mattila")!
     const page = await html(PlayerPage(data, joel.slug))
 
     expect(page).toContain("<th>Career Goals</th>")
     expect(page).not.toContain("<th>Career GP</th>")
+  })
+
+  test("renders Rec, CC, and Career aggregate rows for skater player pages", async () => {
+    const joel = data.players.find((p) => p.name === "Joel Mattila")!
+    const page = await html(PlayerPage(data, joel.slug))
+    const careerTable = page.slice(page.indexOf("<h3>Career League Seasons</h3>"))
+
+    expect(careerTable).toMatch(/<td>Rec<\/td>[\s\S]*?<td>52<\/td>[\s\S]*?<td>52<\/td>[\s\S]*?<td>104<\/td>/)
+    expect(careerTable).toMatch(/<td>CC<\/td>[\s\S]*?<td>13<\/td>[\s\S]*?<td>13<\/td>[\s\S]*?<td>26<\/td>/)
+    expect(careerTable).toMatch(/<td>Career<\/td>[\s\S]*?<td>65<\/td>[\s\S]*?<td>65<\/td>[\s\S]*?<td>130<\/td>/)
   })
 
   test("uses arena goalie stats when game shot counts are missing", () => {
