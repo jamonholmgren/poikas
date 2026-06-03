@@ -43,8 +43,6 @@ export function PlayerPage(data: PoikasData, slug: string) {
 
   const rec = player.activeSeasons?.Rec
   const cc = player.activeSeasons?.CC
-  const careerGoals = player.careerStats?.goals || 0
-  const careerAssists = player.careerStats?.assists || 0
 
   // Helper function to build season data for a specific league
   function buildSeasonData(player: Player, leagueName: LeagueName | "Career"): SeasonData[] {
@@ -84,6 +82,8 @@ export function PlayerPage(data: PoikasData, slug: string) {
     if (value === undefined || value === null || value === "") return "-"
     return value
   }
+
+  const careerStatsRows = isGoaliePosition(player.pos) ? goalieCareerStatsRows(player) : skaterCareerStatsRows(player)
 
   return routePage({
     path: player.profileURL,
@@ -161,22 +161,7 @@ export function PlayerPage(data: PoikasData, slug: string) {
             <h3>Career Stats</h3>
             <div class="table-container">
               <table class="statsheet">
-                <tr>
-                  <th>Career Goals</th>
-                  <td>${careerGoals || "-"}</td>
-                </tr>
-                <tr>
-                  <th>Career Assists</th>
-                  <td>${careerAssists || "-"}</td>
-                </tr>
-                <tr>
-                  <th>Career Points</th>
-                  <td>${careerGoals + careerAssists || "-"}</td>
-                </tr>
-                <tr>
-                  <th>Career PIM</th>
-                  <td>${player.careerStats?.pim || "-"}</td>
-                </tr>
+                ${careerStatsRows}
                 <tr>
                   <th>Rec Seasons</th>
                   <td>${recSeasons}</td>
@@ -304,6 +289,71 @@ export function PlayerPage(data: PoikasData, slug: string) {
 
 function isGoaliePosition(pos?: string): boolean {
   return !!pos?.split("/").includes("G")
+}
+
+function skaterCareerStatsRows(player: Player) {
+  const careerGoals = player.careerStats?.goals || 0
+  const careerAssists = player.careerStats?.assists || 0
+  return `
+    <tr>
+      <th>Career Goals</th>
+      <td>${careerGoals || "-"}</td>
+    </tr>
+    <tr>
+      <th>Career Assists</th>
+      <td>${careerAssists || "-"}</td>
+    </tr>
+    <tr>
+      <th>Career Points</th>
+      <td>${careerGoals + careerAssists || "-"}</td>
+    </tr>
+    <tr>
+      <th>Career PIM</th>
+      <td>${player.careerStats?.pim || "-"}</td>
+    </tr>
+  `
+}
+
+function goalieCareerStatsRows(player: Player) {
+  const stats = player.careerStats
+  const careerGoals = stats?.goals || 0
+  const careerAssists = stats?.assists || 0
+  const careerPoints = careerGoals + careerAssists
+
+  return `
+    <tr>
+      <th>Career GP</th>
+      <td>${stats?.goalieGamesPlayed || "-"}</td>
+    </tr>
+    <tr>
+      <th>Career WLT</th>
+      <td>${stats?.goalieRecord || "-"}</td>
+    </tr>
+    <tr>
+      <th>Career GAA</th>
+      <td>${stats?.goalieGamesPlayed ? stats.goalsAgainstAverageFormatted : "-"}</td>
+    </tr>
+    <tr>
+      <th>Career SV%</th>
+      <td>${stats?.goalieGamesWithShots ? stats.savePercentageFormatted : "-"}</td>
+    </tr>
+    <tr>
+      <th>Career SA/G</th>
+      <td>${stats?.goalieGamesWithShots ? stats.averageShotsAgainstFormatted : "-"}</td>
+    </tr>
+    <tr>
+      <th>Career SO</th>
+      <td>${stats?.shutouts || "-"}</td>
+    </tr>
+    <tr>
+      <th>Skater G-A-P</th>
+      <td>${careerGoals}-${careerAssists}-${careerPoints}</td>
+    </tr>
+    <tr>
+      <th>Skater PIM</th>
+      <td>${stats?.pim || "-"}</td>
+    </tr>
+  `
 }
 
 function activeStats(season: PlayerSeason) {

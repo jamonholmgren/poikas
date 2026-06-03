@@ -87,6 +87,26 @@ describe("PlayerPage", () => {
     expect(page).toContain("SV%")
   })
 
+  test("renders goalie career stats for goalie player pages", async () => {
+    const jamon = data.players.find((p) => p.name === "Jamon Holmgren")!
+    const page = await html(PlayerPage(data, jamon.slug))
+
+    expect(page).toContain("<th>Career GP</th>")
+    expect(page).toContain("<th>Career WLT</th>")
+    expect(page).toContain("<th>Career SV%</th>")
+    expect(page).toContain("<th>Career SA/G</th>")
+    expect(page).toContain("<th>Skater G-A-P</th>")
+    expect(page).not.toContain("<th>Career Goals</th>")
+  })
+
+  test("keeps skater career stats for non-goalie player pages", async () => {
+    const joel = data.players.find((p) => p.name === "Joel Mattila")!
+    const page = await html(PlayerPage(data, joel.slug))
+
+    expect(page).toContain("<th>Career Goals</th>")
+    expect(page).not.toContain("<th>Career GP</th>")
+  })
+
   test("uses arena goalie stats when game shot counts are missing", () => {
     const jamon = data.players.find((p) => p.name === "Jamon Holmgren")!
     const spring2023 = jamon.seasons.Rec.find((s) => s.year === 2023 && s.seasonName === "Spring")!

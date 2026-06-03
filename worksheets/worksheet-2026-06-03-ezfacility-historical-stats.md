@@ -83,9 +83,12 @@ Known samples:
 - Updated Fall 2025 Rec/CC `schedule` fields from league pages to the discovered team pages.
 - Ran `bun test`: 14 pass, 0 fail.
 - Ran `bun test` again after compacting the archive: 14 pass, 0 fail.
+- Follow-up: updated goalie player-page career cards to show goalie career GP/WLT/GAA/SV%/SA/G/SO, plus compact skater G-A-P and PIM rows. Non-goalie pages keep the existing skater career rows.
+- Added player-page tests for goalie and non-goalie career-card rendering.
 
 ## Commits
 
 - `f30f70d Fix historical goalie stat display`
 - `8140839 Archive EZFacility historical stats`
 - Commit message: `Update EZFacility worksheet`
+- Commit message: `Show goalie career stats on player pages`
