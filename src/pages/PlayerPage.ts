@@ -13,6 +13,7 @@ type SeasonData = {
   record: string
   stats?: PlayerStats
   isGoalie: boolean
+  goalieStatsReliable: boolean
 }
 
 export function PlayerPage(data: PoikasData, slug: string) {
@@ -49,14 +50,15 @@ export function PlayerPage(data: PoikasData, slug: string) {
   function buildSeasonData(player: Player, leagueName: LeagueName | "Career"): SeasonData[] {
     if (leagueName === "Career") {
       let record = `${player.careerStats?.teamWins || 0}-${player.careerStats?.teamLosses || 0}${player.careerStats?.teamTies ? `-${player.careerStats?.teamTies}` : ""}`
-      if (player.pos === "G")
+      if (isGoaliePosition(player.pos))
         record = `${player.careerStats?.goalieWins || 0}-${player.careerStats?.goalieLosses || 0}${player.careerStats?.goalieTies ? `-${player.careerStats?.goalieTies}` : ""}`
       return [
         {
           seasonLink: "Career",
           record,
           stats: player.careerStats,
-          isGoalie: player.pos === "G",
+          isGoalie: isGoaliePosition(player.pos),
+          goalieStatsReliable: true,
         },
       ]
     }
@@ -70,9 +72,17 @@ export function PlayerPage(data: PoikasData, slug: string) {
         seasonLink,
         record,
         stats,
-        isGoalie: player.pos === "G",
+        isGoalie: isGoaliePosition(player.pos),
+        goalieStatsReliable: !season.ignoreGoalieStats,
       }
     })
+  }
+
+  const goalieStatValue = (prop: keyof PlayerStats, reliableOnly = false) => (seasonData: SeasonData) => {
+    if (reliableOnly && !seasonData.goalieStatsReliable) return "-"
+    const value = seasonData.stats?.[prop]
+    if (value === undefined || value === null || value === "") return "-"
+    return value
   }
 
   return routePage({
@@ -225,14 +235,14 @@ export function PlayerPage(data: PoikasData, slug: string) {
                 columns: [
                   { th: "Season", val: "seasonLink", width: 200, alt: "Season name and link" },
                   { th: "Team WLT", val: "record", width: 100, alt: "Team win-loss-tie record" },
-                  ...(player.pos === "G"
+                  ...(isGoaliePosition(player.pos)
                     ? [
-                        { th: "GP", width: 50, alt: "Games played", val: "stats.goalieGamesPlayed" },
-                        { th: "WLT", width: 50, alt: "Player win-loss-tie record", val: "stats.goalieRecord" },
-                        { th: "GAA", width: 50, alt: "Goals against average", val: "stats.goalsAgainstAverageFormatted" },
-                        { th: "SV%", width: 50, alt: "Save percentage", val: "stats.savePercentageFormatted" },
-                        { th: "SA/G", width: 50, alt: "Shots against per game", val: "stats.averageShotsAgainstFormatted" },
-                        { th: "SO", width: 50, alt: "Shutouts", val: "stats.shutouts" },
+                        { th: "GP", width: 50, alt: "Games played", getValue: goalieStatValue("goalieGamesPlayed") },
+                        { th: "WLT", width: 50, alt: "Player win-loss-tie record", getValue: goalieStatValue("goalieRecord") },
+                        { th: "GAA", width: 50, alt: "Goals against average", getValue: goalieStatValue("goalsAgainstAverageFormatted", true) },
+                        { th: "SV%", width: 50, alt: "Save percentage", getValue: goalieStatValue("savePercentageFormatted", true) },
+                        { th: "SA/G", width: 50, alt: "Shots against per game", getValue: goalieStatValue("averageShotsAgainstFormatted", true) },
+                        { th: "SO", width: 50, alt: "Shutouts", getValue: goalieStatValue("shutouts", true) },
                       ]
                     : []),
                   { th: "G", width: 50, alt: "Goals", val: "stats.goals" },
@@ -290,6 +300,10 @@ export function PlayerPage(data: PoikasData, slug: string) {
     `,
     footer: ``,
   })
+}
+
+function isGoaliePosition(pos?: string): boolean {
+  return !!pos?.split("/").includes("G")
 }
 
 function activeStats(season: PlayerSeason) {

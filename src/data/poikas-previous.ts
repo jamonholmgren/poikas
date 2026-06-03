@@ -385,8 +385,8 @@ export const poikasPrevious: SeasonRaw[] = [
     leagueName: "Rec",
     description: "We won back-to-back championships!",
     photos: ["poikas-rec-2021-fall-champions.jpg"],
+    schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2649820/Suomi-Poikas-Rec.aspx?framed=1",
     playoffs: "champions",
-    ignoreGoalieStats: true,
     roster: [
       "Asa Storm",
       "Brad Wuori",
@@ -557,8 +557,8 @@ export const poikasPrevious: SeasonRaw[] = [
     leagueName: "CC",
     description:
       "For Fall 2021, Joel Mattila put together a CC level team to accommodate the players who were advancing beyond Rec League level. This was the first time for most of the Poikas playing at the next level.",
+    schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2649857/Suomi-Poikas-C.aspx?framed=1",
     playoffs: "eliminated",
-    ignoreGoalieStats: true,
     roster: [
       "Asa Storm",
       "Brad Wuori",
@@ -580,8 +580,8 @@ export const poikasPrevious: SeasonRaw[] = [
     seasonName: "Spring",
     leagueName: "CC",
     description: "We had a solid second season at the C level, coming in just under .500.",
+    schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2704526/Suomi-Poikas-C-.aspx?framed=1",
     playoffs: "eliminated",
-    ignoreGoalieStats: true,
     roster: [
       "Asa Storm",
       "Brad Wuori",
@@ -607,8 +607,8 @@ export const poikasPrevious: SeasonRaw[] = [
     description:
       "We won our third championship in a row! Our team was dominating Rec League, and this was the last season we would keep Asa Storm and some of our other top scorers.",
     photos: ["poikas-rec-2022-spring-champions.jpg"],
+    schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2704574/Suomi-Poikas-Rec.aspx?framed=1",
     playoffs: "champions",
-    ignoreGoalieStats: true,
     roster: [
       "Asa Storm",
       "Brad Wuori",
@@ -906,8 +906,8 @@ export const poikasPrevious: SeasonRaw[] = [
     year: 2022,
     seasonName: "Fall",
     leagueName: "CC",
+    schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2771864/Suomi-Poikas-C-.aspx?framed=1",
     playoffs: "eliminated",
-    ignoreGoalieStats: true,
     roster: [
       "Andrew Nichol",
       "Asa Storm",
@@ -921,7 +921,7 @@ export const poikasPrevious: SeasonRaw[] = [
       "Rick Ramstetter",
       "Scott Daniels",
       "Will Murphy",
-      "Jamon Holmgren",
+      "Erik Benton",
     ],
     games: [
       {
@@ -930,7 +930,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 1,
         result: "won",
         notable: "Joel was in Michigan",
-        goalie: "Jamon Holmgren",
+        goalie: "Erik Benton",
       },
       {
         vs: "Callahan",
@@ -938,7 +938,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 5,
         result: "lost",
         sisu: "Matt Bromley",
-        goalie: "Jamon Holmgren",
+        goalie: "Erik Benton",
       },
       {
         vs: "Bandits",
@@ -946,21 +946,21 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 5,
         result: "lost",
         sisu: "Will Murphy",
-        goalie: "Jamon Holmgren",
+        goalie: "Erik Benton",
       },
       {
         vs: "Lightning",
         us: 2,
         them: 8,
         result: "lost",
-        goalie: "Jamon Holmgren",
+        goalie: "Erik Benton",
       },
       {
         vs: "Dead Guys",
         us: 4,
         them: 5,
         result: "lost",
-        goalie: "Jamon Holmgren",
+        goalie: "Erik Benton",
       },
       {
         vs: "Dead Guys",
@@ -968,7 +968,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 7,
         result: "lost",
         sisu: "Asa Storm",
-        goalie: "Jamon Holmgren",
+        goalie: "Erik Benton",
       },
       {
         vs: "Badgers",
@@ -977,7 +977,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "lost",
         sisu: "Andrew Nichol",
         notable: "They got an empty netter",
-        goalie: "Jamon Holmgren",
+        goalie: "Erik Benton",
       },
       {
         vs: "CCCP",
@@ -985,7 +985,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 7,
         result: "lost",
         sisu: "Erik Matson",
-        goalie: "Jamon Holmgren",
+        goalie: "Erik Benton",
       },
       {
         vs: "Revolution",
@@ -994,7 +994,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "lost",
         sisu: "Jared Paben",
         notable: "Revolution had a 5-1 lead in the third",
-        goalie: "Jamon Holmgren",
+        goalie: "Erik Benton",
       },
       {
         vs: "PBR",
@@ -1002,7 +1002,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 4,
         result: "won",
         sisu: "Oren Matson",
-        goalie: "Jamon Holmgren",
+        goalie: "Erik Benton",
       },
       {
         vs: "Bandits",
@@ -1010,21 +1010,21 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 6,
         result: "lost",
         sisu: "Matt Bromley",
-        goalie: "Jamon Holmgren",
+        goalie: "Erik Benton",
       },
       {
         vs: "Lightning",
         us: 0,
         them: 7,
         result: "lost",
-        goalie: "Jamon Holmgren",
+        goalie: "Erik Benton",
       },
       {
         vs: "2 Towns",
         us: 4,
         them: 1,
         result: "won",
-        goalie: "Jamon Holmgren",
+        goalie: "Erik Benton",
       },
       {
         vs: "Callahan",
@@ -1033,7 +1033,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "lost",
         sisu: "Eric Matson",
         notable: "Lost in a shootout",
-        goalie: "Jamon Holmgren",
+        goalie: "Erik Benton",
       },
       {
         vs: "Dead Guys",
@@ -1041,7 +1041,7 @@ export const poikasPrevious: SeasonRaw[] = [
         them: 8,
         result: "lost",
         sisu: "Andrew Nichol",
-        goalie: "Jamon Holmgren",
+        goalie: "Erik Benton",
       },
       {
         vs: "Bandits",
@@ -1050,7 +1050,7 @@ export const poikasPrevious: SeasonRaw[] = [
         result: "lost",
         sisu: "Dmitriy Piskorskiy",
         notable: "Playoffs round 1.",
-        goalie: "Jamon Holmgren",
+        goalie: "Erik Benton",
       },
     ],
   },
@@ -1058,8 +1058,8 @@ export const poikasPrevious: SeasonRaw[] = [
     year: 2023,
     seasonName: "Spring",
     leagueName: "Rec",
+    schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2842210/Suomi-Poikas-Rec.aspx?framed=1",
     playoffs: "eliminated",
-    ignoreGoalieStats: true,
     roster: [
       "Brenden Mattila",
       "Brent Mattila",
@@ -1368,8 +1368,8 @@ export const poikasPrevious: SeasonRaw[] = [
       "This was one of our most fulfilling seasons! We battled hard and ended up #2 in the league after the regular season. In the playoffs, we played against the #3 Thundersticks, which we had been 0-3 against in the regular season, and the #1 Slavic Peeps (Russians), which we went 1-2 against. We squeaked out a narrow 3-1 win against the Thundersticks and moved on to the Slavic Peeps for the Championship. We went down 0-2 early but battled back in front of a packed house to win it 5-3 for our fourth championship!",
     photos: ["poikas-rec-2023-fall-champions.jpg"],
     videos: ["https://www.youtube.com/embed/y-PfIM5V3_Q?si=qlmu66nOdwSq4g0x"],
+    schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2902712/Suomi-Poikas-Rec.aspx?framed=1",
     playoffs: "champions",
-    ignoreGoalieStats: true,
     roster: [
       "Brad Wuori",
       "Brenden Mattila",
@@ -1539,8 +1539,8 @@ export const poikasPrevious: SeasonRaw[] = [
     wins: 3,
     losses: 12,
     ties: 0,
+    schedule: "https://mountainview.ezleagues.ezfacility.com/teams/2902820/Suomi-Poikas-C.aspx?framed=1",
     playoffs: "eliminated",
-    ignoreGoalieStats: true,
     roster: [
       "Andrew Tunseth",
       "Asa Storm",

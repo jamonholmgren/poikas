@@ -14,6 +14,7 @@ export function LeaguePage(data: PoikasData, slug: string) {
   const leagueStandingsHTML = schedule ? `<a href="${schedule}" target="_blank">MVIA</a>` : "-"
 
   const getValueCustom = (prop: keyof PlayerStats) => (player: Player) => {
+    if (league.ignoreGoalieStats && goalieStatNeedsReliableSource(prop)) return "-"
     const seasonStats = player.seasons[leagueName]?.find((s) => s.year === year && s.seasonName === seasonName)?.stats
     const s = seasonStats && seasonStats[prop]
     if (s === undefined || s === null) return "-"
@@ -191,7 +192,7 @@ export function LeaguePage(data: PoikasData, slug: string) {
             { th: "Yrs", val: "years", width: 30, xtra: true, alt: "Years with team" },
             { th: "Age", getValue: getAgeCustom(league), width: 30, xtra: true, alt: "Player age" },
           ],
-          players: players?.filter((player) => player.pos === "G") || [],
+          players: players?.filter((player) => isGoaliePosition(player.pos)) || [],
         })}
       </div>
 
@@ -268,6 +269,14 @@ export function LeaguePage(data: PoikasData, slug: string) {
       </div>
     `,
   })
+}
+
+function goalieStatNeedsReliableSource(prop: keyof PlayerStats): boolean {
+  return prop === "goalsAgainstAverageFormatted" || prop === "savePercentageFormatted" || prop === "averageShotsAgainstFormatted" || prop === "shutouts"
+}
+
+function isGoaliePosition(pos?: string): boolean {
+  return !!pos?.split("/").includes("G")
 }
 
 function gameScore(game: Game) {

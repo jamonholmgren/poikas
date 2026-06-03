@@ -1,4 +1,4 @@
-import type { Game, Player, PoikasData, PoikasDataRaw, PlayerSeason, ArenaSeasonStats, SeasonName, LeagueName, Season, PlayerStats, PlayerGameStats } from "../types"
+import type { Game, Player, PoikasData, PoikasDataRaw, PlayerSeason, ArenaSeasonStats, ArenaGoalieSeasonStats, SeasonName, LeagueName, Season, PlayerStats, PlayerGameStats } from "../types"
 import { poikasData } from "./poikas"
 import { img } from "../image"
 
@@ -69,7 +69,7 @@ function populateSeasonData(season: Season, data: PoikasData) {
   season.link = `<a href="${season.url}">${season.leagueName} ${season.year} ${season.seasonName}</a>`
 
   // Add historical data to the league
-  season.arenaReportedStats = historicalSeasons.find((h) => h.year === season.year && h.season === season.seasonName && h.league === season.leagueName)
+  season.arenaReportedStats = historicalSeasons.find((h) => h.year === season.year && h.season === season.seasonName && arenaLeagueMatchesSeason(h.league, season.leagueName))
 
   // Add all roster players
   if (!season.players) season.players = []
@@ -205,6 +205,10 @@ function populatePlayerData(player: Player, data: PoikasData) {
     ss.penalties = seasonPenalties
     ss.pim = seasonPenalties * 3
 
+    const arenaGoalie = findArenaGoalieStats(player, season)
+    if (arenaGoalie) playerSeason.arenaGoalieSeasonStats = arenaGoalie
+    if (arenaGoalie && ss.goalieGamesWithShots === 0) applyArenaGoalieStats(ss, arenaGoalie)
+
     populateGoalieStatsAggregates(ss)
 
     // Add totals for player's career
@@ -252,6 +256,40 @@ function populatePlayerData(player: Player, data: PoikasData) {
   player.profileURL = `/players/${player.slug}`
   player.profileLink = `<a href="${player.profileURL}">${player.name}</a>`
   player.shortProfileLink = `<a href="${player.profileURL}">${player.shortName}</a>`
+}
+
+export function findArenaGoalieStats(player: Player, season: Season): ArenaGoalieSeasonStats | undefined {
+  if (season.ignoreGoalieStats) return undefined
+  return season.arenaReportedStats?.goalies.find((g) => arenaGoalieMatchesPlayer(g, player))
+}
+
+function arenaLeagueMatchesSeason(arenaLeague: string, seasonLeague: LeagueName): boolean {
+  return arenaLeague === seasonLeague || (arenaLeague === "C" && seasonLeague === "CC")
+}
+
+export function arenaGoalieMatchesPlayer(arena: ArenaGoalieSeasonStats, player: Player): boolean {
+  if (arena.name === player.name) return true
+  const [first, ...rest] = player.name.split(" ")
+  const last = rest.join(" ")
+  if (!first || arena.name !== first) return false
+  if (!last) return true
+  const label = `${arena.name} ${arena.number}`.toLowerCase()
+  return label.includes(last.split(" ")[0].toLowerCase())
+}
+
+function applyArenaGoalieStats(stats: PlayerStats, arena: ArenaGoalieSeasonStats) {
+  const shotsOnGoal = arena.saves + arena.goals_against
+  if (stats.goalieGamesPlayed === 0) stats.goalieGamesPlayed = arena.games_played
+  if (stats.goalieWins === 0 && stats.goalieLosses === 0 && stats.goalieTies === 0) {
+    stats.goalieWins = arena.wins
+    stats.goalieLosses = arena.losses
+    stats.goalieTies = arena.ot_losses
+  }
+  if (stats.goalsAgainst === 0) stats.goalsAgainst = arena.goals_against
+  stats.shotsAgainst = shotsOnGoal
+  stats.goalsAgainstWithShots = arena.goals_against
+  stats.goalieGamesWithShots = arena.games_played
+  stats.shutouts = Math.max(stats.shutouts, arena.shutouts)
 }
 
 // Goalie stats aggregates based on totals

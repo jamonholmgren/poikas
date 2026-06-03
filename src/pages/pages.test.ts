@@ -87,6 +87,48 @@ describe("PlayerPage", () => {
     expect(page).toContain("SV%")
   })
 
+  test("uses arena goalie stats when game shot counts are missing", () => {
+    const jamon = data.players.find((p) => p.name === "Jamon Holmgren")!
+    const spring2023 = jamon.seasons.Rec.find((s) => s.year === 2023 && s.seasonName === "Spring")!
+    expect(spring2023.stats.savePercentageFormatted).toBe("86.2%")
+    expect(spring2023.stats.averageShotsAgainstFormatted).toBe("20.3")
+    expect(spring2023.arenaGoalieSeasonStats?.save_percentage).toBe(0.862)
+  })
+
+  test("uses arena goalie stats for older Rec and CC seasons", () => {
+    const jamon = data.players.find((p) => p.name === "Jamon Holmgren")!
+
+    const recFall2021 = jamon.seasons.Rec.find((s) => s.year === 2021 && s.seasonName === "Fall")!
+    expect(recFall2021.stats.savePercentageFormatted).toBe("90.2%")
+    expect(recFall2021.stats.averageShotsAgainstFormatted).toBe("16.1")
+
+    const ccFall2021 = jamon.seasons.CC.find((s) => s.year === 2021 && s.seasonName === "Fall")!
+    expect(ccFall2021.stats.savePercentageFormatted).toBe("81.9%")
+    expect(ccFall2021.stats.averageShotsAgainstFormatted).toBe("30.2")
+
+    const ccSpring2022 = jamon.seasons.CC.find((s) => s.year === 2022 && s.seasonName === "Spring")!
+    expect(ccSpring2022.stats.savePercentageFormatted).toBe("84.5%")
+    expect(ccSpring2022.stats.averageShotsAgainstFormatted).toBe("27.4")
+  })
+
+  test("keeps Fall 2022 CC goalie stats with Erik Benton", () => {
+    const jamon = data.players.find((p) => p.name === "Jamon Holmgren")!
+    const jamonFall2022 = jamon.seasons.CC.find((s) => s.year === 2022 && s.seasonName === "Fall")
+    expect(jamonFall2022).toBeUndefined()
+
+    const erik = data.players.find((p) => p.name === "Erik Benton")!
+    const erikFall2022 = erik.seasons.CC.find((s) => s.year === 2022 && s.seasonName === "Fall")!
+    expect(erikFall2022.stats.savePercentageFormatted).toBe("86.9%")
+    expect(erikFall2022.arenaGoalieSeasonStats?.name).toBe("Erik Benton")
+  })
+
+  test("does not render fake goalie percentages for ignored seasons", async () => {
+    const jamon = data.players.find((p) => p.name === "Jamon Holmgren")!
+    const page = await html(PlayerPage(data, jamon.slug))
+
+    expect(page).toMatch(/Rec 2020 Spring[\s\S]*?<td>1<\/td>\s*<td>1-0-0<\/td>\s*<td>-<\/td>\s*<td>-<\/td>\s*<td>-<\/td>/)
+  })
+
   test("returns 404 for unknown player slug", () => {
     const res = PlayerPage(data, "no-such-player")
     expect(res).toBeInstanceOf(Response)

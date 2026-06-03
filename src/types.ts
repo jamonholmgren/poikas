@@ -110,6 +110,7 @@ export type PlayerSeason = {
   season: Season
   stats: PlayerStats
   arenaPlayerSeasonStats?: ArenaPlayerSeasonStats
+  arenaGoalieSeasonStats?: ArenaGoalieSeasonStats
 }
 
 // Can be for a game, season, or career
