@@ -43,15 +43,15 @@ export function HomePage(data: PoikasData) {
             />
           </div>
           <div class="page-hero-info">
-            <h1 class="page-hero-name">Double Champions!</h1>
+            <h1 class="page-hero-name">Rec Championship Bound!</h1>
             <div class="page-hero-details">
               <div class="stat-item">
-                <span class="stat-number">🏆</span>
-                <span class="stat-label">Rec: Champions</span>
+                <span class="stat-number">🥇</span>
+                <span class="stat-label">Rec: #1 Seed</span>
               </div>
               <div class="stat-item">
                 <span class="stat-number">🏆</span>
-                <span class="stat-label">CC: Champions</span>
+                <span class="stat-label">Fall 2025: Double Champs</span>
               </div>
               <div class="stat-item">
                 <span class="stat-number">🇫🇮</span>
@@ -60,7 +60,7 @@ export function HomePage(data: PoikasData) {
             </div>
             <div class="page-hero-description">
               <p>Welcome to the official website of the Suomi Poikas, your favorite Finnish-American hockey team! Hyvä Suomi! 🇫🇮</p>
-              <p><strong>Both teams are Fall 2025 champions!</strong> Our Rec squad won 2-0 over the Thundersticks and our CC squad won 4-2 with a Treven hat trick!</p>
+              <p><strong>Spring Rec is headed to the championship again!</strong> We clinched the #1 seed and won the playoff semifinal 4-0 over Liquid Gold. Championship Saturday June 6 at 7:30 PM — come out to Mountain View Ice Arena!</p>
             </div>
           </div>
         </div>
@@ -181,11 +181,11 @@ export function HomePage(data: PoikasData) {
 
       <article>
         <h2>What's New?</h2>
-        <p><em>Updated January 18, 2026</em></p>
+        <p><em>Updated June 3, 2026</em></p>
         <ul>
-          <li>Both Rec and CC teams won the Fall 2025 championship!</li>
-          <li>Rec beat Thundersticks 2-0 in the final</li>
-          <li>CC won 4-2 with a Treven Erickson hat trick</li>
+          <li>Spring Rec clinched the #1 seed and won the playoff semifinal 4-0 over Liquid Gold</li>
+          <li>Daniel Kulla with back-to-back hat tricks in May</li>
+          <li>Fall 2025: both Rec and CC teams won the championship</li>
         </ul>
 
         <h2>Our History</h2>
