@@ -87,4 +87,5 @@ Known samples:
 ## Commits
 
 - `f30f70d Fix historical goalie stat display`
-- Pending commit: `Archive EZFacility historical stats`
+- `8140839 Archive EZFacility historical stats`
+- Commit message: `Update EZFacility worksheet`
