@@ -26,7 +26,7 @@ export function AllPlayersPage(data: PoikasData) {
                 <span class="stat-label">Total Players</span>
               </div>
               <div class="stat-item">
-                <span class="stat-number">${data.players.filter((p) => p.activeSeasons?.Rec || p.activeSeasons?.C).length}</span>
+                <span class="stat-number">${data.players.filter((p) => p.activeSeasons?.Rec || p.activeSeasons?.CC).length}</span>
                 <span class="stat-label">Active Players</span>
               </div>
             </div>
