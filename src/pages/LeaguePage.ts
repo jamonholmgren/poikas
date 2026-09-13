@@ -223,7 +223,7 @@ export function LeaguePage(data: PoikasData, slug: string) {
                         <td>${game.vsLink}</td>
                         <td>${gameScore(game)}</td>
                         <td>${gameShots(game)}</td>
-                        <td>${(game.sisu && players?.find((p) => p.name === game.sisu)?.shortProfileLink) || "-"}</td>
+                        <td>${(game.sisu && (players?.find((p) => p.name === game.sisu)?.shortProfileLink || shortenName(game.sisu))) || "-"}</td>
                         <td>${game.goaliePlayer?.shortProfileLink || shortenName(game.goalie)}</td>
                         <td class="extra notable">${notableAbbr(game.notable, 60)}</td>
                       </tr>
@@ -284,7 +284,7 @@ function gameScore(game: Game) {
   if (game.result === "forfeited") return "Forfeited"
   if (game.result === "cancelled") return "Cancelled"
   if (game.us !== undefined && game.them !== undefined) return `${game.result} ${game.us}-${game.them}`
-  return game.result
+  return game.result || "-"
 }
 
 function gameShots(game: Game) {

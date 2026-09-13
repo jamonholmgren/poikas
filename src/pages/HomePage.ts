@@ -16,9 +16,9 @@ export function HomePage(data: PoikasData) {
   let cc = data.leagues.CC.current || data.leagues.CC.seasons.at(-1)!
 
   // latest games from each league
-  const completedRecGames = (rec.games || []).filter((g) => g.result != "pending")
+  const completedRecGames = (rec.games || []).filter((g) => g.result && g.result != "pending")
   const lastRecGame = completedRecGames.length > 0 ? completedRecGames.at(-1) : undefined
-  const completedCCGames = (cc.games || []).filter((g) => g.result != "pending")
+  const completedCCGames = (cc.games || []).filter((g) => g.result && g.result != "pending")
   const lastCCGame = completedCCGames.length > 0 ? completedCCGames.at(-1) : undefined
   const incompleteRecGames = upcomingPendingGames(rec.games || [])
   const nextRecGame = incompleteRecGames.length > 0 ? incompleteRecGames.at(0) : undefined
