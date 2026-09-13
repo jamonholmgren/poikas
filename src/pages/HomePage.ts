@@ -24,6 +24,10 @@ export function HomePage(data: PoikasData) {
   const nextRecGame = incompleteRecGames.length > 0 ? incompleteRecGames.at(0) : undefined
   const incompleteCCGames = upcomingPendingGames(cc.games || [])
   const nextCCGame = incompleteCCGames.length > 0 ? incompleteCCGames.at(0) : undefined
+  const percentage = (wins: number | undefined, losses: number | undefined, ties: number | undefined) => {
+    const gamesPlayed = (wins || 0) + (losses || 0) + (ties || 0)
+    return gamesPlayed ? (((wins || 0) / gamesPlayed) * 100).toFixed(1) : "0.0"
+  }
 
   return routePage({
     path: "/",
@@ -87,7 +91,7 @@ export function HomePage(data: PoikasData) {
                       <span class="mini-stat-label">Record</span>
                     </div>
                     <div class="mini-stat">
-                      <span class="mini-stat-number">${rec.wins && rec.losses ? ((rec.wins / (rec.wins + rec.losses + (rec.ties || 0))) * 100).toFixed(1) : "0.0"}%</span>
+                      <span class="mini-stat-number">${percentage(rec.wins, rec.losses, rec.ties)}%</span>
                       <span class="mini-stat-label">Win %</span>
                     </div>
                     <div class="mini-stat">
@@ -142,7 +146,7 @@ export function HomePage(data: PoikasData) {
                       <span class="mini-stat-label">Record</span>
                     </div>
                     <div class="mini-stat">
-                      <span class="mini-stat-number">${cc.wins && cc.losses ? ((cc.wins / (cc.wins + cc.losses + (cc.ties || 0))) * 100).toFixed(1) : "0.0"}%</span>
+                      <span class="mini-stat-number">${percentage(cc.wins, cc.losses, cc.ties)}%</span>
                       <span class="mini-stat-label">Win %</span>
                     </div>
                     <div class="mini-stat">

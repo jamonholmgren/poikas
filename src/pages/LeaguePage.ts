@@ -29,7 +29,8 @@ export function LeaguePage(data: PoikasData, slug: string) {
   }
 
   const record = `${wins || 0}-${losses || 0}${ties ? `-${ties}` : ""}`
-  const winPercentage = wins && losses ? ((wins / (wins + losses + (ties || 0))) * 100).toFixed(1) : "0.0"
+  const gamesPlayed = (wins || 0) + (losses || 0) + (ties || 0)
+  const winPercentage = gamesPlayed ? (((wins || 0) / gamesPlayed) * 100).toFixed(1) : "0.0"
 
   return routePage({
     path: url,

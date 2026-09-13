@@ -3,7 +3,7 @@ import { getData } from "../data/load"
 import { LeaguePage } from "./LeaguePage"
 import { PlayerPage } from "./PlayerPage"
 import { AllPlayersPage } from "./AllPlayersPage"
-import { upcomingPendingGames } from "./HomePage"
+import { HomePage, upcomingPendingGames } from "./HomePage"
 
 const data = getData()
 
@@ -41,6 +41,7 @@ describe("LeaguePage", () => {
     expect(page).toContain("won 5-0")
     expect(page).toContain("Caps N Taps")
     expect(page).toContain("Brenna Matson's first game as a Poika.")
+    expect(page).toContain('<span class="stat-number">100.0%</span>')
     expect(page).toContain("Upcoming")
     expect(page).toContain("9/12/2026")
   })
@@ -90,6 +91,13 @@ describe("LeaguePage", () => {
 })
 
 describe("HomePage", () => {
+  test("shows a 100% win rate for the undefeated Fall Rec team", async () => {
+    const page = await html(HomePage(data))
+
+    expect(page).toContain("2026 Fall Rec")
+    expect(page).toContain('<span class="mini-stat-number">100.0%</span>')
+  })
+
   test("skips pending games from before today", () => {
     const games = [
       { vs: "Old Pending", result: "pending" as const, date: new Date("2026-04-26") },
