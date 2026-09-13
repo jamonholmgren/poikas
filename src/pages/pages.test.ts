@@ -25,10 +25,23 @@ describe("LeaguePage", () => {
     // PIM column header
     expect(page).toContain(">PIM<")
     expect(page).toContain("Penalty minutes")
-    // Pending stub games show as Upcoming
-    expect(page).toContain("Upcoming")
+    expect(page).toContain("lost 4-5")
+    expect(page).toContain("Championship game")
     // A known roster member should appear
     expect(page).toContain("Jayden Matson")
+  })
+
+  test("renders the Fall 2026 Rec season and its Sep. 12 game", async () => {
+    const season = data.seasons.find((s) => s.year === 2026 && s.seasonName === "Fall" && s.leagueName === "Rec")!
+    expect(season).toBeDefined()
+    const slug = season.url.split("/").slice(2).join("/")
+    const page = await html(LeaguePage(data, slug))
+
+    expect(page).toContain("2026 Fall Rec")
+    expect(page).toContain("won 5-0")
+    expect(page).toContain("Caps N Taps")
+    expect(page).toContain("Upcoming")
+    expect(page).toContain("9/12/2026")
   })
 
   test("renders the Spring 2026 CC season", async () => {
@@ -104,9 +117,9 @@ describe("PlayerPage", () => {
     const page = await html(PlayerPage(data, jamon.slug))
     const careerTable = page.slice(page.indexOf("<h3>Career League Seasons</h3>"))
 
-    expect(careerTable).toMatch(/<td>Rec<\/td>[\s\S]*?<td>90\.3%<\/td>[\s\S]*?<td>17\.4<\/td>/)
+    expect(careerTable).toMatch(/<td>Rec<\/td>[\s\S]*?<td>90\.2%<\/td>[\s\S]*?<td>17\.4<\/td>/)
     expect(careerTable).toMatch(/<td>CC<\/td>[\s\S]*?<td>83\.6%<\/td>[\s\S]*?<td>29\.9<\/td>/)
-    expect(careerTable).toMatch(/<td>Career<\/td>[\s\S]*?<td>87\.3%<\/td>[\s\S]*?<td>21\.5<\/td>/)
+    expect(careerTable).toMatch(/<td>Career<\/td>[\s\S]*?<td>87\.2%<\/td>[\s\S]*?<td>21\.4<\/td>/)
   })
 
   test("keeps skater career stats for non-goalie player pages", async () => {
@@ -122,9 +135,9 @@ describe("PlayerPage", () => {
     const page = await html(PlayerPage(data, joel.slug))
     const careerTable = page.slice(page.indexOf("<h3>Career League Seasons</h3>"))
 
-    expect(careerTable).toMatch(/<td>Rec<\/td>[\s\S]*?<td>52<\/td>[\s\S]*?<td>52<\/td>[\s\S]*?<td>104<\/td>/)
+    expect(careerTable).toMatch(/<td>Rec<\/td>[\s\S]*?<td>53<\/td>[\s\S]*?<td>53<\/td>[\s\S]*?<td>106<\/td>/)
     expect(careerTable).toMatch(/<td>CC<\/td>[\s\S]*?<td>13<\/td>[\s\S]*?<td>13<\/td>[\s\S]*?<td>26<\/td>/)
-    expect(careerTable).toMatch(/<td>Career<\/td>[\s\S]*?<td>65<\/td>[\s\S]*?<td>65<\/td>[\s\S]*?<td>130<\/td>/)
+    expect(careerTable).toMatch(/<td>Career<\/td>[\s\S]*?<td>66<\/td>[\s\S]*?<td>66<\/td>[\s\S]*?<td>132<\/td>/)
   })
 
   test("uses arena goalie stats when game shot counts are missing", () => {
@@ -149,6 +162,17 @@ describe("PlayerPage", () => {
     const ccSpring2022 = jamon.seasons.CC.find((s) => s.year === 2022 && s.seasonName === "Spring")!
     expect(ccSpring2022.stats.savePercentageFormatted).toBe("84.5%")
     expect(ccSpring2022.stats.averageShotsAgainstFormatted).toBe("27.4")
+  })
+
+  test("uses MVIA's Spring 2026 CC goalie totals", () => {
+    const kyle = data.players.find((p) => p.name === "Kyle Malstrom")!
+    const spring2026 = kyle.seasons.CC.find((s) => s.year === 2026 && s.seasonName === "Spring")!
+
+    expect(spring2026.stats.goalieGamesPlayed).toBe(10)
+    expect(spring2026.stats.goalieRecord).toBe("7-2-1")
+    expect(spring2026.stats.savePercentageFormatted).toBe("89.9%")
+    expect(spring2026.stats.shutouts).toBe(1)
+    expect(spring2026.arenaGoalieSeasonStats?.name).toBe("Kyle Malstrom")
   })
 
   test("keeps Fall 2022 CC goalie stats with Erik Benton", () => {
