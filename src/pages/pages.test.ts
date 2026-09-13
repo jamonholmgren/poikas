@@ -138,12 +138,21 @@ describe("PlayerPage", () => {
     expect(page).not.toContain("<th>Career Goals</th>")
   })
 
+  test("counts Jamon's three Fall 2026 Rec starts", () => {
+    const jamon = data.players.find((p) => p.name === "Jamon Holmgren")!
+    const fall2026 = jamon.seasons.Rec.find((s) => s.year === 2026 && s.seasonName === "Fall")!
+
+    expect(fall2026.season.wins).toBe(4)
+    expect(fall2026.stats.goalieGamesPlayed).toBe(3)
+    expect(fall2026.stats.goalieRecord).toBe("3-0-0")
+  })
+
   test("renders Rec, CC, and Career aggregate rows for goalie player pages", async () => {
     const jamon = data.players.find((p) => p.name === "Jamon Holmgren")!
     const page = await html(PlayerPage(data, jamon.slug))
     const careerTable = page.slice(page.indexOf("<h3>Career League Seasons</h3>"))
 
-    expect(careerTable).toMatch(/<td>Rec<\/td>[\s\S]*?<td>90\.2%<\/td>[\s\S]*?<td>17\.6<\/td>/)
+    expect(careerTable).toMatch(/<td>Rec<\/td>[\s\S]*?<td>90\.1%<\/td>[\s\S]*?<td>17\.5<\/td>/)
     expect(careerTable).toMatch(/<td>CC<\/td>[\s\S]*?<td>83\.9%<\/td>[\s\S]*?<td>30\.0<\/td>/)
     expect(careerTable).toMatch(/<td>Career<\/td>[\s\S]*?<td>87\.3%<\/td>[\s\S]*?<td>21\.6<\/td>/)
   })

@@ -16,7 +16,6 @@ export const poikasData: PoikasDataRaw = {
       sidebar: "",
       roster: [
         "Asa Storm",
-        "Brenna Matson",
         "Cedric Holmgren",
         "Dan Warren",
         "Daniel Kulla",
@@ -673,11 +672,12 @@ export const poikasData: PoikasDataRaw = {
       leagueName: "Rec",
       schedule: "https://mountainview.ezleagues.ezfacility.com/teams/3235421/Suomi-Poikas.aspx",
       playoffs: "pending",
-      description: "Off to a 3-0 start in the Fall 2026/27 Rec season!",
+      description: "Off to a 4-0 start in the Fall 2026/27 Rec season!",
       photos: [],
       sidebar: "",
       roster: [
         "Asa Storm",
+        "Brenna Matson",
         "Cedric Holmgren",
         "Dan Warren",
         "Daniel Kulla",
@@ -725,6 +725,7 @@ export const poikasData: PoikasDataRaw = {
           sisu: "Dan Warren",
           date: new Date("2026-08-22"),
           notable: "Dan Warren hat trick!",
+          goalie: "Jamon Holmgren",
           stats: {
             "Dan Warren": { goals: 3, assists: 1 },
             "Joel Mattila": { goals: 1 },
