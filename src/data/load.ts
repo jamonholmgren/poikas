@@ -82,7 +82,7 @@ function populateSeasonData(season: Season, data: PoikasData) {
   // for leagues with games listed, calculate w/l/t
   if (season.games) {
     season.wins = season.games.filter((g) => g.result === "won").length
-    season.losses = season.games.filter((g) => g.result === "lost").length
+    season.losses = season.games.filter((g) => g.result === "lost" || g.result === "forfeited").length
     season.ties = season.games.filter((g) => g.result === "tied" || g.result === "lost-ot").length
 
     // populate game data for this season

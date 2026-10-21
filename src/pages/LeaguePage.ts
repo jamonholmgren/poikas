@@ -282,7 +282,7 @@ function isGoaliePosition(pos?: string): boolean {
 
 function gameScore(game: Game) {
   if (game.result === "pending") return "Upcoming"
-  if (game.result === "forfeited") return "Forfeited"
+  if (game.result === "forfeited") return game.us !== undefined && game.them !== undefined ? `Forfeited ${game.us}-${game.them}` : "Forfeited"
   if (game.result === "cancelled") return "Cancelled"
   if (game.us !== undefined && game.them !== undefined) return `${game.result} ${game.us}-${game.them}`
   return game.result || "-"

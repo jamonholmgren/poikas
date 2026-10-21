@@ -11,11 +11,11 @@ export function OpponentPage(data: PoikasData, slug: string) {
   const name = sampleGame.vs || slug
 
   const recWins = recGames.filter((g) => g.result === "won").length
-  const recLosses = recGames.filter((g) => g.result === "lost").length
+  const recLosses = recGames.filter((g) => g.result === "lost" || g.result === "forfeited").length
   const recTies = recGames.filter((g) => g.result === "tied" || g.result === "lost-ot").length
 
   const cWins = cGames.filter((g) => g.result === "won").length
-  const cLosses = cGames.filter((g) => g.result === "lost").length
+  const cLosses = cGames.filter((g) => g.result === "lost" || g.result === "forfeited").length
   const cTies = cGames.filter((g) => g.result === "tied" || g.result === "lost-ot").length
 
   return routePage({
