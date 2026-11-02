@@ -225,7 +225,7 @@ describe("PlayerPage", () => {
     const game = (s: typeof data.seasons[number], date: string) => s.games!.find((g) => g.date?.toISOString().startsWith(date))!
     expect(game(season(2026, "Spring", "Rec"), "2026-02-14").goalie).toBe("Jamie Dugger")
     expect(game(season(2024, "Spring", "Rec"), "2024-04-13").goalie).toBeFalsy()
-    expect(game(season(2026, "Spring", "CC"), "2026-02-08").goalie).toBeUndefined()
+    expect(game(season(2026, "Spring", "CC"), "2026-02-08").goalie).toBe("Kyle Malstrom")
     expect(game(season(2026, "Fall", "CC"), "2026-11-08").goalie).toBeUndefined()
   })
 
@@ -336,12 +336,13 @@ describe("PlayerPage", () => {
     expect(ccSpring2022.stats.averageShotsAgainstFormatted).toBe("27.4")
   })
 
-  test("uses MVIA's Spring 2026 CC goalie totals", () => {
+  test("uses Kyle as the Spring 2026 CC default and preserves arena shot totals", () => {
     const kyle = data.players.find((p) => p.name === "Kyle Malstrom")!
     const spring2026 = kyle.seasons.CC.find((s) => s.year === 2026 && s.seasonName === "Spring")!
 
-    expect(spring2026.stats.goalieGamesPlayed).toBe(10)
-    expect(spring2026.stats.goalieRecord).toBe("7-2-1")
+    expect(spring2026.season.games!.filter((g) => g.goalie === "Kyle Malstrom")).toHaveLength(17)
+    expect(spring2026.stats.goalieGamesPlayed).toBe(17)
+    expect(spring2026.stats.goalieRecord).toBe("12-3-2")
     expect(spring2026.stats.savePercentageFormatted).toBe("89.9%")
     expect(spring2026.stats.shutouts).toBe(1)
     expect(spring2026.arenaGoalieSeasonStats?.name).toBe("Kyle Malstrom")

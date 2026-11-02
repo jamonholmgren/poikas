@@ -411,6 +411,7 @@ export const poikasData: PoikasDataRaw = {
           us: 4,
           them: 2,
           result: "won",
+          goalie: "Kyle Malstrom",
           date: new Date("2026-02-08"),
         },
         {
@@ -418,6 +419,7 @@ export const poikasData: PoikasDataRaw = {
           us: 3,
           them: 5,
           result: "lost",
+          goalie: "Kyle Malstrom",
           date: new Date("2026-02-15"),
         },
         {
@@ -425,6 +427,7 @@ export const poikasData: PoikasDataRaw = {
           us: 3,
           them: 4,
           result: "lost-ot",
+          goalie: "Kyle Malstrom",
           date: new Date("2026-02-22"),
           notable: "OT loss.",
         },
@@ -433,6 +436,7 @@ export const poikasData: PoikasDataRaw = {
           us: 3,
           them: 2,
           result: "won",
+          goalie: "Kyle Malstrom",
           date: new Date("2026-03-01"),
           notable: "OT win.",
         },
@@ -441,6 +445,7 @@ export const poikasData: PoikasDataRaw = {
           us: 3,
           them: 0,
           result: "won",
+          goalie: "Kyle Malstrom",
           date: new Date("2026-03-08"),
           notable: "Shutout.",
         },
@@ -449,6 +454,7 @@ export const poikasData: PoikasDataRaw = {
           us: 7,
           them: 5,
           result: "won",
+          goalie: "Kyle Malstrom",
           date: new Date("2026-03-15"),
         },
         {
@@ -456,6 +462,7 @@ export const poikasData: PoikasDataRaw = {
           us: 3,
           them: 1,
           result: "won",
+          goalie: "Kyle Malstrom",
           date: new Date("2026-03-22"),
         },
         {
@@ -463,6 +470,7 @@ export const poikasData: PoikasDataRaw = {
           us: 4,
           them: 2,
           result: "won",
+          goalie: "Kyle Malstrom",
           date: new Date("2026-03-29"),
         },
         {
@@ -470,6 +478,7 @@ export const poikasData: PoikasDataRaw = {
           us: 3,
           them: 4,
           result: "lost",
+          goalie: "Kyle Malstrom",
           date: new Date("2026-04-05"),
         },
         {
@@ -477,6 +486,7 @@ export const poikasData: PoikasDataRaw = {
           us: 3,
           them: 4,
           result: "lost",
+          goalie: "Kyle Malstrom",
           date: new Date("2026-04-12"),
         },
         {
@@ -484,6 +494,7 @@ export const poikasData: PoikasDataRaw = {
           us: 6,
           them: 2,
           result: "won",
+          goalie: "Kyle Malstrom",
           date: new Date("2026-04-19"),
         },
         {
@@ -491,6 +502,7 @@ export const poikasData: PoikasDataRaw = {
           us: 7,
           them: 5,
           result: "won",
+          goalie: "Kyle Malstrom",
           date: new Date("2026-04-26"),
         },
         {
@@ -498,6 +510,7 @@ export const poikasData: PoikasDataRaw = {
           us: 8,
           them: 3,
           result: "won",
+          goalie: "Kyle Malstrom",
           date: new Date("2026-05-03"),
         },
         {
@@ -505,6 +518,7 @@ export const poikasData: PoikasDataRaw = {
           us: 6,
           them: 3,
           result: "won",
+          goalie: "Kyle Malstrom",
           date: new Date("2026-05-10"),
         },
         {
@@ -512,6 +526,7 @@ export const poikasData: PoikasDataRaw = {
           us: 7,
           them: 4,
           result: "won",
+          goalie: "Kyle Malstrom",
           date: new Date("2026-05-17"),
         },
         {
@@ -519,6 +534,7 @@ export const poikasData: PoikasDataRaw = {
           us: 6,
           them: 3,
           result: "won",
+          goalie: "Kyle Malstrom",
           date: new Date("2026-05-31"),
           notable: "Playoff semifinal.",
         },
@@ -527,6 +543,7 @@ export const poikasData: PoikasDataRaw = {
           us: 2,
           them: 3,
           result: "lost-ot",
+          goalie: "Kyle Malstrom",
           date: new Date("2026-06-07"),
           notable: "Championship game — overtime loss.",
         },
