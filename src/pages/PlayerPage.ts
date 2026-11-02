@@ -327,6 +327,7 @@ function aggregateSeasonStats(seasons: PlayerSeason[]): PlayerStats {
     if (playerSeason.season.ignoreGoalieStats) return
 
     stats.goalieGamesPlayed += seasonStats.goalieGamesPlayed
+    stats.goalieGamesWithScore += seasonStats.goalieGamesWithScore
     stats.goalieGamesWithShots += seasonStats.goalieGamesWithShots
     stats.goalieWins += seasonStats.goalieWins
     stats.goalieLosses += seasonStats.goalieLosses
@@ -384,7 +385,7 @@ function goalieCareerStatsRows(player: Player, stats: PlayerStats) {
     </tr>
     <tr>
       <th>Career GAA</th>
-      <td>${stats.goalieGamesPlayed ? stats.goalsAgainstAverageFormatted : "-"}</td>
+      <td>${stats.goalieGamesWithScore ? stats.goalsAgainstAverageFormatted : "-"}</td>
     </tr>
     <tr>
       <th>Career SV%</th>
@@ -410,7 +411,7 @@ function goalieCareerStatsRows(player: Player, stats: PlayerStats) {
 }
 
 function populateGoalieStatsAggregates(stats: PlayerStats) {
-  const gp: number = stats.goalieGamesPlayed
+  const gp: number = stats.goalieGamesWithScore
   const gws: number = stats.goalieGamesWithShots
   const sa: number = stats.shotsAgainst
   const ga: number = stats.goalsAgainst - stats.goalsAgainstEmptyNetters
@@ -437,6 +438,7 @@ function emptyStats(): PlayerStats {
     penalties: 0,
     pim: 0,
     goalieGamesPlayed: 0,
+    goalieGamesWithScore: 0,
     goalieGamesWithShots: 0,
     goalieWins: 0,
     goalieLosses: 0,

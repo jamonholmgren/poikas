@@ -61,10 +61,10 @@ describe("LeaguePage", () => {
     const september19 = season.games!.find((g) => g.date?.toISOString().startsWith("2026-09-19"))!
     expect(september19.stats).toBeUndefined()
     expect(september19.shotsUs).toBeUndefined()
-    expect(september19.goalie).toBeUndefined()
+    expect(september19.goalie).toBe("Jamon Holmgren")
     expect(september19.sisu).toBeUndefined()
     const october10 = season.games!.find((g) => g.date?.toISOString().startsWith("2026-10-10"))!
-    expect(october10.goalie).toBeUndefined()
+    expect(october10.goalie).toBe("Jamon Holmgren")
     const october31 = season.games!.find((g) => g.date?.toISOString().startsWith("2026-10-31"))!
     expect(october31).toMatchObject({
       vs: "Pinecones", us: 9, them: 0, result: "won", shotsUs: 38, shotsThem: 17, sisu: "Shane Matson",
@@ -75,7 +75,7 @@ describe("LeaguePage", () => {
         "Shane Matson": { assists: 3 }, "Zacharias Snellman": { assists: 2 }, "Daniel Kulla": { penalties: 1 },
       },
     })
-    expect(october31.goalie).toBeUndefined()
+    expect(october31.goalie).toBe("Jamon Holmgren")
   })
 
   test("renders the Summer 2026 Rec exhibition series", async () => {
@@ -118,12 +118,13 @@ describe("LeaguePage", () => {
     expect(season.ties).toBe(2)
   })
 
-  test("keeps unreported CC stats and goalies absent", () => {
+  test("preserves missing CC stats and defaults goalies for played games", () => {
     const season = data.seasons.find((s) => s.year === 2026 && s.seasonName === "Fall" && s.leagueName === "CC")!
     const gameOn = (date: string) => season.games!.find((g) => g.date?.toISOString().startsWith(date))!
 
-    for (const date of ["2026-09-13", "2026-09-20", "2026-10-04", "2026-10-18"]) {
-      expect(gameOn(date).goalie).toBeUndefined()
+    expect(gameOn("2026-09-13").goalie).toBeUndefined()
+    for (const date of ["2026-09-20", "2026-10-04", "2026-10-18"]) {
+      expect(gameOn(date).goalie).toBe("Jamon Holmgren")
     }
     expect(gameOn("2026-09-13").stats).toBeUndefined()
     expect(gameOn("2026-09-13").shotsThem).toBeUndefined()
@@ -209,14 +210,32 @@ describe("PlayerPage", () => {
     expect(fall2026.stats.penalties).toBe(1)
   })
 
-  test("counts Jamon's six confirmed Fall CC starts", () => {
+  test("counts Jamon's Fall CC starts", () => {
     const jamon = data.players.find((p) => p.name === "Jamon Holmgren")!
     const fall2026 = jamon.seasons.CC.find((s) => s.year === 2026 && s.seasonName === "Fall")!
 
-    expect(fall2026.stats.goalieGamesPlayed).toBe(6)
-    expect(fall2026.stats.goalieRecord).toBe("2-2-2")
-    expect(fall2026.stats.shotsAgainst).toBe(155)
-    expect(fall2026.stats.goalsAgainst).toBe(20)
+    expect(fall2026.stats.goalieGamesPlayed).toBe(9)
+    expect(fall2026.stats.goalieRecord).toBe("4-3-2")
+    expect(fall2026.stats.shotsAgainst).toBe(256)
+    expect(fall2026.stats.goalsAgainst).toBe(31)
+  })
+
+  test("preserves alternate goalies, documented absences, and unplayed games", () => {
+    const season = (year: number, seasonName: string, leagueName: string) => data.seasons.find((s) => s.year === year && s.seasonName === seasonName && s.leagueName === leagueName)!
+    const game = (s: typeof data.seasons[number], date: string) => s.games!.find((g) => g.date?.toISOString().startsWith(date))!
+    expect(game(season(2026, "Spring", "Rec"), "2026-02-14").goalie).toBe("Jamie Dugger")
+    expect(game(season(2024, "Spring", "Rec"), "2024-04-13").goalie).toBeFalsy()
+    expect(game(season(2026, "Spring", "CC"), "2026-02-08").goalie).toBeUndefined()
+    expect(game(season(2026, "Fall", "CC"), "2026-11-08").goalie).toBeUndefined()
+  })
+
+  test("does not count missing scores as shutouts or zero-goal games", () => {
+    const jamon = data.players.find((p) => p.name === "Jamon Holmgren")!
+    const season = jamon.seasons.Rec.find((s) => s.year === 2019 && s.seasonName === "Fall")!
+    expect(season.stats.goalieGamesPlayed).toBe(13)
+    expect(season.stats.goalieGamesWithScore).toBe(6)
+    expect(season.stats.shutouts).toBe(0)
+    expect(season.stats.goalsAgainstAverage).toBe(2.33)
   })
 
   test("renders Joel Mattila's profile with career stats and PIM", async () => {
@@ -254,15 +273,15 @@ describe("PlayerPage", () => {
     expect(page).not.toContain("<th>Career Goals</th>")
   })
 
-  test("counts Jamon's six confirmed Fall 2026 Rec starts", () => {
+  test("counts Jamon's Fall 2026 Rec starts", () => {
     const jamon = data.players.find((p) => p.name === "Jamon Holmgren")!
     const fall2026 = jamon.seasons.Rec.find((s) => s.year === 2026 && s.seasonName === "Fall")!
 
     expect(fall2026.season.wins).toBe(9)
-    expect(fall2026.stats.goalieGamesPlayed).toBe(6)
-    expect(fall2026.stats.goalieRecord).toBe("5-0-1")
-    expect(fall2026.stats.shotsAgainst).toBe(76)
-    expect(fall2026.stats.goalsAgainst).toBe(9)
+    expect(fall2026.stats.goalieGamesPlayed).toBe(9)
+    expect(fall2026.stats.goalieRecord).toBe("8-0-1")
+    expect(fall2026.stats.shotsAgainst).toBe(102)
+    expect(fall2026.stats.goalsAgainst).toBe(11)
   })
 
   test("renders Rec, CC, and Career aggregate rows for goalie player pages", async () => {
@@ -271,8 +290,8 @@ describe("PlayerPage", () => {
     const careerTable = page.slice(page.indexOf("<h3>Career League Seasons</h3>"))
 
     expect(careerTable).toMatch(/<td>Rec<\/td>[\s\S]*?<td>90\.0%<\/td>[\s\S]*?<td>17\.4<\/td>/)
-    expect(careerTable).toMatch(/<td>CC<\/td>[\s\S]*?<td>83\.9%<\/td>[\s\S]*?<td>29\.6<\/td>/)
-    expect(careerTable).toMatch(/<td>Career<\/td>[\s\S]*?<td>87\.2%<\/td>[\s\S]*?<td>21\.4<\/td>/)
+    expect(careerTable).toMatch(/<td>CC<\/td>[\s\S]*?<td>84\.2%<\/td>[\s\S]*?<td>29\.2<\/td>/)
+    expect(careerTable).toMatch(/<td>Career<\/td>[\s\S]*?<td>87\.3%<\/td>[\s\S]*?<td>21\.4<\/td>/)
   })
 
   test("keeps skater career stats for non-goalie player pages", async () => {

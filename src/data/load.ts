@@ -152,6 +152,7 @@ function populatePlayerData(player: Player, data: PoikasData) {
       // did the player play goalie in this game?
       if (game.goalie === player.name) {
         ss.goalieGamesPlayed += 1
+        if (game.them !== undefined) ss.goalieGamesWithScore += 1
         if (game.shotsUs && game.shotsThem) {
           ss.goalieGamesWithShots += 1
           ss.shotsFor += game.shotsUs || 0
@@ -160,7 +161,7 @@ function populatePlayerData(player: Player, data: PoikasData) {
         }
         ss.goalsAgainstEmptyNetters += game.goalsAgainstEmptyNetters || 0
         ss.goalsAgainst += game.them || 0
-        if ((game.them || 0) === 0) ss.shutouts += 1
+        if (game.them === 0) ss.shutouts += 1
         if (game.result === "won") ss.goalieWins += 1
         if (game.result === "lost") ss.goalieLosses += 1
         if (game.result === "lost-ot" || game.result === "tied") ss.goalieTies += 1
@@ -218,6 +219,7 @@ function populatePlayerData(player: Player, data: PoikasData) {
     cs.penalties += ss.penalties
     cs.pim += ss.pim
     cs.goalieGamesPlayed += ss.goalieGamesPlayed
+    cs.goalieGamesWithScore += ss.goalieGamesWithScore
     cs.goalieGamesWithShots += ss.goalieGamesWithShots
     cs.shotsFor += ss.shotsFor
     cs.shotsAgainst += ss.shotsAgainst
@@ -286,6 +288,7 @@ function applyArenaGoalieStats(stats: PlayerStats, arena: ArenaGoalieSeasonStats
     stats.goalieTies = arena.ot_losses
   }
   if (stats.goalsAgainst === 0) stats.goalsAgainst = arena.goals_against
+  if (stats.goalieGamesWithScore === 0) stats.goalieGamesWithScore = arena.games_played
   stats.shotsAgainst = shotsOnGoal
   stats.goalsAgainstWithShots = arena.goals_against
   stats.goalieGamesWithShots = arena.games_played
@@ -294,7 +297,7 @@ function applyArenaGoalieStats(stats: PlayerStats, arena: ArenaGoalieSeasonStats
 
 // Goalie stats aggregates based on totals
 function populateGoalieStatsAggregates(stats: PlayerStats) {
-  const gp: number = stats.goalieGamesPlayed
+  const gp: number = stats.goalieGamesWithScore
   const gws: number = stats.goalieGamesWithShots
   const sa: number = stats.shotsAgainst
   const ga: number = stats.goalsAgainst - stats.goalsAgainstEmptyNetters
@@ -358,6 +361,7 @@ function defaultStats(): PlayerStats {
     penalties: 0,
     pim: 0,
     goalieGamesPlayed: 0,
+    goalieGamesWithScore: 0,
     goalieGamesWithShots: 0,
     goalieWins: 0,
     goalieLosses: 0,

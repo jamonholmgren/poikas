@@ -58,37 +58,44 @@ export const poikasPrevious: SeasonRaw[] = [
         date: new Date("2019-10-26"),
         vs: "Caps N Taps",
         result: "won",
+        goalie: "Jamon Holmgren",
       },
       {
         date: new Date("2019-11-02"),
         vs: "Mother Russia",
         result: "won",
+        goalie: "Jamon Holmgren",
       },
       {
         date: new Date("2019-11-09"),
         vs: "Thundersticks",
         result: "won",
+        goalie: "Jamon Holmgren",
         notable: "First ever shootout, and we won!",
       },
       {
         date: new Date("2019-11-16"),
         vs: "Skunk Apes",
         result: "won",
+        goalie: "Jamon Holmgren",
       },
       {
         date: new Date("2019-11-23"),
         vs: "Pinecones",
         result: "won",
+        goalie: "Jamon Holmgren",
       },
       {
         date: new Date("2019-12-07"),
         vs: "Caps N Taps",
         result: "won",
+        goalie: "Jamon Holmgren",
       },
       {
         date: new Date("2019-12-14"),
         vs: "Mother Russia",
         result: "won",
+        goalie: "Jamon Holmgren",
       },
       {
         date: new Date("2019-12-21"),
@@ -96,6 +103,7 @@ export const poikasPrevious: SeasonRaw[] = [
         us: 5,
         them: 2,
         result: "won",
+        goalie: "Jamon Holmgren",
       },
       {
         date: new Date("2019-01-04"),
@@ -1355,6 +1363,7 @@ export const poikasPrevious: SeasonRaw[] = [
         us: 3,
         them: 5,
         result: "lost",
+        goalie: "Jamon Holmgren",
         sisu: "Erik Benton",
         notable: "Playoffs round 1.",
       },
@@ -2438,7 +2447,7 @@ export const poikasPrevious: SeasonRaw[] = [
         sisu: "Nolan Matson",
         date: new Date("2024-10-05"),
         notable: "Orrin 2g, Oren 1g 1a, Nolan 1g 1a, Cedric 1g, Daniel 1g, Joel 1g, Myron 1a, Dan 1a",
-        goalie: "", // unknown
+        goalie: "Jamon Holmgren",
         stats: {
           "Orrin Erickson": { goals: 2 },
           "Oren Matson": { goals: 1, assists: 1 },
@@ -2768,7 +2777,7 @@ export const poikasPrevious: SeasonRaw[] = [
         sisu: "Nels Tapio",
         date: new Date("2024-09-29"),
         notable: "Caleb 3g, Evan 1g, Nels 2g, Kevin 2a, Andrew 1a, Caleb 1a, Russ 1a",
-        goalie: "",
+        goalie: "Jamon Holmgren",
         stats: {
           "Caleb Aring": { goals: 3, assists: 1 },
           "Evan Tapio": { goals: 1 },
@@ -2788,7 +2797,7 @@ export const poikasPrevious: SeasonRaw[] = [
         sisu: "Kevin Sarkela",
         date: new Date("2024-10-06"),
         notable: "Kevin 3g, Andrew 1g, Steve 1g, Nels 2g, unsure on 8th goal",
-        goalie: "",
+        goalie: "Jamon Holmgren",
         stats: {
           "Kevin Sarkela": { goals: 3 },
           "Andrew Tunseth": { goals: 1 },
@@ -2806,7 +2815,7 @@ export const poikasPrevious: SeasonRaw[] = [
         sisu: "Brad Wuori",
         date: new Date("2024-10-13"),
         notable: "Won 4-0. No other info available.",
-        goalie: "",
+        goalie: "Jamon Holmgren",
         stats: {
           "Nels Tapio": { goals: 1 },
           "Brad Wuori": { goals: 1 },

@@ -125,6 +125,7 @@ export type PlayerStats = {
   teamTies: number
   // Goalie stats
   goalieGamesPlayed: number
+  goalieGamesWithScore: number
   goalieGamesWithShots: number
   goalieWins: number
   goalieLosses: number
