@@ -90,7 +90,7 @@ describe("LeaguePage", () => {
     expect(page).toContain("<td>lost 3-6</td>")
   })
 
-  test("renders the Fall 2026 CC reports through October 18, including the forfeit", async () => {
+  test("renders the Fall 2026 CC reports through November 1, including the forfeit", async () => {
     const season = data.seasons.find((s) => s.year === 2026 && s.seasonName === "Fall" && s.leagueName === "CC")!
     expect(season).toBeDefined()
     const slug = season.url.split("/").slice(2).join("/")
@@ -104,13 +104,16 @@ describe("LeaguePage", () => {
     expect(page).toContain("lost 2-3")
     expect(page).toContain("won 3-2")
     expect(page).toContain("25-48")
+    expect(page).toContain("won 4-1")
+    expect(page).toContain("24-19")
+    expect(page).toContain("Treven's first game back, with three points.")
     expect(page).toContain("Caleb scored a hat trick in his first game in six months.")
     expect(page).toContain("Ward's truck")
     expect(page).toContain("Gutsy win over a very good team!")
     expect(page).toContain("Brian")
     expect(page).toContain("Upcoming")
     expect(page).toContain("9/13/2026")
-    expect(season.wins).toBe(3)
+    expect(season.wins).toBe(4)
     expect(season.losses).toBe(4)
     expect(season.ties).toBe(2)
   })
@@ -127,6 +130,16 @@ describe("LeaguePage", () => {
     expect(gameOn("2026-09-27").stats).toEqual({ "Russ Tapio": { goals: 1 }, "Scott Daniels": { goals: 1 } })
     expect(gameOn("2026-09-27").goalie).toBe("Jamon Holmgren")
     expect(gameOn("2026-10-11").goalie).toBe("Jamon Holmgren")
+    expect(gameOn("2026-11-01")).toMatchObject({
+      vs: "Revolution", us: 4, them: 1, result: "won", shotsUs: 24, shotsThem: 19,
+      sisu: "AWOL", goalie: "Jamon Holmgren",
+      stats: {
+        "Treven Erickson": { goals: 2, assists: 1, penalties: 1 },
+        "Nels Tapio": { goals: 1, assists: 1 },
+        "Russ Tapio": { goals: 1, assists: 2 },
+        "Ward Pearson": { assists: 1 },
+      },
+    })
   })
 
   test("includes the forfeit in the Jugs opponent record", async () => {
@@ -158,11 +171,11 @@ describe("LeaguePage", () => {
 })
 
 describe("HomePage", () => {
-  test("shows the October 18 CC win as the latest result", async () => {
+  test("shows the November 1 CC win as the latest result", async () => {
     const page = await html(HomePage(data))
 
-    expect(page).toContain("Gutsy win over a very good team!")
-    expect(page).toContain("3-4-2")
+    expect(page).toContain("Treven's first game back, with three points.")
+    expect(page).toContain("4-4-2")
   })
 
   test("shows the latest Fall Rec result and updated win rate", async () => {
@@ -196,14 +209,14 @@ describe("PlayerPage", () => {
     expect(fall2026.stats.penalties).toBe(1)
   })
 
-  test("counts only Jamon's five confirmed Fall CC starts", () => {
+  test("counts Jamon's six confirmed Fall CC starts", () => {
     const jamon = data.players.find((p) => p.name === "Jamon Holmgren")!
     const fall2026 = jamon.seasons.CC.find((s) => s.year === 2026 && s.seasonName === "Fall")!
 
-    expect(fall2026.stats.goalieGamesPlayed).toBe(5)
-    expect(fall2026.stats.goalieRecord).toBe("1-2-2")
-    expect(fall2026.stats.shotsAgainst).toBe(136)
-    expect(fall2026.stats.goalsAgainst).toBe(19)
+    expect(fall2026.stats.goalieGamesPlayed).toBe(6)
+    expect(fall2026.stats.goalieRecord).toBe("2-2-2")
+    expect(fall2026.stats.shotsAgainst).toBe(155)
+    expect(fall2026.stats.goalsAgainst).toBe(20)
   })
 
   test("renders Joel Mattila's profile with career stats and PIM", async () => {
@@ -258,7 +271,7 @@ describe("PlayerPage", () => {
     const careerTable = page.slice(page.indexOf("<h3>Career League Seasons</h3>"))
 
     expect(careerTable).toMatch(/<td>Rec<\/td>[\s\S]*?<td>90\.0%<\/td>[\s\S]*?<td>17\.4<\/td>/)
-    expect(careerTable).toMatch(/<td>CC<\/td>[\s\S]*?<td>83\.8%<\/td>[\s\S]*?<td>29\.7<\/td>/)
+    expect(careerTable).toMatch(/<td>CC<\/td>[\s\S]*?<td>83\.9%<\/td>[\s\S]*?<td>29\.6<\/td>/)
     expect(careerTable).toMatch(/<td>Career<\/td>[\s\S]*?<td>87\.2%<\/td>[\s\S]*?<td>21\.4<\/td>/)
   })
 
