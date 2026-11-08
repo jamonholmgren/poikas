@@ -32,7 +32,7 @@ describe("LeaguePage", () => {
     expect(page).toContain("Jayden Matson")
   })
 
-  test("renders Fall 2026 Rec reports through October 31 and the arena-confirmed September 19 win", async () => {
+  test("renders Fall 2026 Rec reports through November 7 and the arena-confirmed September 19 win", async () => {
     const season = data.seasons.find((s) => s.year === 2026 && s.seasonName === "Fall" && s.leagueName === "Rec")!
     expect(season).toBeDefined()
     const slug = season.url.split("/").slice(2).join("/")
@@ -52,10 +52,10 @@ describe("LeaguePage", () => {
     expect(page).toContain("36-9")
     expect(page).toContain("estimated closer to 42-14")
     expect(page).toContain("Only our fourth loss to Caps N Taps all time.")
-    expect(page).toContain('<span class="stat-number">90.0%</span>')
+    expect(page).toContain('<span class="stat-number">90.9%</span>')
     expect(page).toContain("Upcoming")
     expect(page).toContain("9/12/2026")
-    expect(season.wins).toBe(9)
+    expect(season.wins).toBe(10)
     expect(season.losses).toBe(0)
     expect(season.ties).toBe(1)
     const september19 = season.games!.find((g) => g.date?.toISOString().startsWith("2026-09-19"))!
@@ -76,6 +76,19 @@ describe("LeaguePage", () => {
       },
     })
     expect(october31.goalie).toBe("Jamon Holmgren")
+    const november7 = season.games!.find((g) => g.date?.toISOString().startsWith("2026-11-07"))!
+    expect(november7).toMatchObject({
+      vs: "Thundersticks", us: 8, them: 0, result: "won", shotsUs: 44, shotsThem: 23,
+      goalie: "Jamon Holmgren", sisu: "Mike Kulla", notable: "Another great game by the Poikas!",
+      stats: {
+        "Levi Estola": { goals: 2 }, "Mike Kulla": { goals: 1 }, "Logan Matson": { goals: 1 },
+        "Dan Warren": { goals: 1, assists: 2 }, "Shane Matson": { goals: 2, assists: 1 },
+        "Joel Mattila": { goals: 1 }, "Zacharias Snellman": { assists: 3 }, "Asa Storm": { assists: 2, penalties: 1 },
+      },
+    })
+    expect(page).toContain("won 8-0")
+    expect(page).toContain("44-23")
+    expect(page).toContain("Another great game by the Poikas!")
   })
 
   test("renders the Summer 2026 Rec exhibition series", async () => {
@@ -183,10 +196,10 @@ describe("HomePage", () => {
     const page = await html(HomePage(data))
 
     expect(page).toContain("2026 Fall Rec")
-    expect(page).toContain('<span class="mini-stat-number">90.0%</span>')
-    expect(page).toContain("9-0-1")
-    expect(page).toContain("Oct 31, won 9-0")
-    expect(page).toContain("Sisu Cup: Shane Matson")
+    expect(page).toContain('<span class="mini-stat-number">90.9%</span>')
+    expect(page).toContain("10-0-1")
+    expect(page).toContain("Nov 7, won 8-0")
+    expect(page).toContain("Sisu Cup: Mike Kulla")
   })
 
   test("skips pending games from before today", () => {
@@ -277,10 +290,10 @@ describe("PlayerPage", () => {
     const jamon = data.players.find((p) => p.name === "Jamon Holmgren")!
     const fall2026 = jamon.seasons.Rec.find((s) => s.year === 2026 && s.seasonName === "Fall")!
 
-    expect(fall2026.season.wins).toBe(9)
-    expect(fall2026.stats.goalieGamesPlayed).toBe(9)
-    expect(fall2026.stats.goalieRecord).toBe("8-0-1")
-    expect(fall2026.stats.shotsAgainst).toBe(102)
+    expect(fall2026.season.wins).toBe(10)
+    expect(fall2026.stats.goalieGamesPlayed).toBe(10)
+    expect(fall2026.stats.goalieRecord).toBe("9-0-1")
+    expect(fall2026.stats.shotsAgainst).toBe(125)
     expect(fall2026.stats.goalsAgainst).toBe(11)
   })
 
@@ -289,7 +302,7 @@ describe("PlayerPage", () => {
     const page = await html(PlayerPage(data, jamon.slug))
     const careerTable = page.slice(page.indexOf("<h3>Career League Seasons</h3>"))
 
-    expect(careerTable).toMatch(/<td>Rec<\/td>[\s\S]*?<td>90\.0%<\/td>[\s\S]*?<td>17\.4<\/td>/)
+    expect(careerTable).toMatch(/<td>Rec<\/td>[\s\S]*?<td>90\.1%<\/td>[\s\S]*?<td>17\.4<\/td>/)
     expect(careerTable).toMatch(/<td>CC<\/td>[\s\S]*?<td>84\.2%<\/td>[\s\S]*?<td>29\.2<\/td>/)
     expect(careerTable).toMatch(/<td>Career<\/td>[\s\S]*?<td>87\.3%<\/td>[\s\S]*?<td>21\.4<\/td>/)
   })
@@ -307,9 +320,9 @@ describe("PlayerPage", () => {
     const page = await html(PlayerPage(data, joel.slug))
     const careerTable = page.slice(page.indexOf("<h3>Career League Seasons</h3>"))
 
-    expect(careerTable).toMatch(/<td>Rec<\/td>[\s\S]*?<td>57<\/td>[\s\S]*?<td>60<\/td>[\s\S]*?<td>117<\/td>/)
+    expect(careerTable).toMatch(/<td>Rec<\/td>[\s\S]*?<td>58<\/td>[\s\S]*?<td>60<\/td>[\s\S]*?<td>118<\/td>/)
     expect(careerTable).toMatch(/<td>CC<\/td>[\s\S]*?<td>13<\/td>[\s\S]*?<td>13<\/td>[\s\S]*?<td>26<\/td>/)
-    expect(careerTable).toMatch(/<td>Career<\/td>[\s\S]*?<td>70<\/td>[\s\S]*?<td>73<\/td>[\s\S]*?<td>143<\/td>/)
+    expect(careerTable).toMatch(/<td>Career<\/td>[\s\S]*?<td>71<\/td>[\s\S]*?<td>73<\/td>[\s\S]*?<td>144<\/td>/)
   })
 
   test("uses arena goalie stats when game shot counts are missing", () => {
