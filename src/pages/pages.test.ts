@@ -103,7 +103,7 @@ describe("LeaguePage", () => {
     expect(page).toContain("<td>lost 3-6</td>")
   })
 
-  test("renders the Fall 2026 CC reports through November 1, including the forfeit", async () => {
+  test("renders the Fall 2026 CC reports through November 8, including the forfeit", async () => {
     const season = data.seasons.find((s) => s.year === 2026 && s.seasonName === "Fall" && s.leagueName === "CC")!
     expect(season).toBeDefined()
     const slug = season.url.split("/").slice(2).join("/")
@@ -127,8 +127,21 @@ describe("LeaguePage", () => {
     expect(page).toContain("Upcoming")
     expect(page).toContain("9/13/2026")
     expect(season.wins).toBe(4)
-    expect(season.losses).toBe(4)
+    expect(season.losses).toBe(5)
     expect(season.ties).toBe(2)
+    const november8 = season.games!.find((g) => g.date?.toISOString().startsWith("2026-11-08"))!
+    expect(november8).toMatchObject({
+      vs: "CCCP", us: 2, them: 4, result: "lost", shotsUs: 20, shotsThem: 34,
+      goalie: "Jamon Holmgren", notable: "Called up Dan Warren, Oren Matson, and Shane Matson to fill in.",
+      stats: {
+        "Scott Daniels": { goals: 1, assists: 1 }, "Treven Erickson": { goals: 1 },
+        "Caleb Aring": { assists: 1 }, "Jared Matson": { assists: 1, penalties: 1 },
+      },
+    })
+    expect(november8.sisu).toBeUndefined()
+    expect(page).toContain("lost 2-4")
+    expect(page).toContain("20-34")
+    for (const name of ["Dan Warren", "Oren Matson", "Shane Matson"]) expect(season.roster).toContain(name)
   })
 
   test("preserves missing CC stats and defaults goalies for played games", () => {
@@ -185,11 +198,11 @@ describe("LeaguePage", () => {
 })
 
 describe("HomePage", () => {
-  test("shows the November 1 CC win as the latest result", async () => {
+  test("shows the November 8 CC loss as the latest result", async () => {
     const page = await html(HomePage(data))
 
-    expect(page).toContain("Treven's first game back, with three points.")
-    expect(page).toContain("4-4-2")
+    expect(page).toContain("Called up Dan Warren, Oren Matson, and Shane Matson to fill in.")
+    expect(page).toContain("4-5-2")
   })
 
   test("shows the latest Fall Rec result and updated win rate", async () => {
@@ -227,10 +240,10 @@ describe("PlayerPage", () => {
     const jamon = data.players.find((p) => p.name === "Jamon Holmgren")!
     const fall2026 = jamon.seasons.CC.find((s) => s.year === 2026 && s.seasonName === "Fall")!
 
-    expect(fall2026.stats.goalieGamesPlayed).toBe(9)
-    expect(fall2026.stats.goalieRecord).toBe("4-3-2")
-    expect(fall2026.stats.shotsAgainst).toBe(256)
-    expect(fall2026.stats.goalsAgainst).toBe(31)
+    expect(fall2026.stats.goalieGamesPlayed).toBe(10)
+    expect(fall2026.stats.goalieRecord).toBe("4-4-2")
+    expect(fall2026.stats.shotsAgainst).toBe(290)
+    expect(fall2026.stats.goalsAgainst).toBe(35)
   })
 
   test("preserves alternate goalies, documented absences, and unplayed games", () => {
@@ -239,7 +252,7 @@ describe("PlayerPage", () => {
     expect(game(season(2026, "Spring", "Rec"), "2026-02-14").goalie).toBe("Jamie Dugger")
     expect(game(season(2024, "Spring", "Rec"), "2024-04-13").goalie).toBeFalsy()
     expect(game(season(2026, "Spring", "CC"), "2026-02-08").goalie).toBe("Kyle Malstrom")
-    expect(game(season(2026, "Fall", "CC"), "2026-11-08").goalie).toBeUndefined()
+    expect(game(season(2026, "Fall", "CC"), "2026-11-15").goalie).toBeUndefined()
   })
 
   test("does not count missing scores as shutouts or zero-goal games", () => {
@@ -303,8 +316,8 @@ describe("PlayerPage", () => {
     const careerTable = page.slice(page.indexOf("<h3>Career League Seasons</h3>"))
 
     expect(careerTable).toMatch(/<td>Rec<\/td>[\s\S]*?<td>90\.1%<\/td>[\s\S]*?<td>17\.4<\/td>/)
-    expect(careerTable).toMatch(/<td>CC<\/td>[\s\S]*?<td>84\.2%<\/td>[\s\S]*?<td>29\.2<\/td>/)
-    expect(careerTable).toMatch(/<td>Career<\/td>[\s\S]*?<td>87\.3%<\/td>[\s\S]*?<td>21\.4<\/td>/)
+    expect(careerTable).toMatch(/<td>CC<\/td>[\s\S]*?<td>84\.2%<\/td>[\s\S]*?<td>29\.3<\/td>/)
+    expect(careerTable).toMatch(/<td>Career<\/td>[\s\S]*?<td>87\.4%<\/td>[\s\S]*?<td>21\.5<\/td>/)
   })
 
   test("keeps skater career stats for non-goalie player pages", async () => {

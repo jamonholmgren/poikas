@@ -999,7 +999,7 @@ export const poikasData: PoikasDataRaw = {
       description: "Jamon Holmgren returns as the full-time CC goalie. The Poikas opened the season with three straight overtime games.",
       photos: [],
       sidebar: "",
-      roster: ["Brad Wuori", "Caleb Aring", "Jamon Holmgren", "Jared Matson", "Kevin Sarkela", "Nels Tapio", "Russ Tapio", "Ryan Schaefer", "Sam Balto", "Scott Daniels", "Treven Erickson", "Ward Pearson"],
+      roster: ["Brad Wuori", "Caleb Aring", "Dan Warren", "Jamon Holmgren", "Jared Matson", "Kevin Sarkela", "Nels Tapio", "Oren Matson", "Russ Tapio", "Ryan Schaefer", "Sam Balto", "Scott Daniels", "Shane Matson", "Treven Erickson", "Ward Pearson"],
       games: [
         {
           vs: "CCCP",
@@ -1180,9 +1180,20 @@ export const poikasData: PoikasDataRaw = {
         },
         {
           vs: "CCCP",
-          result: "pending",
+          us: 2,
+          them: 4,
+          result: "lost",
           date: new Date("2026-11-08"),
-          notable: "6:30 PM",
+          notable: "Called up Dan Warren, Oren Matson, and Shane Matson to fill in.",
+          goalie: "Jamon Holmgren",
+          stats: {
+            "Scott Daniels": { goals: 1, assists: 1 },
+            "Treven Erickson": { goals: 1 },
+            "Caleb Aring": { assists: 1 },
+            "Jared Matson": { assists: 1, penalties: 1 },
+          },
+          shotsUs: 20,
+          shotsThem: 34,
         },
         {
           vs: "Local Legends",
