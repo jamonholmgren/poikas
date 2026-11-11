@@ -198,6 +198,22 @@ describe("LeaguePage", () => {
 })
 
 describe("HomePage", () => {
+  test("keeps the double-champions photo and shows current season news instead of the old championship preview", async () => {
+    const page = await html(HomePage(data))
+
+    expect(page).toContain("Suomi Poikas Hockey</h1>")
+    expect(page).toContain("poikas-rec-and-cc-2025-fall-double-championship.jpg")
+    expect(page).toContain("Rec and CC teams celebrating their Fall 2025 championships")
+    expect(page).toContain("Fall 2026 Rec team</a> is 10-0-1")
+    expect(page).toContain("Fall 2026 CC team</a> is 4-5-2")
+    expect(page).toContain("November 7 — won 8-0 vs Thundersticks")
+    expect(page).toContain("November 8 — lost 2-4 vs CCCP")
+    expect(page).not.toContain("Championship Bound")
+    expect(page).not.toContain("Spring Rec is headed")
+    expect(page).not.toContain("Updated June 3, 2026")
+    expect(page).not.toContain("Rec: #1 Seed")
+  })
+
   test("shows the November 8 CC loss as the latest result", async () => {
     const page = await html(HomePage(data))
 

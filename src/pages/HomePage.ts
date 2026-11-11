@@ -42,16 +42,16 @@ export function HomePage(data: PoikasData) {
           <div class="page-hero-image">
             <img
               src="${img("poikas-rec-and-cc-2025-fall-double-championship.jpg")}?c=${serverStart}"
-              alt="Suomi Poika~s 2025 Spring CC league championship team photo"
+              alt="Suomi Poikas Rec and CC teams celebrating their Fall 2025 championships"
               onerror="this.onerror=null;this.src='${img("000-placeholder.jpg")}';"
             />
           </div>
           <div class="page-hero-info">
-            <h1 class="page-hero-name">Rec Championship Bound!</h1>
+            <h1 class="page-hero-name">Suomi Poikas Hockey</h1>
             <div class="page-hero-details">
               <div class="stat-item">
-                <span class="stat-number">🥇</span>
-                <span class="stat-label">Rec: #1 Seed</span>
+                <span class="stat-number">🏒</span>
+                <span class="stat-label">${rec.seasonName} ${rec.year}</span>
               </div>
               <div class="stat-item">
                 <span class="stat-number">🏆</span>
@@ -64,7 +64,8 @@ export function HomePage(data: PoikasData) {
             </div>
             <div class="page-hero-description">
               <p>Welcome to the official website of the Suomi Poikas, your favorite Finnish-American hockey team! Hyvä Suomi! 🇫🇮</p>
-              <p><strong>Spring Rec is headed to the championship again!</strong> We clinched the #1 seed and won the playoff semifinal 4-0 over Liquid Gold. Championship Saturday June 6 at 7:30 PM — come out to Mountain View Ice Arena!</p>
+              <p><strong>Follow our Rec and CC teams at Mountain View Ice Arena.</strong> Our <a href="${rec.url}">${rec.seasonName} ${rec.year} Rec team</a> is ${rec.wins || 0}-${rec.losses || 0}-${rec.ties || 0}, and our <a href="${cc.url}">${cc.seasonName} ${cc.year} CC team</a> is ${cc.wins || 0}-${cc.losses || 0}-${cc.ties || 0}. Catch up on the latest results and upcoming games below.</p>
+              <p>Two teams, two trophies: celebrating our Fall 2025 double championship in the photo above.</p>
             </div>
           </div>
         </div>
@@ -185,11 +186,10 @@ export function HomePage(data: PoikasData) {
 
       <article>
         <h2>What's New?</h2>
-        <p><em>Updated June 3, 2026</em></p>
         <ul>
-          <li>Spring Rec clinched the #1 seed and won the playoff semifinal 4-0 over Liquid Gold</li>
-          <li>Daniel Kulla with back-to-back hat tricks in May</li>
-          <li>Fall 2025: both Rec and CC teams won the championship</li>
+          ${lastRecGame ? `<li><a href="${rec.url}">Rec latest:</a> ${lastRecGame.date?.toLocaleDateString("en-US", { month: "long", day: "numeric", timeZone: "UTC" }) || "Latest game"} — ${lastRecGame.result} ${lastRecGame.us}-${lastRecGame.them} vs ${lastRecGame.vs}.</li>` : ""}
+          ${lastCCGame ? `<li><a href="${cc.url}">CC latest:</a> ${lastCCGame.date?.toLocaleDateString("en-US", { month: "long", day: "numeric", timeZone: "UTC" }) || "Latest game"} — ${lastCCGame.result} ${lastCCGame.us}-${lastCCGame.them} vs ${lastCCGame.vs}.</li>` : ""}
+          <li>Fall 2025: both Rec and CC teams won the championship. We're keeping the double-champions photo front and center!</li>
         </ul>
 
         <h2>Our History</h2>
