@@ -10,12 +10,15 @@ import { parseSchedule } from "./schedule"
 const origin = "http://localhost:5151"
 const data = getData()
 const hash = Bun.password.hashSync("test-admin-long-password")
+const code = "test-shared-team-code"
+const codeHash = Bun.password.hashSync(code)
 let dir: string, app: TeamApp
 beforeEach(() => {
   dir = mkdtempSync(join(tmpdir(), "poikas-team-test-"))
   app = new TeamApp(data, { dir, enabled: true, origin })
   app.store.change("auth", blankAuth, (a) => {
     a.adminHash = hash
+    a.teamCodeHash = codeHash
   })
 })
 afterEach(() => rmSync(dir, { recursive: true, force: true }))
@@ -34,10 +37,7 @@ async function admin() {
   return r.headers.get("set-cookie")!.split(";")[0]
 }
 async function player(id = "jamon-holmgren") {
-  app.store.change("auth", blankAuth, (a) => {
-    a.pins[id] = Bun.password.hashSync("123")
-  })
-  const r = await req("login", { player: id, pin: "123" })
+  const r = await req("login", { player: id, code })
   expect(r.status).toBe(200)
   return r.headers.get("set-cookie")!.split(";")[0]
 }
@@ -58,32 +58,6 @@ test("unauthenticated routes never expose attendance notes, lines, credentials o
   expect(await shell.text()).not.toContain(hash)
   expect(shell.headers.get("content-security-policy")).toContain("frame-ancestors 'none'")
 })
-test("PIN setup is admin-issued, one-use, revokes old sessions, and only stores hashes", async () => {
-  const a = await admin(),
-    old = await player()
-  const r = await req("reset-pin", { player: "jamon-holmgren" }, a),
-    { link } = await r.json()
-  const t = link.split("#")[1]
-  expect(readFileSync(join(dir, "auth.json"), "utf8")).not.toContain(t)
-  expect((await req("setup", { token: t, pin: "456" })).status).toBe(200)
-  expect((await req("setup", { token: t, pin: "456" })).status).toBe(400)
-  expect((await (await req("state", undefined, old)).json()).me).toBeNull()
-  expect(await Bun.password.verify("456", app.store.auth().pins["jamon-holmgren"])).toBe(true)
-})
-test("expired setup links cannot reset a PIN", async () => {
-  app.store.change("auth", blankAuth, (a) => {
-    a.resets[digest("a".repeat(64))] = { player: "jamon-holmgren", expires: 0 }
-  })
-  expect((await req("setup", { token: "a".repeat(64), pin: "456" })).status).toBe(400)
-})
-test("PIN attempts are limited per player and remain limited after restart", async () => {
-  app.store.change("auth", blankAuth, (a) => {
-    a.pins["jamon-holmgren"] = Bun.password.hashSync("123")
-  })
-  for (let i = 0; i < 6; i++) expect((await req("login", { player: "jamon-holmgren", pin: "999" })).status).toBe(401)
-  app = new TeamApp(data, { dir, enabled: true, origin })
-  expect((await req("login", { player: "jamon-holmgren", pin: "999" })).status).toBe(429)
-})
 test("admin login is also rate limited", async () => {
   for (let i = 0; i < 8; i++) expect((await req("admin-login", { password: "wrong" })).status).toBe(401)
   expect((await req("admin-login", { password: "test-admin-long-password" })).status).toBe(429)
@@ -94,7 +68,7 @@ test("cross-origin writes and player impersonation are prevented", async () => {
   await req("attendance", { game: future().key, player: "peter-tapio", status: "in", note: "my note" }, p)
   expect(app.store.state().games[future().key].attendance["jamon-holmgren"].status).toBe("in")
   expect(app.store.state().games[future().key].attendance["peter-tapio"]).toBeUndefined()
-  expect((await req("reset-pin", { player: "peter-tapio" }, p)).status).toBe(403)
+  expect((await req("team-code", { code: "other-team-code" }, p)).status).toBe(403)
 })
 test("In/Out and private notes survive a new server instance and atomic saves", async () => {
   const p = await player()
@@ -198,15 +172,6 @@ test("daily JSON backup remains valid and private on disk", () => {
   expect(validBackup(b)).toBe(true)
 })
 
-test("first login sets a hashed PIN, subsequent logins must match", async () => {
-  const first = await req("login", { player: "jamon-holmgren", pin: "007" })
-  expect(first.status).toBe(200)
-  expect(app.store.auth().pins["jamon-holmgren"]).not.toBe("007")
-  expect(await Bun.password.verify("007", app.store.auth().pins["jamon-holmgren"])).toBe(true)
-  expect((await req("login", { player: "jamon-holmgren", pin: "008" })).status).toBe(401)
-  expect((await req("login", { player: "jamon-holmgren", pin: "007" })).status).toBe(200)
-})
-
 test("player and admin sessions have no expiry and renew their browser cookies", async () => {
   for (const cookie of [await player(), await admin()]) {
     const response = await req("state", undefined, cookie)
@@ -224,7 +189,39 @@ test("player and admin sessions have no expiry and renew their browser cookies",
   }
 })
 
-test("two first-use requests cannot silently replace each other's PIN", async () => {
-  const responses = await Promise.all([req("login", { player: "jamon-holmgren", pin: "111" }), req("login", { player: "jamon-holmgren", pin: "222" })])
-  expect(responses.map((r) => r.status).sort()).toEqual([200, 401])
+test("one hashed team code signs in any selected roster player without individual enrollment", async () => {
+  for (const id of ["jamon-holmgren", "mike-kulla", "peter-tapio"]) {
+    const r = await req("login", { player: id, code })
+    expect(r.status).toBe(200)
+    const cookie = r.headers.get("set-cookie")!.split(";")[0]
+    const state = await (await req("state", undefined, cookie)).json()
+    expect(state.me.player).toBe(id)
+  }
+  expect(app.store.auth().pins).toEqual({})
+  expect(readFileSync(join(dir, "auth.json"), "utf8")).not.toContain(code)
+  expect(await Bun.password.verify(code, app.store.auth().teamCodeHash!)).toBe(true)
+})
+
+test("wrong shared codes are rejected and attempts remain limited after restart", async () => {
+  for (let i = 0; i < 6; i++) expect((await req("login", { player: "jamon-holmgren", code: "wrong-code" })).status).toBe(401)
+  app = new TeamApp(data, { dir, enabled: true, origin })
+  expect((await req("login", { player: "jamon-holmgren", code })).status).toBe(429)
+})
+
+test("admin can copy one prefilling team link; changing the code revokes old player sessions", async () => {
+  const a = await admin(),
+    p = await player()
+  const r = await req("team-link", { code }, a)
+  expect((await r.json()).link).toBe(origin + "/team#code=" + encodeURIComponent(code))
+  expect((await req("team-link", { code: "wrong-code" }, a)).status).toBe(400)
+  expect((await req("team-code", { code: "new-shared-code" }, a)).status).toBe(200)
+  expect((await (await req("state", undefined, p)).json()).me).toBeNull()
+  expect((await (await req("state", undefined, a)).json()).me.admin).toBe(true)
+  expect((await req("login", { player: "jamon-holmgren", code })).status).toBe(401)
+  expect((await req("login", { player: "jamon-holmgren", code: "new-shared-code" })).status).toBe(200)
+})
+
+test("individual PINs and setup links no longer log anyone in", async () => {
+  expect((await req("login", { player: "jamon-holmgren", pin: "123" })).status).toBe(400)
+  expect((await req("setup", { token: "a".repeat(64), pin: "123" })).status).not.toBe(200)
 })

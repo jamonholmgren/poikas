@@ -41,9 +41,17 @@ export class TeamApp {
     this.sync = new ScheduleSync(this.store, data)
     const supplied = process.env.POIKAS_ADMIN_PASSWORD
     if (supplied && !this.store.auth().adminHash) {
-      if (supplied.length < 8) throw new Error("Use an admin password of at least 8 characters.")
+      if (supplied.length < 16) throw new Error("Use an admin password of at least 16 characters.")
       this.store.change("auth", blankAuth, (a) => {
         a.adminHash = Bun.password.hashSync(supplied)
+      })
+    }
+    const code = process.env.POIKAS_TEAM_CODE
+    if (code && !this.store.auth().teamCodeHash) {
+      if (code.length < 4 || code.length > 32) throw new Error("Team code must contain 4 to 32 characters.")
+      const hash = Bun.password.hashSync(code)
+      this.store.change("auth", blankAuth, (a) => {
+        a.teamCodeHash = hash
       })
     }
   }
@@ -90,7 +98,7 @@ export class TeamApp {
         if (x.count > max) limited = true
       }
     })
-    if (limited) fail(429, "Too many attempts. Try again in 15 minutes, or ask the admin for a PIN link.")
+    if (limited) fail(429, "Too many attempts. Try again in 15 minutes, or check the team code with the admin.")
   }
   async handle(req: Request, ip = "unknown"): Promise<Response> {
     const url = new URL(req.url),
@@ -116,7 +124,14 @@ export class TeamApp {
         const roster = players(this.data, state).filter(
           (p) => this.data.seasons.some((s) => s.current && s.roster.includes(p.name)) || Object.hasOwn(state.extraPlayers, p.id) || actor?.player === p.id,
         )
-        if (!actor) return json({ me: null, enabled: this.enabled, players: roster.map((p) => ({ id: p.id, name: p.name })), adminReady: !!this.store.auth().adminHash })
+        if (!actor)
+          return json({
+            me: null,
+            enabled: this.enabled,
+            players: roster.map((p) => ({ id: p.id, name: p.name })),
+            adminReady: !!this.store.auth().adminHash,
+            teamReady: !!this.store.auth().teamCodeHash,
+          })
         const seasons = this.data.seasons
           .filter((s) => s.games?.length)
           .map((s) => ({ key: seasonKey(s), name: `${s.year} ${s.seasonName} ${s.leagueName}`, league: s.leagueName, current: s.current }))
@@ -153,7 +168,7 @@ export class TeamApp {
           today: pacificDay(),
           games,
           sync: state.sync,
-          players: actor.admin ? players(this.data, state).map((p) => ({ ...p, hasPin: !!this.store.auth().pins[p.id] })) : undefined,
+          players: actor.admin ? players(this.data, state) : undefined,
           game: game
             ? {
                 ...games.find((f) => f.key === game.key),
@@ -202,16 +217,11 @@ export class TeamApp {
       if (!b || typeof b !== "object" || Array.isArray(b)) fail(400, "Invalid request.")
       if (path === "/team/api/login") {
         const player = players(this.data, state).find((p) => p.id === b.player)
-        if (!player || !/^\d{3}$/.test(b.pin)) fail(400, "Choose your player and enter three digits.")
+        if (!player || typeof b.code !== "string" || b.code.length < 4 || b.code.length > 32) fail(400, "Choose your player and enter the team code.")
         this.attempt(ip, player.id)
-        let hash = this.store.auth().pins[player.id]
-        if (!hash) {
-          const proposed = await Bun.password.hash(String(b.pin))
-          this.store.change("auth", blankAuth, (a) => {
-            hash = a.pins[player.id] ||= proposed
-          })
-        }
-        if (!hash || !(await Bun.password.verify(String(b.pin), hash))) fail(401, "PIN not recognized. Ask the admin for a PIN setup/reset link.")
+        const hash = this.store.auth().teamCodeHash
+        if (!hash) fail(503, "The team code has not been configured yet.")
+        if (!(await Bun.password.verify(b.code, hash))) fail(401, "Team code not recognized. Check the code with your team.")
         return json({ ok: true }, 200, { "set-cookie": this.login(player.id) })
       }
       if (path === "/team/api/admin-login") {
@@ -219,22 +229,6 @@ export class TeamApp {
         const hash = this.store.auth().adminHash
         if (!hash || typeof b.password !== "string" || b.password.length > 200 || !(await Bun.password.verify(b.password, hash))) fail(401, "Password not recognized.")
         return json({ ok: true }, 200, { "set-cookie": this.login(undefined, true) })
-      }
-      if (path === "/team/api/setup") {
-        if (typeof b.token !== "string" || b.token.length !== 64 || !/^\d{3}$/.test(b.pin)) fail(400, "Use your setup link and a three-digit PIN.")
-        this.attempt(ip, "setup-" + digest(b.token))
-        let player = ""
-        const hash = Bun.password.hashSync(String(b.pin))
-        this.store.change("auth", blankAuth, (a) => {
-          const reset = a.resets[digest(b.token)]
-          if (!reset || reset.expires < Date.now()) fail(400, "This link has expired or was already used. Ask the admin for a fresh link.")
-          player = reset.player
-          a.pins[player] = hash
-          delete a.resets[digest(b.token)]
-          for (const [k, s] of Object.entries(a.sessions)) if (s.player === player) delete a.sessions[k]
-          delete a.attempts[digest("user:" + player)]
-        })
-        return json({ ok: true }, 200, { "set-cookie": this.login(player) })
       }
       if (!actor) fail(401, "Please sign in again.")
       if (path === "/team/api/logout") {
@@ -260,17 +254,25 @@ export class TeamApp {
         return json({ ok: true })
       }
       if (!actor!.admin) fail(403, "Admin login required.")
-      if (path === "/team/api/reset-pin") {
-        if (!players(this.data, state).some((p) => p.id === b.player)) fail(400, "Player not found.")
-        const t = token()
+      if (path === "/team/api/team-link") {
+        const hash = this.store.auth().teamCodeHash
+        if (!hash || typeof b.code !== "string" || b.code.length > 32 || !(await Bun.password.verify(b.code, hash))) fail(400, "Enter the current team code.")
+        // URL fragments stay out of server requests and access logs.
+        return json({ link: this.origin + "/team#code=" + encodeURIComponent(b.code) })
+      }
+      if (path === "/team/api/team-code") {
+        if (typeof b.code !== "string" || b.code.length < 4 || b.code.length > 32) fail(400, "Use a team code of 4 to 32 characters.")
+        const hash = Bun.password.hashSync(b.code)
         this.store.change("auth", blankAuth, (a) => {
-          for (const [k, r] of Object.entries(a.resets)) if (r.player === b.player || r.expires < Date.now()) delete a.resets[k]
-          a.resets[digest(t)] = { player: b.player, expires: Date.now() + 86400000 }
+          a.teamCodeHash = hash
+          a.pins = {}
+          a.resets = {}
+          for (const [key, session] of Object.entries(a.sessions)) if (!session.admin) delete a.sessions[key]
         })
-        return json({ link: this.origin + "/team/setup#" + t })
+        return json({ ok: true })
       }
       if (path === "/team/api/admin-password") {
-        if (typeof b.password !== "string" || b.password.length < 8 || b.password.length > 200) fail(400, "Use at least 8 characters.")
+        if (typeof b.password !== "string" || b.password.length < 16 || b.password.length > 200) fail(400, "Use at least 16 characters.")
         const hash = Bun.password.hashSync(b.password)
         this.store.change("auth", blankAuth, (a) => {
           a.adminHash = hash

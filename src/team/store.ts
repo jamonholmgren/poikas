@@ -24,6 +24,7 @@ export type Session = { player?: string; admin?: boolean; expires: number | null
 export type Auth = {
   version: 1
   adminHash?: string
+  teamCodeHash?: string
   pins: Record<string, string>
   sessions: Record<string, Session>
   resets: Record<string, { player: string; expires: number }>
@@ -129,6 +130,7 @@ export function validBackup(b: any): boolean {
   if (![b.state.games, b.state.extraPlayers, b.auth.pins, b.auth.sessions, b.auth.resets, b.auth.attempts].every(record) || !Array.isArray(b.state.schedule) || !b.state.sync)
     return false
   if (b.auth.adminHash && typeof b.auth.adminHash !== "string") return false
+  if (b.auth.teamCodeHash && (typeof b.auth.teamCodeHash !== "string" || !b.auth.teamCodeHash.startsWith("$"))) return false
   for (const g of Object.values(b.state.games) as any[]) {
     if (!record(g.attendance) || !record(g.lines) || !Array.isArray(g.guests) || !Number.isInteger(g.revision)) return false
     if (!Object.values(g.attendance).every((a: any) => ["in", "out"].includes(a.status) && typeof a.note === "string" && a.note.length <= 300 && typeof a.updatedAt === "string"))

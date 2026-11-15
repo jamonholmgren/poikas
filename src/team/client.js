@@ -5,8 +5,8 @@ const esc = (x) => String(x ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 let state,
   selectedPlayer = "",
   busy = false
-let setupToken = location.pathname === "/team/setup" ? location.hash.slice(1) : ""
-if (setupToken) history.replaceState(null, "", "/team/setup")
+let sharedCode = new URLSearchParams(location.hash.slice(1)).get("code") || ""
+if (location.hash) history.replaceState(null, "", location.pathname + location.search)
 let period = "upcoming",
   gameTab = "attendance"
 const flash = (message, error = false) => {
@@ -29,7 +29,7 @@ async function load() {
     render()
     app.setAttribute("aria-busy", "false")
   } catch (e) {
-    app.innerHTML = `<section class="panel"><h1>Couldn’t load the team room</h1><p>${esc(e.message)}</p><button id="retry">Try again</button></section>`
+    app.innerHTML = `<section class="panel"><h1>Couldn’t load the locker room</h1><p>${esc(e.message)}</p><button id="retry">Try again</button></section>`
     document.querySelector("#retry").onclick = load
   }
 }
@@ -52,16 +52,11 @@ const gameLink = (key) => "/team?game=" + encodeURIComponent(key)
 const displayTime = (game) => (game.time ? game.time + " Pacific" : "Time not listed — check MVIA")
 const rowName = (id) => state.game?.attendance.find((p) => p.id === id)?.name || id
 function render() {
-  if (setupToken) {
-    app.innerHTML = `<section class="login panel"><p class="eyebrow">WELCOME TO THE TEAM</p><h1>Choose your PIN.</h1><p>Three digits. Your phone will remember you.</p><form id="setup"><label>New PIN<input name="pin" inputmode="numeric" pattern="[0-9]{3}" maxlength="3" minlength="3" type="password" autocomplete="new-password" required></label><label>Repeat PIN<input name="repeat" inputmode="numeric" pattern="[0-9]{3}" maxlength="3" type="password" autocomplete="new-password" required></label><button>Save PIN & sign in</button></form></section>`
-    bind()
-    return
-  }
   if (!state.me) {
     const admin = location.pathname === "/team/admin"
-    app.innerHTML = `<section class="login panel"><p class="eyebrow">SUOMI POIKAS · REC + CC</p><h1>${admin ? "Admin sign in." : "See you at the rink."}</h1><p>${admin ? "Manage attendance, lines and player PINs." : "Check in, see the roster, and get ready for game night."}</p>${state.enabled ? "" : '<p class="alert">Team setup is in progress. Check back soon.</p>'}
-    <form id="${admin ? "admin-login" : "login"}">${admin ? '<label>Admin password<input name="password" type="password" autocomplete="current-password" required></label>' : `<label>Your player<select name="player" required><option value="">Choose your name</option>${state.players.map((p) => `<option value="${esc(p.id)}">${esc(p.name)}</option>`).join("")}</select></label><label>Three-digit PIN<input name="pin" type="password" inputmode="numeric" pattern="[0-9]{3}" maxlength="3" minlength="3" autocomplete="current-password" required></label>`}<button ${!state.enabled ? "disabled" : ""}>Sign in</button></form>
-    <p class="muted">${admin ? '<a href="/team" data-nav>Player sign in</a>' : "First time? Choose three digits to set your PIN. After that, use the same PIN. Forgot it? Ask the admin for a reset link."}</p>${admin ? "" : '<a class="quiet" href="/team/admin" data-nav>Admin sign in</a>'}</section>`
+    app.innerHTML = `<section class="login panel"><p class="eyebrow">SUOMI POIKAS · REC + CC</p><h1>${admin ? "Admin sign in." : "See you at the rink."}</h1><p>${admin ? "Manage attendance, lines and the team code." : "Check in, see the roster, and get ready for game night."}</p>${state.enabled ? "" : '<p class="alert">The locker room is not open yet. Server setup is still needed.</p>'}
+    <form id="${admin ? "admin-login" : "login"}">${admin ? '<label>Admin password<input name="password" type="password" autocomplete="current-password" required></label>' : `<label>Your player<select name="player" required><option value="">Choose your name</option>${state.players.map((p) => `<option value="${esc(p.id)}">${esc(p.name)}</option>`).join("")}</select></label><label>Team code<input name="code" type="password" inputmode="numeric" minlength="4" maxlength="32" autocomplete="current-password" value="${esc(sharedCode)}" required></label>`}<button ${!state.enabled ? "disabled" : ""}>Sign in</button></form>
+    <p class="muted">${admin ? '<a href="/team" data-nav>Player sign in</a>' : "Choose your name and enter the shared team code. Your phone will remember you."}</p>${admin ? "" : '<a class="quiet" href="/team/admin" data-nav>Admin sign in</a>'}</section>`
     bind()
     return
   }
@@ -139,7 +134,7 @@ function lineSlot(slot, label) {
   return `<button class="line-slot ${p ? "filled" : ""} ${p && p.status !== "in" ? "unavailable" : ""}" data-slot="${slot}" ${!state.me.admin ? "disabled" : ""}><small>${label}</small><span>${p ? esc(p.name) : "—"}</span>${p && p.status !== "in" ? "<small>Not checked in</small>" : ""}</button>`
 }
 function adminPage() {
-  return `<a class="back" href="/team" data-nav>← Games & lines</a><section class="intro"><p class="eyebrow">KEEP IT SIMPLE</p><h1>Team admin.</h1></section><section class="panel"><h2>Player PINs</h2><p>Copy a private setup/reset link and text it to the player. Links expire after one day and work once.</p><label>Player<select id="reset-player">${state.players.map((p) => `<option value="${esc(p.id)}">${esc(p.name)}${p.hasPin ? "" : " · needs PIN"}</option>`).join("")}</select></label><button id="reset-pin">Copy PIN setup/reset link</button><div id="copy-fallback"></div></section><section class="panel"><h2>Add a roster player</h2><p>For a one-game fill-in, open that game and use “Add a fill-in.”</p><form id="roster"><label>Team<select name="league"><option>Rec</option><option>CC</option></select></label><label>Player’s full name<input name="name" list="admin-player-names" maxlength="80" required></label><button class="secondary">Add to roster</button></form><datalist id="admin-player-names">${state.players.map((p) => `<option value="${esc(p.name)}"></option>`).join("")}</datalist></section><section class="panel"><h2>Schedule</h2><p>Refreshes every day at 10 a.m. Pacific. Existing check-ins and lines stay with a rescheduled game.</p><button class="secondary" id="sync">Refresh from MVIA now</button>${syncInfo()}</section><section class="panel"><h2>Private backups</h2><p>Download one file with attendance, notes, lines, and login settings. Keep it private. The server keeps 30 daily backups.</p><a class="button" href="/team/api/backup" download>Download backup</a><form id="restore"><label>Restore a downloaded backup<input type="file" name="backup" accept="application/json,.json" required></label><p class="muted">Restoring replaces team-room data and logs everyone out. Game stats are separate.</p><button class="secondary">Restore backup</button></form></section><section class="panel"><h2>Admin password</h2><form id="password"><label>New password · at least 8 characters<input name="password" type="password" minlength="8" maxlength="200" autocomplete="new-password" required></label><button class="secondary">Change password</button></form></section>`
+  return `<a class="back" href="/team" data-nav>← Games & lines</a><section class="intro"><p class="eyebrow">KEEP IT SIMPLE</p><h1>Team admin.</h1></section><section class="panel"><h2>Team sign-in link</h2><p>One link for both teams. It fills in the team code; players just choose their name and sign in.</p><form id="team-link"><label>Current team code<input name="code" type="password" minlength="4" maxlength="32" autocomplete="off" required></label><button>Copy team sign-in link</button></form><div id="copy-fallback"></div></section><section class="panel"><h2>Change team code</h2><p>Changing the code signs players out. Share a new sign-in link afterward.</p><form id="team-code"><label>New shared code<input name="code" type="password" minlength="4" maxlength="32" autocomplete="new-password" required></label><button class="secondary">Save team code</button></form></section><section class="panel"><h2>Add a roster player</h2><p>For a one-game fill-in, open that game and use “Add a fill-in.”</p><form id="roster"><label>Team<select name="league"><option>Rec</option><option>CC</option></select></label><label>Player’s full name<input name="name" list="admin-player-names" maxlength="80" required></label><button class="secondary">Add to roster</button></form><datalist id="admin-player-names">${state.players.map((p) => `<option value="${esc(p.name)}"></option>`).join("")}</datalist></section><section class="panel"><h2>Schedule</h2><p>Refreshes every day at 10 a.m. Pacific. Existing check-ins and lines stay with a rescheduled game.</p><button class="secondary" id="sync">Refresh from MVIA now</button>${syncInfo()}</section><section class="panel"><h2>Private backups</h2><p>Download one file with attendance, notes, lines, and login settings. Keep it private. The server keeps 30 daily backups.</p><a class="button" href="/team/api/backup" download>Download backup</a><form id="restore"><label>Restore a downloaded backup<input type="file" name="backup" accept="application/json,.json" required></label><p class="muted">Restoring replaces team-room data and logs everyone out. Game stats are separate.</p><button class="secondary">Restore backup</button></form></section><section class="panel"><h2>Admin password</h2><form id="password"><label>New password · at least 16 characters<input name="password" type="password" minlength="16" maxlength="200" autocomplete="new-password" required></label><button class="secondary">Change password</button></form></section>`
 }
 async function copy(text) {
   try {
@@ -199,17 +194,12 @@ function bind() {
   }
   form("login", async (b) => {
     await post("login", b)
+    sharedCode = ""
     await load()
   })
   form("admin-login", async (b) => {
     await post("admin-login", b)
     await load()
-  })
-  form("setup", async (b) => {
-    if (b.pin !== b.repeat) throw new Error("The PINs do not match.")
-    await post("setup", { pin: b.pin, token: setupToken })
-    setupToken = ""
-    go("/team")
   })
   form("attendance", async (b, e) => {
     await post("attendance", { game: state.game.key, note: b.note, status: e.submitter.value })
@@ -242,9 +232,14 @@ function bind() {
     const b = document.getElementById(id)
     if (b) b.onclick = () => act(fn)
   }
-  on("reset-pin", async () => {
-    const r = await post("reset-pin", { player: document.querySelector("#reset-player").value })
+  form("team-link", async (b) => {
+    const r = await post("team-link", b)
     await copy(r.link)
+  })
+  form("team-code", async (b) => {
+    await post("team-code", b)
+    flash("Team code saved. Share a new sign-in link.")
+    await load()
   })
   on("sync", async () => {
     flash("Refreshing MVIA…")
