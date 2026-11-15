@@ -936,9 +936,21 @@ export const poikasData: PoikasDataRaw = {
         },
         {
           vs: "Liquid Gold",
-          result: "pending",
+          us: 2,
+          them: 0,
+          result: "won",
           date: new Date("2026-11-14"),
-          notable: "7:30 PM",
+          notable: "Good game with a slightly shorter bench.",
+          goalie: "Jamon Holmgren",
+          sisu: "Matix Sarkela",
+          stats: {
+            "Myron Kinnunen": { goals: 1 },
+            "Daniel Kulla": { goals: 1 },
+            "Zacharias Snellman": { assists: 1, penalties: 1 },
+            "Peter Tapio": { assists: 2, penalties: 1 },
+          },
+          shotsUs: 33,
+          shotsThem: 17,
         },
         {
           vs: "Caps N Taps",
