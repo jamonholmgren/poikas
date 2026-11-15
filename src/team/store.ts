@@ -20,7 +20,7 @@ export type State = {
   schedule: Fixture[]
   sync: { lastAttempt?: string; lastSuccess?: string; error?: string; day?: string }
 }
-export type Session = { player?: string; admin?: boolean; expires: number }
+export type Session = { player?: string; admin?: boolean; expires: number | null }
 export type Auth = {
   version: 1
   adminHash?: string
@@ -138,7 +138,7 @@ export function validBackup(b: any): boolean {
   for (const p of Object.values(b.state.extraPlayers) as any[])
     if (typeof p.name !== "string" || p.name.length > 80 || !Array.isArray(p.teams) || !p.teams.every((t: string) => /^\d{4}-(spring|summer|fall)-(rec|cc)$/.test(t))) return false
   if (!Object.values(b.auth.pins).every((v) => typeof v === "string" && v.startsWith("$"))) return false
-  if (!Object.values(b.auth.sessions).every((v: any) => Number.isFinite(v.expires) && (v.admin === true || typeof v.player === "string"))) return false
+  if (!Object.values(b.auth.sessions).every((v: any) => (v.expires === null || Number.isFinite(v.expires)) && (v.admin === true || typeof v.player === "string"))) return false
   if (!Object.values(b.auth.resets).every((v: any) => Number.isFinite(v.expires) && typeof v.player === "string")) return false
   if (!Object.values(b.auth.attempts).every((v: any) => Number.isFinite(v.until) && Number.isInteger(v.count))) return false
   return b.state.schedule.every(

@@ -41,7 +41,7 @@ export class TeamApp {
     this.sync = new ScheduleSync(this.store, data)
     const supplied = process.env.POIKAS_ADMIN_PASSWORD
     if (supplied && !this.store.auth().adminHash) {
-      if (supplied.length < 16) throw new Error("Use an admin password of at least 16 characters.")
+      if (supplied.length < 8) throw new Error("Use an admin password of at least 8 characters.")
       this.store.change("auth", blankAuth, (a) => {
         a.adminHash = Bun.password.hashSync(supplied)
       })
@@ -62,16 +62,20 @@ export class TeamApp {
       .find((x) => x.startsWith(SESSION + "="))
       ?.slice(SESSION.length + 1)
     const s = cookie && this.store.auth().sessions[digest(cookie)]
-    return s && s.expires > Date.now() ? s : undefined
+    return s && (s.expires === null || s.expires > Date.now()) ? s : undefined
   }
   login(player?: string, admin = false) {
     const value = token()
     this.store.change("auth", blankAuth, (a) => {
-      for (const [key, s] of Object.entries(a.sessions)) if (s.expires <= Date.now()) delete a.sessions[key]
-      a.sessions[digest(value)] = { player, admin, expires: Date.now() + (admin ? 12 * 3600000 : 90 * 86400000) }
+      for (const [key, s] of Object.entries(a.sessions)) if (s.expires !== null && s.expires <= Date.now()) delete a.sessions[key]
+      a.sessions[digest(value)] = { player, admin, expires: null }
     })
+    return this.cookie(value)
+  }
+  cookie(value: string) {
     const secure = this.origin.startsWith("https:") ? "; Secure" : ""
-    return `${SESSION}=${value}; Path=/team; HttpOnly; SameSite=Lax; Max-Age=${admin ? 43200 : 7776000}${secure}`
+    // Browsers cap cookie lifetime. Renew it on each visit; server sessions never expire.
+    return `${SESSION}=${value}; Path=/team; HttpOnly; SameSite=Lax; Max-Age=34560000${secure}`
   }
   attempt(ip: string, identity: string) {
     let limited = false
@@ -141,7 +145,7 @@ export class TeamApp {
               unknown: rows.filter((p) => p.status === "unknown").length,
             }
           })
-        return json({
+        const response = json({
           me: actor.admin ? { admin: true, name: "Admin" } : { player: actor.player, name: players(this.data, state).find((p) => p.id === actor.player)?.name },
           enabled: this.enabled,
           seasons,
@@ -159,6 +163,9 @@ export class TeamApp {
               }
             : undefined,
         })
+        const value = req.headers.get("cookie")?.match(/(?:^|;\s*)poikas_team=([^;]+)/)?.[1]
+        if (value) response.headers.set("set-cookie", this.cookie(value))
+        return response
       }
       if (path === "/team/api/backup" && req.method === "GET") {
         if (!actor?.admin) fail(403, "Admin login required.")
@@ -197,7 +204,13 @@ export class TeamApp {
         const player = players(this.data, state).find((p) => p.id === b.player)
         if (!player || !/^\d{3}$/.test(b.pin)) fail(400, "Choose your player and enter three digits.")
         this.attempt(ip, player.id)
-        const hash = this.store.auth().pins[player.id]
+        let hash = this.store.auth().pins[player.id]
+        if (!hash) {
+          const proposed = await Bun.password.hash(String(b.pin))
+          this.store.change("auth", blankAuth, (a) => {
+            hash = a.pins[player.id] ||= proposed
+          })
+        }
         if (!hash || !(await Bun.password.verify(String(b.pin), hash))) fail(401, "PIN not recognized. Ask the admin for a PIN setup/reset link.")
         return json({ ok: true }, 200, { "set-cookie": this.login(player.id) })
       }
@@ -257,7 +270,7 @@ export class TeamApp {
         return json({ link: this.origin + "/team/setup#" + t })
       }
       if (path === "/team/api/admin-password") {
-        if (typeof b.password !== "string" || b.password.length < 16 || b.password.length > 200) fail(400, "Use at least 16 characters.")
+        if (typeof b.password !== "string" || b.password.length < 8 || b.password.length > 200) fail(400, "Use at least 8 characters.")
         const hash = Bun.password.hashSync(b.password)
         this.store.change("auth", blankAuth, (a) => {
           a.adminHash = hash

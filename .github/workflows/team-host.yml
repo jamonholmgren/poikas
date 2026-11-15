@@ -1,8 +1,22 @@
 name: Poikas team-room host setup
 on:
   workflow_dispatch:
+    inputs:
+      action:
+        type: choice
+        description: Bounded Poikas service operation
+        options: [inspect, configure, verify, enable]
+        default: inspect
+      expected_marker:
+        type: string
+        description: Persistence fingerprint from configure (required for verify/enable)
+permissions:
+  contents: read
+concurrency:
+  group: poikas-team-host
+  cancel-in-progress: false
 jobs:
-  inspect:
+  host:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -13,7 +27,10 @@ jobs:
         env:
           REMOTE_HOST: ${{ secrets.CUSTOM_REMOTE_SERVER }}
         run: ssh-keyscan -p 22 "$REMOTE_HOST" >> ~/.ssh/known_hosts
-      - name: Inspect only the Poikas deployment and service
+      - name: Run the bounded Poikas operation
         env:
           CUSTOM_REMOTE_URL: ${{ secrets.CUSTOM_REMOTE_URL }}
-        run: python3 scripts/team-host.py inspect
+          POIKAS_TEAM_ADMIN_PASSWORD: ${{ secrets.POIKAS_TEAM_ADMIN_PASSWORD }}
+          EXPECTED_MARKER: ${{ inputs.expected_marker }}
+          HOST_ACTION: ${{ inputs.action }}
+        run: python3 scripts/team-host.py "$HOST_ACTION"

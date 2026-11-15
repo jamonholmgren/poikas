@@ -77,6 +77,9 @@ test("expired setup links cannot reset a PIN", async () => {
   expect((await req("setup", { token: "a".repeat(64), pin: "456" })).status).toBe(400)
 })
 test("PIN attempts are limited per player and remain limited after restart", async () => {
+  app.store.change("auth", blankAuth, (a) => {
+    a.pins["jamon-holmgren"] = Bun.password.hashSync("123")
+  })
   for (let i = 0; i < 6; i++) expect((await req("login", { player: "jamon-holmgren", pin: "999" })).status).toBe(401)
   app = new TeamApp(data, { dir, enabled: true, origin })
   expect((await req("login", { player: "jamon-holmgren", pin: "999" })).status).toBe(429)
@@ -193,4 +196,35 @@ test("daily JSON backup remains valid and private on disk", () => {
   app.store.dailyBackup()
   const b = JSON.parse(readFileSync(join(dir, "backups", new Date().toISOString().slice(0, 10) + ".json"), "utf8"))
   expect(validBackup(b)).toBe(true)
+})
+
+test("first login sets a hashed PIN, subsequent logins must match", async () => {
+  const first = await req("login", { player: "jamon-holmgren", pin: "007" })
+  expect(first.status).toBe(200)
+  expect(app.store.auth().pins["jamon-holmgren"]).not.toBe("007")
+  expect(await Bun.password.verify("007", app.store.auth().pins["jamon-holmgren"])).toBe(true)
+  expect((await req("login", { player: "jamon-holmgren", pin: "008" })).status).toBe(401)
+  expect((await req("login", { player: "jamon-holmgren", pin: "007" })).status).toBe(200)
+})
+
+test("player and admin sessions have no expiry and renew their browser cookies", async () => {
+  for (const cookie of [await player(), await admin()]) {
+    const response = await req("state", undefined, cookie)
+    expect(response.headers.get("set-cookie")).toContain("Max-Age=34560000")
+    const key = digest(cookie.split("=")[1])
+    expect(app.store.auth().sessions[key].expires).toBeNull()
+    const restarted = new TeamApp(data, { dir, enabled: true, origin })
+    const realNow = Date.now
+    try {
+      Date.now = () => realNow() + 10 * 365 * 86400000
+      expect(restarted.session(new Request(origin + "/team", { headers: { cookie } }))).toBeTruthy()
+    } finally {
+      Date.now = realNow
+    }
+  }
+})
+
+test("two first-use requests cannot silently replace each other's PIN", async () => {
+  const responses = await Promise.all([req("login", { player: "jamon-holmgren", pin: "111" }), req("login", { player: "jamon-holmgren", pin: "222" })])
+  expect(responses.map((r) => r.status).sort()).toEqual([200, 401])
 })
