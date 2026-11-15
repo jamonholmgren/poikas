@@ -10,6 +10,7 @@ import { JoinPage } from "./pages/JoinPage"
 import { PhotosPage } from "./pages/PhotosPage"
 import { LeaguePage } from "./pages/LeaguePage"
 import { setImageHost } from "./image"
+import { TeamApp } from "./team/app"
 
 export const serverStart = Date.now()
 
@@ -18,11 +19,17 @@ if (import.meta.main) startServer()
 function startServer() {
   // Grab all the data on server start
   const data = getData()
+  const team = new TeamApp(data)
+  team.start()
 
   const server = serve({
     port: 5151,
-    async fetch(req) {
+    async fetch(req, server) {
       const url = new URL(req.url)
+      if (url.pathname === "/team" || url.pathname.startsWith("/team/")) {
+        const ip = server.requestIP(req)?.address || "unknown"
+        return team.handle(req, ["127.0.0.1", "::1", "::ffff:127.0.0.1"].includes(ip) ? req.headers.get("x-real-ip") || ip : ip)
+      }
       const domain = url.hostname
 
       // set the image host

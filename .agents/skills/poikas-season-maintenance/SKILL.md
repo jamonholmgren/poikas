@@ -28,4 +28,6 @@ Keep the site’s team data accurate without inventing missing game details.
 
 Run `bun test`. For a local smoke test, run `bun start` and check the current season and home routes at `http://localhost:5151`.
 
+Before pushing game results, download the current private team-room backup from the authenticated admin page (or copy the server's private backup through authorized SSH) and run `bun scripts/team-backup.ts /path/to/download.json`. The full backup belongs in `.private-backups/latest.json`, which is ignored. Only `backups/team-schedule.json` contains public schedule fields and may be committed. Never commit attendance, notes, lines, PIN/password hashes, sessions or reset links. If the backup cannot be obtained, report it and continue the authorized game update without inventing a backup. See `src/team/OPERATIONS.md` for hosting and restore details.
+
 Review `git diff --check` and the staged diff. After successful validation, commit the completed in-scope changes with a concise message and push them to the configured upstream branch. Report the commit and test result.

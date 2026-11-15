@@ -2,3 +2,9 @@
 node_modules
 .wrangler
 example-docs
+
+# Private team-room state, credentials and backups
+.runtime/
+.private-backups/
+.env
+__pycache__/

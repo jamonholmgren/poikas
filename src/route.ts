@@ -60,6 +60,7 @@ function layout(options: LayoutOptions) {
         <li><a href="/" class="${active("/", path)}">Home</a></li>
         <li><a href="${currentRecSeason!.url}" class="${active(currentRecSeason!.url, path)}">Rec</a></li>
         <li><a href="${currentCCSeason!.url}" class="${active(currentCCSeason!.url, path)}">CC</a></li>
+        ${process.env.POIKAS_WRITES_ENABLED === "1" ? '<li><a href="/team">Check in / Lines</a></li>' : ""}
         <li><a href="/players/" class="${active("/players/", path)}">All Players</a></li>
         <li><a href="/photos/" class="${active("/photos/", path)}">Photos</a></li>
         <li><a href="/join/" class="${active("/join/", path)}">Join</a></li>

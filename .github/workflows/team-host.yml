@@ -1,0 +1,19 @@
+name: Poikas team-room host setup
+on:
+  workflow_dispatch:
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Trust the existing deployment host
+        env:
+          REMOTE_HOST: ${{ secrets.CUSTOM_REMOTE_SERVER }}
+        run: ssh-keyscan -p 22 "$REMOTE_HOST" >> ~/.ssh/known_hosts
+      - name: Inspect only the Poikas deployment and service
+        env:
+          CUSTOM_REMOTE_URL: ${{ secrets.CUSTOM_REMOTE_URL }}
+        run: python3 scripts/team-host.py inspect
