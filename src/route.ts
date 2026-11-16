@@ -63,7 +63,7 @@ function layout(options: LayoutOptions) {
         ${process.env.POIKAS_WRITES_ENABLED === "1" ? '<li><a href="/team">Check in / Lines</a></li>' : ""}
         <li><a href="/players/" class="${active("/players/", path)}">All Players</a></li>
         <li><a href="/photos/" class="${active("/photos/", path)}">Photos</a></li>
-        <li><a href="/join/" class="${active("/join/", path)}">Join</a></li>
+        <li><a href="/about" class="${active("/about", path)}">About</a></li>
       </ul>
     </nav>
     <div class="container">

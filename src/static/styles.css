@@ -1576,3 +1576,75 @@ table.statsheet {
 .table-container::-webkit-scrollbar-thumb:hover {
   background: var(--gradient-hover);
 }
+
+/* Homepage refresh: readable links, full-width championship photo, compact leaders. */
+main article a, .leaderboard-season a, .points-table a, .seasons td a, footer a {
+  color: #1354a6;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+main article a:hover, .points-table a:hover, .leaderboard-season a:hover {
+  color: #0a2e63;
+}
+.page-hero a {
+  color: #fff1a8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+.page-hero a:hover { color: white; }
+a:focus-visible { outline: 3px solid #fbbf24; outline-offset: 4px; }
+.home-hero .page-hero-content { flex-direction: column; align-items: stretch; }
+.home-hero .championship-photo {
+  position: relative;
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid var(--yellow);
+}
+.home-hero .championship-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 0;
+  box-shadow: none;
+}
+.championship-photo figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  background: rgba(5, 18, 42, 0.72);
+  color: white;
+  padding: 14px 20px;
+  font-size: clamp(13px, 1.5vw, 18px);
+  line-height: 1.45;
+  text-align: center;
+}
+.home-hero .page-hero-name { font-size: clamp(26px, 4vw, 38px); text-wrap: balance; }
+.home-hero .page-hero-details { flex-wrap: wrap; justify-content: flex-start; }
+.home-hero .page-hero-description { max-width: none; opacity: 1; }
+.content-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.content-card { min-width: 0; }
+.latest-games { flex-wrap: wrap; }
+.latest-games .game { min-width: 0; flex-basis: 150px; }
+.latest-games .game div { max-width: none; white-space: normal; overflow: visible; }
+.latest-games .matchup-record { font-size: 14px; color: #334155; line-height: 1.5; margin-bottom: 0; }
+.points-leaderboards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin: 30px 0; }
+.points-card { min-width: 0; padding: 20px; background: #f8fafc; border: 1px solid #d5dfed; border-radius: 14px; }
+.points-card h2 { margin-top: 0; margin-bottom: 8px; }
+.leaderboard-season { margin-top: 0; font-size: 14px; }
+.points-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.points-table caption { text-align: left; color: #475569; font-size: 12px; padding-bottom: 12px; }
+.points-table th, .points-table td { padding: 10px 5px; text-align: right; white-space: normal; border-bottom: 1px solid #d5dfed; }
+.points-table th:nth-child(2), .points-table tbody th { text-align: left; }
+.points-table thead th { font-size: 12px; color: #475569; }
+.points-table th { cursor: default; }
+.points-table th:hover { background: transparent !important; }
+.points-table td:last-child { color: #0e479d; font-size: 17px; }
+@media (max-width: 768px) {
+  .content-grid, .points-leaderboards { grid-template-columns: minmax(0, 1fr); }
+  .points-card { padding: 16px; }
+  .home-hero .championship-photo figcaption { padding: 8px 10px; font-size: 12px; }
+  .home-hero .page-hero-details { gap: 12px; }
+  .content-card { padding: 16px; }
+  .latest-games .game { flex-basis: 100%; padding: 14px; }
+}

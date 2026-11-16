@@ -231,7 +231,7 @@ describe("HomePage", () => {
   test("keeps the double-champions photo and shows current season news instead of the old championship preview", async () => {
     const page = await html(HomePage(data))
 
-    expect(page).toContain("Suomi Poikas Hockey</h1>")
+    expect(page).toContain("Fall/Winter 2026</h1>")
     expect(page).toContain("poikas-rec-and-cc-2025-fall-double-championship.jpg")
     expect(page).toContain("Rec and CC teams celebrating their Fall 2025 championships")
     expect(page).toContain("Fall 2026 Rec team</a> is 11-0-1")

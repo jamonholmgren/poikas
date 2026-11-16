@@ -3,9 +3,8 @@ import { routePage } from "../route"
 import { ChampTile } from "../components/ChampTile"
 import { leagueSeasonsMap } from "../utils/leagueSeasonsMap"
 import { img } from "../image"
-import { renderRosterTable } from "../utils/renderRosterTable"
+import { opponentRecord, pointsLeaderboard, renderPointsLeaderboard, seasonHeading } from "../utils/homepage"
 import { serverStart } from "../server"
-import { notableAbbr } from "../utils/strings"
 
 export function HomePage(data: PoikasData) {
   // Finding the championships we've won as a team, but
@@ -16,9 +15,9 @@ export function HomePage(data: PoikasData) {
   let cc = data.leagues.CC.current || data.leagues.CC.seasons.at(-1)!
 
   // latest games from each league
-  const completedRecGames = (rec.games || []).filter((g) => g.result && g.result != "pending")
+  const completedRecGames = (rec.games || []).filter((g) => g.result && !["pending", "cancelled"].includes(g.result))
   const lastRecGame = completedRecGames.length > 0 ? completedRecGames.at(-1) : undefined
-  const completedCCGames = (cc.games || []).filter((g) => g.result && g.result != "pending")
+  const completedCCGames = (cc.games || []).filter((g) => g.result && !["pending", "cancelled"].includes(g.result))
   const lastCCGame = completedCCGames.length > 0 ? completedCCGames.at(-1) : undefined
   const incompleteRecGames = upcomingPendingGames(rec.games || [])
   const nextRecGame = incompleteRecGames.length > 0 ? incompleteRecGames.at(0) : undefined
@@ -37,24 +36,25 @@ export function HomePage(data: PoikasData) {
     sidebar: championLeagues.map((league) => ChampTile({ league })).join("\n"),
     main: `
       <!-- Hero Section -->
-      <div class="page-hero">
+      <div class="page-hero home-hero">
         <div class="page-hero-content">
-          <div class="page-hero-image">
+          <figure class="page-hero-image championship-photo">
             <img
               src="${img("poikas-rec-and-cc-2025-fall-double-championship.jpg")}?c=${serverStart}"
               alt="Suomi Poikas Rec and CC teams celebrating their Fall 2025 championships"
               onerror="this.onerror=null;this.src='${img("000-placeholder.jpg")}';"
             />
-          </div>
+            <figcaption>Two teams, two trophies: celebrating our Fall 2025 double championship.</figcaption>
+          </figure>
           <div class="page-hero-info">
-            <h1 class="page-hero-name">Suomi Poikas Hockey</h1>
+            <h1 class="page-hero-name">${seasonHeading(rec)}</h1>
             <div class="page-hero-details">
               <div class="stat-item">
                 <span class="stat-number">🏒</span>
                 <span class="stat-label">${rec.seasonName} ${rec.year}</span>
               </div>
               <div class="stat-item">
-                <span class="stat-number">🏆</span>
+                <span class="stat-number" aria-label="Two championship trophies">🏆🏆</span>
                 <span class="stat-label">Fall 2025: Double Champs</span>
               </div>
               <div class="stat-item">
@@ -65,7 +65,6 @@ export function HomePage(data: PoikasData) {
             <div class="page-hero-description">
               <p>Welcome to the official website of the Suomi Poikas, your favorite Finnish-American hockey team! Hyvä Suomi! 🇫🇮</p>
               <p><strong>Follow our Rec and CC teams at Mountain View Ice Arena.</strong> Our <a href="${rec.url}">${rec.seasonName} ${rec.year} Rec team</a> is ${rec.wins || 0}-${rec.losses || 0}-${rec.ties || 0}, and our <a href="${cc.url}">${cc.seasonName} ${cc.year} CC team</a> is ${cc.wins || 0}-${cc.losses || 0}-${cc.ties || 0}. Catch up on the latest results and upcoming games below.</p>
-              <p>Two teams, two trophies: celebrating our Fall 2025 double championship in the photo above.</p>
             </div>
           </div>
         </div>
@@ -109,7 +108,7 @@ export function HomePage(data: PoikasData) {
                 ? `<a href="${rec.url}" class='game'>
                     <div class='league'>Latest Game</div>
                     <div class='teams'>Poikas vs ${lastRecGame.vs}</div>
-                    <div class='result'>${lastRecGame.date?.toLocaleDateString("en-US", { month: "short", day: "numeric" })}, ${lastRecGame.result} ${lastRecGame.us}-${
+                    <div class='result'>${lastRecGame.date?.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" })}, ${lastRecGame.result} ${lastRecGame.us}-${
                       lastRecGame.them
                     }</div>
                     ${lastRecGame.sisu ? `<div class='sisu'>${`🇫🇮 Sisu Cup: ${lastRecGame.sisu}` || ""}</div>` : ""}
@@ -121,8 +120,9 @@ export function HomePage(data: PoikasData) {
                 nextRecGame
                   ? `<a href="${rec.url}" class='game'>
                       <div class='league'>Next Game</div>
-                      <div class='teams'>Poikas vs ${nextRecGame.vs}<br />${nextRecGame.date?.toLocaleDateString("en-US", { month: "short", day: "numeric" })}</div>
+                      <div class='teams'>Poikas vs ${nextRecGame.vs}<br />${nextRecGame.date?.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" })}</div>
                       <div class='notable'>${nextRecGame.notable || ""}</div>
+                      <p class="matchup-record">${opponentRecord(rec, nextRecGame)}</p>
                     </a>`
                   : "<div class='game'>No Rec games scheduled</div>"
               }
@@ -163,7 +163,7 @@ export function HomePage(data: PoikasData) {
               lastCCGame
                 ? `<a href="${cc.url}" class='game'>
                     <div class='league'>Latest Game</div>
-                    <div class='teams'>Poikas vs ${lastCCGame.vs}<br />${lastCCGame.date?.toLocaleDateString("en-US", { month: "short", day: "numeric" })}</div>
+                    <div class='teams'>Poikas vs ${lastCCGame.vs}<br />${lastCCGame.date?.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" })}</div>
                     <div class='result'>${lastCCGame.result} ${lastCCGame.us}-${lastCCGame.them}</div>
                     ${lastCCGame.sisu ? `<div class='sisu'>${`🇫🇮 Sisu Cup: ${lastCCGame.sisu}` || ""}</div>` : ""}
                     <div class='notable'>${lastCCGame.notable || ""}</div>
@@ -174,8 +174,9 @@ export function HomePage(data: PoikasData) {
                 nextCCGame
                   ? `<a href="${cc.url}" class='game'>
                       <div class='league'>Next Game</div>
-                      <div class='teams'>Poikas vs ${nextCCGame.vs}<br />${nextCCGame.date?.toLocaleDateString("en-US", { month: "short", day: "numeric" })}</div>
+                      <div class='teams'>Poikas vs ${nextCCGame.vs}<br />${nextCCGame.date?.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" })}</div>
                       <div class='notable'>${nextCCGame.notable || ""}</div>
+                      <p class="matchup-record">${opponentRecord(cc, nextCCGame)}</p>
                     </a>`
                   : "<div class='game'>No CC games scheduled</div>"
               }
@@ -189,96 +190,15 @@ export function HomePage(data: PoikasData) {
         <ul>
           ${lastRecGame ? `<li><a href="${rec.url}">Rec latest:</a> ${lastRecGame.date?.toLocaleDateString("en-US", { month: "long", day: "numeric", timeZone: "UTC" }) || "Latest game"} — ${lastRecGame.result} ${lastRecGame.us}-${lastRecGame.them} vs ${lastRecGame.vs}.</li>` : ""}
           ${lastCCGame ? `<li><a href="${cc.url}">CC latest:</a> ${lastCCGame.date?.toLocaleDateString("en-US", { month: "long", day: "numeric", timeZone: "UTC" }) || "Latest game"} — ${lastCCGame.result} ${lastCCGame.us}-${lastCCGame.them} vs ${lastCCGame.vs}.</li>` : ""}
-          <li>Fall 2025: both Rec and CC teams won the championship. We're keeping the double-champions photo front and center!</li>
+          <li>Fall 2025: both Rec and CC teams won the championship.</li>
         </ul>
 
-        <h2>Our History</h2>
-        <p>
-          In fall of 2018, <a href="/players/brenden-mattila">Brenden Mattila</a>
-          turned 18 and started playing ice hockey with the local Thundersticks
-          Rec League team. While watching him play, his dad
-          <a href="/players/joel-mattila">Joel Mattila</a>
-          decided to join for spring 2019 league, along with his friend Eric Matson.
-          Halfway through the season, Joel thought "I know enough Finns who play hockey
-          that I could start a team," and the Suomi Poikas ("Finnish Boys") were born.
-        </p>
-        <p>
-          The club is made up primarily of Finnish-American players. Most seasons, there
-          is a Rec League team and a CC League team. We play at the
-          <a href="https://mtviewice.com/" target="_blank">Mountain View Ice Arena</a>
-          in Vancouver, Washington, USA.
-        </p>
-        <p>
-          If you're interested in joining the team,
-          <a href="/join/">click here</a>.
-        </p>
-        <h2>Connect with Us</h2>
-        <p>
-          Follow us on
-          <a href="https://www.facebook.com/profile.php?id=100069293784030" target="_blank">Facebook</a>!
-        </p>
-        <p>
-          Also check out our recent
-          <a href="https://www.youtube.com/watch?v=y-PfIM5V3_Q" target="_blank">Fall 2023 Rec championship video</a>.
-        </p>
-        <p>Subscribe to our Rec & CC schedules:</p>
-        <ul>
-          <li>
-            <a href="webcal://ics.benchapp.com/eyJwbGF5ZXJJZCI6NDY1ODAzLCJ0ZWFtSWQiOlsyNDYyNDBdfQ"
-              >Webcal link: Apple Calendar, Google Calendar</a
-            >
-          </li>
-          <li>
-            <a href="https://ics.benchapp.com/eyJwbGF5ZXJJZCI6NDY1ODAzLCJ0ZWFtSWQiOlsyNDYyNDBdfQ==" target="_blank"
-              >ICS file: Outlook, iCal, etc.</a
-            >
-          </li>
-        </ul>
       </article>
 
-      <div class="roster">
-        <h2>
-          Current Rec Roster
-          <a class="details" href="${rec.url}">(view season page)</a>
-        </h2>
-        ${renderRosterTable({
-          id: "rec-roster",
-          className: "roster",
-          columns: [
-            { th: "Photo", val: "imageHTML", width: 50, alt: "Player photo" },
-            { th: "Name", val: "profileLink", alt: "Player name" },
-            { th: "#", val: "number", width: 30, alt: "Jersey number" },
-            { th: "Pos", val: "pos", width: 30, alt: "Position" },
-            { th: "Ht", val: "ht", width: 30, xtra: true, alt: "Height" },
-            { th: "Wt", val: "wt", width: 30, xtra: true, alt: "Weight" },
-            { th: "Sh", val: "shoots", width: 30, xtra: true, alt: "Shoots left or right" },
-            { th: "Yrs", val: "years", width: 30, xtra: true, alt: "Years with team" },
-            { th: "Age", val: "age", width: 30, xtra: true, alt: "Player age" },
-          ],
-          players: rec.players || [],
-        })}
-
-        <h2>
-          Current CC Roster
-          <a class="details" href="${cc.url}">(view season page)</a>
-        </h2>
-        ${renderRosterTable({
-          id: "c-roster",
-          className: "roster",
-          columns: [
-            { th: "Photo", val: "imageHTML", width: 50, alt: "Player photo" },
-            { th: "Name", val: "profileLink", alt: "Player name" },
-            { th: "#", val: "number", width: 30, alt: "Jersey number" },
-            { th: "Pos", val: "pos", width: 30, alt: "Position" },
-            { th: "Ht", val: "ht", width: 30, xtra: true, alt: "Height" },
-            { th: "Wt", val: "wt", width: 30, xtra: true, alt: "Weight" },
-            { th: "Sh", val: "shoots", width: 30, xtra: true, alt: "Shoots left or right" },
-            { th: "Yrs", val: "years", width: 30, xtra: true, alt: "Years with team" },
-            { th: "Age", val: "age", width: 30, xtra: true, alt: "Player age" },
-          ],
-          players: cc.players || [],
-        })}
-      </div>
+      <section class="points-leaderboards" aria-label="Points leaderboards">
+        ${renderPointsLeaderboard(pointsLeaderboard(data, rec), "Rec")}
+        ${renderPointsLeaderboard(pointsLeaderboard(data, cc), "CC")}
+      </section>
       <div class="seasons">
         <h2>Season Archives</h2>
         <div class="table-container">

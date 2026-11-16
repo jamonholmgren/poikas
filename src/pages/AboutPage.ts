@@ -2,16 +2,60 @@ import { routePage } from "../route"
 import type { PoikasData } from "../types"
 import { img } from "../image"
 
-export function JoinPage(_data: PoikasData) {
+export function AboutPage(_data: PoikasData) {
   return routePage({
-    path: "/join/",
-    title: "Join Suomi Poikas",
-    description: "Join us! Suomi Poikas Hockey Club",
+    path: "/about",
+    title: "About Suomi Poikas",
+    description: "Our history, community, and how to join Suomi Poikas Hockey Club",
     metaImage: img("000-placeholder.jpg"),
     sidebar: ``,
     main: `
       <article>
-        <h2>Join the team</h2>
+        <h1>About Suomi Poikas</h1>
+        <h2>Our History</h2>
+        <p>
+          In fall of 2018, <a href="/players/brenden-mattila">Brenden Mattila</a>
+          turned 18 and started playing ice hockey with the local Thundersticks
+          Rec League team. While watching him play, his dad
+          <a href="/players/joel-mattila">Joel Mattila</a>
+          decided to join for spring 2019 league, along with his friend Eric Matson.
+          Halfway through the season, Joel thought "I know enough Finns who play hockey
+          that I could start a team," and the Suomi Poikas ("Finnish Boys") were born.
+        </p>
+        <p>
+          The club is made up primarily of Finnish-American players. Most seasons, there
+          is a Rec League team and a CC League team. We play at the
+          <a href="https://mtviewice.com/" target="_blank">Mountain View Ice Arena</a>
+          in Vancouver, Washington, USA.
+        </p>
+        <p>
+          If you're interested in joining the team,
+          <a href="#join">see how to join below</a>.
+        </p>
+        <h2>Connect with Us</h2>
+        <p>
+          Follow us on
+          <a href="https://www.facebook.com/profile.php?id=100069293784030" target="_blank">Facebook</a>!
+        </p>
+        <p>
+          Also check out our recent
+          <a href="https://www.youtube.com/watch?v=y-PfIM5V3_Q" target="_blank">Fall 2023 Rec championship video</a>.
+        </p>
+        <p>Subscribe to our Rec & CC schedules:</p>
+        <ul>
+          <li>
+            <a href="webcal://ics.benchapp.com/eyJwbGF5ZXJJZCI6NDY1ODAzLCJ0ZWFtSWQiOlsyNDYyNDBdfQ"
+              >Webcal link: Apple Calendar, Google Calendar</a
+            >
+          </li>
+          <li>
+            <a href="https://ics.benchapp.com/eyJwbGF5ZXJJZCI6NDY1ODAzLCJ0ZWFtSWQiOlsyNDYyNDBdfQ==" target="_blank"
+              >ICS file: Outlook, iCal, etc.</a
+            >
+          </li>
+        </ul>
+
+        <h2 id="join">Join the team</h2>
         <p>
           If you're located in the southwest Washington state area, of Finnish
           descent, and interested in joining the team, please contact Joel
