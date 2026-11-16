@@ -45,7 +45,7 @@ function startServer() {
       if (url.pathname.startsWith("/vs/")) return OpponentPage(data, segments[2])
       if (url.pathname.startsWith("/players/") && segments[2]) return PlayerPage(data, segments[2])
       if (url.pathname.startsWith("/players")) return AllPlayersPage(data)
-      if (url.pathname === "/join" || url.pathname === "/join/") return Response.redirect(new URL("/about" + url.search, url), 301)
+      if (url.pathname === "/join" || url.pathname === "/join/") return new Response(null, { status: 301, headers: { location: "/about" + url.search } })
       if (url.pathname === "/about" || url.pathname === "/about/") return AboutPage(data)
       if (url.pathname.startsWith("/seasons/") && segs > 4) return LeaguePage(data, segments.slice(2).join("/"))
       if (url.pathname.startsWith("/photos")) return PhotosPage(images)
