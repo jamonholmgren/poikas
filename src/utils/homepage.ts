@@ -35,7 +35,7 @@ export function seasonPoints(season: Season): PointsRow[] {
     }
     return { player, goals, assists, points: goals + assists, rank: 0 }
   }).filter(p => p.points > 0)
-    .sort((a, b) => b.points - a.points || a.player.name.localeCompare(b.player.name))
+    .sort((a, b) => b.points - a.points || b.goals - a.goals || a.player.name.localeCompare(b.player.name))
     .map((p, i, all) => ({ ...p, rank: all.findIndex(other => other.points === p.points) + 1 }))
 }
 
@@ -50,8 +50,7 @@ export function pointsLeaderboard(data: PoikasData, current: Season) {
     season = previous
     rows = seasonPoints(season)
   }
-  const cutoff = rows[4]?.points ?? 0
-  return { season, fallback: season !== current, rows: rows.filter((p, i) => i < 5 || p.points === cutoff) }
+  return { season, fallback: season !== current, rows: rows.slice(0, 5) }
 }
 
 export function renderPointsLeaderboard(board: ReturnType<typeof pointsLeaderboard>, league: LeagueName) {
@@ -59,7 +58,7 @@ export function renderPointsLeaderboard(board: ReturnType<typeof pointsLeaderboa
     <h2 id="${league.toLowerCase()}-points-title">${league} Points Leaders</h2>
     <p class="leaderboard-season"><a href="${board.season.url}">${board.season.seasonName} ${board.season.year} ${league}</a>${board.fallback ? ' · Previous season (current season stats not yet available)' : ''}</p>
     ${board.rows.length ? `<table class="points-table">
-      <caption>Top five players${board.rows.length > 5 ? ', including ties at fifth' : ''} · recorded points</caption>
+      <caption>Top five players · recorded points (ties: goals, then name)</caption>
       <thead><tr><th scope="col">Rank</th><th scope="col">Player</th><th scope="col"><abbr title="Goals">G</abbr></th><th scope="col"><abbr title="Assists">A</abbr></th><th scope="col"><abbr title="Points">PTS</abbr></th></tr></thead>
       <tbody>${board.rows.map(p => `<tr><td>${p.rank}</td><th scope="row"><a href="${p.player.profileURL}">${p.player.name}</a></th><td>${p.goals}</td><td>${p.assists}</td><td><strong>${p.points}</strong></td></tr>`).join('')}</tbody>
     </table>` : '<p>Scoring statistics are not available yet.</p>'}

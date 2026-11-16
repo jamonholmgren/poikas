@@ -39,12 +39,12 @@ describe("Homepage refresh", () => {
     expect(opponentRecord({ ...cc, games: [{ ...next, result: "won", date: new Date("2026-12-01") }] }, next)).toContain("first game")
   })
 
-  test("current top five points include ties at the cutoff without duplicate players", () => {
+  test("current top five use goals then names to break points ties without duplicate players", () => {
     const rec = pointsLeaderboard(data, season("Rec"))
     expect(rec.fallback).toBe(false)
     expect(rec.rows.map(r => [r.player.name, r.points, r.rank])).toEqual([
       ["Zacharias Snellman", 19, 1], ["Asa Storm", 12, 2], ["Myron Kinnunen", 12, 2],
-      ["Levi Estola", 11, 4], ["Dan Warren", 10, 5], ["Daniel Kulla", 10, 5], ["Shane Matson", 10, 5],
+      ["Levi Estola", 11, 4], ["Daniel Kulla", 10, 5],
     ])
     const cc = pointsLeaderboard(data, season("CC"))
     expect(cc.rows.map(r => [r.player.name, r.points])).toEqual([
@@ -60,7 +60,7 @@ describe("Homepage refresh", () => {
     expect(board.fallback).toBe(true)
     expect(board.season.seasonName).toBe("Summer")
     expect(board.season.year).toBe(2026)
-    expect(board.rows.length).toBeGreaterThanOrEqual(5)
+    expect(board.rows.length).toBe(5)
     const empty = pointsLeaderboard({ ...data, seasons: [current] }, current)
     expect(empty.rows).toEqual([])
   })
