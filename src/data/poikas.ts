@@ -1417,7 +1417,13 @@ export const poikasData: PoikasDataRaw = {
       born: 2004,
     },
     {
+      number: 40,
       name: "Ivan Kulla",
+      ht: "6-0",
+      wt: 175,
+      shoots: "L",
+      born: 2005,
+      pos: "W",
     },
     {
       number: 28,
