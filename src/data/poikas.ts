@@ -1295,6 +1295,11 @@ export const poikasData: PoikasDataRaw = {
     {
       number: 94,
       name: "Ryan Tapio",
+      ht: "5-10",
+      wt: 170,
+      shoots: "L",
+      born: 2007,
+      pos: "LW",
     },
     {
       number: 8,
