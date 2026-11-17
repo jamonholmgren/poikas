@@ -1432,7 +1432,7 @@ export const poikasData: PoikasDataRaw = {
       wt: 165,
       shoots: "R",
       born: 1973,
-      pos: "D",
+      pos: "RW/D",
     },
     {
       number: 10,

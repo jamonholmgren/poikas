@@ -274,6 +274,15 @@ describe("HomePage", () => {
 })
 
 describe("PlayerPage", () => {
+  test("Mike Kulla and Myron Kinnunen play right wing and defense", async () => {
+    for (const name of ["Mike Kulla", "Myron Kinnunen"]) {
+      const player = data.players.find(p => p.name === name)!
+      expect(player.pos).toBe("RW/D")
+      const page = await html(PlayerPage(data, player.slug))
+      expect(page).toContain('<span class="page-hero-position">RW/D</span>')
+    }
+  })
+
   test("includes Brad's reported Fall CC goal and penalty", () => {
     const brad = data.players.find((p) => p.name === "Brad Wuori")!
     const fall2026 = brad.seasons.CC.find((s) => s.year === 2026 && s.seasonName === "Fall")!
