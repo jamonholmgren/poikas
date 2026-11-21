@@ -14,6 +14,29 @@ async function html(res: Response | unknown) {
 }
 
 describe("LeaguePage", () => {
+  test("uses each current team's official rink feed for webcal, ICS, and Google subscriptions", async () => {
+    for (const [league, uid] of [["rec", "3235421"], ["cc", "3235401"]]) {
+      const page = await html(LeaguePage(data, `2026/fall/${league}`))
+      const section = page.match(/<ul class="schedule-links">([\s\S]*?)<\/ul>/)![1]
+      const links = [...section.matchAll(/href="([^"]+)"/g)].map(m => m[1])
+      const feed = `https://ezleagues.ezfacility.com/WebServices/TeamCalendar?UID=${uid}`
+      expect(links).toHaveLength(3)
+      expect(links).toContain(feed)
+      expect(links).toContain(feed.replace("https:", "webcal:"))
+      const google = new URL(links.find(link => link.startsWith("https://calendar.google.com/"))!)
+      expect(google.searchParams.get("cid")).toBe(feed)
+      expect(section).not.toContain("benchapp")
+    }
+  })
+
+  test("preserves past-season calendar links", async () => {
+    const page = await html(LeaguePage(data, "2026/spring/rec"))
+    const section = page.match(/<ul class="schedule-links">([\s\S]*?)<\/ul>/)![1]
+    expect(section).toContain("webcal://ics.benchapp.com/")
+    expect(section).toContain("https://ics.benchapp.com/")
+    expect(section).not.toContain("TeamCalendar")
+  })
+
   test("renders the Spring 2026 Rec season", async () => {
     const season = data.seasons.find((s) => s.year === 2026 && s.seasonName === "Spring" && s.leagueName === "Rec")!
     expect(season).toBeDefined()

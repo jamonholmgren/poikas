@@ -1,5 +1,6 @@
 import type { Game, Player, PlayerStats, PoikasData, Season } from "../types"
 import { routePage } from "../route"
+import poikasSettings from "../data/poikas.json"
 import { img } from "../image"
 import { renderRosterTable } from "../utils/renderRosterTable"
 import { fullPlayoffs, fullRecord, notableAbbr, shortenName } from "../utils/strings"
@@ -12,6 +13,8 @@ export function LeaguePage(data: PoikasData, slug: string) {
   const { url, schedule, year, seasonName, leagueName, description, photos, wins, losses, ties, playoffs, videos, games, players, sidebar } = league
   const metaImage = (photos && img(photos[0])) || img("finland-flag-icon.png")
   const leagueStandingsHTML = schedule ? `<a href="${schedule}" target="_blank">MVIA</a>` : "-"
+  const calendarFeed = poikasSettings.calendarFeeds[url as keyof typeof poikasSettings.calendarFeeds]
+  const webcalFeed = calendarFeed?.replace(/^https:/, "webcal:")
 
   const getValueCustom = (prop: keyof PlayerStats) => (player: Player) => {
     if (league.ignoreGoalieStats && goalieStatNeedsReliableSource(prop)) return "-"
@@ -107,6 +110,22 @@ export function LeaguePage(data: PoikasData, slug: string) {
             <h3>Team Schedule</h3>
             <p>Subscribe to our ${leagueName} schedule:</p>
             <ul class="schedule-links">
+              ${calendarFeed ? `
+              <li>
+                <a href="${webcalFeed}" target="_blank">
+                  📅 Webcal: Apple Calendar
+                </a>
+              </li>
+              <li>
+                <a href="https://calendar.google.com/calendar/render?cid=${encodeURIComponent(calendarFeed)}" target="_blank">
+                  📅 Subscribe in Google Calendar
+                </a>
+              </li>
+              <li>
+                <a href="${calendarFeed}" target="_blank">
+                  📄 ICS file: Outlook, iCal, etc.
+                </a>
+              </li>` : `
               <li>
                 <a href="webcal://ics.benchapp.com/eyJwbGF5ZXJJZCI6NDY1ODAzLCJ0ZWFtSWQiOlsyNDYyNDBdfQ" target="_blank">
                   📅 Webcal: Apple Calendar, Google Calendar
@@ -116,7 +135,7 @@ export function LeaguePage(data: PoikasData, slug: string) {
                 <a href="https://ics.benchapp.com/eyJwbGF5ZXJJZCI6NDY1ODAzLCJ0ZWFtSWQiOlsyNDYyNDBdfQ==" target="_blank">
                   📄 ICS file: Outlook, iCal, etc.
                 </a>
-              </li>
+              </li>`}
             </ul>
           </div>
         </div>
